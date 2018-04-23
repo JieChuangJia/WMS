@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DA7DE2B7-69A6-45F3-8458-BDA2DA13630A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WMS_Database</RootNamespace>
+    <AssemblyName>WMS_Database</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\View_ManageStockListBLL.cs" />
+    <Compile Include="BLL\WH_Cell_Operate_RecordBLL.cs" />
+    <Compile Include="BLL\WH_Station_LogicBLL.cs" />
+    <Compile Include="BLL\View_Manage_CellBLL.cs" />
+    <Compile Include="BLL\View_ManageBLL.cs" />
+    <Compile Include="BLL\View_ManageListBLL.cs" />
+    <Compile Include="BLL\View_PlanMainBLL.cs" />
+    <Compile Include="BLL\WH_LaneBLL.cs" />
+    <Compile Include="BLL\View_Plan_ManageBLL.cs" />
+    <Compile Include="BLL\View_StockListBLL.cs" />
+    <Compile Include="BLL\View_PlanListBLL.cs" />
+    <Compile Include="BLL\Control_ApplyBLL.cs" />
+    <Compile Include="BLL\ControlBLL.cs" />
+    <Compile Include="BLL\View_Plan_StockListBLL.cs" />
+    <Compile Include="BLL\View_CellBLL.cs" />
+    <Compile Include="BLL\View_GoodsBLL.cs" />
+    <Compile Include="BLL\GoodsBll.cs" />
+    <Compile Include="BLL\Goods_ClassBll.cs" />
+    <Compile Include="BLL\Goods_PropertyBll.cs" />
+    <Compile Include="BLL\ManageBll.cs" />
+    <Compile Include="BLL\Manage_DetaiBll.cs" />
+    <Compile Include="BLL\Manage_ListBll.cs" />
+    <Compile Include="BLL\Manage_TypeBll.cs" />
+    <Compile Include="BLL\PlanBll.cs" />
+    <Compile Include="BLL\Plan_DetailBll.cs" />
+    <Compile Include="BLL\Plan_ListBll.cs" />
+    <Compile Include="BLL\Plan_TypeBll.cs" />
+    <Compile Include="BLL\RecordBll.cs" />
+    <Compile Include="BLL\Record_DetailBll.cs" />
+    <Compile Include="BLL\Record_ListBll.cs" />
+    <Compile Include="BLL\StockBll.cs" />
+    <Compile Include="BLL\Stock_DetailBll.cs" />
+    <Compile Include="BLL\Stock_ListBll.cs" />
+    <Compile Include="BLL\WH_AreaBll.cs" />
+    <Compile Include="BLL\WH_CellBll.cs" />
+    <Compile Include="BLL\WH_Cell_ChildrenBll.cs" />
+    <Compile Include="BLL\WH_WareHouseBll.cs" />
+    <Compile Include="DAL\View_ManageStockListDAL.cs" />
+    <Compile Include="DAL\WH_Cell_Operate_RecordDAL.cs" />
+    <Compile Include="DAL\WH_Station_LogicDAL.cs" />
+    <Compile Include="DAL\View_Manage_CellDAL.cs" />
+    <Compile Include="DAL\View_ManageDAL.cs" />
+    <Compile Include="DAL\View_ManageListDAL.cs" />
+    <Compile Include="DAL\View_PlanMainDAL.cs" />
+    <Compile Include="DAL\WH_LaneDAL.cs" />
+    <Compile Include="DAL\View_Plan_ManageDAL.cs" />
+    <Compile Include="DAL\View_StockListDAL.cs" />
+    <Compile Include="DAL\View_PlanListDAL.cs" />
+    <Compile Include="DAL\Control_ApplyDAL.cs" />
+    <Compile Include="DAL\ControlDAL.cs" />
+    <Compile Include="DAL\View_Plan_StockListDAL.cs" />
+    <Compile Include="DAL\View_CellDAL.cs" />
+    <Compile Include="DAL\View_GoodsDAL.cs" />
+    <Compile Include="DAL\GoodsDal.cs" />
+    <Compile Include="DAL\Goods_ClassDal.cs" />
+    <Compile Include="DAL\Goods_PropertyDal.cs" />
+    <Compile Include="DAL\ManageDal.cs" />
+    <Compile Include="DAL\Manage_DetailDal.cs" />
+    <Compile Include="DAL\Manage_ListDal.cs" />
+    <Compile Include="DAL\Manage_TypeDal.cs" />
+    <Compile Include="DAL\PlanDal.cs" />
+    <Compile Include="DAL\Plan_DetailDal.cs" />
+    <Compile Include="DAL\Plan_ListDal.cs" />
+    <Compile Include="DAL\Plan_TypeDal.cs" />
+    <Compile Include="DAL\RecordDal.cs" />
+    <Compile Include="DAL\Record_DetailDal.cs" />
+    <Compile Include="DAL\Record_ListDal.cs" />
+    <Compile Include="DAL\StockDal.cs" />
+    <Compile Include="DAL\Stock_DetailDal.cs" />
+    <Compile Include="DAL\Stock_ListDal.cs" />
+    <Compile Include="DAL\WH_AreaDal.cs" />
+    <Compile Include="DAL\WH_CellDal.cs" />
+    <Compile Include="DAL\WH_Cell_ChildrenDal.cs" />
+    <Compile Include="DAL\WH_WareHouseDal.cs" />
+    <Compile Include="DBUtility\DbHelperSQL.cs" />
+    <Compile Include="DBUtility\PubConstant.cs" />
+    <Compile Include="Model\View_ManageStockListModel.cs" />
+    <Compile Include="Model\WH_Cell_Operate_RecordModel.cs" />
+    <Compile Include="Model\WH_Station_LogicModel.cs" />
+    <Compile Include="Model\View_Manage_CellModel.cs" />
+    <Compile Include="Model\View_ManageModel.cs" />
+    <Compile Include="Model\View_ManageListModel.cs" />
+    <Compile Include="Model\View_PlanMainModel.cs" />
+    <Compile Include="Model\WH_LaneModel.cs" />
+    <Compile Include="Model\View_Plan_ManageModel.cs" />
+    <Compile Include="Model\View_StockListModel.cs" />
+    <Compile Include="Model\View_PlanListModel.cs" />
+    <Compile Include="Model\Control_ApplyModel.cs" />
+    <Compile Include="Model\ControlModel.cs" />
+    <Compile Include="Model\View_Plan_StockListModel.cs" />
+    <Compile Include="Model\View_CellModel.cs" />
+    <Compile Include="Model\View_GoodsModel.cs" />
+    <Compile Include="Model\GoodsModel.cs" />
+    <Compile Include="Model\Goods_ClassModel.cs" />
+    <Compile Include="Model\Goods_PropertyModel.cs" />
+    <Compile Include="Model\ManageModel.cs" />
+    <Compile Include="Model\Manage_DetailModel.cs" />
+    <Compile Include="Model\Manage_ListModel.cs" />
+    <Compile Include="Model\Manage_TypeModel.cs" />
+    <Compile Include="Model\PlanMainModel.cs" />
+    <Compile Include="Model\Plan_DetailModel.cs" />
+    <Compile Include="Model\Plan_ListModel.cs" />
+    <Compile Include="Model\Plan_TypeModel.cs" />
+    <Compile Include="Model\RecordModel.cs" />
+    <Compile Include="Model\Record_DetailModel.cs" />
+    <Compile Include="Model\Record_ListModel.cs" />
+    <Compile Include="Model\StockModel.cs" />
+    <Compile Include="Model\Stock_DetailModel.cs" />
+    <Compile Include="Model\Stock_ListModel.cs" />
+    <Compile Include="Model\WH_AreaModel.cs" />
+    <Compile Include="Model\WH_CellModel.cs" />
+    <Compile Include="Model\WH_Cell_ChildrenModel.cs" />
+    <Compile Include="Model\WH_WareHouseModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

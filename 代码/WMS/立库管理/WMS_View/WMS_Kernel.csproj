@@ -1,0 +1,607 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8D74FF49-520C-4F5C-AB93-7C96B8F9C1A2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WMS_Kernel</RootNamespace>
+    <AssemblyName>WMS_Kernel</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 16.2\Components\Bin\Framework\DevExpress.BonusSkins.v16.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v16.2.Core, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v16.2.Core, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IView\IInWareWithPlanView.cs" />
+    <Compile Include="IView\IMaterailManaView.cs" />
+    <Compile Include="IView\IPalletManageView.cs" />
+    <Compile Include="IView\IPlanInputView.cs" />
+    <Compile Include="IView\IPlanQueryView.cs" />
+    <Compile Include="IView\IPutawayView.cs" />
+    <Compile Include="IView\IStockTakingUnshelveView.cs" />
+    <Compile Include="IView\IStorageView.cs" />
+    <Compile Include="IView\ITaskListView.cs" />
+    <Compile Include="IView\ITodoListView.cs" />
+    <Compile Include="IView\IUnShelvePlanView.cs" />
+    <Compile Include="Presenter\InWareWithPlanPresenter.cs" />
+    <Compile Include="Presenter\MaterialManaPresenter.cs" />
+    <Compile Include="Presenter\PalletManagePresenter.cs" />
+    <Compile Include="Presenter\PlanInputPresenter.cs" />
+    <Compile Include="Presenter\PlanQueryPresenter.cs" />
+    <Compile Include="Presenter\PutawayPresenter.cs" />
+    <Compile Include="Presenter\StockTakingUnshelvePresenter.cs" />
+    <Compile Include="Presenter\StorageViewPresenter.cs" />
+    <Compile Include="Presenter\TaskListPresenter.cs" />
+    <Compile Include="Presenter\TodoListPresenter.cs" />
+    <Compile Include="Presenter\UnShelvePlanPresenter.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ImageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\GoodsDataManageView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GoodsDataManageView.Designer.cs">
+      <DependentUpon>GoodsDataManageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CellStatusView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CellStatusView.Designer.cs">
+      <DependentUpon>CellStatusView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\StockTakingUnshelveView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\StockTakingUnshelveView.Designer.cs">
+      <DependentUpon>StockTakingUnshelveView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TodoListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TodoListView.Designer.cs">
+      <DependentUpon>TodoListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WMSManager.cs" />
+    <Compile Include="WmsViewManager.cs" />
+    <Compile Include="View\MaterialDetailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MaterialDetailView.Designer.cs">
+      <DependentUpon>MaterialDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\StationShowView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\StationShowView.Designer.cs">
+      <DependentUpon>StationShowView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\WareQueryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\WareQueryView.Designer.cs">
+      <DependentUpon>WareQueryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PalletManaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PalletManaView.Designer.cs">
+      <DependentUpon>PalletManaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OutWareWithPlanView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OutWareWithPlanView.Designer.cs">
+      <DependentUpon>OutWareWithPlanView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UnShelvePlanView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UnShelvePlanView.Designer.cs">
+      <DependentUpon>UnShelvePlanView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\InWareWithPlanView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\InWareWithPlanView.Designer.cs">
+      <DependentUpon>InWareWithPlanView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OutWareWithoutPlanView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OutWareWithoutPlanView.Designer.cs">
+      <DependentUpon>OutWareWithoutPlanView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PutawayView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PutawayView.Designer.cs">
+      <DependentUpon>PutawayView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\InWareWithoutPlanView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\InWareWithoutPlanView.Designer.cs">
+      <DependentUpon>InWareWithoutPlanView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlanImportView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PlanImportView.Designer.cs">
+      <DependentUpon>PlanImportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlanQueryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PlanQueryView.Designer.cs">
+      <DependentUpon>PlanQueryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TaskListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TaskListView.Designer.cs">
+      <DependentUpon>TaskListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MaterialManaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MaterialManaView.Designer.cs">
+      <DependentUpon>MaterialManaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\WareLimitManaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\WareLimitManaView.Designer.cs">
+      <DependentUpon>WareLimitManaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LimitManaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LimitManaView.Designer.cs">
+      <DependentUpon>LimitManaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ModPasswordView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ModPasswordView.Designer.cs">
+      <DependentUpon>ModPasswordView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\UserManaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserManaView.Designer.cs">
+      <DependentUpon>UserManaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RoleManaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RoleManaView.Designer.cs">
+      <DependentUpon>RoleManaView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ImageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ImageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="View\GoodsDataManageView.resx">
+      <DependentUpon>GoodsDataManageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CellStatusView.resx">
+      <DependentUpon>CellStatusView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MaterialDetailView.resx">
+      <DependentUpon>MaterialDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\StockTakingUnshelveView.resx">
+      <DependentUpon>StockTakingUnshelveView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TodoListView.resx">
+      <DependentUpon>TodoListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\StationShowView.resx">
+      <DependentUpon>StationShowView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\WareQueryView.resx">
+      <DependentUpon>WareQueryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PalletManaView.resx">
+      <DependentUpon>PalletManaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OutWareWithPlanView.resx">
+      <DependentUpon>OutWareWithPlanView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UnShelvePlanView.resx">
+      <DependentUpon>UnShelvePlanView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\InWareWithPlanView.resx">
+      <DependentUpon>InWareWithPlanView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OutWareWithoutPlanView.resx">
+      <DependentUpon>OutWareWithoutPlanView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PutawayView.resx">
+      <DependentUpon>PutawayView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\InWareWithoutPlanView.resx">
+      <DependentUpon>InWareWithoutPlanView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PlanImportView.resx">
+      <DependentUpon>PlanImportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PlanQueryView.resx">
+      <DependentUpon>PlanQueryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TaskListView.resx">
+      <DependentUpon>TaskListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MaterialManaView.resx">
+      <DependentUpon>MaterialManaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\WareLimitManaView.resx">
+      <DependentUpon>WareLimitManaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LimitManaView.resx">
+      <DependentUpon>LimitManaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ModPasswordView.resx">
+      <DependentUpon>ModPasswordView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserManaView.resx">
+      <DependentUpon>UserManaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RoleManaView.resx">
+      <DependentUpon>RoleManaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\基础模块\CommonMoudle\CommonMoudle.csproj">
+      <Project>{cb701bea-1ee0-42fd-9183-c2a0952f11e7}</Project>
+      <Name>CommonMoudle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\基础模块\LicenceManager\LicenceManager.csproj">
+      <Project>{785aa2aa-cc7e-408b-b61c-2dfb906d1797}</Project>
+      <Name>LicenceManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WMS_Database\WMS_Database.csproj">
+      <Project>{da7de2b7-69a6-45f3-8458-bda2da13630a}</Project>
+      <Name>WMS_Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WMS_Interface\WMS_Interface.csproj">
+      <Project>{2d29f362-7ac3-4a39-a3ad-f0d1e0f4f39f}</Project>
+      <Name>WMS_Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WMS_UserControl\WMS_UserControl.csproj">
+      <Project>{6b773d18-ad44-48e6-963d-682653d9df0c}</Project>
+      <Name>WMS_UserControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\draw-line-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application-go.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appointment-new-4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-down-1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-down-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-down-double-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-refresh.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-up-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-up-double-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\battery-3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\configure-5.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\configure-6.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database-go.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dialog-ok.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dialog-ok1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dialog-ok-apply-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-edit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-export-4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-import-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-save-5.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door-in.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-add-4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-clear-3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-clear-history-3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-delete-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-delete-5.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-find-5.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-remove-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-remove-3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-undo-5.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exaile-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\format-list-unordered.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gnome-klotski.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gnome-mastermind.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\go-first-view.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\go-home.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\go-home-6.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\go-home-8.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\go-last-view.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\go-next-view.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\go-previous-view.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\irkick-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kdmconfig.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kedit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kgpg_export.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kgpg_import.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\limit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list-add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail-find.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail-send-3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\material.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\media-playback-pause-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\media-playback-pause-7.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\media-playback-start.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\media-playback-start1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\media-playback-start-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\media-playback-start-3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\media-playback-start-9.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page-edit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\role.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system-search-3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tool_delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view-list-icons.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view-list-text-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view-refresh-4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ware.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appointment-new.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\code-class.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

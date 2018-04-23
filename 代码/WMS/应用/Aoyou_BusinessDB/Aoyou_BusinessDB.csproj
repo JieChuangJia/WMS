@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2FD120C1-F8C4-4BEE-8B01-3C6B2EE2BB6D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aoyou_BusinessDB</RootNamespace>
+    <AssemblyName>Aoyou_BusinessDB</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\程序输出\服务端输出\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\View_ERP_WH_ShelfBLL.cs" />
+    <Compile Include="BLL\ERP_WH_VG_RELBLL.cs" />
+    <Compile Include="BLL\ERP_WH_VGBLL.cs" />
+    <Compile Include="BLL\ERP_WHBLL.cs" />
+    <Compile Include="BLL\ERP_Shelf_VG_VListBLL.cs" />
+    <Compile Include="BLL\ERP_Shelf_VGBLL.cs" />
+    <Compile Include="DAL\View_ERP_WH_ShelfDAL.cs" />
+    <Compile Include="DAL\ERP_WH_VG_RELDAL.cs" />
+    <Compile Include="DAL\ERP_WH_VGDAL.cs" />
+    <Compile Include="DAL\ERP_WHDAL.cs" />
+    <Compile Include="DAL\ERP_Shelf_VG_VListDAL.cs" />
+    <Compile Include="DAL\ERP_Shelf_VGDAL.cs" />
+    <Compile Include="Model\View_ERP_WH_ShelfModel.cs" />
+    <Compile Include="Model\ERP_WH_VG_RELModel.cs" />
+    <Compile Include="Model\ERP_WH_VGModel.cs" />
+    <Compile Include="Model\ERP_WHModel.cs" />
+    <Compile Include="Model\ERP_Shelf_VG_VListModel.cs" />
+    <Compile Include="Model\ERP_Shelf_VGModel.cs" />
+    <Compile Include="DBUtility\DbHelperSQL.cs" />
+    <Compile Include="DBUtility\PubConstant.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

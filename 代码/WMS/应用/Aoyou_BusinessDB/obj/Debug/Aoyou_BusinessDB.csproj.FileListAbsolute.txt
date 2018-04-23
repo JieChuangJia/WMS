@@ -1,0 +1,5 @@
+F:\NpWork\others\遨优\WMS\代码\WMS\应用\Aoyou_BusinessDB\bin\Debug\Aoyou_BusinessDB.dll
+F:\NpWork\others\遨优\WMS\代码\WMS\应用\Aoyou_BusinessDB\bin\Debug\Aoyou_BusinessDB.pdb
+F:\NpWork\others\遨优\WMS\代码\WMS\应用\Aoyou_BusinessDB\obj\Debug\Aoyou_BusinessDB.csprojResolveAssemblyReference.cache
+F:\NpWork\others\遨优\WMS\代码\WMS\应用\Aoyou_BusinessDB\obj\Debug\Aoyou_BusinessDB.dll
+F:\NpWork\others\遨优\WMS\代码\WMS\应用\Aoyou_BusinessDB\obj\Debug\Aoyou_BusinessDB.pdb

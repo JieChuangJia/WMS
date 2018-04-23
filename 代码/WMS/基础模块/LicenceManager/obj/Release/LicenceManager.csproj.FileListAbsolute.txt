@@ -1,0 +1,20 @@
+E:\tongyan\项目\201802 WMS\WMS0304\WMS\基础模块\LicenceManager\bin\Release\LicenceManager.dll
+E:\tongyan\项目\201802 WMS\WMS0304\WMS\基础模块\LicenceManager\bin\Release\LicenceManager.pdb
+E:\tongyan\项目\201802 WMS\WMS0304\WMS\基础模块\LicenceManager\obj\Release\LicenceManager.ActivativeFormView.resources
+E:\tongyan\项目\201802 WMS\WMS0304\WMS\基础模块\LicenceManager\obj\Release\LicenceManager.csproj.GenerateResource.Cache
+E:\tongyan\项目\201802 WMS\WMS0304\WMS\基础模块\LicenceManager\obj\Release\LicenceManager.dll
+E:\tongyan\项目\201802 WMS\WMS0304\WMS\基础模块\LicenceManager\obj\Release\LicenceManager.pdb
+F:\NpWork\others\遨优\WMS\代码\WMS\基础模块\LicenceManager\bin\Release\LicenceManager.dll
+F:\NpWork\others\遨优\WMS\代码\WMS\基础模块\LicenceManager\bin\Release\LicenceManager.pdb
+F:\NpWork\others\遨优\WMS\代码\WMS\基础模块\LicenceManager\obj\Release\LicenceManager.csprojResolveAssemblyReference.cache
+F:\NpWork\others\遨优\WMS\代码\WMS\基础模块\LicenceManager\obj\Release\LicenceManager.ActivativeFormView.resources
+F:\NpWork\others\遨优\WMS\代码\WMS\基础模块\LicenceManager\obj\Release\LicenceManager.csproj.GenerateResource.Cache
+F:\NpWork\others\遨优\WMS\代码\WMS\基础模块\LicenceManager\obj\Release\LicenceManager.dll
+F:\NpWork\others\遨优\WMS\代码\WMS\基础模块\LicenceManager\obj\Release\LicenceManager.pdb
+E:\Projects\遨优WMS\代码\WMS\基础模块\LicenceManager\bin\Release\LicenceManager.dll
+E:\Projects\遨优WMS\代码\WMS\基础模块\LicenceManager\bin\Release\LicenceManager.pdb
+E:\Projects\遨优WMS\代码\WMS\基础模块\LicenceManager\obj\Release\LicenceManager.csprojResolveAssemblyReference.cache
+E:\Projects\遨优WMS\代码\WMS\基础模块\LicenceManager\obj\Release\LicenceManager.ActivativeFormView.resources
+E:\Projects\遨优WMS\代码\WMS\基础模块\LicenceManager\obj\Release\LicenceManager.csproj.GenerateResource.Cache
+E:\Projects\遨优WMS\代码\WMS\基础模块\LicenceManager\obj\Release\LicenceManager.dll
+E:\Projects\遨优WMS\代码\WMS\基础模块\LicenceManager\obj\Release\LicenceManager.pdb

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D986AF44-5DE3-40BF-A4DC-28237DEA678C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aoyou_Service</RootNamespace>
+    <AssemblyName>Aoyou_Service</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\程序输出\服务端输出\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AoyouSvrManager.cs" />
+    <Compile Include="Interface\IWMS_To_ERP.cs" />
+    <Compile Include="Interface\IWMS_To_MES.cs" />
+    <Compile Include="Model\ResponseData.cs" />
+    <Compile Include="Presenter\WMS_To_ERPPresenter.cs" />
+    <Compile Include="Presenter\WMS_To_MESPresenter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\基础模块\CommonMoudle\CommonMoudle.csproj">
+      <Project>{cb701bea-1ee0-42fd-9183-c2a0952f11e7}</Project>
+      <Name>CommonMoudle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\立库管理\WMS_Database\WMS_Database.csproj">
+      <Project>{da7de2b7-69a6-45f3-8458-bda2da13630a}</Project>
+      <Name>WMS_Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\立库管理\WMS_Interface\WMS_Interface.csproj">
+      <Project>{2d29f362-7ac3-4a39-a3ad-f0d1e0f4f39f}</Project>
+      <Name>WMS_Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aoyou_BusinessDB\Aoyou_BusinessDB.csproj">
+      <Project>{2fd120c1-f8c4-4bee-8b01-3c6b2ee2bb6d}</Project>
+      <Name>Aoyou_BusinessDB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
