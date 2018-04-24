@@ -26,3 +26,4 @@ F:\NpWork\others\遨优\WMS\代码\WMS0408\WMS\基础模块\CommonMoudle\bin\Rel
 F:\NpWork\others\遨优\WMS\代码\WMS0408\WMS\基础模块\CommonMoudle\obj\Release\CommonMoudle.csprojResolveAssemblyReference.cache
 F:\NpWork\others\遨优\WMS\代码\WMS0408\WMS\基础模块\CommonMoudle\obj\Release\CommonMoudle.dll
 F:\NpWork\others\遨优\WMS\代码\WMS0408\WMS\基础模块\CommonMoudle\obj\Release\CommonMoudle.pdb
+E:\Projects\遨优WMS\代码\WMS\基础模块\CommonMoudle\obj\Release\CommonMoudle.csprojResolveAssemblyReference.cache
