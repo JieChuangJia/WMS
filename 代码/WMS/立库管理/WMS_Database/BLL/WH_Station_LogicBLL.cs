@@ -178,7 +178,7 @@ namespace WMS_Database
         }
         public WH_Station_LogicModel GetModelByCellID(string cellChildID)
         {
-            string sqlStr = "Cell_Chlid_ID ='" + cellChildID+"'";
+            string sqlStr = "Cell_Child_ID ='" + cellChildID+"'";
             List<WH_Station_LogicModel> stationList = GetModelList(sqlStr);
             if(stationList!=null&&stationList.Count>0)
             {

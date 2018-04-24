@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrame));
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbon_Title = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -55,9 +54,9 @@
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.richTextBoxLog = new System.Windows.Forms.RichTextBox();
@@ -357,10 +356,10 @@
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
             this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
             this.dockPanel1.ID = new System.Guid("8a9febef-4918-483c-8b2e-fee918ef2453");
-            this.dockPanel1.Location = new System.Drawing.Point(0, 404);
+            this.dockPanel1.Location = new System.Drawing.Point(0, 419);
             this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.OriginalSize = new System.Drawing.Size(200, 160);
-            this.dockPanel1.Size = new System.Drawing.Size(1072, 160);
+            this.dockPanel1.OriginalSize = new System.Drawing.Size(200, 145);
+            this.dockPanel1.Size = new System.Drawing.Size(1072, 145);
             this.dockPanel1.Text = "日志";
             // 
             // dockPanel1_Container
@@ -368,7 +367,7 @@
             this.dockPanel1_Container.Controls.Add(this.richTextBoxLog);
             this.dockPanel1_Container.Location = new System.Drawing.Point(3, 27);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(1066, 130);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(1066, 115);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // richTextBoxLog
@@ -376,7 +375,7 @@
             this.richTextBoxLog.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBoxLog.Location = new System.Drawing.Point(0, 0);
             this.richTextBoxLog.Name = "richTextBoxLog";
-            this.richTextBoxLog.Size = new System.Drawing.Size(1066, 130);
+            this.richTextBoxLog.Size = new System.Drawing.Size(1066, 115);
             this.richTextBoxLog.TabIndex = 6;
             this.richTextBoxLog.Text = "";
             // 

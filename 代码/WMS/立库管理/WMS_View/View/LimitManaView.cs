@@ -38,10 +38,10 @@ namespace WMS_Kernel
 
             string restr = "";
 
-            Bitmap bitmap = ImageResource.LimitMana.ToBitmap();
-            this.IWmsFrame.AddTitlePage("系统", ref restr);
-            this.IWmsFrame.AddGroup("系统", "系统配置", ref restr);
-            this.IWmsFrame.AddButtonItem("系统", "系统配置", "权限维护", bitmap, ShowTabEventHandler, ref restr);
+            //Bitmap bitmap = ImageResource.LimitMana.ToBitmap();
+            //this.IWmsFrame.AddTitlePage("系统", ref restr);
+            //this.IWmsFrame.AddGroup("系统", "系统配置", ref restr);
+            //this.IWmsFrame.AddButtonItem("系统", "系统配置", "权限维护", bitmap, ShowTabEventHandler, ref restr);
         }
 
         private void ShowTabEventHandler(object sender, ItemClickEventArgs e)

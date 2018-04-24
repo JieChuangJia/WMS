@@ -314,8 +314,9 @@
             // 
             // sb_CheckUnShelve
             // 
+            this.sb_CheckUnShelve.Enabled = false;
             this.sb_CheckUnShelve.Image = ((System.Drawing.Image)(resources.GetObject("sb_CheckUnShelve.Image")));
-            this.sb_CheckUnShelve.Location = new System.Drawing.Point(484, 41);
+            this.sb_CheckUnShelve.Location = new System.Drawing.Point(520, 38);
             this.sb_CheckUnShelve.Name = "sb_CheckUnShelve";
             this.sb_CheckUnShelve.Size = new System.Drawing.Size(108, 22);
             this.sb_CheckUnShelve.TabIndex = 57;
@@ -323,7 +324,8 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(207, 45);
+            this.labelControl2.Enabled = false;
+            this.labelControl2.Location = new System.Drawing.Point(347, 42);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(48, 14);
             this.labelControl2.TabIndex = 56;
@@ -336,7 +338,8 @@
             0,
             0,
             0});
-            this.se_UnshelveNum.Location = new System.Drawing.Point(262, 42);
+            this.se_UnshelveNum.Enabled = false;
+            this.se_UnshelveNum.Location = new System.Drawing.Point(402, 39);
             this.se_UnshelveNum.Name = "se_UnshelveNum";
             this.se_UnshelveNum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -353,7 +356,7 @@
             // sb_UnShelveTask
             // 
             this.sb_UnShelveTask.Image = ((System.Drawing.Image)(resources.GetObject("sb_UnShelveTask.Image")));
-            this.sb_UnShelveTask.Location = new System.Drawing.Point(369, 41);
+            this.sb_UnShelveTask.Location = new System.Drawing.Point(214, 38);
             this.sb_UnShelveTask.Name = "sb_UnShelveTask";
             this.sb_UnShelveTask.Size = new System.Drawing.Size(108, 22);
             this.sb_UnShelveTask.TabIndex = 17;
@@ -362,7 +365,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(22, 45);
+            this.labelControl6.Location = new System.Drawing.Point(22, 42);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(48, 14);
             this.labelControl6.TabIndex = 11;
@@ -371,7 +374,7 @@
             // ce_TargetStation
             // 
             this.ce_TargetStation.EditValue = "请选择";
-            this.ce_TargetStation.Location = new System.Drawing.Point(77, 42);
+            this.ce_TargetStation.Location = new System.Drawing.Point(77, 39);
             this.ce_TargetStation.Name = "ce_TargetStation";
             this.ce_TargetStation.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});

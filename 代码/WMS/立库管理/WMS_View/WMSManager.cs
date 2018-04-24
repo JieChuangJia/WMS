@@ -52,12 +52,14 @@ namespace WMS_Kernel
                 if(task.Mange_Status == EnumManageTaskStatus.执行中.ToString())
                 {
                     taskContext.SetStatus(task, new TaskRunning());
+                    taskContext.ChangeStatus();
                 }
                 else if(task.Mange_Status == EnumManageTaskStatus.完成.ToString())
                 {
                     taskContext.SetStatus(task, new TaskComplete());
+                    taskContext.ChangeStatus(); 
                 }
-                taskContext.ChangeStatus();
+              
             }
         }
 
@@ -293,7 +295,7 @@ namespace WMS_Kernel
             bool completeStatus = true;
             foreach (Plan_ListModel pl in planList)
             {
-                if(pl.Plan_List_Finished_Quantity != pl.Plan_List_Quantity)
+                if(int.Parse(pl.Plan_List_Finished_Quantity) < int.Parse(pl.Plan_List_Quantity))
                 {
                     completeStatus = false;
                     break;
@@ -381,7 +383,7 @@ namespace WMS_Kernel
                     TaskHandleMethod.UpdateCellStatus(manageTask.Mange_Start_Cell_ID, EnumCellStatus.空闲, EnumGSTaskStatus.完成);
                     TaskHandleMethod.AddCellOperRecord(manageTask.Mange_Start_Cell_ID, EnumGSOperateType.系统更新货位操作, "货物下架任务完成，更新货位状态");
                     TaskHandleMethod.UpdatePlanCompleteNum(manageTask.Mange_ID);
-                    TaskHandleMethod.DeleteStock(manageTask.Mange_ID);
+                    TaskHandleMethod.DeleteStock(manageTask.Mange_Stock_Barcode);
                 }
                 else if (manageTask.Manage_Type_Name == EnumManageTaskType.盘点下架.ToString() )
                 {
@@ -398,8 +400,7 @@ namespace WMS_Kernel
                     return false;
                 }
                 TaskHandleMethod.CheckPlanCompleteStatus(manageTask.Plan_ID);//检查计划是否完成，如果完成自动更新计划通过计划数量和完成数量相等判断
-                TaskHandleMethod.DeleteManageTask(manageTask.Mange_ID);//删除管理任务
-                
+                TaskHandleMethod.DeleteManageTask(manageTask.Mange_ID);//删除管理任务               
                 TaskHandleMethod.AddStockRecord(manageTask.Mange_ID);
                 return true;
             }

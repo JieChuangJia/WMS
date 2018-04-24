@@ -977,7 +977,7 @@ namespace WMS_Service
                   
                     manage.StartDevice = startDevice;
                     manage.Status = manageModel.Mange_Status;
-                    View_CellModel targetCell = bllViewCell.GetModelByChildCellID(manageModel.Mange_Start_Cell_ID);
+                    View_CellModel targetCell = bllViewCell.GetModelByChildCellID(manageModel.Mange_End_Cell_ID);
                     if (targetCell == null)
                     {
                         response.Status = false;
@@ -985,7 +985,7 @@ namespace WMS_Service
                         return response;
                     }
 
-                    TaskDeviceModel targetDevice = FillTaskDevice(startCell, manageModel.Mange_End_Cell_ID);
+                    TaskDeviceModel targetDevice = FillTaskDevice(targetCell, manageModel.Mange_End_Cell_ID);
 
                     manage.TargetDevice = targetDevice;
                     manage.TaskID = manageModel.Mange_ID;
@@ -1161,7 +1161,7 @@ namespace WMS_Service
         private string GetWCSCellCode(View_CellModel cell)
         {
             string cellCode = "";
-            if (cell.Cell_Type == EnumShelfType.单深.ToString())
+            if (cell.Shelf_Type == EnumShelfType.单深.ToString())
             {
                 ////wcs是把双深工位看成两排,需要转换下
                 //string[] cellCodeArr = cell.Cell_Code.Split('-');
@@ -1170,16 +1170,35 @@ namespace WMS_Service
             else//双深
             {
                 //wcs是把双深工位看成两排
+                 
                 string[] cellCodeArr = cell.Cell_Code.Split('-');
-                if (cell.Cell_Chlid_Position == EnumCellPos.前.ToString())
+                if (cellCodeArr[0] == "1")
                 {
-                    cellCode = cell.Cell_Code;
+                    if (cell.Cell_Chlid_Position == EnumCellPos.前.ToString())
+                    {
+                        cellCode = (int.Parse(cellCodeArr[0]) + 1).ToString() + "-" + cellCodeArr[1] + "-" + cellCodeArr[2];
+                       
+                    }
+                    else
+                    {
+                        cellCode = cell.Cell_Code;
+                    }
                 }
-                else
+                else //等于2的时候
                 {
-                    cellCode = (int.Parse(cellCodeArr[0]) + 1).ToString() + "-" + cellCodeArr[1] + "-" + cellCodeArr[2];
+                    if (cell.Cell_Chlid_Position == EnumCellPos.前.ToString())
+                    {
+                        cellCode = (int.Parse(cellCodeArr[0]) + 1).ToString() + "-" + cellCodeArr[1] + "-" + cellCodeArr[2];
+
+                    }
+                    else
+                    {
+                        cellCode = (int.Parse(cellCodeArr[0]) + 2).ToString() + "-" + cellCodeArr[1] + "-" + cellCodeArr[2];
+
+                    }
+                
                 }
-             
+
             }
             return cellCode;
                  

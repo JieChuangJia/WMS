@@ -107,6 +107,7 @@ namespace WMS_Kernel
             if(planModel!=null)
             {
                 planModel.Plan_Status = EnumPlanStatus.执行中.ToString();
+                planModel.Plan_Begin_Time = DateTime.Now;
                 bllPlan.Update(planModel);
                 this.WmsFrame.WriteLog("待办工作", "", "提示", "计划开始执行！");
             }

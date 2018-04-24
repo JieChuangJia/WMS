@@ -39,6 +39,8 @@ namespace WMS_Kernel
             this.IWmsFrame.AddTitlePage("任务管理", ref restr);
             this.IWmsFrame.AddGroup("任务管理", "任务操作", ref restr);
             this.IWmsFrame.AddButtonItem("任务管理", "任务操作", "按计划配盘", bitmap, ShowTabEventHandler, ref restr);
+
+            this.IWmsFrame.SetTabChangeEvent(TabChangeEventHandler);
         }
         private void TabChangeEventHandler(object sender, EventArgs e)
         {

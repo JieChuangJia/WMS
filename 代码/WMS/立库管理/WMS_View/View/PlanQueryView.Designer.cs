@@ -267,6 +267,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(75, 29);
             this.simpleButton1.TabIndex = 15;
             this.simpleButton1.Text = "删除";
+            this.simpleButton1.Visible = false;
             // 
             // PlanQueryView
             // 

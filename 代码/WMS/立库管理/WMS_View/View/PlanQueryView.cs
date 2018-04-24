@@ -41,6 +41,9 @@ namespace WMS_Kernel
             this.IWmsFrame.AddTitlePage("计划管理", ref restr);
             this.IWmsFrame.AddGroup("计划管理", "计划管理", ref restr);
             this.IWmsFrame.AddButtonItem("计划管理", "计划管理", "计划查询", bitmap, ShowTabEventHandler, ref restr);
+
+
+           
         }
 
         public void IniPlanTypeList(List<string> planTypeList)
@@ -111,7 +114,7 @@ namespace WMS_Kernel
         {
             if (this.gv_PlanList == null || this.gv_PlanList.GetSelectedRows().Count() == 0)
             {
-                this.ShowMessage("信息提示", "请选择计划编号！");
+                //this.ShowMessage("信息提示", "请选择计划编号！");
                 return;
             }
             int currRow = this.gv_PlanList.GetSelectedRows()[0];

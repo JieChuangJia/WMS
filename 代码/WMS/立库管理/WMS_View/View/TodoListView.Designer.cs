@@ -247,6 +247,7 @@
             // 
             // simpleButton6
             // 
+            this.simpleButton6.Enabled = false;
             this.simpleButton6.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.Image")));
             this.simpleButton6.Location = new System.Drawing.Point(337, 31);
             this.simpleButton6.Name = "simpleButton6";
@@ -256,6 +257,7 @@
             // 
             // simpleButton5
             // 
+            this.simpleButton5.Enabled = false;
             this.simpleButton5.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.Image")));
             this.simpleButton5.Location = new System.Drawing.Point(255, 31);
             this.simpleButton5.Name = "simpleButton5";
@@ -265,6 +267,7 @@
             // 
             // simpleButton4
             // 
+            this.simpleButton4.Enabled = false;
             this.simpleButton4.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.Image")));
             this.simpleButton4.Location = new System.Drawing.Point(173, 31);
             this.simpleButton4.Name = "simpleButton4";
@@ -274,6 +277,7 @@
             // 
             // simpleButton3
             // 
+            this.simpleButton3.Enabled = false;
             this.simpleButton3.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.Image")));
             this.simpleButton3.Location = new System.Drawing.Point(91, 31);
             this.simpleButton3.Name = "simpleButton3";

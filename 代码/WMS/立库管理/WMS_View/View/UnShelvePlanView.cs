@@ -175,7 +175,7 @@ namespace WMS_Kernel
         {
             if (this.gv_PlanList == null || this.gv_PlanList.GetSelectedRows().Count() == 0)
             {
-                this.ShowMessage("信息提示", "请选择计划编号！");
+                //this.ShowMessage("信息提示", "请选择计划编号！");
                 return;
             }
             int currRow = this.gv_PlanList.GetSelectedRows()[0];

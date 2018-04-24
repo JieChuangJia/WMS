@@ -43,6 +43,8 @@ namespace WMS_Kernel
             this.IWmsFrame.AddTitlePage("库存管理", ref restr);
             this.IWmsFrame.AddGroup("库存管理", "库存操作", ref restr);
             this.IWmsFrame.AddButtonItem("库存管理", "库存操作", "货位显示", bitmap, ShowTabEventHandler, ref restr);
+
+            this.IWmsFrame.SetTabChangeEvent(TabChangeEventHandler);
         }
 
         private void TabChangeEventHandler(object sender, EventArgs e)

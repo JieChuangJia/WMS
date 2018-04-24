@@ -45,7 +45,6 @@
             this.sb_ChooseConfirm = new DevExpress.XtraEditors.SimpleButton();
             this.sb_TaskComplete = new DevExpress.XtraEditors.SimpleButton();
             this.sBtn_Cancel = new DevExpress.XtraEditors.SimpleButton();
-            this.sBtn_Error = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -184,7 +183,6 @@
             this.groupControl1.Controls.Add(this.sb_ChooseConfirm);
             this.groupControl1.Controls.Add(this.sb_TaskComplete);
             this.groupControl1.Controls.Add(this.sBtn_Cancel);
-            this.groupControl1.Controls.Add(this.sBtn_Error);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 433);
             this.groupControl1.Name = "groupControl1";
@@ -194,7 +192,7 @@
             // 
             // sb_ChooseConfirm
             // 
-            this.sb_ChooseConfirm.Location = new System.Drawing.Point(295, 27);
+            this.sb_ChooseConfirm.Location = new System.Drawing.Point(229, 28);
             this.sb_ChooseConfirm.Name = "sb_ChooseConfirm";
             this.sb_ChooseConfirm.Size = new System.Drawing.Size(92, 22);
             this.sb_ChooseConfirm.TabIndex = 8;
@@ -202,7 +200,7 @@
             // 
             // sb_TaskComplete
             // 
-            this.sb_TaskComplete.Location = new System.Drawing.Point(190, 27);
+            this.sb_TaskComplete.Location = new System.Drawing.Point(124, 28);
             this.sb_TaskComplete.Name = "sb_TaskComplete";
             this.sb_TaskComplete.Size = new System.Drawing.Size(78, 22);
             this.sb_TaskComplete.TabIndex = 7;
@@ -211,19 +209,11 @@
             // 
             // sBtn_Cancel
             // 
-            this.sBtn_Cancel.Location = new System.Drawing.Point(107, 27);
+            this.sBtn_Cancel.Location = new System.Drawing.Point(41, 28);
             this.sBtn_Cancel.Name = "sBtn_Cancel";
             this.sBtn_Cancel.Size = new System.Drawing.Size(56, 22);
             this.sBtn_Cancel.TabIndex = 6;
             this.sBtn_Cancel.Text = "取消";
-            // 
-            // sBtn_Error
-            // 
-            this.sBtn_Error.Location = new System.Drawing.Point(24, 27);
-            this.sBtn_Error.Name = "sBtn_Error";
-            this.sBtn_Error.Size = new System.Drawing.Size(56, 22);
-            this.sBtn_Error.TabIndex = 5;
-            this.sBtn_Error.Text = "故障";
             // 
             // TaskListView
             // 
@@ -263,7 +253,6 @@
         private DevExpress.XtraEditors.ComboBoxEdit cbe_TaskStatus;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SimpleButton sb_TaskQuery;
-        private DevExpress.XtraEditors.SimpleButton sBtn_Error;
         private DevExpress.XtraEditors.SimpleButton sBtn_Cancel;
         private DevExpress.XtraEditors.SimpleButton sb_TaskComplete;
         private DevExpress.XtraEditors.LabelControl labelControl2;
