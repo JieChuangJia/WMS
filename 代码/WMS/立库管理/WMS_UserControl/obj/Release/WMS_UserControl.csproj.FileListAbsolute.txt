@@ -24,3 +24,10 @@ E:\Projects\遨优WMS\代码\WMS\立库管理\WMS_UserControl\obj\Release\WMS_Us
 E:\Projects\遨优WMS\代码\WMS\立库管理\WMS_UserControl\obj\Release\WMS_UserControl.dll
 E:\Projects\遨优WMS\代码\WMS\立库管理\WMS_UserControl\obj\Release\WMS_UserControl.pdb
 E:\Projects\遨优WMS\代码\WMS\立库管理\WMS_UserControl\obj\Release\WMS_UserControl.csprojResolveAssemblyReference.cache
+C:\Users\Yan\Desktop\WMS\立库管理\WMS_UserControl\bin\Release\WMS_UserControl.dll
+C:\Users\Yan\Desktop\WMS\立库管理\WMS_UserControl\bin\Release\WMS_UserControl.pdb
+C:\Users\Yan\Desktop\WMS\立库管理\WMS_UserControl\obj\Release\WMS_UserControl.csprojResolveAssemblyReference.cache
+C:\Users\Yan\Desktop\WMS\立库管理\WMS_UserControl\obj\Release\Storage.StorageControl.resources
+C:\Users\Yan\Desktop\WMS\立库管理\WMS_UserControl\obj\Release\WMS_UserControl.csproj.GenerateResource.Cache
+C:\Users\Yan\Desktop\WMS\立库管理\WMS_UserControl\obj\Release\WMS_UserControl.dll
+C:\Users\Yan\Desktop\WMS\立库管理\WMS_UserControl\obj\Release\WMS_UserControl.pdb

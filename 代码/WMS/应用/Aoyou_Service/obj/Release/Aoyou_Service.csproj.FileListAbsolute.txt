@@ -37,3 +37,8 @@ F:\NpWork\others\遨优\WMS\代码\WMS\程序输出\服务端输出\Release\Aoyo
 F:\NpWork\others\遨优\WMS\代码\WMS\程序输出\服务端输出\Release\Aoyou_Service.pdb
 E:\Projects\遨优WMS\代码\WMS\程序输出\服务端输出\Release\Aoyou_Service.dll
 E:\Projects\遨优WMS\代码\WMS\程序输出\服务端输出\Release\Aoyou_Service.pdb
+C:\Users\Yan\Desktop\WMS\程序输出\服务端输出\Release\Aoyou_Service.dll
+C:\Users\Yan\Desktop\WMS\程序输出\服务端输出\Release\Aoyou_Service.pdb
+C:\Users\Yan\Desktop\WMS\应用\Aoyou_Service\obj\Release\Aoyou_Service.csprojResolveAssemblyReference.cache
+C:\Users\Yan\Desktop\WMS\应用\Aoyou_Service\obj\Release\Aoyou_Service.dll
+C:\Users\Yan\Desktop\WMS\应用\Aoyou_Service\obj\Release\Aoyou_Service.pdb

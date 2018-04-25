@@ -53,3 +53,11 @@ E:\Projects\遨优WMS\代码\WMS\立库管理\WMS_Interface\obj\Release\WMS_Inte
 E:\Projects\遨优WMS\代码\WMS\立库管理\WMS_Interface\obj\Release\WMS_Interface.dll
 E:\Projects\遨优WMS\代码\WMS\立库管理\WMS_Interface\obj\Release\WMS_Interface.pdb
 E:\Projects\遨优WMS\代码\WMS\立库管理\WMS_Interface\obj\Release\WMS_Interface.csprojResolveAssemblyReference.cache
+C:\Users\Yan\Desktop\WMS\立库管理\WMS_Interface\bin\Release\WMS_Interface.dll
+C:\Users\Yan\Desktop\WMS\立库管理\WMS_Interface\bin\Release\WMS_Interface.pdb
+C:\Users\Yan\Desktop\WMS\立库管理\WMS_Interface\obj\Release\WMS_Interface.csprojResolveAssemblyReference.cache
+C:\Users\Yan\Desktop\WMS\立库管理\WMS_Interface\obj\Release\WMS_Interface.ChildViewBase.resources
+C:\Users\Yan\Desktop\WMS\立库管理\WMS_Interface\obj\Release\WMS_Interface.csproj.GenerateResource.Cache
+C:\Users\Yan\Desktop\WMS\立库管理\WMS_Interface\obj\Release\WMS_Interface.dll.licenses
+C:\Users\Yan\Desktop\WMS\立库管理\WMS_Interface\obj\Release\WMS_Interface.dll
+C:\Users\Yan\Desktop\WMS\立库管理\WMS_Interface\obj\Release\WMS_Interface.pdb

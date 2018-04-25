@@ -8,3 +8,8 @@ E:\Projects\遨优WMS\代码\WMS\程序输出\服务端输出\Release\WMS_Servic
 E:\Projects\遨优WMS\代码\WMS\立库管理\WMS_Service\obj\Release\WMS_Service.csprojResolveAssemblyReference.cache
 E:\Projects\遨优WMS\代码\WMS\立库管理\WMS_Service\obj\Release\WMS_Service.dll
 E:\Projects\遨优WMS\代码\WMS\立库管理\WMS_Service\obj\Release\WMS_Service.pdb
+C:\Users\Yan\Desktop\WMS\程序输出\服务端输出\Release\WMS_Service.dll
+C:\Users\Yan\Desktop\WMS\程序输出\服务端输出\Release\WMS_Service.pdb
+C:\Users\Yan\Desktop\WMS\立库管理\WMS_Service\obj\Release\WMS_Service.csprojResolveAssemblyReference.cache
+C:\Users\Yan\Desktop\WMS\立库管理\WMS_Service\obj\Release\WMS_Service.dll
+C:\Users\Yan\Desktop\WMS\立库管理\WMS_Service\obj\Release\WMS_Service.pdb
