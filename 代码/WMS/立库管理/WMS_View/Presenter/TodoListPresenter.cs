@@ -104,12 +104,16 @@ namespace WMS_Kernel
         public void ExePlan(string planCode)
         {
             PlanMainModel planModel = bllPlan.GetModelByPlanCode(planCode);
-            if(planModel!=null)
+            if(planModel!=null&&planModel.Plan_Status==EnumPlanStatus.待执行.ToString())
             {
                 planModel.Plan_Status = EnumPlanStatus.执行中.ToString();
                 planModel.Plan_Begin_Time = DateTime.Now;
                 bllPlan.Update(planModel);
                 this.WmsFrame.WriteLog("待办工作", "", "提示", "计划开始执行！");
+            }
+            else
+            {
+                this.WmsFrame.WriteLog("待办工作", "", "提示", "只有状态为【待执行】的任务可以执行！");
             }
             QueryPlan(this.querySDate, this.queryEDate, this.queryPlanType, this.queryPlanCode);
         }

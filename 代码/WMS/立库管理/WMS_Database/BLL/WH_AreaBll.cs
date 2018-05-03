@@ -138,6 +138,24 @@ namespace WMS_Database
         #endregion  BasicMethod
 		#region  ExtensionMethod
 
+        public List<WH_AreaModel> GetModels(string houseID)
+        {
+            string sqlStr = "WareHouse_ID ='" +houseID +"'";
+            return GetModelList(sqlStr);
+        }
+        public WH_AreaModel GetModelByName(string areaName)
+        {
+            string sqlStr = "Area_Name ='" + areaName + "'";
+            List<WH_AreaModel> areaList = GetModelList(sqlStr);
+            if(areaList!= null&& areaList.Count>0)
+            {
+                return areaList[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
 		#endregion  ExtensionMethod
 	}
 }

@@ -166,7 +166,7 @@ namespace WMS_Kernel
         {
             string houseName = this.cbe_HouseList.Text.Trim();
             this.Presenter.InitHouseRowList(houseName);
-
+            this.Presenter.InitPosList(this.cbe_HouseList.Text.Trim(), int.Parse(this.cbe_Row.Text.Trim()));
             RefreshData();
         }
 
@@ -301,6 +301,11 @@ namespace WMS_Kernel
                 this.Presenter.ModifyGsStatus( cellID, egsv.GSStatus, egsv.GSTaskStatus);
 
             }
+        }
+
+        private void sb_CellSet_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

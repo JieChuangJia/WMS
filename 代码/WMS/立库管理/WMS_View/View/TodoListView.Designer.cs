@@ -91,7 +91,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1171, 488);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1173, 489);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // gc_PlanGoodsList
@@ -100,7 +100,7 @@
             this.gc_PlanGoodsList.Location = new System.Drawing.Point(3, 242);
             this.gc_PlanGoodsList.MainView = this.gv_PlanGoodsList;
             this.gc_PlanGoodsList.Name = "gc_PlanGoodsList";
-            this.gc_PlanGoodsList.Size = new System.Drawing.Size(1165, 173);
+            this.gc_PlanGoodsList.Size = new System.Drawing.Size(1167, 173);
             this.gc_PlanGoodsList.TabIndex = 7;
             this.gc_PlanGoodsList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_PlanGoodsList});
@@ -118,7 +118,7 @@
             this.gc_PlanList.Location = new System.Drawing.Point(3, 63);
             this.gc_PlanList.MainView = this.gv_PlanList;
             this.gc_PlanList.Name = "gc_PlanList";
-            this.gc_PlanList.Size = new System.Drawing.Size(1165, 173);
+            this.gc_PlanList.Size = new System.Drawing.Size(1167, 173);
             this.gc_PlanList.TabIndex = 2;
             this.gc_PlanList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_PlanList});
@@ -146,7 +146,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1165, 54);
+            this.panelControl1.Size = new System.Drawing.Size(1167, 54);
             this.panelControl1.TabIndex = 0;
             // 
             // sb_TrayQuery
@@ -241,7 +241,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 421);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1165, 64);
+            this.groupControl1.Size = new System.Drawing.Size(1167, 65);
             this.groupControl1.TabIndex = 8;
             this.groupControl1.Text = "操作区";
             // 
@@ -299,7 +299,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1171, 488);
+            this.ClientSize = new System.Drawing.Size(1173, 489);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "TodoListView";
             this.Text = "待办工作";

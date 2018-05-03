@@ -7,7 +7,10 @@ namespace WMS_Database
 	/// 1
 	/// </summary>
 	public partial class WH_Cell_ChildrenBll
-	{
+    {
+        private WH_WareHouseBll bllWareHouse = new WH_WareHouseBll();
+        private WH_AreaBll bllArea = new WH_AreaBll();
+        private View_CellBLL bllViewCell = new View_CellBLL();
 		private readonly WH_Cell_ChildrenDal dal=new WH_Cell_ChildrenDal();
         public WH_Cell_ChildrenBll()
 		{}
@@ -137,7 +140,15 @@ namespace WMS_Database
 
         #endregion  BasicMethod
 		#region  ExtensionMethod
+        //public bool SetMultiGsSinleColEnbledStatus(string houseName, int rowth, int colth, string cellPos, bool status)
+        //{
 
+
+        //}
+        //public bool SetMultiGsSinleLayerEnbledStatus(string houseName, int rowth, int layerth, bool status)
+        //{
+
+        //}
 		#endregion  ExtensionMethod
 	}
 }

@@ -40,7 +40,7 @@
       </GSInvalidList>
     </StoreHouse>
   <StoreHouse name ="A4库房" DeviceID ="11004" AreaID="4">
-      <ReBuild>true</ReBuild>
+      <ReBuild>false</ReBuild>
       <GSRows>
         <GSRow Index ="1" ShelfType ="单深" Cols="70" Layers="4"> </GSRow>
         <GSRow Index ="2" ShelfType ="单深" Cols="70" Layers="4"> </GSRow>

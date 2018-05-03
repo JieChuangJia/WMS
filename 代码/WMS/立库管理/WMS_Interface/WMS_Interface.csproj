@@ -83,7 +83,6 @@
     <EmbeddedResource Include="ChildViewBase.resx">
       <DependentUpon>ChildViewBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

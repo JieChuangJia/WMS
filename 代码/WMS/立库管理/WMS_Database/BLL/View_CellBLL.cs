@@ -168,7 +168,12 @@ namespace WMS_Database
             List<View_CellModel> cellList = GetModelList(sqlStr); 
             return cellList;
         }
-     
+        public List<View_CellModel> GetCells(string houseName, int rowth, int colth, string cellPos)
+        {
+            string sqlStr = "WareHouse_Name = '" + houseName + "' and Cell_Row =" + rowth + " and Cell_Column="+colth+" and Cell_Chlid_Position='" + cellPos + "' ";
+            List<View_CellModel> cellList = GetModelList(sqlStr);
+            return cellList;
+        }
 
         public View_CellModel GetModelByWHAndCellName(string houseName, string cellName)
         {
@@ -264,7 +269,7 @@ namespace WMS_Database
         public View_CellModel GetCell(string houseID)
         {
             string wereStr = "WareHouse_ID='" + houseID + "' and Cell_Child_Status ='空闲' and Cell_Child_Run_Status ='完成' and Cell_Child_Flag ='1' order by Cell_Column asc,"
-                + "Cell_Row asc,Cell_Layer asc";
+                + "Cell_Row asc,Cell_Layer asc,Cell_Child_Order asc";
 
             List<View_CellModel> cellList = GetModelList(wereStr);
             if (cellList != null && cellList.Count > 0)
@@ -289,9 +294,9 @@ namespace WMS_Database
             {
                 return null;
             }
-        } 
+        }
 
-      
+    
        
 
         #endregion  ExtensionMethod

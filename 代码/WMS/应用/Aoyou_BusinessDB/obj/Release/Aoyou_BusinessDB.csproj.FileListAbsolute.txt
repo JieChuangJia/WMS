@@ -1,6 +1,5 @@
 F:\NpWork\others\遨优\WMS\代码\WMS\应用\Aoyou_BusinessDB\bin\Release\Aoyou_BusinessDB.dll
 F:\NpWork\others\遨优\WMS\代码\WMS\应用\Aoyou_BusinessDB\bin\Release\Aoyou_BusinessDB.pdb
-F:\NpWork\others\遨优\WMS\代码\WMS\应用\Aoyou_BusinessDB\obj\Release\Aoyou_BusinessDB.csprojResolveAssemblyReference.cache
 F:\NpWork\others\遨优\WMS\代码\WMS\应用\Aoyou_BusinessDB\obj\Release\Aoyou_BusinessDB.dll
 F:\NpWork\others\遨优\WMS\代码\WMS\应用\Aoyou_BusinessDB\obj\Release\Aoyou_BusinessDB.pdb
 E:\Projects\遨优WMS\代码\WMS\应用\Aoyou_BusinessDB\bin\Release\Aoyou_BusinessDB.dll
@@ -14,11 +13,4 @@ F:\NpWork\others\遨优\WMS\代码\WMS0408\WMS\应用\Aoyou_BusinessDB\obj\Relea
 F:\NpWork\others\遨优\WMS\代码\WMS0408\WMS\应用\Aoyou_BusinessDB\obj\Release\Aoyou_BusinessDB.pdb
 F:\NpWork\others\遨优\WMS\代码\WMS\程序输出\服务端输出\Release\Aoyou_BusinessDB.dll
 F:\NpWork\others\遨优\WMS\代码\WMS\程序输出\服务端输出\Release\Aoyou_BusinessDB.pdb
-E:\Projects\遨优WMS\代码\WMS\程序输出\服务端输出\Release\Aoyou_BusinessDB.dll
-E:\Projects\遨优WMS\代码\WMS\程序输出\服务端输出\Release\Aoyou_BusinessDB.pdb
-E:\Projects\遨优WMS\代码\WMS\应用\Aoyou_BusinessDB\obj\Release\Aoyou_BusinessDB.csprojResolveAssemblyReference.cache
-C:\Users\Yan\Desktop\WMS\程序输出\服务端输出\Release\Aoyou_BusinessDB.dll
-C:\Users\Yan\Desktop\WMS\程序输出\服务端输出\Release\Aoyou_BusinessDB.pdb
-C:\Users\Yan\Desktop\WMS\应用\Aoyou_BusinessDB\obj\Release\Aoyou_BusinessDB.csprojResolveAssemblyReference.cache
-C:\Users\Yan\Desktop\WMS\应用\Aoyou_BusinessDB\obj\Release\Aoyou_BusinessDB.dll
-C:\Users\Yan\Desktop\WMS\应用\Aoyou_BusinessDB\obj\Release\Aoyou_BusinessDB.pdb
+F:\NpWork\others\遨优\WMS\代码\WMS\应用\Aoyou_BusinessDB\obj\Release\Aoyou_BusinessDB.csprojResolveAssemblyReference.cache

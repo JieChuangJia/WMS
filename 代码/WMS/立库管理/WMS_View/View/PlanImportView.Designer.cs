@@ -129,16 +129,16 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(967, 483);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(969, 484);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // gc_PlanGoodsList
             // 
             this.gc_PlanGoodsList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_PlanGoodsList.Location = new System.Drawing.Point(3, 304);
+            this.gc_PlanGoodsList.Location = new System.Drawing.Point(3, 305);
             this.gc_PlanGoodsList.MainView = this.gv_PlanGoodsList;
             this.gc_PlanGoodsList.Name = "gc_PlanGoodsList";
-            this.gc_PlanGoodsList.Size = new System.Drawing.Size(961, 176);
+            this.gc_PlanGoodsList.Size = new System.Drawing.Size(963, 176);
             this.gc_PlanGoodsList.TabIndex = 10;
             this.gc_PlanGoodsList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_PlanGoodsList});
@@ -155,7 +155,7 @@
             this.gc_MaterialList.Location = new System.Drawing.Point(3, 63);
             this.gc_MaterialList.MainView = this.gv_GoodsList;
             this.gc_MaterialList.Name = "gc_MaterialList";
-            this.gc_MaterialList.Size = new System.Drawing.Size(961, 175);
+            this.gc_MaterialList.Size = new System.Drawing.Size(963, 176);
             this.gc_MaterialList.TabIndex = 9;
             this.gc_MaterialList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_GoodsList});
@@ -174,7 +174,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(961, 54);
+            this.panelControl1.Size = new System.Drawing.Size(963, 54);
             this.panelControl1.TabIndex = 0;
             // 
             // labelControl1
@@ -209,9 +209,9 @@
             this.panelControl2.Controls.Add(this.sb_AddGoods);
             this.panelControl2.Controls.Add(this.labelControl7);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(3, 244);
+            this.panelControl2.Location = new System.Drawing.Point(3, 245);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(961, 54);
+            this.panelControl2.Size = new System.Drawing.Size(963, 54);
             this.panelControl2.TabIndex = 1;
             // 
             // se_PlanNum
@@ -271,7 +271,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1173, 489);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1175, 490);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // groupControl1
@@ -290,7 +290,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(194, 483);
+            this.groupControl1.Size = new System.Drawing.Size(194, 484);
             this.groupControl1.TabIndex = 5;
             this.groupControl1.Text = "计划";
             // 
@@ -389,7 +389,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1173, 489);
+            this.ClientSize = new System.Drawing.Size(1175, 490);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "PlanImportView";
             this.Text = "计划录入";

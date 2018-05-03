@@ -77,7 +77,7 @@ namespace WMS_Interface
    {
        待执行,
        执行中,
-       完成
+       已完成
    }
     public enum EnumManageTaskType
     {

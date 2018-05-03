@@ -77,7 +77,7 @@ namespace WMS_Kernel
                 this.View.ShowMessage("信息提示", "不存在任务！");
                 return;
             }
-            task.Mange_Status = EnumManageTaskStatus.完成.ToString();
+            task.Mange_Status = EnumManageTaskStatus.已完成.ToString();
             bllManage.Update(task);
         }
         public void QueryTaskDetail(string palletCode)

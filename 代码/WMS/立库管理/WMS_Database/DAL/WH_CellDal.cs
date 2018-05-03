@@ -545,7 +545,123 @@ namespace WMS_Database
 
         #endregion  Method
 		#region  ExtensionMethod
+        public bool DeleteByAreaID(string areaID)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("delete from WH_Cell ");
+            strSql.Append(" where Area_ID='" + areaID + "' ");
+            int rowsAffected = DbHelperSQL.ExecuteSql(strSql.ToString());
+            if (rowsAffected > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
+        public bool DeleteByAreaAndRCL(string areaID,int row,int col,int layer)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("delete from WH_Cell ");
+            strSql.Append(" where Area_ID='" + areaID + "' and Cell_Row=" + row + " and Cell_Column=" + col + " and Cell_Layer =" + layer);
+            int rowsAffected = DbHelperSQL.ExecuteSql(strSql.ToString());
+            if (rowsAffected > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool DeleteByAreaAndRC(string areaID, int row, int col)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("delete from WH_Cell ");
+            strSql.Append(" where Area_ID='" + areaID + "' and Cell_Row=" + row + " and Cell_Column=" + col );
+            int rowsAffected = DbHelperSQL.ExecuteSql(strSql.ToString());
+            if (rowsAffected > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool DeleteByAreaAndRL(string areaID, int row, int layer)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("delete from WH_Cell ");
+            strSql.Append(" where Area_ID='" + areaID + "' and Cell_Row=" + row + " and Cell_Layer =" + layer);
+            int rowsAffected = DbHelperSQL.ExecuteSql(strSql.ToString());
+            if (rowsAffected > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool DeleteUnnecessaryGs(string areaID, int totalRow, int totalCol, int totalLayer)
+        {
+            string sqlStr = "delete from WH_Cell where  Cell_Row > " + totalRow
+                + " or Cell_Column >" + totalCol + " or Cell_Layer > " + totalLayer + " and Area_ID = '" + areaID + "'";
+
+
+            int rows = DbHelperSQL.ExecuteSql(sqlStr);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool SetMultiGsSinleColEnbledStatus(string houseID, int rowth, int colth, string cellPos,bool status)
+        {
+            int intSta = 0;
+            if (status == true)
+            {
+                intSta = 1;
+            }
+            string sqlStr = "update WH_Cell set GsEnabled = " + intSta
+         + " where StoreHouseID = " + houseID + " and GoodsSiteColumn = " + colth + " and GoodsSiteRow =" + rowth;
+
+            int rows = DbHelperSQL.ExecuteSql(sqlStr);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool SetMultiGsSinleLayerEnbledStatus(long houseID, int rowth, int layerth, bool status)
+        {
+            int intSta = 0;
+            if (status == true)
+            {
+                intSta = 1;
+            }
+            string sqlStr = "update GoodsSite set GsEnabled = " + intSta
+        + " where StoreHouseID = " + houseID + " and GoodsSiteLayer = " + layerth + " and GoodsSiteRow =" + rowth;
+
+            int rows = DbHelperSQL.ExecuteSql(sqlStr);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 		#endregion  ExtensionMethod
 	}
 }

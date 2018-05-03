@@ -14,15 +14,10 @@ E:\Projects\遨优WMS\代码\WMS\立库管理\WMS_Database\obj\Release\WMS_Datab
 E:\Projects\遨优WMS\代码\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.pdb
 E:\Projects\遨优WMS\代码\WMS\立库管理\WMS_Database\bin\Release\WMS_Database.dll
 E:\Projects\遨优WMS\代码\WMS\立库管理\WMS_Database\bin\Release\WMS_Database.pdb
-F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.csprojResolveAssemblyReference.cache
 E:\Projects\遨优WMS\代码\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.csprojResolveAssemblyReference.cache
 F:\NpWork\others\遨优\WMS\代码\WMS0408\WMS\立库管理\WMS_Database\bin\Release\WMS_Database.dll
 F:\NpWork\others\遨优\WMS\代码\WMS0408\WMS\立库管理\WMS_Database\bin\Release\WMS_Database.pdb
 F:\NpWork\others\遨优\WMS\代码\WMS0408\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.csprojResolveAssemblyReference.cache
 F:\NpWork\others\遨优\WMS\代码\WMS0408\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.dll
 F:\NpWork\others\遨优\WMS\代码\WMS0408\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.pdb
-C:\Users\Yan\Desktop\WMS\立库管理\WMS_Database\bin\Release\WMS_Database.dll
-C:\Users\Yan\Desktop\WMS\立库管理\WMS_Database\bin\Release\WMS_Database.pdb
-C:\Users\Yan\Desktop\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.csprojResolveAssemblyReference.cache
-C:\Users\Yan\Desktop\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.dll
-C:\Users\Yan\Desktop\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.pdb
+F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.csprojResolveAssemblyReference.cache

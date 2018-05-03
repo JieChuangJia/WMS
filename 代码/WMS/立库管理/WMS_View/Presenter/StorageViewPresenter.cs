@@ -15,6 +15,8 @@ namespace WMS_Kernel
     public class StorageViewPresenter:BasePresenter<IStorageView>
     {
         WH_WareHouseBll bllHouse = new WH_WareHouseBll();
+        WH_AreaBll bllArea = new WH_AreaBll();
+
         View_Plan_StockListBLL bllViewPlanStockList = new View_Plan_StockListBLL();
 
         View_CellBLL bllViewCell = new View_CellBLL();
@@ -161,7 +163,7 @@ namespace WMS_Kernel
             pos.Rowth = (int)gsModel.Cell_Row;
             pos.StoreStatus = gsModel.Cell_Child_Status;
             pos.TaskType = gsModel.Cell_Child_Run_Status;
-            pos.GoodsSiteID = gsModel.Cell_ID;
+            pos.GoodsSiteID = gsModel.Cell_Chlid_ID;
             if (gsModel.Cell_Child_Flag == "1")
             {
                 pos.enbled = true;
@@ -223,5 +225,75 @@ namespace WMS_Kernel
             List<string> rowList = bllViewCell.GetRowListByHouseName(houseName);
             this.View.BingHouseRowData(rowList);
         }
+
+        /// <summary>
+        /// 设置整列逻辑区域
+        /// </summary>
+        /// <param name="houseName"></param>
+        /// <param name="colth"></param>
+        /// <returns></returns>
+        public bool SetMulLayerMulColArea(string logicAreaName, int rowth, int stCol, int edCol, int stLayer, int edLayer)
+        {
+            //string reStr = "";
+          
+            //for (int i = stCol; i <= edCol; i++)
+            //{
+            WH_AreaModel area = bllArea.GetModelByName(logicAreaName);
+            if(area == null)
+            {
+                this.View.ShowMessage("信息提示", "区域名称错误！");
+                return false;
+            }
+            bool status = bllCell.SetMulLayerMulColGsArea(area.Area_ID,  rowth, stCol, edCol, stLayer, edLayer);
+            if (status == false)
+            {
+                this.View.ShowMessage("信息提示", "区域设置错误！");
+                return false;
+            }
+            ////for (int layer = stLayer; layer <= edLayer;layer ++ )
+            ////{
+            ////    for(int col = stCol;col<=edCol;col++)
+            ////    {
+            //this.iStorageManage.AddGSOperRecord(houseName, new CellCoordModel(rowth, stCol, stLayer)
+            //    , EnumGSOperateType.库存区域设置, "手动多层多列库存区域设置:起始列[" + stCol + "]终止列[" + edCol + "] 起始层[" + stLayer + "]"
+            //    + "终止层[" + edLayer + "] 为->" + logicArea.StoreHouseAreaName, ref reStr);
+            ////    }
+            ////}
+
+
+            ////}
+            this.View.RefreshData();
+            
+            return true;
+
+        }
+
+        //public bool SetSingleLayerGsArea(string logicAreaName, int rowth, int layer)
+        //{
+        //    WH_AreaModel area = bllArea.GetModelByName(logicAreaName);
+        //    if (area == null)
+        //    {
+        //        this.View.ShowMessage("信息提示", "区域名称错误！");
+        //        return false;
+        //    }
+        //    return bllCell.gets(logicAreaName, rowth, layer);
+        //}
+
+      
+        //public bool SetSingleColGsArea(long houseID, long houseAreaID, int rowth, int colth)
+        //{
+        //    string strSql = "StoreHouseID =" + houseID + " and GoodsSiteRow = " + rowth + " and GoodsSiteColumn =" + colth;
+        //    List<GoodsSiteModel> gsList = GetModelList(strSql);
+        //    if (gsList == null)
+        //    {
+        //        return false;
+        //    }
+        //    for (int i = 0; i < gsList.Count; i++)
+        //    {
+        //        gsList[i].StoreHouseLogicAreaID = houseAreaID;
+        //        Update(gsList[i]);
+        //    }
+        //    return true;
+        //}
     }
 }

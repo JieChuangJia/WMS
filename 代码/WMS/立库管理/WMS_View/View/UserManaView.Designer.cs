@@ -123,7 +123,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(941, 431);
+            this.layoutControl1.Size = new System.Drawing.Size(943, 432);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -132,7 +132,7 @@
             this.gc_User.Location = new System.Drawing.Point(2, 2);
             this.gc_User.MainView = this.gridView1;
             this.gc_User.Name = "gc_User";
-            this.gc_User.Size = new System.Drawing.Size(937, 397);
+            this.gc_User.Size = new System.Drawing.Size(939, 398);
             this.gc_User.TabIndex = 5;
             this.gc_User.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -192,11 +192,11 @@
             this.layoutControl2.Controls.Add(this.sBtn_Modify);
             this.layoutControl2.Controls.Add(this.sBtn_Add);
             this.layoutControl2.Controls.Add(this.labelCtl_SumRow);
-            this.layoutControl2.Location = new System.Drawing.Point(2, 403);
+            this.layoutControl2.Location = new System.Drawing.Point(2, 404);
             this.layoutControl2.Margin = new System.Windows.Forms.Padding(0);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.Root;
-            this.layoutControl2.Size = new System.Drawing.Size(937, 26);
+            this.layoutControl2.Size = new System.Drawing.Size(939, 26);
             this.layoutControl2.TabIndex = 4;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -429,7 +429,7 @@
             this.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
             rowDefinition1});
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.Root.Size = new System.Drawing.Size(937, 26);
+            this.Root.Size = new System.Drawing.Size(939, 26);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem2
@@ -595,16 +595,16 @@
             rowDefinition2,
             rowDefinition3});
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(941, 431);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(943, 432);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.layoutControl2;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 401);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 402);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutControlItem1.Size = new System.Drawing.Size(941, 30);
+            this.layoutControlItem1.Size = new System.Drawing.Size(943, 30);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -613,7 +613,7 @@
             this.layoutControlItem16.Control = this.gc_User;
             this.layoutControlItem16.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(941, 401);
+            this.layoutControlItem16.Size = new System.Drawing.Size(943, 402);
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem16.TextVisible = false;
             // 
@@ -621,7 +621,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 431);
+            this.ClientSize = new System.Drawing.Size(943, 432);
             this.Controls.Add(this.layoutControl1);
             this.Name = "UserManaView";
             this.Text = "用户维护";

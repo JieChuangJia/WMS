@@ -111,14 +111,14 @@ namespace WMS_Kernel
             }
             foreach (View_CellModel cell in cellList)
             {
-                if (cell.Shelf_Type == EnumShelfType.双深.ToString())
-                {
+                //if (cell.Shelf_Type == EnumShelfType.双深.ToString())
+                //{
                     this.cbe_TargetStation.Properties.Items.Add(cell.Cell_Name +"-"+cell.Cell_Chlid_Position);
-                }
-                else
-                {
-                    this.cbe_TargetStation.Properties.Items.Add(cell.Cell_Name);
-                }
+                //}
+                //else
+                //{
+                //    this.cbe_TargetStation.Properties.Items.Add(cell.Cell_Name);
+                //}
                
             }
             if (this.cbe_TargetStation.Properties.Items.Count > 0)

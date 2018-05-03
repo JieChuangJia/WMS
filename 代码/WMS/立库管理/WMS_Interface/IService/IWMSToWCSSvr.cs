@@ -33,6 +33,7 @@ namespace WMS_Interface
       /// <param name="cellCoord">若申请成功，返回货位坐标</param>
       /// <param name="reStr">若申请失败，返回原因信息</param>
       /// <returns>申请成功返回true，否则返回false</returns>
+       [OperationContract]
       bool CellRequire(string houseName, string logicAreaName, ref CellCoordModel cellCoord, ref string reStr);
 
       /// <summary>
@@ -43,6 +44,7 @@ namespace WMS_Interface
       /// <param name="cellCoord"></param>
       /// <param name="reStr"></param>
       /// <returns></returns>
+       [OperationContract]
       bool CellRequireByRow(string houseName, string logicAreaName, int row, ref CellCoordModel cellCoord, ref string reStr);
 
       /// <summary>
@@ -52,6 +54,7 @@ namespace WMS_Interface
       /// <param name="cellCoord"></param>
       /// <param name="inputDT"></param>
       /// <returns>若货位空，返回false</returns>
+       [OperationContract]
       bool GetCellInputTime(string houseName, CellCoordModel cellCoord, ref System.DateTime inputDT);
 
       /// <summary>
@@ -61,6 +64,7 @@ namespace WMS_Interface
       /// <param name="houseAreaName">逻辑库存名称</param>
       /// <param name="gsCount">货位数量</param>
       /// <returns>查询状态</returns>
+       [OperationContract]
       bool GetHouseAreaLeftGs(string houseName, string houseAreaName, ref int gsCount, string reStr);
 
       /// <summary>
@@ -71,6 +75,7 @@ namespace WMS_Interface
       /// <param name="cellStatus">货位状态</param>
       /// <param name="taskStatus">货位任务状态</param>
       /// <returns>查询状态</returns>
+       [OperationContract]
       bool GetCellStatus(string houseName, CellCoordModel cellCoord, ref EnumCellStatus cellStatus, ref EnumGSTaskStatus taskStatus);
 
       /// <summary>
@@ -80,6 +85,7 @@ namespace WMS_Interface
       /// <param name="cell">货位位置</param>
       /// <param name="logicArea">库区名称</param>
       /// <returns>执行状态</returns>
+       [OperationContract]
       bool GetLogicAreaName(string houseName, CellCoordModel cell, ref string logicArea);
 
       /// <summary>
@@ -89,6 +95,7 @@ namespace WMS_Interface
       /// <param name="celCoord">货位位置</param>
       /// <param name="gsEnabledStatus">货位启用状态</param>
       /// <returns>查询状态</returns>
+       [OperationContract]
       bool GetCellEnabledStatus(string houseName, CellCoordModel celCoord, ref EnumGSEnabledStatus gsEnabledStatus);
       /// <summary>
       /// 获取库存料框条码列表
@@ -97,6 +104,7 @@ namespace WMS_Interface
       /// <param name="cellCoord">货位位置</param>
       /// <param name="boxCodeList">料框条码列表</param>
       /// <returns>查询状态</returns>
+       [OperationContract]
       bool GetStockDetail(string houseName, CellCoordModel cellCoord, ref List<string> boxCodeList);
 
       /// <summary>
@@ -108,6 +116,7 @@ namespace WMS_Interface
       /// <param name="taskStatus">货位任务状态</param>
       /// <param name="reStr">执行状态描述</param>
       /// <returns>执行状态结果</returns>
+       [OperationContract]
       bool UpdateCellStatus(string houseName, CellCoordModel cellCoord, EnumCellStatus cellStat, EnumGSTaskStatus taskStatus, ref string reStr);
       /// <summary>
       /// 更新货位状态，货位申请、出库、入库等改变货位状态后需要调用
@@ -117,6 +126,7 @@ namespace WMS_Interface
       /// <param name="cellStat">货位状态</param>
       /// <param name="reStr">执行状态描述</param>
       /// <returns>执行结果</returns>
+       [OperationContract]
       bool UpdateGsStatus(string houseName, CellCoordModel cellCoord, EnumCellStatus cellStat, ref string reStr);
       /// <summary>
       /// 更新货位任务状态，货位申请、出库、入库等改变货位状态后需要调用
@@ -135,6 +145,7 @@ namespace WMS_Interface
       /// <param name="enabledStatus">货位禁用状态</param>
       /// <param name="reStr">执行状态描述</param>
       /// <returns>执行状态</returns>
+       [OperationContract]
       bool UpdateGsEnabledStatus(string houseName, CellCoordModel cellCoord, EnumGSEnabledStatus enabledStatus, ref string reStr);
       /// <summary>
       /// 更新货位操作，任务申请，完成后调用
@@ -144,6 +155,7 @@ namespace WMS_Interface
       /// <param name="gsOper">库存操作</param>
       /// <param name="reStr">执行状态描述</param>
       /// <returns>执行状态结果</returns>
+       [OperationContract]
       bool UpdateGSOper(string houseName, CellCoordModel cellCoord, EnumGSOperate gsOper, ref string reStr);
 
       /// <summary>
@@ -155,6 +167,7 @@ namespace WMS_Interface
       /// <param name="gsOperType">货位操作详细可为空</param>
       /// <param name="reStr">执行状态描述</param>
       /// <returns>执行状态结果</returns>
+       [OperationContract]
       bool AddGSOperRecord(string houseName, CellCoordModel cellCoord, EnumGSOperateType gsOperType, string operateDetail, ref string reStr);
       /// <summary>
       /// 添加库存
@@ -164,6 +177,7 @@ namespace WMS_Interface
       /// <param name="goodsInfo">库存信息</param>
       /// <param name="reStr">执行状态描述</param>
       /// <returns>执行状态结果</returns>
+       [OperationContract]
       bool AddStack(string houseName, CellCoordModel cellCoord, string proBatch, string[] goodsInfo, ref string reStr);
 
       /// <summary>
@@ -173,6 +187,7 @@ namespace WMS_Interface
       /// <param name="cellCoord">货位位置</param>
       /// <param name="reStr">执行状态描述</param>
       /// <returns>执行状态结果</returns>
+       [OperationContract]
       bool RemoveStack(string houseName, CellCoordModel cellCoord, ref string reStr);
       /// <summary>
       /// 添加空料筐库存
@@ -181,6 +196,7 @@ namespace WMS_Interface
       /// <param name="cellCoord">货位位置</param>
       /// <param name="reStr">执行状态描述</param>
       /// <returns>执行状态结果</returns>
+       [OperationContract]
       bool AddEmptyMeterialBox(string houseName, CellCoordModel cellCoord, ref string reStr);
 
       /// <summary>
@@ -190,6 +206,7 @@ namespace WMS_Interface
       /// <param name="gsList">货位列表</param>
       /// <param name="reStr">执行状态描述</param>
       /// <returns>执行状态结果</returns>
+       [OperationContract]
       bool GetAllowLeftHouseGs(string houseName, ref List<CellCoordModel> gsList, ref string reStr);
 
       /// <summary>
@@ -198,12 +215,14 @@ namespace WMS_Interface
       /// <param name="houseName">库房名称</param>
       /// <param name="batchList">批次列表</param>
       /// <returns>执行状态结果</returns>
+       [OperationContract]
       bool GetStockProductBatch(string houseName, ref  List<string> batchList);
       /// <summary>
       /// 删除过时的数据
       /// </summary>
       /// <param name="days">天</param>
       /// <returns>删除状态</returns>
+       [OperationContract]
       bool DeletePreviousData(int days);
 
 
@@ -216,6 +235,7 @@ namespace WMS_Interface
       /// <param name="layer">层</param>
       /// <param name="reStr">若失败，返回错误信息</param>
       /// <returns></returns>
+       [OperationContract]
       bool GetCellCount(string houseName, ref int row, ref int col, ref int layer, ref string reStr);
 
       /// <summary>
@@ -225,6 +245,7 @@ namespace WMS_Interface
       /// 如：A库房:1-3-13 value：为GSMemTempModel类</param>
       /// <param name="reStr"></param>
       /// <returns></returns>
+       [OperationContract]
       bool GetAllGsModel(ref  Dictionary<string, GSMemTempModel> gsTempDic, ref string reStr);
 
       /// <summary>
@@ -234,6 +255,7 @@ namespace WMS_Interface
       /// <param name="houseAreaName">库区名称</param>
       /// <param name="batch">批次</param>
       /// <returns>执行状态</returns>
+       [OperationContract]
       bool GetOutBatch(string houseName, string houseAreaName, ref string batch, ref string reStr);
 
       /// <summary>
@@ -243,6 +265,7 @@ namespace WMS_Interface
       /// <param name="productCode">产品二维码</param>
       /// <param name="reStr">执行结果描述</param>
       /// <returns>若在库则返回在库货位，否则返回空字符串</returns>
+       [OperationContract]
       string IsProductCodeInStore(string houseName, string productCode, ref string reStr);
       #endregion
   }

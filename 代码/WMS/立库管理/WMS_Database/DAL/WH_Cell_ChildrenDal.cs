@@ -494,7 +494,21 @@ namespace WMS_Database
 
         #endregion  Method
 		#region  ExtensionMethod
+        //public bool SetMultiGsSinleColEnbledStatus(string hosueAreaID, int rowth, int colth, string cellPos, bool status)
+        //{
+        //    string flag = "1";
+        //    if(status == true)
+        //    {
+        //        flag = "1";
+        //    }
+        //    else
+        //    {
+        //        flag = "0";
+        //    }
+        //    string sqlStr = "update WH_Cell_Children set Cell_Child_Flag='" + flag + "' where Cell_ID in ( select WH_Cell.Cell_ID from WH_Cell where WH_Cell.Area_ID ='" + hosueAreaID + "'"
+        //        + " and WH_Cell.Cell_Row=" + rowth + " and WH_Cell.Cell_Column ="+ colth +" and ";
 
+        //}
 		#endregion  ExtensionMethod
 	}
 }

@@ -154,7 +154,7 @@ namespace Aoyou_WMS
         {
             string dbSrc = ConfigurationManager.AppSettings["DBSource"];
             //CtlDBAccess.DBUtility.PubConstant.ConnectionString = string.Format(@"{0}Initial Catalog=ACEcams;User ID=sa;Password=123456;", dbSrc);
-             string dbConn1 = string.Format(@"{0}Initial Catalog=WMSDB2;User ID=AoyoWmsSA;Password=Aa123456;", dbSrc);
+             string dbConn1 = string.Format(@"{0}Initial Catalog=WMSDB2;User ID=sa;Password=123456;", dbSrc);
              WMS_Database.PubConstant.ConnectionString=dbConn1;
         }
         private void InitTabbedMDI()
@@ -274,8 +274,11 @@ namespace Aoyou_WMS
             DialogResult result = DevExpress.XtraEditors.XtraMessageBox.Show("您确定要退出系统么？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == System.Windows.Forms.DialogResult.Yes)
             {
-                System.Environment.Exit(0);
-                Application.Exit();
+                //this.xtraTabbedMdiManager1.Pages.Clear();
+                //System.Environment.Exit(0);
+                Application.ExitThread();
+                //Application.Exit();
+
             }
             else
             {

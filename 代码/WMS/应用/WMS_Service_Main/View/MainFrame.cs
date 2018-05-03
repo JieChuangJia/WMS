@@ -175,8 +175,8 @@ namespace WMS_Service_Main
             string dbSrc = ConfigurationManager.AppSettings["WMS_Database_Path"];
             string dbAoyou = ConfigurationManager.AppSettings["WMS_AoyouDatabase_Path"];
             //CtlDBAccess.DBUtility.PubConstant.ConnectionString = string.Format(@"{0}Initial Catalog=ACEcams;User ID=sa;Password=123456;", dbSrc);
-             string dbConn1 = string.Format(@"{0}Initial Catalog=WMSDB2;User ID=AoyoWmsSA;Password=Aa123456;", dbSrc);
-             string dbAoyouConn = string.Format(@"{0}Initial Catalog=Aoyou_BusinessDB;User ID=AoyoWmsSA;Password=Aa123456;", dbAoyou);
+             string dbConn1 = string.Format(@"{0}Initial Catalog=WMSDB2;User ID=sa;Password=123456;", dbSrc);
+             string dbAoyouConn = string.Format(@"{0}Initial Catalog=Aoyou_BusinessDB;User ID=sa;Password=123456;", dbAoyou);
              WMS_Database.PubConstant.ConnectionString=dbConn1;
              Aoyou_BusinessDB.PubConstant.ConnectionString = dbAoyouConn;
         }
@@ -297,8 +297,9 @@ namespace WMS_Service_Main
             DialogResult result = DevExpress.XtraEditors.XtraMessageBox.Show("您确定要退出系统么？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == System.Windows.Forms.DialogResult.Yes)
             {
-                System.Environment.Exit(0);
-                Application.Exit();
+                //System.Environment.Exit(0);
+                this.xtraTabbedMdiManager1.Pages.Clear();
+                //Application.Exit();
             }
             else
             {
