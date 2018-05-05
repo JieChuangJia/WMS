@@ -21,3 +21,14 @@ E:\Projects\遨优WMS\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service
 E:\Projects\遨优WMS\代码\WMS\程序输出\服务端输出\Release\WMS_Service_Main.exe.config
 E:\Projects\遨优WMS\代码\WMS\程序输出\服务端输出\Release\WMS_Service_Main.exe
 E:\Projects\遨优WMS\代码\WMS\程序输出\服务端输出\Release\WMS_Service_Main.pdb
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\程序输出\服务端输出\Release\WMS_Service_Main.exe.config
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\程序输出\服务端输出\Release\WMS_Service_Main.exe
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\程序输出\服务端输出\Release\WMS_Service_Main.pdb
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.csprojResolveAssemblyReference.cache
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.ImageSource.resources
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.Properties.Resources.resources
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.MainFrame.resources
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.ServiceManageView.resources
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.csproj.GenerateResource.Cache
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.exe
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.pdb

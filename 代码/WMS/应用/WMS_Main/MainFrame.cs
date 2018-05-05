@@ -154,7 +154,9 @@ namespace Aoyou_WMS
         {
             string dbSrc = ConfigurationManager.AppSettings["DBSource"];
             //CtlDBAccess.DBUtility.PubConstant.ConnectionString = string.Format(@"{0}Initial Catalog=ACEcams;User ID=sa;Password=123456;", dbSrc);
-             string dbConn1 = string.Format(@"{0}Initial Catalog=WMSDB2;User ID=sa;Password=123456;", dbSrc);
+          //   string dbConn1 = string.Format(@"{0}Initial Catalog=WMSDB2;User ID=sa;Password=123456;", dbSrc);
+            string dbConn1 = string.Format(@"{0}Initial Catalog=WMSDB2;User ID=AoyouWmsSA;Password=Aa123456;", dbSrc);
+         
              WMS_Database.PubConstant.ConnectionString=dbConn1;
         }
         private void InitTabbedMDI()

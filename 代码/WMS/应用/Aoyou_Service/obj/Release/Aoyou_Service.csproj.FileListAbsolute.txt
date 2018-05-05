@@ -35,3 +35,8 @@ F:\NpWork\others\遨优\WMS\代码\WMS\应用\Aoyou_Service\bin\Release\WMS_Inte
 F:\NpWork\others\遨优\WMS\代码\WMS\应用\Aoyou_Service\bin\Release\WMS_Interface.pdb
 F:\NpWork\others\遨优\WMS\代码\WMS\程序输出\服务端输出\Release\Aoyou_Service.dll
 F:\NpWork\others\遨优\WMS\代码\WMS\程序输出\服务端输出\Release\Aoyou_Service.pdb
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\程序输出\服务端输出\Release\Aoyou_Service.dll
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\程序输出\服务端输出\Release\Aoyou_Service.pdb
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\应用\Aoyou_Service\obj\Release\Aoyou_Service.csprojResolveAssemblyReference.cache
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\应用\Aoyou_Service\obj\Release\Aoyou_Service.dll
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\应用\Aoyou_Service\obj\Release\Aoyou_Service.pdb

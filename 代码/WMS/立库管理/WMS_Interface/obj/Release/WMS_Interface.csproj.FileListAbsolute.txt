@@ -52,3 +52,10 @@ E:\Projects\遨优WMS\代码\WMS\立库管理\WMS_Interface\obj\Release\WMS_Inte
 E:\Projects\遨优WMS\代码\WMS\立库管理\WMS_Interface\obj\Release\WMS_Interface.pdb
 E:\Projects\遨优WMS\代码\WMS\立库管理\WMS_Interface\obj\Release\WMS_Interface.csprojResolveAssemblyReference.cache
 F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_Interface\obj\Release\WMS_Interface.csprojResolveAssemblyReference.cache
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\立库管理\WMS_Interface\bin\Release\WMS_Interface.dll
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\立库管理\WMS_Interface\bin\Release\WMS_Interface.pdb
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\立库管理\WMS_Interface\obj\Release\WMS_Interface.csprojResolveAssemblyReference.cache
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\立库管理\WMS_Interface\obj\Release\WMS_Interface.ChildViewBase.resources
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\立库管理\WMS_Interface\obj\Release\WMS_Interface.csproj.GenerateResource.Cache
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\立库管理\WMS_Interface\obj\Release\WMS_Interface.dll
+E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\立库管理\WMS_Interface\obj\Release\WMS_Interface.pdb
