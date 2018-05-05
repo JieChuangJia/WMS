@@ -48,22 +48,22 @@
       <GSInvalidList>
         
         <!--无效列-->
-        <GSInvalidCol row="2">2 </GSInvalidCol>>
-        <GSInvalidCol row="2">3 </GSInvalidCol>>
-        <GSInvalidCol row="2">9 </GSInvalidCol>>
-        <GSInvalidCol row="2">15 </GSInvalidCol>>
-        <GSInvalidCol row="2">16 </GSInvalidCol>>
-        <GSInvalidCol row="2">22 </GSInvalidCol>>
-        <GSInvalidCol row="2">23 </GSInvalidCol>> 
-        <GSInvalidCol row="2"> 29</GSInvalidCol>>
-        <GSInvalidCol row="2">35 </GSInvalidCol>>
-        <GSInvalidCol row="2"> 36</GSInvalidCol>>
-        <GSInvalidCol row="2">42 </GSInvalidCol>>
-        <GSInvalidCol row="2"> 49</GSInvalidCol>>
-        <GSInvalidCol row="2">55 </GSInvalidCol>>
-        <GSInvalidCol row="2"> 56</GSInvalidCol>>
-        <GSInvalidCol row="2">62 </GSInvalidCol>>
-        <GSInvalidCol row="2">69 </GSInvalidCol>>
+        <GSInvalidCol row="2">2 </GSInvalidCol>
+        <GSInvalidCol row="2">3 </GSInvalidCol>
+        <GSInvalidCol row="2">9 </GSInvalidCol>
+        <GSInvalidCol row="2">15 </GSInvalidCol>
+        <GSInvalidCol row="2">16 </GSInvalidCol>
+        <GSInvalidCol row="2">22 </GSInvalidCol>
+        <GSInvalidCol row="2">23 </GSInvalidCol> 
+        <GSInvalidCol row="2"> 29</GSInvalidCol>
+        <GSInvalidCol row="2">35 </GSInvalidCol>
+        <GSInvalidCol row="2"> 36</GSInvalidCol>
+        <GSInvalidCol row="2">42 </GSInvalidCol>
+        <GSInvalidCol row="2"> 49</GSInvalidCol>
+        <GSInvalidCol row="2">55 </GSInvalidCol>
+        <GSInvalidCol row="2"> 56</GSInvalidCol>
+        <GSInvalidCol row="2">62 </GSInvalidCol>
+        <GSInvalidCol row="2">69 </GSInvalidCol>
         <!--无效层-->
          <!--<GSInvalidLayer row="2"> </GSInvalidLayer>>-->
          <!--<GSItem>2-2-1</GSItem>

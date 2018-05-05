@@ -22,3 +22,13 @@ E:\Projects\遨优WMS\代码\WMS\应用\WMS_Main\obj\Release\WMS_Main.exe.licens
 F:\NpWork\others\遨优\WMS\代码\WMS0408\WMS\程序输出\客户端输出\Release\WMS_Main.exe.config
 F:\NpWork\others\遨优\WMS\代码\WMS0408\WMS\应用\WMS_Main\obj\Release\WMS_Main.exe
 F:\NpWork\others\遨优\WMS\代码\WMS0408\WMS\应用\WMS_Main\obj\Release\WMS_Main.pdb
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\程序输出\客户端输出\Release\WMS_Main.exe.config
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\WMS_Main\obj\Release\WMS_Main.exe
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\WMS_Main\obj\Release\WMS_Main.pdb
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\程序输出\客户端输出\Release\WMS_Main.exe
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\程序输出\客户端输出\Release\WMS_Main.pdb
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\WMS_Main\obj\Release\WMS_Main.csprojResolveAssemblyReference.cache
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\WMS_Main\obj\Release\Aoyou_WMS.LoginView.resources
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\WMS_Main\obj\Release\Aoyou_WMS.MainFrame.resources
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\WMS_Main\obj\Release\WMS_Main.Properties.Resources.resources
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\WMS_Main\obj\Release\WMS_Main.csproj.GenerateResource.Cache
