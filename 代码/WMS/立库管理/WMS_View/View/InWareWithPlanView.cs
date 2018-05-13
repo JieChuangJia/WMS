@@ -150,8 +150,8 @@ namespace WMS_Kernel
  
         private void sb_DeleteGoods_Click(object sender, EventArgs e)
         {   
-            int currRow = this.gv_PlanList.GetSelectedRows()[0];
-            string goodsCode = this.gv_PlanList.GetRowCellValue(currRow, "物料编码").ToString();
+            int currRow = this.gv_TrayGoods.GetSelectedRows()[0];
+            string goodsCode = this.gv_TrayGoods.GetRowCellValue(currRow, "物料编码").ToString();
             if(goodsCode == "")
             {
                 this.ShowMessage("信息提示","物料编码错误！");

@@ -305,7 +305,16 @@ namespace WMS_Kernel
 
         private void sb_CellSet_Click(object sender, EventArgs e)
         {
-
+            List<int> rows = this.Presenter.GetHouseRCL(this.cbe_HouseList.Text.Trim(), 0);
+            List<int> cols = this.Presenter.GetHouseRCL(this.cbe_HouseList.Text.Trim(), 1);
+            List<int> layers = this.Presenter.GetHouseRCL(this.cbe_HouseList.Text.Trim(), 2);
+            List<string> cellPos = new List<string>();
+            foreach (string item in this.cbe_PosTypeList.Properties.Items)
+            {
+                cellPos.Add(item);
+            }
+            CellSetView csv = new CellSetView(this.cbe_HouseList.Text.Trim(), int.Parse(this.cbe_Row.Text.Trim()), this.Presenter, cols, layers, cellPos);
+            csv.ShowDialog();
         }
 
     }

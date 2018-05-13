@@ -16,6 +16,10 @@ namespace WMS_Kernel
         View_PlanListBLL bllViewPlanList = new View_PlanListBLL();
          View_GoodsBLL bllView_Goods = new View_GoodsBLL();
          View_GoodsBLL bllViewGoods = new View_GoodsBLL();
+         StockBll bllStock = new StockBll();
+         Stock_ListBll bllStockList = new Stock_ListBll();
+         WH_Station_LogicBLL bllStationLogic = new WH_Station_LogicBLL();
+         GoodsBll bllGoods = new GoodsBll();
         public PalletManagePresenter(IPalletManageView view,IWMSFrame wmsFrame):base(view,wmsFrame)
         { }
         public override void Init()
@@ -158,6 +162,75 @@ namespace WMS_Kernel
                 }
 
             }
+        }
+
+        public void TrayConfirm( bool isFull, string palletCode, string recCellName)
+        {
+            try
+            {
+                if (ViewDataManager.PALLETMANAGEDATA.PalletInforData.Count == 0)
+                {
+                    this.View.ShowMessage("信息提示", "请添加配盘物料！");
+                    return;
+                }
+               
+                WH_Station_LogicModel cell = bllStationLogic.GetStationByName(recCellName);
+                if (cell == null)
+                {
+                    this.View.ShowMessage("信息提示", "接口地点错误！");
+                    return;
+                }
+                StockModel stockModel = bllStock.GetModelByTrayCode(palletCode);
+                if (stockModel == null)
+                {
+                    this.View.ShowMessage("信息提示", "此托盘条码不在库存中！");
+                    return;
+                }
+                stockModel.Cell_Child_ID = cell.Cell_Child_ID;
+                stockModel.Stock_Tray_Barcode = palletCode;
+                if (isFull == true)
+                {
+                    stockModel.Stock_Full_Flag = "1";
+                }
+                else
+                {
+                    stockModel.Stock_Full_Flag = "0";
+                }
+              
+                bllStock.Update(stockModel);
+                Stock_ListModel stockListTemp = bllStockList.GetModelByPalletCode(palletCode);
+                if(stockListTemp == null)
+                {
+                    this.View.ShowMessage("信息提示", "此托盘中没有物料！");
+                    return;
+                }
+                bllStockList.DeleteByStockID(stockModel.Stock_ID);
+                for (int i = 0; i < ViewDataManager.PALLETMANAGEDATA.PalletInforData.Count; i++)
+                {
+                    Stock_ListModel stockList = new Stock_ListModel();
+                    stockList.Stock_List_ID = Guid.NewGuid().ToString();
+                    stockList.Stock_ID = stockModel.Stock_ID;
+                    TrayGoodsListModel trayGoodsModel = ViewDataManager.PALLETMANAGEDATA.PalletInforData[i];
+                    GoodsModel goods = bllGoods.GetModelByCode(trayGoodsModel.物料编码);
+                    if (goods == null)
+                    {
+                        continue;
+                    }
+                    stockList.Goods_ID = goods.Goods_ID;
+                    stockList.Plan_List_ID = stockListTemp.Plan_List_ID;
+                    stockList.Stock_List_Box_Barcode = palletCode;
+                    stockList.Stock_List_Entry_Time = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    stockList.Stock_List_Quantity = trayGoodsModel.数量.ToString();
+                    bllStockList.Add(stockList);
+
+                }
+                this.View.ShowMessage("信息提示", "配盘成功！");
+            }
+            catch (Exception ex)
+            {
+                this.View.ShowMessage("信息提示", "配盘失败！" + ex.Message);
+            }
+
         }
         private bool IsExistPalletGoods(string goodsCode)
         {

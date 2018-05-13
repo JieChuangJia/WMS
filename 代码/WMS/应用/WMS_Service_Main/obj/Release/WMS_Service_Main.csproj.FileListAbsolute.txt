@@ -32,3 +32,14 @@ E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WM
 E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.csproj.GenerateResource.Cache
 E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.exe
 E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.pdb
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\程序输出\服务端输出\Release\WMS_Service_Main.exe.config
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\程序输出\服务端输出\Release\WMS_Service_Main.exe
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\程序输出\服务端输出\Release\WMS_Service_Main.pdb
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.csprojResolveAssemblyReference.cache
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.ImageSource.resources
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.Properties.Resources.resources
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.MainFrame.resources
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.ServiceManageView.resources
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.csproj.GenerateResource.Cache
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.exe
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.pdb

@@ -47,11 +47,13 @@
             this.rb_SingleLayer = new System.Windows.Forms.RadioButton();
             this.bt_UseGs = new System.Windows.Forms.Button();
             this.rb_singleCol = new System.Windows.Forms.RadioButton();
-            this.cb_ColSTList = new System.Windows.Forms.ComboBox();
             this.cb_ColEDList = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cb_CellPos = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cb_ColSTList = new System.Windows.Forms.ComboBox();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -70,7 +72,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 122);
+            this.label2.Location = new System.Drawing.Point(29, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 14);
             this.label2.TabIndex = 13;
@@ -80,14 +82,14 @@
             // 
             this.cb_HouseArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_HouseArea.FormattingEnabled = true;
-            this.cb_HouseArea.Location = new System.Drawing.Point(132, 118);
+            this.cb_HouseArea.Location = new System.Drawing.Point(133, 99);
             this.cb_HouseArea.Name = "cb_HouseArea";
             this.cb_HouseArea.Size = new System.Drawing.Size(231, 22);
             this.cb_HouseArea.TabIndex = 13;
             // 
             // bt_AreaSet
             // 
-            this.bt_AreaSet.Location = new System.Drawing.Point(278, 154);
+            this.bt_AreaSet.Location = new System.Drawing.Point(285, 127);
             this.bt_AreaSet.Name = "bt_AreaSet";
             this.bt_AreaSet.Size = new System.Drawing.Size(79, 31);
             this.bt_AreaSet.TabIndex = 9;
@@ -180,9 +182,9 @@
             this.groupBox2.Controls.Add(this.cb_HouseArea);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.cb_ColListSTArea);
-            this.groupBox2.Location = new System.Drawing.Point(12, 185);
+            this.groupBox2.Location = new System.Drawing.Point(12, 192);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(381, 192);
+            this.groupBox2.Size = new System.Drawing.Size(381, 165);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "逻辑库区设置";
@@ -198,7 +200,7 @@
             // 
             // bt_GsFobit
             // 
-            this.bt_GsFobit.Location = new System.Drawing.Point(281, 92);
+            this.bt_GsFobit.Location = new System.Drawing.Point(285, 116);
             this.bt_GsFobit.Name = "bt_GsFobit";
             this.bt_GsFobit.Size = new System.Drawing.Size(70, 31);
             this.bt_GsFobit.TabIndex = 3;
@@ -218,7 +220,7 @@
             // 
             // bt_UseGs
             // 
-            this.bt_UseGs.Location = new System.Drawing.Point(204, 92);
+            this.bt_UseGs.Location = new System.Drawing.Point(208, 116);
             this.bt_UseGs.Name = "bt_UseGs";
             this.bt_UseGs.Size = new System.Drawing.Size(70, 31);
             this.bt_UseGs.TabIndex = 9;
@@ -238,15 +240,6 @@
             this.rb_singleCol.Text = "单列";
             this.rb_singleCol.UseVisualStyleBackColor = true;
             // 
-            // cb_ColSTList
-            // 
-            this.cb_ColSTList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_ColSTList.FormattingEnabled = true;
-            this.cb_ColSTList.Location = new System.Drawing.Point(177, 29);
-            this.cb_ColSTList.Name = "cb_ColSTList";
-            this.cb_ColSTList.Size = new System.Drawing.Size(59, 22);
-            this.cb_ColSTList.TabIndex = 3;
-            // 
             // cb_ColEDList
             // 
             this.cb_ColEDList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -255,15 +248,6 @@
             this.cb_ColEDList.Name = "cb_ColEDList";
             this.cb_ColEDList.Size = new System.Drawing.Size(59, 22);
             this.cb_ColEDList.TabIndex = 13;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(124, 34);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 14);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "起始列";
             // 
             // label5
             // 
@@ -276,6 +260,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.cb_CellPos);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.cb_ColEDList);
@@ -285,12 +271,48 @@
             this.groupBox3.Controls.Add(this.rb_SingleLayer);
             this.groupBox3.Controls.Add(this.bt_GsFobit);
             this.groupBox3.Controls.Add(this.cb_LayerList);
-            this.groupBox3.Location = new System.Drawing.Point(12, 51);
+            this.groupBox3.Location = new System.Drawing.Point(12, 33);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(381, 131);
+            this.groupBox3.Size = new System.Drawing.Size(381, 153);
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "货位启禁用设置";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(128, 93);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 14);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "货位位置";
+            // 
+            // cb_CellPos
+            // 
+            this.cb_CellPos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_CellPos.FormattingEnabled = true;
+            this.cb_CellPos.Location = new System.Drawing.Point(189, 90);
+            this.cb_CellPos.Name = "cb_CellPos";
+            this.cb_CellPos.Size = new System.Drawing.Size(167, 22);
+            this.cb_CellPos.TabIndex = 19;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(124, 34);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 14);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "起始列";
+            // 
+            // cb_ColSTList
+            // 
+            this.cb_ColSTList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_ColSTList.FormattingEnabled = true;
+            this.cb_ColSTList.Location = new System.Drawing.Point(177, 29);
+            this.cb_ColSTList.Name = "cb_ColSTList";
+            this.cb_ColSTList.Size = new System.Drawing.Size(59, 22);
+            this.cb_ColSTList.TabIndex = 3;
             // 
             // ribbonControl1
             // 
@@ -314,14 +336,14 @@
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbonControl1.ShowQatLocationSelector = false;
             this.ribbonControl1.ShowToolbarCustomizeItem = false;
-            this.ribbonControl1.Size = new System.Drawing.Size(412, 33);
+            this.ribbonControl1.Size = new System.Drawing.Size(412, 27);
             this.ribbonControl1.Toolbar.ShowCustomizeItem = false;
             // 
             // CellSetView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 385);
+            this.ClientSize = new System.Drawing.Size(412, 362);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.ribbonControl1);
@@ -361,11 +383,13 @@
         private System.Windows.Forms.RadioButton rb_SingleLayer;
         private System.Windows.Forms.Button bt_UseGs;
         private System.Windows.Forms.RadioButton rb_singleCol;
-        private System.Windows.Forms.ComboBox cb_ColSTList;
         private System.Windows.Forms.ComboBox cb_ColEDList;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox3;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cb_CellPos;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cb_ColSTList;
     }
 }

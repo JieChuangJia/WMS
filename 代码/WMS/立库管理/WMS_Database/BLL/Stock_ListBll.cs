@@ -152,6 +152,10 @@ namespace WMS_Database
                 return null;
             }
         }
+        public bool DeleteByStockID(string stockID)
+        {
+            return dal.DeleteByStockID(stockID);
+        }
 		#endregion  ExtensionMethod
 	}
 }

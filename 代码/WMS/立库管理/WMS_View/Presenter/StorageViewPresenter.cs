@@ -225,7 +225,16 @@ namespace WMS_Kernel
             List<string> rowList = bllViewCell.GetRowListByHouseName(houseName);
             this.View.BingHouseRowData(rowList);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cate">0：查询排数量；1：查询列数量；2：查询层数量</param>
+        /// <returns></returns>
+        public List<int> GetHouseRCL(string houseName,int cate)
+        { 
+           WH_WareHouseModel house = bllHouse.GetModelByName(houseName);
+           return bllCell.GetGsRCLData(house.WareHouse_ID, cate);
+        }
         /// <summary>
         /// 设置整列逻辑区域
         /// </summary>
@@ -244,7 +253,7 @@ namespace WMS_Kernel
                 this.View.ShowMessage("信息提示", "区域名称错误！");
                 return false;
             }
-            bool status = bllCell.SetMulLayerMulColGsArea(area.Area_ID,  rowth, stCol, edCol, stLayer, edLayer);
+            bool status = bllCell.SetMulLayerMulColGsArea( this.currHouseName,area.Area_ID,  rowth, stCol, edCol, stLayer, edLayer);
             if (status == false)
             {
                 this.View.ShowMessage("信息提示", "区域设置错误！");
@@ -268,6 +277,24 @@ namespace WMS_Kernel
 
         }
 
+        public bool SetMulColCellEnabled(string houseName,bool status,int rowth,int stCol,int edCol)
+        {
+            bllCell.SetCellEnabledByCol(houseName, status, rowth, stCol, edCol);
+           this.View.RefreshData();
+           return true;
+        }
+        public bool SetMulLayerlCellEnabled(string houseName, bool status, int rowth, int stCol, int edCol)
+        {
+             bllCell.SetCellEnabledByCol(houseName, status, rowth, stCol, edCol);
+             this.View.RefreshData();
+             return true;
+        }
+        public bool SetSingleLayerCellEnabled(string houseName, bool status,int rowth, int layer,string cellPos)
+        {
+             bllCell.SetSingleLayerCellEnabled(houseName, status, rowth, layer, cellPos);
+             this.View.RefreshData();
+             return true;
+        }
         //public bool SetSingleLayerGsArea(string logicAreaName, int rowth, int layer)
         //{
         //    WH_AreaModel area = bllArea.GetModelByName(logicAreaName);

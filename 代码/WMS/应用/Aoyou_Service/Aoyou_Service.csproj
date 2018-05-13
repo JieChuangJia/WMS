@@ -40,6 +40,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WMSTools">
+      <HintPath>..\..\程序输出\客户端输出\Release\WMSTools.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AoyouSvrManager.cs" />

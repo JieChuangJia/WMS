@@ -211,9 +211,6 @@
   <data name="InWareWithoutPlan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\document-import-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="InWareWithPlan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\kgpg_import.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="irkick_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\irkick-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -280,9 +277,6 @@
   <data name="page_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\page-edit.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PalletMana" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\gnome-klotski.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\pause.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -331,10 +325,16 @@
   <data name="zoom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\zoom.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StationShow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\appointment-new.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="code_class" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\code-class.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InWareWithPlan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\view-calendar-week.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pallet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\view-calendar-month.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StationShow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\bitscope.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

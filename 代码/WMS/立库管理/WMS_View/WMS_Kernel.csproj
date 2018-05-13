@@ -605,6 +605,15 @@
   <ItemGroup>
     <None Include="Resources\code-class.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view-calendar-month.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bitscope.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view-calendar-week.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

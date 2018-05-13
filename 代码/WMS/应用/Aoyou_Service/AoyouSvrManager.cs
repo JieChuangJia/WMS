@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using CommonMoudle;
+using WMSTools;
 
 namespace Aoyou_Service
 {
@@ -35,6 +36,11 @@ namespace Aoyou_Service
         public bool StopMESServ(ref string restr)
         {
             return mesServ.Stop(ref restr);
+        }
+
+        public void GetTest()
+        {
+            //WMSTools.BusinessOperation.CreatePurchaseInStock()
         }
 
     }

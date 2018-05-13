@@ -42,3 +42,4 @@ E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WM
 E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\应用\WMS_Main\obj\Release\Aoyou_WMS.MainFrame.resources
 E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\应用\WMS_Main\obj\Release\WMS_Main.Properties.Resources.resources
 E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\应用\WMS_Main\obj\Release\WMS_Main.csproj.GenerateResource.Cache
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\WMS_Main\obj\Release\WMS_Main.exe.licenses

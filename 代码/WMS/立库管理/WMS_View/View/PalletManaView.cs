@@ -16,6 +16,7 @@ namespace WMS_Kernel
     public partial class PalletManaView : ChildViewBase,IPalletManageView
     {
         PalletManagePresenter presenter = null;
+  
         public PalletManaView()
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace WMS_Kernel
             this.presenter.Init();
             string restr = "";
 
-            Bitmap bitmap = ImageResource.PalletMana.ToBitmap();
+            Bitmap bitmap = ImageResource.Pallet.ToBitmap();
             this.IWmsFrame.AddTitlePage("库存管理", ref restr);
             this.IWmsFrame.AddGroup("库存管理", "库存操作", ref restr);
             this.IWmsFrame.AddButtonItem("库存管理", "库存操作", "配盘管理", bitmap, ShowTabEventHandler, ref restr);
@@ -153,6 +154,24 @@ namespace WMS_Kernel
             this.presenter.DeleteTrayGoods(goodsCode);
         }
 
+        private void sb_PalletSure_Click(object sender, EventArgs e)
+        {
+            int status = this.AskMessage("信息提示", "您确定当前物料配盘？");
+            if (status != 0)
+            {
+                return;
+            }
+            if (this.gv_PalletInfor.GetSelectedRows().Count() == 0)
+            {
+                return;
+            }
+            int currRow = this.gv_PalletList.GetSelectedRows()[0];
+            string palletCode = this.gv_PalletList.GetRowCellValue(currRow, "托盘条码").ToString();
+
+            this.presenter.TrayConfirm(this.ce_IsFull.Checked, palletCode, this.cbe_PalletPos.Text);
+
+        }
+ 
        
     }
 }

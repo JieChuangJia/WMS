@@ -31,3 +31,10 @@ E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WM
 E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\立库管理\WMS_UserControl\obj\Release\WMS_UserControl.csproj.GenerateResource.Cache
 E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\立库管理\WMS_UserControl\obj\Release\WMS_UserControl.dll
 E:\workspace\项目\之信遨优项目\代码\原材料库\GIT_WMS_JCJ\代码\WMS\立库管理\WMS_UserControl\obj\Release\WMS_UserControl.pdb
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_UserControl\bin\Release\WMS_UserControl.dll
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_UserControl\bin\Release\WMS_UserControl.pdb
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_UserControl\obj\Release\WMS_UserControl.csprojResolveAssemblyReference.cache
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_UserControl\obj\Release\Storage.StorageControl.resources
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_UserControl\obj\Release\WMS_UserControl.csproj.GenerateResource.Cache
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_UserControl\obj\Release\WMS_UserControl.dll
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_UserControl\obj\Release\WMS_UserControl.pdb

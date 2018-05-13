@@ -244,11 +244,18 @@ namespace WMS_Database
             return true;
         }
 
-        public bool SetMulLayerMulColGsArea(string houseAreaID, int rowth, int stCol, int edCol, int stLayer, int edLayer)
+        public bool SetMulLayerMulColGsArea(string houseName,string houseAreaID, int rowth, int stCol, int edCol, int stLayer, int edLayer)
         {
-            string strSql = " Cell_Row = " + rowth + " and Cell_Column >=" + stCol + " and Cell_Column<= " + edCol
-                + " and Cell_Layer>= " + stLayer + " and Cell_Layer<= " + edLayer;
-            List<WH_CellModel> gsList = GetModelList(strSql);
+            //string strSql = " Cell_Row = " + rowth + " and Cell_Column >=" + stCol + " and Cell_Column<= " + edCol
+            //    + " and Cell_Layer>= " + stLayer + " and Cell_Layer<= " + edLayer;
+              WH_WareHouseModel wareHouse = bllWareHouse.GetModelByName(houseName);
+            if (wareHouse == null)
+            {
+                return false;
+            }
+            DataSet ds = dal.GetAreaData(wareHouse.WareHouse_ID, rowth, stCol, edCol, stLayer, edLayer);
+
+            List<WH_CellModel> gsList = DataTableToList(ds.Tables[0]);
             if (gsList == null)
             {
                 return false;
@@ -282,7 +289,72 @@ namespace WMS_Database
             return true;
         }
 
-      
+        public bool SetCellEnabledByCol(string houseName, bool enabled,int rowth, int startCol,int endCol)
+        {  
+            
+            WH_WareHouseModel house =  bllWareHouse.GetModelByName(houseName);
+            if (house == null)
+            {
+                return false;
+            }
+            return dal.SetCellEnabledByCol(house.WareHouse_ID, enabled, rowth, startCol, endCol);
+        }
+        public bool SetSingleLayerCellEnabled(string houseName, bool enabled,int rowth, int layer,string cellPos)
+        {
+
+            WH_WareHouseModel house = bllWareHouse.GetModelByName(houseName);
+            if (house == null)
+            {
+                return false;
+            }
+            return dal.SetSingleLayerCellEnabled(house.WareHouse_ID, enabled, rowth,layer,cellPos);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="houseName">库房名称</param>
+        /// <param name="cate">0：查询排数量；1：查询列数量；2：查询层数量</param>
+        /// <returns></returns>
+        public List<int> GetGsRCLData(string houseID, int cate)
+        {
+            List<int> data = new List<int>();
+            string sqlStr = "select distinct ";
+            if (0 == cate)// 获取排数量
+            {
+
+                sqlStr += " WH_Cell.Cell_Row from WH_Cell";
+            }
+            else if (1 == cate)// 获取列数量
+            {
+                sqlStr += " WH_Cell.Cell_Column from WH_Cell";
+            }
+            else if (2 == cate)// 获取层数量
+            {
+                sqlStr += " WH_Cell.Cell_Layer from WH_Cell";
+            }
+            else
+            {
+                return null;
+            }
+            sqlStr += " where WH_Cell.Area_ID in (select WH_Area.Area_ID from WH_Area where WH_Area.WareHouse_ID='" + houseID + "') and WH_Cell.Cell_Row !=0"
+                + " and WH_Cell.Cell_Column !=0 and  WH_Cell.Cell_Layer !=0";
+            DataSet ds = DbHelperSQL.Query(sqlStr);
+            if (ds != null && ds.Tables.Count > 0)
+            {
+
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    int rowth = int.Parse(ds.Tables[0].Rows[i][0].ToString());
+                    data.Add(rowth);
+                }
+            }
+            else
+            {
+                return null;
+            }
+            data.Sort();
+            return data;
+        }
 		#endregion  ExtensionMethod
 	}
 }

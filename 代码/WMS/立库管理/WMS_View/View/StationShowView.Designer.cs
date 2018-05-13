@@ -358,7 +358,6 @@
             this.sb_CellSet.Size = new System.Drawing.Size(85, 22);
             this.sb_CellSet.TabIndex = 30;
             this.sb_CellSet.Text = "货位设置";
-            this.sb_CellSet.Visible = false;
             this.sb_CellSet.Click += new System.EventHandler(this.sb_CellSet_Click);
             // 
             // labelControl7

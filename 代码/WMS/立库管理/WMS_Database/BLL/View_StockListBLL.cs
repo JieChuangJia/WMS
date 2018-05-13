@@ -170,7 +170,7 @@ namespace WMS_Database
         }
         public List<View_StockListModel> GetModelList(string houseName,string palletPos)
         {
-            string sqlStr = "WareHouse_Name = '" + houseName + "' and Cell_Type='" + palletPos+"'";
+            string sqlStr = "WareHouse_Name = '" + houseName + "' and Cell_Name='" + palletPos+"'";
             return GetModelList(sqlStr);
         }
         public List<View_StockListModel> GetPalletStock(string palletCode, string cellName)

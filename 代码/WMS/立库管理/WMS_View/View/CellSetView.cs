@@ -22,7 +22,7 @@ namespace WMS_Kernel
         private Dictionary<string, string> areaColor = new Dictionary<string, string>();
         WH_AreaBll bllArea = new WH_AreaBll();
         WH_WareHouseBll bllWareHouse = new WH_WareHouseBll();
-        public CellSetView(string houseName, int rowth, StorageViewPresenter presenter, List<string> colList, List<string> layerList)
+        public CellSetView(string houseName, int rowth, StorageViewPresenter presenter, List<int> colList, List<int> layerList,List<string> cellPosList)
         {
             InitializeComponent();
             this.Text = houseName +"-"+rowth +"排-货位批量设置";
@@ -34,9 +34,26 @@ namespace WMS_Kernel
             IniColList(colList);
             IniColListArea(colList);
             IniHouseAreaList();
+            InitPosTypeList(cellPosList);
         }
-
-        private void IniLayerListArea( List<string> layerList)
+        public void InitPosTypeList(List<string> posList)
+        {
+            if (posList == null)
+            {
+                return;
+            }
+            this.cb_CellPos.Items.Clear();
+            this.cb_CellPos.Items.Add("所有");
+            foreach (string pos in posList)
+            {
+                this.cb_CellPos.Items.Add(pos);
+            }
+            if (posList.Count > 0)
+            {
+                this.cb_CellPos.SelectedIndex = 0;
+            }
+        }
+        private void IniLayerListArea( List<int> layerList)
         {
             //this.cb_LayerListArea.Items.Clear();
             this.cb_startLayer.Items.Clear();
@@ -57,7 +74,7 @@ namespace WMS_Kernel
                 this.cb_EndLayer.SelectedIndex = 0;
             }
         }
-        private void IniLayerList( List<string> layerList)
+        private void IniLayerList( List<int> layerList)
         {
             this.cb_LayerList.Items.Clear();
             for(int i=0;i<layerList.Count;i++)
@@ -71,7 +88,7 @@ namespace WMS_Kernel
              }
         }
 
-        private void IniColListArea(List<string> colList)
+        private void IniColListArea(List<int> colList)
         {
             this.cb_ColListSTArea.Items.Clear();
             this.cb_ColListEDArea.Items.Clear();
@@ -115,7 +132,7 @@ namespace WMS_Kernel
             }
         }
 
-        private void IniColList(List<string> colList)
+        private void IniColList(List<int> colList)
         {
             this.cb_ColSTList.Items.Clear();
             this.cb_ColEDList.Items.Clear();
@@ -148,12 +165,12 @@ namespace WMS_Kernel
                
                 }
 
-                //this.presenter.UseOrForbitSingleColGs(this.houseName, this.rowth, stCol, edCol,true);
+                this.presenter.SetMulColCellEnabled(this.houseName,true, this.rowth, stCol, edCol);
             }
             else if(this.rb_SingleLayer.Checked == true)
             {
                 int layerth = int.Parse(this.cb_LayerList.Text);
-                //this.presenter.UseOrForbitSingleLayerGs(this.houseName, this.rowth, layerth, true);
+                this.presenter.SetSingleLayerCellEnabled(this.houseName, true, this.rowth,int.Parse(this.cb_LayerList.Text),this.cb_CellPos.Text);
             }
             this.IsModify = true;
              
@@ -173,12 +190,12 @@ namespace WMS_Kernel
 
                 }
 
-                //this.presenter.UseOrForbitSingleColGs(this.houseName, this.rowth, stCol,edCol, false);
+                this.presenter.SetMulColCellEnabled(this.houseName, false, this.rowth, stCol, edCol);
             }
             else if (this.rb_SingleLayer.Checked == true)
             {
                 int layerth = int.Parse(this.cb_LayerList.Text);
-                //this.presenter.UseOrForbitSingleLayerGs(this.houseName, this.rowth, layerth, false);
+                this.presenter.SetSingleLayerCellEnabled(this.houseName, false, this.rowth,int.Parse(this.cb_LayerList.Text),this.cb_CellPos.Text);
             }
             this.IsModify = true;
            

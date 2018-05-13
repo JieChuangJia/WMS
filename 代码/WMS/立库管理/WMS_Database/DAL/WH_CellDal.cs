@@ -662,6 +662,77 @@ namespace WMS_Database
                 return false;
             }
         }
+
+        public bool SetCellEnabledByCol(string houseID, bool status ,int rowth, int startCol, int endCol)
+        {
+            string flag ="1";
+            if(status ==true)
+            {
+                flag ="1";
+            }
+            else
+            {
+                flag="0";
+            }
+            string sqlStr = "  UPDATE WH_Cell_Children   set Cell_Child_Flag='"+flag+"' from WH_Cell_Children  inner join WH_Cell on WH_Cell_Children.Cell_ID = WH_Cell.Cell_ID"
+             + " where WH_Cell.Cell_Row =" + rowth + " and WH_Cell.Cell_Column>=" + startCol + " and Cell_Column<=" + endCol
+             +"  and WH_Cell.Area_ID in (select Area_ID from WH_Area where WareHouse_ID='"+houseID+"' )";
+            int rows = DbHelperSQL.ExecuteSql(sqlStr);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool SetSingleLayerCellEnabled(string houseID, bool enabled, int rowth,int layer,string cellPos)
+        {
+            string flag = "1";
+            if (enabled == true)
+            {
+                flag = "1";
+            }
+            else
+            {
+                flag = "0";
+            }
+           
+            string sqlStr = "  UPDATE WH_Cell_Children   set Cell_Child_Flag='" + flag + "' from WH_Cell_Children  inner join WH_Cell on WH_Cell_Children.Cell_ID = WH_Cell.Cell_ID"
+             + " where WH_Cell.Cell_Layer =" + layer + " and WH_Cell.Cell_Row =" + rowth 
+             + " and WH_Cell.Area_ID in (select Area_ID from WH_Area where WareHouse_ID='" + houseID + "' )";
+
+            if (cellPos != "所有")
+            {
+                sqlStr += " and WH_Cell_Children.Cell_Chlid_Position ='" + cellPos + "'";
+            }
+            int rows = DbHelperSQL.ExecuteSql(sqlStr);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+         
+        }
+
+        /// <summary>
+        /// 获得数据列表
+        /// </summary>
+        public DataSet GetAreaData(string houseID, int rowth, int stCol, int edCol, int stLayer, int edLayer)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select Cell_ID,WH_Cell.Area_ID,Cell_Code,Cell_Name,Cell_Lane,Device_Code,Shelf_Type,Cell_InOut,Cell_Type,Cell_Storage_Type,Cell_Fork_Type,Cell_Layer,Cell_Column,Cell_Row,Cell_Reserve1,Cell_Reserve2,Cell_Reserve3,Cell_Reserve4,Cell_Reserve5 ");
+            strSql.Append(" FROM WH_Cell ");
+            strSql.Append("   inner join [WMSDB2].[dbo].WH_Area on [WMSDB2].[dbo].[WH_Cell].Area_ID = [WMSDB2].[dbo].WH_Area.Area_ID where  [WMSDB2].[dbo].WH_Area.WareHouse_ID ='"+houseID+"' ");
+            strSql.Append(" and Cell_Row = " + rowth + " and Cell_Column >=" + stCol + " and Cell_Column<= " + edCol + " and Cell_Layer>= " + stLayer + " and Cell_Layer<= " + edLayer);
+        
+            return DbHelperSQL.Query(strSql.ToString());
+        }
 		#endregion  ExtensionMethod
 	}
 }

@@ -460,7 +460,21 @@ namespace WMS_Database
 
         #endregion  Method
 		#region  ExtensionMethod
-
+        public bool DeleteByStockID(string stockID)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("delete from Stock_List ");
+            strSql.Append(" where Stock_ID='" + stockID + "' ");
+            int rowsAffected = DbHelperSQL.ExecuteSql(strSql.ToString());
+            if (rowsAffected > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 		#endregion  ExtensionMethod
 	}
 }
