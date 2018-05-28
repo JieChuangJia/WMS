@@ -188,6 +188,19 @@ namespace WMS_Database
                 return null;
             }
         }
+        public View_CellModel GetModelByWHAndCellName(string houseName, string cellName,int order)
+        {
+            string sqlStr = "Cell_Name ='" + cellName + "' and WareHouse_Name = '" + houseName + "' and Cell_Child_Order =" + order;
+            List<View_CellModel> cellList = GetModelList(sqlStr);
+            if (cellList != null && cellList.Count > 0)
+            {
+                return cellList[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
 
         public List<View_CellModel> GetPutawayCellList(string houseName)
         {
@@ -269,7 +282,7 @@ namespace WMS_Database
         public View_CellModel GetCell(string houseID)
         {
             string wereStr = "WareHouse_ID='" + houseID + "' and Cell_Child_Status ='空闲' and Cell_Child_Run_Status ='完成' and Cell_Child_Flag ='1' order by Cell_Column asc,"
-                + "Cell_Row asc,Cell_Layer asc,Cell_Child_Order asc";
+                + "Cell_Row asc,Cell_Layer asc,Cell_Child_Order desc";
 
             List<View_CellModel> cellList = GetModelList(wereStr);
             if (cellList != null && cellList.Count > 0)

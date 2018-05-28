@@ -120,6 +120,8 @@ namespace WMS_Kernel
             this.gc_TrayGoodsList.DataBindings.Clear();
             this.gc_TrayGoodsList.DataBindings.Add("DataSource", ViewDataManager.PALLETWITHPLANDATA, "TrayGoodsListData", false, DataSourceUpdateMode.OnPropertyChanged);
 
+          
+
         }
        
         

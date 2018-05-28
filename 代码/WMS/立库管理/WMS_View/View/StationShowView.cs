@@ -317,5 +317,137 @@ namespace WMS_Kernel
             csv.ShowDialog();
         }
 
+        private void tsmi_Refresh_Click(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void tsmi_UnUseGs_Click(object sender, EventArgs e)
+        {
+            if(this.IWmsFrame.RoleID>2)
+            {
+                ShowMessage( "信息提示","当前用户没有此功能的操作权限！");
+              
+                return;
+            }
+            if (this.AskMessage("询问", "您确定要禁用选中货位吗？") != 0)
+            {
+                return;
+            }
+            if (null == this.storageControl1.selectPositions)
+            {
+                ShowMessage("信息提示", "请选择要禁用的货位！");
+                return;
+            }
+            this.Presenter.SetGsStatus(this.storageControl1.selectPositions.GoodsSiteID, false);
+        }
+
+        private void tsmi_UseGs_Click(object sender, EventArgs e)
+        {
+            if (this.IWmsFrame.RoleID > 2)
+            {
+                ShowMessage("信息提示", "当前用户没有此功能的操作权限！");
+
+                return;
+            }
+            if (this.AskMessage("询问", "您确定要启用选中货位吗？") != 0)
+            {
+                return;
+            }
+            if (null == this.storageControl1.selectPositions)
+            {
+                ShowMessage("信息提示", "请选择要启用的货位！");
+                return;
+            }
+            this.Presenter.SetGsStatus(this.storageControl1.selectPositions.GoodsSiteID, true);
+        }
+
+        private void tsmi_StartPos_Click(object sender, EventArgs e)
+        {
+            if (this.storageControl1.selectPositions == null)
+            {
+                return;
+            }
+            Positions pos = this.storageControl1.selectPositions;
+            if (pos == null)
+            {
+                return;
+            }
+            MoveHouseProModel moveHouseProModel = new MoveHouseProModel();
+            moveHouseProModel.HouseName = this.cbe_HouseList.Text.Trim();
+            moveHouseProModel.CellName = pos.Rowth + "排-" + pos.Columnth + "列-" + pos.Layer + "层";
+            moveHouseProModel.CellPos = (EnumCellPos)Enum.Parse(typeof(EnumCellPos), this.cbe_PosTypeList.Text.Trim());
+            moveHouseProModel.CellChildID = pos.GoodsSiteID;
+            this.te_Start.Tag = moveHouseProModel;
+            this.te_Start.Text = moveHouseProModel.HouseName + ":" + moveHouseProModel.CellName + ":" + moveHouseProModel.CellPos;
+           
+        }
+
+        private void tsmi_EndPos_Click(object sender, EventArgs e)
+        {
+            if (this.storageControl1.selectPositions == null)
+            {
+                return;
+            }
+            Positions pos = this.storageControl1.selectPositions;
+            if (pos == null)
+            {
+                return;
+            }
+            MoveHouseProModel moveHouseProModel = new MoveHouseProModel();
+            moveHouseProModel.HouseName = this.cbe_HouseList.Text.Trim();
+            moveHouseProModel.CellName = pos.Rowth + "排-" + pos.Columnth + "列-" + pos.Layer+"层";
+            moveHouseProModel.CellPos = (EnumCellPos)Enum.Parse(typeof(EnumCellPos), this.cbe_PosTypeList.Text.Trim());
+            moveHouseProModel.CellChildID = pos.GoodsSiteID;
+            this.te_EndPos.Tag = moveHouseProModel;
+            this.te_EndPos.Text = moveHouseProModel.HouseName + ":" + moveHouseProModel.CellName + ":" + moveHouseProModel.CellPos;
+        }
+
+        private bool CheckSameHouse()
+        {
+            MoveHouseProModel stPro = (MoveHouseProModel)this.te_Start.Tag;
+            MoveHouseProModel edPro = (MoveHouseProModel)this.te_EndPos.Tag;
+            if(stPro==null || edPro ==null)
+            {
+                return false;
+            }
+            if(stPro.HouseName != edPro.HouseName)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private void sb_Move_Click(object sender, EventArgs e)
+        {
+            if(this.AskMessage("询问","您确定要移动当前设置库存么？")!=0)
+            {
+                return;
+            }
+            if (this.te_Start.Text.Trim() == "")
+            {
+                this.ShowMessage("信息提示", "请选择起始货位！");
+                return;
+            }
+            if (this.te_EndPos.Text.Trim() =="")
+            {
+                this.ShowMessage("信息提示", "请选择目标货位！");
+                return;
+            }
+            if(CheckSameHouse() == false)
+            {
+                this.ShowMessage("信息提示", "只能在同一个库房进行移库！");
+                return;
+            }
+               MoveHouseProModel stPro = (MoveHouseProModel)this.te_Start.Tag;
+            MoveHouseProModel edPro = (MoveHouseProModel)this.te_EndPos.Tag;
+            if(stPro==null || edPro ==null)
+            {
+                return ;
+            }
+            this.Presenter.MoveHouse(stPro.CellChildID, edPro.CellChildID);
+             
+        }
+
     }
 }

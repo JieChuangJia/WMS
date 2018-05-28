@@ -20,6 +20,13 @@ namespace WMS_Interface
         满位,
         空料框
     }
+    public enum EnumLoglevel
+    {
+        调试,
+        提示,
+        警告,
+        错误
+    }
     /// <summary>
     /// 货位启用状态
     /// </summary>
@@ -83,6 +90,7 @@ namespace WMS_Interface
     {
         上架,
         下架,
+        移库,
         盘点下架,
         拣选下架,
         空托盘上架,

@@ -26,6 +26,7 @@ namespace WMS_Kernel
         {
             DataBingding();
             this.presenter.Init();
+            this.presenter.IniPutawayPalletCode();
         }
         
         public override void Init(IWMSFrame wmsFrame)
@@ -49,7 +50,7 @@ namespace WMS_Kernel
             }
             if (tabEventArgs.Page.Text == "上架管理")
             {
-                
+                this.presenter.IniPutawayPalletCode();
             }
         }
         private void ShowTabEventHandler(object sender, ItemClickEventArgs e)
@@ -57,7 +58,23 @@ namespace WMS_Kernel
             this.IWmsFrame.ShowView(this, true);
         }
 
+        public void IniPalletCode(List<string> palletCode)
+        {
+            this.ce_PalletCode.Properties.Items.Clear();
 
+            if (palletCode == null)
+            {
+                return;
+            }
+            foreach (string pallet in palletCode)
+            {
+                this.ce_PalletCode.Properties.Items.Add(pallet);
+            }
+            if (this.ce_PalletCode.Properties.Items.Count > 0)
+            {
+                this.ce_PalletCode.SelectedIndex = 0;
+            }
+        }
 
         private void DataBingding()
         {
@@ -137,13 +154,13 @@ namespace WMS_Kernel
                 return;
             }
 
-            this.presenter.PutawayTask(this.te_PalletCode.Text.Trim(),this.cbe_HouseName.Text.Trim(), this.cbe_StartStation.Text.Trim(), 
+            this.presenter.PutawayTask(this.ce_PalletCode.Text.Trim(),this.cbe_HouseName.Text.Trim(), this.cbe_StartStation.Text.Trim(), 
                 this.ce_CheckPos.Checked, this.cbe_TargetStation.Text.Trim(),this.ce_IsNullPallet.Checked);
         }
 
         private void sb_TrayQuery_Click(object sender, EventArgs e)
         {
-            this.presenter.QueryPalletInfor(this.te_PalletCode.Text.Trim());
+            this.presenter.QueryPalletInfor(this.ce_PalletCode.Text.Trim());
         }
 
         private void ce_CheckPos_CheckedChanged(object sender, EventArgs e)

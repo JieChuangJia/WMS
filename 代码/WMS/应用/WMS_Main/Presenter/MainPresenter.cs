@@ -13,6 +13,7 @@ namespace Aoyou_WMS
     {
         private View_GoodsBLL bllView_Goods = new View_GoodsBLL();
         private Goods_PropertyBll bllProperty = new Goods_PropertyBll();
+        private SysLogBLL bllSysLog = new SysLogBLL();
         //private WmsViewManager wmsViewManager = new WmsViewManager();
         private WMSManager wmsManager = new WMSManager();
         public MainPresenter()
@@ -21,6 +22,15 @@ namespace Aoyou_WMS
         {
             wmsManager.Init(wmsFrame);
             wmsManager.ResgistShowMaterialProperty(ShowMaterialProperty);
+        }
+
+        public bool AddDBLog(SysLogModel logModel)
+        {
+            if(logModel == null)
+            {
+                return false;
+            }
+            return bllSysLog.Add(logModel);
         }
         public void ShowMaterialProperty(string goodsInfor)
         {
@@ -37,6 +47,7 @@ namespace Aoyou_WMS
                 GoodsDataModel gsdModel = new GoodsDataModel();
                 gsdModel.单位 = goods.Goods_Unit;
                 gsdModel.启用 = goods.Goods_Flag;
+                gsdModel.规格型号 = goods.Goods_Model;
                 gsdModel.物料编码 = goods.Goods_Code;
                 gsdModel.物料类别 = goods.Goods_Category;
                 gsdModel.物料名称 = goods.Goods_Name;

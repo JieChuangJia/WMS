@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using WMS_Interface;
 using WMS_Database;
+using CommonMoudle;
 
 namespace WMS_Kernel
 {
@@ -90,6 +91,7 @@ namespace WMS_Kernel
 
         public void PutawayTask(string palletCode,string houseName, string putawayStationName, bool isAssign,string targetCell, bool isEmptyPallet)
         {
+            string restr = "";
             if (palletCode == "")
             {
                 this.View.ShowMessage("信息提示", "请输入托盘条码！");
@@ -112,123 +114,37 @@ namespace WMS_Kernel
                 return;
             }
             string manageID = "";
-            if (CreateManageTask(palletCode,houseName, putawayStationName, isAssign,targetCell, isEmptyPallet, ref manageID) == false)
+            EnumManageTaskType manaTask = EnumManageTaskType.空托盘上架;
+            if (isEmptyPallet == true)
             {
+                manaTask = EnumManageTaskType.空托盘上架;
+            }
+            else
+            {
+                manaTask = EnumManageTaskType.上架;
+            }
+            if (TaskHandleMethod.CreatePutawayManageTask(palletCode, houseName, putawayStationName, isAssign, targetCell, manaTask, ref manageID, ref restr) == false)
+            {
+                this.WmsFrame.WriteLog("上架逻辑", "", "提示", "创建管理任务失败：" + restr);
                 return;
             }
-            if (CreateManageListTask(manageID, palletCode) == false)
-            {
-                return;
-            }
+            //if (TaskHandleMethod.CreatePutawayManageListTask(manageID, palletCode, ref restr) == false)
+            //{
+            //    this.WmsFrame.WriteLog("上架逻辑", "", "提示", "创建管理任务列表失败：" + restr);
+            //    return;
+            //}
             this.WmsFrame.WriteLog("上架逻辑", "", "提示", "上架任务下达成功！");
         }
 
-        private bool CreateManageTask(string palletCode, string houseName,string putawayStationName, bool isAssign,string targetStation, bool isEmptyPallet,ref string manageID)
+        public void IniPutawayPalletCode()
         {
-            ManageModel manage = new ManageModel();
-            WH_Station_LogicModel stationCell = bllStationLogic.GetStationByName(putawayStationName);
-            if (stationCell == null)
-            {
-                this.WmsFrame.WriteLog("上架逻辑", "", "提示", "上架站台不存在！");
-                return false;
-            }
-            WH_WareHouseModel wareHouse = bllWareHouse.GetModelByName(houseName);
-            if(wareHouse == null)
-            {
-                this.WmsFrame.WriteLog("上架逻辑", "", "提示", "库房名称错误！");
-                return false;
-                     
-            }
-           View_StockListModel stock=bllViewStockList.GetModelByPalletCode(palletCode,EnumCellType.货位.ToString());
-            if(stock!= null)
-            {
-                this.View.ShowMessage("信息提示", "库存中已经有此托盘条码！");
-                return false;
-            }
-            View_CellModel targetCell = null;
-            if (isAssign == true)//分配货位要做校验
-            {
-                string[] targetPos = targetStation.Split('-');
-                if (targetPos == null || targetPos.Length != 2)
-                {
-                    this.WmsFrame.WriteLog("上架逻辑", "", "提示", "指定货位格式错误！");
-                    return false;
-                }
-                string cellName = targetPos[0];
-                string cellPos = targetPos[1];
-                targetCell = bllViewCell.GetCell(wareHouse.WareHouse_ID, cellName, cellPos);
+            List<string> palletList = bllViewStockList.GetPalletCodeList();
 
-            }
-            else
-            {
-                targetCell = bllViewCell.GetCell(wareHouse.WareHouse_ID);
-            }
 
-            if (targetCell == null)
-            {
-                this.WmsFrame.WriteLog("上架逻辑", "", "提示", "库房已满，没有货位可以申请了！");
-                return false;
-            }
-            if(targetCell.Cell_Child_Run_Status!=EnumGSTaskStatus.完成.ToString()&&targetCell.Cell_Child_Status!=EnumCellStatus.空闲.ToString() )
-            {
-                this.WmsFrame.WriteLog("上架逻辑", "", "提示", "指定货位已经被占用！");
-                return false;
-            }
 
-            manage.Mange_ID = Guid.NewGuid().ToString();
-
-            manage.Mange_Start_Cell_ID = stationCell.Cell_Child_ID;
-            manage.Mange_End_Cell_ID = targetCell.Cell_Chlid_ID;
-            manage.Mange_Status = EnumManageTaskStatus.待执行.ToString();
-            manage.Manage_BreakDown_Status = "待分解";
-            manage.Mange_Stock_Barcode = palletCode;
-            if (isEmptyPallet == true)
-            {
-                manage.Mange_Type_ID = "7";// EnumManageTaskType.空托盘上架.ToString();
-            }
-            else
-            {
-                manage.Mange_Type_ID ="6";//上架
-            }
-            View_Plan_StockListModel plan = bllViewPalnStockList.GetModelByPalletCode(palletCode);
-            if (plan == null)
-            {
-                this.WmsFrame.WriteLog("上架逻辑", "", "提示", "当前库存没有对应计划！");
-                return false;
-            }
-           
-
-            manage.Plan_ID = plan.Plan_ID;
-
-            manageID = manage.Mange_ID;
-            bllManage.Add(manage);
-            return true;
+            this.View.IniPalletCode(palletList);
         }
-        private bool CreateManageListTask(string manageID, string palletCode)
-        {
-            List<View_StockListModel> stockList = bllViewStockList.GetModelListByPalletCode(palletCode,EnumCellType.配盘工位.ToString());
-            if (stockList == null)
-            {
-                this.WmsFrame.WriteLog("上架逻辑", "", "提示", "储存为空！");
-                return false;
-            }
-            //View_Plan_StockListModel plan = bllViewPalnStockList.GetModelByPalletCode(palletCode);
 
-            foreach (View_StockListModel stock in stockList)
-            {
-                Manage_ListModel manageListModel = new Manage_ListModel();
-                Plan_ListModel planList = bllPlanList.GetModel(stock.Plan_List_ID);
-                
-                planList.Plan_List_Ordered_Quantity = stock.Stock_List_Quantity;
-                bllPlanList.Update(planList);
-
-                manageListModel.Manage_List_ID = Guid.NewGuid().ToString();
-                manageListModel.Manage_List_Quantity = stock.Stock_List_Quantity;
-                manageListModel.Mange_ID = manageID;
-                manageListModel.Stock_List_ID = stock.Stock_List_ID;
-                bllManageList.Add(manageListModel);
-            }
-            return true;
-        }
+      
     }
 }

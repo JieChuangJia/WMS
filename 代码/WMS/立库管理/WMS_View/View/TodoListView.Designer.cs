@@ -48,7 +48,7 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.sb_DeleteTask = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.sb_ExePlan = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1.SuspendLayout();
@@ -235,7 +235,7 @@
             // 
             this.groupControl1.Controls.Add(this.simpleButton6);
             this.groupControl1.Controls.Add(this.simpleButton5);
-            this.groupControl1.Controls.Add(this.simpleButton4);
+            this.groupControl1.Controls.Add(this.sb_DeleteTask);
             this.groupControl1.Controls.Add(this.simpleButton3);
             this.groupControl1.Controls.Add(this.sb_ExePlan);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -265,15 +265,15 @@
             this.simpleButton5.TabIndex = 18;
             this.simpleButton5.Text = " 编辑";
             // 
-            // simpleButton4
+            // sb_DeleteTask
             // 
-            this.simpleButton4.Enabled = false;
-            this.simpleButton4.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(173, 31);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(68, 23);
-            this.simpleButton4.TabIndex = 17;
-            this.simpleButton4.Text = "删除";
+            this.sb_DeleteTask.Image = ((System.Drawing.Image)(resources.GetObject("sb_DeleteTask.Image")));
+            this.sb_DeleteTask.Location = new System.Drawing.Point(173, 31);
+            this.sb_DeleteTask.Name = "sb_DeleteTask";
+            this.sb_DeleteTask.Size = new System.Drawing.Size(68, 23);
+            this.sb_DeleteTask.TabIndex = 17;
+            this.sb_DeleteTask.Text = "删除";
+            this.sb_DeleteTask.Click += new System.EventHandler(this.sb_DeleteTask_Click);
             // 
             // simpleButton3
             // 
@@ -345,7 +345,7 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton sb_DeleteTask;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton sb_ExePlan;
     }

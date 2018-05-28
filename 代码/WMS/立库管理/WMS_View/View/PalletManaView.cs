@@ -171,7 +171,17 @@ namespace WMS_Kernel
             this.presenter.TrayConfirm(this.ce_IsFull.Checked, palletCode, this.cbe_PalletPos.Text);
 
         }
- 
-       
+
+        private void sb_CancelPallet_Click(object sender, EventArgs e)
+        {
+            int status = this.AskMessage("信息提示", "您确定要取消当前选中配盘么？取消后将清空库存结束物料与托盘的绑定！！");
+            if (status != 0)
+            {
+                return;
+            }
+            int currRow = this.gv_PalletList.GetSelectedRows()[0];
+            string palletCode = this.gv_PalletList.GetRowCellValue(currRow, "托盘条码").ToString();
+            this.presenter.CancelPallet(palletCode);
+        }     
     }
 }

@@ -8,6 +8,7 @@ using System.Data;
 using Storage;
 using System.Drawing;
 using WMS_Database;
+using CommonMoudle;
  
 
 namespace WMS_Kernel
@@ -81,7 +82,7 @@ namespace WMS_Kernel
         }
         public void ModifyGsStatus(string cellChildID, string cellStatus, string cellTaskStatus)
         {
-           
+            string restr = "";
             WH_Cell_ChildrenModel oldgsm =  bllChildCell.GetModel(cellChildID);
             if (oldgsm == null)
             {
@@ -99,10 +100,50 @@ namespace WMS_Kernel
             oldgsm.Cell_Child_Status =cellStatus;
             oldgsm.Cell_Child_Run_Status = cellTaskStatus;
             bllChildCell.Update(oldgsm);
-           TaskHandleMethod.AddCellOperRecord(cellChildID, EnumGSOperateType.手动修改状态,operteDetail);
+           TaskHandleMethod.AddCellOperRecord(cellChildID, EnumGSOperateType.手动修改状态,operteDetail,ref restr);
 
 
            this.View.RefreshData();
+        }
+
+        public void SetGsStatus(string gsID, bool status)
+        {
+            
+            if(bllChildCell.UpdateGSEnabledStatusByID(gsID, status)==true)
+            {
+                   this.WmsFrame.WriteLog("库存看板","","提示","启用成功！");
+            }
+            else
+            {
+                   this.WmsFrame.WriteLog("库存看板","","提示","启用失败！");
+            }
+         
+            //WH_Cell_ChildrenModel gsm =bllChildCell.GetModel(gsID);
+            //if (gsm == null)
+            //{
+            //    return;
+            //}
+            //StoreHouseModel house = bllStoreHouse.GetModel(gsm.StoreHouseID);
+            //if (house == null)
+            //{
+            //    return;
+            //}
+            //if (status == true)
+            //{
+            //    this.view.AddLog("库存看板", "货位《" + gsm.GoodsSiteName + "》启用！", EnumLoglevel.提示);
+
+            //    this.iStorageManage.AddGSOperRecord(house.StoreHouseName, new CellCoordModel(gsm.GoodsSiteRow,
+            //          gsm.GoodsSiteColumn, gsm.GoodsSiteLayer)
+            //         , EnumGSOperateType.手动启用货位, "手动启用货位", ref reStr);
+            //}
+            //else
+            //{
+            //    this.iStorageManage.AddGSOperRecord(house.StoreHouseName, new CellCoordModel(gsm.GoodsSiteRow,
+            //       gsm.GoodsSiteColumn, gsm.GoodsSiteLayer)
+            //      , EnumGSOperateType.手动禁用货位, "手动禁用货位", ref reStr);
+            //    this.view.AddLog("库存看板", "货位《" + gsm.GoodsSiteName + "》禁用！", EnumLoglevel.提示);
+            //}
+
         }
         public void GetGSDetail(string cellID)
         {
@@ -294,6 +335,23 @@ namespace WMS_Kernel
              bllCell.SetSingleLayerCellEnabled(houseName, status, rowth, layer, cellPos);
              this.View.RefreshData();
              return true;
+        }
+
+        public bool MoveHouse(string startCellChildID,string endCellChildID)
+        {
+            string restr = "";
+           bool status = TaskHandleMethod.CreateMoveManageTask(startCellChildID, endCellChildID, ref restr);
+           if (status == true)
+           {
+               this.WmsFrame.WriteLog("库存看板", "", "提示", "移库任务生成功！" + restr);
+               return true;
+           }
+           else
+           {
+               this.WmsFrame.WriteLog("库存看板", "", "错误", "移库任务生失败！" + restr);
+               return false;
+           }
+            
         }
         //public bool SetSingleLayerGsArea(string logicAreaName, int rowth, int layer)
         //{

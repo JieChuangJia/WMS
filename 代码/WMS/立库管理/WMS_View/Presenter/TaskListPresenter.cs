@@ -46,14 +46,14 @@ namespace WMS_Kernel
                     || manage.Manage_Type_Name == EnumManageTaskType.盘点下架.ToString()
                     || manage.Manage_Type_Name == EnumManageTaskType.下架.ToString())
                 {
-                    task.起始位置 = viewStartCell.WareHouse_Name + ":" + viewStartCell.Cell_Name;
+                    task.起始位置 = viewStartCell.WareHouse_Name + ":" + viewStartCell.Cell_Name + ":" + viewStartCell.Cell_Chlid_Position;
                 }
                 View_CellModel viewEndCell = bllViewCell.GetModelByChildCellID(manage.Mange_End_Cell_ID);
 
                 if (manage.Manage_Type_Name == EnumManageTaskType.空托盘上架.ToString()
                    || manage.Manage_Type_Name == EnumManageTaskType.上架.ToString())
                 {
-                    task.终止位置 = viewEndCell.WareHouse_Name + ":" + viewEndCell.Cell_Name;
+                    task.终止位置 = viewEndCell.WareHouse_Name + ":" + viewEndCell.Cell_Name+":"+viewEndCell.Cell_Chlid_Position;
                 }
                 else if (manage.Manage_Type_Name == EnumManageTaskType.拣选下架.ToString()
                     || manage.Manage_Type_Name == EnumManageTaskType.盘点下架.ToString()

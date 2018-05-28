@@ -14,11 +14,12 @@ using WMS_Interface;
  
 using System.Configuration;
 using CommonMoudle;
+using WMS_Database;
  
 
 namespace WMS_Service_Main
 {
-    public partial class MainFrame : DevExpress.XtraBars.Ribbon.RibbonForm,IWMSFrame
+    public partial class MainFrame : ChildViewBase, IWMSFrame
     {
         private delegate void DelegateDispLog(string logSrc, string category,string level, string content);//委托，显示日志
         ServiceManageView serviceManageVieww = new ServiceManageView();
@@ -79,6 +80,13 @@ namespace WMS_Service_Main
                     richTextBoxLog.Select(richTextBoxLog.Text.Length, 0);
                     richTextBoxLog.ScrollToCaret();
                 }
+                SysLogModel logModel = new SysLogModel();
+                logModel.SysLog_ID = Guid.NewGuid().ToString();
+                logModel.SysLog_Level = level;
+                logModel.SysLog_Content = content;
+                logModel.SysLog_Source = logSrc;
+                logModel.SysLog_Time = DateTime.Now;
+                this.mainPresenter.AddDBLog(logModel);
 
             }
         }
@@ -166,9 +174,11 @@ namespace WMS_Service_Main
         public int RoleID { get; set; }
         #endregion
         #region 私有方法
+      
         private void LoadForms()
         {
             serviceManageVieww.Init(this);
+            serviceManageVieww.FormClosing += FormCloseEventHandler;
         }
         private void DatabaseCfg()
         {

@@ -88,9 +88,6 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.gc_PlanList = new DevExpress.XtraGrid.GridControl();
             this.gv_PlanList = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
-            this.gc_TrayGoodsList = new DevExpress.XtraGrid.GridControl();
-            this.gv_TrayGoods = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cbe_PlanID = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -107,6 +104,9 @@
             this.sb_AddGoods = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
+            this.gc_TrayGoodsList = new DevExpress.XtraGrid.GridControl();
+            this.gv_TrayGoods = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
@@ -137,10 +137,6 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_PlanList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_PlanList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
-            this.groupControl7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gc_TrayGoodsList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gv_TrayGoods)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_PlanID.Properties)).BeginInit();
@@ -152,6 +148,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.se_GoodsNum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
+            this.groupControl7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_TrayGoodsList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_TrayGoods)).BeginInit();
             this.SuspendLayout();
             // 
             // gridColumn10
@@ -345,10 +345,10 @@
             this.layoutControl6.Controls.Add(this.txtEdit_PalletID);
             this.layoutControl6.Controls.Add(this.cbEdit_RecvPlace);
             this.layoutControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl6.Location = new System.Drawing.Point(2, 22);
+            this.layoutControl6.Location = new System.Drawing.Point(2, 21);
             this.layoutControl6.Name = "layoutControl6";
             this.layoutControl6.Root = this.layoutControlGroup5;
-            this.layoutControl6.Size = new System.Drawing.Size(196, 76);
+            this.layoutControl6.Size = new System.Drawing.Size(196, 77);
             this.layoutControl6.TabIndex = 0;
             this.layoutControl6.Text = "layoutControl6";
             // 
@@ -439,7 +439,7 @@
             this.layoutControlGroup5.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
             rowDefinition4});
             this.layoutControlGroup5.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 4, 4);
-            this.layoutControlGroup5.Size = new System.Drawing.Size(731, 59);
+            this.layoutControlGroup5.Size = new System.Drawing.Size(731, 60);
             this.layoutControlGroup5.TextVisible = false;
             // 
             // layoutControlItem24
@@ -448,7 +448,7 @@
             this.layoutControlItem24.Location = new System.Drawing.Point(190, 0);
             this.layoutControlItem24.Name = "layoutControlItem24";
             this.layoutControlItem24.OptionsTableLayoutItem.ColumnIndex = 2;
-            this.layoutControlItem24.Size = new System.Drawing.Size(180, 51);
+            this.layoutControlItem24.Size = new System.Drawing.Size(180, 52);
             this.layoutControlItem24.Text = "接收地点";
             this.layoutControlItem24.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.layoutControlItem24.TextSize = new System.Drawing.Size(48, 14);
@@ -460,7 +460,7 @@
             this.layoutControlItem35.Location = new System.Drawing.Point(370, 0);
             this.layoutControlItem35.Name = "layoutControlItem35";
             this.layoutControlItem35.OptionsTableLayoutItem.ColumnIndex = 3;
-            this.layoutControlItem35.Size = new System.Drawing.Size(200, 51);
+            this.layoutControlItem35.Size = new System.Drawing.Size(200, 52);
             this.layoutControlItem35.Text = "配盘托盘条码";
             this.layoutControlItem35.TextSize = new System.Drawing.Size(72, 14);
             // 
@@ -470,7 +470,7 @@
             this.layoutControlItem36.Location = new System.Drawing.Point(570, 0);
             this.layoutControlItem36.Name = "layoutControlItem36";
             this.layoutControlItem36.OptionsTableLayoutItem.ColumnIndex = 4;
-            this.layoutControlItem36.Size = new System.Drawing.Size(80, 51);
+            this.layoutControlItem36.Size = new System.Drawing.Size(80, 52);
             this.layoutControlItem36.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem36.TextVisible = false;
             // 
@@ -480,7 +480,7 @@
             this.layoutControlItem37.Location = new System.Drawing.Point(650, 0);
             this.layoutControlItem37.Name = "layoutControlItem37";
             this.layoutControlItem37.OptionsTableLayoutItem.ColumnIndex = 5;
-            this.layoutControlItem37.Size = new System.Drawing.Size(80, 51);
+            this.layoutControlItem37.Size = new System.Drawing.Size(80, 52);
             this.layoutControlItem37.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem37.TextVisible = false;
             // 
@@ -490,7 +490,7 @@
             this.layoutControlItem25.Location = new System.Drawing.Point(10, 0);
             this.layoutControlItem25.Name = "layoutControlItem25";
             this.layoutControlItem25.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.layoutControlItem25.Size = new System.Drawing.Size(180, 51);
+            this.layoutControlItem25.Size = new System.Drawing.Size(180, 52);
             this.layoutControlItem25.Text = "接收库区";
             this.layoutControlItem25.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.layoutControlItem25.TextLocation = DevExpress.Utils.Locations.Left;
@@ -548,7 +548,7 @@
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl5.Location = new System.Drawing.Point(3, 429);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(998, 49);
+            this.groupControl5.Size = new System.Drawing.Size(1000, 50);
             this.groupControl5.TabIndex = 51;
             this.groupControl5.Text = "配盘操作";
             // 
@@ -556,9 +556,9 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.groupControl7, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.groupControl1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.groupControl5, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.groupControl7, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.panelControl1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.panelControl2, 0, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -570,7 +570,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1004, 481);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1006, 482);
             this.tableLayoutPanel2.TabIndex = 52;
             // 
             // groupControl1
@@ -579,7 +579,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 43);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(998, 167);
+            this.groupControl1.Size = new System.Drawing.Size(1000, 167);
             this.groupControl1.TabIndex = 53;
             this.groupControl1.Text = "计划列表";
             // 
@@ -589,10 +589,10 @@
             gridLevelNode1.RelationName = "Level1";
             this.gc_PlanList.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gc_PlanList.Location = new System.Drawing.Point(2, 22);
+            this.gc_PlanList.Location = new System.Drawing.Point(2, 21);
             this.gc_PlanList.MainView = this.gv_PlanList;
             this.gc_PlanList.Name = "gc_PlanList";
-            this.gc_PlanList.Size = new System.Drawing.Size(994, 143);
+            this.gc_PlanList.Size = new System.Drawing.Size(996, 144);
             this.gc_PlanList.TabIndex = 13;
             this.gc_PlanList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_PlanList});
@@ -605,35 +605,6 @@
             this.gv_PlanList.OptionsView.ColumnAutoWidth = false;
             this.gv_PlanList.OptionsView.ShowGroupPanel = false;
             // 
-            // groupControl7
-            // 
-            this.groupControl7.Controls.Add(this.gc_TrayGoodsList);
-            this.groupControl7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl7.Location = new System.Drawing.Point(3, 256);
-            this.groupControl7.Name = "groupControl7";
-            this.groupControl7.Size = new System.Drawing.Size(998, 167);
-            this.groupControl7.TabIndex = 52;
-            this.groupControl7.Text = "配盘物料列表";
-            // 
-            // gc_TrayGoodsList
-            // 
-            this.gc_TrayGoodsList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_TrayGoodsList.Location = new System.Drawing.Point(2, 22);
-            this.gc_TrayGoodsList.MainView = this.gv_TrayGoods;
-            this.gc_TrayGoodsList.Name = "gc_TrayGoodsList";
-            this.gc_TrayGoodsList.Size = new System.Drawing.Size(994, 143);
-            this.gc_TrayGoodsList.TabIndex = 14;
-            this.gc_TrayGoodsList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gv_TrayGoods});
-            // 
-            // gv_TrayGoods
-            // 
-            this.gv_TrayGoods.GridControl = this.gc_TrayGoodsList;
-            this.gv_TrayGoods.IndicatorWidth = 40;
-            this.gv_TrayGoods.Name = "gv_TrayGoods";
-            this.gv_TrayGoods.OptionsView.ColumnAutoWidth = false;
-            this.gv_TrayGoods.OptionsView.ShowGroupPanel = false;
-            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.labelControl1);
@@ -642,7 +613,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(998, 34);
+            this.panelControl1.Size = new System.Drawing.Size(1000, 34);
             this.panelControl1.TabIndex = 54;
             // 
             // labelControl1
@@ -686,7 +657,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(3, 216);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(998, 34);
+            this.panelControl2.Size = new System.Drawing.Size(1000, 34);
             this.panelControl2.TabIndex = 55;
             // 
             // sb_ClearTrayData
@@ -793,11 +764,40 @@
             // 
             this.gridView3.Name = "gridView3";
             // 
+            // groupControl7
+            // 
+            this.groupControl7.Controls.Add(this.gc_TrayGoodsList);
+            this.groupControl7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl7.Location = new System.Drawing.Point(3, 256);
+            this.groupControl7.Name = "groupControl7";
+            this.groupControl7.Size = new System.Drawing.Size(1000, 167);
+            this.groupControl7.TabIndex = 56;
+            this.groupControl7.Text = "配盘物料列表";
+            // 
+            // gc_TrayGoodsList
+            // 
+            this.gc_TrayGoodsList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_TrayGoodsList.Location = new System.Drawing.Point(2, 21);
+            this.gc_TrayGoodsList.MainView = this.gv_TrayGoods;
+            this.gc_TrayGoodsList.Name = "gc_TrayGoodsList";
+            this.gc_TrayGoodsList.Size = new System.Drawing.Size(996, 144);
+            this.gc_TrayGoodsList.TabIndex = 14;
+            this.gc_TrayGoodsList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gv_TrayGoods});
+            // 
+            // gv_TrayGoods
+            // 
+            this.gv_TrayGoods.GridControl = this.gc_TrayGoodsList;
+            this.gv_TrayGoods.IndicatorWidth = 40;
+            this.gv_TrayGoods.Name = "gv_TrayGoods";
+            this.gv_TrayGoods.OptionsView.ColumnAutoWidth = false;
+            this.gv_TrayGoods.OptionsView.ShowGroupPanel = false;
+            // 
             // InWareWithPlanView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 481);
+            this.ClientSize = new System.Drawing.Size(1006, 482);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "InWareWithPlanView";
             this.Text = "按计划配盘";
@@ -834,10 +834,6 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc_PlanList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_PlanList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
-            this.groupControl7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gc_TrayGoodsList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gv_TrayGoods)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -851,6 +847,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.se_GoodsNum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
+            this.groupControl7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gc_TrayGoodsList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_TrayGoods)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -897,11 +897,8 @@
         private DevExpress.XtraEditors.GroupControl groupControl5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private DevExpress.XtraEditors.GroupControl groupControl6;
-    
+
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
-        private DevExpress.XtraEditors.GroupControl groupControl7;
-        private DevExpress.XtraGrid.GridControl gc_TrayGoodsList;
-        private DevExpress.XtraGrid.Views.Grid.GridView gv_TrayGoods;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraGrid.GridControl gc_PlanList;
         private DevExpress.XtraGrid.Views.Grid.GridView gv_PlanList;
@@ -919,5 +916,8 @@
         private DevExpress.XtraEditors.SpinEdit se_GoodsNum;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.SimpleButton sb_AddGoods;
+        private DevExpress.XtraEditors.GroupControl groupControl7;
+        private DevExpress.XtraGrid.GridControl gc_TrayGoodsList;
+        private DevExpress.XtraGrid.Views.Grid.GridView gv_TrayGoods;
     }
 }

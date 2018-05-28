@@ -38,7 +38,7 @@ namespace WMS_Interface
         public string 物料名称 { get; set; }
         public string 规格型号 { get; set; }
         public string 批次号 { get; set; }
-        public DateTime 生产日期 { get; set; }
+        //public DateTime 生产日期 { get; set; }
         public string 计量单位 { get; set; }
         public string 计划数量 { get; set; }
         //public string 下达数量 { get; set; }

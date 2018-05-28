@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition4 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition5 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition6 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition7 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition8 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition9 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition10 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition6 = new DevExpress.XtraLayout.RowDefinition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StationShowView));
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -89,14 +89,13 @@
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.sb_Move = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit21 = new DevExpress.XtraEditors.TextEdit();
+            this.te_EndPos = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit20 = new DevExpress.XtraEditors.TextEdit();
+            this.te_Start = new DevExpress.XtraEditors.TextEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
@@ -124,8 +123,8 @@
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit21.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit20.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_EndPos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_Start.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -224,23 +223,23 @@
             this.layoutControlGroup8.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.layoutControlGroup8.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup8.Name = "layoutControlGroup8";
-            columnDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition1.Width = 60D;
-            columnDefinition2.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition2.Width = 60D;
-            columnDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition3.Width = 60D;
-            columnDefinition4.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition4.Width = 100D;
+            columnDefinition6.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition6.Width = 60D;
+            columnDefinition7.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition7.Width = 60D;
+            columnDefinition8.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition8.Width = 60D;
+            columnDefinition9.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition9.Width = 100D;
             this.layoutControlGroup8.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition1,
-            columnDefinition2,
-            columnDefinition3,
-            columnDefinition4});
-            rowDefinition1.Height = 100D;
-            rowDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition6,
+            columnDefinition7,
+            columnDefinition8,
+            columnDefinition9});
+            rowDefinition4.Height = 100D;
+            rowDefinition4.SizeType = System.Windows.Forms.SizeType.Percent;
             this.layoutControlGroup8.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition1});
+            rowDefinition4});
             this.layoutControlGroup8.Size = new System.Drawing.Size(1139, 30);
             this.layoutControlGroup8.TextVisible = false;
             // 
@@ -277,17 +276,17 @@
             this.layoutControlGroup6.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.layoutControlGroup6.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup6.Name = "layoutControlGroup6";
-            columnDefinition5.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition5.Width = 100D;
+            columnDefinition10.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition10.Width = 100D;
             this.layoutControlGroup6.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition5});
-            rowDefinition2.Height = 100D;
-            rowDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
-            rowDefinition3.Height = 30D;
-            rowDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition10});
+            rowDefinition5.Height = 100D;
+            rowDefinition5.SizeType = System.Windows.Forms.SizeType.Percent;
+            rowDefinition6.Height = 30D;
+            rowDefinition6.SizeType = System.Windows.Forms.SizeType.Absolute;
             this.layoutControlGroup6.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition2,
-            rowDefinition3});
+            rowDefinition5,
+            rowDefinition6});
             this.layoutControlGroup6.Size = new System.Drawing.Size(1143, 152);
             this.layoutControlGroup6.TextVisible = false;
             // 
@@ -325,7 +324,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1222, 594);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1224, 595);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panelControl1
@@ -347,7 +346,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1216, 54);
+            this.panelControl1.Size = new System.Drawing.Size(1218, 54);
             this.panelControl1.TabIndex = 5;
             // 
             // sb_CellSet
@@ -486,7 +485,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1216, 528);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1218, 529);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
             // tableLayoutPanel3
@@ -502,7 +501,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(930, 522);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(932, 523);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // storageControl1
@@ -519,7 +518,7 @@
             this.storageControl1.Layers = 0;
             this.storageControl1.Location = new System.Drawing.Point(3, 3);
             this.storageControl1.Name = "storageControl1";
-            this.storageControl1.Size = new System.Drawing.Size(924, 359);
+            this.storageControl1.Size = new System.Drawing.Size(926, 360);
             this.storageControl1.TabIndex = 14;
             this.storageControl1.PositionsClick += new Storage.StorageControl.ClickPositionsEventHandler(this.storageControl1_PositionsClick);
             // 
@@ -547,18 +546,21 @@
             this.tsmi_UnUseGs.Name = "tsmi_UnUseGs";
             this.tsmi_UnUseGs.Size = new System.Drawing.Size(124, 22);
             this.tsmi_UnUseGs.Text = "禁用货位";
+            this.tsmi_UnUseGs.Click += new System.EventHandler(this.tsmi_UnUseGs_Click);
             // 
             // tsmi_UseGs
             // 
             this.tsmi_UseGs.Name = "tsmi_UseGs";
             this.tsmi_UseGs.Size = new System.Drawing.Size(124, 22);
             this.tsmi_UseGs.Text = "启用货位";
+            this.tsmi_UseGs.Click += new System.EventHandler(this.tsmi_UseGs_Click);
             // 
             // tsmi_Refresh
             // 
             this.tsmi_Refresh.Name = "tsmi_Refresh";
             this.tsmi_Refresh.Size = new System.Drawing.Size(124, 22);
             this.tsmi_Refresh.Text = "刷      新";
+            this.tsmi_Refresh.Click += new System.EventHandler(this.tsmi_Refresh_Click);
             // 
             // 手动移库ToolStripMenuItem
             // 
@@ -572,22 +574,24 @@
             // tsmi_StartPos
             // 
             this.tsmi_StartPos.Name = "tsmi_StartPos";
-            this.tsmi_StartPos.Size = new System.Drawing.Size(124, 22);
+            this.tsmi_StartPos.Size = new System.Drawing.Size(152, 22);
             this.tsmi_StartPos.Text = "起始位置";
+            this.tsmi_StartPos.Click += new System.EventHandler(this.tsmi_StartPos_Click);
             // 
             // tsmi_EndPos
             // 
             this.tsmi_EndPos.Name = "tsmi_EndPos";
-            this.tsmi_EndPos.Size = new System.Drawing.Size(124, 22);
+            this.tsmi_EndPos.Size = new System.Drawing.Size(152, 22);
             this.tsmi_EndPos.Text = "终止位置";
+            this.tsmi_EndPos.Click += new System.EventHandler(this.tsmi_EndPos_Click);
             // 
             // gc_CellGoodsDetail
             // 
             this.gc_CellGoodsDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_CellGoodsDetail.Location = new System.Drawing.Point(3, 368);
+            this.gc_CellGoodsDetail.Location = new System.Drawing.Point(3, 369);
             this.gc_CellGoodsDetail.MainView = this.gridView2;
             this.gc_CellGoodsDetail.Name = "gc_CellGoodsDetail";
-            this.gc_CellGoodsDetail.Size = new System.Drawing.Size(924, 151);
+            this.gc_CellGoodsDetail.Size = new System.Drawing.Size(926, 151);
             this.gc_CellGoodsDetail.TabIndex = 6;
             this.gc_CellGoodsDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -602,7 +606,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(939, 3);
+            this.splitContainer1.Location = new System.Drawing.Point(941, 3);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -613,20 +617,19 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(274, 522);
+            this.splitContainer1.Size = new System.Drawing.Size(274, 523);
             this.splitContainer1.SplitterDistance = 241;
             this.splitContainer1.TabIndex = 1;
             // 
             // groupControl4
             // 
-            this.groupControl4.Controls.Add(this.simpleButton5);
-            this.groupControl4.Controls.Add(this.simpleButton1);
+            this.groupControl4.Controls.Add(this.sb_Move);
             this.groupControl4.Controls.Add(this.simpleButton8);
             this.groupControl4.Controls.Add(this.simpleButton7);
             this.groupControl4.Controls.Add(this.labelControl2);
-            this.groupControl4.Controls.Add(this.textEdit21);
+            this.groupControl4.Controls.Add(this.te_EndPos);
             this.groupControl4.Controls.Add(this.labelControl1);
-            this.groupControl4.Controls.Add(this.textEdit20);
+            this.groupControl4.Controls.Add(this.te_Start);
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl4.Location = new System.Drawing.Point(0, 0);
             this.groupControl4.Name = "groupControl4";
@@ -634,21 +637,14 @@
             this.groupControl4.TabIndex = 1;
             this.groupControl4.Text = "移库详细";
             // 
-            // simpleButton5
+            // sb_Move
             // 
-            this.simpleButton5.Location = new System.Drawing.Point(194, 128);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(56, 22);
-            this.simpleButton5.TabIndex = 30;
-            this.simpleButton5.Text = "取消";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(119, 128);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(56, 22);
-            this.simpleButton1.TabIndex = 29;
-            this.simpleButton1.Text = "移库";
+            this.sb_Move.Location = new System.Drawing.Point(150, 79);
+            this.sb_Move.Name = "sb_Move";
+            this.sb_Move.Size = new System.Drawing.Size(92, 22);
+            this.sb_Move.TabIndex = 29;
+            this.sb_Move.Text = "移库";
+            this.sb_Move.Click += new System.EventHandler(this.sb_Move_Click);
             // 
             // simpleButton8
             // 
@@ -670,40 +666,40 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(26, 90);
+            this.labelControl2.Location = new System.Drawing.Point(18, 56);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(60, 14);
             this.labelControl2.TabIndex = 3;
             this.labelControl2.Text = "移库终点：";
             // 
-            // textEdit21
+            // te_EndPos
             // 
-            this.textEdit21.Location = new System.Drawing.Point(99, 87);
-            this.textEdit21.Name = "textEdit21";
-            this.textEdit21.Size = new System.Drawing.Size(151, 20);
-            this.textEdit21.TabIndex = 2;
+            this.te_EndPos.Location = new System.Drawing.Point(91, 53);
+            this.te_EndPos.Name = "te_EndPos";
+            this.te_EndPos.Size = new System.Drawing.Size(151, 20);
+            this.te_EndPos.TabIndex = 2;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(26, 54);
+            this.labelControl1.Location = new System.Drawing.Point(18, 28);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(60, 14);
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "移库起点：";
             // 
-            // textEdit20
+            // te_Start
             // 
-            this.textEdit20.Location = new System.Drawing.Point(99, 51);
-            this.textEdit20.Name = "textEdit20";
-            this.textEdit20.Size = new System.Drawing.Size(151, 20);
-            this.textEdit20.TabIndex = 0;
+            this.te_Start.Location = new System.Drawing.Point(91, 25);
+            this.te_Start.Name = "te_Start";
+            this.te_Start.Size = new System.Drawing.Size(151, 20);
+            this.te_Start.TabIndex = 0;
             // 
             // groupControl1
             // 
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(274, 277);
+            this.groupControl1.Size = new System.Drawing.Size(274, 278);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "图例";
             // 
@@ -711,7 +707,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1222, 594);
+            this.ClientSize = new System.Drawing.Size(1224, 595);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "StationShowView";
             this.Text = "货位显示";
@@ -745,8 +741,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
             this.groupControl4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit21.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit20.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_EndPos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_Start.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.ResumeLayout(false);
 
@@ -795,14 +791,13 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private DevExpress.XtraEditors.GroupControl groupControl4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton sb_Move;
         private DevExpress.XtraEditors.SimpleButton simpleButton8;
         private DevExpress.XtraEditors.SimpleButton simpleButton7;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit textEdit21;
+        private DevExpress.XtraEditors.TextEdit te_EndPos;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit20;
+        private DevExpress.XtraEditors.TextEdit te_Start;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private System.Windows.Forms.ContextMenuStrip cms_Property;

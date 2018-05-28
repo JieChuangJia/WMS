@@ -26,5 +26,7 @@ namespace WMS_Interface
         public static PlanQueryViewData PLANQUERYDATA = new PlanQueryViewData();
         public static  PlanQueryViewData TODOLISTDATA = new PlanQueryViewData();
         public static PalletManageViewData PALLETMANAGEDATA = new PalletManageViewData();
+
+        public static SysLogViewData SYSLOGVIEWDATA = new SysLogViewData();
     }
 }

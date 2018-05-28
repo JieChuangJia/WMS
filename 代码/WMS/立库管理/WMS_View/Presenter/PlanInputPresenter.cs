@@ -67,7 +67,7 @@ namespace WMS_Kernel
             }
             if (IsExistPalletGoods(goodsCode) == true)
             {
-                this.View.ShowMessage("信息提示", "此物料已经在配盘中！");
+                this.View.ShowMessage("信息提示", "此物料已经在计划中！");
                 return;
             }
         
@@ -85,7 +85,7 @@ namespace WMS_Kernel
             plm.物料编码 = goodsCode;
             plm.物料名称 = goodsModel.Goods_Name;
             //plm.下达数量 = "0";
-            plm.计划列表编码 = Guid.NewGuid().ToString();
+            //plm.计划列表编码 = Guid.NewGuid().ToString();
             ViewDataManager.PLANINPUTDATA.PlanListData.Add(plm);
         }
 
@@ -146,7 +146,7 @@ namespace WMS_Kernel
                     planList.Goods_ID = goodsModel.Goods_ID;
                     planList.Plan_ID = plan.Plan_ID;
                     planList.Plan_List_Finished_Quantity = "0";
-                    planList.Plan_List_ID = goods.计划列表编码;
+                    planList.Plan_List_ID =Guid.NewGuid().ToString();
                     planList.Plan_List_Ordered_Quantity = "0";
                     planList.Plan_List_Quantity = goods.计划数量;
                     bllPlanList.Add(planList);

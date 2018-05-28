@@ -86,6 +86,7 @@
       <DependentUpon>ImageSource.resx</DependentUpon>
     </Compile>
     <Compile Include="Interface\ISvrManaView.cs" />
+    <Compile Include="Model\StatusManager.cs" />
     <Compile Include="Presenter\BasePresenter.cs" />
     <Compile Include="Presenter\MainPresenter.cs" />
     <Compile Include="Presenter\SvrManagePresenter.cs" />
@@ -107,6 +108,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ImageSource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -171,9 +173,7 @@
   <ItemGroup>
     <None Include="Resources\format-list-ordered.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="WMSServerConfig.xml" />
   </ItemGroup>

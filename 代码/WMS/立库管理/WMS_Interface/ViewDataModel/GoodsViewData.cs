@@ -36,8 +36,8 @@ namespace WMS_Interface
         public string 规格型号 { get; set; }
         public string 单位 { get; set; }
         public string 启用 { get; set; }
-        public string 保质期 { get; set; }
-        public string 启用报警 { get; set; }
+        //public string 保质期 { get; set; }
+        //public string 启用报警 { get; set; }
 
         public string 物料内部编码 { get; set; }
 

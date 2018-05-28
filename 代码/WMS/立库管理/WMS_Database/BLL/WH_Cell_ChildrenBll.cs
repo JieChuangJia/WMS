@@ -149,6 +149,25 @@ namespace WMS_Database
         //{
 
         //}
+        public bool UpdateGSEnabledStatusByID(string gsID, bool status)
+        {
+            WH_Cell_ChildrenModel gsm = GetModel(gsID);
+            if (gsm == null)
+            {
+                return false;
+            }
+            if(status == true)
+            {
+                gsm.Cell_Child_Flag = "1";
+            }
+            else
+            {
+                gsm.Cell_Child_Flag = "0";
+            }
+         
+            return Update(gsm);
+        }
+
 		#endregion  ExtensionMethod
 	}
 }

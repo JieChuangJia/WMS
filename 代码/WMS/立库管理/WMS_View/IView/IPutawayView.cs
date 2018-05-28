@@ -12,5 +12,6 @@ namespace WMS_Kernel
         void IniPutawayList(List<string> cellList);
         void IniCellList(List<View_CellModel> cellList);
         void IniHouseName(List<WH_WareHouseModel> houseList);
+        void IniPalletCode(List<string> palletCode);
     }
 }

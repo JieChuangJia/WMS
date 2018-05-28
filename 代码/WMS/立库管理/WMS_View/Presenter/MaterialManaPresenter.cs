@@ -11,7 +11,9 @@ namespace WMS_Kernel
     {
         View_GoodsBLL bllView_Goods = new View_GoodsBLL();
         Goods_PropertyBll bllProperty = new Goods_PropertyBll();
+        
         Action<string> showMaterialProperty = null;
+        private GoodsBll bllGoods = new GoodsBll();
         public MaterialManaPresenter(IMaterailManaView view, IWMSFrame wmsFrame)
             : base(view, wmsFrame)
         { }
@@ -44,6 +46,11 @@ namespace WMS_Kernel
             }
             this.showMaterialProperty(goodsInfor);
 
+        }
+
+        public bool DeleteMaterial(string materialID)
+        {
+            return bllGoods.Delete(materialID);
         }
 
     }

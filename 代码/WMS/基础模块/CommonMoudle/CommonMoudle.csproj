@@ -42,11 +42,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TaskHandleMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TextBoxWriter.cs" />
     <Compile Include="ThreadBaseModel.cs" />
     <Compile Include="WCFManager.cs" />
     <Compile Include="XMLOperater.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\立库管理\WMS_Database\WMS_Database.csproj">
+      <Project>{da7de2b7-69a6-45f3-8458-bda2da13630a}</Project>
+      <Name>WMS_Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\立库管理\WMS_Interface\WMS_Interface.csproj">
+      <Project>{2d29f362-7ac3-4a39-a3ad-f0d1e0f4f39f}</Project>
+      <Name>WMS_Interface</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

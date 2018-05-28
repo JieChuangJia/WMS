@@ -36,3 +36,16 @@ F:\NpWork\others\JieChuangJia\WMS\代码\WMS\基础模块\CommonMoudle\bin\Relea
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\基础模块\CommonMoudle\obj\Release\CommonMoudle.csprojResolveAssemblyReference.cache
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\基础模块\CommonMoudle\obj\Release\CommonMoudle.dll
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\基础模块\CommonMoudle\obj\Release\CommonMoudle.pdb
+E:\JCJ\WMS\代码\WMS\基础模块\CommonMoudle\obj\Release\CommonMoudle.csprojResolveAssemblyReference.cache
+E:\JCJ\WMS\代码\WMS\基础模块\CommonMoudle\obj\Release\CommonMoudle.dll
+E:\JCJ\WMS\代码\WMS\基础模块\CommonMoudle\bin\Release\CommonMoudle.dll
+E:\JCJ\WMS\代码\WMS\基础模块\CommonMoudle\bin\Release\CommonMoudle.pdb
+E:\JCJ\WMS\代码\WMS\基础模块\CommonMoudle\bin\Release\WMS_Database.dll
+E:\JCJ\WMS\代码\WMS\基础模块\CommonMoudle\bin\Release\WMS_Interface.dll
+E:\JCJ\WMS\代码\WMS\基础模块\CommonMoudle\bin\Release\WMS_Database.pdb
+E:\JCJ\WMS\代码\WMS\基础模块\CommonMoudle\bin\Release\WMS_Interface.pdb
+E:\JCJ\WMS\代码\WMS\基础模块\CommonMoudle\obj\Release\CommonMoudle.pdb
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\基础模块\CommonMoudle\bin\Release\WMS_Database.dll
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\基础模块\CommonMoudle\bin\Release\WMS_Interface.dll
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\基础模块\CommonMoudle\bin\Release\WMS_Database.pdb
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\基础模块\CommonMoudle\bin\Release\WMS_Interface.pdb

@@ -41,4 +41,12 @@ namespace WMS_Interface
         public DateTime? InHouseDate { get; set; }
        
     }
+
+    public class MoveHouseProModel
+    {
+        public string HouseName { get; set; }
+        public string CellName { get; set; }
+        public EnumCellPos CellPos { get; set; }
+        public string CellChildID { get; set; }
+    }
 }

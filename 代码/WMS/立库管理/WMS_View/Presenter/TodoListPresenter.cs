@@ -65,6 +65,7 @@ namespace WMS_Kernel
                 ViewDataManager.TODOLISTDATA.PlanData.Add(planData);
             }
         }
+
         public void QueryPlanList(string planCode)
         {
             List<View_PlanListModel> planList = bllViewPlanList.GetModelByPlanCode(planCode);
@@ -80,7 +81,7 @@ namespace WMS_Kernel
                 planDetailData.计划数量 = plan.Plan_List_Quantity.ToString();
                 planDetailData.计量单位 = plan.Goods_Unit;
                 planDetailData.批次号 = plan.Goods_Batch;
-                planDetailData.生产日期 = (DateTime)plan.Goods_ProduceDate;
+                //planDetailData.生产日期 = (DateTime)plan.Goods_ProduceDate;
                 planDetailData.完成数量 = plan.Plan_List_Finished_Quantity.ToString();
                 planDetailData.物料编码 = plan.Goods_Code;
                 planDetailData.物料名称 = plan.Goods_Name;
@@ -88,6 +89,26 @@ namespace WMS_Kernel
                 ViewDataManager.TODOLISTDATA.PlanDetailData.Add(planDetailData);
 
             }
+        }
+        public void DeletePlanList(string planCode)
+        {
+
+            if (this.View.AskMessage("询问", "您确定要删除此计划么？") != 0)
+            {
+                return;
+            }
+            PlanMainModel planModel = bllPlan.GetModelByPlanCode(planCode);
+            if (planModel == null)
+            {
+                return;
+            }
+            if (planModel.Plan_Status != EnumPlanStatus.待执行.ToString())
+            {
+                this.View.ShowMessage("提示", "只有待执行的计划可以删除！");
+                return;
+            }
+            bllPlan.Delete(planModel.Plan_ID);
+            QueryPlan(this.querySDate, this.queryEDate, this.queryPlanType, this.queryPlanCode);
         }
         private void InitPlanTypeList()
         {

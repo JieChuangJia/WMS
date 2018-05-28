@@ -28,17 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PalletManaView));
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition6 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition7 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition8 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition9 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition10 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition6 = new DevExpress.XtraLayout.RowDefinition();
-            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition4 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition5 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
+            this.imageCollection1 = new DevExpress.Utils.ImageCollection();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -74,6 +73,7 @@
             this.cbe_PalletPos = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cbe_HouseList = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.sb_CancelPallet = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.de_CreateTime = new DevExpress.XtraEditors.DateEdit();
             this.sb_DeleteGoods = new DevExpress.XtraEditors.SimpleButton();
@@ -222,23 +222,23 @@
             this.layoutControlGroup8.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.layoutControlGroup8.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup8.Name = "layoutControlGroup8";
-            columnDefinition6.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition6.Width = 60D;
-            columnDefinition7.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition7.Width = 60D;
-            columnDefinition8.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition8.Width = 60D;
-            columnDefinition9.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition9.Width = 100D;
+            columnDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition1.Width = 60D;
+            columnDefinition2.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition2.Width = 60D;
+            columnDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition3.Width = 60D;
+            columnDefinition4.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition4.Width = 100D;
             this.layoutControlGroup8.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition6,
-            columnDefinition7,
-            columnDefinition8,
-            columnDefinition9});
-            rowDefinition4.Height = 100D;
-            rowDefinition4.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition1,
+            columnDefinition2,
+            columnDefinition3,
+            columnDefinition4});
+            rowDefinition1.Height = 100D;
+            rowDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
             this.layoutControlGroup8.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition4});
+            rowDefinition1});
             this.layoutControlGroup8.Size = new System.Drawing.Size(1139, 30);
             this.layoutControlGroup8.TextVisible = false;
             // 
@@ -275,17 +275,17 @@
             this.layoutControlGroup6.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.layoutControlGroup6.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup6.Name = "layoutControlGroup6";
-            columnDefinition10.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition10.Width = 100D;
+            columnDefinition5.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition5.Width = 100D;
             this.layoutControlGroup6.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition10});
-            rowDefinition5.Height = 100D;
-            rowDefinition5.SizeType = System.Windows.Forms.SizeType.Percent;
-            rowDefinition6.Height = 30D;
-            rowDefinition6.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition5});
+            rowDefinition2.Height = 100D;
+            rowDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
+            rowDefinition3.Height = 30D;
+            rowDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute;
             this.layoutControlGroup6.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition5,
-            rowDefinition6});
+            rowDefinition2,
+            rowDefinition3});
             this.layoutControlGroup6.Size = new System.Drawing.Size(1143, 152);
             this.layoutControlGroup6.TextVisible = false;
             // 
@@ -328,7 +328,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1171, 488);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1173, 489);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // gc_GoodsList
@@ -337,7 +337,7 @@
             this.gc_GoodsList.Location = new System.Drawing.Point(3, 272);
             this.gc_GoodsList.MainView = this.gv_GoodsList;
             this.gc_GoodsList.Name = "gc_GoodsList";
-            this.gc_GoodsList.Size = new System.Drawing.Size(1165, 143);
+            this.gc_GoodsList.Size = new System.Drawing.Size(1167, 143);
             this.gc_GoodsList.TabIndex = 7;
             this.gc_GoodsList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_GoodsList});
@@ -361,7 +361,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1165, 143);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1167, 143);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // gc_PalletGoodsInfor
@@ -369,10 +369,10 @@
             this.gc_PalletGoodsInfor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gc_PalletGoodsInfor.Location = new System.Drawing.Point(585, 3);
+            this.gc_PalletGoodsInfor.Location = new System.Drawing.Point(586, 3);
             this.gc_PalletGoodsInfor.MainView = this.gv_PalletInfor;
             this.gc_PalletGoodsInfor.Name = "gc_PalletGoodsInfor";
-            this.gc_PalletGoodsInfor.Size = new System.Drawing.Size(577, 137);
+            this.gc_PalletGoodsInfor.Size = new System.Drawing.Size(578, 137);
             this.gc_PalletGoodsInfor.TabIndex = 2;
             this.gc_PalletGoodsInfor.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_PalletInfor});
@@ -391,7 +391,7 @@
             this.gc_PalletList.Location = new System.Drawing.Point(3, 3);
             this.gc_PalletList.MainView = this.gv_PalletList;
             this.gc_PalletList.Name = "gc_PalletList";
-            this.gc_PalletList.Size = new System.Drawing.Size(576, 137);
+            this.gc_PalletList.Size = new System.Drawing.Size(577, 137);
             this.gc_PalletList.TabIndex = 1;
             this.gc_PalletList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_PalletList});
@@ -413,7 +413,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1165, 54);
+            this.panelControl1.Size = new System.Drawing.Size(1167, 54);
             this.panelControl1.TabIndex = 1;
             // 
             // sb_QueryPallet
@@ -462,6 +462,7 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.sb_CancelPallet);
             this.panelControl2.Controls.Add(this.labelControl3);
             this.panelControl2.Controls.Add(this.de_CreateTime);
             this.panelControl2.Controls.Add(this.sb_DeleteGoods);
@@ -473,8 +474,18 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(3, 212);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1165, 54);
+            this.panelControl2.Size = new System.Drawing.Size(1167, 54);
             this.panelControl2.TabIndex = 2;
+            // 
+            // sb_CancelPallet
+            // 
+            this.sb_CancelPallet.Image = ((System.Drawing.Image)(resources.GetObject("sb_CancelPallet.Image")));
+            this.sb_CancelPallet.Location = new System.Drawing.Point(683, 18);
+            this.sb_CancelPallet.Name = "sb_CancelPallet";
+            this.sb_CancelPallet.Size = new System.Drawing.Size(91, 23);
+            this.sb_CancelPallet.TabIndex = 64;
+            this.sb_CancelPallet.Text = "取消配盘";
+            this.sb_CancelPallet.Click += new System.EventHandler(this.sb_CancelPallet_Click);
             // 
             // labelControl3
             // 
@@ -571,7 +582,7 @@
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl3.Location = new System.Drawing.Point(3, 421);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1165, 64);
+            this.panelControl3.Size = new System.Drawing.Size(1167, 65);
             this.panelControl3.TabIndex = 3;
             // 
             // sb_QueryGoodsInfor
@@ -603,7 +614,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1171, 488);
+            this.ClientSize = new System.Drawing.Size(1173, 489);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "PalletManaView";
             this.Text = "配盘管理";
@@ -694,5 +705,6 @@
         private DevExpress.XtraEditors.SimpleButton sb_AddGoods;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.DateEdit de_CreateTime;
+        private DevExpress.XtraEditors.SimpleButton sb_CancelPallet;
     }
 }

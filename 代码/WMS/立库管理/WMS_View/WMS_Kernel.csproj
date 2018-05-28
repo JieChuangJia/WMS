@@ -84,6 +84,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IView\IAddMaterialView.cs" />
     <Compile Include="IView\IInWareWithPlanView.cs" />
     <Compile Include="IView\IMaterailManaView.cs" />
     <Compile Include="IView\IPalletManageView.cs" />
@@ -92,9 +93,11 @@
     <Compile Include="IView\IPutawayView.cs" />
     <Compile Include="IView\IStockTakingUnshelveView.cs" />
     <Compile Include="IView\IStorageView.cs" />
+    <Compile Include="IView\ISysLog.cs" />
     <Compile Include="IView\ITaskListView.cs" />
     <Compile Include="IView\ITodoListView.cs" />
     <Compile Include="IView\IUnShelvePlanView.cs" />
+    <Compile Include="Presenter\AddMaterialPresenter.cs" />
     <Compile Include="Presenter\InWareWithPlanPresenter.cs" />
     <Compile Include="Presenter\MaterialManaPresenter.cs" />
     <Compile Include="Presenter\PalletManagePresenter.cs" />
@@ -103,6 +106,7 @@
     <Compile Include="Presenter\PutawayPresenter.cs" />
     <Compile Include="Presenter\StockTakingUnshelvePresenter.cs" />
     <Compile Include="Presenter\StorageViewPresenter.cs" />
+    <Compile Include="Presenter\SysLogPresenter.cs" />
     <Compile Include="Presenter\TaskListPresenter.cs" />
     <Compile Include="Presenter\TodoListPresenter.cs" />
     <Compile Include="Presenter\UnShelvePlanPresenter.cs" />
@@ -115,6 +119,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ImageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ModifyMaterialView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ModifyMaterialView.Designer.cs">
+      <DependentUpon>ModifyMaterialView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddMaterialView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddMaterialView.Designer.cs">
+      <DependentUpon>AddMaterialView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\GoodsDataManageView.cs">
       <SubType>Form</SubType>
@@ -139,6 +155,12 @@
     </Compile>
     <Compile Include="View\StockTakingUnshelveView.Designer.cs">
       <DependentUpon>StockTakingUnshelveView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SysLogView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SysLogView.Designer.cs">
+      <DependentUpon>SysLogView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\TodoListView.cs">
       <SubType>Form</SubType>
@@ -268,6 +290,12 @@
       <LastGenOutput>ImageResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="View\ModifyMaterialView.resx">
+      <DependentUpon>ModifyMaterialView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddMaterialView.resx">
+      <DependentUpon>AddMaterialView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\GoodsDataManageView.resx">
       <DependentUpon>GoodsDataManageView.cs</DependentUpon>
     </EmbeddedResource>
@@ -282,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\StockTakingUnshelveView.resx">
       <DependentUpon>StockTakingUnshelveView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SysLogView.resx">
+      <DependentUpon>SysLogView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TodoListView.resx">
       <DependentUpon>TodoListView.cs</DependentUpon>

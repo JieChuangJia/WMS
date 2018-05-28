@@ -15,7 +15,7 @@ using WMS_Kernel;
 using LicenceManager;
 using System.Configuration;
 using CommonMoudle;
-
+using WMS_Database;
 namespace Aoyou_WMS
 {
     public partial class MainFrame :ChildViewBase,IWMSFrame
@@ -65,6 +65,13 @@ namespace Aoyou_WMS
                     richTextBoxLog.Select(richTextBoxLog.Text.Length, 0);
                     richTextBoxLog.ScrollToCaret();
                 }
+                SysLogModel logModel = new SysLogModel();
+                logModel.SysLog_ID = Guid.NewGuid().ToString();
+                logModel.SysLog_Level = level;
+                logModel.SysLog_Content = content;
+                logModel.SysLog_Source=logSrc;
+                logModel.SysLog_Time = DateTime.Now;
+                this.mainPresenter.AddDBLog(logModel);
 
             }
         }

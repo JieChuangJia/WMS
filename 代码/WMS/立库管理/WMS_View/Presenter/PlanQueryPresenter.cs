@@ -71,7 +71,10 @@ namespace WMS_Kernel
                 planDetailData.计划数量 = plan.Plan_List_Quantity.ToString();
                 planDetailData.计量单位 = plan.Goods_Unit;
                 planDetailData.批次号 = plan.Goods_Batch;
-                planDetailData.生产日期 = (DateTime)plan.Goods_ProduceDate;
+                //if (plan.Goods_ProduceDate!=null)
+                //{
+                //    planDetailData.生产日期 = (DateTime)plan.Goods_ProduceDate;
+                //}
                 planDetailData.完成数量 = plan.Plan_List_Finished_Quantity.ToString();
                 planDetailData.物料编码 = plan.Goods_Code;
                 planDetailData.物料名称 = plan.Goods_Name;

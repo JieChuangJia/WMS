@@ -57,7 +57,6 @@
             this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem31 = new DevExpress.XtraLayout.LayoutControlItem();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.te_PalletCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.sb_TrayQuery = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
@@ -72,6 +71,7 @@
             this.cbe_StartStation = new DevExpress.XtraEditors.ComboBoxEdit();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.ce_PalletCode = new DevExpress.XtraEditors.ComboBoxEdit();
             this.gc_PalletInfor = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).BeginInit();
@@ -81,7 +81,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.te_PalletCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -94,6 +93,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ce_PalletCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_PalletInfor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
@@ -281,13 +281,6 @@
             this.simpleButton2.Size = new System.Drawing.Size(0, 22);
             this.simpleButton2.TabIndex = 6;
             // 
-            // te_PalletCode
-            // 
-            this.te_PalletCode.Location = new System.Drawing.Point(97, 36);
-            this.te_PalletCode.Name = "te_PalletCode";
-            this.te_PalletCode.Size = new System.Drawing.Size(171, 20);
-            this.te_PalletCode.TabIndex = 5;
-            // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(7, 39);
@@ -376,6 +369,7 @@
             this.ce_IsNullPallet.Properties.Caption = "是否空搬运容器";
             this.ce_IsNullPallet.Size = new System.Drawing.Size(116, 19);
             this.ce_IsNullPallet.TabIndex = 19;
+            this.ce_IsNullPallet.Visible = false;
             // 
             // cbe_TargetStation
             // 
@@ -423,8 +417,8 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.ce_PalletCode);
             this.groupControl2.Controls.Add(this.gc_PalletInfor);
-            this.groupControl2.Controls.Add(this.te_PalletCode);
             this.groupControl2.Controls.Add(this.sb_TrayQuery);
             this.groupControl2.Controls.Add(this.labelControl1);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -433,6 +427,15 @@
             this.groupControl2.Size = new System.Drawing.Size(1040, 413);
             this.groupControl2.TabIndex = 5;
             this.groupControl2.Text = "配盘信息查询";
+            // 
+            // ce_PalletCode
+            // 
+            this.ce_PalletCode.Location = new System.Drawing.Point(85, 38);
+            this.ce_PalletCode.Name = "ce_PalletCode";
+            this.ce_PalletCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ce_PalletCode.Size = new System.Drawing.Size(179, 20);
+            this.ce_PalletCode.TabIndex = 9;
             // 
             // gc_PalletInfor
             // 
@@ -469,7 +472,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.te_PalletCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -484,6 +486,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ce_PalletCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_PalletInfor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
@@ -512,7 +515,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
-        private DevExpress.XtraEditors.TextEdit te_PalletCode;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton sb_TrayQuery;
         private DevExpress.XtraEditors.PanelControl panelControl3;
@@ -529,5 +531,6 @@
         private DevExpress.XtraEditors.CheckEdit ce_CheckPos;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.ComboBoxEdit cbe_HouseName;
+        private DevExpress.XtraEditors.ComboBoxEdit ce_PalletCode;
     }
 }

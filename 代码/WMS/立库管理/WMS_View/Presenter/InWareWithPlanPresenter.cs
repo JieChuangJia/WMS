@@ -134,7 +134,7 @@ namespace WMS_Kernel
                WH_Station_LogicModel cell = bllStationLogic.GetStationByName( recCellName);
                if (cell == null)
                {
-                   this.View.ShowMessage("信息提示", "接口地点错误！");
+                   this.View.ShowMessage("信息提示", "配盘地点错误！");
                    return;
                }
                StockModel stockModel = bllStock.GetModelByTrayCode(trayCode);
@@ -251,7 +251,7 @@ namespace WMS_Kernel
            }
            foreach(WH_Station_LogicModel station in statinList)
            {
-               palletSta.Add(station.WH_Station_Logic_Type);
+               palletSta.Add(station.WH_Station_Logic_Name);
            }
            this.View.IniTargetPos(palletSta);
        }

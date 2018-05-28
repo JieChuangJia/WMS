@@ -43,3 +43,16 @@ F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\WMS_Service_Main\obj\Release
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.csproj.GenerateResource.Cache
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.exe
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.pdb
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.exe.licenses
+E:\JCJ\WMS\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.csprojResolveAssemblyReference.cache
+E:\JCJ\WMS\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.ImageSource.resources
+E:\JCJ\WMS\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.Properties.Resources.resources
+E:\JCJ\WMS\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.MainFrame.resources
+E:\JCJ\WMS\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.ServiceManageView.resources
+E:\JCJ\WMS\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.csproj.GenerateResource.Cache
+E:\JCJ\WMS\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.exe.licenses
+E:\JCJ\WMS\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.exe
+E:\JCJ\WMS\代码\WMS\程序输出\服务端输出\Release\WMS_Service_Main.exe.config
+E:\JCJ\WMS\代码\WMS\程序输出\服务端输出\Release\WMS_Service_Main.exe
+E:\JCJ\WMS\代码\WMS\程序输出\服务端输出\Release\WMS_Service_Main.pdb
+E:\JCJ\WMS\代码\WMS\应用\WMS_Service_Main\obj\Release\WMS_Service_Main.pdb

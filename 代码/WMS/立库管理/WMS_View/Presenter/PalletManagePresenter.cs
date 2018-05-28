@@ -68,12 +68,27 @@ namespace WMS_Kernel
         public void QueryPallet(string houseName,string palletPos)
         {
             List<View_StockListModel> stockList = bllViewStockList.GetModelList(houseName, palletPos);
+
+            //var p1 = stockList.Distinct(sl=>sl.Stpcl);  
+           
             ViewDataManager.PALLETMANAGEDATA.PalletList.Clear();
             if(stockList == null)
             {
                 return;
             }
-            foreach(View_StockListModel stock in stockList)
+
+            List<View_StockListModel> distinctPallet = new List<View_StockListModel>();//去除重复数据
+            foreach(View_StockListModel vsm in stockList)
+            {
+               var existPallet= distinctPallet.Where(s=>s.Stock_Tray_Barcode== vsm.Stock_Tray_Barcode);
+                if(existPallet==null||existPallet.Count()==0)
+                {
+                    distinctPallet.Add(vsm);
+                }
+            }
+
+
+            foreach (View_StockListModel stock in distinctPallet)
             {
                 PalletListData pallet = new PalletListData();
                 if(stock.Plan_List_ID =="-1")
@@ -177,7 +192,7 @@ namespace WMS_Kernel
                 WH_Station_LogicModel cell = bllStationLogic.GetStationByName(recCellName);
                 if (cell == null)
                 {
-                    this.View.ShowMessage("信息提示", "接口地点错误！");
+                    this.View.ShowMessage("信息提示", "配盘地点错误！");
                     return;
                 }
                 StockModel stockModel = bllStock.GetModelByTrayCode(palletCode);
@@ -231,6 +246,24 @@ namespace WMS_Kernel
                 this.View.ShowMessage("信息提示", "配盘失败！" + ex.Message);
             }
 
+        }
+
+        public void CancelPallet(string palletCode)
+        {
+            try
+            {
+                StockModel stock = bllStock.GetModelByTrayCode(palletCode);
+                if(stock == null)
+                {
+                    return;
+                }
+                bllStock.Delete(stock.Stock_ID);
+                this.View.ShowMessage("信息提示", "取消配盘成功！");
+            }
+            catch(Exception ex)
+            {
+                this.View.ShowMessage("信息提示", "取消配盘失败！" + ex.Message);
+            }
         }
         private bool IsExistPalletGoods(string goodsCode)
         {

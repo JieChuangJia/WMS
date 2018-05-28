@@ -1455,7 +1455,11 @@ namespace WMS_Database
 
         #endregion  Method
         #region  MethodEx
-
+         public DataSet GetPalletCodeList()
+        {
+            string sqlStr = "SELECT  distinct Stock_List_Box_Barcode FROM [WMSDB2].[dbo].[View_StockList] where Cell_Type='配盘工位' ";
+            return DbHelperSQL.Query(sqlStr);
+        }
         #endregion  MethodEx
     }
 }

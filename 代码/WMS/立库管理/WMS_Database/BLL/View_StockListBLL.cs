@@ -164,7 +164,7 @@ namespace WMS_Database
         }
         public List<View_StockListModel> GetModelListByGoodsCode(string goodsCode,string cellType)
         {
-            string sqlStr = "Goods_Code = '" + goodsCode + "' and Cell_Type ='" + cellType+"'";
+            string sqlStr = "Goods_Code = '" + goodsCode + "' and Cell_Type ='" + cellType + "' order by Stock_List_Entry_Time asc";
             return GetModelList(sqlStr);
 
         }
@@ -177,6 +177,26 @@ namespace WMS_Database
         {
             string sqlStr = "Stock_Tray_Barcode = '" + palletCode + "' and Cell_Name='" + cellName + "' and Cell_Type='配盘工位'";
             return GetModelList(sqlStr);
+        }
+
+        public List<string> GetPalletCodeList()
+        {
+            DataSet ds = dal.GetPalletCodeList();
+            List<string> palletList = new List<string>();
+            if(ds!= null && ds.Tables.Count>0)
+            {
+              for(int i=0;i<ds.Tables[0].Rows.Count;i++)
+              {
+                  
+                string pallet=  ds.Tables[0].Rows[i][0].ToString();
+                palletList.Add(pallet);
+              }
+              return palletList;
+            }
+            else
+            {
+                return null;
+            }
         }
         #endregion  ExtensionMethod
     }
