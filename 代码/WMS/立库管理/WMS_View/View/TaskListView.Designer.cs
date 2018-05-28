@@ -192,15 +192,17 @@
             // 
             // sb_ChooseConfirm
             // 
-            this.sb_ChooseConfirm.Location = new System.Drawing.Point(229, 28);
+            this.sb_ChooseConfirm.Location = new System.Drawing.Point(249, 26);
             this.sb_ChooseConfirm.Name = "sb_ChooseConfirm";
             this.sb_ChooseConfirm.Size = new System.Drawing.Size(92, 22);
             this.sb_ChooseConfirm.TabIndex = 8;
             this.sb_ChooseConfirm.Text = "拣选完成确认";
+            this.sb_ChooseConfirm.Visible = false;
             // 
             // sb_TaskComplete
             // 
-            this.sb_TaskComplete.Location = new System.Drawing.Point(124, 28);
+            this.sb_TaskComplete.Image = ((System.Drawing.Image)(resources.GetObject("sb_TaskComplete.Image")));
+            this.sb_TaskComplete.Location = new System.Drawing.Point(42, 26);
             this.sb_TaskComplete.Name = "sb_TaskComplete";
             this.sb_TaskComplete.Size = new System.Drawing.Size(78, 22);
             this.sb_TaskComplete.TabIndex = 7;
@@ -209,11 +211,13 @@
             // 
             // sBtn_Cancel
             // 
-            this.sBtn_Cancel.Location = new System.Drawing.Point(41, 28);
+            this.sBtn_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("sBtn_Cancel.Image")));
+            this.sBtn_Cancel.Location = new System.Drawing.Point(146, 26);
             this.sBtn_Cancel.Name = "sBtn_Cancel";
-            this.sBtn_Cancel.Size = new System.Drawing.Size(56, 22);
+            this.sBtn_Cancel.Size = new System.Drawing.Size(77, 22);
             this.sBtn_Cancel.TabIndex = 6;
             this.sBtn_Cancel.Text = "取消";
+            this.sBtn_Cancel.Click += new System.EventHandler(this.sBtn_Cancel_Click);
             // 
             // TaskListView
             // 

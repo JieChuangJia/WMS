@@ -14,6 +14,8 @@ namespace WMS_Kernel
         View_Plan_ManageBLL bllViewPlanManage = new View_Plan_ManageBLL();
         View_StockListBLL bllViewStockList = new View_StockListBLL();
         View_ManageBLL bllViewManage = new View_ManageBLL();
+        string currtaskType = "";
+        string currtaskStatus = "";
         public TaskListPresenter(ITaskListView view,IWMSFrame wmsFrame):base(view,wmsFrame)
         { }
 
@@ -24,6 +26,8 @@ namespace WMS_Kernel
 
         public void QueryTask(string taskType, string taskStatus)
         {
+            currtaskType = taskType;
+            currtaskStatus = taskStatus;
             List<View_ManageModel> taskList = bllViewManage.GetModelList(taskType, taskStatus);
             ViewDataManager.TASKLISTDATA.TaskListData.Clear();
             if (taskList == null)
@@ -79,6 +83,25 @@ namespace WMS_Kernel
             }
             task.Mange_Status = EnumManageTaskStatus.已完成.ToString();
             bllManage.Update(task);
+        }
+
+        public void CancelTask(string palletCode)
+        {
+            ManageModel manage = bllManage.GetModelByPalletCode(palletCode);
+            if(manage == null)
+            {
+                this.View.ShowMessage("信息提示","获取管理任务失败！");
+                return;
+            }
+            if(manage.Mange_Status != EnumManageTaskStatus.待执行.ToString())
+            {
+                this.View.ShowMessage("信息提示", "只有待执行的任务可以取消！");
+                return;
+            }
+            bllManage.Delete(manage.Mange_ID);
+            this.View.ShowMessage("信息提示", "取消任务成功！");
+            this.WmsFrame.WriteLog("任务列表", "", "提示", "手动取消任务：托盘[" + palletCode + "]" + ",任务类型：" + manage.Mange_Type_ID);
+            QueryTask(this.currtaskType, this.currtaskStatus);
         }
         public void QueryTaskDetail(string palletCode)
         {
