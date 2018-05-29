@@ -16,6 +16,5 @@ F:\NpWork\others\遨优\WMS\代码\WMS\程序输出\服务端输出\Release\Aoyo
 F:\NpWork\others\遨优\WMS\代码\WMS\应用\Aoyou_BusinessDB\obj\Release\Aoyou_BusinessDB.csprojResolveAssemblyReference.cache
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\程序输出\服务端输出\Release\Aoyou_BusinessDB.dll
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\程序输出\服务端输出\Release\Aoyou_BusinessDB.pdb
-F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\Aoyou_BusinessDB\obj\Release\Aoyou_BusinessDB.csprojResolveAssemblyReference.cache
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\Aoyou_BusinessDB\obj\Release\Aoyou_BusinessDB.dll
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\Aoyou_BusinessDB\obj\Release\Aoyou_BusinessDB.pdb

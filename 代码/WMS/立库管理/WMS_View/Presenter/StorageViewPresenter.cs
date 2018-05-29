@@ -357,11 +357,12 @@ namespace WMS_Kernel
 
         public bool MoveHouse(string startCellChildID,string endCellChildID)
         {
-            string restr = "";
+           string restr = "";
            bool status = TaskHandleMethod.CreateMoveManageTask(startCellChildID, endCellChildID, ref restr);
            if (status == true)
            {
                this.WmsFrame.WriteLog("库存看板", "", "提示", "移库任务生成功！" + restr);
+               this.View.RefreshData();
                return true;
            }
            else
@@ -369,6 +370,7 @@ namespace WMS_Kernel
                this.WmsFrame.WriteLog("库存看板", "", "错误", "移库任务生失败！" + restr);
                return false;
            }
+         
             
         }
         //public bool SetSingleLayerGsArea(string logicAreaName, int rowth, int layer)

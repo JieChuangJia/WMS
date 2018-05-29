@@ -362,6 +362,7 @@ namespace CommonMoudle
             if(status == true)
             {
                 restr += "生成上架任务成功：起点：" + houseName + targetCell.Cell_Name + targetCell.Cell_Chlid_Position;
+                UpdateCellStatus(targetCell.Cell_Chlid_ID, EnumCellStatus.空闲, EnumGSTaskStatus.锁定);
                 return true;
             }
             else
@@ -432,6 +433,8 @@ namespace CommonMoudle
             if (status == true)
             {
                 restr += "生成下架任务成功：起点：" + startCell.WareHouse_Name + startCell.Cell_Name + startCell.Cell_Chlid_Position;
+                EnumCellStatus cellStatus = (EnumCellStatus)Enum.Parse(typeof(EnumCellStatus), startCell.Cell_Child_Status);
+                UpdateCellStatus(startCell.Cell_Chlid_ID, cellStatus, EnumGSTaskStatus.锁定);
                 return true;
             }
             else
@@ -488,6 +491,10 @@ namespace CommonMoudle
             {
                 restr += "生成移库任务成功：起点：" + startCell.WareHouse_Name + startCell.Cell_Name + startCell.Cell_Chlid_Position
                     + "终点：" + endCell.WareHouse_Name + endCell.Cell_Name + endCell.Cell_Chlid_Position ;
+
+                EnumCellStatus cellStatus = (EnumCellStatus)Enum.Parse(typeof(EnumCellStatus), startCell.Cell_Child_Status);
+                UpdateCellStatus(startCell.Cell_Chlid_ID, cellStatus, EnumGSTaskStatus.锁定);
+                UpdateCellStatus(endCell.Cell_Chlid_ID, EnumCellStatus.空闲, EnumGSTaskStatus.锁定);
                 return true;
             }
             else
