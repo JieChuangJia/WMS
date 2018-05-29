@@ -172,12 +172,12 @@ namespace WMS_Service_Main
                 TaskHandleMethod.CheckPlanCompleteStatus(manageTask.Plan_ID, ref restr);//检查计划是否完成，如果完成自动更新计划通过计划数量和完成数量相等判断
                 TaskHandleMethod.DeleteManageTask(manageTask.Mange_ID);//删除管理任务               
                 TaskHandleMethod.AddStockRecord(manageTask.Mange_ID);
-                StatusManager.wmsFrame.WriteLog("任务状态管理", "", "提示", restr);
+                StatusManager.wmsFrame.WriteLog("服务管理", "", "提示", restr);
                 return true;
             }
             catch (Exception ex)
             {
-                StatusManager.wmsFrame.WriteLog("TaskComplete", "", "错误", "任务完成处理失败！" + ex.Message);
+                StatusManager.wmsFrame.WriteLog("服务管理", "", "错误", "任务完成处理失败！" + ex.Message);
                 return false;
             }
 
