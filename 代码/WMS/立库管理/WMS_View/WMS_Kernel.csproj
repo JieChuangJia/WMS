@@ -289,6 +289,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ImageResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="View\ModifyMaterialView.resx">
       <DependentUpon>ModifyMaterialView.cs</DependentUpon>
     </EmbeddedResource>
