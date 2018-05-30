@@ -109,9 +109,9 @@ namespace WMS_Kernel
         public void SetGsStatus(string gsID, bool status)
         {
             bool setstatus = bllChildCell.UpdateGSEnabledStatusByID(gsID, status);
-            if (setstatus == true)
+            if (status == true)
             {
-                if(status ==true)
+                if (setstatus == true)
                 {
                     this.WmsFrame.WriteLog("库存看板", "", "提示", "启用成功！");
 
@@ -124,7 +124,7 @@ namespace WMS_Kernel
             }
             else
             {
-                if (status == true)
+                if (setstatus == true)
                 {
                     this.WmsFrame.WriteLog("库存看板", "", "提示", "禁用成功！");
 
