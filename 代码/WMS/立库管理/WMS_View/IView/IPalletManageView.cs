@@ -11,5 +11,7 @@ namespace WMS_Kernel
     {
         void IniHouseName(List<WH_WareHouseModel> houseList);
         void IniPalletPos(List<View_CellModel> stationList);
+
+        void IniPlanList(List<string> planList);
     }
 }

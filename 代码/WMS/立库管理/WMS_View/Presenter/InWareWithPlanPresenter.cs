@@ -192,7 +192,7 @@ namespace WMS_Kernel
 
                      bllStockList.Add(stockList);
 
-                     if (UpdatePlanNum(planListID, goods.Goods_ID,trayGoodsModel.数量, ref restr) == false)
+                     if (UpdatePlanNum(trayGoodsModel.计划列表编号, goods.Goods_ID, trayGoodsModel.数量, ref restr) == false)
                      {
                          this.WmsFrame.WriteLog("按计划配盘", "", "提示", restr);
                      }

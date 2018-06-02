@@ -13,6 +13,7 @@ namespace WMS_Kernel
         View_CellBLL bllViewCell = new View_CellBLL();
         View_StockListBLL bllViewStockList = new View_StockListBLL();
         Plan_ListBll bllPlanList = new Plan_ListBll();
+        PlanBll bllPlan = new PlanBll();
         View_PlanListBLL bllViewPlanList = new View_PlanListBLL();
          View_GoodsBLL bllView_Goods = new View_GoodsBLL();
          View_GoodsBLL bllViewGoods = new View_GoodsBLL();
@@ -26,11 +27,26 @@ namespace WMS_Kernel
         {
             IniHouseList();
             IniPalletPos();
+            IniPlanList();
         }
         private void IniHouseList()
         {
             List<WH_WareHouseModel> houseList = bllWareHouse.GetModelList("");
             this.View.IniHouseName(houseList);
+        }
+
+        private void IniPlanList()
+        {
+            List<string> planList = new List<string>();
+            List<PlanMainModel> planModelList = bllPlan.GetRunPlanList();
+            if (planModelList != null)
+            {
+                foreach (PlanMainModel plan in planModelList)
+                 {
+                     planList.Add(plan.Plan_Code);
+                 }
+            }
+            this.View.IniPlanList(planList);
         }
         private void IniPalletPos()
         {
@@ -70,12 +86,12 @@ namespace WMS_Kernel
         /// </summary>
         /// <param name="houseName">库房名称</param>
         /// <param name="palletPos">配盘工位</param>
-        public void QueryPallet(string houseName,string palletPos)
+        public void QueryPallet(string houseName,string palletPos,string planCode)
         {
-            List<View_StockListModel> stockList = bllViewStockList.GetModelList(houseName, palletPos);
+            List<View_StockListModel> stockList = bllViewStockList.GetModelList(houseName, palletPos,planCode);
 
             //var p1 = stockList.Distinct(sl=>sl.Stpcl);  
-           
+            
             ViewDataManager.PALLETMANAGEDATA.PalletList.Clear();
             if(stockList == null)
             {
@@ -95,6 +111,12 @@ namespace WMS_Kernel
 
             foreach (View_StockListModel stock in distinctPallet)
             {
+                View_PlanListModel planList = bllViewPlanList.GetModelByPlanListID(stock.Plan_List_ID);
+             if(planList == null)
+             {
+                 return;
+             }
+
                 PalletListData pallet = new PalletListData();
                 if(stock.Plan_List_ID =="-1")
                 {
@@ -103,7 +125,7 @@ namespace WMS_Kernel
                 else
                 {
                     pallet.按计划配盘 = "是";
-                    View_PlanListModel planList = bllViewPlanList.GetModelByPlanListID(stock.Plan_List_ID);
+                    
                     pallet.计划单号 = planList.Plan_Code;
                 }
                 pallet.配盘时间 = stock.Stock_List_Entry_Time.ToString();

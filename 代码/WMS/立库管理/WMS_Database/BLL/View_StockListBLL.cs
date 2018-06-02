@@ -168,9 +168,14 @@ namespace WMS_Database
             return GetModelList(sqlStr);
 
         }
-        public List<View_StockListModel> GetModelList(string houseName,string palletPos)
+        public List<View_StockListModel> GetModelList(string houseName,string palletPos,string planCode)
         {
-            string sqlStr = "WareHouse_Name = '" + houseName + "' and Cell_Name='" + palletPos+"'";
+            string sqlStr = "WareHouse_Name = '" + houseName + "' and Cell_Name='" + palletPos + "'";
+            if(planCode != "所有")
+            {
+                sqlStr += " and Plan_List_ID in (select Plan_List_ID from View_PlanList where Plan_Code ='" + planCode + "')";
+            }
+            
             return GetModelList(sqlStr);
         }
         public List<View_StockListModel> GetPalletStock(string palletCode, string cellName)

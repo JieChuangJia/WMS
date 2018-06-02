@@ -28,7 +28,7 @@ namespace WMS_Kernel
         { }
         public void Init()
         {
-            IniPutawayList();
+            //IniPutawayList();
             IniHouseList();
         }
         public void QueryPalletInfor(string palletNum)
@@ -78,9 +78,25 @@ namespace WMS_Kernel
             List<WH_WareHouseModel> houseList = bllWareHouse.GetModelList("");
             this.View.IniHouseName(houseList);
         }
-        private void IniPutawayList()
+        private void IniPutawayList(string houseName)
         {
-            List<WH_Station_LogicModel> cellList = bllStationLogic.GetStationListByType(EnumCellType.上架工位.ToString());
+            WH_WareHouseModel wareHouse = bllWareHouse.GetModelByName(houseName);
+            if (wareHouse == null)
+            {
+                this.View.ShowMessage("信息提示", "库房不存在！");
+                return;
+            }
+            string houseID = "";
+            if(houseName=="A1库房"||houseName=="A2库房"||houseName=="A3库房"||houseName=="A4库房"||houseName=="A5库房")
+            {
+                houseID = "1-5库房";
+            }
+            else
+            {
+                houseID = wareHouse.WareHouse_ID;
+            }
+
+            List<WH_Station_LogicModel> cellList = bllStationLogic.GetModelListByHouseIDAndCellType(houseID, EnumCellType.上架工位.ToString());
             if(cellList == null)
             {
                 return;
@@ -94,6 +110,7 @@ namespace WMS_Kernel
         }
         public void IniRows(string houseName)
         {
+            IniPutawayList( houseName);
             WH_WareHouseModel wareHouse = bllWareHouse.GetModelByName(houseName);
             if(wareHouse== null)
             {

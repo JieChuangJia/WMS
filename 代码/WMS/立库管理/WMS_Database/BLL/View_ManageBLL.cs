@@ -144,7 +144,7 @@ namespace WMS_Database
             {
                 sqlstr += "  and Manage_Type_Name = '" + taskType + "'";
             }
-
+            sqlstr += "   order by Mange_CreateTime desc";
             return GetModelList(sqlstr);
         }
 

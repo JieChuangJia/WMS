@@ -140,6 +140,7 @@ namespace WMS_Database
         #region  ExtensionMethod
         public List<WH_Station_LogicModel> GetModelListByHouseIDAndCellType(string houseID,string stationType)
         {
+            
             string sqlStr = "WareHouse_ID ='" + houseID + "' and WH_Station_Logic_Type='" + stationType +"'";
             List<WH_Station_LogicModel> cellList= GetModelList(sqlStr);
             return cellList;

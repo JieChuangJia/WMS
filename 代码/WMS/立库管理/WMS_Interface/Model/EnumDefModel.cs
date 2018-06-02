@@ -86,6 +86,12 @@ namespace WMS_Interface
        执行中,
        已完成
    }
+
+    public enum EnumBreakDowmStatus
+    {
+        待分解,
+        已处理
+    }
     public enum EnumManageTaskType
     {
         上架,

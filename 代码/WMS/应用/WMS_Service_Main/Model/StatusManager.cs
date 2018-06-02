@@ -46,12 +46,12 @@ namespace WMS_Service_Main
 
             foreach (View_ManageModel task in manageList)
             {
-                if (task.Mange_Status == EnumManageTaskStatus.执行中.ToString())
-                {
-                    taskContext.SetStatus(task, new TaskRunning());
-                    taskContext.ChangeStatus();
-                }
-                else if (task.Mange_Status == EnumManageTaskStatus.已完成.ToString())
+                //if (task.Mange_Status == EnumManageTaskStatus.执行中.ToString())
+                //{
+                //    taskContext.SetStatus(task, new TaskRunning());
+                //    taskContext.ChangeStatus();
+                //}
+                 if (task.Mange_Status == EnumManageTaskStatus.已完成.ToString()&&task.Manage_BreakDown_Status ==EnumBreakDowmStatus.待分解.ToString())
                 {
                     taskContext.SetStatus(task, new TaskComplete());
                     taskContext.ChangeStatus();
@@ -170,6 +170,8 @@ namespace WMS_Service_Main
                     return false;
                 }
                 TaskHandleMethod.CheckPlanCompleteStatus(manageTask.Plan_ID, ref restr);//检查计划是否完成，如果完成自动更新计划通过计划数量和完成数量相等判断
+                TaskHandleMethod.UpdateManageCompleteTime(manageTask.Plan_ID, DateTime.Now);
+                TaskHandleMethod.UpdateManageHandleStatus(manageTask.Mange_ID, EnumBreakDowmStatus.已处理);
                 //TaskHandleMethod.DeleteManageTask(manageTask.Mange_ID);//删除管理任务,添加数据时自动删除前30天的数据            
                 TaskHandleMethod.AddStockRecord(manageTask.Mange_ID);
                 StatusManager.wmsFrame.WriteLog("服务管理", "", "提示", restr);

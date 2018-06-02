@@ -57,6 +57,24 @@ namespace WMS_Kernel
                 this.cbe_HouseList.SelectedIndex = 0;
             }
         }
+
+        public void IniPlanList(List<string> planList)
+        {
+            this.cbe_PlanList.Properties.Items.Clear();
+            this.cbe_PlanList.Properties.Items.Add("所有");
+            if (planList == null)
+            {
+                return;
+            }
+            foreach (string plan in planList)
+            {
+                this.cbe_PlanList.Properties.Items.Add(plan);
+            }
+            if (this.cbe_PlanList.Properties.Items.Count > 0)
+            {
+                this.cbe_PlanList.SelectedIndex = 0;
+            }
+        }
         public void IniPalletPos(List<View_CellModel> stationList)
         {
             this.cbe_PalletPos.Properties.Items.Clear();
@@ -95,7 +113,7 @@ namespace WMS_Kernel
 
         private void sb_QueryPallet_Click(object sender, EventArgs e)
         {
-            this.presenter.QueryPallet(this.cbe_HouseList.Text.Trim(), this.cbe_PalletPos.Text.Trim());
+            this.presenter.QueryPallet(this.cbe_HouseList.Text.Trim(), this.cbe_PalletPos.Text.Trim(),this.cbe_PlanList.Text.Trim());
         }
 
         private void sb_QueryGoodsInfor_Click(object sender, EventArgs e)
@@ -140,7 +158,12 @@ namespace WMS_Kernel
         {
             if (this.gv_PalletInfor.GetSelectedRows() == null || this.gv_PalletInfor.GetSelectedRows().Count() == 0)
             {
-                this.ShowMessage("信息提示", "没有物料信息可以删除！");
+                this.ShowMessage("信息提示", "没有物料信息可以移除！");
+                return;
+            }
+            int status = this.AskMessage("信息提示", "您确定要移除右侧【配盘物料信息】选中物料么？");
+            if (status != 0)
+            {
                 return;
             }
             int currRow = this.gv_PalletInfor.GetSelectedRows()[0];

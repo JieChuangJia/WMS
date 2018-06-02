@@ -294,7 +294,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1175, 490);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1177, 491);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl3
@@ -308,7 +308,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(3, 413);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(1169, 74);
+            this.groupControl3.Size = new System.Drawing.Size(1171, 75);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "操作";
             // 
@@ -373,11 +373,12 @@
             // 
             // ce_TargetStation
             // 
-            this.ce_TargetStation.EditValue = "请选择";
+            this.ce_TargetStation.EditValue = "";
             this.ce_TargetStation.Location = new System.Drawing.Point(77, 39);
             this.ce_TargetStation.Name = "ce_TargetStation";
             this.ce_TargetStation.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ce_TargetStation.Properties.ReadOnly = true;
             this.ce_TargetStation.Size = new System.Drawing.Size(123, 20);
             this.ce_TargetStation.TabIndex = 7;
             // 
@@ -387,7 +388,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(3, 208);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1169, 199);
+            this.groupControl2.Size = new System.Drawing.Size(1171, 199);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "库存清单";
             // 
@@ -397,7 +398,7 @@
             this.gc_Stock.Location = new System.Drawing.Point(2, 22);
             this.gc_Stock.MainView = this.gv_Stock;
             this.gc_Stock.Name = "gc_Stock";
-            this.gc_Stock.Size = new System.Drawing.Size(1165, 175);
+            this.gc_Stock.Size = new System.Drawing.Size(1167, 175);
             this.gc_Stock.TabIndex = 7;
             this.gc_Stock.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Stock});
@@ -420,7 +421,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1169, 199);
+            this.groupControl1.Size = new System.Drawing.Size(1171, 199);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "计划查询";
             // 
@@ -442,7 +443,7 @@
             this.gc_PlanList.Location = new System.Drawing.Point(4, 59);
             this.gc_PlanList.MainView = this.gv_PlanList;
             this.gc_PlanList.Name = "gc_PlanList";
-            this.gc_PlanList.Size = new System.Drawing.Size(1159, 135);
+            this.gc_PlanList.Size = new System.Drawing.Size(1161, 135);
             this.gc_PlanList.TabIndex = 13;
             this.gc_PlanList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_PlanList});
@@ -479,7 +480,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1175, 490);
+            this.ClientSize = new System.Drawing.Size(1177, 491);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UnShelvePlanView";
             this.Text = "按计划下架";

@@ -197,6 +197,16 @@ namespace WMS_Kernel
             ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData.Clear();
         }
 
+        private void cbe_PlanID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.cbe_PlanID.Text.Trim() == "")
+            {
+               // this.ShowMessage("信息提示", "请选择计划编号！");
+                return;
+            }
+            this.presenter.QueryPlan(this.cbe_PlanID.Text.Trim());
+        }
+
         //private void cbe_HouseName_SelectedIndexChanged(object sender, EventArgs e)
         //{
         //    this.presenter.IniTargetPos(this.cbe_HouseName.Text.Trim());

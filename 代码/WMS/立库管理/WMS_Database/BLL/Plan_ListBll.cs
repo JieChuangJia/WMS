@@ -142,6 +142,8 @@ namespace WMS_Database
             string sqlStr = "Plan_ID ='" + planID + "'";
             return GetModelList(sqlStr);
         }
+
+     
         public Plan_ListModel GetModelByPlanIDAndGoodsID(string planID,string goodsID)
         {
             string sqlStr = "Plan_ID ='" + planID + "' and Goods_ID='" + goodsID+"'";

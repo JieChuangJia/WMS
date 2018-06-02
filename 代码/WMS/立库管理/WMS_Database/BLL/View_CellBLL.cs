@@ -295,8 +295,12 @@ namespace WMS_Database
                     if (cell.Shelf_Type == "双深")
                     {
                         View_CellModel backCell = GetCell(cell.WareHouse_ID, cell.Cell_Name, "后");
-
-                        if (backCell != null && backCell.Cell_Child_Run_Status == "锁定")//双深工位后面的工位处于锁定状态，不允许操作前面的工位
+                        if (backCell != null && backCell.Cell_Child_Status == "空闲" && backCell.Cell_Child_Run_Status == "完成")
+                        {
+                            applyCell = backCell;
+                            break;
+                        }
+                        else  if (backCell != null && backCell.Cell_Child_Run_Status == "锁定")//双深工位后面的工位处于锁定状态，不允许操作前面的工位
                         {
                             continue;
                         }

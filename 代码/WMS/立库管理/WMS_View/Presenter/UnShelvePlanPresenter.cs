@@ -27,19 +27,46 @@ namespace WMS_Kernel
         View_ManageListBLL bllViewManageList = new View_ManageListBLL();
         View_PlanMainBLL bllViewPlanMain = new View_PlanMainBLL();
         WH_Station_LogicBLL bllStationLogic = new WH_Station_LogicBLL();
+        WH_WareHouseBll bllWareHouse = new WH_WareHouseBll();
         
         public UnShelvePlanPresenter(IUnShelvePlanView view,IWMSFrame wmsFrame):base(view,wmsFrame)
         { }
         public override void Init()
         {
             IniPlanList();
-            GetUnShelveStation();
+            //GetUnShelveStation();
         }
        
         public void IniPlanList()
         {
             List<View_PlanMainModel> planList = bllViewPlanMain.GetPlanListByStatus("2", EnumPlanStatus.执行中.ToString());//下架
             this.View.IniPlanList(planList);
+        }
+        public void IniUnShelveStationList (string houseName)
+        {
+            WH_WareHouseModel house = bllWareHouse.GetModelByName(houseName);
+            if(house==null)
+            {
+                return;
+            }
+            string houseID = "";
+            if (houseName == "A1库房" || houseName == "A2库房" || houseName == "A3库房" || houseName == "A4库房" || houseName == "A5库房")
+            {
+                houseID = "1-5库房";
+            }
+            else
+            {
+                houseID = house.WareHouse_ID;
+            }
+            List<WH_Station_LogicModel> staionList = bllStationLogic.GetModelListByHouseIDAndCellType(houseID, EnumCellType.下架工位.ToString());
+            List<string> stationList = new List<string>();
+
+
+            foreach (WH_Station_LogicModel station in staionList)
+            {
+                stationList.Add(station.WH_Station_Logic_Name);
+            }
+            this.View.IniTargetList(stationList);
         }
         public void QueryPlan(string planCode)
         {

@@ -137,16 +137,30 @@ namespace CommonMoudle
             manage.Manage_End_Time = completeTime;
             return bllManage.Update(manage);
         }
+        public static bool UpdateManageHandleStatus(string manageTaskID, EnumBreakDowmStatus handleStatus)
+        {
+            ManageModel manage = bllManage.GetModel(manageTaskID);
+            if (manage == null)
+            {
+                return false;
+            }
+            manage.Manage_BreakDown_Status = handleStatus.ToString();
+            return bllManage.Update(manage);
+        }
 
         public static bool UpdateStockUpdateTime(string palletCode, DateTime updateTime)
         {
-            Stock_ListModel stockList = bllStockList.GetModelByPalletCode(palletCode);
+            List<Stock_ListModel> stockList = bllStockList.GetModelListByPalletCode(palletCode);
             if (stockList == null)
             {
                 return false;
             }
-            stockList.Stock_List_Update_Time = updateTime;
-            return bllStockList.Update(stockList);
+            foreach (Stock_ListModel slm in stockList)
+            {
+                slm.Stock_List_Update_Time = updateTime;
+                bllStockList.Update(slm);
+            }
+            return true;
         }
 
         public static bool DeleteManageTask(int days)
@@ -420,10 +434,16 @@ namespace CommonMoudle
                 restr = "没有找到所选物料货位！";
                 return false;
             }
-            if(startCell.Cell_Child_Order>1)//双深工位里面的货位，要判断外面的货位是否出来了
+            if (startCell.Shelf_Type == EnumShelfType.双深.ToString() && startCell.Cell_Chlid_Position == EnumCellPos.后.ToString())//双深工位如果选中前面的工位要判断后面是否有料
             {
-                View_CellModel shuangShenOtherCell = bllViewCell.GetModelByWHAndCellName(stockModel.WareHouse_Name, stockModel.Cell_Name, 2);
-                if(shuangShenOtherCell!= null)
+                View_CellModel forwordCell = bllViewCell.GetCell(stockModel.WareHouse_ID, stockModel.Cell_Name,EnumCellPos.前.ToString());
+
+
+                if (forwordCell != null && forwordCell.Cell_Child_Status == "空闲" && forwordCell.Cell_Child_Run_Status== "完成")//前面的已经出去了
+                {
+                   
+                }
+                else
                 {
                     restr = "双深工位出库需要先将外面的库存出库，再出库里面的！";
                     return false;

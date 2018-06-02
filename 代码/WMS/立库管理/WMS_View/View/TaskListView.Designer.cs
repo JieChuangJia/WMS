@@ -81,7 +81,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1179, 492);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1181, 493);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panelControl1
@@ -94,7 +94,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1173, 54);
+            this.panelControl1.Size = new System.Drawing.Size(1175, 54);
             this.panelControl1.TabIndex = 0;
             // 
             // labelControl2
@@ -147,7 +147,7 @@
             this.gc_TaskList.Location = new System.Drawing.Point(3, 63);
             this.gc_TaskList.MainView = this.gv_TaskList;
             this.gc_TaskList.Name = "gc_TaskList";
-            this.gc_TaskList.Size = new System.Drawing.Size(1173, 180);
+            this.gc_TaskList.Size = new System.Drawing.Size(1175, 180);
             this.gc_TaskList.TabIndex = 1;
             this.gc_TaskList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_TaskList});
@@ -166,7 +166,7 @@
             this.gc_TaskDetail.Location = new System.Drawing.Point(3, 249);
             this.gc_TaskDetail.MainView = this.gv_TaskDetail;
             this.gc_TaskDetail.Name = "gc_TaskDetail";
-            this.gc_TaskDetail.Size = new System.Drawing.Size(1173, 180);
+            this.gc_TaskDetail.Size = new System.Drawing.Size(1175, 180);
             this.gc_TaskDetail.TabIndex = 2;
             this.gc_TaskDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_TaskDetail});
@@ -186,13 +186,13 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 435);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1173, 54);
+            this.groupControl1.Size = new System.Drawing.Size(1175, 55);
             this.groupControl1.TabIndex = 3;
             this.groupControl1.Text = "操作区";
             // 
             // sb_ChooseConfirm
             // 
-            this.sb_ChooseConfirm.Location = new System.Drawing.Point(249, 26);
+            this.sb_ChooseConfirm.Location = new System.Drawing.Point(121, 28);
             this.sb_ChooseConfirm.Name = "sb_ChooseConfirm";
             this.sb_ChooseConfirm.Size = new System.Drawing.Size(92, 22);
             this.sb_ChooseConfirm.TabIndex = 8;
@@ -202,17 +202,18 @@
             // sb_TaskComplete
             // 
             this.sb_TaskComplete.Image = ((System.Drawing.Image)(resources.GetObject("sb_TaskComplete.Image")));
-            this.sb_TaskComplete.Location = new System.Drawing.Point(42, 26);
+            this.sb_TaskComplete.Location = new System.Drawing.Point(230, 28);
             this.sb_TaskComplete.Name = "sb_TaskComplete";
             this.sb_TaskComplete.Size = new System.Drawing.Size(78, 22);
             this.sb_TaskComplete.TabIndex = 7;
             this.sb_TaskComplete.Text = "手动完成";
+            this.sb_TaskComplete.Visible = false;
             this.sb_TaskComplete.Click += new System.EventHandler(this.sb_TaskComplete_Click);
             // 
             // sBtn_Cancel
             // 
             this.sBtn_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("sBtn_Cancel.Image")));
-            this.sBtn_Cancel.Location = new System.Drawing.Point(146, 26);
+            this.sBtn_Cancel.Location = new System.Drawing.Point(23, 28);
             this.sBtn_Cancel.Name = "sBtn_Cancel";
             this.sBtn_Cancel.Size = new System.Drawing.Size(77, 22);
             this.sBtn_Cancel.TabIndex = 6;
@@ -223,7 +224,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1179, 492);
+            this.ClientSize = new System.Drawing.Size(1181, 493);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "TaskListView";
             this.Text = "任务列表";

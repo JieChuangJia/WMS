@@ -40,10 +40,10 @@ namespace WMS_Kernel
                 ManageTask task = new ManageTask();
                 task.操作员 = manage.Manage_Operater;
                 //task.结束时间 = manage.Manage_End_Time.ToString("yyyyy-MM-dd HH:mm:ss");
-                if(manage.Manage_Begin_Time!= null)
-                {
-                    task.开始时间 = ((DateTime)manage.Manage_Begin_Time).ToString("yyyyy-MM-dd HH:mm:ss");
-                }
+                //if(manage.Manage_Begin_Time!= null)
+                //{
+                //    task.开始时间 = ((DateTime)manage.Manage_Begin_Time).ToString("yyyyy-MM-dd HH:mm:ss");
+                //}
                
                 View_CellModel viewStartCell = bllViewCell.GetModelByChildCellID(manage.Mange_Start_Cell_ID);
                 if (manage.Manage_Type_Name == EnumManageTaskType.空托盘上架.ToString()
@@ -79,7 +79,20 @@ namespace WMS_Kernel
                 task.任务类型 = manage.Manage_Type_Name;
                 task.任务状态 = manage.Mange_Status;
                 task.托盘条码 = manage.Mange_Stock_Barcode;
+                //if(manage.Manage_Begin_Time!= null)
+                //{
+                //    task.开始时间 = manage.Manage_Begin_Time.ToString();
+                //}
+                if (manage.Mange_CreateTime != null)
+                {
+                    task.创建时间 = manage.Mange_CreateTime.ToString();
+                }
 
+                if (manage.Manage_End_Time != null)
+                {
+                    task.完成时间 = manage.Manage_End_Time.ToString();
+                }
+             
                 ViewDataManager.TASKLISTDATA.TaskListData.Add(task);
             }
         }

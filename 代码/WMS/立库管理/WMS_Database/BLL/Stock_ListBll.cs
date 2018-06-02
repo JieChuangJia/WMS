@@ -152,6 +152,12 @@ namespace WMS_Database
                 return null;
             }
         }
+        public List<Stock_ListModel> GetModelListByPalletCode(string palletCode)
+        {
+            string sqlstr = "Stock_List_Box_Barcode ='" + palletCode + "'";
+            List<Stock_ListModel> stockList = GetModelList(sqlstr);
+            return stockList;
+        }
         public bool DeleteByStockID(string stockID)
         {
             return dal.DeleteByStockID(stockID);

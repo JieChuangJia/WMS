@@ -178,7 +178,11 @@ namespace WMS_Database
                 return null;
             }
         }
-      
+        public List<PlanMainModel> GetRunPlanList()
+        {
+            string sqlStr = "Plan_Status ='执行中'";
+            return GetModelList(sqlStr);
+        }
         public void UpdatePlan(PlanMainModel plan)
         {
             PlanMainModel planMain = GetModelByPlanCode(plan.Plan_Code);

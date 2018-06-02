@@ -104,6 +104,12 @@ namespace WMS_Kernel
         private void cbe_PlanList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+            if (this.cbe_PlanList.Text.Trim() == "")
+            {
+                //this.ShowMessage("信息提示", "请选择计划编号！");
+                return;
+            }
+            this.presenter.QueryPlan(this.cbe_PlanList.Text.Trim()); 
         }
 
         private void sb_PlanQuery_Click(object sender, EventArgs e)
@@ -131,23 +137,28 @@ namespace WMS_Kernel
 
         private void gc_Stock_Click(object sender, EventArgs e)
         {
-            //if (this.gv_PlanList == null || this.gv_PlanList.GetSelectedRows().Count() == 0)
-            //{
-            //    this.ShowMessage("信息提示", "请选择计划编号！");
-            //    return;
-            //}
-            //if(this.gv_Stock.GetSelectedRows().Count()==0)
-            //{
-            //    return;
-            //}
-            //int currRow = this.gv_Stock.GetSelectedRows()[0];
-            //string palletCode = this.gv_Stock.GetRowCellValue(currRow, "托盘条码").ToString();
+            if (this.gv_Stock == null || this.gv_Stock.GetSelectedRows().Count() == 0)
+            {
+                this.ShowMessage("信息提示", "请选择要下架的库存！");
+                return;
+            }
+            if (this.gv_Stock.GetSelectedRows().Count() == 0)
+            {
+                return;
+            }
+            int currRow = this.gv_Stock.GetSelectedRows()[0];
+            string houseName = this.gv_Stock.GetRowCellValue(currRow, "库房").ToString();
 
-            //this.presenter.GetUnShelveStation(palletCode);
+            this.presenter.IniUnShelveStationList(houseName);
         }
 
         private void sb_UnShelveTask_Click(object sender, EventArgs e)
         {
+            if(this.ce_TargetStation.Text.Trim() == "")
+            {
+                this.ShowMessage("信息提示", "请在库存清单中选中要出库的托盘！");
+                return;
+            }
             int status = this.AskMessage("信息提示", "您确定下架当前选中物料么？");
             if (status != 0)
             {

@@ -319,6 +319,11 @@ namespace WMS_Kernel
             this.presenter.IniLayers(this.cbe_HouseName.Text.Trim(), rowth, colth, layerth);
         }
 
+        private void ce_PalletCode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.presenter.QueryPalletInfor(this.ce_PalletCode.Text.Trim());
+        }
+
        
     }
 }
