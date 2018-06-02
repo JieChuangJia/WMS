@@ -1,7 +1,0 @@
-F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_UserControl\bin\Debug\WMS_UserControl.dll
-F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_UserControl\bin\Debug\WMS_UserControl.pdb
-F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_UserControl\obj\Debug\WMS_UserControl.csprojResolveAssemblyReference.cache
-F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_UserControl\obj\Debug\Storage.StorageControl.resources
-F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_UserControl\obj\Debug\WMS_UserControl.csproj.GenerateResource.Cache
-F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_UserControl\obj\Debug\WMS_UserControl.dll
-F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_UserControl\obj\Debug\WMS_UserControl.pdb

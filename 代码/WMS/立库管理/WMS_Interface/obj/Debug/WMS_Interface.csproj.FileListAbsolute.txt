@@ -1,8 +1,0 @@
-F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_Interface\bin\Debug\WMS_Interface.dll
-F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_Interface\bin\Debug\WMS_Interface.pdb
-F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_Interface\obj\Debug\WMS_Interface.csprojResolveAssemblyReference.cache
-F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_Interface\obj\Debug\WMS_Interface.ChildViewBase.resources
-F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_Interface\obj\Debug\WMS_Interface.csproj.GenerateResource.Cache
-F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_Interface\obj\Debug\WMS_Interface.dll.licenses
-F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_Interface\obj\Debug\WMS_Interface.dll
-F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_Interface\obj\Debug\WMS_Interface.pdb

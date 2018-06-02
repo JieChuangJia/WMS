@@ -1,7 +1,0 @@
-F:\NpWork\others\遨优\WMS\代码\WMS\基础模块\LicenceManager\bin\Debug\LicenceManager.dll
-F:\NpWork\others\遨优\WMS\代码\WMS\基础模块\LicenceManager\bin\Debug\LicenceManager.pdb
-F:\NpWork\others\遨优\WMS\代码\WMS\基础模块\LicenceManager\obj\Debug\LicenceManager.csprojResolveAssemblyReference.cache
-F:\NpWork\others\遨优\WMS\代码\WMS\基础模块\LicenceManager\obj\Debug\LicenceManager.ActivativeFormView.resources
-F:\NpWork\others\遨优\WMS\代码\WMS\基础模块\LicenceManager\obj\Debug\LicenceManager.csproj.GenerateResource.Cache
-F:\NpWork\others\遨优\WMS\代码\WMS\基础模块\LicenceManager\obj\Debug\LicenceManager.dll
-F:\NpWork\others\遨优\WMS\代码\WMS\基础模块\LicenceManager\obj\Debug\LicenceManager.pdb
