@@ -1,5 +1,0 @@
-F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_Database\bin\Debug\WMS_Database.dll
-F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_Database\bin\Debug\WMS_Database.pdb
-F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_Database\obj\Debug\WMS_Database.dll
-F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_Database\obj\Debug\WMS_Database.pdb
-F:\NpWork\others\遨优\WMS\代码\WMS\立库管理\WMS_Database\obj\Debug\WMS_Database.csprojResolveAssemblyReference.cache
