@@ -1,5 +1,0 @@
-F:\NpWork\others\遨优\WMS\代码\WMS\基础模块\CommonMoudle\bin\Debug\CommonMoudle.dll
-F:\NpWork\others\遨优\WMS\代码\WMS\基础模块\CommonMoudle\bin\Debug\CommonMoudle.pdb
-F:\NpWork\others\遨优\WMS\代码\WMS\基础模块\CommonMoudle\obj\Debug\CommonMoudle.csprojResolveAssemblyReference.cache
-F:\NpWork\others\遨优\WMS\代码\WMS\基础模块\CommonMoudle\obj\Debug\CommonMoudle.dll
-F:\NpWork\others\遨优\WMS\代码\WMS\基础模块\CommonMoudle\obj\Debug\CommonMoudle.pdb
