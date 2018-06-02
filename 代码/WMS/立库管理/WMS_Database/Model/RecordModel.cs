@@ -17,8 +17,8 @@ namespace WMS_Database
         private string _start_cell_id = "-1";
         private string _end_cell_id = "-1";
         private string _manage_operater = "-1";
-        private DateTime? _manage_begin_time = Convert.ToDateTime("");
-        private DateTime? _manage_end_time = Convert.ToDateTime("");
+        private DateTime? _manage_begin_time;
+        private DateTime? _manage_end_time;
         private string _record_remark = "";
         private string _record_reserve1;
         private string _record_reserve2;

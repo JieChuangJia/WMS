@@ -45,6 +45,8 @@ namespace WMS_Kernel
             this.gc_TaskList.DataBindings.Add("DataSource", ViewDataManager.TASKLISTDATA, "TaskListData", false, DataSourceUpdateMode.OnPropertyChanged);
             this.gc_TaskDetail.DataBindings.Clear();
             this.gc_TaskDetail.DataBindings.Add("DataSource", ViewDataManager.TASKLISTDATA, "TaskDetailData", false, DataSourceUpdateMode.OnPropertyChanged);
+
+          
         }
 
         private void ShowTabEventHandler(object sender, ItemClickEventArgs e)

@@ -89,7 +89,8 @@ namespace WMS_Kernel
             }
             int currRow = this.gv_GoodsList.GetSelectedRows()[0];
             string goodsCode = this.gv_GoodsList.GetRowCellValue(currRow, "物料编码").ToString();
-            this.presenter.AddPlanGoods(goodsCode, this.se_PlanNum.Value);
+
+            this.presenter.AddPlanGoods(goodsCode, this.se_PlanNum.Value, te_PlanCode.Text.Trim());
 
         }
 

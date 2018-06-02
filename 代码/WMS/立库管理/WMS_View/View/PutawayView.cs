@@ -117,11 +117,78 @@ namespace WMS_Kernel
                 this.cbe_StartStation.SelectedIndex = 0;
             }
         }
+        public void IniRows(List<string> rows)
+        {
+            this.cbe_Row.Properties.Items.Clear();
 
+            if (rows == null)
+            {
+                return;
+            }
+            foreach (string cell in rows)
+            {
+                this.cbe_Row.Properties.Items.Add(cell);
+            }
+            if (this.cbe_Row.Properties.Items.Count > 0)
+            {
+                this.cbe_Row.SelectedIndex = 0;
+            }
+        }
+        public void IniCols(List<string> cols)
+        {
+            this.cbe_Col.Properties.Items.Clear();
+
+            if (cols == null)
+            {
+                return;
+            }
+            foreach (string cell in cols)
+            {
+                this.cbe_Col.Properties.Items.Add(cell);
+            }
+            if (this.cbe_Col.Properties.Items.Count > 0)
+            {
+                this.cbe_Col.SelectedIndex = 0;
+            }
+        }
+        public void IniLayers(List<string> layers)
+        {
+            this.cbe_Layer.Properties.Items.Clear();
+
+            if (layers == null)
+            {
+                return;
+            }
+            foreach (string cell in layers)
+            {
+                this.cbe_Layer.Properties.Items.Add(cell);
+            }
+            if (this.cbe_Layer.Properties.Items.Count > 0)
+            {
+                this.cbe_Layer.SelectedIndex = 0;
+            }
+        }
+        public void IniPoses(List<string> poses)
+        {
+            this.cbe_Pos.Properties.Items.Clear();
+
+            if (poses == null)
+            {
+                return;
+            }
+            foreach (string cell in poses)
+            {
+                this.cbe_Pos.Properties.Items.Add(cell);
+            }
+            if (this.cbe_Pos.Properties.Items.Count > 0)
+            {
+                this.cbe_Pos.SelectedIndex = 0;
+            }
+        }
         public void IniCellList(List<View_CellModel> cellList)
         {
-            this.cbe_TargetStation.Properties.Items.Clear();
-            this.cbe_TargetStation.Text = "";
+            this.cbe_Row.Properties.Items.Clear();
+            this.cbe_Row.Text = "";
             if (cellList == null)
             {
                 return;
@@ -130,7 +197,7 @@ namespace WMS_Kernel
             {
                 //if (cell.Shelf_Type == EnumShelfType.双深.ToString())
                 //{
-                    this.cbe_TargetStation.Properties.Items.Add(cell.Cell_Name +"-"+cell.Cell_Chlid_Position);
+                    this.cbe_Row.Properties.Items.Add(cell.Cell_Name +"-"+cell.Cell_Chlid_Position);
                 //}
                 //else
                 //{
@@ -138,9 +205,9 @@ namespace WMS_Kernel
                 //}
                
             }
-            if (this.cbe_TargetStation.Properties.Items.Count > 0)
+            if (this.cbe_Row.Properties.Items.Count > 0)
             {
-                this.cbe_TargetStation.SelectedIndex = 0;
+                this.cbe_Row.SelectedIndex = 0;
             }
         }
     
@@ -155,7 +222,7 @@ namespace WMS_Kernel
             }
 
             this.presenter.PutawayTask(this.ce_PalletCode.Text.Trim(),this.cbe_HouseName.Text.Trim(), this.cbe_StartStation.Text.Trim(), 
-                this.ce_CheckPos.Checked, this.cbe_TargetStation.Text.Trim(),this.ce_IsNullPallet.Checked);
+                this.ce_CheckPos.Checked, this.cbe_Row.Text.Trim(),this.cbe_Col.Text.Trim(),this.cbe_Layer.Text.Trim(),this.cbe_Pos.Text.Trim());
         }
 
         private void sb_TrayQuery_Click(object sender, EventArgs e)
@@ -167,11 +234,26 @@ namespace WMS_Kernel
         {
             if(this.ce_CheckPos.Checked == true)
             {
-                this.cbe_TargetStation.Enabled = true;
+                this.cbe_Row.Enabled = true;
+                this.cbe_Col.Enabled = true;
+                this.cbe_Layer.Enabled = true;
+                this.cbe_Pos.Enabled = true;
+                this.lc_Col.Enabled = true;
+                this.lc_layer.Enabled = true;
+                this.lc_Pos.Enabled = true;
+                this.lc_row.Enabled = true;
             }
             else
             {
-                this.cbe_TargetStation.Enabled = false;
+                this.cbe_Row.Enabled = false;
+                this.cbe_Col.Enabled = false;
+                this.cbe_Layer.Enabled = false;
+                this.cbe_Pos.Enabled = false;
+
+                this.lc_Col.Enabled = false;
+                this.lc_layer.Enabled = false;
+                this.lc_Pos.Enabled = false;
+                this.lc_row.Enabled = false;
             }
         }
 
@@ -183,7 +265,58 @@ namespace WMS_Kernel
         private void cbe_HouseName_SelectedIndexChanged(object sender, EventArgs e)
         {
            
-            this.presenter.IniCellList(this.cbe_HouseName.Text.Trim());
+            this.presenter.IniRows(this.cbe_HouseName.Text.Trim());
+        }
+
+        private void cbe_Row_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.cbe_Row.Text.Trim() == "")
+            {
+                //this.ShowMessage("信息提示","行不能为空");
+                return;
+            }
+            int rowth = int.Parse(this.cbe_Row.Text.Trim());
+
+            this.presenter.IniCols(this.cbe_HouseName.Text.Trim(), rowth);
+        }
+
+        private void cbe_Col_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.cbe_Row.Text.Trim() == "")
+            {
+                this.ShowMessage("信息提示", "行不能为空");
+                return;
+            }
+            if (this.cbe_Col.Text.Trim() == "")
+            {
+                this.ShowMessage("信息提示", "列不能为空");
+                return;
+            }
+            int rowth =  int.Parse(this.cbe_Row.Text.Trim());
+            int colth = int.Parse(this.cbe_Col.Text.Trim());
+            this.presenter.IniLayers(this.cbe_HouseName.Text.Trim(), rowth, colth);
+        }
+
+        private void cbe_Layer_SelectedIndexChanged(object sender, EventArgs e)
+        {   if (this.cbe_Row.Text.Trim() == "")
+            {
+                this.ShowMessage("信息提示", "行不能为空");
+                return;
+            }
+            if (this.cbe_Col.Text.Trim() == "")
+            {
+                this.ShowMessage("信息提示", "列不能为空");
+                return;
+            }
+            if (this.cbe_Layer.Text.Trim() == "")
+            {
+                this.ShowMessage("信息提示", "层不能为空");
+                return;
+            }
+            int rowth =  int.Parse(this.cbe_Row.Text.Trim());
+            int colth = int.Parse(this.cbe_Col.Text.Trim());
+            int layerth = int.Parse(this.cbe_Layer.Text.Trim());
+            this.presenter.IniLayers(this.cbe_HouseName.Text.Trim(), rowth, colth, layerth);
         }
 
        

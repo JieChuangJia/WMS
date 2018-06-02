@@ -16,7 +16,7 @@ namespace WMS_Database
         private string _control_apply_device_code = "";
         private string _control_apply_tray_barcode = "";
         private string _control_apply_status = "-1";
-        private DateTime _control_apply_time = Convert.ToDateTime("");
+        private DateTime _control_apply_time;
         private string _control_apply_remark = "";
         private string _control_apply_reserve1;
         private string _control_apply_reserve2;

@@ -39,6 +39,7 @@ namespace WMS_Database
         private string _stock_full_flag;
         private string _stock_remark;
         private string _mange_id;
+        private DateTime? _mange_createtime;
         /// <summary>
         /// 
         /// </summary>
@@ -270,6 +271,14 @@ namespace WMS_Database
         {
             set { _mange_id = value; }
             get { return _mange_id; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public DateTime? Mange_CreateTime
+        {
+            set { _mange_createtime = value; }
+            get { return _mange_createtime; }
         }
         #endregion Model
 

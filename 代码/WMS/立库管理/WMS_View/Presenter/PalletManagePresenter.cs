@@ -48,15 +48,20 @@ namespace WMS_Kernel
             foreach (View_StockListModel stock in stockList)
             {
                 TrayGoodsListModel pallet = new TrayGoodsListModel();
-                pallet.保质期 = stock.Goods_Shelf_Life.ToString();
+                //pallet.保质期 = stock.Goods_Shelf_Life.ToString();
                 pallet.单位 = stock.Goods_Unit;
                 pallet.规格型号 = stock.Goods_Model;
                 pallet.托盘条码 = stock.Stock_Tray_Barcode;
-                pallet.生产日期 = (DateTime)stock.Goods_ProduceDate;
+                //pallet.生产日期 = (DateTime)stock.Goods_ProduceDate;
                 pallet.数量 = int.Parse(stock.Stock_List_Quantity);
                 pallet.物料编码 = stock.Goods_Code;
+                pallet.计划列表编号 = stock.Plan_List_ID;
 
-                
+                Plan_ListModel planListModel = bllPlanList.GetModel(stock.Plan_List_ID);
+                if(planListModel !=null )
+                {
+                    pallet.计划单号 = planListModel.Plan_ID;
+                }
                 ViewDataManager.PALLETMANAGEDATA.PalletInforData.Add(pallet);
             }
         }
@@ -99,9 +104,9 @@ namespace WMS_Kernel
                 {
                     pallet.按计划配盘 = "是";
                     View_PlanListModel planList = bllViewPlanList.GetModelByPlanListID(stock.Plan_List_ID);
-                    pallet.计划代码 = planList.Plan_Code;
+                    pallet.计划单号 = planList.Plan_Code;
                 }
-                pallet.配盘时间 =(DateTime) stock.Stock_List_Entry_Time;
+                pallet.配盘时间 = stock.Stock_List_Entry_Time.ToString();
                 pallet.托盘条码 = stock.Stock_Tray_Barcode;
                 pallet.配盘工位名称 = stock.Cell_Name;
                 ViewDataManager.PALLETMANAGEDATA.PalletList.Add(pallet);
@@ -133,7 +138,7 @@ namespace WMS_Kernel
             }
         }
 
-        public void AddTrayGoods(string trayCode, int goodsNum, DateTime createDatetime, string goodsCode)
+        public void AddTrayGoods(string trayCode, int goodsNum, string goodsCode)
         {
             if (trayCode.Trim() == "")
             {
@@ -159,7 +164,7 @@ namespace WMS_Kernel
             tglm.单位 = goodsModel.Goods_Unit;
             tglm.规格型号 = goodsModel.Goods_Model;
             tglm.托盘条码 = trayCode;
-            tglm.生产日期 = createDatetime;
+            //tglm.生产日期 = createDatetime;
             tglm.数量 = goodsNum;
             tglm.物料编码 = goodsCode;
 
@@ -252,10 +257,27 @@ namespace WMS_Kernel
         {
             try
             {
+                string restr ="";
                 StockModel stock = bllStock.GetModelByTrayCode(palletCode);
                 if(stock == null)
                 {
                     return;
+                }
+              
+                List<Stock_ListModel> stockList = bllStockList.GetListByStockID(stock.Stock_ID);
+                if(stockList == null)
+                {
+                     this.WmsFrame.WriteLog("配盘管理","","错误","计划下达数量更新错误！");
+                    return;
+                }
+             
+                foreach(Stock_ListModel slModel in stockList)
+                {
+                    if (UpdatePlanNum(slModel.Plan_List_ID, slModel.Goods_ID, int.Parse(slModel.Stock_List_Quantity), ref restr) == false)
+                    {
+                        this.View.ShowMessage("信息提示", "取消配盘是失败！"+ restr);
+                        return;
+                    }
                 }
                 bllStock.Delete(stock.Stock_ID);
                 this.View.ShowMessage("信息提示", "取消配盘成功！");
@@ -264,6 +286,26 @@ namespace WMS_Kernel
             {
                 this.View.ShowMessage("信息提示", "取消配盘失败！" + ex.Message);
             }
+        }
+
+        private bool UpdatePlanNum(string planListID, string materialCode, int materialNum, ref string restr)
+        {
+
+            Plan_ListModel planListModel = bllPlanList.GetModel(planListID);
+            if (planListModel == null)
+            {
+                restr = "计划列表编码错误：" + planListID;
+                return false;
+            }
+            int orderNum = 0;
+            if (planListModel.Plan_List_Ordered_Quantity.Trim() != "")
+            {
+                orderNum = int.Parse(planListModel.Plan_List_Ordered_Quantity);
+            }
+            orderNum -= materialNum;
+            planListModel.Plan_List_Ordered_Quantity = orderNum.ToString();
+            bllPlanList.Update(planListModel);
+            return true;
         }
         private bool IsExistPalletGoods(string goodsCode)
         {

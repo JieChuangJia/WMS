@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition4 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition5 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition11 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition12 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition13 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition14 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition7 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition15 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition8 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition9 = new DevExpress.XtraLayout.RowDefinition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PutawayView));
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -61,12 +61,18 @@
             this.sb_TrayQuery = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.lc_Pos = new DevExpress.XtraEditors.LabelControl();
+            this.lc_layer = new DevExpress.XtraEditors.LabelControl();
+            this.lc_Col = new DevExpress.XtraEditors.LabelControl();
+            this.lc_row = new DevExpress.XtraEditors.LabelControl();
+            this.cbe_Pos = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbe_Layer = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbe_Col = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.cbe_HouseName = new DevExpress.XtraEditors.ComboBoxEdit();
             this.ce_CheckPos = new DevExpress.XtraEditors.CheckEdit();
             this.sb_InputTask = new DevExpress.XtraEditors.SimpleButton();
-            this.ce_IsNullPallet = new DevExpress.XtraEditors.CheckEdit();
-            this.cbe_TargetStation = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbe_Row = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cbe_StartStation = new DevExpress.XtraEditors.ComboBoxEdit();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -85,10 +91,12 @@
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_Pos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_Layer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_Col.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_HouseName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ce_CheckPos.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ce_IsNullPallet.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbe_TargetStation.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_Row.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_StartStation.Properties)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -193,23 +201,23 @@
             this.layoutControlGroup8.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.layoutControlGroup8.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup8.Name = "layoutControlGroup8";
-            columnDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition1.Width = 60D;
-            columnDefinition2.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition2.Width = 60D;
-            columnDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition3.Width = 60D;
-            columnDefinition4.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition4.Width = 100D;
+            columnDefinition11.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition11.Width = 60D;
+            columnDefinition12.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition12.Width = 60D;
+            columnDefinition13.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition13.Width = 60D;
+            columnDefinition14.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition14.Width = 100D;
             this.layoutControlGroup8.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition1,
-            columnDefinition2,
-            columnDefinition3,
-            columnDefinition4});
-            rowDefinition1.Height = 100D;
-            rowDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition11,
+            columnDefinition12,
+            columnDefinition13,
+            columnDefinition14});
+            rowDefinition7.Height = 100D;
+            rowDefinition7.SizeType = System.Windows.Forms.SizeType.Percent;
             this.layoutControlGroup8.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition1});
+            rowDefinition7});
             this.layoutControlGroup8.Size = new System.Drawing.Size(1139, 30);
             this.layoutControlGroup8.TextVisible = false;
             // 
@@ -246,17 +254,17 @@
             this.layoutControlGroup6.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.layoutControlGroup6.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup6.Name = "layoutControlGroup6";
-            columnDefinition5.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition5.Width = 100D;
+            columnDefinition15.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition15.Width = 100D;
             this.layoutControlGroup6.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition5});
-            rowDefinition2.Height = 100D;
-            rowDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
-            rowDefinition3.Height = 30D;
-            rowDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition15});
+            rowDefinition8.Height = 100D;
+            rowDefinition8.SizeType = System.Windows.Forms.SizeType.Percent;
+            rowDefinition9.Height = 30D;
+            rowDefinition9.SizeType = System.Windows.Forms.SizeType.Absolute;
             this.layoutControlGroup6.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition2,
-            rowDefinition3});
+            rowDefinition8,
+            rowDefinition9});
             this.layoutControlGroup6.Size = new System.Drawing.Size(1143, 152);
             this.layoutControlGroup6.TextVisible = false;
             // 
@@ -303,27 +311,97 @@
             // 
             this.panelControl3.Controls.Add(this.groupControl1);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(3, 422);
+            this.panelControl3.Location = new System.Drawing.Point(3, 423);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1040, 64);
+            this.panelControl3.Size = new System.Drawing.Size(1042, 64);
             this.panelControl3.TabIndex = 4;
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.lc_Pos);
+            this.groupControl1.Controls.Add(this.lc_layer);
+            this.groupControl1.Controls.Add(this.lc_Col);
+            this.groupControl1.Controls.Add(this.lc_row);
+            this.groupControl1.Controls.Add(this.cbe_Pos);
+            this.groupControl1.Controls.Add(this.cbe_Layer);
+            this.groupControl1.Controls.Add(this.cbe_Col);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.cbe_HouseName);
             this.groupControl1.Controls.Add(this.ce_CheckPos);
             this.groupControl1.Controls.Add(this.sb_InputTask);
-            this.groupControl1.Controls.Add(this.ce_IsNullPallet);
-            this.groupControl1.Controls.Add(this.cbe_TargetStation);
+            this.groupControl1.Controls.Add(this.cbe_Row);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.cbe_StartStation);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(2, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1036, 60);
+            this.groupControl1.Size = new System.Drawing.Size(1038, 60);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "操作";
+            // 
+            // lc_Pos
+            // 
+            this.lc_Pos.Location = new System.Drawing.Point(754, 34);
+            this.lc_Pos.Name = "lc_Pos";
+            this.lc_Pos.Size = new System.Drawing.Size(36, 14);
+            this.lc_Pos.TabIndex = 30;
+            this.lc_Pos.Text = "位置：";
+            // 
+            // lc_layer
+            // 
+            this.lc_layer.Location = new System.Drawing.Point(667, 34);
+            this.lc_layer.Name = "lc_layer";
+            this.lc_layer.Size = new System.Drawing.Size(24, 14);
+            this.lc_layer.TabIndex = 29;
+            this.lc_layer.Text = "层：";
+            // 
+            // lc_Col
+            // 
+            this.lc_Col.Location = new System.Drawing.Point(580, 34);
+            this.lc_Col.Name = "lc_Col";
+            this.lc_Col.Size = new System.Drawing.Size(24, 14);
+            this.lc_Col.TabIndex = 28;
+            this.lc_Col.Text = "列：";
+            // 
+            // lc_row
+            // 
+            this.lc_row.Location = new System.Drawing.Point(493, 34);
+            this.lc_row.Name = "lc_row";
+            this.lc_row.Size = new System.Drawing.Size(24, 14);
+            this.lc_row.TabIndex = 27;
+            this.lc_row.Text = "排：";
+            // 
+            // cbe_Pos
+            // 
+            this.cbe_Pos.Enabled = false;
+            this.cbe_Pos.Location = new System.Drawing.Point(795, 31);
+            this.cbe_Pos.Name = "cbe_Pos";
+            this.cbe_Pos.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_Pos.Size = new System.Drawing.Size(53, 20);
+            this.cbe_Pos.TabIndex = 26;
+            // 
+            // cbe_Layer
+            // 
+            this.cbe_Layer.Enabled = false;
+            this.cbe_Layer.Location = new System.Drawing.Point(696, 31);
+            this.cbe_Layer.Name = "cbe_Layer";
+            this.cbe_Layer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_Layer.Size = new System.Drawing.Size(53, 20);
+            this.cbe_Layer.TabIndex = 25;
+            this.cbe_Layer.SelectedIndexChanged += new System.EventHandler(this.cbe_Layer_SelectedIndexChanged);
+            // 
+            // cbe_Col
+            // 
+            this.cbe_Col.Enabled = false;
+            this.cbe_Col.Location = new System.Drawing.Point(609, 31);
+            this.cbe_Col.Name = "cbe_Col";
+            this.cbe_Col.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_Col.Size = new System.Drawing.Size(53, 20);
+            this.cbe_Col.TabIndex = 24;
+            this.cbe_Col.SelectedIndexChanged += new System.EventHandler(this.cbe_Col_SelectedIndexChanged);
             // 
             // labelControl3
             // 
@@ -345,7 +423,7 @@
             // 
             // ce_CheckPos
             // 
-            this.ce_CheckPos.Location = new System.Drawing.Point(416, 33);
+            this.ce_CheckPos.Location = new System.Drawing.Point(416, 32);
             this.ce_CheckPos.Name = "ce_CheckPos";
             this.ce_CheckPos.Properties.Caption = "指定货位";
             this.ce_CheckPos.Size = new System.Drawing.Size(72, 19);
@@ -355,31 +433,23 @@
             // sb_InputTask
             // 
             this.sb_InputTask.Image = ((System.Drawing.Image)(resources.GetObject("sb_InputTask.Image")));
-            this.sb_InputTask.Location = new System.Drawing.Point(733, 31);
+            this.sb_InputTask.Location = new System.Drawing.Point(870, 30);
             this.sb_InputTask.Name = "sb_InputTask";
             this.sb_InputTask.Size = new System.Drawing.Size(106, 22);
             this.sb_InputTask.TabIndex = 20;
             this.sb_InputTask.Text = "下达上架任务";
             this.sb_InputTask.Click += new System.EventHandler(this.sb_InputTask_Click);
             // 
-            // ce_IsNullPallet
+            // cbe_Row
             // 
-            this.ce_IsNullPallet.Location = new System.Drawing.Point(624, 33);
-            this.ce_IsNullPallet.Name = "ce_IsNullPallet";
-            this.ce_IsNullPallet.Properties.Caption = "是否空搬运容器";
-            this.ce_IsNullPallet.Size = new System.Drawing.Size(116, 19);
-            this.ce_IsNullPallet.TabIndex = 19;
-            this.ce_IsNullPallet.Visible = false;
-            // 
-            // cbe_TargetStation
-            // 
-            this.cbe_TargetStation.Enabled = false;
-            this.cbe_TargetStation.Location = new System.Drawing.Point(494, 32);
-            this.cbe_TargetStation.Name = "cbe_TargetStation";
-            this.cbe_TargetStation.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbe_Row.Enabled = false;
+            this.cbe_Row.Location = new System.Drawing.Point(522, 31);
+            this.cbe_Row.Name = "cbe_Row";
+            this.cbe_Row.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbe_TargetStation.Size = new System.Drawing.Size(109, 20);
-            this.cbe_TargetStation.TabIndex = 17;
+            this.cbe_Row.Size = new System.Drawing.Size(53, 20);
+            this.cbe_Row.TabIndex = 17;
+            this.cbe_Row.SelectedIndexChanged += new System.EventHandler(this.cbe_Row_SelectedIndexChanged);
             // 
             // labelControl2
             // 
@@ -412,7 +482,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1046, 489);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1048, 490);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl2
@@ -424,7 +494,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(3, 3);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1040, 413);
+            this.groupControl2.Size = new System.Drawing.Size(1042, 414);
             this.groupControl2.TabIndex = 5;
             this.groupControl2.Text = "配盘信息查询";
             // 
@@ -445,7 +515,7 @@
             this.gc_PalletInfor.Location = new System.Drawing.Point(5, 64);
             this.gc_PalletInfor.MainView = this.gridView1;
             this.gc_PalletInfor.Name = "gc_PalletInfor";
-            this.gc_PalletInfor.Size = new System.Drawing.Size(1030, 344);
+            this.gc_PalletInfor.Size = new System.Drawing.Size(1032, 345);
             this.gc_PalletInfor.TabIndex = 0;
             this.gc_PalletInfor.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -460,7 +530,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1046, 489);
+            this.ClientSize = new System.Drawing.Size(1048, 490);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "PutawayView";
             this.Text = "上架管理";
@@ -477,10 +547,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_Pos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_Layer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_Col.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_HouseName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ce_CheckPos.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ce_IsNullPallet.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbe_TargetStation.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_Row.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_StartStation.Properties)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
@@ -520,8 +592,7 @@
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SimpleButton sb_InputTask;
-        private DevExpress.XtraEditors.CheckEdit ce_IsNullPallet;
-        private DevExpress.XtraEditors.ComboBoxEdit cbe_TargetStation;
+        private DevExpress.XtraEditors.ComboBoxEdit cbe_Row;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.ComboBoxEdit cbe_StartStation;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -532,5 +603,12 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.ComboBoxEdit cbe_HouseName;
         private DevExpress.XtraEditors.ComboBoxEdit ce_PalletCode;
+        private DevExpress.XtraEditors.LabelControl lc_Col;
+        private DevExpress.XtraEditors.LabelControl lc_row;
+        private DevExpress.XtraEditors.ComboBoxEdit cbe_Pos;
+        private DevExpress.XtraEditors.ComboBoxEdit cbe_Layer;
+        private DevExpress.XtraEditors.ComboBoxEdit cbe_Col;
+        private DevExpress.XtraEditors.LabelControl lc_Pos;
+        private DevExpress.XtraEditors.LabelControl lc_layer;
     }
 }

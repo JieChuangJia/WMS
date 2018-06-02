@@ -50,11 +50,20 @@ namespace WMS_Kernel
                 PalletInfor palletInfor = new PalletInfor();
                 palletInfor.存储货位 = stock.Cell_Name;
                 palletInfor.存储库区 = stock.Area_Name;
-                palletInfor.更新时间 = stock.Stock_List_Update_Time;
+                if (stock.Stock_List_Update_Time!= null)
+                {
+                    palletInfor.更新时间 = stock.Stock_List_Update_Time.ToString();
+                }
+               
                 palletInfor.规格型号 = stock.Goods_Model;
                 palletInfor.计量单位 = stock.Goods_Unit;
-                palletInfor.入库时间 = stock.Stock_List_Entry_Time;
-                palletInfor.生产日期 = stock.Goods_ProduceDate;
+                if (stock.Stock_List_Entry_Time != null)
+                {
+
+                    palletInfor.入库时间 = stock.Stock_List_Entry_Time.ToString();
+                }
+              
+                //palletInfor.生产日期 = stock.Goods_ProduceDate;
                 palletInfor.是否满盘 = stock.Stock_Full_Flag;
                 palletInfor.数量 = int.Parse(stock.Stock_List_Quantity);
                 palletInfor.托盘条码 = stock.Stock_Tray_Barcode;
@@ -83,13 +92,54 @@ namespace WMS_Kernel
             }
             this.View.IniPutawayList(staList);
         }
-        public void IniCellList(string houseName)
+        public void IniRows(string houseName)
         {
-            List<View_CellModel> cellList = bllViewCell.GetPutawayCellList(houseName);
-            this.View.IniCellList(cellList);
+            WH_WareHouseModel wareHouse = bllWareHouse.GetModelByName(houseName);
+            if(wareHouse== null)
+            {
+                this.View.ShowMessage("信息提示","库房不存在！");
+                return;
+            }
+            List<string> rowList = bllViewCell.GetRCL(wareHouse.WareHouse_ID, 0, 0, 0, 0);
+            this.View.IniRows(rowList);
+            //List<View_CellModel> cellList = bllViewCell.GetPutawayCellList(houseName);
+            //this.View.IniCellList(cellList);
         }
-
-        public void PutawayTask(string palletCode,string houseName, string putawayStationName, bool isAssign,string targetCell, bool isEmptyPallet)
+        public void IniCols(string houseName,int rowth)
+        {
+            WH_WareHouseModel wareHouse = bllWareHouse.GetModelByName(houseName);
+            if (wareHouse == null)
+            {
+                this.View.ShowMessage("信息提示", "库房不存在！");
+                return;
+            }
+            List<string> colList = bllViewCell.GetRCL(wareHouse.WareHouse_ID, rowth, 0, 0, 1);
+            this.View.IniCols(colList);
+        }
+        public void IniLayers(string houseName, int rowth,int colth)
+        {
+            WH_WareHouseModel wareHouse = bllWareHouse.GetModelByName(houseName);
+            if (wareHouse == null)
+            {
+                this.View.ShowMessage("信息提示", "库房不存在！");
+                return;
+            }
+            List<string> layers = bllViewCell.GetRCL(wareHouse.WareHouse_ID, rowth, colth, 0, 2);
+            this.View.IniLayers(layers);
+        }
+        public void IniLayers(string houseName, int rowth, int colth,int layerth)
+        {
+            WH_WareHouseModel wareHouse = bllWareHouse.GetModelByName(houseName);
+            if (wareHouse == null)
+            {
+                this.View.ShowMessage("信息提示", "库房不存在！");
+                return;
+            }
+            List<string> poses = bllViewCell.GetRCL(wareHouse.WareHouse_ID, rowth, colth, layerth,3);
+            this.View.IniPoses(poses);
+        }
+        public void PutawayTask(string palletCode,string houseName, string putawayStationName,
+            bool isAssign,string rowth,string colth,string layerth,string pos)
         {
             string restr = "";
             if (palletCode == "")
@@ -97,15 +147,15 @@ namespace WMS_Kernel
                 this.View.ShowMessage("信息提示", "请输入托盘条码！");
                 return;
             }
-            if(isEmptyPallet == false)//不是空托盘，没有库存判断
-            {
+            //if(isEmptyPallet == false)//不是空托盘，没有库存判断
+            //{
                 StockModel stock = bllStock.GetModelByTrayCode(palletCode);
                 if(stock == null)
                 {
                     this.View.ShowMessage("信息提示", "请配盘入库！");
                     return;
                 }             
-            }
+            //}
 
             ManageModel manageTemp = bllManage.GetModelByPalletCode(palletCode);
             if (manageTemp != null)
@@ -114,15 +164,16 @@ namespace WMS_Kernel
                 return;
             }
             string manageID = "";
-            EnumManageTaskType manaTask = EnumManageTaskType.空托盘上架;
-            if (isEmptyPallet == true)
-            {
-                manaTask = EnumManageTaskType.空托盘上架;
-            }
-            else
-            {
-                manaTask = EnumManageTaskType.上架;
-            }
+            EnumManageTaskType manaTask = EnumManageTaskType.上架;
+            string targetCell = rowth + "排" + colth + "列" + layerth+"层-"+pos ;
+            //if (isEmptyPallet == true)
+            //{
+            //    manaTask = EnumManageTaskType.空托盘上架;
+            //}
+            //else
+            ////{
+                //manaTask = EnumManageTaskType.上架;
+            //}
             if (TaskHandleMethod.CreatePutawayManageTask(palletCode, houseName, putawayStationName, isAssign, targetCell, manaTask, ref manageID, ref restr) == false)
             {
                 this.WmsFrame.WriteLog("上架逻辑", "", "提示", "创建管理任务失败：" + restr);
@@ -133,7 +184,7 @@ namespace WMS_Kernel
             //    this.WmsFrame.WriteLog("上架逻辑", "", "提示", "创建管理任务列表失败：" + restr);
             //    return;
             //}
-            this.WmsFrame.WriteLog("上架逻辑", "", "提示", "上架任务下达成功！");
+            this.WmsFrame.WriteLog("上架逻辑", "", "提示", "上架任务下达成功！"+restr);
         }
 
         public void IniPutawayPalletCode()

@@ -61,8 +61,14 @@ namespace WMS_Kernel
                 planModel.完成数量 = stockModel.Plan_List_Finished_Quantity.ToString();
                 planModel.物料编码 = stockModel.Goods_Code;
                 planModel.物料名称 = stockModel.Goods_Name;
-                //planModel.下达数量 = stockModel.Plan_List_Ordered_Quantity.ToString();
+                planModel.下达数量 = stockModel.Plan_List_Ordered_Quantity.ToString();
                 planModel.计划列表编码 = stockModel.Plan_List_ID;
+                planModel.计划单号 = stockModel.Plan_ID;
+                if (stockModel.Plan_Create_Time!= null)
+                {
+                    planModel.计划创建时间 = stockModel.Plan_Create_Time.ToString();
+                }
+               
                 ViewDataManager.UNSHELVEPALNDATA.PlanListData.Add(planModel);
             }
 
@@ -110,13 +116,14 @@ namespace WMS_Kernel
             foreach (View_StockListModel stock in stockList)
             {
                 PalletInfor palletInfor = new PalletInfor();
-                palletInfor.存储货位 = stock.Cell_Name;
+                palletInfor.库房 = stock.WareHouse_Name;
+                palletInfor.存储货位 = stock.Cell_Name+"-"+stock.Cell_Chlid_Position;
                 palletInfor.存储库区 = stock.Area_Name;
-                palletInfor.更新时间 = stock.Stock_List_Update_Time;
+                palletInfor.更新时间 = stock.Stock_List_Update_Time.ToString();
                 palletInfor.规格型号 = stock.Goods_Model;
                 palletInfor.计量单位 = stock.Goods_Unit;
-                palletInfor.入库时间 = stock.Stock_List_Entry_Time;
-                palletInfor.生产日期 = stock.Goods_ProduceDate;
+                palletInfor.入库时间 = stock.Stock_List_Entry_Time.ToString();
+                //palletInfor.生产日期 = stock.Goods_ProduceDate;
                 palletInfor.是否满盘 = stock.Stock_Full_Flag;
                
                 palletInfor.数量 = int.Parse(stock.Stock_List_Quantity);
@@ -134,7 +141,8 @@ namespace WMS_Kernel
             View_Manage_ListModel manage = bllViewManageList.GetModelByPalletCodeAndTaskType(palletCode, EnumManageTaskType.下架.ToString(), EnumManageTaskStatus.待执行.ToString());
             if(manage!=null)
             {
-                this.WmsFrame.WriteLog("下架逻辑", "", "提示", "当前托盘下架任务已经下发！");
+                //this.WmsFrame.WriteLog("下架逻辑", "", "提示", "当前托盘下架任务已经下发！");
+                this.View.ShowMessage("信息提示", "当前托盘下架任务已经下发！");
                 return;
             }
             string restr = "";

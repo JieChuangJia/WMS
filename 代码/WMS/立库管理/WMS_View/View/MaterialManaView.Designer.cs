@@ -74,7 +74,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1204, 569);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1206, 570);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // splitContainer1
@@ -91,8 +91,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.sb_ClosePro);
             this.splitContainer1.Panel2.Controls.Add(this.gc_PropertyDetail);
-            this.splitContainer1.Size = new System.Drawing.Size(1198, 443);
-            this.splitContainer1.SplitterDistance = 944;
+            this.splitContainer1.Size = new System.Drawing.Size(1200, 444);
+            this.splitContainer1.SplitterDistance = 945;
             this.splitContainer1.TabIndex = 8;
             // 
             // gc_GoodsList
@@ -101,13 +101,13 @@
             this.gc_GoodsList.Location = new System.Drawing.Point(0, 0);
             this.gc_GoodsList.MainView = this.gv_MaterialList;
             this.gc_GoodsList.Name = "gc_GoodsList";
-            this.gc_GoodsList.Size = new System.Drawing.Size(944, 443);
+            this.gc_GoodsList.Size = new System.Drawing.Size(945, 444);
             this.gc_GoodsList.TabIndex = 6;
             this.gc_GoodsList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_MaterialList});
             this.gc_GoodsList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gc_GoodsList_MouseDoubleClick);
             // 
-            // gridView1
+            // gv_MaterialList
             // 
             this.gv_MaterialList.GridControl = this.gc_GoodsList;
             this.gv_MaterialList.GroupPanelText = "物料清单";
@@ -117,7 +117,7 @@
             // sb_ClosePro
             // 
             this.sb_ClosePro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sb_ClosePro.Location = new System.Drawing.Point(167, 412);
+            this.sb_ClosePro.Location = new System.Drawing.Point(168, 413);
             this.sb_ClosePro.Name = "sb_ClosePro";
             this.sb_ClosePro.Size = new System.Drawing.Size(75, 23);
             this.sb_ClosePro.TabIndex = 1;
@@ -132,7 +132,7 @@
             this.gc_PropertyDetail.Location = new System.Drawing.Point(3, 3);
             this.gc_PropertyDetail.MainView = this.gridView2;
             this.gc_PropertyDetail.Name = "gc_PropertyDetail";
-            this.gc_PropertyDetail.Size = new System.Drawing.Size(239, 403);
+            this.gc_PropertyDetail.Size = new System.Drawing.Size(240, 404);
             this.gc_PropertyDetail.TabIndex = 0;
             this.gc_PropertyDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -151,7 +151,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1198, 54);
+            this.panelControl1.Size = new System.Drawing.Size(1200, 54);
             this.panelControl1.TabIndex = 10;
             // 
             // labelControl1
@@ -185,9 +185,9 @@
             this.groupControl1.Controls.Add(this.sb_DeleteGoods);
             this.groupControl1.Controls.Add(this.sb_AddGoods);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(3, 512);
+            this.groupControl1.Location = new System.Drawing.Point(3, 513);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1198, 54);
+            this.groupControl1.Size = new System.Drawing.Size(1200, 54);
             this.groupControl1.TabIndex = 11;
             this.groupControl1.Text = "操作区";
             // 
@@ -225,7 +225,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1204, 569);
+            this.ClientSize = new System.Drawing.Size(1206, 570);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MaterialManaView";
             this.Text = "物料维护";

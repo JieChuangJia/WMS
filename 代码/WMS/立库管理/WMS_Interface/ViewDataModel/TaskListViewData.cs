@@ -24,8 +24,8 @@ namespace WMS_Interface
         public string 起始位置 { get; set; }
         public string 终止位置 { get; set; }
         public string 操作员 { get; set; }
-        public DateTime ?开始时间 { get; set; }
-        public DateTime ?结束时间 { get; set; }
+        public string 开始时间 { get; set; }
+        //public string 结束时间 { get; set; }
 
 
         public ManageTask()

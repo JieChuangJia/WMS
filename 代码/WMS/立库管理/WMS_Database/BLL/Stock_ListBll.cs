@@ -156,6 +156,13 @@ namespace WMS_Database
         {
             return dal.DeleteByStockID(stockID);
         }
+
+        public List<Stock_ListModel> GetListByStockID(string StockID)
+        {
+            string sqlStr = "Stock_ID = '" + StockID + "'";
+            return GetModelList(sqlStr);
+
+        }
 		#endregion  ExtensionMethod
 	}
 }

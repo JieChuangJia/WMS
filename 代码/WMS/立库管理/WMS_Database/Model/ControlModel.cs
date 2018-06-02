@@ -23,8 +23,8 @@ namespace WMS_Database
         private int _control_phase;
         private string _control_status = "0";
         private string _control_error_text = "";
-        private DateTime? _control_begin_time = Convert.ToDateTime("");
-        private DateTime? _contorl_end_time = Convert.ToDateTime("");
+        private DateTime? _control_begin_time;
+        private DateTime? _contorl_end_time;
         private string _control_remark = "";
         private string _control_reserve1;
         private string _control_reserve2;

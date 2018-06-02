@@ -33,6 +33,7 @@ namespace WMS_Database
         private string _manage_type_reserve2;
         private string _manage_remark;
         private string _mange_reserve1;
+        private DateTime? _mange_createtime;
         /// <summary>
         /// 
         /// </summary>
@@ -217,7 +218,16 @@ namespace WMS_Database
             set { _mange_reserve1 = value; }
             get { return _mange_reserve1; }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        public DateTime? Mange_CreateTime
+        {
+            set { _mange_createtime = value; }
+            get { return _mange_createtime; }
+        }
         #endregion Model
+
 
     }
 }

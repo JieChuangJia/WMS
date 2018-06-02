@@ -109,16 +109,23 @@ namespace WMS_Kernel
         public void SetGsStatus(string gsID, bool status)
         {
             bool setstatus = bllChildCell.UpdateGSEnabledStatusByID(gsID, status);
+            View_CellModel viewCell = bllViewCell.GetModelByChildCellID(gsID);
+            if (viewCell == null)
+            {
+                this.View.ShowMessage("信息提示", "获取货位失败！");
+                return;
+            }
             if (status == true)
             {
+              
                 if (setstatus == true)
                 {
-                    this.WmsFrame.WriteLog("库存看板", "", "提示", "启用成功！");
+                    this.WmsFrame.WriteLog("库存看板", "", "提示", viewCell.WareHouse_Name +"：货位:"+viewCell.Cell_Name+"-" + viewCell.Cell_Chlid_Position+"启用成功！");
 
                 }
                 else
                 {
-                    this.WmsFrame.WriteLog("库存看板", "", "提示", "启用失败！");
+                    this.WmsFrame.WriteLog("库存看板", "", "提示", viewCell.WareHouse_Name + "：货位:" + viewCell.Cell_Name + "-" + viewCell.Cell_Chlid_Position + "启用失败！");
                 }
                  
             }
@@ -126,12 +133,13 @@ namespace WMS_Kernel
             {
                 if (setstatus == true)
                 {
-                    this.WmsFrame.WriteLog("库存看板", "", "提示", "禁用成功！");
+                    this.WmsFrame.WriteLog("库存看板", "", "提示", viewCell.WareHouse_Name + "：货位:" + viewCell.Cell_Name + "-" + viewCell.Cell_Chlid_Position + "禁用成功！");
 
                 }
                 else
                 {
-                    this.WmsFrame.WriteLog("库存看板", "", "提示", "禁用失败！");
+                    this.WmsFrame.WriteLog("库存看板", "", "提示", viewCell.WareHouse_Name + "：货位:" + viewCell.Cell_Name + "-" + viewCell.Cell_Chlid_Position + "禁用失败！");
+
                 }
             }
             this.View.RefreshData();

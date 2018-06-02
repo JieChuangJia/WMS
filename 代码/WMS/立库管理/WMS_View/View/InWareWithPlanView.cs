@@ -26,7 +26,7 @@ namespace WMS_Kernel
         {
             BindGridData();
             this.presenter.Init();
-            de_CreateTime.EditValue = DateTime.Now;
+            //de_CreateTime.EditValue = DateTime.Now;
         }
         public override void Init(IWMSFrame wmsFrame)
         {
@@ -120,8 +120,6 @@ namespace WMS_Kernel
             this.gc_TrayGoodsList.DataBindings.Clear();
             this.gc_TrayGoodsList.DataBindings.Add("DataSource", ViewDataManager.PALLETWITHPLANDATA, "TrayGoodsListData", false, DataSourceUpdateMode.OnPropertyChanged);
 
-          
-
         }
        
         
@@ -147,7 +145,9 @@ namespace WMS_Kernel
             }
             int currRow = this.gv_PlanList.GetSelectedRows()[0];
             string goodsCode = this.gv_PlanList.GetRowCellValue(currRow, "物料编码").ToString();
-            this.presenter.AddTrayGoods(this.te_TrayCode.Text, (int)this.se_GoodsNum.Value, this.de_CreateTime.DateTime, goodsCode);
+                string planCode = this.gv_PlanList.GetRowCellValue(currRow, "计划单号").ToString();
+                string planListCode = this.gv_PlanList.GetRowCellValue(currRow, "计划列表编码").ToString();
+                this.presenter.AddTrayGoods(planListCode,this.te_TrayCode.Text, (int)this.se_GoodsNum.Value, goodsCode, planCode);
         }
  
         private void sb_DeleteGoods_Click(object sender, EventArgs e)
@@ -160,7 +160,14 @@ namespace WMS_Kernel
 
                 return ;
             }
-            this.presenter.DeleteTrayGoods(goodsCode);
+            string palletCode = this.gv_TrayGoods.GetRowCellValue(currRow, "托盘条码").ToString();
+            if (palletCode == "")
+            {
+                this.ShowMessage("信息提示", "托盘条码错误！");
+
+                return;
+            }
+            this.presenter.DeleteTrayGoods(palletCode,goodsCode);
         }
 
         private void sb_TrayInput_Click(object sender, EventArgs e)
@@ -177,7 +184,7 @@ namespace WMS_Kernel
             int currRow = this.gv_PlanList.GetSelectedRows()[0];
             string planListID = this.gv_PlanList.GetRowCellValue(currRow, "计划列表编码").ToString();
 
-            this.presenter.TrayConfirm(planListID, this.ce_IsFull.Checked, this.te_TrayCode.Text, this.cbe_TargetCell.Text);
+            this.presenter.TrayConfirm(planListID, this.cbe_TargetCell.Text);
         }
 
         private void sb_ClearTrayData_Click(object sender, EventArgs e)

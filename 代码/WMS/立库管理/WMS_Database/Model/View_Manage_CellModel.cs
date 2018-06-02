@@ -55,6 +55,7 @@ namespace WMS_Database
         private string _cell_child_operate_type;
         private string _cell_child_tasklock_id;
         private string _cell_child_reserve1;
+        private DateTime? _mange_createtime;
         /// <summary>
         /// 
         /// </summary>
@@ -414,6 +415,14 @@ namespace WMS_Database
         {
             set { _cell_child_reserve1 = value; }
             get { return _cell_child_reserve1; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public DateTime? Mange_CreateTime
+        {
+            set { _mange_createtime = value; }
+            get { return _mange_createtime; }
         }
         #endregion Model
 

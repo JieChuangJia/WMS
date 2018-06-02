@@ -28,7 +28,7 @@ namespace WMS_Interface
         public string 存储货位 { get; set; }
         public string 托盘条码 { get; set; }
         public string 是否满盘 { get; set; }
-        public string 生产日期 { get; set; }
+        //public string 生产日期 { get; set; }
         public string 入库时间 { get; set; }
         
         public string 更新时间 { get; set; }

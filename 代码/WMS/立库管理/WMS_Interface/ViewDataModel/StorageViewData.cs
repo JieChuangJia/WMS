@@ -23,7 +23,7 @@ namespace WMS_Interface
         public string 物料条码 { get; set; }
         public string 物料名称 { get; set; }
         public string 规格型号 { get; set; }
-        public string 生产日期 { get;set; }
+        //public string 生产日期 { get;set; }
             
         public string 数量 { get; set; }
         public string 存储货位 { get; set; }

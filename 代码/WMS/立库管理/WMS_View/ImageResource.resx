@@ -118,188 +118,89 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="appointment_new_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\appointment-new-4.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="arrow_down_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\arrow-down-1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="arrow_down_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\arrow-down-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="arrow_down_double_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\arrow-down-double-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="arrow_refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\arrow-refresh.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="arrow_up_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\arrow-up-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="arrow_up_double_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\arrow-up-double-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="battery_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\battery-3.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="configure_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\configure-5.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="database_go" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\database-go.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dialog_ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\dialog-ok.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dialog_ok1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\dialog-ok1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dialog_ok_apply_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\dialog-ok-apply-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="start" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\start.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="document_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\document-edit.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="document_save_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\document-save-5.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="door_in" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\door-in.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit_clear_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\edit-clear-3.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit_clear_history_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\edit-clear-history-3.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit_delete_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\edit-delete-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit_delete_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\edit-delete-5.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="system_search_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\system-search-3.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="edit_find_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\edit-find-5.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="edit_remove_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\edit-remove-3.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit_undo_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\edit-undo-5.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="exaile_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\exaile-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="go_first_view" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\go-first-view.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="go_home_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\go-home-6.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="go_home_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\go-home-8.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="WareQuery" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ware.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="go_last_view" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\go-last-view.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="go_next_view" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\go-next-view.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="go_previous_view" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\go-previous-view.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="InWareWithoutPlan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\document-import-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="irkick_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\irkick-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="kedit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\kedit.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="limit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\limit.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LimitMana" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\configure-6.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="list_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\list-add.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mail_find" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\mail-find.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mail_send_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\mail-send-3.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="material" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\material.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="edit_delete_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\edit-delete-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MaterialLoad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\edit-remove-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MaterialMana" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\gnome-mastermind.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MaterialUnload" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\edit-add-4.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="media_playback_pause_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\media-playback-pause-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="media_playback_pause_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\media-playback-pause-7.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="media_playback_start" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\media-playback-start.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="media_playback_start1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\media-playback-start1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="media_playback_start_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\media-playback-start-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="media_playback_start_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\media-playback-start-3.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="media_playback_start_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\media-playback-start-9.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ModifyPassWord" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\draw-line-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OutWareWithoutPlan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\document-export-4.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="configure_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\configure-5.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="OutWareWithPlan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\kgpg_export.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="page_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\page-edit.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mail_send_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\mail-send-3.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\pause.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="list_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\list-add.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlanMana" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\edit-add.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="OutWareWithoutPlan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\document-export-4.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlanQuery" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\view-list-text-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="limit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\limit.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="go_previous_view" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\go-previous-view.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="material" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\material.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dialog_ok_apply_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\dialog-ok-apply-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PrepareWork" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\view-list-icons.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="role" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\role.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="view_refresh_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\view-refresh-4.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RoleMana" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\kdmconfig.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="database_go" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\database-go.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="start" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\start.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="door_in" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\door-in.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="system_search_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\system-search-3.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ModifyPassWord" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\draw-line-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlanQuery" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\view-list-text-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="media_playback_start_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\media-playback-start-3.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="appointment_new_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\appointment-new-4.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow_up_double_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\arrow-up-double-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UserMana" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\user1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="battery_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\battery-3.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TaskList" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\format-list-unordered.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -307,34 +208,136 @@
   <data name="tool_delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\tool_delete.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="User" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\User.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="edit_undo_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\edit-undo-5.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="UserMana" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\user1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="edit_clear_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\edit-clear-3.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="view_refresh_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\view-refresh-4.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="WareLimitMana" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\go-home.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="WareQuery" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\ware.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="go_home_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\go-home-6.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="zoom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\zoom.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="code_class" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\code-class.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="InWareWithoutPlan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\document-import-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_clear_history_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\edit-clear-history-3.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="media_playback_pause_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\media-playback-pause-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="media_playback_pause_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\media-playback-pause-7.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlanMana" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\edit-add.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="media_playback_start_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\media-playback-start-9.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoleMana" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\kdmconfig.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="InWareWithPlan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\view-calendar-week.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="media_playback_start_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\media-playback-start-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="go_first_view" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\go-first-view.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LimitMana" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\configure-6.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Pallet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\view-calendar-month.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="StationShow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\bitscope.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WareLimitMana" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\go-home.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="document_save_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\document-save-5.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="page_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\page-edit.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_delete_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\edit-delete-5.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="go_home_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\go-home-8.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="exaile_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\exaile-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mail_find" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\mail-find.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\pause.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaterialUnload" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\edit-add-4.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaterialMana" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\gnome-mastermind.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow_up_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\arrow-up-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="media_playback_start1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\media-playback-start1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow_refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\arrow-refresh.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dialog_ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\dialog-ok.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow_down_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\arrow-down-1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="code_class" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\code-class.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow_down_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\arrow-down-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="go_next_view" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\go-next-view.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kedit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\kedit.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow_down_double_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\arrow-down-double-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="irkick_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\irkick-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dialog_ok1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\dialog-ok1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="User" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\User.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="media_playback_start" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\media-playback-start.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_remove_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\edit-remove-3.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="role" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\role.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit-add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\edit-add1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

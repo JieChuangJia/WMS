@@ -24,13 +24,14 @@ namespace WMS_Interface
         public string 物料名称 { get; set; }
         public string 规格型号 { get; set; }
         public int 数量 { get; set; }
-        public DateTime ?生产日期 { get; set; }
+        //public string 生产日期 { get; set; }
+        public string 库房 { get; set; }
         public string 存储货位 { get; set; }
         public string 计量单位 { get; set; }
         public string 是否满盘 { get; set; }
         public string 存储库区 { get; set; }
-        public DateTime ?入库时间 { get; set; }
-        public DateTime ?更新时间 { get; set; }
+        public string 入库时间 { get; set; }
+        public string 更新时间 { get; set; }
 
 
     }

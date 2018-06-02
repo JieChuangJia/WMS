@@ -48,12 +48,12 @@ namespace WMS_Kernel
                 gsdModel.物料类别 = goods.Goods_Category;
                 gsdModel.物料名称 = goods.Goods_Name;
                 gsdModel.物料内部编码 = goods.Goods_ID.ToString();
-
+                gsdModel.规格型号 = goods.Goods_Model;
                 ViewDataManager.PLANINPUTDATA.GoodsListData.Add(gsdModel);
             }
 
         }
-        public void AddPlanGoods(string goodsCode, decimal planGoodsNum)
+        public void AddPlanGoods(string goodsCode, decimal planGoodsNum,string planCode)
         {
             if (goodsCode.Trim() == "")
             {
@@ -63,6 +63,11 @@ namespace WMS_Kernel
             if (planGoodsNum ==0)
             {
                 this.View.ShowMessage("信息提示", "请输入物料计划数量！");
+                return;
+            }
+            if (planCode == "")
+            {
+                this.View.ShowMessage("信息提示", "请输入计划单号！");
                 return;
             }
             if (IsExistPalletGoods(goodsCode) == true)
@@ -78,14 +83,15 @@ namespace WMS_Kernel
                 return;
             }
             PlanListModel plm = new PlanListModel();
+            plm.计划单号 = planCode;
             plm.规格型号 = goodsModel.Goods_Model;
             plm.计划数量 = planGoodsNum.ToString();
             plm.计量单位 = goodsModel.Goods_Unit;
             plm.完成数量 = "0";
             plm.物料编码 = goodsCode;
             plm.物料名称 = goodsModel.Goods_Name;
-            //plm.下达数量 = "0";
-            //plm.计划列表编码 = Guid.NewGuid().ToString();
+            plm.下达数量 = "0";
+            plm.计划列表编码 = Guid.NewGuid().ToString();
             ViewDataManager.PLANINPUTDATA.PlanListData.Add(plm);
         }
 
@@ -125,6 +131,7 @@ namespace WMS_Kernel
                     return;
                 }
                 PlanMainModel plan = new PlanMainModel();
+               
                 plan.Plan_Code = planCode;
                 plan.Plan_ID = Guid.NewGuid().ToString();
                 plan.Plan_Type_ID = planType.Plan_Type_ID;
@@ -152,6 +159,7 @@ namespace WMS_Kernel
                     bllPlanList.Add(planList);
                 }
                 this.View.ShowMessage("信息提示", "计划添加成功！");
+                ViewDataManager.PLANINPUTDATA.PlanListData.Clear();//添加计划口清空计划列表
             }
             catch(Exception ex)
             {

@@ -164,20 +164,20 @@ namespace WMS_Database
 
         public List<View_CellModel> GetHouseRowCells(string houseName, string rowth,string cellPos)
         {
-            string sqlStr = "WareHouse_Name = '" + houseName + "' and Cell_Row =" + rowth + " and Cell_Chlid_Position='" + cellPos + "' ";
+            string sqlStr = "WareHouse_Name = '" + houseName + "' and Cell_Row =" + rowth + " and Cell_Chlid_Position='" + cellPos + "' and Cell_Type ='货位'";
             List<View_CellModel> cellList = GetModelList(sqlStr); 
             return cellList;
         }
         public List<View_CellModel> GetCells(string houseName, int rowth, int colth, string cellPos)
         {
-            string sqlStr = "WareHouse_Name = '" + houseName + "' and Cell_Row =" + rowth + " and Cell_Column="+colth+" and Cell_Chlid_Position='" + cellPos + "' ";
+            string sqlStr = "WareHouse_Name = '" + houseName + "' and Cell_Row =" + rowth + " and Cell_Column=" + colth + " and Cell_Chlid_Position='" + cellPos + "' and Cell_Type ='货位' ";
             List<View_CellModel> cellList = GetModelList(sqlStr);
             return cellList;
         }
 
-        public View_CellModel GetModelByWHAndCellName(string houseName, string cellName)
+        public View_CellModel GetModelByWHAndCellName(string houseName, string cellName,string pos)
         {
-            string sqlStr = "Cell_Name ='" + cellName + "' and WareHouse_Name = '" + houseName + "'";
+            string sqlStr = "Cell_Name ='" + cellName + "' and WareHouse_Name = '" + houseName + "'and Cell_Chlid_Position='" + pos+"'";
             List<View_CellModel> cellList = GetModelList(sqlStr);
             if (cellList != null && cellList.Count > 0)
             {
@@ -190,7 +190,7 @@ namespace WMS_Database
         }
         public View_CellModel GetModelByWHAndCellName(string houseName, string cellName,int order)
         {
-            string sqlStr = "Cell_Name ='" + cellName + "' and WareHouse_Name = '" + houseName + "' and Cell_Child_Order =" + order;
+            string sqlStr = "Cell_Name ='" + cellName + "' and WareHouse_Name = '" + houseName + "' and Cell_Child_Order =" + order + " and Cell_Type ='货位' ";
             List<View_CellModel> cellList = GetModelList(sqlStr);
             if (cellList != null && cellList.Count > 0)
             {
@@ -232,7 +232,8 @@ namespace WMS_Database
 
         public View_CellModel GetCell(string houseID, string cellName, string cellPos)
         {
-            string sqlStr = "WareHouse_ID = '" + houseID + "' and Cell_Name ='" + cellName + "' and Cell_Chlid_Position='" + cellPos + "'";
+            string sqlStr = "WareHouse_ID = '" + houseID + "' and Cell_Name ='" + cellName + "' and Cell_Chlid_Position='" + cellPos + "' and Cell_Type ='货位'"
+                + " and Cell_Child_Flag ='1' ";
 
             List<View_CellModel> cellList = GetModelList(sqlStr);
             if (cellList != null && cellList.Count > 0)
@@ -246,8 +247,8 @@ namespace WMS_Database
         }
         public View_CellModel GetEmptyPalletCell(string houseID)
         {
-            string sqlStr = "WareHouse_ID = '" + houseID + "' and Cell_Child_Status='空托盘'and Cell_Child_Run_Status ='完成' and Cell_Child_Flag ='1' order by Cell_Column asc,"
-                + "Cell_Row asc,Cell_Layer asc";
+            string sqlStr = "WareHouse_ID = '" + houseID + "' and Cell_Child_Status='空托盘'and Cell_Child_Run_Status ='完成' and Cell_Child_Flag ='1' and Cell_Type ='货位' order by Cell_Column asc,"
+                + "Cell_Row asc,Cell_Layer asc ";
 
             List<View_CellModel> cellList = GetModelList(sqlStr);
             if (cellList != null && cellList.Count > 0)
@@ -262,7 +263,7 @@ namespace WMS_Database
 
         public View_CellModel GetEmptyPalletCell()
         {
-            string sqlStr = " Cell_Child_Status='空托盘'and Cell_Child_Run_Status ='完成' and Cell_Child_Flag ='1' order by Cell_Column asc,"
+            string sqlStr = " Cell_Child_Status='空托盘'and Cell_Child_Run_Status ='完成' and Cell_Child_Flag ='1' and Cell_Type ='货位' order by Cell_Column asc,"
                 + "Cell_Row asc,Cell_Layer asc";
 
             List<View_CellModel> cellList = GetModelList(sqlStr);
@@ -279,15 +280,35 @@ namespace WMS_Database
         {
             return dal.GetCellPositionType(houseName, rowth);
         }
-        public View_CellModel GetCell(string houseID)
+        public View_CellModel ApplyCell(string houseID)
         {
-            string wereStr = "WareHouse_ID='" + houseID + "' and Cell_Child_Status ='空闲' and Cell_Child_Run_Status ='完成' and Cell_Child_Flag ='1' order by Cell_Column asc,"
+            string wereStr = "WareHouse_ID='" + houseID + "' and Cell_Child_Status ='空闲' and Cell_Child_Run_Status ='完成' and Cell_Child_Flag ='1' and Cell_Type ='货位' order by Cell_Column asc,"
                 + "Cell_Row asc,Cell_Layer asc,Cell_Child_Order desc";
 
             List<View_CellModel> cellList = GetModelList(wereStr);
+            View_CellModel applyCell = null;
             if (cellList != null && cellList.Count > 0)
             {
-                return cellList[0];
+                foreach(View_CellModel cell in cellList)
+                {
+
+                    if (cell.Shelf_Type == "双深")
+                    {
+                        View_CellModel backCell = GetCell(cell.WareHouse_ID, cell.Cell_Name, "后");
+
+                        if (backCell != null && backCell.Cell_Child_Run_Status == "锁定")//双深工位后面的工位处于锁定状态，不允许操作前面的工位
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            applyCell = cell;
+                            break;
+                        }
+                    }
+                }
+
+                return applyCell;
             }
             else
             {
@@ -309,7 +330,78 @@ namespace WMS_Database
             }
         }
 
-    
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="houseID"></param>
+        /// <param name="row"></param>
+        /// <param name="col"></param>
+        /// <param name="layer"></param>
+        /// <param name="cate">0:获取所有不重复行；1：获取当前行下的所有不重复列；2当前行列下获取不重复层；3：当前排列层下不重复位置</param>
+        /// <returns></returns>
+        public List<string> GetRCL(string houseID,int row,int col,int layer,int cate)
+        {
+            List<string> data = new List<string>();
+            string sqlStr = "select distinct";
+            if (0 == cate)// 获取排数量
+            {
+                sqlStr += " Cell_Row from View_Cell";
+            }
+            else if (1 == cate)// 获取列数量
+            {
+                sqlStr += " Cell_Column from View_Cell";
+            }
+            else if (2 == cate)// 获取层数量
+            {
+                sqlStr += " Cell_Layer from View_Cell";
+            }
+            else if (3 == cate)
+            {
+                sqlStr += " Cell_Chlid_Position from View_Cell";
+            }
+            else
+            {
+                return null;
+            }
+            sqlStr += " where WareHouse_ID = " + houseID + " and Cell_Child_Status='空闲' and Cell_Child_Run_Status ='完成' and Cell_Type ='货位'";
+            if (0 == cate)// 获取排数量
+            {
+                sqlStr += "  order by Cell_Row asc";
+            }
+            else if (1 == cate)// 获取列数量
+            {
+                sqlStr += " and Cell_Row=" + row + " order by Cell_Column asc";
+            }
+            else if (2 == cate)// 获取层数量
+            {
+                sqlStr += " and Cell_Row=" + row + " and Cell_Column = " + col + " order by Cell_Layer asc";
+            }
+            else if (3 == cate)
+            {
+                sqlStr += " and Cell_Row=" + row + " and Cell_Column = " + col + " and Cell_Layer=" + layer + " order by Cell_Chlid_Position asc"; ;
+            }
+            else
+            {
+                return null;
+            }
+
+            DataSet ds = DbHelperSQL.Query(sqlStr);
+            if (ds != null && ds.Tables.Count > 0)
+            {
+
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    string vaStr =ds.Tables[0].Rows[i][0].ToString();
+                    data.Add(vaStr);
+                }
+            }
+            else
+            {
+                return null;
+            }
+            //data.Sort();
+            return data;
+        }
        
 
         #endregion  ExtensionMethod

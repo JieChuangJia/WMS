@@ -41,6 +41,7 @@ namespace WMS_Database
         /// </summary>
         public bool Delete(string Mange_ID)
         {
+            DeleteManage(30);
 
             return dal.Delete(Mange_ID);
         }
@@ -61,7 +62,7 @@ namespace WMS_Database
             return dal.GetModel(Mange_ID);
         }
 
-
+     
         /// <summary>
         /// 获得数据列表
         /// </summary>
@@ -140,7 +141,7 @@ namespace WMS_Database
 		#region  ExtensionMethod
         public ManageModel GetModelByPalletCode(string palletCode)
         {
-            string sqlStr = "Mange_Stock_Barcode = '" + palletCode + "' and Mange_Status ='待执行'";
+            string sqlStr = "Mange_Stock_Barcode = '" + palletCode + "' and Mange_Status!='已完成'";
             List<ManageModel> manageList = GetModelList(sqlStr);
             if(manageList!= null&&manageList.Count>0)
             {

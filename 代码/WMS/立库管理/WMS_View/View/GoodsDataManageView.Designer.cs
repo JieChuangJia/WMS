@@ -62,7 +62,7 @@
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbonControl1.ShowQatLocationSelector = false;
             this.ribbonControl1.ShowToolbarCustomizeItem = false;
-            this.ribbonControl1.Size = new System.Drawing.Size(650, 33);
+            this.ribbonControl1.Size = new System.Drawing.Size(652, 33);
             this.ribbonControl1.Toolbar.ShowCustomizeItem = false;
             // 
             // groupControl1
@@ -78,7 +78,7 @@
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Location = new System.Drawing.Point(0, 31);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(650, 299);
+            this.groupControl1.Size = new System.Drawing.Size(652, 300);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "物料属性";
             // 
@@ -91,7 +91,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(21, 61);
+            this.labelControl3.Location = new System.Drawing.Point(21, 62);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(48, 14);
             this.labelControl3.TabIndex = 14;
@@ -106,7 +106,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(21, 35);
+            this.labelControl2.Location = new System.Drawing.Point(21, 36);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(48, 14);
             this.labelControl2.TabIndex = 12;
@@ -123,7 +123,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(21, 90);
+            this.labelControl1.Location = new System.Drawing.Point(21, 91);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(48, 14);
             this.labelControl1.TabIndex = 10;
@@ -149,7 +149,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(650, 382);
+            this.ClientSize = new System.Drawing.Size(652, 383);
             this.Controls.Add(this.sb_Cancel);
             this.Controls.Add(this.sb_Sure);
             this.Controls.Add(this.groupControl1);

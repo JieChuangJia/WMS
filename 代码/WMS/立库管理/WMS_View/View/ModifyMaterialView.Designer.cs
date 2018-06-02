@@ -40,9 +40,9 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.sb_can = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.te_Model = new DevExpress.XtraEditors.TextEdit();
+            this.sb_can = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.cb_Flag.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEdit_MaterialUnit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEdit_MaterialCode.Properties)).BeginInit();
@@ -163,15 +163,6 @@
             this.groupControl1.TabIndex = 14;
             this.groupControl1.Text = "物料信息";
             // 
-            // sb_can
-            // 
-            this.sb_can.Location = new System.Drawing.Point(351, 155);
-            this.sb_can.Name = "sb_can";
-            this.sb_can.Size = new System.Drawing.Size(85, 22);
-            this.sb_can.TabIndex = 15;
-            this.sb_can.Text = "取消";
-            this.sb_can.Click += new System.EventHandler(this.sb_can_Click);
-            // 
             // labelControl6
             // 
             this.labelControl6.Location = new System.Drawing.Point(229, 99);
@@ -186,6 +177,15 @@
             this.te_Model.Name = "te_Model";
             this.te_Model.Size = new System.Drawing.Size(128, 20);
             this.te_Model.TabIndex = 15;
+            // 
+            // sb_can
+            // 
+            this.sb_can.Location = new System.Drawing.Point(351, 155);
+            this.sb_can.Name = "sb_can";
+            this.sb_can.Size = new System.Drawing.Size(85, 22);
+            this.sb_can.TabIndex = 15;
+            this.sb_can.Text = "取消";
+            this.sb_can.Click += new System.EventHandler(this.sb_can_Click);
             // 
             // ModifyMaterialView
             // 

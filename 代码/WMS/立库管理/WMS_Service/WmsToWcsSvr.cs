@@ -1073,7 +1073,7 @@ namespace WMS_Service
                 if (requireTask.RequireType == EnumRequireTaskType.空筐入库.ToString())//入库请求设备对应指定库房编码，库房编码和堆垛机编码一致
                 {
                     //通过stationLogic得知申请的是哪个库房的入库
-                    View_CellModel targetModel = bllViewCell.GetCell(stationLogic.WareHouse_ID);
+                    View_CellModel targetModel = bllViewCell.ApplyCell(stationLogic.WareHouse_ID);
                     if (targetModel == null)
                     {
                         response.Status = false;

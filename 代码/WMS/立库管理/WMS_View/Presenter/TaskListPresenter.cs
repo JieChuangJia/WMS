@@ -14,12 +14,13 @@ namespace WMS_Kernel
         View_Plan_ManageBLL bllViewPlanManage = new View_Plan_ManageBLL();
         View_StockListBLL bllViewStockList = new View_StockListBLL();
         View_ManageBLL bllViewManage = new View_ManageBLL();
+        WH_Station_LogicBLL bllStationLogic = new WH_Station_LogicBLL();
         string currtaskType = "";
         string currtaskStatus = "";
         public TaskListPresenter(ITaskListView view,IWMSFrame wmsFrame):base(view,wmsFrame)
         { }
 
-        public void Init()
+        public override void Init()
         { 
         
         }
@@ -38,8 +39,12 @@ namespace WMS_Kernel
             {
                 ManageTask task = new ManageTask();
                 task.操作员 = manage.Manage_Operater;
-                task.结束时间 = manage.Manage_End_Time;
-                task.开始时间 = manage.Manage_Begin_Time;
+                //task.结束时间 = manage.Manage_End_Time.ToString("yyyyy-MM-dd HH:mm:ss");
+                if(manage.Manage_Begin_Time!= null)
+                {
+                    task.开始时间 = ((DateTime)manage.Manage_Begin_Time).ToString("yyyyy-MM-dd HH:mm:ss");
+                }
+               
                 View_CellModel viewStartCell = bllViewCell.GetModelByChildCellID(manage.Mange_Start_Cell_ID);
                 if (manage.Manage_Type_Name == EnumManageTaskType.空托盘上架.ToString()
                     || manage.Manage_Type_Name == EnumManageTaskType.上架.ToString())
@@ -63,7 +68,12 @@ namespace WMS_Kernel
                     || manage.Manage_Type_Name == EnumManageTaskType.盘点下架.ToString()
                     || manage.Manage_Type_Name == EnumManageTaskType.下架.ToString())
                 {
-                    task.终止位置 = viewEndCell.Cell_Name;
+                    WH_Station_LogicModel station = bllStationLogic.GetStationByIDAndType(viewEndCell.Cell_Chlid_ID, EnumCellType.下架工位.ToString());
+                    if(station!= null)
+                    {
+                        task.终止位置 = station.WH_Station_Logic_Name;
+                    }
+                  
                 }
 
                 task.任务类型 = manage.Manage_Type_Name;
@@ -83,6 +93,7 @@ namespace WMS_Kernel
             }
             task.Mange_Status = EnumManageTaskStatus.已完成.ToString();
             bllManage.Update(task);
+            QueryTask(this.currtaskType, this.currtaskStatus);
         }
 
         public void CancelTask(string palletCode)
@@ -116,11 +127,11 @@ namespace WMS_Kernel
                 PalletInfor palletInfor = new PalletInfor();
                 palletInfor.存储货位 = stockDetail.Cell_Name +"-"+stockDetail.Cell_Chlid_Position;
                 palletInfor.存储库区 = stockDetail.Area_Name;
-                palletInfor.更新时间 = stockDetail.Stock_List_Update_Time;
+                palletInfor.更新时间 = stockDetail.Stock_List_Update_Time.ToString();
                 palletInfor.规格型号 = stockDetail.Goods_Model;
                 palletInfor.计量单位 = stockDetail.Goods_Unit;
-                palletInfor.入库时间 = stockDetail.Stock_List_Entry_Time;
-                palletInfor.生产日期 = stockDetail.Goods_ProduceDate;
+                palletInfor.入库时间 = stockDetail.Stock_List_Entry_Time.ToString();
+                //palletInfor.生产日期 = stockDetail.Goods_ProduceDate;
                 if(stockDetail.Stock_Full_Flag == "1")
                 {
                    palletInfor.是否满盘 = "是";

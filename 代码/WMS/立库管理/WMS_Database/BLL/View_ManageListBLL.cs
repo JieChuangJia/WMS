@@ -16,9 +16,9 @@ namespace WMS_Database
         /// <summary>
         /// 是否存在该记录
         /// </summary>
-        public bool Exists(string Plan_ID, string Mange_Type_ID, string Mange_Stock_Barcode, string Mange_Status, string Mange_Full_Flag, string Manage_BreakDown_Status, string Mange_Start_Cell_ID, string Mange_End_Cell_ID, string Manage_Operater, DateTime Manage_Begin_Time, DateTime Manage_End_Time, string Manage_List_ID, string Stock_List_ID, string Manage_List_Quantity, string Manage_List_Remark, string Manage_Type_Code, string Manage_Type_Name, string Manage_Type_Group, string Manage_Type_Remark, string Manage_Type_InOut, string Mange_ID)
+        public bool Exists(string Plan_ID, string Mange_Type_ID, string Mange_Stock_Barcode, string Mange_Status, string Mange_Full_Flag, string Manage_BreakDown_Status, string Mange_Start_Cell_ID, string Mange_End_Cell_ID, string Manage_Operater, DateTime Manage_Begin_Time, DateTime Manage_End_Time, string Manage_List_ID, string Stock_List_ID, string Manage_List_Quantity, string Manage_List_Remark, string Manage_Type_Code, string Manage_Type_Name, string Manage_Type_Group, string Manage_Type_Remark, string Manage_Type_InOut, string Mange_ID, DateTime Mange_CreateTime)
         {
-            return dal.Exists(Plan_ID, Mange_Type_ID, Mange_Stock_Barcode, Mange_Status, Mange_Full_Flag, Manage_BreakDown_Status, Mange_Start_Cell_ID, Mange_End_Cell_ID, Manage_Operater, Manage_Begin_Time, Manage_End_Time, Manage_List_ID, Stock_List_ID, Manage_List_Quantity, Manage_List_Remark, Manage_Type_Code, Manage_Type_Name, Manage_Type_Group, Manage_Type_Remark, Manage_Type_InOut, Mange_ID);
+            return dal.Exists(Plan_ID, Mange_Type_ID, Mange_Stock_Barcode, Mange_Status, Mange_Full_Flag, Manage_BreakDown_Status, Mange_Start_Cell_ID, Mange_End_Cell_ID, Manage_Operater, Manage_Begin_Time, Manage_End_Time, Manage_List_ID, Stock_List_ID, Manage_List_Quantity, Manage_List_Remark, Manage_Type_Code, Manage_Type_Name, Manage_Type_Group, Manage_Type_Remark, Manage_Type_InOut, Mange_ID, Mange_CreateTime);
         }
 
         /// <summary>
@@ -40,21 +40,22 @@ namespace WMS_Database
         /// <summary>
         /// 删除一条数据
         /// </summary>
-        public bool Delete(string Plan_ID, string Mange_Type_ID, string Mange_Stock_Barcode, string Mange_Status, string Mange_Full_Flag, string Manage_BreakDown_Status, string Mange_Start_Cell_ID, string Mange_End_Cell_ID, string Manage_Operater, DateTime Manage_Begin_Time, DateTime Manage_End_Time, string Manage_List_ID, string Stock_List_ID, string Manage_List_Quantity, string Manage_List_Remark, string Manage_Type_Code, string Manage_Type_Name, string Manage_Type_Group, string Manage_Type_Remark, string Manage_Type_InOut, string Mange_ID)
+        public bool Delete(string Plan_ID, string Mange_Type_ID, string Mange_Stock_Barcode, string Mange_Status, string Mange_Full_Flag, string Manage_BreakDown_Status, string Mange_Start_Cell_ID, string Mange_End_Cell_ID, string Manage_Operater, DateTime Manage_Begin_Time, DateTime Manage_End_Time, string Manage_List_ID, string Stock_List_ID, string Manage_List_Quantity, string Manage_List_Remark, string Manage_Type_Code, string Manage_Type_Name, string Manage_Type_Group, string Manage_Type_Remark, string Manage_Type_InOut, string Mange_ID, DateTime Mange_CreateTime)
         {
 
-            return dal.Delete(Plan_ID, Mange_Type_ID, Mange_Stock_Barcode, Mange_Status, Mange_Full_Flag, Manage_BreakDown_Status, Mange_Start_Cell_ID, Mange_End_Cell_ID, Manage_Operater, Manage_Begin_Time, Manage_End_Time, Manage_List_ID, Stock_List_ID, Manage_List_Quantity, Manage_List_Remark, Manage_Type_Code, Manage_Type_Name, Manage_Type_Group, Manage_Type_Remark, Manage_Type_InOut, Mange_ID);
+            return dal.Delete(Plan_ID, Mange_Type_ID, Mange_Stock_Barcode, Mange_Status, Mange_Full_Flag, Manage_BreakDown_Status, Mange_Start_Cell_ID, Mange_End_Cell_ID, Manage_Operater, Manage_Begin_Time, Manage_End_Time, Manage_List_ID, Stock_List_ID, Manage_List_Quantity, Manage_List_Remark, Manage_Type_Code, Manage_Type_Name, Manage_Type_Group, Manage_Type_Remark, Manage_Type_InOut, Mange_ID, Mange_CreateTime);
         }
 
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public WMS_Database.View_Manage_ListModel GetModel(string Plan_ID, string Mange_Type_ID, string Mange_Stock_Barcode, string Mange_Status, string Mange_Full_Flag, string Manage_BreakDown_Status, string Mange_Start_Cell_ID, string Mange_End_Cell_ID, string Manage_Operater, DateTime Manage_Begin_Time, DateTime Manage_End_Time, string Manage_List_ID, string Stock_List_ID, string Manage_List_Quantity, string Manage_List_Remark, string Manage_Type_Code, string Manage_Type_Name, string Manage_Type_Group, string Manage_Type_Remark, string Manage_Type_InOut, string Mange_ID)
+        public WMS_Database.View_Manage_ListModel GetModel(string Plan_ID, string Mange_Type_ID, string Mange_Stock_Barcode, string Mange_Status, string Mange_Full_Flag, string Manage_BreakDown_Status, string Mange_Start_Cell_ID, string Mange_End_Cell_ID, string Manage_Operater, DateTime Manage_Begin_Time, DateTime Manage_End_Time, string Manage_List_ID, string Stock_List_ID, string Manage_List_Quantity, string Manage_List_Remark, string Manage_Type_Code, string Manage_Type_Name, string Manage_Type_Group, string Manage_Type_Remark, string Manage_Type_InOut, string Mange_ID, DateTime Mange_CreateTime)
         {
 
-            return dal.GetModel(Plan_ID, Mange_Type_ID, Mange_Stock_Barcode, Mange_Status, Mange_Full_Flag, Manage_BreakDown_Status, Mange_Start_Cell_ID, Mange_End_Cell_ID, Manage_Operater, Manage_Begin_Time, Manage_End_Time, Manage_List_ID, Stock_List_ID, Manage_List_Quantity, Manage_List_Remark, Manage_Type_Code, Manage_Type_Name, Manage_Type_Group, Manage_Type_Remark, Manage_Type_InOut, Mange_ID);
+            return dal.GetModel(Plan_ID, Mange_Type_ID, Mange_Stock_Barcode, Mange_Status, Mange_Full_Flag, Manage_BreakDown_Status, Mange_Start_Cell_ID, Mange_End_Cell_ID, Manage_Operater, Manage_Begin_Time, Manage_End_Time, Manage_List_ID, Stock_List_ID, Manage_List_Quantity, Manage_List_Remark, Manage_Type_Code, Manage_Type_Name, Manage_Type_Group, Manage_Type_Remark, Manage_Type_InOut, Mange_ID, Mange_CreateTime);
         }
 
+        
         /// <summary>
         /// 获得数据列表
         /// </summary>

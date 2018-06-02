@@ -18,11 +18,11 @@ namespace WMS_Database
         /// <summary>
         /// 是否存在该记录
         /// </summary>
-        public bool Exists(string Plan_ID, string Mange_Type_ID, string Mange_Stock_Barcode, string Mange_Status, string Mange_Full_Flag, string Manage_BreakDown_Status, string Mange_Start_Cell_ID, string Mange_End_Cell_ID, string Manage_Operater, DateTime Manage_Begin_Time, DateTime Manage_End_Time, string Manage_List_ID, string Stock_List_ID, string Manage_List_Quantity, string Manage_List_Remark, string Manage_Type_Code, string Manage_Type_Name, string Manage_Type_Group, string Manage_Type_Remark, string Manage_Type_InOut, string Mange_ID)
+        public bool Exists(string Plan_ID, string Mange_Type_ID, string Mange_Stock_Barcode, string Mange_Status, string Mange_Full_Flag, string Manage_BreakDown_Status, string Mange_Start_Cell_ID, string Mange_End_Cell_ID, string Manage_Operater, DateTime Manage_Begin_Time, DateTime Manage_End_Time, string Manage_List_ID, string Stock_List_ID, string Manage_List_Quantity, string Manage_List_Remark, string Manage_Type_Code, string Manage_Type_Name, string Manage_Type_Group, string Manage_Type_Remark, string Manage_Type_InOut, string Mange_ID, DateTime Mange_CreateTime)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select count(1) from View_Manage_List");
-            strSql.Append(" where Plan_ID='" + Plan_ID + "' and Mange_Type_ID='" + Mange_Type_ID + "' and Mange_Stock_Barcode='" + Mange_Stock_Barcode + "' and Mange_Status='" + Mange_Status + "' and Mange_Full_Flag='" + Mange_Full_Flag + "' and Manage_BreakDown_Status='" + Manage_BreakDown_Status + "' and Mange_Start_Cell_ID='" + Mange_Start_Cell_ID + "' and Mange_End_Cell_ID='" + Mange_End_Cell_ID + "' and Manage_Operater='" + Manage_Operater + "' and Manage_Begin_Time='" + Manage_Begin_Time + "' and Manage_End_Time='" + Manage_End_Time + "' and Manage_List_ID='" + Manage_List_ID + "' and Stock_List_ID='" + Stock_List_ID + "' and Manage_List_Quantity='" + Manage_List_Quantity + "' and Manage_List_Remark='" + Manage_List_Remark + "' and Manage_Type_Code='" + Manage_Type_Code + "' and Manage_Type_Name='" + Manage_Type_Name + "' and Manage_Type_Group='" + Manage_Type_Group + "' and Manage_Type_Remark='" + Manage_Type_Remark + "' and Manage_Type_InOut='" + Manage_Type_InOut + "' and Mange_ID='" + Mange_ID + "' ");
+            strSql.Append(" where Plan_ID='" + Plan_ID + "' and Mange_Type_ID='" + Mange_Type_ID + "' and Mange_Stock_Barcode='" + Mange_Stock_Barcode + "' and Mange_Status='" + Mange_Status + "' and Mange_Full_Flag='" + Mange_Full_Flag + "' and Manage_BreakDown_Status='" + Manage_BreakDown_Status + "' and Mange_Start_Cell_ID='" + Mange_Start_Cell_ID + "' and Mange_End_Cell_ID='" + Mange_End_Cell_ID + "' and Manage_Operater='" + Manage_Operater + "' and Manage_Begin_Time='" + Manage_Begin_Time + "' and Manage_End_Time='" + Manage_End_Time + "' and Manage_List_ID='" + Manage_List_ID + "' and Stock_List_ID='" + Stock_List_ID + "' and Manage_List_Quantity='" + Manage_List_Quantity + "' and Manage_List_Remark='" + Manage_List_Remark + "' and Manage_Type_Code='" + Manage_Type_Code + "' and Manage_Type_Name='" + Manage_Type_Name + "' and Manage_Type_Group='" + Manage_Type_Group + "' and Manage_Type_Remark='" + Manage_Type_Remark + "' and Manage_Type_InOut='" + Manage_Type_InOut + "' and Mange_ID='" + Mange_ID + "' and Mange_CreateTime='" + Mange_CreateTime + "' ");
             return DbHelperSQL.Exists(strSql.ToString());
         }
 
@@ -138,6 +138,11 @@ namespace WMS_Database
             {
                 strSql1.Append("Mange_ID,");
                 strSql2.Append("'" + model.Mange_ID + "',");
+            }
+            if (model.Mange_CreateTime != null)
+            {
+                strSql1.Append("Mange_CreateTime,");
+                strSql2.Append("'" + model.Mange_CreateTime + "',");
             }
             strSql.Append("insert into View_Manage_List(");
             strSql.Append(strSql1.ToString().Remove(strSql1.Length - 1));
@@ -319,9 +324,17 @@ namespace WMS_Database
             {
                 strSql.Append("Mange_ID='" + model.Mange_ID + "',");
             }
+            if (model.Mange_CreateTime != null)
+            {
+                strSql.Append("Mange_CreateTime='" + model.Mange_CreateTime + "',");
+            }
+            else
+            {
+                strSql.Append("Mange_CreateTime= null ,");
+            }
             int n = strSql.ToString().LastIndexOf(",");
             strSql.Remove(n, 1);
-            strSql.Append(" where Plan_ID='" + model.Plan_ID + "' and Mange_Type_ID='" + model.Mange_Type_ID + "' and Mange_Stock_Barcode='" + model.Mange_Stock_Barcode + "' and Mange_Status='" + model.Mange_Status + "' and Mange_Full_Flag='" + model.Mange_Full_Flag + "' and Manage_BreakDown_Status='" + model.Manage_BreakDown_Status + "' and Mange_Start_Cell_ID='" + model.Mange_Start_Cell_ID + "' and Mange_End_Cell_ID='" + model.Mange_End_Cell_ID + "' and Manage_Operater='" + model.Manage_Operater + "' and Manage_Begin_Time='" + model.Manage_Begin_Time + "' and Manage_End_Time='" + model.Manage_End_Time + "' and Manage_List_ID='" + model.Manage_List_ID + "' and Stock_List_ID='" + model.Stock_List_ID + "' and Manage_List_Quantity='" + model.Manage_List_Quantity + "' and Manage_List_Remark='" + model.Manage_List_Remark + "' and Manage_Type_Code='" + model.Manage_Type_Code + "' and Manage_Type_Name='" + model.Manage_Type_Name + "' and Manage_Type_Group='" + model.Manage_Type_Group + "' and Manage_Type_Remark='" + model.Manage_Type_Remark + "' and Manage_Type_InOut='" + model.Manage_Type_InOut + "' and Mange_ID='" + model.Mange_ID + "' ");
+            strSql.Append(" where Plan_ID='" + model.Plan_ID + "' and Mange_Type_ID='" + model.Mange_Type_ID + "' and Mange_Stock_Barcode='" + model.Mange_Stock_Barcode + "' and Mange_Status='" + model.Mange_Status + "' and Mange_Full_Flag='" + model.Mange_Full_Flag + "' and Manage_BreakDown_Status='" + model.Manage_BreakDown_Status + "' and Mange_Start_Cell_ID='" + model.Mange_Start_Cell_ID + "' and Mange_End_Cell_ID='" + model.Mange_End_Cell_ID + "' and Manage_Operater='" + model.Manage_Operater + "' and Manage_Begin_Time='" + model.Manage_Begin_Time + "' and Manage_End_Time='" + model.Manage_End_Time + "' and Manage_List_ID='" + model.Manage_List_ID + "' and Stock_List_ID='" + model.Stock_List_ID + "' and Manage_List_Quantity='" + model.Manage_List_Quantity + "' and Manage_List_Remark='" + model.Manage_List_Remark + "' and Manage_Type_Code='" + model.Manage_Type_Code + "' and Manage_Type_Name='" + model.Manage_Type_Name + "' and Manage_Type_Group='" + model.Manage_Type_Group + "' and Manage_Type_Remark='" + model.Manage_Type_Remark + "' and Manage_Type_InOut='" + model.Manage_Type_InOut + "' and Mange_ID='" + model.Mange_ID + "' and Mange_CreateTime='" + model.Mange_CreateTime + "' ");
             int rowsAffected = DbHelperSQL.ExecuteSql(strSql.ToString());
             if (rowsAffected > 0)
             {
@@ -336,11 +349,11 @@ namespace WMS_Database
         /// <summary>
         /// 删除一条数据
         /// </summary>
-        public bool Delete(string Plan_ID, string Mange_Type_ID, string Mange_Stock_Barcode, string Mange_Status, string Mange_Full_Flag, string Manage_BreakDown_Status, string Mange_Start_Cell_ID, string Mange_End_Cell_ID, string Manage_Operater, DateTime Manage_Begin_Time, DateTime Manage_End_Time, string Manage_List_ID, string Stock_List_ID, string Manage_List_Quantity, string Manage_List_Remark, string Manage_Type_Code, string Manage_Type_Name, string Manage_Type_Group, string Manage_Type_Remark, string Manage_Type_InOut, string Mange_ID)
+        public bool Delete(string Plan_ID, string Mange_Type_ID, string Mange_Stock_Barcode, string Mange_Status, string Mange_Full_Flag, string Manage_BreakDown_Status, string Mange_Start_Cell_ID, string Mange_End_Cell_ID, string Manage_Operater, DateTime Manage_Begin_Time, DateTime Manage_End_Time, string Manage_List_ID, string Stock_List_ID, string Manage_List_Quantity, string Manage_List_Remark, string Manage_Type_Code, string Manage_Type_Name, string Manage_Type_Group, string Manage_Type_Remark, string Manage_Type_InOut, string Mange_ID, DateTime Mange_CreateTime)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("delete from View_Manage_List ");
-            strSql.Append(" where Plan_ID='" + Plan_ID + "' and Mange_Type_ID='" + Mange_Type_ID + "' and Mange_Stock_Barcode='" + Mange_Stock_Barcode + "' and Mange_Status='" + Mange_Status + "' and Mange_Full_Flag='" + Mange_Full_Flag + "' and Manage_BreakDown_Status='" + Manage_BreakDown_Status + "' and Mange_Start_Cell_ID='" + Mange_Start_Cell_ID + "' and Mange_End_Cell_ID='" + Mange_End_Cell_ID + "' and Manage_Operater='" + Manage_Operater + "' and Manage_Begin_Time='" + Manage_Begin_Time + "' and Manage_End_Time='" + Manage_End_Time + "' and Manage_List_ID='" + Manage_List_ID + "' and Stock_List_ID='" + Stock_List_ID + "' and Manage_List_Quantity='" + Manage_List_Quantity + "' and Manage_List_Remark='" + Manage_List_Remark + "' and Manage_Type_Code='" + Manage_Type_Code + "' and Manage_Type_Name='" + Manage_Type_Name + "' and Manage_Type_Group='" + Manage_Type_Group + "' and Manage_Type_Remark='" + Manage_Type_Remark + "' and Manage_Type_InOut='" + Manage_Type_InOut + "' and Mange_ID='" + Mange_ID + "' ");
+            strSql.Append(" where Plan_ID='" + Plan_ID + "' and Mange_Type_ID='" + Mange_Type_ID + "' and Mange_Stock_Barcode='" + Mange_Stock_Barcode + "' and Mange_Status='" + Mange_Status + "' and Mange_Full_Flag='" + Mange_Full_Flag + "' and Manage_BreakDown_Status='" + Manage_BreakDown_Status + "' and Mange_Start_Cell_ID='" + Mange_Start_Cell_ID + "' and Mange_End_Cell_ID='" + Mange_End_Cell_ID + "' and Manage_Operater='" + Manage_Operater + "' and Manage_Begin_Time='" + Manage_Begin_Time + "' and Manage_End_Time='" + Manage_End_Time + "' and Manage_List_ID='" + Manage_List_ID + "' and Stock_List_ID='" + Stock_List_ID + "' and Manage_List_Quantity='" + Manage_List_Quantity + "' and Manage_List_Remark='" + Manage_List_Remark + "' and Manage_Type_Code='" + Manage_Type_Code + "' and Manage_Type_Name='" + Manage_Type_Name + "' and Manage_Type_Group='" + Manage_Type_Group + "' and Manage_Type_Remark='" + Manage_Type_Remark + "' and Manage_Type_InOut='" + Manage_Type_InOut + "' and Mange_ID='" + Mange_ID + "' and Mange_CreateTime='" + Mange_CreateTime + "' ");
             int rowsAffected = DbHelperSQL.ExecuteSql(strSql.ToString());
             if (rowsAffected > 0)
             {
@@ -355,13 +368,13 @@ namespace WMS_Database
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public WMS_Database.View_Manage_ListModel GetModel(string Plan_ID, string Mange_Type_ID, string Mange_Stock_Barcode, string Mange_Status, string Mange_Full_Flag, string Manage_BreakDown_Status, string Mange_Start_Cell_ID, string Mange_End_Cell_ID, string Manage_Operater, DateTime Manage_Begin_Time, DateTime Manage_End_Time, string Manage_List_ID, string Stock_List_ID, string Manage_List_Quantity, string Manage_List_Remark, string Manage_Type_Code, string Manage_Type_Name, string Manage_Type_Group, string Manage_Type_Remark, string Manage_Type_InOut, string Mange_ID)
+        public WMS_Database.View_Manage_ListModel GetModel(string Plan_ID, string Mange_Type_ID, string Mange_Stock_Barcode, string Mange_Status, string Mange_Full_Flag, string Manage_BreakDown_Status, string Mange_Start_Cell_ID, string Mange_End_Cell_ID, string Manage_Operater, DateTime Manage_Begin_Time, DateTime Manage_End_Time, string Manage_List_ID, string Stock_List_ID, string Manage_List_Quantity, string Manage_List_Remark, string Manage_Type_Code, string Manage_Type_Name, string Manage_Type_Group, string Manage_Type_Remark, string Manage_Type_InOut, string Mange_ID, DateTime Mange_CreateTime)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select  top 1  ");
-            strSql.Append(" Plan_ID,Mange_Type_ID,Mange_Stock_Barcode,Mange_Status,Mange_Full_Flag,Manage_BreakDown_Status,Mange_Start_Cell_ID,Mange_End_Cell_ID,Manage_Operater,Manage_Begin_Time,Manage_End_Time,Manage_List_ID,Stock_List_ID,Manage_List_Quantity,Manage_List_Remark,Manage_Type_Code,Manage_Type_Name,Manage_Type_Group,Manage_Type_Remark,Manage_Type_InOut,Mange_ID ");
+            strSql.Append(" Plan_ID,Mange_Type_ID,Mange_Stock_Barcode,Mange_Status,Mange_Full_Flag,Manage_BreakDown_Status,Mange_Start_Cell_ID,Mange_End_Cell_ID,Manage_Operater,Manage_Begin_Time,Manage_End_Time,Manage_List_ID,Stock_List_ID,Manage_List_Quantity,Manage_List_Remark,Manage_Type_Code,Manage_Type_Name,Manage_Type_Group,Manage_Type_Remark,Manage_Type_InOut,Mange_ID,Mange_CreateTime ");
             strSql.Append(" from View_Manage_List ");
-            strSql.Append(" where Plan_ID='" + Plan_ID + "' and Mange_Type_ID='" + Mange_Type_ID + "' and Mange_Stock_Barcode='" + Mange_Stock_Barcode + "' and Mange_Status='" + Mange_Status + "' and Mange_Full_Flag='" + Mange_Full_Flag + "' and Manage_BreakDown_Status='" + Manage_BreakDown_Status + "' and Mange_Start_Cell_ID='" + Mange_Start_Cell_ID + "' and Mange_End_Cell_ID='" + Mange_End_Cell_ID + "' and Manage_Operater='" + Manage_Operater + "' and Manage_Begin_Time='" + Manage_Begin_Time + "' and Manage_End_Time='" + Manage_End_Time + "' and Manage_List_ID='" + Manage_List_ID + "' and Stock_List_ID='" + Stock_List_ID + "' and Manage_List_Quantity='" + Manage_List_Quantity + "' and Manage_List_Remark='" + Manage_List_Remark + "' and Manage_Type_Code='" + Manage_Type_Code + "' and Manage_Type_Name='" + Manage_Type_Name + "' and Manage_Type_Group='" + Manage_Type_Group + "' and Manage_Type_Remark='" + Manage_Type_Remark + "' and Manage_Type_InOut='" + Manage_Type_InOut + "' and Mange_ID='" + Mange_ID + "' ");
+            strSql.Append(" where Plan_ID='" + Plan_ID + "' and Mange_Type_ID='" + Mange_Type_ID + "' and Mange_Stock_Barcode='" + Mange_Stock_Barcode + "' and Mange_Status='" + Mange_Status + "' and Mange_Full_Flag='" + Mange_Full_Flag + "' and Manage_BreakDown_Status='" + Manage_BreakDown_Status + "' and Mange_Start_Cell_ID='" + Mange_Start_Cell_ID + "' and Mange_End_Cell_ID='" + Mange_End_Cell_ID + "' and Manage_Operater='" + Manage_Operater + "' and Manage_Begin_Time='" + Manage_Begin_Time + "' and Manage_End_Time='" + Manage_End_Time + "' and Manage_List_ID='" + Manage_List_ID + "' and Stock_List_ID='" + Stock_List_ID + "' and Manage_List_Quantity='" + Manage_List_Quantity + "' and Manage_List_Remark='" + Manage_List_Remark + "' and Manage_Type_Code='" + Manage_Type_Code + "' and Manage_Type_Name='" + Manage_Type_Name + "' and Manage_Type_Group='" + Manage_Type_Group + "' and Manage_Type_Remark='" + Manage_Type_Remark + "' and Manage_Type_InOut='" + Manage_Type_InOut + "' and Mange_ID='" + Mange_ID + "' and Mange_CreateTime='" + Mange_CreateTime + "' ");
             WMS_Database.View_Manage_ListModel model = new WMS_Database.View_Manage_ListModel();
             DataSet ds = DbHelperSQL.Query(strSql.ToString());
             if (ds.Tables[0].Rows.Count > 0)
@@ -466,6 +479,10 @@ namespace WMS_Database
                 {
                     model.Mange_ID = row["Mange_ID"].ToString();
                 }
+                if (row["Mange_CreateTime"] != null && row["Mange_CreateTime"].ToString() != "")
+                {
+                    model.Mange_CreateTime = DateTime.Parse(row["Mange_CreateTime"].ToString());
+                }
             }
             return model;
         }
@@ -476,7 +493,7 @@ namespace WMS_Database
         public DataSet GetList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select Plan_ID,Mange_Type_ID,Mange_Stock_Barcode,Mange_Status,Mange_Full_Flag,Manage_BreakDown_Status,Mange_Start_Cell_ID,Mange_End_Cell_ID,Manage_Operater,Manage_Begin_Time,Manage_End_Time,Manage_List_ID,Stock_List_ID,Manage_List_Quantity,Manage_List_Remark,Manage_Type_Code,Manage_Type_Name,Manage_Type_Group,Manage_Type_Remark,Manage_Type_InOut,Mange_ID ");
+            strSql.Append("select Plan_ID,Mange_Type_ID,Mange_Stock_Barcode,Mange_Status,Mange_Full_Flag,Manage_BreakDown_Status,Mange_Start_Cell_ID,Mange_End_Cell_ID,Manage_Operater,Manage_Begin_Time,Manage_End_Time,Manage_List_ID,Stock_List_ID,Manage_List_Quantity,Manage_List_Remark,Manage_Type_Code,Manage_Type_Name,Manage_Type_Group,Manage_Type_Remark,Manage_Type_InOut,Mange_ID,Mange_CreateTime ");
             strSql.Append(" FROM View_Manage_List ");
             if (strWhere.Trim() != "")
             {
@@ -496,7 +513,7 @@ namespace WMS_Database
             {
                 strSql.Append(" top " + Top.ToString());
             }
-            strSql.Append(" Plan_ID,Mange_Type_ID,Mange_Stock_Barcode,Mange_Status,Mange_Full_Flag,Manage_BreakDown_Status,Mange_Start_Cell_ID,Mange_End_Cell_ID,Manage_Operater,Manage_Begin_Time,Manage_End_Time,Manage_List_ID,Stock_List_ID,Manage_List_Quantity,Manage_List_Remark,Manage_Type_Code,Manage_Type_Name,Manage_Type_Group,Manage_Type_Remark,Manage_Type_InOut,Mange_ID ");
+            strSql.Append(" Plan_ID,Mange_Type_ID,Mange_Stock_Barcode,Mange_Status,Mange_Full_Flag,Manage_BreakDown_Status,Mange_Start_Cell_ID,Mange_End_Cell_ID,Manage_Operater,Manage_Begin_Time,Manage_End_Time,Manage_List_ID,Stock_List_ID,Manage_List_Quantity,Manage_List_Remark,Manage_Type_Code,Manage_Type_Name,Manage_Type_Group,Manage_Type_Remark,Manage_Type_InOut,Mange_ID,Mange_CreateTime ");
             strSql.Append(" FROM View_Manage_List ");
             if (strWhere.Trim() != "")
             {
@@ -541,7 +558,7 @@ namespace WMS_Database
             }
             else
             {
-                strSql.Append("order by T.Mange_ID desc");
+                strSql.Append("order by T.Mange_CreateTime desc");
             }
             strSql.Append(")AS Row, T.*  from View_Manage_List T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))

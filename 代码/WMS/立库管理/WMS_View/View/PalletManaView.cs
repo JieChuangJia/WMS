@@ -25,7 +25,7 @@ namespace WMS_Kernel
         private void PalletManaView_Load(object sender, EventArgs e)
         {
             BindPalletData();
-            de_CreateTime.EditValue = DateTime.Now;
+            //de_CreateTime.EditValue = DateTime.Now;
         }
 
         public override void Init(IWMSFrame wmsFrame)
@@ -133,7 +133,7 @@ namespace WMS_Kernel
             int currGsRow = this.gv_GoodsList.GetSelectedRows()[0];
             string goodsCode = this.gv_GoodsList.GetRowCellValue(currGsRow, "物料编码").ToString();
 
-            this.presenter.AddTrayGoods(palletCode, (int)this.se_GoodsNum.Value, this.de_CreateTime.DateTime, goodsCode);
+            this.presenter.AddTrayGoods(palletCode, (int)this.se_GoodsNum.Value,  goodsCode);
         }
 
         private void sb_DeleteGoods_Click(object sender, EventArgs e)
@@ -181,6 +181,7 @@ namespace WMS_Kernel
             }
             int currRow = this.gv_PalletList.GetSelectedRows()[0];
             string palletCode = this.gv_PalletList.GetRowCellValue(currRow, "托盘条码").ToString();
+            
             this.presenter.CancelPallet(palletCode);
         }     
     }

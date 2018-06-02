@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PalletManaView));
             DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
@@ -37,7 +38,7 @@
             DevExpress.XtraLayout.ColumnDefinition columnDefinition5 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
-            this.imageCollection1 = new DevExpress.Utils.ImageCollection();
+            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -74,8 +75,6 @@
             this.cbe_HouseList = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.sb_CancelPallet = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.de_CreateTime = new DevExpress.XtraEditors.DateEdit();
             this.sb_DeleteGoods = new DevExpress.XtraEditors.SimpleButton();
             this.se_GoodsNum = new DevExpress.XtraEditors.SpinEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -108,8 +107,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbe_HouseList.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.de_CreateTime.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.de_CreateTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.se_GoodsNum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ce_IsFull.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -328,16 +325,16 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1173, 489);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1175, 490);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // gc_GoodsList
             // 
             this.gc_GoodsList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_GoodsList.Location = new System.Drawing.Point(3, 272);
+            this.gc_GoodsList.Location = new System.Drawing.Point(3, 273);
             this.gc_GoodsList.MainView = this.gv_GoodsList;
             this.gc_GoodsList.Name = "gc_GoodsList";
-            this.gc_GoodsList.Size = new System.Drawing.Size(1167, 143);
+            this.gc_GoodsList.Size = new System.Drawing.Size(1169, 144);
             this.gc_GoodsList.TabIndex = 7;
             this.gc_GoodsList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_GoodsList});
@@ -361,7 +358,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1167, 143);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1169, 144);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // gc_PalletGoodsInfor
@@ -369,10 +366,10 @@
             this.gc_PalletGoodsInfor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gc_PalletGoodsInfor.Location = new System.Drawing.Point(586, 3);
+            this.gc_PalletGoodsInfor.Location = new System.Drawing.Point(587, 3);
             this.gc_PalletGoodsInfor.MainView = this.gv_PalletInfor;
             this.gc_PalletGoodsInfor.Name = "gc_PalletGoodsInfor";
-            this.gc_PalletGoodsInfor.Size = new System.Drawing.Size(578, 137);
+            this.gc_PalletGoodsInfor.Size = new System.Drawing.Size(579, 138);
             this.gc_PalletGoodsInfor.TabIndex = 2;
             this.gc_PalletGoodsInfor.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_PalletInfor});
@@ -391,7 +388,7 @@
             this.gc_PalletList.Location = new System.Drawing.Point(3, 3);
             this.gc_PalletList.MainView = this.gv_PalletList;
             this.gc_PalletList.Name = "gc_PalletList";
-            this.gc_PalletList.Size = new System.Drawing.Size(577, 137);
+            this.gc_PalletList.Size = new System.Drawing.Size(578, 138);
             this.gc_PalletList.TabIndex = 1;
             this.gc_PalletList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_PalletList});
@@ -413,7 +410,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1167, 54);
+            this.panelControl1.Size = new System.Drawing.Size(1169, 54);
             this.panelControl1.TabIndex = 1;
             // 
             // sb_QueryPallet
@@ -463,8 +460,6 @@
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.sb_CancelPallet);
-            this.panelControl2.Controls.Add(this.labelControl3);
-            this.panelControl2.Controls.Add(this.de_CreateTime);
             this.panelControl2.Controls.Add(this.sb_DeleteGoods);
             this.panelControl2.Controls.Add(this.se_GoodsNum);
             this.panelControl2.Controls.Add(this.labelControl5);
@@ -472,45 +467,25 @@
             this.panelControl2.Controls.Add(this.ce_IsFull);
             this.panelControl2.Controls.Add(this.sb_PalletSure);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(3, 212);
+            this.panelControl2.Location = new System.Drawing.Point(3, 213);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1167, 54);
+            this.panelControl2.Size = new System.Drawing.Size(1169, 54);
             this.panelControl2.TabIndex = 2;
             // 
             // sb_CancelPallet
             // 
             this.sb_CancelPallet.Image = ((System.Drawing.Image)(resources.GetObject("sb_CancelPallet.Image")));
-            this.sb_CancelPallet.Location = new System.Drawing.Point(683, 18);
+            this.sb_CancelPallet.Location = new System.Drawing.Point(477, 19);
             this.sb_CancelPallet.Name = "sb_CancelPallet";
             this.sb_CancelPallet.Size = new System.Drawing.Size(91, 23);
             this.sb_CancelPallet.TabIndex = 64;
             this.sb_CancelPallet.Text = "取消配盘";
             this.sb_CancelPallet.Click += new System.EventHandler(this.sb_CancelPallet_Click);
             // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(162, 24);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(48, 14);
-            this.labelControl3.TabIndex = 62;
-            this.labelControl3.Text = "生产日期";
-            // 
-            // de_CreateTime
-            // 
-            this.de_CreateTime.EditValue = new System.DateTime(2018, 3, 28, 20, 35, 53, 359);
-            this.de_CreateTime.Location = new System.Drawing.Point(220, 21);
-            this.de_CreateTime.Name = "de_CreateTime";
-            this.de_CreateTime.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.de_CreateTime.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.de_CreateTime.Size = new System.Drawing.Size(100, 20);
-            this.de_CreateTime.TabIndex = 63;
-            // 
             // sb_DeleteGoods
             // 
             this.sb_DeleteGoods.Image = ((System.Drawing.Image)(resources.GetObject("sb_DeleteGoods.Image")));
-            this.sb_DeleteGoods.Location = new System.Drawing.Point(515, 19);
+            this.sb_DeleteGoods.Location = new System.Drawing.Point(309, 20);
             this.sb_DeleteGoods.Name = "sb_DeleteGoods";
             this.sb_DeleteGoods.Size = new System.Drawing.Size(75, 23);
             this.sb_DeleteGoods.TabIndex = 61;
@@ -549,7 +524,7 @@
             // sb_AddGoods
             // 
             this.sb_AddGoods.Image = ((System.Drawing.Image)(resources.GetObject("sb_AddGoods.Image")));
-            this.sb_AddGoods.Location = new System.Drawing.Point(429, 19);
+            this.sb_AddGoods.Location = new System.Drawing.Point(223, 20);
             this.sb_AddGoods.Name = "sb_AddGoods";
             this.sb_AddGoods.Size = new System.Drawing.Size(75, 23);
             this.sb_AddGoods.TabIndex = 60;
@@ -558,16 +533,17 @@
             // 
             // ce_IsFull
             // 
-            this.ce_IsFull.Location = new System.Drawing.Point(343, 21);
+            this.ce_IsFull.Location = new System.Drawing.Point(170, 23);
             this.ce_IsFull.Name = "ce_IsFull";
             this.ce_IsFull.Properties.Caption = "满托盘";
             this.ce_IsFull.Size = new System.Drawing.Size(75, 19);
             this.ce_IsFull.TabIndex = 21;
+            this.ce_IsFull.Visible = false;
             // 
             // sb_PalletSure
             // 
             this.sb_PalletSure.Image = ((System.Drawing.Image)(resources.GetObject("sb_PalletSure.Image")));
-            this.sb_PalletSure.Location = new System.Drawing.Point(601, 19);
+            this.sb_PalletSure.Location = new System.Drawing.Point(395, 20);
             this.sb_PalletSure.Name = "sb_PalletSure";
             this.sb_PalletSure.Size = new System.Drawing.Size(76, 22);
             this.sb_PalletSure.TabIndex = 19;
@@ -580,9 +556,9 @@
             this.panelControl3.Controls.Add(this.labelControl4);
             this.panelControl3.Controls.Add(this.te_GoodsInfo);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(3, 421);
+            this.panelControl3.Location = new System.Drawing.Point(3, 423);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1167, 65);
+            this.panelControl3.Size = new System.Drawing.Size(1169, 64);
             this.panelControl3.TabIndex = 3;
             // 
             // sb_QueryGoodsInfor
@@ -614,7 +590,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1173, 489);
+            this.ClientSize = new System.Drawing.Size(1175, 490);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "PalletManaView";
             this.Text = "配盘管理";
@@ -643,8 +619,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.de_CreateTime.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.de_CreateTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.se_GoodsNum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ce_IsFull.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
@@ -703,8 +677,6 @@
         private DevExpress.XtraEditors.SpinEdit se_GoodsNum;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.SimpleButton sb_AddGoods;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.DateEdit de_CreateTime;
         private DevExpress.XtraEditors.SimpleButton sb_CancelPallet;
     }
 }

@@ -11,8 +11,7 @@ namespace WMS_Database
 	{
         public ManageDal()
 		{}
-        #region  Method
-
+        #region  BasicMethod
 
         /// <summary>
         /// 是否存在该记录
@@ -21,9 +20,14 @@ namespace WMS_Database
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select count(1) from Manage");
-            strSql.Append(" where Mange_ID='" + Mange_ID + "' ");
-            return DbHelperSQL.Exists(strSql.ToString());
+            strSql.Append(" where Mange_ID=@Mange_ID ");
+            SqlParameter[] parameters = {
+					new SqlParameter("@Mange_ID", SqlDbType.NVarChar,50)			};
+            parameters[0].Value = Mange_ID;
+
+            return DbHelperSQL.Exists(strSql.ToString(), parameters);
         }
+
 
         /// <summary>
         /// 增加一条数据
@@ -31,105 +35,51 @@ namespace WMS_Database
         public bool Add(WMS_Database.ManageModel model)
         {
             StringBuilder strSql = new StringBuilder();
-            StringBuilder strSql1 = new StringBuilder();
-            StringBuilder strSql2 = new StringBuilder();
-            if (model.Mange_ID != null)
-            {
-                strSql1.Append("Mange_ID,");
-                strSql2.Append("'" + model.Mange_ID + "',");
-            }
-            if (model.Plan_ID != null)
-            {
-                strSql1.Append("Plan_ID,");
-                strSql2.Append("'" + model.Plan_ID + "',");
-            }
-            if (model.Mange_Type_ID != null)
-            {
-                strSql1.Append("Mange_Type_ID,");
-                strSql2.Append("'" + model.Mange_Type_ID + "',");
-            }
-            if (model.Mange_Status != null)
-            {
-                strSql1.Append("Mange_Status,");
-                strSql2.Append("'" + model.Mange_Status + "',");
-            }
-            if (model.Mange_Stock_Barcode != null)
-            {
-                strSql1.Append("Mange_Stock_Barcode,");
-                strSql2.Append("'" + model.Mange_Stock_Barcode + "',");
-            }
-            if (model.Mange_Full_Flag != null)
-            {
-                strSql1.Append("Mange_Full_Flag,");
-                strSql2.Append("'" + model.Mange_Full_Flag + "',");
-            }
-            if (model.Manage_BreakDown_Status != null)
-            {
-                strSql1.Append("Manage_BreakDown_Status,");
-                strSql2.Append("'" + model.Manage_BreakDown_Status + "',");
-            }
-            if (model.Mange_Start_Cell_ID != null)
-            {
-                strSql1.Append("Mange_Start_Cell_ID,");
-                strSql2.Append("'" + model.Mange_Start_Cell_ID + "',");
-            }
-            if (model.Mange_End_Cell_ID != null)
-            {
-                strSql1.Append("Mange_End_Cell_ID,");
-                strSql2.Append("'" + model.Mange_End_Cell_ID + "',");
-            }
-            if (model.Manage_Operater != null)
-            {
-                strSql1.Append("Manage_Operater,");
-                strSql2.Append("'" + model.Manage_Operater + "',");
-            }
-            if (model.Manage_Begin_Time != null)
-            {
-                strSql1.Append("Manage_Begin_Time,");
-                strSql2.Append("'" + model.Manage_Begin_Time + "',");
-            }
-            if (model.Manage_End_Time != null)
-            {
-                strSql1.Append("Manage_End_Time,");
-                strSql2.Append("'" + model.Manage_End_Time + "',");
-            }
-            if (model.Manage_Remark != null)
-            {
-                strSql1.Append("Manage_Remark,");
-                strSql2.Append("'" + model.Manage_Remark + "',");
-            }
-            if (model.Mange_Reserve1 != null)
-            {
-                strSql1.Append("Mange_Reserve1,");
-                strSql2.Append("'" + model.Mange_Reserve1 + "',");
-            }
-            if (model.Mange_Reserve2 != null)
-            {
-                strSql1.Append("Mange_Reserve2,");
-                strSql2.Append("'" + model.Mange_Reserve2 + "',");
-            }
-            if (model.Mange_Reserve3 != null)
-            {
-                strSql1.Append("Mange_Reserve3,");
-                strSql2.Append("'" + model.Mange_Reserve3 + "',");
-            }
-            if (model.Mange_Reserve4 != null)
-            {
-                strSql1.Append("Mange_Reserve4,");
-                strSql2.Append("'" + model.Mange_Reserve4 + "',");
-            }
-            if (model.Mange_Reserve5 != null)
-            {
-                strSql1.Append("Mange_Reserve5,");
-                strSql2.Append("'" + model.Mange_Reserve5 + "',");
-            }
             strSql.Append("insert into Manage(");
-            strSql.Append(strSql1.ToString().Remove(strSql1.Length - 1));
-            strSql.Append(")");
+            strSql.Append("Mange_ID,Plan_ID,Mange_Type_ID,Mange_Status,Mange_Stock_Barcode,Mange_Full_Flag,Manage_BreakDown_Status,Mange_Start_Cell_ID,Mange_End_Cell_ID,Manage_Operater,Mange_CreateTime,Manage_Begin_Time,Manage_End_Time,Manage_Remark,Mange_Reserve1,Mange_Reserve2,Mange_Reserve3,Mange_Reserve4,Mange_Reserve5)");
             strSql.Append(" values (");
-            strSql.Append(strSql2.ToString().Remove(strSql2.Length - 1));
-            strSql.Append(")");
-            int rows = DbHelperSQL.ExecuteSql(strSql.ToString());
+            strSql.Append("@Mange_ID,@Plan_ID,@Mange_Type_ID,@Mange_Status,@Mange_Stock_Barcode,@Mange_Full_Flag,@Manage_BreakDown_Status,@Mange_Start_Cell_ID,@Mange_End_Cell_ID,@Manage_Operater,@Mange_CreateTime,@Manage_Begin_Time,@Manage_End_Time,@Manage_Remark,@Mange_Reserve1,@Mange_Reserve2,@Mange_Reserve3,@Mange_Reserve4,@Mange_Reserve5)");
+            SqlParameter[] parameters = {
+					new SqlParameter("@Mange_ID", SqlDbType.NVarChar,50),
+					new SqlParameter("@Plan_ID", SqlDbType.NVarChar,50),
+					new SqlParameter("@Mange_Type_ID", SqlDbType.NVarChar,50),
+					new SqlParameter("@Mange_Status", SqlDbType.NVarChar,50),
+					new SqlParameter("@Mange_Stock_Barcode", SqlDbType.NVarChar,50),
+					new SqlParameter("@Mange_Full_Flag", SqlDbType.NVarChar,50),
+					new SqlParameter("@Manage_BreakDown_Status", SqlDbType.NVarChar,50),
+					new SqlParameter("@Mange_Start_Cell_ID", SqlDbType.NVarChar,50),
+					new SqlParameter("@Mange_End_Cell_ID", SqlDbType.NVarChar,50),
+					new SqlParameter("@Manage_Operater", SqlDbType.NVarChar,50),
+					new SqlParameter("@Mange_CreateTime", SqlDbType.DateTime),
+					new SqlParameter("@Manage_Begin_Time", SqlDbType.DateTime),
+					new SqlParameter("@Manage_End_Time", SqlDbType.DateTime),
+					new SqlParameter("@Manage_Remark", SqlDbType.NVarChar,50),
+					new SqlParameter("@Mange_Reserve1", SqlDbType.NVarChar,100),
+					new SqlParameter("@Mange_Reserve2", SqlDbType.NVarChar,100),
+					new SqlParameter("@Mange_Reserve3", SqlDbType.NVarChar,100),
+					new SqlParameter("@Mange_Reserve4", SqlDbType.NVarChar,100),
+					new SqlParameter("@Mange_Reserve5", SqlDbType.NVarChar,100)};
+            parameters[0].Value = model.Mange_ID;
+            parameters[1].Value = model.Plan_ID;
+            parameters[2].Value = model.Mange_Type_ID;
+            parameters[3].Value = model.Mange_Status;
+            parameters[4].Value = model.Mange_Stock_Barcode;
+            parameters[5].Value = model.Mange_Full_Flag;
+            parameters[6].Value = model.Manage_BreakDown_Status;
+            parameters[7].Value = model.Mange_Start_Cell_ID;
+            parameters[8].Value = model.Mange_End_Cell_ID;
+            parameters[9].Value = model.Manage_Operater;
+            parameters[10].Value = model.Mange_CreateTime;
+            parameters[11].Value = model.Manage_Begin_Time;
+            parameters[12].Value = model.Manage_End_Time;
+            parameters[13].Value = model.Manage_Remark;
+            parameters[14].Value = model.Mange_Reserve1;
+            parameters[15].Value = model.Mange_Reserve2;
+            parameters[16].Value = model.Mange_Reserve3;
+            parameters[17].Value = model.Mange_Reserve4;
+            parameters[18].Value = model.Mange_Reserve5;
+
+            int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
             if (rows > 0)
             {
                 return true;
@@ -139,7 +89,6 @@ namespace WMS_Database
                 return false;
             }
         }
-
         /// <summary>
         /// 更新一条数据
         /// </summary>
@@ -147,147 +96,67 @@ namespace WMS_Database
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("update Manage set ");
-            if (model.Plan_ID != null)
-            {
-                strSql.Append("Plan_ID='" + model.Plan_ID + "',");
-            }
-            else
-            {
-                strSql.Append("Plan_ID= null ,");
-            }
-            if (model.Mange_Type_ID != null)
-            {
-                strSql.Append("Mange_Type_ID='" + model.Mange_Type_ID + "',");
-            }
-            else
-            {
-                strSql.Append("Mange_Type_ID= null ,");
-            }
-            if (model.Mange_Status != null)
-            {
-                strSql.Append("Mange_Status='" + model.Mange_Status + "',");
-            }
-            else
-            {
-                strSql.Append("Mange_Status= null ,");
-            }
-            if (model.Mange_Stock_Barcode != null)
-            {
-                strSql.Append("Mange_Stock_Barcode='" + model.Mange_Stock_Barcode + "',");
-            }
-            else
-            {
-                strSql.Append("Mange_Stock_Barcode= null ,");
-            }
-            if (model.Mange_Full_Flag != null)
-            {
-                strSql.Append("Mange_Full_Flag='" + model.Mange_Full_Flag + "',");
-            }
-            else
-            {
-                strSql.Append("Mange_Full_Flag= null ,");
-            }
-            if (model.Manage_BreakDown_Status != null)
-            {
-                strSql.Append("Manage_BreakDown_Status='" + model.Manage_BreakDown_Status + "',");
-            }
-            else
-            {
-                strSql.Append("Manage_BreakDown_Status= null ,");
-            }
-            if (model.Mange_Start_Cell_ID != null)
-            {
-                strSql.Append("Mange_Start_Cell_ID='" + model.Mange_Start_Cell_ID + "',");
-            }
-            else
-            {
-                strSql.Append("Mange_Start_Cell_ID= null ,");
-            }
-            if (model.Mange_End_Cell_ID != null)
-            {
-                strSql.Append("Mange_End_Cell_ID='" + model.Mange_End_Cell_ID + "',");
-            }
-            else
-            {
-                strSql.Append("Mange_End_Cell_ID= null ,");
-            }
-            if (model.Manage_Operater != null)
-            {
-                strSql.Append("Manage_Operater='" + model.Manage_Operater + "',");
-            }
-            else
-            {
-                strSql.Append("Manage_Operater= null ,");
-            }
-            if (model.Manage_Begin_Time != null)
-            {
-                strSql.Append("Manage_Begin_Time='" + model.Manage_Begin_Time + "',");
-            }
-            else
-            {
-                strSql.Append("Manage_Begin_Time= null ,");
-            }
-            if (model.Manage_End_Time != null)
-            {
-                strSql.Append("Manage_End_Time='" + model.Manage_End_Time + "',");
-            }
-            else
-            {
-                strSql.Append("Manage_End_Time= null ,");
-            }
-            if (model.Manage_Remark != null)
-            {
-                strSql.Append("Manage_Remark='" + model.Manage_Remark + "',");
-            }
-            else
-            {
-                strSql.Append("Manage_Remark= null ,");
-            }
-            if (model.Mange_Reserve1 != null)
-            {
-                strSql.Append("Mange_Reserve1='" + model.Mange_Reserve1 + "',");
-            }
-            else
-            {
-                strSql.Append("Mange_Reserve1= null ,");
-            }
-            if (model.Mange_Reserve2 != null)
-            {
-                strSql.Append("Mange_Reserve2='" + model.Mange_Reserve2 + "',");
-            }
-            else
-            {
-                strSql.Append("Mange_Reserve2= null ,");
-            }
-            if (model.Mange_Reserve3 != null)
-            {
-                strSql.Append("Mange_Reserve3='" + model.Mange_Reserve3 + "',");
-            }
-            else
-            {
-                strSql.Append("Mange_Reserve3= null ,");
-            }
-            if (model.Mange_Reserve4 != null)
-            {
-                strSql.Append("Mange_Reserve4='" + model.Mange_Reserve4 + "',");
-            }
-            else
-            {
-                strSql.Append("Mange_Reserve4= null ,");
-            }
-            if (model.Mange_Reserve5 != null)
-            {
-                strSql.Append("Mange_Reserve5='" + model.Mange_Reserve5 + "',");
-            }
-            else
-            {
-                strSql.Append("Mange_Reserve5= null ,");
-            }
-            int n = strSql.ToString().LastIndexOf(",");
-            strSql.Remove(n, 1);
-            strSql.Append(" where Mange_ID='" + model.Mange_ID + "' ");
-            int rowsAffected = DbHelperSQL.ExecuteSql(strSql.ToString());
-            if (rowsAffected > 0)
+            strSql.Append("Plan_ID=@Plan_ID,");
+            strSql.Append("Mange_Type_ID=@Mange_Type_ID,");
+            strSql.Append("Mange_Status=@Mange_Status,");
+            strSql.Append("Mange_Stock_Barcode=@Mange_Stock_Barcode,");
+            strSql.Append("Mange_Full_Flag=@Mange_Full_Flag,");
+            strSql.Append("Manage_BreakDown_Status=@Manage_BreakDown_Status,");
+            strSql.Append("Mange_Start_Cell_ID=@Mange_Start_Cell_ID,");
+            strSql.Append("Mange_End_Cell_ID=@Mange_End_Cell_ID,");
+            strSql.Append("Manage_Operater=@Manage_Operater,");
+            strSql.Append("Mange_CreateTime=@Mange_CreateTime,");
+            strSql.Append("Manage_Begin_Time=@Manage_Begin_Time,");
+            strSql.Append("Manage_End_Time=@Manage_End_Time,");
+            strSql.Append("Manage_Remark=@Manage_Remark,");
+            strSql.Append("Mange_Reserve1=@Mange_Reserve1,");
+            strSql.Append("Mange_Reserve2=@Mange_Reserve2,");
+            strSql.Append("Mange_Reserve3=@Mange_Reserve3,");
+            strSql.Append("Mange_Reserve4=@Mange_Reserve4,");
+            strSql.Append("Mange_Reserve5=@Mange_Reserve5");
+            strSql.Append(" where Mange_ID=@Mange_ID ");
+            SqlParameter[] parameters = {
+					new SqlParameter("@Plan_ID", SqlDbType.NVarChar,50),
+					new SqlParameter("@Mange_Type_ID", SqlDbType.NVarChar,50),
+					new SqlParameter("@Mange_Status", SqlDbType.NVarChar,50),
+					new SqlParameter("@Mange_Stock_Barcode", SqlDbType.NVarChar,50),
+					new SqlParameter("@Mange_Full_Flag", SqlDbType.NVarChar,50),
+					new SqlParameter("@Manage_BreakDown_Status", SqlDbType.NVarChar,50),
+					new SqlParameter("@Mange_Start_Cell_ID", SqlDbType.NVarChar,50),
+					new SqlParameter("@Mange_End_Cell_ID", SqlDbType.NVarChar,50),
+					new SqlParameter("@Manage_Operater", SqlDbType.NVarChar,50),
+					new SqlParameter("@Mange_CreateTime", SqlDbType.DateTime),
+					new SqlParameter("@Manage_Begin_Time", SqlDbType.DateTime),
+					new SqlParameter("@Manage_End_Time", SqlDbType.DateTime),
+					new SqlParameter("@Manage_Remark", SqlDbType.NVarChar,50),
+					new SqlParameter("@Mange_Reserve1", SqlDbType.NVarChar,100),
+					new SqlParameter("@Mange_Reserve2", SqlDbType.NVarChar,100),
+					new SqlParameter("@Mange_Reserve3", SqlDbType.NVarChar,100),
+					new SqlParameter("@Mange_Reserve4", SqlDbType.NVarChar,100),
+					new SqlParameter("@Mange_Reserve5", SqlDbType.NVarChar,100),
+					new SqlParameter("@Mange_ID", SqlDbType.NVarChar,50)};
+            parameters[0].Value = model.Plan_ID;
+            parameters[1].Value = model.Mange_Type_ID;
+            parameters[2].Value = model.Mange_Status;
+            parameters[3].Value = model.Mange_Stock_Barcode;
+            parameters[4].Value = model.Mange_Full_Flag;
+            parameters[5].Value = model.Manage_BreakDown_Status;
+            parameters[6].Value = model.Mange_Start_Cell_ID;
+            parameters[7].Value = model.Mange_End_Cell_ID;
+            parameters[8].Value = model.Manage_Operater;
+            parameters[9].Value = model.Mange_CreateTime;
+            parameters[10].Value = model.Manage_Begin_Time;
+            parameters[11].Value = model.Manage_End_Time;
+            parameters[12].Value = model.Manage_Remark;
+            parameters[13].Value = model.Mange_Reserve1;
+            parameters[14].Value = model.Mange_Reserve2;
+            parameters[15].Value = model.Mange_Reserve3;
+            parameters[16].Value = model.Mange_Reserve4;
+            parameters[17].Value = model.Mange_Reserve5;
+            parameters[18].Value = model.Mange_ID;
+
+            int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+            if (rows > 0)
             {
                 return true;
             }
@@ -302,11 +171,16 @@ namespace WMS_Database
         /// </summary>
         public bool Delete(string Mange_ID)
         {
+
             StringBuilder strSql = new StringBuilder();
             strSql.Append("delete from Manage ");
-            strSql.Append(" where Mange_ID='" + Mange_ID + "' ");
-            int rowsAffected = DbHelperSQL.ExecuteSql(strSql.ToString());
-            if (rowsAffected > 0)
+            strSql.Append(" where Mange_ID=@Mange_ID ");
+            SqlParameter[] parameters = {
+					new SqlParameter("@Mange_ID", SqlDbType.NVarChar,50)			};
+            parameters[0].Value = Mange_ID;
+
+            int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+            if (rows > 0)
             {
                 return true;
             }
@@ -314,7 +188,8 @@ namespace WMS_Database
             {
                 return false;
             }
-        }		/// <summary>
+        }
+        /// <summary>
         /// 批量删除数据
         /// </summary>
         public bool DeleteList(string Mange_IDlist)
@@ -339,13 +214,16 @@ namespace WMS_Database
         /// </summary>
         public WMS_Database.ManageModel GetModel(string Mange_ID)
         {
+
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select  top 1  ");
-            strSql.Append(" Mange_ID,Plan_ID,Mange_Type_ID,Mange_Status,Mange_Stock_Barcode,Mange_Full_Flag,Manage_BreakDown_Status,Mange_Start_Cell_ID,Mange_End_Cell_ID,Manage_Operater,Manage_Begin_Time,Manage_End_Time,Manage_Remark,Mange_Reserve1,Mange_Reserve2,Mange_Reserve3,Mange_Reserve4,Mange_Reserve5 ");
-            strSql.Append(" from Manage ");
-            strSql.Append(" where Mange_ID='" + Mange_ID + "' ");
+            strSql.Append("select  top 1 Mange_ID,Plan_ID,Mange_Type_ID,Mange_Status,Mange_Stock_Barcode,Mange_Full_Flag,Manage_BreakDown_Status,Mange_Start_Cell_ID,Mange_End_Cell_ID,Manage_Operater,Mange_CreateTime,Manage_Begin_Time,Manage_End_Time,Manage_Remark,Mange_Reserve1,Mange_Reserve2,Mange_Reserve3,Mange_Reserve4,Mange_Reserve5 from Manage ");
+            strSql.Append(" where Mange_ID=@Mange_ID ");
+            SqlParameter[] parameters = {
+					new SqlParameter("@Mange_ID", SqlDbType.NVarChar,50)			};
+            parameters[0].Value = Mange_ID;
+
             WMS_Database.ManageModel model = new WMS_Database.ManageModel();
-            DataSet ds = DbHelperSQL.Query(strSql.ToString());
+            DataSet ds = DbHelperSQL.Query(strSql.ToString(), parameters);
             if (ds.Tables[0].Rows.Count > 0)
             {
                 return DataRowToModel(ds.Tables[0].Rows[0]);
@@ -355,6 +233,7 @@ namespace WMS_Database
                 return null;
             }
         }
+
 
         /// <summary>
         /// 得到一个对象实体
@@ -404,6 +283,10 @@ namespace WMS_Database
                 {
                     model.Manage_Operater = row["Manage_Operater"].ToString();
                 }
+                if (row["Mange_CreateTime"] != null && row["Mange_CreateTime"].ToString() != "")
+                {
+                    model.Mange_CreateTime = DateTime.Parse(row["Mange_CreateTime"].ToString());
+                }
                 if (row["Manage_Begin_Time"] != null && row["Manage_Begin_Time"].ToString() != "")
                 {
                     model.Manage_Begin_Time = DateTime.Parse(row["Manage_Begin_Time"].ToString());
@@ -446,7 +329,7 @@ namespace WMS_Database
         public DataSet GetList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select Mange_ID,Plan_ID,Mange_Type_ID,Mange_Status,Mange_Stock_Barcode,Mange_Full_Flag,Manage_BreakDown_Status,Mange_Start_Cell_ID,Mange_End_Cell_ID,Manage_Operater,Manage_Begin_Time,Manage_End_Time,Manage_Remark,Mange_Reserve1,Mange_Reserve2,Mange_Reserve3,Mange_Reserve4,Mange_Reserve5 ");
+            strSql.Append("select Mange_ID,Plan_ID,Mange_Type_ID,Mange_Status,Mange_Stock_Barcode,Mange_Full_Flag,Manage_BreakDown_Status,Mange_Start_Cell_ID,Mange_End_Cell_ID,Manage_Operater,Mange_CreateTime,Manage_Begin_Time,Manage_End_Time,Manage_Remark,Mange_Reserve1,Mange_Reserve2,Mange_Reserve3,Mange_Reserve4,Mange_Reserve5 ");
             strSql.Append(" FROM Manage ");
             if (strWhere.Trim() != "")
             {
@@ -466,7 +349,7 @@ namespace WMS_Database
             {
                 strSql.Append(" top " + Top.ToString());
             }
-            strSql.Append(" Mange_ID,Plan_ID,Mange_Type_ID,Mange_Status,Mange_Stock_Barcode,Mange_Full_Flag,Manage_BreakDown_Status,Mange_Start_Cell_ID,Mange_End_Cell_ID,Manage_Operater,Manage_Begin_Time,Manage_End_Time,Manage_Remark,Mange_Reserve1,Mange_Reserve2,Mange_Reserve3,Mange_Reserve4,Mange_Reserve5 ");
+            strSql.Append(" Mange_ID,Plan_ID,Mange_Type_ID,Mange_Status,Mange_Stock_Barcode,Mange_Full_Flag,Manage_BreakDown_Status,Mange_Start_Cell_ID,Mange_End_Cell_ID,Manage_Operater,Mange_CreateTime,Manage_Begin_Time,Manage_End_Time,Manage_Remark,Mange_Reserve1,Mange_Reserve2,Mange_Reserve3,Mange_Reserve4,Mange_Reserve5 ");
             strSql.Append(" FROM Manage ");
             if (strWhere.Trim() != "")
             {
@@ -524,9 +407,31 @@ namespace WMS_Database
         }
 
         /*
-        */
+        /// <summary>
+        /// 分页获取数据列表
+        /// </summary>
+        public DataSet GetList(int PageSize,int PageIndex,string strWhere)
+        {
+            SqlParameter[] parameters = {
+                    new SqlParameter("@tblName", SqlDbType.VarChar, 255),
+                    new SqlParameter("@fldName", SqlDbType.VarChar, 255),
+                    new SqlParameter("@PageSize", SqlDbType.Int),
+                    new SqlParameter("@PageIndex", SqlDbType.Int),
+                    new SqlParameter("@IsReCount", SqlDbType.Bit),
+                    new SqlParameter("@OrderType", SqlDbType.Bit),
+                    new SqlParameter("@strWhere", SqlDbType.VarChar,1000),
+                    };
+            parameters[0].Value = "Manage";
+            parameters[1].Value = "Mange_ID";
+            parameters[2].Value = PageSize;
+            parameters[3].Value = PageIndex;
+            parameters[4].Value = 0;
+            parameters[5].Value = 0;
+            parameters[6].Value = strWhere;	
+            return DbHelperSQL.RunProcedure("UP_GetRecordByPage",parameters,"ds");
+        }*/
 
-        #endregion  Method
+        #endregion  BasicMethod
 		#region  ExtensionMethod
 
           
@@ -536,7 +441,8 @@ namespace WMS_Database
             StringBuilder strSql = new StringBuilder();
             string nowTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             strSql.Append("delete from Manage ");
-            strSql.Append(" where datediff(day,Manage_End_Time,'" + nowTime + "') >= " + days);
+            strSql.Append(" where datediff(day,Mange_CreateTime,'" + nowTime + "') >= " + days);
+
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString());
             if (rows > 0)
             {

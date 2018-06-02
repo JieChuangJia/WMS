@@ -43,7 +43,7 @@
             this.gc_MaterialDetail.Location = new System.Drawing.Point(0, 0);
             this.gc_MaterialDetail.MainView = this.gridView1;
             this.gc_MaterialDetail.Name = "gc_MaterialDetail";
-            this.gc_MaterialDetail.Size = new System.Drawing.Size(380, 425);
+            this.gc_MaterialDetail.Size = new System.Drawing.Size(382, 426);
             this.gc_MaterialDetail.TabIndex = 0;
             this.gc_MaterialDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -65,7 +65,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 459);
+            this.ClientSize = new System.Drawing.Size(383, 460);
             this.Controls.Add(this.sb_Sure);
             this.Controls.Add(this.gc_MaterialDetail);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

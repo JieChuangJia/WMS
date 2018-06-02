@@ -20,8 +20,9 @@ namespace WMS_Database
         private string _mange_start_cell_id = "-1";
         private string _mange_end_cell_id = "-1";
         private string _manage_operater = "-1";
-        private DateTime? _manage_begin_time =null;
-        private DateTime? _manage_end_time = null;
+        private DateTime? _mange_createtime;
+        private DateTime? _manage_begin_time;
+        private DateTime? _manage_end_time;
         private string _manage_remark = "";
         private string _mange_reserve1;
         private string _mange_reserve2;
@@ -107,6 +108,14 @@ namespace WMS_Database
         {
             set { _manage_operater = value; }
             get { return _manage_operater; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public DateTime? Mange_CreateTime
+        {
+            set { _mange_createtime = value; }
+            get { return _mange_createtime; }
         }
         /// <summary>
         /// 开始时间

@@ -90,7 +90,7 @@ namespace CommonMoudle
 
             return true;
         }
-        public static bool UpdateCellStatus(string childCellID, EnumCellStatus cellStatus, EnumGSTaskStatus cellRunStatus)
+        public static bool UpdateCellStatus(string childCellID, EnumCellStatus cellStatus, EnumGSTaskStatus cellRunStatus,EnumGSOperate gsoperate)
         {
             WH_Cell_ChildrenModel childCell = bllCellChild.GetModel(childCellID);
             if (childCell == null)
@@ -99,6 +99,7 @@ namespace CommonMoudle
             }
             childCell.Cell_Child_Status = cellStatus.ToString();
             childCell.Cell_Child_Run_Status = cellRunStatus.ToString();
+            childCell.Cell_Child_Operate_Type = gsoperate.ToString();
             bllCellChild.Update(childCell);
             return true;
         }
@@ -280,6 +281,7 @@ namespace CommonMoudle
             bool isAssign, string targetStation, EnumManageTaskType taskType, ref string manageID, ref string restr)
         {
             ManageModel manage = new ManageModel();
+            manage.Mange_CreateTime = DateTime.Now;
             WH_Station_LogicModel stationCell = bllStationLogic.GetStationByName(putawayStationName);
             if (stationCell == null)
             {
@@ -310,17 +312,37 @@ namespace CommonMoudle
                 string cellName = targetPos[0];
                 string cellPos = targetPos[1];
                 targetCell = bllViewCell.GetCell(wareHouse.WareHouse_ID, cellName, cellPos);
-
+                if (targetCell == null || targetCell.Cell_Child_Status != EnumCellStatus.空闲.ToString() || targetCell.Cell_Child_Run_Status != EnumGSTaskStatus.完成.ToString())
+                {
+                    restr = "当前货位不可用！";
+                    return false;
+                }
             }
             else
             {
-                targetCell = bllViewCell.GetCell(wareHouse.WareHouse_ID);
+                targetCell = bllViewCell.ApplyCell(wareHouse.WareHouse_ID);
             }
 
             if (targetCell == null)
             {
-             restr="库房已满，没有货位可以申请了！";
+                restr = "库房已满，没有货位可以申请了！";
                 return false;
+            }
+            if(targetCell.Shelf_Type == EnumShelfType.双深.ToString()&&targetCell.Cell_Chlid_Position ==EnumCellPos.前.ToString())//双深工位如果选中前面的工位要判断后面是否有料
+            {
+                View_CellModel backCell = bllViewCell.GetCell(wareHouse.WareHouse_ID, targetCell.Cell_Name, EnumCellPos.后.ToString());
+
+                 
+                if (backCell != null && backCell.Cell_Child_Run_Status == EnumGSTaskStatus.完成.ToString()&& backCell.Cell_Child_Status== EnumCellStatus.空闲.ToString())
+                {
+                    restr = "此货位为双深工位 ，需要先送入后面的货位再入前面的货位！";
+                    return false;
+                }
+                if (backCell != null && backCell.Cell_Child_Run_Status == EnumGSTaskStatus.锁定.ToString())
+                {
+                    restr = "此货位为双深工位 ，需要先送入后面的货位再入前面的货位,后面的工位处于锁定状态！";
+                    return false;
+                }
             }
             if (targetCell.Cell_Child_Run_Status != EnumGSTaskStatus.完成.ToString() && targetCell.Cell_Child_Status != EnumCellStatus.空闲.ToString())
             {
@@ -361,13 +383,13 @@ namespace CommonMoudle
             bool status = CreatePutawayManageListTask(manage.Mange_ID, palletCode, ref restr); 
             if(status == true)
             {
-                restr += "生成上架任务成功：起点：" + houseName + targetCell.Cell_Name + targetCell.Cell_Chlid_Position;
-                UpdateCellStatus(targetCell.Cell_Chlid_ID, EnumCellStatus.空闲, EnumGSTaskStatus.锁定);
+                restr += "生成上架任务成功：终点：" + houseName + targetCell.Cell_Name + targetCell.Cell_Chlid_Position;
+                UpdateCellStatus(targetCell.Cell_Chlid_ID, EnumCellStatus.空闲, EnumGSTaskStatus.锁定,  EnumGSOperate.入库);
                 return true;
             }
             else
             {
-                restr += "生成上架任务失败：起点：" + houseName + targetCell.Cell_Name + targetCell.Cell_Chlid_Position;
+                restr += "生成上架任务失败：终点：" + houseName + targetCell.Cell_Name + targetCell.Cell_Chlid_Position;
                 return false;
             }
         }
@@ -376,6 +398,7 @@ namespace CommonMoudle
         public static bool CreateUnshelveManageTask(string planCode, string palletCode, string unshelveStationName, ref string manageID,ref string restr)
         {
             ManageModel manage = new ManageModel();
+            manage.Mange_CreateTime = DateTime.Now;
             WH_Station_LogicModel targetCell = bllStationLogic.GetStationByName(unshelveStationName);
             if (targetCell == null)
             {
@@ -391,7 +414,7 @@ namespace CommonMoudle
               restr="没有找到所选物料库存！";
                 return false;
             }
-            startCell = bllViewCell.GetModelByWHAndCellName(stockModel.WareHouse_Name, stockModel.Cell_Name);
+            startCell = bllViewCell.GetModelByWHAndCellName(stockModel.WareHouse_Name, stockModel.Cell_Name, stockModel.Cell_Chlid_Position);
             if (startCell == null)
             {
                 restr = "没有找到所选物料货位！";
@@ -434,7 +457,7 @@ namespace CommonMoudle
             {
                 restr += "生成下架任务成功：起点：" + startCell.WareHouse_Name + startCell.Cell_Name + startCell.Cell_Chlid_Position;
                 EnumCellStatus cellStatus = (EnumCellStatus)Enum.Parse(typeof(EnumCellStatus), startCell.Cell_Child_Status);
-                UpdateCellStatus(startCell.Cell_Chlid_ID, cellStatus, EnumGSTaskStatus.锁定);
+                UpdateCellStatus(startCell.Cell_Chlid_ID, cellStatus, EnumGSTaskStatus.锁定,  EnumGSOperate.出库);
                 return true;
             }
             else
@@ -460,6 +483,7 @@ namespace CommonMoudle
             List<View_StockListModel> stockList = bllViewStockList.GetModelListByCellID(startCellID);
             //if(stockList== null)
             ManageModel manage = new ManageModel();
+            manage.Mange_CreateTime = DateTime.Now;
             manage.Mange_ID = Guid.NewGuid().ToString();
             manage.Manage_BreakDown_Status = "待分解";
             manage.Mange_Start_Cell_ID = startCellID;
@@ -493,8 +517,8 @@ namespace CommonMoudle
                     + "终点：" + endCell.WareHouse_Name + endCell.Cell_Name + endCell.Cell_Chlid_Position ;
 
                 EnumCellStatus cellStatus = (EnumCellStatus)Enum.Parse(typeof(EnumCellStatus), startCell.Cell_Child_Status);
-                UpdateCellStatus(startCell.Cell_Chlid_ID, cellStatus, EnumGSTaskStatus.锁定);
-                UpdateCellStatus(endCell.Cell_Chlid_ID, EnumCellStatus.空闲, EnumGSTaskStatus.锁定);
+                UpdateCellStatus(startCell.Cell_Chlid_ID, cellStatus, EnumGSTaskStatus.锁定, EnumGSOperate.出库);
+                UpdateCellStatus(endCell.Cell_Chlid_ID, EnumCellStatus.空闲, EnumGSTaskStatus.锁定, EnumGSOperate.入库);
                 return true;
             }
             else

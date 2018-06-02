@@ -235,20 +235,22 @@
             // 
             // sb_DeleteGoods
             // 
-            this.sb_DeleteGoods.Location = new System.Drawing.Point(320, 17);
+            this.sb_DeleteGoods.Image = ((System.Drawing.Image)(resources.GetObject("sb_DeleteGoods.Image")));
+            this.sb_DeleteGoods.Location = new System.Drawing.Point(365, 17);
             this.sb_DeleteGoods.Name = "sb_DeleteGoods";
-            this.sb_DeleteGoods.Size = new System.Drawing.Size(75, 23);
+            this.sb_DeleteGoods.Size = new System.Drawing.Size(100, 23);
             this.sb_DeleteGoods.TabIndex = 59;
-            this.sb_DeleteGoods.Text = "删除";
+            this.sb_DeleteGoods.Text = "移除计划物料";
             this.sb_DeleteGoods.Click += new System.EventHandler(this.sb_DeleteGoods_Click);
             // 
             // sb_AddGoods
             // 
+            this.sb_AddGoods.Image = ((System.Drawing.Image)(resources.GetObject("sb_AddGoods.Image")));
             this.sb_AddGoods.Location = new System.Drawing.Point(239, 17);
             this.sb_AddGoods.Name = "sb_AddGoods";
-            this.sb_AddGoods.Size = new System.Drawing.Size(75, 23);
+            this.sb_AddGoods.Size = new System.Drawing.Size(100, 23);
             this.sb_AddGoods.TabIndex = 58;
-            this.sb_AddGoods.Text = "添加";
+            this.sb_AddGoods.Text = "添加计划物料";
             this.sb_AddGoods.Click += new System.EventHandler(this.sb_AddGoods_Click);
             // 
             // labelControl7
@@ -313,9 +315,10 @@
             // 
             // sb_AddPlan
             // 
-            this.sb_AddPlan.Location = new System.Drawing.Point(16, 215);
+            this.sb_AddPlan.Image = ((System.Drawing.Image)(resources.GetObject("sb_AddPlan.Image")));
+            this.sb_AddPlan.Location = new System.Drawing.Point(94, 216);
             this.sb_AddPlan.Name = "sb_AddPlan";
-            this.sb_AddPlan.Size = new System.Drawing.Size(75, 23);
+            this.sb_AddPlan.Size = new System.Drawing.Size(95, 23);
             this.sb_AddPlan.TabIndex = 60;
             this.sb_AddPlan.Text = "添加计划";
             this.sb_AddPlan.Click += new System.EventHandler(this.sb_AddPlan_Click);

@@ -36,3 +36,13 @@ E:\JCJ\WMS\代码\WMS\立库管理\WMS_Database\bin\Release\WMS_Database.pdb
 E:\JCJ\WMS\代码\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.csprojResolveAssemblyReference.cache
 E:\JCJ\WMS\代码\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.dll
 E:\JCJ\WMS\代码\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.pdb
+E:\JieChuangJia\WMS530\WMS\立库管理\WMS_Database\bin\Release\WMS_Database.dll
+E:\JieChuangJia\WMS530\WMS\立库管理\WMS_Database\bin\Release\WMS_Database.pdb
+E:\JieChuangJia\WMS530\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.csprojResolveAssemblyReference.cache
+E:\JieChuangJia\WMS530\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.dll
+E:\JieChuangJia\WMS530\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.pdb
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS530-1\WMS\立库管理\WMS_Database\bin\Release\WMS_Database.dll
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS530-1\WMS\立库管理\WMS_Database\bin\Release\WMS_Database.pdb
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS530-1\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.csprojResolveAssemblyReference.cache
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS530-1\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.dll
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS530-1\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.pdb

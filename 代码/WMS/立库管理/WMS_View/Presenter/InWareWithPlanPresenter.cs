@@ -20,9 +20,12 @@ namespace WMS_Kernel
        View_PlanListBLL bllViewPlanList = new View_PlanListBLL();
       
        PlanBll bllPlan = new WMS_Database.PlanBll();
+       Plan_ListBll bllPlanList = new Plan_ListBll();
        View_PlanMainBLL bllViewPlanMain = new View_PlanMainBLL();
        WH_WareHouseBll bllWareHouse = new WH_WareHouseBll();
        WH_Station_LogicBLL bllStationLogic = new WH_Station_LogicBLL();
+
+       string currPlanCode = "";
        public InWareWithPlanPresenter(IInWareWithPlanView view,IWMSFrame wmsFrame) :base(view,wmsFrame)
        {
         
@@ -39,7 +42,7 @@ namespace WMS_Kernel
        {
            //List<View_Plan_StockListModel> stockList = bllViewStockList.GetModelByPlanID(planID);
            List<View_PlanListModel> planList = bllViewPlanList.GetModelByPlanCode(planCode);
-         
+           this.currPlanCode = planCode;
            ViewDataManager.PALLETWITHPLANDATA.PlanListData.Clear();
            if (planList == null || planList.Count == 0)
            {
@@ -49,20 +52,22 @@ namespace WMS_Kernel
            foreach (View_PlanListModel stockModel in planList)
            {
                PlanListModel planModel = new PlanListModel();
+               planModel.计划列表编码 = stockModel.Plan_List_ID;
+               planModel.计划单号 = planCode;
                planModel.规格型号 = stockModel.Goods_Model;
                planModel.计量单位 = stockModel.Goods_Unit;
                planModel.完成数量 = stockModel.Plan_List_Finished_Quantity.ToString();
                planModel.物料编码 = stockModel.Goods_Code;
                planModel.物料名称 = stockModel.Goods_Name;
                planModel.计划数量 = stockModel.Plan_List_Quantity;
-               //planModel.下达数量 = stockModel.Plan_List_Ordered_Quantity.ToString();
-               planModel.计划列表编码 = stockModel.Plan_List_ID;
+               planModel.下达数量 = stockModel.Plan_List_Ordered_Quantity.ToString();
+               //planModel.计划列表编码 = stockModel.Plan_List_ID;
                ViewDataManager.PALLETWITHPLANDATA.PlanListData.Add(planModel);
            }
 
           
        }
-       public void AddTrayGoods(string trayCode,int goodsNum,DateTime createDatetime,string goodsCode)
+       public void AddTrayGoods(string planListID,string trayCode,int goodsNum,string goodsCode,string planCode)
        {
            if(trayCode.Trim() == "")
            {
@@ -74,7 +79,7 @@ namespace WMS_Kernel
                this.View.ShowMessage("信息提示", "请输入物料配盘数量！");
                return;
            }
-          if(IsExistPalletGoods(goodsCode) == true)
+           if (IsExistPalletGoods(trayCode,goodsCode) == true)
           {
               this.View.ShowMessage("信息提示", "此物料已经在配盘中！");
               return;
@@ -85,20 +90,22 @@ namespace WMS_Kernel
                return;
            }
            TrayGoodsListModel tglm = new TrayGoodsListModel();
+           tglm.计划单号 = planCode;
+           tglm.计划列表编号 = planListID;
+           tglm.托盘条码 = trayCode;
            tglm.单位 = goodsModel.Goods_Unit;
            tglm.规格型号 = goodsModel.Goods_Model;
-           tglm.托盘条码 = trayCode;
-           tglm.生产日期 = createDatetime;
+           //tglm.生产日期 = createDatetime;
            tglm.数量 = goodsNum;
            tglm.物料编码 = goodsCode;
            
            ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData.Add(tglm);
        }
-       private bool IsExistPalletGoods(string goodsCode)
+       private bool IsExistPalletGoods(string palletCode,string goodsCode)
        {
            foreach(TrayGoodsListModel goods in   ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData)
            {
-               if(goods.物料编码 == goodsCode)
+               if (goods.物料编码 == goodsCode && goods.托盘条码 == palletCode)
                {
                    return true;
                }
@@ -106,30 +113,23 @@ namespace WMS_Kernel
            return false;
        }
 
-       public void TrayConfirm(string planListID, bool isFull, string trayCode, string recCellName)
+       public void TrayConfirm(string planListID, string recCellName)
        {
            try
            {
+               string restr ="";
                if( ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData.Count ==0)
                {
                    this.View.ShowMessage("信息提示", "请添加配盘物料！");
                    return;
                }
-               StockModel stock = new StockModel();
-               stock.Stock_ID = Guid.NewGuid().ToString();
-               if (isFull == true)
-               {
-                   stock.Stock_Full_Flag = "1";
-               }
-               else
-               {
-                   stock.Stock_Full_Flag = "0";
-               }
-               //WH_WareHouseModel house = bllWareHouse.GetModelByName(recHouseName);
-               //if(house ==null)
+               //if (isFull == true)
                //{
-               //    this.View.ShowMessage("信息提示", "库房名称错误！");
-               //    return;
+               //    stock.Stock_Full_Flag = "1";
+               //}
+               //else
+               //{
+               //    stock.Stock_Full_Flag = "0";
                //}
                WH_Station_LogicModel cell = bllStationLogic.GetStationByName( recCellName);
                if (cell == null)
@@ -137,34 +137,70 @@ namespace WMS_Kernel
                    this.View.ShowMessage("信息提示", "配盘地点错误！");
                    return;
                }
-               StockModel stockModel = bllStock.GetModelByTrayCode(trayCode);
-               if(stockModel != null)
+               List<string> distinctTray = new List<string>();
+               foreach(TrayGoodsListModel tray in ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData)
                {
-                   this.View.ShowMessage("信息提示", "此托盘条码已经在库存中，请确认托盘条码！");
-                   return;
+                 if(distinctTray.Contains(tray.托盘条码) == false)
+                 {
+                     distinctTray.Add(tray.托盘条码);
+                 }
                }
-               stock.Cell_Child_ID = cell.Cell_Child_ID;
-               stock.Stock_Tray_Barcode = trayCode;
-               bllStock.Add(stock);
-               for (int i = 0; i < ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData.Count; i++)
-               {
-                   Stock_ListModel stockList = new Stock_ListModel();
-                   stockList.Stock_List_ID = Guid.NewGuid().ToString();
-                   stockList.Stock_ID = stock.Stock_ID;
-                   TrayGoodsListModel trayGoodsModel = ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData[i];
-                   GoodsModel goods = bllGoods.GetModelByCode(trayGoodsModel.物料编码);
-                   if (goods == null)
-                   {
-                       continue;
-                   }
-                   stockList.Goods_ID = goods.Goods_ID;
-                   stockList.Plan_List_ID = planListID;
-                   stockList.Stock_List_Box_Barcode = trayCode;
-                   stockList.Stock_List_Entry_Time = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                   stockList.Stock_List_Quantity = trayGoodsModel.数量.ToString();
-                   bllStockList.Add(stockList);
+             foreach(string tray in distinctTray)
+             {
+                 StockModel stockModel = bllStock.GetModelByTrayCode(tray);
+                 if (stockModel != null)
+                 {
+                     this.View.ShowMessage("信息提示", "托盘条码" + tray + "已经在库存中，请确认托盘条码！");
+                     return;
+                 }
+             }
 
+               if(CheckMaterialNum(ref restr) == false)
+               {
+                   this.View.ShowMessage("信息提示", restr);
+                   return ;
                }
+             foreach (string tray in distinctTray)
+             {
+                 StockModel stock = new StockModel();
+                 stock.Stock_ID = Guid.NewGuid().ToString();
+                 stock.Cell_Child_ID = cell.Cell_Child_ID;
+                 stock.Stock_Tray_Barcode = tray;
+                 bllStock.Add(stock);
+
+                 for (int i = 0; i < ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData.Count; i++)
+                 {
+                     TrayGoodsListModel trayGoodsModel = ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData[i];
+                     if(trayGoodsModel.托盘条码 != tray)
+                     {
+                         continue;
+                     }
+                     Stock_ListModel stockList = new Stock_ListModel();
+                     stockList.Stock_List_ID = Guid.NewGuid().ToString();
+                     stockList.Stock_ID = stock.Stock_ID;
+               
+                     GoodsModel goods = bllGoods.GetModelByCode(trayGoodsModel.物料编码);
+                     if (goods == null)
+                     {
+                         continue;
+                     }
+                     stockList.Goods_ID = goods.Goods_ID;
+                     stockList.Plan_List_ID = trayGoodsModel.计划列表编号;
+                     stockList.Stock_List_Box_Barcode = trayGoodsModel.托盘条码;
+                     stockList.Stock_List_Entry_Time = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                     stockList.Stock_List_Quantity = trayGoodsModel.数量.ToString();
+
+                     bllStockList.Add(stockList);
+
+                     if (UpdatePlanNum(planListID, goods.Goods_ID,trayGoodsModel.数量, ref restr) == false)
+                     {
+                         this.WmsFrame.WriteLog("按计划配盘", "", "提示", restr);
+                     }
+                   
+                 }
+                 ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData.Clear();//配盘完成后清除数据
+                 QueryPlan(this.currPlanCode);
+             }
                this.View.ShowMessage("信息提示", "配盘成功！");
            }
            catch (Exception ex)
@@ -174,12 +210,68 @@ namespace WMS_Kernel
 
        }
 
-       public void DeleteTrayGoods(string goodsCode)
+       private bool UpdatePlanNum(string planListID, string materialCode, int materialNum, ref string restr)
+       {
+
+           Plan_ListModel planListModel = bllPlanList.GetModel(planListID);
+           if (planListModel == null)
+           {
+               restr = "计划列表编码错误：" + planListID;
+               return false;
+           }
+           int orderNum = 0;
+           if (planListModel.Plan_List_Ordered_Quantity.Trim() != "")
+           {
+               orderNum = int.Parse(planListModel.Plan_List_Ordered_Quantity);
+           }
+           orderNum += materialNum;
+           planListModel.Plan_List_Ordered_Quantity = orderNum.ToString();
+           bllPlanList.Update(planListModel);
+           return true;
+       }
+
+       private bool CheckMaterialNum(ref string restr)
+       {
+           Dictionary<string, int> materialNum = new Dictionary<string, int>();
+           for (int i = 0; i < ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData.Count; i++)
+           {
+               TrayGoodsListModel trayGoodsModel = ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData[i];
+               if(materialNum.Keys.Contains(trayGoodsModel.物料编码) == false)
+               {
+                   materialNum[trayGoodsModel.物料编码] = trayGoodsModel.数量;
+                   continue;
+               }
+               materialNum[trayGoodsModel.物料编码] += trayGoodsModel.数量;
+           }
+           foreach(KeyValuePair<string,int> keyValue in materialNum)
+           {
+               int planNum = GetPlanMateriNum(keyValue.Key);
+               if(keyValue.Value > planNum)
+               {
+                   restr = "物料：" + keyValue.Key + "超出计划剩余的数量（计划数量-下达数量）";
+                   return false;
+               }
+           }
+           return true;
+       }
+
+       private int GetPlanMateriNum(string materialCode)
+       {
+           foreach (PlanListModel planDetail in ViewDataManager.PALLETWITHPLANDATA.PlanListData)
+           {
+               if (planDetail.物料编码 == materialCode)
+               {
+                   return (int.Parse(planDetail.计划数量) - int.Parse(planDetail.下达数量));
+               }
+           }
+           return 0;
+       }
+       public void DeleteTrayGoods(string pallet,string goodsCode)
        {
            for (int i = 0; i < ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData.Count;i++ )
            {
                TrayGoodsListModel tglm = ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData[i];
-               if(tglm.物料编码 == goodsCode)
+               if(tglm.物料编码 == goodsCode&&pallet == tglm.托盘条码)
                {
                    ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData.Remove(tglm);
                    break;
@@ -189,7 +281,7 @@ namespace WMS_Kernel
        }
        /// <summary>
        ///  配盘数据，建立库存
-       /// </summary>
+       /// </summary> 
        /// <param name="trayCode">托盘码</param>
        /// <param name="targetHouseName">目标库房名称</param>
        /// <param name="targetStationName">目标站台名称，可做成配置</param>

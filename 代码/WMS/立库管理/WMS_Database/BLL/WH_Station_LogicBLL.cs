@@ -163,6 +163,19 @@ namespace WMS_Database
                 return null;
             }
         }
+        public WH_Station_LogicModel GetStationByIDAndType(string childCellID,string cellType)
+        {
+            string sqlStr = " Cell_Child_ID='" + childCellID + "' and WH_Station_Logic_Type ='"+ cellType+"'";
+            List<WH_Station_LogicModel> cellList = GetModelList(sqlStr);
+            if (cellList != null && cellList.Count > 0)
+            {
+                return cellList[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
         public WH_Station_LogicModel GetModelByHouseIDAndCellName(string houseID, string stationName)
         {
             string sqlStr = "WareHouse_ID ='" + houseID + "' and WH_Station_Logic_Name='" + stationName + "'";

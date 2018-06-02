@@ -50,3 +50,8 @@ E:\JCJ\WMS\代码\WMS\程序输出\服务端输出\Release\Aoyou_Service.pdb
 E:\JCJ\WMS\代码\WMS\应用\Aoyou_Service\obj\Release\Aoyou_Service.csprojResolveAssemblyReference.cache
 E:\JCJ\WMS\代码\WMS\应用\Aoyou_Service\obj\Release\Aoyou_Service.dll
 E:\JCJ\WMS\代码\WMS\应用\Aoyou_Service\obj\Release\Aoyou_Service.pdb
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS530-1\WMS\程序输出\服务端输出\Release\Aoyou_Service.dll
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS530-1\WMS\程序输出\服务端输出\Release\Aoyou_Service.pdb
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS530-1\WMS\应用\Aoyou_Service\obj\Release\Aoyou_Service.csprojResolveAssemblyReference.cache
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS530-1\WMS\应用\Aoyou_Service\obj\Release\Aoyou_Service.dll
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS530-1\WMS\应用\Aoyou_Service\obj\Release\Aoyou_Service.pdb
