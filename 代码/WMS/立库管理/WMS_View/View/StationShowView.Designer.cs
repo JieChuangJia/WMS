@@ -85,6 +85,7 @@
             this.手动移库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_StartPos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_EndPos = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.gc_CellGoodsDetail = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -125,6 +126,8 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.cms_Property.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_CellGoodsDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -335,7 +338,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1224, 595);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1226, 596);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panelControl1
@@ -357,7 +360,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1218, 54);
+            this.panelControl1.Size = new System.Drawing.Size(1220, 54);
             this.panelControl1.TabIndex = 5;
             // 
             // sb_CellSet
@@ -429,6 +432,7 @@
             this.cbe_PosTypeList.Name = "cbe_PosTypeList";
             this.cbe_PosTypeList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_PosTypeList.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbe_PosTypeList.Size = new System.Drawing.Size(69, 20);
             this.cbe_PosTypeList.TabIndex = 23;
             this.cbe_PosTypeList.SelectedIndexChanged += new System.EventHandler(this.cbe_PosTypeList_SelectedIndexChanged);
@@ -462,6 +466,7 @@
             this.cbe_Row.Name = "cbe_Row";
             this.cbe_Row.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_Row.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbe_Row.Size = new System.Drawing.Size(49, 20);
             this.cbe_Row.TabIndex = 19;
             this.cbe_Row.SelectedIndexChanged += new System.EventHandler(this.cbe_Row_SelectedIndexChanged);
@@ -480,6 +485,7 @@
             this.cbe_HouseList.Name = "cbe_HouseList";
             this.cbe_HouseList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_HouseList.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbe_HouseList.Size = new System.Drawing.Size(149, 20);
             this.cbe_HouseList.TabIndex = 17;
             this.cbe_HouseList.SelectedIndexChanged += new System.EventHandler(this.cbe_HouseList_SelectedIndexChanged);
@@ -496,7 +502,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1218, 529);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1220, 530);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
             // tableLayoutPanel3
@@ -504,7 +510,7 @@
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.storageControl1, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.gc_CellGoodsDetail, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.groupControl2, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -512,7 +518,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(932, 523);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(934, 524);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // storageControl1
@@ -529,7 +535,7 @@
             this.storageControl1.Layers = 0;
             this.storageControl1.Location = new System.Drawing.Point(3, 3);
             this.storageControl1.Name = "storageControl1";
-            this.storageControl1.Size = new System.Drawing.Size(926, 360);
+            this.storageControl1.Size = new System.Drawing.Size(928, 360);
             this.storageControl1.TabIndex = 14;
             this.storageControl1.PositionsClick += new Storage.StorageControl.ClickPositionsEventHandler(this.storageControl1_PositionsClick);
             // 
@@ -596,13 +602,24 @@
             this.tsmi_EndPos.Text = "终止位置";
             this.tsmi_EndPos.Click += new System.EventHandler(this.tsmi_EndPos_Click);
             // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.gc_CellGoodsDetail);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(3, 369);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(928, 152);
+            this.groupControl2.TabIndex = 15;
+            this.groupControl2.Text = "货位物料详细";
+            // 
             // gc_CellGoodsDetail
             // 
             this.gc_CellGoodsDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_CellGoodsDetail.Location = new System.Drawing.Point(3, 369);
+            this.gc_CellGoodsDetail.Location = new System.Drawing.Point(2, 22);
             this.gc_CellGoodsDetail.MainView = this.gridView2;
+            this.gc_CellGoodsDetail.Margin = new System.Windows.Forms.Padding(0);
             this.gc_CellGoodsDetail.Name = "gc_CellGoodsDetail";
-            this.gc_CellGoodsDetail.Size = new System.Drawing.Size(926, 151);
+            this.gc_CellGoodsDetail.Size = new System.Drawing.Size(924, 128);
             this.gc_CellGoodsDetail.TabIndex = 6;
             this.gc_CellGoodsDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -613,11 +630,14 @@
             this.gridView2.GroupPanelText = "货位物料详细";
             this.gridView2.IndicatorWidth = 40;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.MultiSelect = true;
+            this.gridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(941, 3);
+            this.splitContainer1.Location = new System.Drawing.Point(943, 3);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -629,7 +649,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(274, 523);
+            this.splitContainer1.Size = new System.Drawing.Size(274, 524);
             this.splitContainer1.SplitterDistance = 120;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -721,7 +741,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(274, 399);
+            this.groupControl1.Size = new System.Drawing.Size(274, 400);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "图例";
             // 
@@ -820,7 +840,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1224, 595);
+            this.ClientSize = new System.Drawing.Size(1226, 596);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "StationShowView";
             this.Text = "货位显示";
@@ -845,6 +865,8 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.cms_Property.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc_CellGoodsDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -934,5 +956,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
     }
 }

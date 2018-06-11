@@ -117,6 +117,7 @@
             this.ribbon_Title.Size = new System.Drawing.Size(1072, 57);
             this.ribbon_Title.StatusBar = this.ribbonStatusBar;
             this.ribbon_Title.Toolbar.ShowCustomizeItem = false;
+            //this.ribbon_Title.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             // 
             // barBtnItem_PlanQuery
             // 

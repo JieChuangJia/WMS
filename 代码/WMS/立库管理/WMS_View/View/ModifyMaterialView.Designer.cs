@@ -59,6 +59,7 @@
             this.cb_Flag.Name = "cb_Flag";
             this.cb_Flag.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cb_Flag.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cb_Flag.Size = new System.Drawing.Size(128, 20);
             this.cb_Flag.TabIndex = 8;
             // 
@@ -90,6 +91,7 @@
             this.cb_GoodsType.Name = "cb_GoodsType";
             this.cb_GoodsType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cb_GoodsType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cb_GoodsType.Size = new System.Drawing.Size(128, 20);
             this.cb_GoodsType.TabIndex = 4;
             // 

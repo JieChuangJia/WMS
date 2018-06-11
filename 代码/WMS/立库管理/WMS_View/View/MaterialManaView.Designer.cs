@@ -31,11 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaterialManaView));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.gc_GoodsList = new DevExpress.XtraGrid.GridControl();
             this.gv_MaterialList = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.sb_ClosePro = new DevExpress.XtraEditors.SimpleButton();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.gc_PropertyDetail = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.sb_ClosePro = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.sb_QueryGoods = new DevExpress.XtraEditors.SimpleButton();
@@ -49,8 +51,12 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_GoodsList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_MaterialList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_PropertyDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -85,23 +91,34 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.gc_GoodsList);
+            this.splitContainer1.Panel1.Controls.Add(this.groupControl2);
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.groupControl3);
             this.splitContainer1.Panel2.Controls.Add(this.sb_ClosePro);
-            this.splitContainer1.Panel2.Controls.Add(this.gc_PropertyDetail);
             this.splitContainer1.Size = new System.Drawing.Size(1200, 444);
             this.splitContainer1.SplitterDistance = 945;
             this.splitContainer1.TabIndex = 8;
             // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.gc_GoodsList);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(0, 0);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(945, 444);
+            this.groupControl2.TabIndex = 0;
+            this.groupControl2.Text = "物料清单";
+            // 
             // gc_GoodsList
             // 
             this.gc_GoodsList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_GoodsList.Location = new System.Drawing.Point(0, 0);
+            this.gc_GoodsList.Location = new System.Drawing.Point(2, 22);
             this.gc_GoodsList.MainView = this.gv_MaterialList;
+            this.gc_GoodsList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_GoodsList.Name = "gc_GoodsList";
-            this.gc_GoodsList.Size = new System.Drawing.Size(945, 444);
+            this.gc_GoodsList.Size = new System.Drawing.Size(941, 420);
             this.gc_GoodsList.TabIndex = 6;
             this.gc_GoodsList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_MaterialList});
@@ -113,6 +130,40 @@
             this.gv_MaterialList.GroupPanelText = "物料清单";
             this.gv_MaterialList.IndicatorWidth = 40;
             this.gv_MaterialList.Name = "gv_MaterialList";
+            this.gv_MaterialList.OptionsSelection.MultiSelect = true;
+            this.gv_MaterialList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_MaterialList.OptionsView.ShowGroupPanel = false;
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.gc_PropertyDetail);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(0, 0);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(251, 444);
+            this.groupControl3.TabIndex = 2;
+            this.groupControl3.Text = "物料属性";
+            // 
+            // gc_PropertyDetail
+            // 
+            this.gc_PropertyDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_PropertyDetail.Location = new System.Drawing.Point(2, 22);
+            this.gc_PropertyDetail.MainView = this.gridView2;
+            this.gc_PropertyDetail.Margin = new System.Windows.Forms.Padding(0);
+            this.gc_PropertyDetail.Name = "gc_PropertyDetail";
+            this.gc_PropertyDetail.Size = new System.Drawing.Size(247, 420);
+            this.gc_PropertyDetail.TabIndex = 0;
+            this.gc_PropertyDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.GridControl = this.gc_PropertyDetail;
+            this.gridView2.GroupPanelText = "物料属性";
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.MultiSelect = true;
+            this.gridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // sb_ClosePro
             // 
@@ -123,25 +174,6 @@
             this.sb_ClosePro.TabIndex = 1;
             this.sb_ClosePro.Text = "关闭属性";
             this.sb_ClosePro.Click += new System.EventHandler(this.sb_ClosePro_Click);
-            // 
-            // gc_PropertyDetail
-            // 
-            this.gc_PropertyDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gc_PropertyDetail.Location = new System.Drawing.Point(3, 3);
-            this.gc_PropertyDetail.MainView = this.gridView2;
-            this.gc_PropertyDetail.Name = "gc_PropertyDetail";
-            this.gc_PropertyDetail.Size = new System.Drawing.Size(240, 404);
-            this.gc_PropertyDetail.TabIndex = 0;
-            this.gc_PropertyDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.gc_PropertyDetail;
-            this.gridView2.GroupPanelText = "物料属性";
-            this.gridView2.Name = "gridView2";
             // 
             // panelControl1
             // 
@@ -235,8 +267,12 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc_GoodsList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_MaterialList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc_PropertyDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -266,6 +302,8 @@
         private DevExpress.XtraEditors.SimpleButton sb_DeleteGoods;
         private DevExpress.XtraEditors.SimpleButton sb_AddGoods;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
 
     }
 }

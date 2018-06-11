@@ -20,6 +20,11 @@ namespace WMS_Kernel
         View_Plan_StockListBLL bllViewPlanStockList = new View_Plan_StockListBLL();
         ManageBll bllManage = new ManageBll();
 
+        private static View_ManageStockListBLL bllViewManageStockList = new View_ManageStockListBLL();
+      
+    
+        private static StockBll bllStock = new StockBll();
+
         PlanBll bllPlan = new PlanBll();
         Plan_ListBll bllPlanList = new Plan_ListBll();
 
@@ -172,13 +177,26 @@ namespace WMS_Kernel
                 this.View.ShowMessage("信息提示", "当前托盘下架任务已经下发！");
                 return;
             }
+
             string restr = "";
 
             string manageID = "";
 
+            //if(CheckMaterialNum(ref restr) == false)//先不加个数校验
+            //{
+            //    this.View.ShowMessage("信息提示", restr);
+            //    return ;
+            //}
+
+
             if (CommonMoudle.TaskHandleMethod.CreateUnshelveManageTask(planCode, palletCode, unshelveStationName, ref manageID,ref restr) == false)
             {
                 this.WmsFrame.WriteLog("下架逻辑", "", "提示", restr);
+                return;
+            }
+            if(CommonMoudle.TaskHandleMethod.UpdatePlanOrderedNum(manage.Mange_ID) == false)
+            {
+                this.WmsFrame.WriteLog("下架逻辑", "", "提示", "更新计划下达数据数量失败：计划编码：" + planCode + "，托盘号：" +palletCode);
                 return;
             }
            
@@ -190,7 +208,43 @@ namespace WMS_Kernel
             this.WmsFrame.WriteLog("下架逻辑", "", "提示","托盘："+palletCode+ "下达下架任务成功！");
         }
 
-    
+        private bool CheckMaterialNum(ref string restr)
+        {
+            Dictionary<string, int> materialNum = new Dictionary<string, int>();
+            for (int i = 0; i <  ViewDataManager.UNSHELVEPALNDATA.PalletInforData.Count; i++)  
+            {
+                PalletInfor trayGoodsModel = ViewDataManager.UNSHELVEPALNDATA.PalletInforData[i];
+                if (materialNum.Keys.Contains(trayGoodsModel.物料编码) == false)
+                {
+                    materialNum[trayGoodsModel.物料编码] = trayGoodsModel.数量;
+                    continue;
+                }
+                materialNum[trayGoodsModel.物料编码] += trayGoodsModel.数量;
+            }
+            foreach (KeyValuePair<string, int> keyValue in materialNum)
+            {
+                int planNum = GetPlanMateriNum(keyValue.Key);
+                if (keyValue.Value > planNum)
+                {
+                    restr = "物料：" + keyValue.Key + "超出计划剩余的数量（计划数量-下达数量）";
+                    return false;
+                }
+            }
+            return true;
+
+        }
+        private int GetPlanMateriNum(string materialCode)
+        {
+            foreach (PlanListModel planDetail in ViewDataManager.UNSHELVEPALNDATA.PlanListData)
+            {
+                if (planDetail.物料编码 == materialCode)
+                {
+                    return (int.Parse(planDetail.计划数量) - int.Parse(planDetail.下达数量));
+                }
+            }
+            return 0;
+        }
+     
         private bool UpateCellStatus(string palletCode, EnumGSOperate cellOperStatus, EnumGSTaskStatus taskStatus)
         {
             View_StockListModel stockModel = bllViewStockList.GetModelByPalletCode(palletCode,EnumCellType.货位.ToString());

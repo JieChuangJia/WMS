@@ -16,6 +16,7 @@ using LicenceManager;
 using System.Configuration;
 using CommonMoudle;
 using WMS_Database;
+using DevExpress.Utils;
 namespace Aoyou_WMS
 {
     public partial class MainFrame :ChildViewBase,IWMSFrame
@@ -122,8 +123,8 @@ namespace Aoyou_WMS
             DevExpress.XtraBars.Ribbon.RibbonPageGroup group = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             group.Name = groupName;
             group.Text = groupName;
-           
             page.Groups.Add(group);
+            this.ribbon_Title.DrawGroupCaptions = DefaultBoolean.False;
             restr = "添加组成功！";
             return true;
         }
@@ -147,6 +148,9 @@ namespace Aoyou_WMS
             buttonItem.Name = itemName;
             buttonItem.Caption = itemName;
             buttonItem.ImageOptions.LargeImage = itemImage;
+            //buttonItem.ImageOptions.Image = itemImage;
+            //buttonItem.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText)
+            //| DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             buttonItem.ItemClick += callBack;
             group.ItemLinks.Add(buttonItem);
             restr = "添加菜单项成功！";
@@ -161,8 +165,8 @@ namespace Aoyou_WMS
         {
             string dbSrc = ConfigurationManager.AppSettings["DBSource"];
             //CtlDBAccess.DBUtility.PubConstant.ConnectionString = string.Format(@"{0}Initial Catalog=ACEcams;User ID=sa;Password=123456;", dbSrc);
-          //   string dbConn1 = string.Format(@"{0}Initial Catalog=WMSDB2;User ID=sa;Password=123456;", dbSrc);
-            string dbConn1 = string.Format(@"{0}Initial Catalog=WMSDB2;User ID=AoyouWmsSA;Password=Aa123456;", dbSrc);
+             string dbConn1 = string.Format(@"{0}Initial Catalog=WMSDB2;User ID=sa;Password=123456;", dbSrc);
+           // string dbConn1 = string.Format(@"{0}Initial Catalog=WMSDB2;User ID=AoyouWmsSA;Password=Aa123456;", dbSrc);
          
              WMS_Database.PubConstant.ConnectionString=dbConn1;
         }

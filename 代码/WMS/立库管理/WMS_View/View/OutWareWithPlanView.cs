@@ -62,5 +62,9 @@ namespace WMS_Kernel
                 e.Info.DisplayText = Convert.ToString(e.RowHandle + 1);
             }
         }
+
+
+
+
     }
 }

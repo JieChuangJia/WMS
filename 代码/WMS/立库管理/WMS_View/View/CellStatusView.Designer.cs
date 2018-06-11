@@ -68,6 +68,7 @@
             this.cbe_TaskStatus.Name = "cbe_TaskStatus";
             this.cbe_TaskStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_TaskStatus.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbe_TaskStatus.Size = new System.Drawing.Size(160, 20);
             this.cbe_TaskStatus.TabIndex = 7;
             // 
@@ -85,6 +86,7 @@
             this.cb_GSStatus.Name = "cb_GSStatus";
             this.cb_GSStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cb_GSStatus.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cb_GSStatus.Size = new System.Drawing.Size(160, 20);
             this.cb_GSStatus.TabIndex = 5;
             // 

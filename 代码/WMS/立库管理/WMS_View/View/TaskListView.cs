@@ -126,7 +126,7 @@ namespace WMS_Kernel
                 //this.ShowMessage("信息提示", "请选择计划编号！");
                 return;
             }
-            int currRow = this.gv_TaskList.GetSelectedRows()[0];
+            int currRow = e.FocusedRowHandle;
             string palletCode = this.gv_TaskList.GetRowCellValue(currRow, "托盘条码").ToString();
             this.presenter.QueryTaskDetail(palletCode);
         }

@@ -33,26 +33,29 @@
             this.de_EndTime = new DevExpress.XtraEditors.DateEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.gc_SysLog = new DevExpress.XtraGrid.GridControl();
-            this.gv_Syslog = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.sb_LogQuery = new DevExpress.XtraEditors.SimpleButton();
             this.te_LikeContent = new DevExpress.XtraEditors.TextEdit();
             this.ce_LikeQuery = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.cbe_LogCate = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.gc_SysLog = new DevExpress.XtraGrid.GridControl();
+            this.gv_Syslog = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.de_StartTime.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.de_StartTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.de_EndTime.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.de_EndTime.Properties)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gc_SysLog)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gv_Syslog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.te_LikeContent.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ce_LikeQuery.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_LogCate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_SysLog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_Syslog)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -99,44 +102,16 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.gc_SysLog, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panelControl1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1109, 546);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1111, 547);
             this.tableLayoutPanel1.TabIndex = 57;
-            // 
-            // gc_SysLog
-            // 
-            this.gc_SysLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_SysLog.EmbeddedNavigator.Buttons.Append.Visible = false;
-            this.gc_SysLog.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
-            this.gc_SysLog.EmbeddedNavigator.Buttons.Edit.Visible = false;
-            this.gc_SysLog.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
-            this.gc_SysLog.EmbeddedNavigator.Buttons.Next.Visible = false;
-            this.gc_SysLog.EmbeddedNavigator.Buttons.Prev.Visible = false;
-            this.gc_SysLog.EmbeddedNavigator.Buttons.Remove.Visible = false;
-            this.gc_SysLog.EmbeddedNavigator.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.gc_SysLog.EmbeddedNavigator.TextStringFormat = "总页数 {0} 第{1}页";
-            this.gc_SysLog.Location = new System.Drawing.Point(3, 83);
-            this.gc_SysLog.MainView = this.gv_Syslog;
-            this.gc_SysLog.Name = "gc_SysLog";
-            this.gc_SysLog.Size = new System.Drawing.Size(1103, 460);
-            this.gc_SysLog.TabIndex = 7;
-            this.gc_SysLog.UseEmbeddedNavigator = true;
-            this.gc_SysLog.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gv_Syslog});
-            // 
-            // gv_Syslog
-            // 
-            this.gv_Syslog.GridControl = this.gc_SysLog;
-            this.gv_Syslog.GroupPanelText = "日志列表";
-            this.gv_Syslog.IndicatorWidth = 40;
-            this.gv_Syslog.Name = "gv_Syslog";
             // 
             // panelControl1
             // 
@@ -152,7 +127,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1103, 74);
+            this.panelControl1.Size = new System.Drawing.Size(1105, 74);
             this.panelControl1.TabIndex = 0;
             // 
             // sb_LogQuery
@@ -193,14 +168,57 @@
             this.cbe_LogCate.Name = "cbe_LogCate";
             this.cbe_LogCate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_LogCate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbe_LogCate.Size = new System.Drawing.Size(135, 20);
             this.cbe_LogCate.TabIndex = 57;
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.gc_SysLog);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(3, 83);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(1105, 461);
+            this.groupControl1.TabIndex = 1;
+            this.groupControl1.Text = "日志列表";
+            // 
+            // gc_SysLog
+            // 
+            this.gc_SysLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_SysLog.EmbeddedNavigator.Buttons.Append.Visible = false;
+            this.gc_SysLog.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
+            this.gc_SysLog.EmbeddedNavigator.Buttons.Edit.Visible = false;
+            this.gc_SysLog.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
+            this.gc_SysLog.EmbeddedNavigator.Buttons.Next.Visible = false;
+            this.gc_SysLog.EmbeddedNavigator.Buttons.Prev.Visible = false;
+            this.gc_SysLog.EmbeddedNavigator.Buttons.Remove.Visible = false;
+            this.gc_SysLog.EmbeddedNavigator.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.gc_SysLog.EmbeddedNavigator.TextStringFormat = "总页数 {0} 第{1}页";
+            this.gc_SysLog.Location = new System.Drawing.Point(2, 22);
+            this.gc_SysLog.MainView = this.gv_Syslog;
+            this.gc_SysLog.Margin = new System.Windows.Forms.Padding(0);
+            this.gc_SysLog.Name = "gc_SysLog";
+            this.gc_SysLog.Size = new System.Drawing.Size(1101, 437);
+            this.gc_SysLog.TabIndex = 7;
+            this.gc_SysLog.UseEmbeddedNavigator = true;
+            this.gc_SysLog.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gv_Syslog});
+            // 
+            // gv_Syslog
+            // 
+            this.gv_Syslog.GridControl = this.gc_SysLog;
+            this.gv_Syslog.GroupPanelText = "日志列表";
+            this.gv_Syslog.IndicatorWidth = 40;
+            this.gv_Syslog.Name = "gv_Syslog";
+            this.gv_Syslog.OptionsSelection.MultiSelect = true;
+            this.gv_Syslog.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_Syslog.OptionsView.ShowGroupPanel = false;
             // 
             // SysLogView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1109, 546);
+            this.ClientSize = new System.Drawing.Size(1111, 547);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "SysLogView";
             this.Text = "系统日志查询";
@@ -209,14 +227,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.de_EndTime.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.de_EndTime.Properties)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gc_SysLog)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gv_Syslog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.te_LikeContent.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ce_LikeQuery.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_LogCate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gc_SysLog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_Syslog)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -236,5 +256,6 @@
         private DevExpress.XtraEditors.SimpleButton sb_LogQuery;
         private DevExpress.XtraGrid.GridControl gc_SysLog;
         private DevExpress.XtraGrid.Views.Grid.GridView gv_Syslog;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
     }
 }

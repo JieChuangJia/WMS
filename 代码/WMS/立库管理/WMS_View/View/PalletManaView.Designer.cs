@@ -68,6 +68,8 @@
             this.gc_PalletList = new DevExpress.XtraGrid.GridControl();
             this.gv_PalletList = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.cbe_PlanList = new DevExpress.XtraEditors.ComboBoxEdit();
             this.sb_QueryPallet = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -85,8 +87,9 @@
             this.sb_QueryGoodsInfor = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.te_GoodsInfo = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.cbe_PlanList = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
@@ -105,6 +108,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gv_PalletList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_PlanList.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_PalletPos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_HouseList.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -114,7 +118,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.te_GoodsInfo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbe_PlanList.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
             this.SuspendLayout();
             // 
             // imageCollection1
@@ -314,11 +323,11 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.gc_GoodsList, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panelControl1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panelControl2, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.panelControl3, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl3, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -334,10 +343,11 @@
             // gc_GoodsList
             // 
             this.gc_GoodsList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_GoodsList.Location = new System.Drawing.Point(3, 273);
+            this.gc_GoodsList.Location = new System.Drawing.Point(2, 22);
             this.gc_GoodsList.MainView = this.gv_GoodsList;
+            this.gc_GoodsList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_GoodsList.Name = "gc_GoodsList";
-            this.gc_GoodsList.Size = new System.Drawing.Size(1169, 144);
+            this.gc_GoodsList.Size = new System.Drawing.Size(1165, 120);
             this.gc_GoodsList.TabIndex = 7;
             this.gc_GoodsList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_GoodsList});
@@ -348,14 +358,17 @@
             this.gv_GoodsList.GroupPanelText = "物料清单";
             this.gv_GoodsList.IndicatorWidth = 40;
             this.gv_GoodsList.Name = "gv_GoodsList";
+            this.gv_GoodsList.OptionsSelection.MultiSelect = true;
+            this.gv_GoodsList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_GoodsList.OptionsView.ShowGroupPanel = false;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.gc_PalletGoodsInfor, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.gc_PalletList, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.groupControl1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.groupControl2, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 63);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -366,13 +379,12 @@
             // 
             // gc_PalletGoodsInfor
             // 
-            this.gc_PalletGoodsInfor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gc_PalletGoodsInfor.Location = new System.Drawing.Point(587, 3);
+            this.gc_PalletGoodsInfor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_PalletGoodsInfor.Location = new System.Drawing.Point(2, 22);
             this.gc_PalletGoodsInfor.MainView = this.gv_PalletInfor;
+            this.gc_PalletGoodsInfor.Margin = new System.Windows.Forms.Padding(0);
             this.gc_PalletGoodsInfor.Name = "gc_PalletGoodsInfor";
-            this.gc_PalletGoodsInfor.Size = new System.Drawing.Size(579, 138);
+            this.gc_PalletGoodsInfor.Size = new System.Drawing.Size(575, 114);
             this.gc_PalletGoodsInfor.TabIndex = 2;
             this.gc_PalletGoodsInfor.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_PalletInfor});
@@ -382,16 +394,18 @@
             this.gv_PalletInfor.GridControl = this.gc_PalletGoodsInfor;
             this.gv_PalletInfor.GroupPanelText = "配盘物料信息";
             this.gv_PalletInfor.Name = "gv_PalletInfor";
+            this.gv_PalletInfor.OptionsSelection.MultiSelect = true;
+            this.gv_PalletInfor.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_PalletInfor.OptionsView.ShowGroupPanel = false;
             // 
             // gc_PalletList
             // 
-            this.gc_PalletList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gc_PalletList.Location = new System.Drawing.Point(3, 3);
+            this.gc_PalletList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_PalletList.Location = new System.Drawing.Point(2, 22);
             this.gc_PalletList.MainView = this.gv_PalletList;
+            this.gc_PalletList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_PalletList.Name = "gc_PalletList";
-            this.gc_PalletList.Size = new System.Drawing.Size(578, 138);
+            this.gc_PalletList.Size = new System.Drawing.Size(574, 114);
             this.gc_PalletList.TabIndex = 1;
             this.gc_PalletList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_PalletList});
@@ -402,6 +416,9 @@
             this.gv_PalletList.GridControl = this.gc_PalletList;
             this.gv_PalletList.GroupPanelText = "配盘列表";
             this.gv_PalletList.Name = "gv_PalletList";
+            this.gv_PalletList.OptionsSelection.MultiSelect = true;
+            this.gv_PalletList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_PalletList.OptionsView.ShowGroupPanel = false;
             // 
             // panelControl1
             // 
@@ -417,6 +434,24 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1169, 54);
             this.panelControl1.TabIndex = 1;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(379, 24);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(48, 14);
+            this.labelControl3.TabIndex = 17;
+            this.labelControl3.Text = "计划编码";
+            // 
+            // cbe_PlanList
+            // 
+            this.cbe_PlanList.Location = new System.Drawing.Point(439, 21);
+            this.cbe_PlanList.Name = "cbe_PlanList";
+            this.cbe_PlanList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_PlanList.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbe_PlanList.Size = new System.Drawing.Size(145, 20);
+            this.cbe_PlanList.TabIndex = 16;
             // 
             // sb_QueryPallet
             // 
@@ -450,6 +485,7 @@
             this.cbe_PalletPos.Name = "cbe_PalletPos";
             this.cbe_PalletPos.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_PalletPos.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbe_PalletPos.Size = new System.Drawing.Size(128, 20);
             this.cbe_PalletPos.TabIndex = 10;
             // 
@@ -459,6 +495,7 @@
             this.cbe_HouseList.Name = "cbe_HouseList";
             this.cbe_HouseList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_HouseList.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbe_HouseList.Size = new System.Drawing.Size(102, 20);
             this.cbe_HouseList.TabIndex = 9;
             // 
@@ -591,22 +628,35 @@
             this.te_GoodsInfo.Size = new System.Drawing.Size(116, 20);
             this.te_GoodsInfo.TabIndex = 16;
             // 
-            // labelControl3
+            // groupControl1
             // 
-            this.labelControl3.Location = new System.Drawing.Point(379, 24);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(48, 14);
-            this.labelControl3.TabIndex = 17;
-            this.labelControl3.Text = "计划编码";
+            this.groupControl1.Controls.Add(this.gc_PalletGoodsInfor);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(587, 3);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(579, 138);
+            this.groupControl1.TabIndex = 3;
+            this.groupControl1.Text = "配盘物料信息";
             // 
-            // cbe_PlanList
+            // groupControl2
             // 
-            this.cbe_PlanList.Location = new System.Drawing.Point(439, 21);
-            this.cbe_PlanList.Name = "cbe_PlanList";
-            this.cbe_PlanList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbe_PlanList.Size = new System.Drawing.Size(145, 20);
-            this.cbe_PlanList.TabIndex = 16;
+            this.groupControl2.Controls.Add(this.gc_PalletList);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(3, 3);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(578, 138);
+            this.groupControl2.TabIndex = 4;
+            this.groupControl2.Text = "配盘列表";
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.gc_GoodsList);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(3, 273);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(1169, 144);
+            this.groupControl3.TabIndex = 4;
+            this.groupControl3.Text = "物料清单";
             // 
             // PalletManaView
             // 
@@ -636,6 +686,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_PlanList.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_PalletPos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_HouseList.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -647,7 +698,12 @@
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.te_GoodsInfo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbe_PlanList.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -703,5 +759,8 @@
         private DevExpress.XtraEditors.SimpleButton sb_CancelPallet;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.ComboBoxEdit cbe_PlanList;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
     }
 }

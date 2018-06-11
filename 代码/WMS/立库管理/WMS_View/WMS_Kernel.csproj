@@ -288,6 +288,7 @@
     <EmbeddedResource Include="ImageResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ImageResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="View\ModifyMaterialView.resx">
@@ -647,6 +648,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\edit-add1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TaskList2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

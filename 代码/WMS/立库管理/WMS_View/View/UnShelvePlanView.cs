@@ -189,7 +189,7 @@ namespace WMS_Kernel
                 //this.ShowMessage("信息提示", "请选择计划编号！");
                 return;
             }
-            int currRow = this.gv_PlanList.GetSelectedRows()[0];
+            int currRow = e.FocusedRowHandle;
             string goodsCode = this.gv_PlanList.GetRowCellValue(currRow, "物料编码").ToString();
 
             this.presenter.QueryStockInfor(goodsCode);

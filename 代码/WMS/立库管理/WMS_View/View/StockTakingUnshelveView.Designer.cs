@@ -34,9 +34,8 @@
             this.ce_TargetStation = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.sb_StockTakingUnshelve = new DevExpress.XtraEditors.SimpleButton();
-            this.gc_Stock = new DevExpress.XtraGrid.GridControl();
-            this.gv_Stock = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.gc_StockList = new DevExpress.XtraGrid.GridControl();
             this.gv_stockList = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -51,14 +50,17 @@
             this.lc_goods = new DevExpress.XtraEditors.LabelControl();
             this.rb_CellStockTaking = new System.Windows.Forms.RadioButton();
             this.rb_goodsStockTaking = new System.Windows.Forms.RadioButton();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.gc_Stock = new DevExpress.XtraGrid.GridControl();
+            this.gv_Stock = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ce_TargetStation.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gc_Stock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gv_Stock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_StockList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_stockList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -67,6 +69,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.te_CellName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_HouseList.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.te_MaterialInfo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_Stock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_Stock)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -74,9 +80,9 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.gc_Stock, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panelControl3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.panelControl1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl2, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -85,7 +91,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(866, 477);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(868, 478);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl1
@@ -94,9 +100,9 @@
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.sb_StockTakingUnshelve);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(3, 399);
+            this.groupControl1.Location = new System.Drawing.Point(3, 401);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(860, 75);
+            this.groupControl1.Size = new System.Drawing.Size(862, 74);
             this.groupControl1.TabIndex = 3;
             this.groupControl1.Text = "操作区";
             // 
@@ -107,6 +113,7 @@
             this.ce_TargetStation.Name = "ce_TargetStation";
             this.ce_TargetStation.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ce_TargetStation.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ce_TargetStation.Size = new System.Drawing.Size(123, 20);
             this.ce_TargetStation.TabIndex = 35;
             // 
@@ -128,41 +135,33 @@
             this.sb_StockTakingUnshelve.TabIndex = 34;
             this.sb_StockTakingUnshelve.Text = "盘点下架";
             // 
-            // gc_Stock
-            // 
-            this.gc_Stock.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gc_Stock.Location = new System.Drawing.Point(3, 83);
-            this.gc_Stock.MainView = this.gv_Stock;
-            this.gc_Stock.Name = "gc_Stock";
-            this.gc_Stock.Size = new System.Drawing.Size(860, 152);
-            this.gc_Stock.TabIndex = 1;
-            this.gc_Stock.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gv_Stock});
-            // 
-            // gv_Stock
-            // 
-            this.gv_Stock.GridControl = this.gc_Stock;
-            this.gv_Stock.GroupPanelText = "库存";
-            this.gv_Stock.Name = "gv_Stock";
-            // 
             // panelControl3
             // 
-            this.panelControl3.Controls.Add(this.gc_StockList);
+            this.panelControl3.Controls.Add(this.groupControl3);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(3, 241);
+            this.panelControl3.Location = new System.Drawing.Point(3, 242);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(860, 152);
+            this.panelControl3.Size = new System.Drawing.Size(862, 153);
             this.panelControl3.TabIndex = 2;
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.gc_StockList);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(2, 2);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(858, 149);
+            this.groupControl3.TabIndex = 0;
+            this.groupControl3.Text = "库存详细";
             // 
             // gc_StockList
             // 
             this.gc_StockList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_StockList.Location = new System.Drawing.Point(2, 2);
+            this.gc_StockList.Location = new System.Drawing.Point(2, 22);
             this.gc_StockList.MainView = this.gv_stockList;
+            this.gc_StockList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_StockList.Name = "gc_StockList";
-            this.gc_StockList.Size = new System.Drawing.Size(856, 148);
+            this.gc_StockList.Size = new System.Drawing.Size(854, 125);
             this.gc_StockList.TabIndex = 2;
             this.gc_StockList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_stockList});
@@ -172,6 +171,9 @@
             this.gv_stockList.GridControl = this.gc_StockList;
             this.gv_stockList.GroupPanelText = "库存详细";
             this.gv_stockList.Name = "gv_stockList";
+            this.gv_stockList.OptionsSelection.MultiSelect = true;
+            this.gv_stockList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_stockList.OptionsView.ShowGroupPanel = false;
             // 
             // panelControl1
             // 
@@ -189,7 +191,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(860, 74);
+            this.panelControl1.Size = new System.Drawing.Size(862, 74);
             this.panelControl1.TabIndex = 0;
             // 
             // sb_QueryByPalletCode
@@ -215,6 +217,7 @@
             this.cbe_PosTypeList.Name = "cbe_PosTypeList";
             this.cbe_PosTypeList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_PosTypeList.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbe_PosTypeList.Size = new System.Drawing.Size(69, 20);
             this.cbe_PosTypeList.TabIndex = 31;
             // 
@@ -247,6 +250,7 @@
             this.cbe_HouseList.Name = "cbe_HouseList";
             this.cbe_HouseList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_HouseList.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbe_HouseList.Size = new System.Drawing.Size(157, 20);
             this.cbe_HouseList.TabIndex = 25;
             // 
@@ -293,11 +297,42 @@
             this.rb_goodsStockTaking.UseVisualStyleBackColor = false;
             this.rb_goodsStockTaking.CheckedChanged += new System.EventHandler(this.rb_goodsStockTaking_CheckedChanged);
             // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.gc_Stock);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(3, 83);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(862, 153);
+            this.groupControl2.TabIndex = 4;
+            this.groupControl2.Text = "库存";
+            // 
+            // gc_Stock
+            // 
+            this.gc_Stock.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_Stock.Location = new System.Drawing.Point(2, 22);
+            this.gc_Stock.MainView = this.gv_Stock;
+            this.gc_Stock.Margin = new System.Windows.Forms.Padding(0);
+            this.gc_Stock.Name = "gc_Stock";
+            this.gc_Stock.Size = new System.Drawing.Size(858, 129);
+            this.gc_Stock.TabIndex = 1;
+            this.gc_Stock.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gv_Stock});
+            // 
+            // gv_Stock
+            // 
+            this.gv_Stock.GridControl = this.gc_Stock;
+            this.gv_Stock.GroupPanelText = "库存";
+            this.gv_Stock.Name = "gv_Stock";
+            this.gv_Stock.OptionsSelection.MultiSelect = true;
+            this.gv_Stock.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_Stock.OptionsView.ShowGroupPanel = false;
+            // 
             // StockTakingUnshelveView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 477);
+            this.ClientSize = new System.Drawing.Size(868, 478);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "StockTakingUnshelveView";
             this.Text = "盘点下架";
@@ -306,10 +341,10 @@
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ce_TargetStation.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gc_Stock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gv_Stock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc_StockList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_stockList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -319,6 +354,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.te_CellName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_HouseList.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.te_MaterialInfo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gc_Stock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_Stock)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -347,5 +386,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton sb_StockTakingUnshelve;
         private DevExpress.XtraEditors.ComboBoxEdit ce_TargetStation;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
     }
 }

@@ -340,10 +340,10 @@
             this.layoutControl6.Controls.Add(this.txtEdit_PalletID);
             this.layoutControl6.Controls.Add(this.cbEdit_RecvPlace);
             this.layoutControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl6.Location = new System.Drawing.Point(2, 22);
+            this.layoutControl6.Location = new System.Drawing.Point(2, 21);
             this.layoutControl6.Name = "layoutControl6";
             this.layoutControl6.Root = this.layoutControlGroup5;
-            this.layoutControl6.Size = new System.Drawing.Size(196, 76);
+            this.layoutControl6.Size = new System.Drawing.Size(196, 77);
             this.layoutControl6.TabIndex = 0;
             this.layoutControl6.Text = "layoutControl6";
             // 
@@ -434,7 +434,7 @@
             this.layoutControlGroup5.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
             rowDefinition4});
             this.layoutControlGroup5.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 4, 4);
-            this.layoutControlGroup5.Size = new System.Drawing.Size(731, 59);
+            this.layoutControlGroup5.Size = new System.Drawing.Size(731, 60);
             this.layoutControlGroup5.TextVisible = false;
             // 
             // layoutControlItem24
@@ -443,7 +443,7 @@
             this.layoutControlItem24.Location = new System.Drawing.Point(190, 0);
             this.layoutControlItem24.Name = "layoutControlItem24";
             this.layoutControlItem24.OptionsTableLayoutItem.ColumnIndex = 2;
-            this.layoutControlItem24.Size = new System.Drawing.Size(180, 51);
+            this.layoutControlItem24.Size = new System.Drawing.Size(180, 52);
             this.layoutControlItem24.Text = "接收地点";
             this.layoutControlItem24.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.layoutControlItem24.TextSize = new System.Drawing.Size(48, 14);
@@ -455,7 +455,7 @@
             this.layoutControlItem35.Location = new System.Drawing.Point(370, 0);
             this.layoutControlItem35.Name = "layoutControlItem35";
             this.layoutControlItem35.OptionsTableLayoutItem.ColumnIndex = 3;
-            this.layoutControlItem35.Size = new System.Drawing.Size(200, 51);
+            this.layoutControlItem35.Size = new System.Drawing.Size(200, 52);
             this.layoutControlItem35.Text = "配盘托盘条码";
             this.layoutControlItem35.TextSize = new System.Drawing.Size(72, 14);
             // 
@@ -465,7 +465,7 @@
             this.layoutControlItem36.Location = new System.Drawing.Point(570, 0);
             this.layoutControlItem36.Name = "layoutControlItem36";
             this.layoutControlItem36.OptionsTableLayoutItem.ColumnIndex = 4;
-            this.layoutControlItem36.Size = new System.Drawing.Size(80, 51);
+            this.layoutControlItem36.Size = new System.Drawing.Size(80, 52);
             this.layoutControlItem36.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem36.TextVisible = false;
             // 
@@ -475,7 +475,7 @@
             this.layoutControlItem37.Location = new System.Drawing.Point(650, 0);
             this.layoutControlItem37.Name = "layoutControlItem37";
             this.layoutControlItem37.OptionsTableLayoutItem.ColumnIndex = 5;
-            this.layoutControlItem37.Size = new System.Drawing.Size(80, 51);
+            this.layoutControlItem37.Size = new System.Drawing.Size(80, 52);
             this.layoutControlItem37.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem37.TextVisible = false;
             // 
@@ -485,7 +485,7 @@
             this.layoutControlItem25.Location = new System.Drawing.Point(10, 0);
             this.layoutControlItem25.Name = "layoutControlItem25";
             this.layoutControlItem25.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.layoutControlItem25.Size = new System.Drawing.Size(180, 51);
+            this.layoutControlItem25.Size = new System.Drawing.Size(180, 52);
             this.layoutControlItem25.Text = "接收库区";
             this.layoutControlItem25.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.layoutControlItem25.TextLocation = DevExpress.Utils.Locations.Left;
@@ -514,6 +514,7 @@
             this.cbe_TargetCell.Name = "cbe_TargetCell";
             this.cbe_TargetCell.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_TargetCell.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbe_TargetCell.Size = new System.Drawing.Size(116, 20);
             this.cbe_TargetCell.TabIndex = 37;
             // 
@@ -542,9 +543,9 @@
             this.groupControl5.Controls.Add(this.ce_IsFull);
             this.groupControl5.Controls.Add(this.labelControl7);
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl5.Location = new System.Drawing.Point(3, 429);
+            this.groupControl5.Location = new System.Drawing.Point(3, 431);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(1000, 50);
+            this.groupControl5.Size = new System.Drawing.Size(1002, 49);
             this.groupControl5.TabIndex = 51;
             this.groupControl5.Text = "配盘操作";
             // 
@@ -566,16 +567,16 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1006, 482);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1008, 483);
             this.tableLayoutPanel2.TabIndex = 52;
             // 
             // groupControl7
             // 
             this.groupControl7.Controls.Add(this.gc_TrayGoodsList);
             this.groupControl7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl7.Location = new System.Drawing.Point(3, 256);
+            this.groupControl7.Location = new System.Drawing.Point(3, 257);
             this.groupControl7.Name = "groupControl7";
-            this.groupControl7.Size = new System.Drawing.Size(1000, 167);
+            this.groupControl7.Size = new System.Drawing.Size(1002, 168);
             this.groupControl7.TabIndex = 56;
             this.groupControl7.Text = "配盘物料列表";
             // 
@@ -585,7 +586,7 @@
             this.gc_TrayGoodsList.Location = new System.Drawing.Point(2, 22);
             this.gc_TrayGoodsList.MainView = this.gv_TrayGoods;
             this.gc_TrayGoodsList.Name = "gc_TrayGoodsList";
-            this.gc_TrayGoodsList.Size = new System.Drawing.Size(996, 143);
+            this.gc_TrayGoodsList.Size = new System.Drawing.Size(998, 144);
             this.gc_TrayGoodsList.TabIndex = 14;
             this.gc_TrayGoodsList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_TrayGoods});
@@ -595,6 +596,8 @@
             this.gv_TrayGoods.GridControl = this.gc_TrayGoodsList;
             this.gv_TrayGoods.IndicatorWidth = 40;
             this.gv_TrayGoods.Name = "gv_TrayGoods";
+            this.gv_TrayGoods.OptionsSelection.MultiSelect = true;
+            this.gv_TrayGoods.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
             this.gv_TrayGoods.OptionsView.ColumnAutoWidth = false;
             this.gv_TrayGoods.OptionsView.ShowGroupPanel = false;
             // 
@@ -604,7 +607,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 43);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1000, 167);
+            this.groupControl1.Size = new System.Drawing.Size(1002, 168);
             this.groupControl1.TabIndex = 53;
             this.groupControl1.Text = "计划列表";
             // 
@@ -617,7 +620,7 @@
             this.gc_PlanList.Location = new System.Drawing.Point(2, 22);
             this.gc_PlanList.MainView = this.gv_PlanList;
             this.gc_PlanList.Name = "gc_PlanList";
-            this.gc_PlanList.Size = new System.Drawing.Size(996, 143);
+            this.gc_PlanList.Size = new System.Drawing.Size(998, 144);
             this.gc_PlanList.TabIndex = 13;
             this.gc_PlanList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_PlanList});
@@ -627,6 +630,8 @@
             this.gv_PlanList.GridControl = this.gc_PlanList;
             this.gv_PlanList.IndicatorWidth = 40;
             this.gv_PlanList.Name = "gv_PlanList";
+            this.gv_PlanList.OptionsSelection.MultiSelect = true;
+            this.gv_PlanList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
             this.gv_PlanList.OptionsView.ColumnAutoWidth = false;
             this.gv_PlanList.OptionsView.ShowGroupPanel = false;
             // 
@@ -638,7 +643,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1000, 34);
+            this.panelControl1.Size = new System.Drawing.Size(1002, 34);
             this.panelControl1.TabIndex = 54;
             // 
             // labelControl1
@@ -655,6 +660,7 @@
             this.cbe_PlanID.Name = "cbe_PlanID";
             this.cbe_PlanID.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_PlanID.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbe_PlanID.Size = new System.Drawing.Size(143, 20);
             this.cbe_PlanID.TabIndex = 34;
             this.cbe_PlanID.SelectedIndexChanged += new System.EventHandler(this.cbe_PlanID_SelectedIndexChanged);
@@ -678,9 +684,9 @@
             this.panelControl2.Controls.Add(this.labelControl5);
             this.panelControl2.Controls.Add(this.sb_AddGoods);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(3, 216);
+            this.panelControl2.Location = new System.Drawing.Point(3, 217);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1000, 34);
+            this.panelControl2.Size = new System.Drawing.Size(1002, 34);
             this.panelControl2.TabIndex = 55;
             // 
             // te_TrayCode
@@ -764,7 +770,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 482);
+            this.ClientSize = new System.Drawing.Size(1008, 483);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "InWareWithPlanView";
             this.Text = "按计划配盘";

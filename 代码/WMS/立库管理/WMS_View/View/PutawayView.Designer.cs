@@ -77,9 +77,12 @@
             this.cbe_StartStation = new DevExpress.XtraEditors.ComboBoxEdit();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.ce_PalletCode = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.gc_PalletInfor = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.ce_PalletCode = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
@@ -101,9 +104,13 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ce_PalletCode.Properties)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_PalletInfor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ce_PalletCode.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridColumn10
@@ -291,7 +298,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(7, 39);
+            this.labelControl1.Location = new System.Drawing.Point(24, 19);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(72, 14);
             this.labelControl1.TabIndex = 6;
@@ -300,7 +307,7 @@
             // sb_TrayQuery
             // 
             this.sb_TrayQuery.Image = ((System.Drawing.Image)(resources.GetObject("sb_TrayQuery.Image")));
-            this.sb_TrayQuery.Location = new System.Drawing.Point(283, 33);
+            this.sb_TrayQuery.Location = new System.Drawing.Point(300, 13);
             this.sb_TrayQuery.Name = "sb_TrayQuery";
             this.sb_TrayQuery.Size = new System.Drawing.Size(75, 23);
             this.sb_TrayQuery.TabIndex = 7;
@@ -311,9 +318,9 @@
             // 
             this.panelControl3.Controls.Add(this.groupControl1);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(3, 423);
+            this.panelControl3.Location = new System.Drawing.Point(3, 424);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1042, 64);
+            this.panelControl3.Size = new System.Drawing.Size(1044, 64);
             this.panelControl3.TabIndex = 4;
             // 
             // groupControl1
@@ -335,7 +342,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(2, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1038, 60);
+            this.groupControl1.Size = new System.Drawing.Size(1040, 60);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "操作";
             // 
@@ -378,6 +385,7 @@
             this.cbe_Pos.Name = "cbe_Pos";
             this.cbe_Pos.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_Pos.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbe_Pos.Size = new System.Drawing.Size(53, 20);
             this.cbe_Pos.TabIndex = 26;
             // 
@@ -388,6 +396,7 @@
             this.cbe_Layer.Name = "cbe_Layer";
             this.cbe_Layer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_Layer.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbe_Layer.Size = new System.Drawing.Size(53, 20);
             this.cbe_Layer.TabIndex = 25;
             this.cbe_Layer.SelectedIndexChanged += new System.EventHandler(this.cbe_Layer_SelectedIndexChanged);
@@ -399,6 +408,7 @@
             this.cbe_Col.Name = "cbe_Col";
             this.cbe_Col.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_Col.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbe_Col.Size = new System.Drawing.Size(53, 20);
             this.cbe_Col.TabIndex = 24;
             this.cbe_Col.SelectedIndexChanged += new System.EventHandler(this.cbe_Col_SelectedIndexChanged);
@@ -417,6 +427,7 @@
             this.cbe_HouseName.Name = "cbe_HouseName";
             this.cbe_HouseName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_HouseName.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbe_HouseName.Size = new System.Drawing.Size(127, 20);
             this.cbe_HouseName.TabIndex = 22;
             this.cbe_HouseName.SelectedIndexChanged += new System.EventHandler(this.cbe_HouseName_SelectedIndexChanged);
@@ -447,6 +458,7 @@
             this.cbe_Row.Name = "cbe_Row";
             this.cbe_Row.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_Row.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbe_Row.Size = new System.Drawing.Size(53, 20);
             this.cbe_Row.TabIndex = 17;
             this.cbe_Row.SelectedIndexChanged += new System.EventHandler(this.cbe_Row_SelectedIndexChanged);
@@ -466,6 +478,7 @@
             this.cbe_StartStation.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbe_StartStation.Properties.ReadOnly = true;
+            this.cbe_StartStation.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbe_StartStation.Size = new System.Drawing.Size(127, 20);
             this.cbe_StartStation.TabIndex = 15;
             this.cbe_StartStation.SelectedIndexChanged += new System.EventHandler(this.cbe_StartStation_SelectedIndexChanged);
@@ -483,41 +496,53 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1048, 490);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1050, 491);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.ce_PalletCode);
-            this.groupControl2.Controls.Add(this.gc_PalletInfor);
-            this.groupControl2.Controls.Add(this.sb_TrayQuery);
-            this.groupControl2.Controls.Add(this.labelControl1);
+            this.groupControl2.Controls.Add(this.tableLayoutPanel2);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(3, 3);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1042, 414);
+            this.groupControl2.Size = new System.Drawing.Size(1044, 415);
             this.groupControl2.TabIndex = 5;
             this.groupControl2.Text = "配盘信息查询";
             // 
-            // ce_PalletCode
+            // tableLayoutPanel2
             // 
-            this.ce_PalletCode.Location = new System.Drawing.Point(85, 38);
-            this.ce_PalletCode.Name = "ce_PalletCode";
-            this.ce_PalletCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ce_PalletCode.Size = new System.Drawing.Size(179, 20);
-            this.ce_PalletCode.TabIndex = 9;
-            this.ce_PalletCode.SelectedIndexChanged += new System.EventHandler(this.ce_PalletCode_SelectedIndexChanged);
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.White;
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.groupControl3, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 22);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1040, 391);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.gc_PalletInfor);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(3, 63);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(1034, 325);
+            this.groupControl3.TabIndex = 10;
+            this.groupControl3.Text = "配盘详细";
             // 
             // gc_PalletInfor
             // 
-            this.gc_PalletInfor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gc_PalletInfor.Location = new System.Drawing.Point(5, 64);
+            this.gc_PalletInfor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_PalletInfor.Location = new System.Drawing.Point(2, 22);
             this.gc_PalletInfor.MainView = this.gridView1;
+            this.gc_PalletInfor.Margin = new System.Windows.Forms.Padding(0);
             this.gc_PalletInfor.Name = "gc_PalletInfor";
-            this.gc_PalletInfor.Size = new System.Drawing.Size(1032, 345);
+            this.gc_PalletInfor.Size = new System.Drawing.Size(1030, 301);
             this.gc_PalletInfor.TabIndex = 0;
             this.gc_PalletInfor.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -527,12 +552,37 @@
             this.gridView1.GridControl = this.gc_PalletInfor;
             this.gridView1.GroupPanelText = "配盘详细";
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.MultiSelect = true;
+            this.gridView1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.ce_PalletCode);
+            this.panel1.Controls.Add(this.sb_TrayQuery);
+            this.panel1.Controls.Add(this.labelControl1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1034, 54);
+            this.panel1.TabIndex = 0;
+            // 
+            // ce_PalletCode
+            // 
+            this.ce_PalletCode.Location = new System.Drawing.Point(102, 18);
+            this.ce_PalletCode.Name = "ce_PalletCode";
+            this.ce_PalletCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ce_PalletCode.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ce_PalletCode.Size = new System.Drawing.Size(179, 20);
+            this.ce_PalletCode.TabIndex = 9;
+            this.ce_PalletCode.SelectedIndexChanged += new System.EventHandler(this.ce_PalletCode_SelectedIndexChanged);
             // 
             // PutawayView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1048, 490);
+            this.ClientSize = new System.Drawing.Size(1050, 491);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "PutawayView";
             this.Text = "上架管理";
@@ -559,10 +609,14 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            this.groupControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ce_PalletCode.Properties)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc_PalletInfor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ce_PalletCode.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -612,5 +666,8 @@
         private DevExpress.XtraEditors.ComboBoxEdit cbe_Col;
         private DevExpress.XtraEditors.LabelControl lc_Pos;
         private DevExpress.XtraEditors.LabelControl lc_layer;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

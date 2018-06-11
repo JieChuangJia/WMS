@@ -62,7 +62,7 @@
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbonControl1.ShowQatLocationSelector = false;
             this.ribbonControl1.ShowToolbarCustomizeItem = false;
-            this.ribbonControl1.Size = new System.Drawing.Size(652, 33);
+            this.ribbonControl1.Size = new System.Drawing.Size(654, 33);
             this.ribbonControl1.Toolbar.ShowCustomizeItem = false;
             // 
             // groupControl1
@@ -78,7 +78,7 @@
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Location = new System.Drawing.Point(0, 31);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(652, 300);
+            this.groupControl1.Size = new System.Drawing.Size(654, 301);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "物料属性";
             // 
@@ -91,7 +91,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(21, 62);
+            this.labelControl3.Location = new System.Drawing.Point(21, 63);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(48, 14);
             this.labelControl3.TabIndex = 14;
@@ -106,7 +106,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(21, 36);
+            this.labelControl2.Location = new System.Drawing.Point(21, 37);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(48, 14);
             this.labelControl2.TabIndex = 12;
@@ -118,12 +118,13 @@
             this.cbe_PlanList.Name = "cbe_PlanList";
             this.cbe_PlanList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_PlanList.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbe_PlanList.Size = new System.Drawing.Size(157, 20);
             this.cbe_PlanList.TabIndex = 11;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(21, 91);
+            this.labelControl1.Location = new System.Drawing.Point(21, 92);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(48, 14);
             this.labelControl1.TabIndex = 10;
@@ -149,7 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 383);
+            this.ClientSize = new System.Drawing.Size(654, 384);
             this.Controls.Add(this.sb_Cancel);
             this.Controls.Add(this.sb_Sure);
             this.Controls.Add(this.groupControl1);

@@ -83,7 +83,7 @@ namespace CommonMoudle
                 {
                     Plan_ListModel plm = bllPlanList.GetModel(pl.Plan_List_ID);
                     plm.Plan_List_Finished_Quantity = (int.Parse(plm.Plan_List_Finished_Quantity) + int.Parse(manageStock.Manage_List_Quantity)).ToString();
-                    plm.Plan_List_Ordered_Quantity = (int.Parse(plm.Plan_List_Ordered_Quantity) - int.Parse(manageStock.Manage_List_Quantity)).ToString();
+                    //plm.Plan_List_Ordered_Quantity = (int.Parse(plm.Plan_List_Ordered_Quantity) - int.Parse(manageStock.Manage_List_Quantity)).ToString();
                     bllPlanList.Update(plm);
                 }
             }

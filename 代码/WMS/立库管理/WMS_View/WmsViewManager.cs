@@ -71,11 +71,13 @@ namespace WMS_Kernel
             materialView.FormClosing += FormCloseEventHandler;
             materialView.Init(wmsFrame);
 
+         
+            planManaView.FormClosing += FormCloseEventHandler;
+            planManaView.Init(wmsFrame);
+
             taskView.FormClosing += FormCloseEventHandler;
             taskView.Init(wmsFrame);
 
-            planManaView.FormClosing += FormCloseEventHandler;
-            planManaView.Init(wmsFrame);
 
             prepareView.FormClosing += FormCloseEventHandler;
             prepareView.Init(wmsFrame);
