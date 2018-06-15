@@ -28,6 +28,10 @@ namespace Aoyou_WMS
         {
             InitializeComponent();
         }
+        public void SetRoleLevel(int roleLevel)
+        {
+            this.RoleLevel = roleLevel;
+        }
         private void MainView_Load(object sender, EventArgs e)
         {
             DatabaseCfg();
@@ -158,7 +162,7 @@ namespace Aoyou_WMS
         }
 
         public  string CurrentUser { get; set; }
-        public int RoleID { get; set; }
+        public int RoleLevel { get; set; }
         #endregion
         #region 私有方法
         private void DatabaseCfg()

@@ -28,287 +28,121 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition6 = new DevExpress.XtraLayout.RowDefinition();
-            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.sBtn_Sure = new DevExpress.XtraEditors.SimpleButton();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.txtEdit_OldPassword = new DevExpress.XtraEditors.TextEdit();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtEdit_UserName = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
-            this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
-            this.layoutControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEdit_OldPassword.Properties)).BeginInit();
+            this.txtEdit_NewPassword = new DevExpress.XtraEditors.TextEdit();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtEdit_CheckPassword = new DevExpress.XtraEditors.TextEdit();
+            this.label4 = new System.Windows.Forms.Label();
+            this.sbtn_Sure = new DevExpress.XtraEditors.SimpleButton();
+            this.sb_Cancel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtEdit_UserName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEdit_NewPassword.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEdit_CheckPassword.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // layoutControl1
+            // label1
             // 
-            this.layoutControl1.Controls.Add(this.layoutControl2);
-            this.layoutControl1.Controls.Add(this.textEdit1);
-            this.layoutControl1.Controls.Add(this.textEdit2);
-            this.layoutControl1.Controls.Add(this.txtEdit_OldPassword);
-            this.layoutControl1.Controls.Add(this.txtEdit_UserName);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(333, 208, 450, 400);
-            this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(271, 178);
-            this.layoutControl1.TabIndex = 0;
-            this.layoutControl1.Text = "layoutControl1";
-            // 
-            // layoutControl2
-            // 
-            this.layoutControl2.Controls.Add(this.sBtn_Sure);
-            this.layoutControl2.Location = new System.Drawing.Point(12, 138);
-            this.layoutControl2.Margin = new System.Windows.Forms.Padding(0);
-            this.layoutControl2.Name = "layoutControl2";
-            this.layoutControl2.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(259, 384, 450, 400);
-            this.layoutControl2.Root = this.Root;
-            this.layoutControl2.Size = new System.Drawing.Size(247, 28);
-            this.layoutControl2.TabIndex = 8;
-            this.layoutControl2.Text = "layoutControl2";
-            // 
-            // sBtn_Sure
-            // 
-            this.sBtn_Sure.Location = new System.Drawing.Point(150, 2);
-            this.sBtn_Sure.Name = "sBtn_Sure";
-            this.sBtn_Sure.Size = new System.Drawing.Size(95, 22);
-            this.sBtn_Sure.StyleController = this.layoutControl2;
-            this.sBtn_Sure.TabIndex = 4;
-            this.sBtn_Sure.Text = "确认";
-            // 
-            // Root
-            // 
-            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.Root.GroupBordersVisible = false;
-            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem6});
-            this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
-            this.Root.Location = new System.Drawing.Point(0, 0);
-            this.Root.Name = "Root";
-            columnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition1.Width = 60D;
-            columnDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition2.Width = 40D;
-            this.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition1,
-            columnDefinition2});
-            rowDefinition1.Height = 100D;
-            rowDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
-            this.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition1});
-            this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.Root.Size = new System.Drawing.Size(247, 28);
-            this.Root.TextVisible = false;
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.sBtn_Sure;
-            this.layoutControlItem6.Location = new System.Drawing.Point(148, 0);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.layoutControlItem6.Size = new System.Drawing.Size(99, 28);
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextVisible = false;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(79, 106);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(180, 20);
-            this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 7;
-            // 
-            // textEdit2
-            // 
-            this.textEdit2.Location = new System.Drawing.Point(79, 74);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(180, 20);
-            this.textEdit2.StyleController = this.layoutControl1;
-            this.textEdit2.TabIndex = 6;
-            // 
-            // txtEdit_OldPassword
-            // 
-            this.txtEdit_OldPassword.EditValue = "123456";
-            this.txtEdit_OldPassword.Location = new System.Drawing.Point(79, 42);
-            this.txtEdit_OldPassword.Name = "txtEdit_OldPassword";
-            this.txtEdit_OldPassword.Size = new System.Drawing.Size(180, 20);
-            this.txtEdit_OldPassword.StyleController = this.layoutControl1;
-            this.txtEdit_OldPassword.TabIndex = 5;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 14);
+            this.label1.TabIndex = 0;
+            this.label1.Text = " 用户名称";
             // 
             // txtEdit_UserName
             // 
-            this.txtEdit_UserName.EditValue = "Administrator";
-            this.txtEdit_UserName.Location = new System.Drawing.Point(79, 12);
+            this.txtEdit_UserName.Location = new System.Drawing.Point(101, 16);
             this.txtEdit_UserName.Name = "txtEdit_UserName";
-            this.txtEdit_UserName.Size = new System.Drawing.Size(180, 20);
-            this.txtEdit_UserName.StyleController = this.layoutControl1;
-            this.txtEdit_UserName.TabIndex = 4;
+            this.txtEdit_UserName.Size = new System.Drawing.Size(135, 20);
+            this.txtEdit_UserName.TabIndex = 1;
             // 
-            // layoutControlGroup1
+            // txtEdit_NewPassword
             // 
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.layoutControlItem2,
-            this.layoutControlItem3,
-            this.layoutControlItem4,
-            this.layoutControlItem5});
-            this.layoutControlGroup1.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "Root";
-            columnDefinition3.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition3.Width = 100D;
-            this.layoutControlGroup1.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition3});
-            rowDefinition2.Height = 20D;
-            rowDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
-            rowDefinition3.Height = 20D;
-            rowDefinition3.SizeType = System.Windows.Forms.SizeType.Percent;
-            rowDefinition4.Height = 20D;
-            rowDefinition4.SizeType = System.Windows.Forms.SizeType.Percent;
-            rowDefinition5.Height = 20D;
-            rowDefinition5.SizeType = System.Windows.Forms.SizeType.Percent;
-            rowDefinition6.Height = 20D;
-            rowDefinition6.SizeType = System.Windows.Forms.SizeType.Percent;
-            this.layoutControlGroup1.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition2,
-            rowDefinition3,
-            rowDefinition4,
-            rowDefinition5,
-            rowDefinition6});
-            this.layoutControlGroup1.Size = new System.Drawing.Size(271, 178);
-            this.layoutControlGroup1.TextVisible = false;
+            this.txtEdit_NewPassword.Location = new System.Drawing.Point(102, 47);
+            this.txtEdit_NewPassword.Name = "txtEdit_NewPassword";
+            this.txtEdit_NewPassword.Size = new System.Drawing.Size(134, 20);
+            this.txtEdit_NewPassword.TabIndex = 5;
             // 
-            // layoutControlItem1
+            // label3
             // 
-            this.layoutControlItem1.Control = this.txtEdit_UserName;
-            this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(251, 30);
-            this.layoutControlItem1.Text = "   用户名称 ";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(64, 14);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 14);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "输入新密码";
             // 
-            // layoutControlItem2
+            // txtEdit_CheckPassword
             // 
-            this.layoutControlItem2.Control = this.txtEdit_OldPassword;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 30);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutControlItem2.Size = new System.Drawing.Size(251, 32);
-            this.layoutControlItem2.Text = "   旧密码   ";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(64, 14);
+            this.txtEdit_CheckPassword.Location = new System.Drawing.Point(102, 80);
+            this.txtEdit_CheckPassword.Name = "txtEdit_CheckPassword";
+            this.txtEdit_CheckPassword.Size = new System.Drawing.Size(134, 20);
+            this.txtEdit_CheckPassword.TabIndex = 7;
             // 
-            // layoutControlItem3
+            // label4
             // 
-            this.layoutControlItem3.Control = this.textEdit2;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 62);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.OptionsTableLayoutItem.RowIndex = 2;
-            this.layoutControlItem3.Size = new System.Drawing.Size(251, 32);
-            this.layoutControlItem3.Text = "输入新密码";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(64, 14);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(25, 81);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 14);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "确认新密码";
             // 
-            // layoutControlItem4
+            // sbtn_Sure
             // 
-            this.layoutControlItem4.Control = this.textEdit1;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 94);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.OptionsTableLayoutItem.RowIndex = 3;
-            this.layoutControlItem4.Size = new System.Drawing.Size(251, 32);
-            this.layoutControlItem4.Tag = "";
-            this.layoutControlItem4.Text = "确认新密码";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(64, 14);
+            this.sbtn_Sure.Location = new System.Drawing.Point(81, 124);
+            this.sbtn_Sure.Name = "sbtn_Sure";
+            this.sbtn_Sure.Size = new System.Drawing.Size(75, 23);
+            this.sbtn_Sure.TabIndex = 8;
+            this.sbtn_Sure.Text = "确认";
+            this.sbtn_Sure.Click += new System.EventHandler(this.sbtn_Sure_Click_1);
             // 
-            // layoutControlItem5
+            // sb_Cancel
             // 
-            this.layoutControlItem5.Control = this.layoutControl2;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 126);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.OptionsTableLayoutItem.RowIndex = 4;
-            this.layoutControlItem5.Size = new System.Drawing.Size(251, 32);
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextVisible = false;
+            this.sb_Cancel.Location = new System.Drawing.Point(162, 124);
+            this.sb_Cancel.Name = "sb_Cancel";
+            this.sb_Cancel.Size = new System.Drawing.Size(75, 23);
+            this.sb_Cancel.TabIndex = 9;
+            this.sb_Cancel.Text = "取消";
+            this.sb_Cancel.Click += new System.EventHandler(this.sb_Cancel_Click);
             // 
             // ModPasswordView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(271, 178);
-            this.Controls.Add(this.layoutControl1);
+            this.ClientSize = new System.Drawing.Size(271, 172);
+            this.Controls.Add(this.sb_Cancel);
+            this.Controls.Add(this.sbtn_Sure);
+            this.Controls.Add(this.txtEdit_CheckPassword);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtEdit_NewPassword);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtEdit_UserName);
+            this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ModPasswordView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "密码修改";
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
-            this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
-            this.layoutControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEdit_OldPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEdit_UserName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEdit_NewPassword.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEdit_CheckPassword.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraLayout.LayoutControl layoutControl2;
-        private DevExpress.XtraEditors.SimpleButton sBtn_Sure;
-        private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit txtEdit_OldPassword;
+        private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.TextEdit txtEdit_UserName;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraEditors.TextEdit txtEdit_NewPassword;
+        private System.Windows.Forms.Label label3;
+        private DevExpress.XtraEditors.TextEdit txtEdit_CheckPassword;
+        private System.Windows.Forms.Label label4;
+        private DevExpress.XtraEditors.SimpleButton sbtn_Sure;
+        private DevExpress.XtraEditors.SimpleButton sb_Cancel;
+
     }
 }

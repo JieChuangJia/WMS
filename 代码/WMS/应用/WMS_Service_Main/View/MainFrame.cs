@@ -171,7 +171,7 @@ namespace WMS_Service_Main
         }
 
         public  string CurrentUser { get; set; }
-        public int RoleID { get; set; }
+        public int RoleLevel{ get; set; }
         #endregion
         #region 私有方法
       

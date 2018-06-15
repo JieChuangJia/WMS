@@ -273,7 +273,7 @@ namespace WMS_Kernel
 
         private void tsmi_ModifyStatus_Click(object sender, EventArgs e)
         {
-            if (this.IWmsFrame.RoleID > 1)
+            if (this.IWmsFrame.RoleLevel > 1)
             {
                 this.ShowMessage("信息提示", "当前用户没有此功能的操作权限！");
                 return;
@@ -324,7 +324,7 @@ namespace WMS_Kernel
 
         private void tsmi_UnUseGs_Click(object sender, EventArgs e)
         {
-            if(this.IWmsFrame.RoleID>2)
+            if(this.IWmsFrame.RoleLevel>2)
             {
                 ShowMessage( "信息提示","当前用户没有此功能的操作权限！");
               
@@ -344,7 +344,7 @@ namespace WMS_Kernel
 
         private void tsmi_UseGs_Click(object sender, EventArgs e)
         {
-            if (this.IWmsFrame.RoleID > 2)
+            if (this.IWmsFrame.RoleLevel > 2)
             {
                 ShowMessage("信息提示", "当前用户没有此功能的操作权限！");
 

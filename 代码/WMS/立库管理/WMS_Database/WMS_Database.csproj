@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\SysLogBLL.cs" />
+    <Compile Include="BLL\SysUserBll.cs" />
+    <Compile Include="BLL\SysRoleBll.cs" />
     <Compile Include="BLL\View_ManageStockListBLL.cs" />
     <Compile Include="BLL\WH_Cell_Operate_RecordBLL.cs" />
     <Compile Include="BLL\WH_Station_LogicBLL.cs" />
@@ -79,6 +81,8 @@
     <Compile Include="BLL\WH_Cell_ChildrenBll.cs" />
     <Compile Include="BLL\WH_WareHouseBll.cs" />
     <Compile Include="DAL\SysLogDAL.cs" />
+    <Compile Include="DAL\SysUserDal.cs" />
+    <Compile Include="DAL\SysRoleDal.cs" />
     <Compile Include="DAL\View_ManageStockListDAL.cs" />
     <Compile Include="DAL\WH_Cell_Operate_RecordDAL.cs" />
     <Compile Include="DAL\WH_Station_LogicDAL.cs" />
@@ -119,6 +123,8 @@
     <Compile Include="DBUtility\DbHelperSQL.cs" />
     <Compile Include="DBUtility\PubConstant.cs" />
     <Compile Include="Model\SysLogModel.cs" />
+    <Compile Include="Model\SysUserModel.cs" />
+    <Compile Include="Model\SysRoleModel.cs" />
     <Compile Include="Model\View_ManageStockListModel.cs" />
     <Compile Include="Model\WH_Cell_Operate_RecordModel.cs" />
     <Compile Include="Model\WH_Station_LogicModel.cs" />

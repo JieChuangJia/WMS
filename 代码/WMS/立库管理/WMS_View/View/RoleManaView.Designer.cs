@@ -28,664 +28,201 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoleManaView));
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition4 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition5 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition6 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition7 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition8 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition9 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition10 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition11 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition12 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition13 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition14 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition15 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition16 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
-            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.gc_Role = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.RoleCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.RoleName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Remark = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.sBtn_Last = new DevExpress.XtraEditors.SimpleButton();
-            this.sBtn_Dowm = new DevExpress.XtraEditors.SimpleButton();
-            this.sBtn_Up = new DevExpress.XtraEditors.SimpleButton();
-            this.sBtn_First = new DevExpress.XtraEditors.SimpleButton();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.gc_RoleList = new DevExpress.XtraGrid.GridControl();
+            this.gv_RoleList = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtEdit_CurPage = new DevExpress.XtraEditors.TextEdit();
-            this.txtEdit_CurRow = new DevExpress.XtraEditors.TextEdit();
-            this.sBtn_Query = new DevExpress.XtraEditors.SimpleButton();
-            this.sBtn_Refresh = new DevExpress.XtraEditors.SimpleButton();
-            this.sBtn_Save = new DevExpress.XtraEditors.SimpleButton();
-            this.sBtn_Del = new DevExpress.XtraEditors.SimpleButton();
-            this.sBtn_Modify = new DevExpress.XtraEditors.SimpleButton();
-            this.sBtn_Add = new DevExpress.XtraEditors.SimpleButton();
-            this.labelCtl_SumRow = new DevExpress.XtraEditors.LabelControl();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
-            this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gc_Role)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
-            this.layoutControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEdit_CurPage.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEdit_CurRow.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
+            this.sb_QueryRoles = new DevExpress.XtraEditors.SimpleButton();
+            this.txtEdit_RoleInfo = new DevExpress.XtraEditors.TextEdit();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.sb_ModifyRole = new DevExpress.XtraEditors.SimpleButton();
+            this.sb_DeleteRole = new DevExpress.XtraEditors.SimpleButton();
+            this.sb_AddRole = new DevExpress.XtraEditors.SimpleButton();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_RoleList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_RoleList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEdit_RoleInfo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // layoutControl1
+            // tableLayoutPanel1
             // 
-            this.layoutControl1.Controls.Add(this.gc_Role);
-            this.layoutControl1.Controls.Add(this.layoutControl2);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(941, 431);
-            this.layoutControl1.TabIndex = 0;
-            this.layoutControl1.Text = "layoutControl1";
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.groupControl2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panelControl1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 2);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(710, 400);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // gc_Role
+            // groupControl2
             // 
-            this.gc_Role.Location = new System.Drawing.Point(2, 2);
-            this.gc_Role.MainView = this.gridView1;
-            this.gc_Role.Name = "gc_Role";
-            this.gc_Role.Size = new System.Drawing.Size(937, 397);
-            this.gc_Role.TabIndex = 5;
-            this.gc_Role.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.groupControl2.Controls.Add(this.gc_RoleList);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(3, 63);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(704, 274);
+            this.groupControl2.TabIndex = 0;
+            this.groupControl2.Text = "角色清单";
             // 
-            // gridView1
+            // gc_RoleList
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.RoleCode,
-            this.RoleName,
-            this.Remark});
-            this.gridView1.GridControl = this.gc_Role;
-            this.gridView1.IndicatorWidth = 40;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsSelection.MultiSelect = true;
-            this.gridView1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
-            this.gridView1.OptionsView.ColumnAutoWidth = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gv_Role_CustomDrawRowIndicator);
-            this.gridView1.Click += new System.EventHandler(this.gridView1_Click);
+            this.gc_RoleList.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode1.RelationName = "Level1";
+            this.gc_RoleList.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
+            this.gc_RoleList.Location = new System.Drawing.Point(2, 22);
+            this.gc_RoleList.MainView = this.gv_RoleList;
+            this.gc_RoleList.Margin = new System.Windows.Forms.Padding(0);
+            this.gc_RoleList.Name = "gc_RoleList";
+            this.gc_RoleList.Size = new System.Drawing.Size(700, 250);
+            this.gc_RoleList.TabIndex = 6;
+            this.gc_RoleList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gv_RoleList});
             // 
-            // RoleCode
+            // gv_RoleList
             // 
-            this.RoleCode.Caption = "角色编码";
-            this.RoleCode.FieldName = "RoleCode";
-            this.RoleCode.Name = "RoleCode";
-            this.RoleCode.Visible = true;
-            this.RoleCode.VisibleIndex = 0;
-            this.RoleCode.Width = 100;
+            this.gv_RoleList.GridControl = this.gc_RoleList;
+            this.gv_RoleList.GroupPanelText = "角色清单";
+            this.gv_RoleList.IndicatorWidth = 40;
+            this.gv_RoleList.Name = "gv_RoleList";
+            this.gv_RoleList.OptionsSelection.MultiSelect = true;
+            this.gv_RoleList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_RoleList.OptionsView.ColumnAutoWidth = false;
+            this.gv_RoleList.OptionsView.ShowGroupPanel = false;
             // 
-            // RoleName
+            // panelControl1
             // 
-            this.RoleName.Caption = "角色名称";
-            this.RoleName.FieldName = "RoleName";
-            this.RoleName.Name = "RoleName";
-            this.RoleName.Visible = true;
-            this.RoleName.VisibleIndex = 1;
-            // 
-            // Remark
-            // 
-            this.Remark.Caption = "标注";
-            this.Remark.FieldName = "Remark";
-            this.Remark.Name = "Remark";
-            this.Remark.Visible = true;
-            this.Remark.VisibleIndex = 2;
-            // 
-            // layoutControl2
-            // 
-            this.layoutControl2.Controls.Add(this.sBtn_Last);
-            this.layoutControl2.Controls.Add(this.sBtn_Dowm);
-            this.layoutControl2.Controls.Add(this.sBtn_Up);
-            this.layoutControl2.Controls.Add(this.sBtn_First);
-            this.layoutControl2.Controls.Add(this.labelControl1);
-            this.layoutControl2.Controls.Add(this.txtEdit_CurPage);
-            this.layoutControl2.Controls.Add(this.txtEdit_CurRow);
-            this.layoutControl2.Controls.Add(this.sBtn_Query);
-            this.layoutControl2.Controls.Add(this.sBtn_Refresh);
-            this.layoutControl2.Controls.Add(this.sBtn_Save);
-            this.layoutControl2.Controls.Add(this.sBtn_Del);
-            this.layoutControl2.Controls.Add(this.sBtn_Modify);
-            this.layoutControl2.Controls.Add(this.sBtn_Add);
-            this.layoutControl2.Controls.Add(this.labelCtl_SumRow);
-            this.layoutControl2.Location = new System.Drawing.Point(2, 403);
-            this.layoutControl2.Margin = new System.Windows.Forms.Padding(0);
-            this.layoutControl2.Name = "layoutControl2";
-            this.layoutControl2.Root = this.Root;
-            this.layoutControl2.Size = new System.Drawing.Size(937, 26);
-            this.layoutControl2.TabIndex = 4;
-            this.layoutControl2.Text = "layoutControl2";
-            // 
-            // sBtn_Last
-            // 
-            this.sBtn_Last.Image = ((System.Drawing.Image)(resources.GetObject("sBtn_Last.Image")));
-            this.sBtn_Last.Location = new System.Drawing.Point(702, 2);
-            this.sBtn_Last.Name = "sBtn_Last";
-            this.sBtn_Last.Size = new System.Drawing.Size(56, 22);
-            this.sBtn_Last.StyleController = this.layoutControl2;
-            this.sBtn_Last.TabIndex = 17;
-            this.sBtn_Last.Text = "尾页";
-            // 
-            // sBtn_Dowm
-            // 
-            this.sBtn_Dowm.Image = ((System.Drawing.Image)(resources.GetObject("sBtn_Dowm.Image")));
-            this.sBtn_Dowm.Location = new System.Drawing.Point(642, 2);
-            this.sBtn_Dowm.Name = "sBtn_Dowm";
-            this.sBtn_Dowm.Size = new System.Drawing.Size(56, 22);
-            this.sBtn_Dowm.StyleController = this.layoutControl2;
-            this.sBtn_Dowm.TabIndex = 16;
-            this.sBtn_Dowm.Text = "下页";
-            // 
-            // sBtn_Up
-            // 
-            this.sBtn_Up.Image = ((System.Drawing.Image)(resources.GetObject("sBtn_Up.Image")));
-            this.sBtn_Up.Location = new System.Drawing.Point(582, 2);
-            this.sBtn_Up.Name = "sBtn_Up";
-            this.sBtn_Up.Size = new System.Drawing.Size(56, 22);
-            this.sBtn_Up.StyleController = this.layoutControl2;
-            this.sBtn_Up.TabIndex = 15;
-            this.sBtn_Up.Text = "上页";
-            // 
-            // sBtn_First
-            // 
-            this.sBtn_First.Appearance.Options.UseTextOptions = true;
-            this.sBtn_First.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.sBtn_First.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.sBtn_First.Image = ((System.Drawing.Image)(resources.GetObject("sBtn_First.Image")));
-            this.sBtn_First.Location = new System.Drawing.Point(522, 2);
-            this.sBtn_First.Name = "sBtn_First";
-            this.sBtn_First.Size = new System.Drawing.Size(56, 22);
-            this.sBtn_First.StyleController = this.layoutControl2;
-            this.sBtn_First.TabIndex = 14;
-            this.sBtn_First.Text = "首页";
+            this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Controls.Add(this.sb_QueryRoles);
+            this.panelControl1.Controls.Add(this.txtEdit_RoleInfo);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl1.Location = new System.Drawing.Point(3, 3);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(704, 54);
+            this.panelControl1.TabIndex = 10;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(482, 2);
+            this.labelControl1.Location = new System.Drawing.Point(22, 22);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(36, 14);
-            this.labelControl1.StyleController = this.layoutControl2;
-            this.labelControl1.TabIndex = 13;
-            this.labelControl1.Text = "/共1页";
+            this.labelControl1.Size = new System.Drawing.Size(48, 14);
+            this.labelControl1.TabIndex = 11;
+            this.labelControl1.Text = "角色信息";
             // 
-            // txtEdit_CurPage
+            // sb_QueryRoles
             // 
-            this.txtEdit_CurPage.EditValue = "1";
-            this.txtEdit_CurPage.Location = new System.Drawing.Point(442, 2);
-            this.txtEdit_CurPage.Name = "txtEdit_CurPage";
-            this.txtEdit_CurPage.Size = new System.Drawing.Size(36, 20);
-            this.txtEdit_CurPage.StyleController = this.layoutControl2;
-            this.txtEdit_CurPage.TabIndex = 12;
+            this.sb_QueryRoles.Image = ((System.Drawing.Image)(resources.GetObject("sb_QueryRoles.Image")));
+            this.sb_QueryRoles.Location = new System.Drawing.Point(251, 18);
+            this.sb_QueryRoles.Name = "sb_QueryRoles";
+            this.sb_QueryRoles.Size = new System.Drawing.Size(79, 22);
+            this.sb_QueryRoles.TabIndex = 10;
+            this.sb_QueryRoles.Text = "查询";
+            this.sb_QueryRoles.Click += new System.EventHandler(this.sb_QueryRoles_Click);
             // 
-            // txtEdit_CurRow
+            // txtEdit_RoleInfo
             // 
-            this.txtEdit_CurRow.Location = new System.Drawing.Point(362, 2);
-            this.txtEdit_CurRow.Name = "txtEdit_CurRow";
-            this.txtEdit_CurRow.Size = new System.Drawing.Size(36, 20);
-            this.txtEdit_CurRow.StyleController = this.layoutControl2;
-            this.txtEdit_CurRow.TabIndex = 10;
+            this.txtEdit_RoleInfo.Location = new System.Drawing.Point(79, 19);
+            this.txtEdit_RoleInfo.Name = "txtEdit_RoleInfo";
+            this.txtEdit_RoleInfo.Size = new System.Drawing.Size(157, 20);
+            this.txtEdit_RoleInfo.TabIndex = 9;
             // 
-            // sBtn_Query
+            // groupControl1
             // 
-            this.sBtn_Query.Image = ((System.Drawing.Image)(resources.GetObject("sBtn_Query.Image")));
-            this.sBtn_Query.Location = new System.Drawing.Point(302, 2);
-            this.sBtn_Query.Name = "sBtn_Query";
-            this.sBtn_Query.Size = new System.Drawing.Size(56, 22);
-            this.sBtn_Query.StyleController = this.layoutControl2;
-            this.sBtn_Query.TabIndex = 9;
-            this.sBtn_Query.Text = "查询";
+            this.groupControl1.Controls.Add(this.sb_ModifyRole);
+            this.groupControl1.Controls.Add(this.sb_DeleteRole);
+            this.groupControl1.Controls.Add(this.sb_AddRole);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(3, 343);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(704, 54);
+            this.groupControl1.TabIndex = 11;
+            this.groupControl1.Text = "操作区";
             // 
-            // sBtn_Refresh
+            // sb_ModifyRole
             // 
-            this.sBtn_Refresh.Image = ((System.Drawing.Image)(resources.GetObject("sBtn_Refresh.Image")));
-            this.sBtn_Refresh.Location = new System.Drawing.Point(242, 2);
-            this.sBtn_Refresh.Name = "sBtn_Refresh";
-            this.sBtn_Refresh.Size = new System.Drawing.Size(56, 22);
-            this.sBtn_Refresh.StyleController = this.layoutControl2;
-            this.sBtn_Refresh.TabIndex = 8;
-            this.sBtn_Refresh.Text = "刷新";
+            this.sb_ModifyRole.Image = ((System.Drawing.Image)(resources.GetObject("sb_ModifyRole.Image")));
+            this.sb_ModifyRole.Location = new System.Drawing.Point(227, 25);
+            this.sb_ModifyRole.Name = "sb_ModifyRole";
+            this.sb_ModifyRole.Size = new System.Drawing.Size(75, 23);
+            this.sb_ModifyRole.TabIndex = 2;
+            this.sb_ModifyRole.Text = "修改";
+            this.sb_ModifyRole.Click += new System.EventHandler(this.sb_ModifyRole_Click);
             // 
-            // sBtn_Save
+            // sb_DeleteRole
             // 
-            this.sBtn_Save.Image = ((System.Drawing.Image)(resources.GetObject("sBtn_Save.Image")));
-            this.sBtn_Save.Location = new System.Drawing.Point(182, 2);
-            this.sBtn_Save.Name = "sBtn_Save";
-            this.sBtn_Save.Size = new System.Drawing.Size(56, 22);
-            this.sBtn_Save.StyleController = this.layoutControl2;
-            this.sBtn_Save.TabIndex = 7;
-            this.sBtn_Save.Text = "保存";
+            this.sb_DeleteRole.Image = ((System.Drawing.Image)(resources.GetObject("sb_DeleteRole.Image")));
+            this.sb_DeleteRole.Location = new System.Drawing.Point(130, 25);
+            this.sb_DeleteRole.Name = "sb_DeleteRole";
+            this.sb_DeleteRole.Size = new System.Drawing.Size(75, 23);
+            this.sb_DeleteRole.TabIndex = 1;
+            this.sb_DeleteRole.Text = "删除";
+            this.sb_DeleteRole.Click += new System.EventHandler(this.sb_DeleteGoods_Click);
             // 
-            // sBtn_Del
+            // sb_AddRole
             // 
-            this.sBtn_Del.Image = ((System.Drawing.Image)(resources.GetObject("sBtn_Del.Image")));
-            this.sBtn_Del.Location = new System.Drawing.Point(122, 2);
-            this.sBtn_Del.Name = "sBtn_Del";
-            this.sBtn_Del.Size = new System.Drawing.Size(56, 22);
-            this.sBtn_Del.StyleController = this.layoutControl2;
-            this.sBtn_Del.TabIndex = 6;
-            this.sBtn_Del.Text = "删除";
-            // 
-            // sBtn_Modify
-            // 
-            this.sBtn_Modify.Image = ((System.Drawing.Image)(resources.GetObject("sBtn_Modify.Image")));
-            this.sBtn_Modify.Location = new System.Drawing.Point(62, 2);
-            this.sBtn_Modify.Name = "sBtn_Modify";
-            this.sBtn_Modify.Size = new System.Drawing.Size(56, 22);
-            this.sBtn_Modify.StyleController = this.layoutControl2;
-            this.sBtn_Modify.TabIndex = 5;
-            this.sBtn_Modify.Text = "修改";
-            // 
-            // sBtn_Add
-            // 
-            this.sBtn_Add.Image = ((System.Drawing.Image)(resources.GetObject("sBtn_Add.Image")));
-            this.sBtn_Add.Location = new System.Drawing.Point(2, 2);
-            this.sBtn_Add.Name = "sBtn_Add";
-            this.sBtn_Add.Size = new System.Drawing.Size(56, 22);
-            this.sBtn_Add.StyleController = this.layoutControl2;
-            this.sBtn_Add.TabIndex = 4;
-            this.sBtn_Add.Text = "添加";
-            // 
-            // labelCtl_SumRow
-            // 
-            this.labelCtl_SumRow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelCtl_SumRow.Appearance.Options.UseTextOptions = true;
-            this.labelCtl_SumRow.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelCtl_SumRow.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.labelCtl_SumRow.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
-            this.labelCtl_SumRow.Location = new System.Drawing.Point(402, 2);
-            this.labelCtl_SumRow.Margin = new System.Windows.Forms.Padding(0);
-            this.labelCtl_SumRow.Name = "labelCtl_SumRow";
-            this.labelCtl_SumRow.Size = new System.Drawing.Size(36, 14);
-            this.labelCtl_SumRow.StyleController = this.layoutControl2;
-            this.labelCtl_SumRow.TabIndex = 11;
-            this.labelCtl_SumRow.Text = "/共2行";
-            // 
-            // Root
-            // 
-            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.Root.GroupBordersVisible = false;
-            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem2,
-            this.layoutControlItem3,
-            this.layoutControlItem4,
-            this.layoutControlItem5,
-            this.layoutControlItem6,
-            this.layoutControlItem7,
-            this.layoutControlItem8,
-            this.layoutControlItem9,
-            this.layoutControlItem10,
-            this.layoutControlItem11,
-            this.layoutControlItem12,
-            this.layoutControlItem13,
-            this.layoutControlItem14,
-            this.layoutControlItem15});
-            this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
-            this.Root.Location = new System.Drawing.Point(0, 0);
-            this.Root.Name = "Root";
-            columnDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition1.Width = 60D;
-            columnDefinition2.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition2.Width = 60D;
-            columnDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition3.Width = 60D;
-            columnDefinition4.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition4.Width = 60D;
-            columnDefinition5.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition5.Width = 60D;
-            columnDefinition6.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition6.Width = 60D;
-            columnDefinition7.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition7.Width = 40D;
-            columnDefinition8.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition8.Width = 40D;
-            columnDefinition9.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition9.Width = 40D;
-            columnDefinition10.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition10.Width = 40D;
-            columnDefinition11.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition11.Width = 60D;
-            columnDefinition12.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition12.Width = 60D;
-            columnDefinition13.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition13.Width = 60D;
-            columnDefinition14.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition14.Width = 60D;
-            columnDefinition15.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition15.Width = 100D;
-            this.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition1,
-            columnDefinition2,
-            columnDefinition3,
-            columnDefinition4,
-            columnDefinition5,
-            columnDefinition6,
-            columnDefinition7,
-            columnDefinition8,
-            columnDefinition9,
-            columnDefinition10,
-            columnDefinition11,
-            columnDefinition12,
-            columnDefinition13,
-            columnDefinition14,
-            columnDefinition15});
-            rowDefinition1.Height = 100D;
-            rowDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
-            this.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition1});
-            this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.Root.Size = new System.Drawing.Size(937, 26);
-            this.Root.TextVisible = false;
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.sBtn_Add;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(60, 26);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextVisible = false;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.sBtn_Modify;
-            this.layoutControlItem3.Location = new System.Drawing.Point(60, 0);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.layoutControlItem3.Size = new System.Drawing.Size(60, 26);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.sBtn_Del;
-            this.layoutControlItem4.Location = new System.Drawing.Point(120, 0);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.OptionsTableLayoutItem.ColumnIndex = 2;
-            this.layoutControlItem4.Size = new System.Drawing.Size(60, 26);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.sBtn_Save;
-            this.layoutControlItem5.Location = new System.Drawing.Point(180, 0);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.OptionsTableLayoutItem.ColumnIndex = 3;
-            this.layoutControlItem5.Size = new System.Drawing.Size(60, 26);
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextVisible = false;
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.sBtn_Refresh;
-            this.layoutControlItem6.Location = new System.Drawing.Point(240, 0);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.OptionsTableLayoutItem.ColumnIndex = 4;
-            this.layoutControlItem6.Size = new System.Drawing.Size(60, 26);
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextVisible = false;
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.sBtn_Query;
-            this.layoutControlItem7.Location = new System.Drawing.Point(300, 0);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.OptionsTableLayoutItem.ColumnIndex = 5;
-            this.layoutControlItem7.Size = new System.Drawing.Size(60, 26);
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem7.TextVisible = false;
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.txtEdit_CurRow;
-            this.layoutControlItem8.Location = new System.Drawing.Point(360, 0);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.OptionsTableLayoutItem.ColumnIndex = 6;
-            this.layoutControlItem8.Size = new System.Drawing.Size(40, 26);
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem8.TextVisible = false;
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.labelCtl_SumRow;
-            this.layoutControlItem9.Location = new System.Drawing.Point(400, 0);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.OptionsTableLayoutItem.ColumnIndex = 7;
-            this.layoutControlItem9.Size = new System.Drawing.Size(40, 26);
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem9.TextVisible = false;
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.txtEdit_CurPage;
-            this.layoutControlItem10.Location = new System.Drawing.Point(440, 0);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.OptionsTableLayoutItem.ColumnIndex = 8;
-            this.layoutControlItem10.Size = new System.Drawing.Size(40, 26);
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem10.TextVisible = false;
-            // 
-            // layoutControlItem11
-            // 
-            this.layoutControlItem11.Control = this.labelControl1;
-            this.layoutControlItem11.Location = new System.Drawing.Point(480, 0);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.OptionsTableLayoutItem.ColumnIndex = 9;
-            this.layoutControlItem11.Size = new System.Drawing.Size(40, 26);
-            this.layoutControlItem11.Text = "共/页";
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem11.TextVisible = false;
-            // 
-            // layoutControlItem12
-            // 
-            this.layoutControlItem12.Control = this.sBtn_First;
-            this.layoutControlItem12.Location = new System.Drawing.Point(520, 0);
-            this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.OptionsTableLayoutItem.ColumnIndex = 10;
-            this.layoutControlItem12.Size = new System.Drawing.Size(60, 26);
-            this.layoutControlItem12.Text = "首页";
-            this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem12.TextVisible = false;
-            // 
-            // layoutControlItem13
-            // 
-            this.layoutControlItem13.Control = this.sBtn_Up;
-            this.layoutControlItem13.Location = new System.Drawing.Point(580, 0);
-            this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.OptionsTableLayoutItem.ColumnIndex = 11;
-            this.layoutControlItem13.Size = new System.Drawing.Size(60, 26);
-            this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem13.TextVisible = false;
-            // 
-            // layoutControlItem14
-            // 
-            this.layoutControlItem14.Control = this.sBtn_Dowm;
-            this.layoutControlItem14.Location = new System.Drawing.Point(640, 0);
-            this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.OptionsTableLayoutItem.ColumnIndex = 12;
-            this.layoutControlItem14.Size = new System.Drawing.Size(60, 26);
-            this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem14.TextVisible = false;
-            // 
-            // layoutControlItem15
-            // 
-            this.layoutControlItem15.Control = this.sBtn_Last;
-            this.layoutControlItem15.Location = new System.Drawing.Point(700, 0);
-            this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.OptionsTableLayoutItem.ColumnIndex = 13;
-            this.layoutControlItem15.Size = new System.Drawing.Size(60, 26);
-            this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem15.TextVisible = false;
-            // 
-            // layoutControlGroup1
-            // 
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.layoutControlItem16});
-            this.layoutControlGroup1.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "Root";
-            columnDefinition16.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition16.Width = 100D;
-            this.layoutControlGroup1.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition16});
-            rowDefinition2.Height = 100D;
-            rowDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
-            rowDefinition3.Height = 30D;
-            rowDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute;
-            this.layoutControlGroup1.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition2,
-            rowDefinition3});
-            this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(941, 431);
-            this.layoutControlGroup1.TextVisible = false;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.layoutControl2;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 401);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutControlItem1.Size = new System.Drawing.Size(941, 30);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
-            // 
-            // layoutControlItem16
-            // 
-            this.layoutControlItem16.Control = this.gc_Role;
-            this.layoutControlItem16.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(941, 401);
-            this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem16.TextVisible = false;
+            this.sb_AddRole.Image = ((System.Drawing.Image)(resources.GetObject("sb_AddRole.Image")));
+            this.sb_AddRole.Location = new System.Drawing.Point(36, 25);
+            this.sb_AddRole.Name = "sb_AddRole";
+            this.sb_AddRole.Size = new System.Drawing.Size(75, 23);
+            this.sb_AddRole.TabIndex = 0;
+            this.sb_AddRole.Text = "添加";
+            this.sb_AddRole.Click += new System.EventHandler(this.sb_AddRole_Click);
             // 
             // RoleManaView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 431);
-            this.Controls.Add(this.layoutControl1);
+            this.ClientSize = new System.Drawing.Size(710, 400);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "RoleManaView";
             this.Text = "角色维护";
             this.Load += new System.EventHandler(this.RoleManaView_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
-            this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gc_Role)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
-            this.layoutControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtEdit_CurPage.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEdit_CurRow.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gc_RoleList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_RoleList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEdit_RoleInfo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraLayout.LayoutControl layoutControl2;
-        private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraEditors.SimpleButton sBtn_Add;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraEditors.TextEdit txtEdit_CurRow;
-        private DevExpress.XtraEditors.SimpleButton sBtn_Query;
-        private DevExpress.XtraEditors.SimpleButton sBtn_Refresh;
-        private DevExpress.XtraEditors.SimpleButton sBtn_Save;
-        private DevExpress.XtraEditors.SimpleButton sBtn_Del;
-        private DevExpress.XtraEditors.SimpleButton sBtn_Modify;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
-        private DevExpress.XtraEditors.SimpleButton sBtn_Last;
-        private DevExpress.XtraEditors.SimpleButton sBtn_Dowm;
-        private DevExpress.XtraEditors.SimpleButton sBtn_Up;
-        private DevExpress.XtraEditors.SimpleButton sBtn_First;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private DevExpress.XtraGrid.GridControl gc_RoleList;
+        private DevExpress.XtraGrid.Views.Grid.GridView gv_RoleList;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.TextEdit txtEdit_RoleInfo;
+        private DevExpress.XtraEditors.SimpleButton sb_QueryRoles;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.SimpleButton sb_ModifyRole;
+        private DevExpress.XtraEditors.SimpleButton sb_DeleteRole;
+        private DevExpress.XtraEditors.SimpleButton sb_AddRole;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit txtEdit_CurPage;
-        private DevExpress.XtraEditors.LabelControl labelCtl_SumRow;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
-        private DevExpress.XtraGrid.GridControl gc_Role;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn RoleCode;
-        private DevExpress.XtraGrid.Columns.GridColumn RoleName;
-        private DevExpress.XtraGrid.Columns.GridColumn Remark;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+
     }
 }

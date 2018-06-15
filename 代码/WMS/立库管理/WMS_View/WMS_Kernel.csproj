@@ -84,8 +84,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IView\IAddUserView.cs" />
+    <Compile Include="IView\IAddRoleView.cs" />
     <Compile Include="IView\IAddMaterialView.cs" />
     <Compile Include="IView\IInWareWithPlanView.cs" />
+    <Compile Include="IView\IUserManaView.cs" />
+    <Compile Include="IView\IRoleManaView.cs" />
     <Compile Include="IView\IMaterailManaView.cs" />
     <Compile Include="IView\IPalletManageView.cs" />
     <Compile Include="IView\IPlanInputView.cs" />
@@ -97,8 +101,12 @@
     <Compile Include="IView\ITaskListView.cs" />
     <Compile Include="IView\ITodoListView.cs" />
     <Compile Include="IView\IUnShelvePlanView.cs" />
+    <Compile Include="Presenter\AddRolePresenter.cs" />
+    <Compile Include="Presenter\AddUserPresenter.cs" />
     <Compile Include="Presenter\AddMaterialPresenter.cs" />
     <Compile Include="Presenter\InWareWithPlanPresenter.cs" />
+    <Compile Include="Presenter\RoleManaPresenter.cs" />
+    <Compile Include="Presenter\UserManaPresenter.cs" />
     <Compile Include="Presenter\MaterialManaPresenter.cs" />
     <Compile Include="Presenter\PalletManagePresenter.cs" />
     <Compile Include="Presenter\PlanInputPresenter.cs" />
@@ -119,6 +127,42 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ImageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ModifyUserView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ModifyUserView.Designer.cs">
+      <DependentUpon>ModifyUserView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddUserView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddUserView.Designer.cs">
+      <DependentUpon>AddUserView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ModifyRoleView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ModifyRoleView.Designer.cs">
+      <DependentUpon>ModifyRoleView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddRoleView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddRoleView.Designer.cs">
+      <DependentUpon>AddRoleView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserManaView.Designer.cs">
+      <DependentUpon>UserManaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RoleManaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RoleManaView.Designer.cs">
+      <DependentUpon>RoleManaView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ModifyMaterialView.cs">
       <SubType>Form</SubType>
@@ -273,24 +317,30 @@
       <DependentUpon>ModPasswordView.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\UserManaView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\UserManaView.Designer.cs">
-      <DependentUpon>UserManaView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\RoleManaView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\RoleManaView.Designer.cs">
-      <DependentUpon>RoleManaView.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="ImageResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ImageResource.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="View\ModifyUserView.resx">
+      <DependentUpon>ModifyUserView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddUserView.resx">
+      <DependentUpon>AddUserView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ModifyRoleView.resx">
+      <DependentUpon>ModifyRoleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddRoleView.resx">
+      <DependentUpon>AddRoleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserManaView.resx">
+      <DependentUpon>UserManaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RoleManaView.resx">
+      <DependentUpon>RoleManaView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ModifyMaterialView.resx">
       <DependentUpon>ModifyMaterialView.cs</DependentUpon>
     </EmbeddedResource>
@@ -370,12 +420,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\UserManaView.resx">
-      <DependentUpon>UserManaView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\RoleManaView.resx">
-      <DependentUpon>RoleManaView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

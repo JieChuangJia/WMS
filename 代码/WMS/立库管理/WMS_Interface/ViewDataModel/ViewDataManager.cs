@@ -28,5 +28,8 @@ namespace WMS_Interface
         public static PalletManageViewData PALLETMANAGEDATA = new PalletManageViewData();
 
         public static SysLogViewData SYSLOGVIEWDATA = new SysLogViewData();
+
+        public static UserViewData USERVIEWDATA = new UserViewData();
+        public static RoleViewData ROLEVIEWDATA = new RoleViewData();
     }
 }

@@ -42,6 +42,16 @@ namespace WMS_Kernel
         {
             this.wmsViewManager.ResgistShowMaterialProperty(showMaterialProperty);
         }
+
+        public void ResgistShowUserProperty(Action<string> showUserProperty)
+        {
+            this.wmsViewManager.ResgistShowUserProperty(showUserProperty);
+        }
+
+        public void ResgistShowRoleProperty(Action<string> showRoleProperty)
+        {
+            this.wmsViewManager.ResgistShowRoleProperty(showRoleProperty);
+        }
      
 
         /// <summary>

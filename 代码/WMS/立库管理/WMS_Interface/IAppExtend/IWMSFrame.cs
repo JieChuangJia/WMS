@@ -21,6 +21,6 @@ namespace WMS_Interface
         void SetVersion(string version);
 
         string CurrentUser { get; set; }
-        int RoleID { get; set; }
+        int RoleLevel{ get; set; }
     }
 }

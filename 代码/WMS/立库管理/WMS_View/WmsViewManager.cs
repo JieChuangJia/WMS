@@ -128,6 +128,16 @@ namespace WMS_Kernel
         {
             this.materialView.presenter.ResgistShowMaterialProperty(showMaterialProperty);
         }
+
+        public void ResgistShowUserProperty(Action<string> showUserProperty)
+        {
+            this.userView.presenter.ResgistShowUserProperty(showUserProperty);
+        }
+
+        public void ResgistShowRoleProperty(Action<string> showRoleProperty)
+        {
+            this.roleView.presenter.ResgistShowRoleProperty(showRoleProperty);
+        }
         private void FormCloseEventHandler(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
