@@ -28,8 +28,8 @@ namespace WMS_Kernel
         private void StationShowView_Load(object sender, EventArgs e)
         {
             Presenter.Init();
-
             CellGoodsDetailDataBind();
+            WareAreaDataBind();
         }
      
 
@@ -75,7 +75,8 @@ namespace WMS_Kernel
                 this.storageControl1.DataSour = posList;
             }
         }
-    
+      
+
         public void RefreshData()
         {
             if (this.InvokeRequired)
@@ -123,6 +124,13 @@ namespace WMS_Kernel
             this.gc_CellGoodsDetail.DataBindings.Add("DataSource", ViewDataManager.STORAGEVIEWDATA, "CellGoodsDetailData", false, DataSourceUpdateMode.OnPropertyChanged);
             
         }
+
+        private void WareAreaDataBind()
+        {
+            this.gc_Area.DataBindings.Clear();
+            this.gc_Area.DataBindings.Add("DataSource", ViewDataManager.WAREAREAVIEWDATA, "AreaColorListData", false, DataSourceUpdateMode.OnPropertyChanged);
+            
+        }
         public void BingHouseRowData(List<string> rowList)
         {
             this.cbe_Row.Properties.Items.Clear();
@@ -167,6 +175,7 @@ namespace WMS_Kernel
             string houseName = this.cbe_HouseList.Text.Trim();
             this.Presenter.InitHouseRowList(houseName);
             this.Presenter.InitPosList(this.cbe_HouseList.Text.Trim(), int.Parse(this.cbe_Row.Text.Trim()));
+            this.Presenter.GetWareArea(houseName);
             RefreshData();
         }
 
@@ -196,6 +205,7 @@ namespace WMS_Kernel
                 return;
             }
             GsSearch(columnth, layerth);
+            
         }
 
         public void GsSearch(int columnth, int layerth)
@@ -448,6 +458,35 @@ namespace WMS_Kernel
             this.Presenter.MoveHouse(stPro.CellChildID, edPro.CellChildID);
              
         }
+
+        private void gv_Area_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+            if (e.Column.FieldName == "区域颜色")
+            {
+                object colorObj = e.CellValue;
+                string[] colorArray = colorObj.ToString().Split(',');
+                e.Appearance.BackColor = Color.FromArgb(Convert.ToByte(colorArray[0]), Convert.ToByte(colorArray[1]), Convert.ToByte(colorArray[2]));
+                e.Appearance.BackColor2 = Color.FromArgb(Convert.ToByte(colorArray[0]), Convert.ToByte(colorArray[1]), Convert.ToByte(colorArray[2]));
+                e.Appearance.ForeColor = Color.FromArgb(Convert.ToByte(colorArray[0]), Convert.ToByte(colorArray[1]), Convert.ToByte(colorArray[2]));
+            }  
+        }
+
+        //  private void RefreshColor()
+        //{
+        //    if (this.gv_Area.RowCount == 0)
+        //    {
+        //        return;
+        //    }
+        //    for(int i = 0;i<this.gv_Area.RowCount;i++)
+        //    {
+        //        string areaColor = this.gv_Area.GetRowCellValue(i, "区域颜色").ToString();
+        //        string[] colorArray = areaColor.Split(',');
+        //        this.gv_Area.
+
+        //    }
+            
+            
+        //}
 
     }
 }

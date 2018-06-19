@@ -84,6 +84,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IView\IAddAndModifyAreaView.cs" />
     <Compile Include="IView\IAddUserView.cs" />
     <Compile Include="IView\IAddRoleView.cs" />
     <Compile Include="IView\IAddMaterialView.cs" />
@@ -101,7 +102,9 @@
     <Compile Include="IView\ITaskListView.cs" />
     <Compile Include="IView\ITodoListView.cs" />
     <Compile Include="IView\IUnShelvePlanView.cs" />
+    <Compile Include="IView\IWareAreaManaView.cs" />
     <Compile Include="Presenter\AddRolePresenter.cs" />
+    <Compile Include="Presenter\AddAndModifyAreaPresenter.cs" />
     <Compile Include="Presenter\AddUserPresenter.cs" />
     <Compile Include="Presenter\AddMaterialPresenter.cs" />
     <Compile Include="Presenter\InWareWithPlanPresenter.cs" />
@@ -118,6 +121,7 @@
     <Compile Include="Presenter\TaskListPresenter.cs" />
     <Compile Include="Presenter\TodoListPresenter.cs" />
     <Compile Include="Presenter\UnShelvePlanPresenter.cs" />
+    <Compile Include="Presenter\WareAreaManaPresenter.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -127,6 +131,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ImageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddAndModifyAreaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddAndModifyAreaView.Designer.cs">
+      <DependentUpon>AddAndModifyAreaView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ModifyUserView.cs">
       <SubType>Form</SubType>
@@ -211,6 +221,12 @@
     </Compile>
     <Compile Include="View\TodoListView.Designer.cs">
       <DependentUpon>TodoListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\WareAreaManaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\WareAreaManaView.designer.cs">
+      <DependentUpon>WareAreaManaView.cs</DependentUpon>
     </Compile>
     <Compile Include="WMSManager.cs" />
     <Compile Include="WmsViewManager.cs" />
@@ -323,6 +339,9 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="View\AddAndModifyAreaView.resx">
+      <DependentUpon>AddAndModifyAreaView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ModifyUserView.resx">
       <DependentUpon>ModifyUserView.cs</DependentUpon>
     </EmbeddedResource>
@@ -370,6 +389,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\StationShowView.resx">
       <DependentUpon>StationShowView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\WareAreaManaView.resx">
+      <DependentUpon>WareAreaManaView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\WareQueryView.resx">
       <DependentUpon>WareQueryView.cs</DependentUpon>
@@ -695,6 +717,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\TaskList2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WareHouseArea.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

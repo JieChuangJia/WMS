@@ -81,6 +81,7 @@
     <Compile Include="ViewDataModel\TrayGoodsManageViewData.cs" />
     <Compile Include="ViewDataModel\UnShelvePlanViewData.cs" />
     <Compile Include="ViewDataModel\ViewDataManager.cs" />
+    <Compile Include="ViewDataModel\WareAreaViewData.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ChildViewBase.resx">

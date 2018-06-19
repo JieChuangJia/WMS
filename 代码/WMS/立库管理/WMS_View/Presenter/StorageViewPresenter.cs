@@ -203,6 +203,29 @@ namespace WMS_Kernel
             //this.currRowth = modelList[0].GoodsSiteRow;
         }
 
+
+        public void GetWareArea(string wareName)
+        {
+            ViewDataManager.WAREAREAVIEWDATA.AreaColorListData.Clear();
+            WH_WareHouseModel house = bllHouse.GetModelByName(wareName);
+            if (house == null)
+            {
+                return;
+            }
+            List<WH_AreaModel> areaList = bllArea.GetModels(house.WareHouse_ID);
+            if (areaList == null)
+            {
+                return;
+            }
+
+            foreach (WH_AreaModel area in areaList)
+            {
+                AreaColorModel model = new AreaColorModel();
+                model.区域名称 = area.Area_Name;
+                model.区域颜色 = area.Area_BackColor;
+                ViewDataManager.WAREAREAVIEWDATA.AreaColorListData.Add(model);
+            }
+        }
         public void GetCellDetailByPalletCode(string palletCode)
         {
             View_StockListModel stockModel = bllViewStockList.GetModelByPalletCode(palletCode,EnumCellType.货位.ToString());

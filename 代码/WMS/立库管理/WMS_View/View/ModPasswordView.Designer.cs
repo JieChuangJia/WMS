@@ -111,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(271, 172);
+            this.ClientSize = new System.Drawing.Size(273, 173);
             this.Controls.Add(this.sb_Cancel);
             this.Controls.Add(this.sbtn_Sure);
             this.Controls.Add(this.txtEdit_CheckPassword);

@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PalletManaView));
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition6 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition7 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition8 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition9 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition10 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition6 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition4 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition5 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -60,11 +60,11 @@
             this.layoutControlItem31 = new DevExpress.XtraLayout.LayoutControlItem();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.gc_GoodsList = new DevExpress.XtraGrid.GridControl();
-            this.gv_GoodsList = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.gc_PalletGoodsInfor = new DevExpress.XtraGrid.GridControl();
             this.gv_PalletInfor = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.gc_PalletList = new DevExpress.XtraGrid.GridControl();
             this.gv_PalletList = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -87,9 +87,9 @@
             this.sb_QueryGoodsInfor = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.te_GoodsInfo = new DevExpress.XtraEditors.TextEdit();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.gc_GoodsList = new DevExpress.XtraGrid.GridControl();
+            this.gv_GoodsList = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
@@ -99,11 +99,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gc_GoodsList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gv_GoodsList)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_PalletGoodsInfor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_PalletInfor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_PalletList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_PalletList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -118,12 +120,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.te_GoodsInfo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_GoodsList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_GoodsList)).BeginInit();
             this.SuspendLayout();
             // 
             // imageCollection1
@@ -231,23 +231,23 @@
             this.layoutControlGroup8.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.layoutControlGroup8.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup8.Name = "layoutControlGroup8";
-            columnDefinition6.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition6.Width = 60D;
-            columnDefinition7.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition7.Width = 60D;
-            columnDefinition8.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition8.Width = 60D;
-            columnDefinition9.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition9.Width = 100D;
+            columnDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition1.Width = 60D;
+            columnDefinition2.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition2.Width = 60D;
+            columnDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition3.Width = 60D;
+            columnDefinition4.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition4.Width = 100D;
             this.layoutControlGroup8.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition6,
-            columnDefinition7,
-            columnDefinition8,
-            columnDefinition9});
-            rowDefinition4.Height = 100D;
-            rowDefinition4.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition1,
+            columnDefinition2,
+            columnDefinition3,
+            columnDefinition4});
+            rowDefinition1.Height = 100D;
+            rowDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
             this.layoutControlGroup8.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition4});
+            rowDefinition1});
             this.layoutControlGroup8.Size = new System.Drawing.Size(1139, 30);
             this.layoutControlGroup8.TextVisible = false;
             // 
@@ -284,17 +284,17 @@
             this.layoutControlGroup6.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.layoutControlGroup6.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup6.Name = "layoutControlGroup6";
-            columnDefinition10.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition10.Width = 100D;
+            columnDefinition5.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition5.Width = 100D;
             this.layoutControlGroup6.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition10});
-            rowDefinition5.Height = 100D;
-            rowDefinition5.SizeType = System.Windows.Forms.SizeType.Percent;
-            rowDefinition6.Height = 30D;
-            rowDefinition6.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition5});
+            rowDefinition2.Height = 100D;
+            rowDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
+            rowDefinition3.Height = 30D;
+            rowDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute;
             this.layoutControlGroup6.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition5,
-            rowDefinition6});
+            rowDefinition2,
+            rowDefinition3});
             this.layoutControlGroup6.Size = new System.Drawing.Size(1143, 152);
             this.layoutControlGroup6.TextVisible = false;
             // 
@@ -340,28 +340,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1175, 490);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // gc_GoodsList
-            // 
-            this.gc_GoodsList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_GoodsList.Location = new System.Drawing.Point(2, 22);
-            this.gc_GoodsList.MainView = this.gv_GoodsList;
-            this.gc_GoodsList.Margin = new System.Windows.Forms.Padding(0);
-            this.gc_GoodsList.Name = "gc_GoodsList";
-            this.gc_GoodsList.Size = new System.Drawing.Size(1165, 120);
-            this.gc_GoodsList.TabIndex = 7;
-            this.gc_GoodsList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gv_GoodsList});
-            // 
-            // gv_GoodsList
-            // 
-            this.gv_GoodsList.GridControl = this.gc_GoodsList;
-            this.gv_GoodsList.GroupPanelText = "物料清单";
-            this.gv_GoodsList.IndicatorWidth = 40;
-            this.gv_GoodsList.Name = "gv_GoodsList";
-            this.gv_GoodsList.OptionsSelection.MultiSelect = true;
-            this.gv_GoodsList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
-            this.gv_GoodsList.OptionsView.ShowGroupPanel = false;
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -376,6 +354,16 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1169, 144);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.gc_PalletGoodsInfor);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(587, 3);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(579, 138);
+            this.groupControl1.TabIndex = 3;
+            this.groupControl1.Text = "配盘物料信息";
             // 
             // gc_PalletGoodsInfor
             // 
@@ -397,6 +385,16 @@
             this.gv_PalletInfor.OptionsSelection.MultiSelect = true;
             this.gv_PalletInfor.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
             this.gv_PalletInfor.OptionsView.ShowGroupPanel = false;
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.gc_PalletList);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(3, 3);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(578, 138);
+            this.groupControl2.TabIndex = 4;
+            this.groupControl2.Text = "配盘列表";
             // 
             // gc_PalletList
             // 
@@ -628,26 +626,6 @@
             this.te_GoodsInfo.Size = new System.Drawing.Size(116, 20);
             this.te_GoodsInfo.TabIndex = 16;
             // 
-            // groupControl1
-            // 
-            this.groupControl1.Controls.Add(this.gc_PalletGoodsInfor);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(587, 3);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(579, 138);
-            this.groupControl1.TabIndex = 3;
-            this.groupControl1.Text = "配盘物料信息";
-            // 
-            // groupControl2
-            // 
-            this.groupControl2.Controls.Add(this.gc_PalletList);
-            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(3, 3);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(578, 138);
-            this.groupControl2.TabIndex = 4;
-            this.groupControl2.Text = "配盘列表";
-            // 
             // groupControl3
             // 
             this.groupControl3.Controls.Add(this.gc_GoodsList);
@@ -657,6 +635,28 @@
             this.groupControl3.Size = new System.Drawing.Size(1169, 144);
             this.groupControl3.TabIndex = 4;
             this.groupControl3.Text = "物料清单";
+            // 
+            // gc_GoodsList
+            // 
+            this.gc_GoodsList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_GoodsList.Location = new System.Drawing.Point(2, 22);
+            this.gc_GoodsList.MainView = this.gv_GoodsList;
+            this.gc_GoodsList.Margin = new System.Windows.Forms.Padding(0);
+            this.gc_GoodsList.Name = "gc_GoodsList";
+            this.gc_GoodsList.Size = new System.Drawing.Size(1165, 120);
+            this.gc_GoodsList.TabIndex = 7;
+            this.gc_GoodsList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gv_GoodsList});
+            // 
+            // gv_GoodsList
+            // 
+            this.gv_GoodsList.GridControl = this.gc_GoodsList;
+            this.gv_GoodsList.GroupPanelText = "物料清单";
+            this.gv_GoodsList.IndicatorWidth = 40;
+            this.gv_GoodsList.Name = "gv_GoodsList";
+            this.gv_GoodsList.OptionsSelection.MultiSelect = true;
+            this.gv_GoodsList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_GoodsList.OptionsView.ShowGroupPanel = false;
             // 
             // PalletManaView
             // 
@@ -676,11 +676,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gc_GoodsList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gv_GoodsList)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc_PalletGoodsInfor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_PalletInfor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc_PalletList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_PalletList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -698,12 +700,10 @@
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.te_GoodsInfo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gc_GoodsList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_GoodsList)).EndInit();
             this.ResumeLayout(false);
 
         }

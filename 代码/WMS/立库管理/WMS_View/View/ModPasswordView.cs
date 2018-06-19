@@ -43,6 +43,11 @@ namespace WMS_Kernel
 
         private void ShowTabEventHandler(object sender, ItemClickEventArgs e)
         {
+            if (this.IWmsFrame.RoleLevel > 2)
+            {
+                this.ShowMessage("信息提示", "当前用户没有此操作权限！");
+                return;
+            }
             this.IWmsFrame.ShowView(this, true);
         }
 

@@ -31,5 +31,7 @@ namespace WMS_Interface
 
         public static UserViewData USERVIEWDATA = new UserViewData();
         public static RoleViewData ROLEVIEWDATA = new RoleViewData();
+
+        public static WareAreaViewData WAREAREAVIEWDATA = new WareAreaViewData();
     }
 }

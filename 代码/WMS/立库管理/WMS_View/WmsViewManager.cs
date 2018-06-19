@@ -48,6 +48,7 @@ namespace WMS_Kernel
 
         StockTakingUnshelveView stocktakingUnshelveView = new StockTakingUnshelveView();
         SysLogView sysLogView = new SysLogView();
+        WareAreaManaView wareAreaManaView = new WareAreaManaView();
         public WmsViewManager()
         { }
         public void InitView(IWMSFrame wmsFrame)
@@ -121,6 +122,9 @@ namespace WMS_Kernel
             sysLogView.FormClosing += FormCloseEventHandler;
             sysLogView.Init(wmsFrame);
 
+            wareAreaManaView.FormClosing += FormCloseEventHandler;
+            wareAreaManaView.Init(wmsFrame);
+
        
         }
 
@@ -138,6 +142,12 @@ namespace WMS_Kernel
         {
             this.roleView.presenter.ResgistShowRoleProperty(showRoleProperty);
         }
+
+        public void ResgistShowAreaProperty(Action<string> showAreaProperty)
+        {
+            this.wareAreaManaView.presenter.ResgistShowAreaProperty(showAreaProperty);
+        }
+
         private void FormCloseEventHandler(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)

@@ -549,7 +549,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(868, 261);
+            this.tabPage2.Size = new System.Drawing.Size(870, 262);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "系统权限";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -563,16 +563,16 @@
             this.layoutControl7.Margin = new System.Windows.Forms.Padding(0);
             this.layoutControl7.Name = "layoutControl7";
             this.layoutControl7.Root = this.layoutControlGroup6;
-            this.layoutControl7.Size = new System.Drawing.Size(862, 255);
+            this.layoutControl7.Size = new System.Drawing.Size(864, 256);
             this.layoutControl7.TabIndex = 0;
             this.layoutControl7.Text = "layoutControl7";
             // 
             // groupControl3
             // 
             this.groupControl3.Controls.Add(this.imageListBoxControl2);
-            this.groupControl3.Location = new System.Drawing.Point(476, 2);
+            this.groupControl3.Location = new System.Drawing.Point(477, 2);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(384, 251);
+            this.groupControl3.Size = new System.Drawing.Size(385, 252);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "已分配功能";
             // 
@@ -580,9 +580,9 @@
             // 
             this.imageListBoxControl2.Cursor = System.Windows.Forms.Cursors.Default;
             this.imageListBoxControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.imageListBoxControl2.Location = new System.Drawing.Point(2, 21);
+            this.imageListBoxControl2.Location = new System.Drawing.Point(2, 22);
             this.imageListBoxControl2.Name = "imageListBoxControl2";
-            this.imageListBoxControl2.Size = new System.Drawing.Size(380, 228);
+            this.imageListBoxControl2.Size = new System.Drawing.Size(381, 228);
             this.imageListBoxControl2.TabIndex = 0;
             // 
             // groupControl4
@@ -590,7 +590,7 @@
             this.groupControl4.Controls.Add(this.layoutControl10);
             this.groupControl4.Location = new System.Drawing.Point(2, 2);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(470, 251);
+            this.groupControl4.Size = new System.Drawing.Size(471, 252);
             this.groupControl4.TabIndex = 0;
             this.groupControl4.Text = "未分配功能";
             // 
@@ -599,10 +599,10 @@
             this.layoutControl10.Controls.Add(this.layoutControl11);
             this.layoutControl10.Controls.Add(this.imageListBoxControl1);
             this.layoutControl10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl10.Location = new System.Drawing.Point(2, 21);
+            this.layoutControl10.Location = new System.Drawing.Point(2, 22);
             this.layoutControl10.Name = "layoutControl10";
             this.layoutControl10.Root = this.layoutControlGroup9;
-            this.layoutControl10.Size = new System.Drawing.Size(466, 228);
+            this.layoutControl10.Size = new System.Drawing.Size(467, 228);
             this.layoutControl10.TabIndex = 0;
             this.layoutControl10.Text = "layoutControl10";
             // 
@@ -612,7 +612,7 @@
             this.layoutControl11.Controls.Add(this.simpleButton8);
             this.layoutControl11.Controls.Add(this.simpleButton7);
             this.layoutControl11.Controls.Add(this.simpleButton6);
-            this.layoutControl11.Location = new System.Drawing.Point(408, 2);
+            this.layoutControl11.Location = new System.Drawing.Point(409, 2);
             this.layoutControl11.Name = "layoutControl11";
             this.layoutControl11.Root = this.layoutControlGroup10;
             this.layoutControl11.Size = new System.Drawing.Size(56, 224);
@@ -738,7 +738,7 @@
             this.imageListBoxControl1.Cursor = System.Windows.Forms.Cursors.Default;
             this.imageListBoxControl1.Location = new System.Drawing.Point(2, 2);
             this.imageListBoxControl1.Name = "imageListBoxControl1";
-            this.imageListBoxControl1.Size = new System.Drawing.Size(402, 224);
+            this.imageListBoxControl1.Size = new System.Drawing.Size(403, 224);
             this.imageListBoxControl1.StyleController = this.layoutControl10;
             this.imageListBoxControl1.TabIndex = 4;
             // 
@@ -764,7 +764,7 @@
             this.layoutControlGroup9.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
             rowDefinition15});
             this.layoutControlGroup9.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup9.Size = new System.Drawing.Size(466, 228);
+            this.layoutControlGroup9.Size = new System.Drawing.Size(467, 228);
             this.layoutControlGroup9.TextVisible = false;
             // 
             // layoutControlItem19
@@ -772,14 +772,14 @@
             this.layoutControlItem19.Control = this.imageListBoxControl1;
             this.layoutControlItem19.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem19.Name = "layoutControlItem19";
-            this.layoutControlItem19.Size = new System.Drawing.Size(406, 228);
+            this.layoutControlItem19.Size = new System.Drawing.Size(407, 228);
             this.layoutControlItem19.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem19.TextVisible = false;
             // 
             // layoutControlItem20
             // 
             this.layoutControlItem20.Control = this.layoutControl11;
-            this.layoutControlItem20.Location = new System.Drawing.Point(406, 0);
+            this.layoutControlItem20.Location = new System.Drawing.Point(407, 0);
             this.layoutControlItem20.Name = "layoutControlItem20";
             this.layoutControlItem20.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutControlItem20.Size = new System.Drawing.Size(60, 228);
@@ -808,7 +808,7 @@
             this.layoutControlGroup6.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
             rowDefinition16});
             this.layoutControlGroup6.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup6.Size = new System.Drawing.Size(862, 255);
+            this.layoutControlGroup6.Size = new System.Drawing.Size(864, 256);
             this.layoutControlGroup6.TextVisible = false;
             // 
             // layoutControlItem11
@@ -816,17 +816,17 @@
             this.layoutControlItem11.Control = this.groupControl4;
             this.layoutControlItem11.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(474, 255);
+            this.layoutControlItem11.Size = new System.Drawing.Size(475, 256);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.groupControl3;
-            this.layoutControlItem10.Location = new System.Drawing.Point(474, 0);
+            this.layoutControlItem10.Location = new System.Drawing.Point(475, 0);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.layoutControlItem10.Size = new System.Drawing.Size(388, 255);
+            this.layoutControlItem10.Size = new System.Drawing.Size(389, 256);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 

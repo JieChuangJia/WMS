@@ -52,6 +52,13 @@ namespace WMS_Kernel
         {
             this.wmsViewManager.ResgistShowRoleProperty(showRoleProperty);
         }
+
+        public void ResgistShowAreaProperty(Action<string> showAreaProperty)
+        {
+            this.wmsViewManager.ResgistShowAreaProperty(showAreaProperty);
+        }
+
+
      
 
         /// <summary>

@@ -97,17 +97,23 @@
             this.te_EndPos = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.te_Start = new DevExpress.XtraEditors.TextEdit();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.gc_Area = new DevExpress.XtraGrid.GridControl();
+            this.gv_Area = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
@@ -138,8 +144,15 @@
             this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.te_EndPos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.te_Start.Properties)).BeginInit();
+            this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_Area)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_Area)).BeginInit();
             this.SuspendLayout();
             // 
             // gridColumn10
@@ -615,11 +628,11 @@
             // gc_CellGoodsDetail
             // 
             this.gc_CellGoodsDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_CellGoodsDetail.Location = new System.Drawing.Point(2, 22);
+            this.gc_CellGoodsDetail.Location = new System.Drawing.Point(2, 21);
             this.gc_CellGoodsDetail.MainView = this.gridView2;
             this.gc_CellGoodsDetail.Margin = new System.Windows.Forms.Padding(0);
             this.gc_CellGoodsDetail.Name = "gc_CellGoodsDetail";
-            this.gc_CellGoodsDetail.Size = new System.Drawing.Size(924, 128);
+            this.gc_CellGoodsDetail.Size = new System.Drawing.Size(924, 129);
             this.gc_CellGoodsDetail.TabIndex = 6;
             this.gc_CellGoodsDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -648,7 +661,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.groupControl1);
+            this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel5);
             this.splitContainer1.Size = new System.Drawing.Size(274, 524);
             this.splitContainer1.SplitterDistance = 120;
             this.splitContainer1.TabIndex = 1;
@@ -671,7 +684,7 @@
             // 
             // sb_Move
             // 
-            this.sb_Move.Location = new System.Drawing.Point(150, 79);
+            this.sb_Move.Location = new System.Drawing.Point(149, 79);
             this.sb_Move.Name = "sb_Move";
             this.sb_Move.Size = new System.Drawing.Size(92, 22);
             this.sb_Move.TabIndex = 29;
@@ -726,103 +739,77 @@
             this.te_Start.Size = new System.Drawing.Size(151, 20);
             this.te_Start.TabIndex = 0;
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.groupControl1, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.groupControl3, 0, 1);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(274, 400);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.label14);
-            this.groupControl1.Controls.Add(this.label5);
-            this.groupControl1.Controls.Add(this.label1);
-            this.groupControl1.Controls.Add(this.label2);
-            this.groupControl1.Controls.Add(this.label13);
-            this.groupControl1.Controls.Add(this.label12);
-            this.groupControl1.Controls.Add(this.label11);
-            this.groupControl1.Controls.Add(this.label8);
-            this.groupControl1.Controls.Add(this.label7);
-            this.groupControl1.Controls.Add(this.label6);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Controls.Add(this.tableLayoutPanel4);
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(274, 400);
+            this.groupControl1.Size = new System.Drawing.Size(274, 93);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "图例";
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 21);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(270, 70);
+            this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(264, 64);
+            this.panel1.TabIndex = 0;
             // 
             // label14
             // 
             this.label14.Image = ((System.Drawing.Image)(resources.GetObject("label14.Image")));
-            this.label14.Location = new System.Drawing.Point(200, 40);
+            this.label14.Location = new System.Drawing.Point(204, 11);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(30, 17);
             this.label14.TabIndex = 28;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(201, 66);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 14);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "禁用";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(145, 66);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 14);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "任务锁定";
-            // 
-            // label2
-            // 
-            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.Location = new System.Drawing.Point(156, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 17);
-            this.label2.TabIndex = 25;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Location = new System.Drawing.Point(112, 66);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(31, 14);
-            this.label13.TabIndex = 24;
-            this.label13.Text = "空闲";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Location = new System.Drawing.Point(69, 66);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(31, 14);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "满位";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Location = new System.Drawing.Point(19, 66);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(43, 14);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "空料框";
-            // 
-            // label8
-            // 
-            this.label8.Image = ((System.Drawing.Image)(resources.GetObject("label8.Image")));
-            this.label8.Location = new System.Drawing.Point(111, 40);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(30, 17);
-            this.label8.TabIndex = 21;
-            // 
             // label7
             // 
             this.label7.Image = ((System.Drawing.Image)(resources.GetObject("label7.Image")));
-            this.label7.Location = new System.Drawing.Point(68, 40);
+            this.label7.Location = new System.Drawing.Point(72, 11);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(30, 17);
             this.label7.TabIndex = 20;
@@ -830,11 +817,111 @@
             // label6
             // 
             this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
-            this.label6.Location = new System.Drawing.Point(24, 40);
+            this.label6.Location = new System.Drawing.Point(28, 11);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(30, 17);
             this.label6.TabIndex = 19;
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Location = new System.Drawing.Point(205, 37);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 14);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "禁用";
+            // 
+            // label8
+            // 
+            this.label8.Image = ((System.Drawing.Image)(resources.GetObject("label8.Image")));
+            this.label8.Location = new System.Drawing.Point(115, 11);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(30, 17);
+            this.label8.TabIndex = 21;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Location = new System.Drawing.Point(23, 37);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(43, 14);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "空料框";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(149, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 14);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "任务锁定";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Location = new System.Drawing.Point(73, 37);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(31, 14);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "满位";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Location = new System.Drawing.Point(116, 37);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(31, 14);
+            this.label13.TabIndex = 24;
+            this.label13.Text = "空闲";
+            // 
+            // label2
+            // 
+            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
+            this.label2.Location = new System.Drawing.Point(160, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 17);
+            this.label2.TabIndex = 25;
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.gc_Area);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(0, 100);
+            this.groupControl3.Margin = new System.Windows.Forms.Padding(0);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(274, 300);
+            this.groupControl3.TabIndex = 1;
+            this.groupControl3.Text = "库存区域";
+            // 
+            // gc_Area
+            // 
+            this.gc_Area.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_Area.Location = new System.Drawing.Point(2, 21);
+            this.gc_Area.MainView = this.gv_Area;
+            this.gc_Area.Margin = new System.Windows.Forms.Padding(0);
+            this.gc_Area.Name = "gc_Area";
+            this.gc_Area.Size = new System.Drawing.Size(270, 277);
+            this.gc_Area.TabIndex = 7;
+            this.gc_Area.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gv_Area});
+            // 
+            // gv_Area
+            // 
+            this.gv_Area.GridControl = this.gc_Area;
+            this.gv_Area.GroupPanelText = "货位物料详细";
+            this.gv_Area.IndicatorWidth = 40;
+            this.gv_Area.Name = "gv_Area";
+            this.gv_Area.OptionsSelection.MultiSelect = true;
+            this.gv_Area.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_Area.OptionsView.ShowGroupPanel = false;
+            this.gv_Area.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gv_Area_RowCellStyle);
             // 
             // StationShowView
             // 
@@ -878,9 +965,16 @@
             this.groupControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.te_EndPos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.te_Start.Properties)).EndInit();
+            this.tableLayoutPanel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gc_Area)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_Area)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -957,5 +1051,11 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private DevExpress.XtraEditors.GroupControl groupControl2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private DevExpress.XtraGrid.GridControl gc_Area;
+        private DevExpress.XtraGrid.Views.Grid.GridView gv_Area;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
     }
 }

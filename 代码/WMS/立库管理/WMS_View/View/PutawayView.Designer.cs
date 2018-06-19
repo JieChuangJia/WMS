@@ -318,9 +318,9 @@
             // 
             this.panelControl3.Controls.Add(this.groupControl1);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(3, 424);
+            this.panelControl3.Location = new System.Drawing.Point(3, 425);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1044, 64);
+            this.panelControl3.Size = new System.Drawing.Size(1046, 64);
             this.panelControl3.TabIndex = 4;
             // 
             // groupControl1
@@ -342,7 +342,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(2, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1040, 60);
+            this.groupControl1.Size = new System.Drawing.Size(1042, 60);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "操作";
             // 
@@ -496,7 +496,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1050, 491);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1052, 492);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl2
@@ -505,7 +505,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(3, 3);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1044, 415);
+            this.groupControl2.Size = new System.Drawing.Size(1046, 416);
             this.groupControl2.TabIndex = 5;
             this.groupControl2.Text = "配盘信息查询";
             // 
@@ -522,7 +522,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1040, 391);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1042, 392);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // groupControl3
@@ -531,7 +531,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(3, 63);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(1034, 325);
+            this.groupControl3.Size = new System.Drawing.Size(1036, 326);
             this.groupControl3.TabIndex = 10;
             this.groupControl3.Text = "配盘详细";
             // 
@@ -542,7 +542,7 @@
             this.gc_PalletInfor.MainView = this.gridView1;
             this.gc_PalletInfor.Margin = new System.Windows.Forms.Padding(0);
             this.gc_PalletInfor.Name = "gc_PalletInfor";
-            this.gc_PalletInfor.Size = new System.Drawing.Size(1030, 301);
+            this.gc_PalletInfor.Size = new System.Drawing.Size(1032, 302);
             this.gc_PalletInfor.TabIndex = 0;
             this.gc_PalletInfor.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -565,7 +565,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1034, 54);
+            this.panel1.Size = new System.Drawing.Size(1036, 54);
             this.panel1.TabIndex = 0;
             // 
             // ce_PalletCode
@@ -583,7 +583,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 491);
+            this.ClientSize = new System.Drawing.Size(1052, 492);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "PutawayView";
             this.Text = "上架管理";

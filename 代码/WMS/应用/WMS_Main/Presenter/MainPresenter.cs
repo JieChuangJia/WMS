@@ -16,6 +16,8 @@ namespace Aoyou_WMS
         private SysRoleBll bllRole = new SysRoleBll();
         private Goods_PropertyBll bllProperty = new Goods_PropertyBll();
         private SysLogBLL bllSysLog = new SysLogBLL();
+        private WH_AreaBll bllArea = new WH_AreaBll();
+        private WH_WareHouseBll bllWareHouse = new WH_WareHouseBll();
         //private WmsViewManager wmsViewManager = new WmsViewManager();
         private WMSManager wmsManager = new WMSManager();
         public MainPresenter()
@@ -26,6 +28,7 @@ namespace Aoyou_WMS
             wmsManager.ResgistShowMaterialProperty(ShowMaterialProperty);
             wmsManager.ResgistShowUserProperty(ShowUserProperty);
             wmsManager.ResgistShowRoleProperty(ShowRoleProperty);
+            wmsManager.ResgistShowAreaProperty(ShowAreaProperty);
             
         }
 
@@ -99,6 +102,58 @@ namespace Aoyou_WMS
                 roleModel.角色描述 = role.SysRole_Desc;
                 roleModel.角色等级 = role.SysRole_Level;
                 ViewDataManager.ROLEVIEWDATA.RoleListData.Add(roleModel);
+            }
+        }
+
+        public void ShowAreaProperty(string wareInfo)
+        {
+            ViewDataManager.WAREAREAVIEWDATA.AreaListData.Clear();
+            WH_WareHouseModel house = bllWareHouse.GetModelByName(wareInfo);
+            if (house == null)
+            {
+                return;
+            }
+            List<WH_AreaModel> areaList = bllArea.GetModels(house.WareHouse_ID);
+            if (areaList == null)
+            {
+                return;
+            }
+
+            foreach (WH_AreaModel area in areaList)
+            {
+                AreaDataModel model = new AreaDataModel();
+                model.区域名称 = area.Area_Name;
+                model.区域启用状态 = area.Area_Flag;
+                model.区域类型 = area.Area_Type;
+                model.区域编号 = area.Area_ID;
+                model.区域编码 = area.Area_Code;
+                model.区域颜色 = area.Area_BackColor;
+                model.库房名称 = area.WareHouse_ID;
+                ViewDataManager.WAREAREAVIEWDATA.AreaListData.Add(model);
+            }
+
+        }
+
+        public void ShowAreaColorProperty(string wareName)
+        {
+            ViewDataManager.WAREAREAVIEWDATA.AreaColorListData.Clear();
+            WH_WareHouseModel house = bllWareHouse.GetModelByName(wareName);
+            if (house == null)
+            {
+                return;
+            }
+            List<WH_AreaModel> areaList = bllArea.GetModels(house.WareHouse_ID);
+            if (areaList == null)
+            {
+                return;
+            }
+
+            foreach (WH_AreaModel area in areaList)
+            {
+                AreaColorModel model = new AreaColorModel();
+                model.区域名称 = area.Area_Name;
+                model.区域颜色 = area.Area_BackColor;
+                ViewDataManager.WAREAREAVIEWDATA.AreaColorListData.Add(model);
             }
         }
     }

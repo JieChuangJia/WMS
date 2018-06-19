@@ -56,6 +56,11 @@ namespace WMS_Kernel
 
         private void ShowTabEventHandler(object sender, ItemClickEventArgs e)
         {
+            if (this.IWmsFrame.RoleLevel > 2)
+            {
+                this.ShowMessage("信息提示", "当前用户没有此操作权限！");
+                return;
+            }
             this.IWmsFrame.ShowView(this, true);
         }
 
@@ -71,6 +76,11 @@ namespace WMS_Kernel
 
         private void sb_DeleteGoods_Click(object sender, EventArgs e)
         {
+            if (this.IWmsFrame.RoleLevel > 2)
+            {
+                this.ShowMessage("信息提示", "当前用户没有此操作权限！");
+                return;
+            }
             if(this.AskMessage("信息提示","您确定要删除选中角色么？")!=0)
             {
                 return;
@@ -101,11 +111,21 @@ namespace WMS_Kernel
 
         private void sb_AddRole_Click(object sender, EventArgs e)
         {
+            if (this.IWmsFrame.RoleLevel > 2)
+            {
+                this.ShowMessage("信息提示", "当前用户没有此操作权限！");
+                return;
+            }
             addView.ShowDialog();
         }
 
         private void sb_ModifyRole_Click(object sender, EventArgs e)
         {
+            if (this.IWmsFrame.RoleLevel > 2)
+            {
+                this.ShowMessage("信息提示", "当前用户没有此操作权限！");
+                return;
+            }
             if (this.gv_RoleList.GetSelectedRows() == null || this.gv_RoleList.GetSelectedRows().Count() == 0)
             {
                 this.ShowMessage("信息提示", "请选择要修改的角色！");
