@@ -11,6 +11,7 @@ namespace WMS_Kernel
     {
         WH_WareHouseBll bllHouse = new WH_WareHouseBll();
         View_CellBLL bllViewCell = new View_CellBLL();
+        WH_CellBll bllCell = new WH_CellBll();
         public StockTakingUnshelvePresenter(IStockTakingUnshelveView view,IWMSFrame wmsframe):base(view,wmsframe)
         { }
 
@@ -21,7 +22,12 @@ namespace WMS_Kernel
         }
         public void InitPosList(string houseName, int rowth)
         {
-            List<string> posTypeList = bllViewCell.GetCellPositionType(houseName, rowth);
+            WH_WareHouseModel house = bllHouse.GetModelByName(houseName);
+            if(house==null)
+            {
+                return;
+            }
+            List<string> posTypeList = bllCell.GetCellPositionType(house.WareHouse_ID, rowth);
             this.View.InitPosTypeList(posTypeList);
         }
         private void InitHouseList()

@@ -123,6 +123,10 @@ namespace WMS_Kernel
            // for(int i=0;i<Enum.GetNames(typeof(EnumLogicArea)).Length;i++)
             for (int i = 0; i < areaList.Count(); i++)
             {
+                if(areaList[i].Area_Name == "暂存区")
+                {
+                    continue;
+                }
                 string areaName = areaList[i].Area_Name;//Enum.GetNames(typeof(EnumLogicArea))[i];
                 this.cb_HouseArea.Items.Add(areaName);
             }

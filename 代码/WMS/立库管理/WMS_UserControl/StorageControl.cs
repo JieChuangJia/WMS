@@ -40,10 +40,12 @@ namespace Storage
         /// <param name="e"></param>
         private void GoodsSiteControl_Paint(object sender, PaintEventArgs e)
         {
+
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias; //SmoothingMode.HighQuality;
             e.Graphics.PixelOffsetMode = PixelOffsetMode.HighSpeed;
             e.Graphics.TranslateTransform(this.AutoScrollPosition.X, this.AutoScrollPosition.Y);
             storage.DrawStorage(e.Graphics);//可以考虑只刷新当前可见区域
+ 
             if (this.selectPositions != null)
             {
                 storage.DrawSelect(e.Graphics, this.selectPositions);
@@ -129,9 +131,18 @@ namespace Storage
             set
             {
                 this.dataSour = value;
-                this.storage.DataSour = this.dataSour;
-                SetScrollSize();
-                this.Invalidate();
+                if (this.dataSour == null||this.dataSour.Count==0)
+                {
+                    this.storage.Clear();
+                    this.Refresh();
+                }
+                else
+                {
+                    this.storage.DataSour = this.dataSour;
+                    SetScrollSize();
+                    this.Invalidate();
+                }
+
             }
         }
 

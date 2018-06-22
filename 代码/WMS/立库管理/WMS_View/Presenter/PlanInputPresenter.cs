@@ -130,6 +130,7 @@ namespace WMS_Kernel
                     this.View.ShowMessage("信息提示", "计划编号已存在：["+planCode+"]");
                     return;
                 }
+
                 PlanMainModel plan = new PlanMainModel();
                
                 plan.Plan_Code = planCode;

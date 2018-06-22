@@ -2,6 +2,7 @@
 using System.Data;
 using System.Text;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 namespace WMS_Database
 {
 	/// <summary>
@@ -545,6 +546,29 @@ namespace WMS_Database
 
         #endregion  Method
 		#region  ExtensionMethod
+        public List<string> GetCellPositionType(string deviceCode, int rowth)
+        {
+            string sqlStr = "select distinct Cell_Chlid_Position,Cell_Child_Order from WH_Cell_Children where" + " WH_Cell_Children.Cell_ID in(select  WH_Cell.Cell_ID from  WH_Cell where Device_Code ='" + deviceCode + "' and Cell_Row=" + rowth + ")"
+          
+                + " order by Cell_Child_Order asc";
+
+            DataSet ds = DbHelperSQL.Query(sqlStr);
+            List<string> posList = new List<string>();
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    string pos = ds.Tables[0].Rows[i][0].ToString();
+                    posList.Add(pos);
+
+                }
+                return posList;
+            }
+            else
+            {
+                return null;
+            }
+        }
         public bool DeleteByAreaID(string areaID)
         {
             StringBuilder strSql = new StringBuilder();
@@ -727,8 +751,8 @@ namespace WMS_Database
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select Cell_ID,WH_Cell.Area_ID,Cell_Code,Cell_Name,Cell_Lane,Device_Code,Shelf_Type,Cell_InOut,Cell_Type,Cell_Storage_Type,Cell_Fork_Type,Cell_Layer,Cell_Column,Cell_Row,Cell_Reserve1,Cell_Reserve2,Cell_Reserve3,Cell_Reserve4,Cell_Reserve5 ");
-            strSql.Append(" FROM WH_Cell ");
-            strSql.Append("   inner join [WMSDB2].[dbo].WH_Area on [WMSDB2].[dbo].[WH_Cell].Area_ID = [WMSDB2].[dbo].WH_Area.Area_ID where  [WMSDB2].[dbo].WH_Area.WareHouse_ID ='"+houseID+"' ");
+            strSql.Append(" FROM WH_Cell where Device_Code='" + houseID + "'");
+            //strSql.Append("   inner join [WMSDB2].[dbo].WH_Area on [WMSDB2].[dbo].[WH_Cell].Area_ID = [WMSDB2].[dbo].WH_Area.Area_ID where  [WMSDB2].[dbo].WH_Area.WareHouse_ID ='"+houseID+"' ");
             strSql.Append(" and Cell_Row = " + rowth + " and Cell_Column >=" + stCol + " and Cell_Column<= " + edCol + " and Cell_Layer>= " + stLayer + " and Cell_Layer<= " + edLayer);
         
             return DbHelperSQL.Query(strSql.ToString());

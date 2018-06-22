@@ -191,6 +191,7 @@ namespace Storage
 
                     this.StorageSize = new Size(controlWidth, controlHeigt);
                 }
+              
             }
         }
         /// <summary>
@@ -229,6 +230,10 @@ namespace Storage
         #endregion
 
         #region 货仓方法
+        public void Clear()
+        {
+            this.data.Clear();
+        }
         /// <summary>
         /// 任务锁定时绘制
         /// </summary>

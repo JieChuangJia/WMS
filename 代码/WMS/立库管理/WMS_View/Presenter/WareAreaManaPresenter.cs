@@ -33,6 +33,17 @@ namespace WMS_Kernel
 
         public bool DeleteArea(string areaID)
         {
+            WH_AreaModel areaModel = bllArea.GetModel(areaID);
+            if(areaID == null)
+            {
+                this.View.ShowMessage("信息提示", "不存在此区域");
+                return false;
+            }
+            if(areaModel.Area_Type == "暂存区")
+            {
+                this.View.ShowMessage("信息提示", "暂存区不允许删除！");
+                return false;
+            }
             return bllArea.Delete(areaID);
         }
 

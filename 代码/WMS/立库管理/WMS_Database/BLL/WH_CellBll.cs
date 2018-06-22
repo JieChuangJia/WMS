@@ -336,8 +336,9 @@ namespace WMS_Database
             {
                 return null;
             }
-            sqlStr += " where WH_Cell.Area_ID in (select WH_Area.Area_ID from WH_Area where WH_Area.WareHouse_ID='" + houseID + "') and WH_Cell.Cell_Row !=0"
-                + " and WH_Cell.Cell_Column !=0 and  WH_Cell.Cell_Layer !=0";
+            sqlStr += " where Device_Code='" + houseID + "'";
+            //sqlStr += " where WH_Cell.Area_ID in (select WH_Area.Area_ID from WH_Area where WH_Area.WareHouse_ID='" + houseID + "') and WH_Cell.Cell_Row !=0"
+            //    + " and WH_Cell.Cell_Column !=0 and  WH_Cell.Cell_Layer !=0";
             DataSet ds = DbHelperSQL.Query(sqlStr);
             if (ds != null && ds.Tables.Count > 0)
             {
@@ -355,6 +356,41 @@ namespace WMS_Database
             data.Sort();
             return data;
         }
+
+        public List<string> GetRowListByDeviceCode(string device_Code)
+        {
+            List<string> data = new List<string>();
+            string sqlStr = "select distinct";
+
+            sqlStr += " Cell_Row from WH_Cell";
+
+            sqlStr += " where Device_Code = '" + device_Code + "' and Cell_Type ='货位'";
+            DataSet ds = DbHelperSQL.Query(sqlStr);
+            if (ds != null && ds.Tables.Count > 0)
+            {
+
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    string row = ds.Tables[0].Rows[i][0].ToString();
+                    if (row == "")
+                    {
+                        continue;
+                    }
+                    data.Add(row);
+                }
+                return data;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public List<string> GetCellPositionType(string deviceCode, int rowth)
+        {
+            return dal.GetCellPositionType(deviceCode, rowth);
+        }
+
 		#endregion  ExtensionMethod
 	}
 }

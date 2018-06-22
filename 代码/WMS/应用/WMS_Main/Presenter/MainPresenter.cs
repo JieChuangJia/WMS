@@ -121,6 +121,10 @@ namespace Aoyou_WMS
 
             foreach (WH_AreaModel area in areaList)
             {
+                if(area.Area_Type == "暂存区")
+                {
+                    continue;//暂存区不显示
+                }
                 AreaDataModel model = new AreaDataModel();
                 model.区域名称 = area.Area_Name;
                 model.区域启用状态 = area.Area_Flag;

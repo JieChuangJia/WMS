@@ -172,9 +172,20 @@ namespace WMS_Kernel
 
         private void cbe_HouseList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            this.storageControl1.DataSour = null;
             string houseName = this.cbe_HouseList.Text.Trim();
+           
+            if(houseName=="")
+            {
+                return;
+            }
             this.Presenter.InitHouseRowList(houseName);
-            this.Presenter.InitPosList(this.cbe_HouseList.Text.Trim(), int.Parse(this.cbe_Row.Text.Trim()));
+            string rowstr = this.cbe_Row.Text.Trim();
+            if (rowstr == "")
+            {
+                return;
+            }
+            this.Presenter.InitPosList(houseName, int.Parse(rowstr));
             this.Presenter.GetWareArea(houseName);
             RefreshData();
         }

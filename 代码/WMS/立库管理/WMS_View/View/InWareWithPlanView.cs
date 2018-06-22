@@ -207,6 +207,8 @@ namespace WMS_Kernel
             this.presenter.QueryPlan(this.cbe_PlanID.Text.Trim());
         }
 
+     
+
         //private void cbe_HouseName_SelectedIndexChanged(object sender, EventArgs e)
         //{
         //    this.presenter.IniTargetPos(this.cbe_HouseName.Text.Trim());

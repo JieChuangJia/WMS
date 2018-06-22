@@ -121,6 +121,18 @@ namespace WMS_Kernel
             this.presenter.DeletePlanList(planCode);
         }
 
+        private void gv_PlanList_Click(object sender, EventArgs e)
+        {
+            if (this.gv_PlanList == null || this.gv_PlanList.GetSelectedRows().Count() == 0)
+            {
+                //this.ShowMessage("信息提示", "请选择计划编号！");
+                return;
+            }
+            int currRow = this.gv_PlanList.GetSelectedRows()[0];
+            string planCode = this.gv_PlanList.GetRowCellValue(currRow, "计划单号").ToString();
+            this.presenter.QueryPlanList(planCode);
+        }
+
         
          
 

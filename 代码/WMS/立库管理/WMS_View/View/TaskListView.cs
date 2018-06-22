@@ -146,6 +146,18 @@ namespace WMS_Kernel
             string palletCode = this.gv_TaskList.GetRowCellValue(currRow, "托盘条码").ToString();
             this.presenter.CancelTask(palletCode);
         }
+
+        private void gc_TaskList_Click(object sender, EventArgs e)
+        {
+            if (this.gv_TaskList == null || this.gv_TaskList.GetSelectedRows().Count() == 0)
+            {
+                //this.ShowMessage("信息提示", "请选择计划编号！");
+                return;
+            }
+            int currRow = this.gv_TaskList.GetSelectedRows()[0];
+            string palletCode = this.gv_TaskList.GetRowCellValue(currRow, "托盘条码").ToString();
+            this.presenter.QueryTaskDetail(palletCode);
+        }
  
     }
 }

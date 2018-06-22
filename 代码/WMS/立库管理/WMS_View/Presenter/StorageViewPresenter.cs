@@ -56,7 +56,13 @@ namespace WMS_Kernel
         }
         public void InitPosList(string houseName,int rowth)
         {
-            List<string> posTypeList = bllViewCell.GetCellPositionType(houseName, rowth);
+            WH_WareHouseModel house = bllHouse.GetModelByName(houseName);
+            if (house == null)
+            {
+                return;
+            }
+           
+            List<string> posTypeList = bllCell.GetCellPositionType(house.WareHouse_ID, rowth);
             this.View.InitPosTypeList(posTypeList);
         }
         public void RefreshPosData(string houseName,string row,string posType)
@@ -220,6 +226,10 @@ namespace WMS_Kernel
 
             foreach (WH_AreaModel area in areaList)
             {
+                if(area.Area_Type == "暂存区")
+                {
+                    continue;
+                }
                 AreaColorModel model = new AreaColorModel();
                 model.区域名称 = area.Area_Name;
                 model.区域颜色 = area.Area_BackColor;
@@ -312,7 +322,12 @@ namespace WMS_Kernel
         }
         public void InitHouseRowList(string houseName)
         {
-            List<string> rowList = bllViewCell.GetRowListByHouseName(houseName);
+            WH_WareHouseModel wareHouse = bllHouse.GetModelByName(houseName);
+            if(wareHouse == null)
+            {
+                return;
+            }
+            List<string> rowList = bllCell.GetRowListByDeviceCode(wareHouse.WareHouse_ID);
             this.View.BingHouseRowData(rowList);
         }
         /// <summary>

@@ -133,34 +133,7 @@ namespace WMS_Database
 
         #endregion  BasicMethod
         #region  ExtensionMethod
-        public List<string> GetRowListByHouseName(string houseName)
-        {
-            List<string> data = new List<string>();
-            string sqlStr = "select distinct";
-
-            sqlStr += " Cell_Row from View_Cell";
-
-            sqlStr += " where WareHouse_Name = '" + houseName + "' and Cell_Type ='货位'";
-            DataSet ds = DbHelperSQL.Query(sqlStr);
-            if (ds != null && ds.Tables.Count > 0)
-            {
-
-                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-                {
-                    string row = ds.Tables[0].Rows[i][0].ToString();
-                    if (row == "")
-                    {
-                        continue;
-                    }
-                    data.Add(row);
-                }
-                return data;
-            }
-            else
-            {
-                return null;
-            }
-        }
+     
 
         public List<View_CellModel> GetHouseRowCells(string houseName, string rowth,string cellPos)
         {
@@ -276,10 +249,10 @@ namespace WMS_Database
                 return null;
             }
         }
-        public List<string> GetCellPositionType(string houseName, int rowth)
-        {
-            return dal.GetCellPositionType(houseName, rowth);
-        }
+        //public List<string> GetCellPositionType(string houseName, int rowth)
+        //{
+        //    return dal.GetCellPositionType(houseName, rowth);
+        //}
         public View_CellModel ApplyCell(string houseID)
         {
             string wereStr = "WareHouse_ID='" + houseID + "' and Cell_Child_Status ='空闲' and Cell_Child_Run_Status ='完成' and Cell_Child_Flag ='1' and Cell_Type ='货位' order by Cell_Column asc,"
