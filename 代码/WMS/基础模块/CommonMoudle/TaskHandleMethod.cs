@@ -500,6 +500,16 @@ namespace CommonMoudle
                 restr ="终止货位为空！";
                 return false;
             }
+            if(startCell.Cell_Child_Status!=EnumCellStatus.满位.ToString()||startCell.Cell_Child_Run_Status!=EnumGSTaskStatus.完成.ToString())
+            {
+                restr = "起始货位状态错误，不能移库！";
+                return false;
+            }
+            if (endCell.Cell_Child_Status != EnumCellStatus.空闲.ToString() || endCell.Cell_Child_Run_Status != EnumGSTaskStatus.完成.ToString())
+            {
+                restr = "终止货位状态错误，不能移库！";
+                return false;
+            }
             List<View_StockListModel> stockList = bllViewStockList.GetModelListByCellID(startCellID);
             //if(stockList== null)
             ManageModel manage = new ManageModel();
@@ -508,7 +518,7 @@ namespace CommonMoudle
             manage.Manage_BreakDown_Status = "待分解";
             manage.Mange_Start_Cell_ID = startCellID;
             manage.Mange_End_Cell_ID = endCellID;
-
+            manage.Mange_Type_ID = "5";
             if(stockList!=null&&stockList.Count>0)
             {
                 manage.Mange_Full_Flag = stockList[0].Stock_Full_Flag;

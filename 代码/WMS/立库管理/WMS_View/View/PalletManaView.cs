@@ -184,8 +184,9 @@ namespace WMS_Kernel
             {
                 return;
             }
-            if (this.gv_PalletInfor.GetSelectedRows().Count() == 0)
+            if (this.gv_PalletList.GetSelectedRows().Count() == 0)
             {
+                this.ShowMessage("信息提示", "请选中要配置的托盘！");
                 return;
             }
             int currRow = this.gv_PalletList.GetSelectedRows()[0];

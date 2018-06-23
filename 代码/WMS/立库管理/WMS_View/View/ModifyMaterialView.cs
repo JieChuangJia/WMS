@@ -50,7 +50,7 @@ namespace WMS_Kernel
             {
                 coll.EndUpdate();
             }
-            this.cb_GoodsType.SelectedIndex = -1;
+            this.cb_GoodsType.SelectedIndex = 0;
   
         }
         #endregion
@@ -63,14 +63,14 @@ namespace WMS_Kernel
             coll.BeginUpdate();
             try
             {
-                coll.Add("1");
-                coll.Add("0");
+                coll.Add("是");
+                coll.Add("否");
             }
             finally
             {
                 coll.EndUpdate();
             }
-            this.cb_GoodsType.SelectedIndex = -1;
+            this.cb_GoodsType.SelectedIndex = 0;
         }
 
         public void ShowMessage(string title, string content)
@@ -87,11 +87,11 @@ namespace WMS_Kernel
             LoadFlag();
             if (modGoods.MaterialFlag == "1")
             {
-                this.cb_Flag.SelectedText ="启用";
+                this.cb_Flag.Text ="是";
             }
             else
             {
-                this.cb_Flag.SelectedText = "禁用";
+                this.cb_Flag.Text = "否";
             }
             
             this.cb_GoodsType.SelectedText = modGoods.MaterialType;

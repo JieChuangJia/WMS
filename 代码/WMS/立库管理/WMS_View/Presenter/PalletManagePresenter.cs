@@ -21,6 +21,9 @@ namespace WMS_Kernel
          Stock_ListBll bllStockList = new Stock_ListBll();
          WH_Station_LogicBLL bllStationLogic = new WH_Station_LogicBLL();
          GoodsBll bllGoods = new GoodsBll();
+        string currHouseName="";
+        string currPalletPos="";
+        string currPlanCode = "";
         public PalletManagePresenter(IPalletManageView view,IWMSFrame wmsFrame):base(view,wmsFrame)
         { }
         public override void Init()
@@ -88,6 +91,9 @@ namespace WMS_Kernel
         /// <param name="palletPos">配盘工位</param>
         public void QueryPallet(string houseName,string palletPos,string planCode)
         {
+            this.currHouseName = houseName;
+            this.currPalletPos = palletPos;
+            this.currPlanCode = planCode;
             List<View_StockListModel> stockList = bllViewStockList.GetModelList(houseName, palletPos,planCode);
 
             //var p1 = stockList.Distinct(sl=>sl.Stpcl);  
@@ -267,6 +273,7 @@ namespace WMS_Kernel
 
                 }
                 this.View.ShowMessage("信息提示", "配盘成功！");
+                QueryPallet(currHouseName, currPalletPos, currPlanCode);
             }
             catch (Exception ex)
             {
@@ -303,6 +310,9 @@ namespace WMS_Kernel
                 }
                 bllStock.Delete(stock.Stock_ID);
                 this.View.ShowMessage("信息提示", "取消配盘成功！");
+                ViewDataManager.PALLETMANAGEDATA.PalletInforData.Clear();
+                QueryPallet(currHouseName, currPalletPos, currPlanCode);
+
             }
             catch(Exception ex)
             {

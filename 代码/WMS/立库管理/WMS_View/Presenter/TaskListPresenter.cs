@@ -162,6 +162,7 @@ namespace WMS_Kernel
                 palletInfor.存储货位 = stockDetail.Cell_Name +"-"+stockDetail.Cell_Chlid_Position;
                 palletInfor.存储库区 = stockDetail.Area_Name;
                 palletInfor.更新时间 = stockDetail.Stock_List_Update_Time.ToString();
+                palletInfor.库房 = stockDetail.WareHouse_Name;
                 palletInfor.规格型号 = stockDetail.Goods_Model;
                 palletInfor.计量单位 = stockDetail.Goods_Unit;
                 palletInfor.入库时间 = stockDetail.Stock_List_Entry_Time.ToString();

@@ -396,7 +396,7 @@ namespace WMS_Kernel
             }
             MoveHouseProModel moveHouseProModel = new MoveHouseProModel();
             moveHouseProModel.HouseName = this.cbe_HouseList.Text.Trim();
-            moveHouseProModel.CellName = pos.Rowth + "排-" + pos.Columnth + "列-" + pos.Layer + "层";
+            moveHouseProModel.CellName =( pos.Rowth +1)+ "排-" + pos.Columnth + "列-" + pos.Layer + "层";
             moveHouseProModel.CellPos = (EnumCellPos)Enum.Parse(typeof(EnumCellPos), this.cbe_PosTypeList.Text.Trim());
             moveHouseProModel.CellChildID = pos.GoodsSiteID;
             this.te_Start.Tag = moveHouseProModel;
@@ -417,7 +417,7 @@ namespace WMS_Kernel
             }
             MoveHouseProModel moveHouseProModel = new MoveHouseProModel();
             moveHouseProModel.HouseName = this.cbe_HouseList.Text.Trim();
-            moveHouseProModel.CellName = pos.Rowth + "排-" + pos.Columnth + "列-" + pos.Layer+"层";
+            moveHouseProModel.CellName = (pos.Rowth +1)+ "排-" + pos.Columnth + "列-" + pos.Layer+"层";
             moveHouseProModel.CellPos = (EnumCellPos)Enum.Parse(typeof(EnumCellPos), this.cbe_PosTypeList.Text.Trim());
             moveHouseProModel.CellChildID = pos.GoodsSiteID;
             this.te_EndPos.Tag = moveHouseProModel;

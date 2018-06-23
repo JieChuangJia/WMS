@@ -52,6 +52,7 @@ namespace WMS_Service_Main
             //}
         }
         #region 实现IWMS
+        public int RoleLevel { get; set; }
         public void SetTabChangeEvent(EventHandler tabChangeEventHandler)
         {
             this.xtraTabbedMdiManager1.SelectedPageChanged += tabChangeEventHandler;

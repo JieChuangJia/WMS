@@ -194,7 +194,7 @@ namespace WMS_Kernel
                 this.WmsFrame.WriteLog("下架逻辑", "", "提示", restr);
                 return;
             }
-            if(CommonMoudle.TaskHandleMethod.UpdatePlanOrderedNum(manage.Mange_ID) == false)
+            if (CommonMoudle.TaskHandleMethod.UpdatePlanOrderedNum(manageID) == false)
             {
                 this.WmsFrame.WriteLog("下架逻辑", "", "提示", "更新计划下达数据数量失败：计划编码：" + planCode + "，托盘号：" +palletCode);
                 return;

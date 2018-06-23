@@ -80,6 +80,11 @@ namespace WMS_Kernel
 
         private void sb_LogQuery_Click(object sender, EventArgs e)
         {
+            if((this.de_EndTime.DateTime-this.de_StartTime.DateTime).TotalSeconds<0)
+            {
+                this.ShowMessage("信息提示", "开始时间大于结束时间！");
+                return;
+            }
             this.presenter.Query(this.de_StartTime.DateTime, this.de_EndTime.DateTime, this.cbe_LogCate.Text.Trim(), this.ce_LikeQuery.Checked, this.te_LikeContent.Text);
         }
         
