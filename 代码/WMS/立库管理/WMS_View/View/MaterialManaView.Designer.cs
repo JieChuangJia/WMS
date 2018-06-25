@@ -130,8 +130,9 @@
             this.gv_MaterialList.GroupPanelText = "物料清单";
             this.gv_MaterialList.IndicatorWidth = 40;
             this.gv_MaterialList.Name = "gv_MaterialList";
-            this.gv_MaterialList.OptionsSelection.MultiSelect = true;
-            this.gv_MaterialList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_MaterialList.OptionsBehavior.Editable = false;
+            this.gv_MaterialList.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gv_MaterialList.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_MaterialList.OptionsView.ShowGroupPanel = false;
             // 
             // groupControl3
@@ -161,8 +162,9 @@
             this.gridView2.GridControl = this.gc_PropertyDetail;
             this.gridView2.GroupPanelText = "物料属性";
             this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsSelection.MultiSelect = true;
-            this.gridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gridView2.OptionsBehavior.Editable = false;
+            this.gridView2.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // sb_ClosePro

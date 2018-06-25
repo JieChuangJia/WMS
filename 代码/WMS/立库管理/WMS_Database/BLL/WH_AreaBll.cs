@@ -143,9 +143,9 @@ namespace WMS_Database
             string sqlStr = "WareHouse_ID ='" +houseID +"'";
             return GetModelList(sqlStr);
         }
-        public WH_AreaModel GetModelByName(string areaName)
+        public WH_AreaModel GetModelByName(string houseID,string areaName)
         {
-            string sqlStr = "Area_Name ='" + areaName + "'";
+            string sqlStr = "Area_Name ='" + areaName + "' and WareHouse_ID='" + houseID +"'";
             List<WH_AreaModel> areaList = GetModelList(sqlStr);
             if(areaList!= null&& areaList.Count>0)
             {

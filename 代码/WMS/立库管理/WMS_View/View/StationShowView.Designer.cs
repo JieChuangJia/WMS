@@ -643,8 +643,9 @@
             this.gridView2.GroupPanelText = "货位物料详细";
             this.gridView2.IndicatorWidth = 40;
             this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsSelection.MultiSelect = true;
-            this.gridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gridView2.OptionsBehavior.Editable = false;
+            this.gridView2.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // splitContainer1
@@ -918,8 +919,9 @@
             this.gv_Area.GroupPanelText = "货位物料详细";
             this.gv_Area.IndicatorWidth = 40;
             this.gv_Area.Name = "gv_Area";
-            this.gv_Area.OptionsSelection.MultiSelect = true;
-            this.gv_Area.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_Area.OptionsBehavior.Editable = false;
+            this.gv_Area.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gv_Area.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_Area.OptionsView.ShowGroupPanel = false;
             this.gv_Area.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gv_Area_RowCellStyle);
             // 

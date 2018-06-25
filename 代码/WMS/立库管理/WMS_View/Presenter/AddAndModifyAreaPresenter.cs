@@ -24,6 +24,12 @@ namespace WMS_Kernel
             {
                 return false;
             }
+            WH_AreaModel existArea = bllArea.GetModelByName(house.WareHouse_ID, area.AreaName);
+            if(existArea!= null)
+            {
+                this.View.ShowMessage("信息提示", "此区域名称已经存在！");
+                return false;
+            }
             model.WareHouse_ID = house.WareHouse_ID;
             model.Area_BackColor = area.AreaBackColor;
             model.Area_Code = area.AreaCode;
@@ -39,6 +45,13 @@ namespace WMS_Kernel
             WH_AreaModel model = bllArea.GetModel(area.AreaID); 
             if(model == null)
             {
+                return false;
+            }
+
+            WH_AreaModel existArea = bllArea.GetModelByName(area.WareHouseID, area.AreaName);
+            if (existArea != null&&model.Area_ID!= existArea.Area_ID)
+            {
+                this.View.ShowMessage("信息提示", "此区域名称已经存在！");
                 return false;
             }
             model.WareHouse_ID = area.WareHouseID;

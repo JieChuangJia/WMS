@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using WMS_Database;
+using WMS_Interface;
 
 namespace WMS_Kernel
 {
@@ -21,7 +22,7 @@ namespace WMS_Kernel
 
 
     }
-    public interface IAddAndModifyAreaView
+    public interface IAddAndModifyAreaView:IBaseView
     {
 
     }

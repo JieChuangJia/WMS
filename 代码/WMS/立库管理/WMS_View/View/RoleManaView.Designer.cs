@@ -102,8 +102,9 @@
             this.gv_RoleList.GroupPanelText = "角色清单";
             this.gv_RoleList.IndicatorWidth = 40;
             this.gv_RoleList.Name = "gv_RoleList";
-            this.gv_RoleList.OptionsSelection.MultiSelect = true;
-            this.gv_RoleList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_RoleList.OptionsBehavior.Editable = false;
+            this.gv_RoleList.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gv_RoleList.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_RoleList.OptionsView.ColumnAutoWidth = false;
             this.gv_RoleList.OptionsView.ShowGroupPanel = false;
             // 

@@ -13,7 +13,7 @@ using WMS_Interface;
 
 namespace WMS_Kernel
 {
-    public partial class AddAndModifyAreaView: DevExpress.XtraEditors.XtraForm,IAddAndModifyAreaView
+    public partial class AddAndModifyAreaView: ChildViewBase,IAddAndModifyAreaView
     {
         //定义委托
         public delegate void MyDelegate();
@@ -73,6 +73,11 @@ namespace WMS_Kernel
                 this.ShowMessage("信息提示", "请设置颜色");
                 return;
             }
+            //if(this.txtEdit_AreaName.Text=="默认库区")
+            //{
+            //    this.ShowMessage("信息提示", "默认库区为系统关键词，请重启设定库区名称");
+            //    return;
+            //}
             area.AreaBackColor = this.txtEdit_AreaColor.Text;
             area.AreaCode = this.textEdit_AreaCode.Text;
             if (this.cb_AreaEnable.Text.Trim() == "是")
@@ -119,7 +124,7 @@ namespace WMS_Kernel
 
         private void AddAndModifyAreaView_Load(object sender, EventArgs e)
         {
-            if(this.operateName == "添加")
+            if (this.operateName == "添加")
             {
                 this.cb_AreaEnable.Properties.Items.Clear();
                 this.cb_AreaEnable.Properties.Items.Add("是");
@@ -145,6 +150,10 @@ namespace WMS_Kernel
                 this.txtEdit_AreaName.Text = area.AreaName;
                 this.txtEdit_AreaType.Text = area.AreaType;
                 this.txtEdit_AreaColor.Text = area.AreaBackColor;
+                int r = int.Parse(area.AreaBackColor.Split(',')[0]);
+                int g = int.Parse(area.AreaBackColor.Split(',')[1]);
+                int b = int.Parse(area.AreaBackColor.Split(',')[2]);
+                this.txtEdit_AreaColor.BackColor = Color.FromArgb(r, g, b);
                 this.Text = "修改库房区域";
                 this.sb_Add.Text = "修改";
             }
@@ -158,6 +167,7 @@ namespace WMS_Kernel
             if(result == DialogResult.OK)
             {
                 this.txtEdit_AreaColor.Text = colorDialog.Color.R.ToString() + "," + colorDialog.Color.G.ToString() + "," + colorDialog.Color.B.ToString();
+                txtEdit_AreaColor.BackColor = colorDialog.Color;
             }
             
         }

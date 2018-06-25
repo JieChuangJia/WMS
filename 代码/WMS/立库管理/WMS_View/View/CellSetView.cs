@@ -230,7 +230,7 @@ namespace WMS_Kernel
                     MessageBox.Show("您的起止层设置错误！", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-                this.presenter.SetMulLayerMulColArea(this.cb_HouseArea.Text, this.rowth, startCol, endCol,startLayer,endLayer);
+                this.presenter.SetMulLayerMulColArea(this.houseName,this.cb_HouseArea.Text, this.rowth, startCol, endCol,startLayer,endLayer);
            
           
         }

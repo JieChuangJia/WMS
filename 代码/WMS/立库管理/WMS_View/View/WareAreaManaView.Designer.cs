@@ -74,8 +74,9 @@
             this.gv_AreaList.GridControl = this.gc_AreaList;
             this.gv_AreaList.IndicatorWidth = 40;
             this.gv_AreaList.Name = "gv_AreaList";
-            this.gv_AreaList.OptionsSelection.MultiSelect = true;
-            this.gv_AreaList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_AreaList.OptionsBehavior.Editable = false;
+            this.gv_AreaList.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gv_AreaList.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_AreaList.OptionsView.ColumnAutoWidth = false;
             this.gv_AreaList.OptionsView.ShowGroupPanel = false;
             this.gv_AreaList.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gv_AreaList_RowCellStyle);

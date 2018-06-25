@@ -757,6 +757,26 @@ namespace WMS_Database
         
             return DbHelperSQL.Query(strSql.ToString());
         }
+
+        public bool UpdateCellArea(string oldAreaID, string newAreaID)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("update WH_Cell set ");
+             
+             strSql.Append("Area_ID='" + newAreaID + "'");
+          
+          
+            strSql.Append(" where Area_ID='" + oldAreaID + "' ");
+            int rowsAffected = DbHelperSQL.ExecuteSql(strSql.ToString());
+            if (rowsAffected > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 		#endregion  ExtensionMethod
 	}
 }

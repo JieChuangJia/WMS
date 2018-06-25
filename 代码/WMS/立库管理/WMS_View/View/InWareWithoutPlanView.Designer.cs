@@ -552,8 +552,9 @@
             this.gridView3.GridControl = this.gridControl3;
             this.gridView3.IndicatorWidth = 40;
             this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsSelection.MultiSelect = true;
-            this.gridView3.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gridView3.OptionsBehavior.Editable = false;
+            this.gridView3.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView3.OptionsView.ColumnAutoWidth = false;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
@@ -798,8 +799,9 @@
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.IndicatorWidth = 40;
             this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsSelection.MultiSelect = true;
-            this.gridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gridView2.OptionsBehavior.Editable = false;
+            this.gridView2.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ColumnAutoWidth = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
@@ -1672,8 +1674,9 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.IndicatorWidth = 40;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsSelection.MultiSelect = true;
-            this.gridView1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 

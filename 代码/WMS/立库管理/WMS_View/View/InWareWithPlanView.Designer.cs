@@ -596,8 +596,9 @@
             this.gv_TrayGoods.GridControl = this.gc_TrayGoodsList;
             this.gv_TrayGoods.IndicatorWidth = 40;
             this.gv_TrayGoods.Name = "gv_TrayGoods";
-            this.gv_TrayGoods.OptionsSelection.MultiSelect = true;
-            this.gv_TrayGoods.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_TrayGoods.OptionsBehavior.Editable = false;
+            this.gv_TrayGoods.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gv_TrayGoods.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_TrayGoods.OptionsView.ColumnAutoWidth = false;
             this.gv_TrayGoods.OptionsView.ShowGroupPanel = false;
             // 
@@ -631,8 +632,9 @@
             this.gv_PlanList.GridControl = this.gc_PlanList;
             this.gv_PlanList.IndicatorWidth = 40;
             this.gv_PlanList.Name = "gv_PlanList";
-            this.gv_PlanList.OptionsSelection.MultiSelect = true;
-            this.gv_PlanList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_PlanList.OptionsBehavior.Editable = false;
+            this.gv_PlanList.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gv_PlanList.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_PlanList.OptionsView.ColumnAutoWidth = false;
             this.gv_PlanList.OptionsView.ShowGroupPanel = false;
             // 

@@ -171,8 +171,9 @@
             this.gv_stockList.GridControl = this.gc_StockList;
             this.gv_stockList.GroupPanelText = "库存详细";
             this.gv_stockList.Name = "gv_stockList";
-            this.gv_stockList.OptionsSelection.MultiSelect = true;
-            this.gv_stockList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_stockList.OptionsBehavior.Editable = false;
+            this.gv_stockList.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gv_stockList.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_stockList.OptionsView.ShowGroupPanel = false;
             // 
             // panelControl1
@@ -324,8 +325,9 @@
             this.gv_Stock.GridControl = this.gc_Stock;
             this.gv_Stock.GroupPanelText = "库存";
             this.gv_Stock.Name = "gv_Stock";
-            this.gv_Stock.OptionsSelection.MultiSelect = true;
-            this.gv_Stock.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_Stock.OptionsBehavior.Editable = false;
+            this.gv_Stock.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gv_Stock.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_Stock.OptionsView.ShowGroupPanel = false;
             // 
             // StockTakingUnshelveView

@@ -210,8 +210,9 @@
             this.gv_Syslog.GroupPanelText = "日志列表";
             this.gv_Syslog.IndicatorWidth = 40;
             this.gv_Syslog.Name = "gv_Syslog";
-            this.gv_Syslog.OptionsSelection.MultiSelect = true;
-            this.gv_Syslog.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_Syslog.OptionsBehavior.Editable = false;
+            this.gv_Syslog.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gv_Syslog.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_Syslog.OptionsView.ShowGroupPanel = false;
             // 
             // SysLogView

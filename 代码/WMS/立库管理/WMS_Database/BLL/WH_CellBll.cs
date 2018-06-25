@@ -267,9 +267,9 @@ namespace WMS_Database
             }
             return true;
         }
-        public bool SetSingleLayerArea(string logicAreaName, int rowth, int layer)
+        public bool SetSingleLayerArea(string houseID,string logicAreaName, int rowth, int layer)
         {
-            WH_AreaModel area = bllArea.GetModelByName(logicAreaName);
+            WH_AreaModel area = bllArea.GetModelByName(houseID,logicAreaName);
             if(area == null)
             {
                 return false;
@@ -389,6 +389,11 @@ namespace WMS_Database
         public List<string> GetCellPositionType(string deviceCode, int rowth)
         {
             return dal.GetCellPositionType(deviceCode, rowth);
+        }
+
+        public bool UpdateCellArea(string oldAreaID,string newAreaID)
+        {
+            return dal.UpdateCellArea(oldAreaID, newAreaID);
         }
 
 		#endregion  ExtensionMethod

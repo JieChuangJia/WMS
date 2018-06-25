@@ -410,8 +410,9 @@
             this.gv_Stock.GridControl = this.gc_Stock;
             this.gv_Stock.IndicatorWidth = 40;
             this.gv_Stock.Name = "gv_Stock";
-            this.gv_Stock.OptionsSelection.MultiSelect = true;
-            this.gv_Stock.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_Stock.OptionsBehavior.Editable = false;
+            this.gv_Stock.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gv_Stock.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_Stock.OptionsView.ColumnAutoWidth = false;
             this.gv_Stock.OptionsView.ShowGroupPanel = false;
             // 
@@ -457,8 +458,9 @@
             this.gv_PlanList.GridControl = this.gc_PlanList;
             this.gv_PlanList.IndicatorWidth = 40;
             this.gv_PlanList.Name = "gv_PlanList";
-            this.gv_PlanList.OptionsSelection.MultiSelect = true;
-            this.gv_PlanList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_PlanList.OptionsBehavior.Editable = false;
+            this.gv_PlanList.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gv_PlanList.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_PlanList.OptionsView.ColumnAutoWidth = false;
             this.gv_PlanList.OptionsView.ShowGroupPanel = false;
             this.gv_PlanList.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gv_PlanList_FocusedRowChanged);

@@ -260,8 +260,9 @@
             this.gv_GoodsList.GridControl = this.gc_MaterialList;
             this.gv_GoodsList.GroupPanelText = "物料列表";
             this.gv_GoodsList.Name = "gv_GoodsList";
-            this.gv_GoodsList.OptionsSelection.MultiSelect = true;
-            this.gv_GoodsList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_GoodsList.OptionsBehavior.Editable = false;
+            this.gv_GoodsList.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gv_GoodsList.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_GoodsList.OptionsView.ShowGroupPanel = false;
             // 
             // groupControl3
@@ -291,8 +292,9 @@
             this.gv_PlanGoodsList.GridControl = this.gc_PlanGoodsList;
             this.gv_PlanGoodsList.GroupPanelText = "计划物料清单";
             this.gv_PlanGoodsList.Name = "gv_PlanGoodsList";
-            this.gv_PlanGoodsList.OptionsSelection.MultiSelect = true;
-            this.gv_PlanGoodsList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_PlanGoodsList.OptionsBehavior.Editable = false;
+            this.gv_PlanGoodsList.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gv_PlanGoodsList.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_PlanGoodsList.OptionsView.ShowGroupPanel = false;
             // 
             // tableLayoutPanel2

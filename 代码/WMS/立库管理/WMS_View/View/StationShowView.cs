@@ -57,6 +57,7 @@ namespace WMS_Kernel
             if (tabEventArgs.Page.Text == "货位显示")
             {
                 RefreshData();
+                this.Presenter.GetWareArea(this.cbe_HouseList.Text.Trim());
             }
         }
         /// <summary>
@@ -173,6 +174,7 @@ namespace WMS_Kernel
         private void cbe_HouseList_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.storageControl1.DataSour = null;
+            this.storageControl1.selectPositions = null;
             string houseName = this.cbe_HouseList.Text.Trim();
            
             if(houseName=="")

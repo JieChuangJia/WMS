@@ -59,6 +59,11 @@ namespace WMS_Kernel
 
         private void ShowTabEventHandler(object sender, ItemClickEventArgs e)
         {
+            if (this.IWmsFrame.RoleLevel > 2)
+            {
+                this.ShowMessage("信息提示", "当前用户没有此操作权限！");
+                return;
+            }
             this.IWmsFrame.ShowView(this, true);
         }
 
@@ -81,6 +86,8 @@ namespace WMS_Kernel
                 return;
 
             }
+         
+          
             if (this.gv_AreaList.GetSelectedRows() == null || this.gv_AreaList.GetSelectedRows().Count() == 0)
             {
                 this.ShowMessage("信息提示", "请选择要删除的库房区域！");
@@ -88,6 +95,12 @@ namespace WMS_Kernel
             }
             int currRow = this.gv_AreaList.GetSelectedRows()[0];
             string areaID = this.gv_AreaList.GetRowCellValue(currRow, "区域编号").ToString();
+            string areaName = this.gv_AreaList.GetRowCellValue(currRow, "区域名称").ToString();
+            if(areaName == "默认库区")
+            {
+                this.ShowMessage("信息提示", "默认库区，不允许删除！");
+                return;
+            }
             if (this.presenter.DeleteArea(areaID))
             {
                 this.ShowMessage("信息提示", "库房区域删除成功！");
@@ -122,7 +135,7 @@ namespace WMS_Kernel
             area.WareHouseID = this.gv_AreaList.GetRowCellValue(currRow, "库房名称").ToString();
             area.AreaCode = this.gv_AreaList.GetRowCellValue(currRow, "区域编码").ToString();
             area.AreaType = this.gv_AreaList.GetRowCellValue(currRow, "区域类型").ToString();
-            area.AreaEnableStatus = this.gv_AreaList.GetRowCellValue(currRow, "区域启用状态").ToString();
+            //area.AreaEnableStatus = this.gv_AreaList.GetRowCellValue(currRow, "区域启用状态").ToString();
             string backColorRGB = this.gv_AreaList.GetRowCellValue(currRow, "区域颜色").ToString();
 
             area.AreaBackColor =backColorRGB;

@@ -102,8 +102,9 @@
             this.gv_UserList.GroupPanelText = "角色清单";
             this.gv_UserList.IndicatorWidth = 40;
             this.gv_UserList.Name = "gv_UserList";
-            this.gv_UserList.OptionsSelection.MultiSelect = true;
-            this.gv_UserList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_UserList.OptionsBehavior.Editable = false;
+            this.gv_UserList.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gv_UserList.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_UserList.OptionsView.ColumnAutoWidth = false;
             this.gv_UserList.OptionsView.ShowGroupPanel = false;
             // 

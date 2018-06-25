@@ -127,19 +127,19 @@ namespace Aoyou_WMS
                 }
                 AreaDataModel model = new AreaDataModel();
                 model.区域名称 = area.Area_Name;
-                model.区域启用状态 = area.Area_Flag;
+                //model.区域启用状态 = area.Area_Flag;
                 model.区域类型 = area.Area_Type;
                 model.区域编号 = area.Area_ID;
                 model.区域编码 = area.Area_Code;
                 model.区域颜色 = area.Area_BackColor;
-                if(area.Area_Flag =="1")
-                {
-                    model.区域启用状态 = "是";
-                }
-                else
-                {
-                    model.区域启用状态 = "否";
-                }
+                //if(area.Area_Flag =="1")
+                //{
+                //    model.区域启用状态 = "是";
+                //}
+                //else
+                //{
+                //    model.区域启用状态 = "否";
+                //}
                
                 model.库房名称 = area.WareHouse_ID;
                 ViewDataManager.WAREAREAVIEWDATA.AreaListData.Add(model);

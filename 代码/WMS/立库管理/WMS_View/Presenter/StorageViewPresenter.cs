@@ -346,13 +346,19 @@ namespace WMS_Kernel
         /// <param name="houseName"></param>
         /// <param name="colth"></param>
         /// <returns></returns>
-        public bool SetMulLayerMulColArea(string logicAreaName, int rowth, int stCol, int edCol, int stLayer, int edLayer)
+        public bool SetMulLayerMulColArea(string houseName,string logicAreaName, int rowth, int stCol, int edCol, int stLayer, int edLayer)
         {
             //string reStr = "";
           
             //for (int i = stCol; i <= edCol; i++)
             //{
-            WH_AreaModel area = bllArea.GetModelByName(logicAreaName);
+            WH_WareHouseModel house = bllHouse.GetModelByName(houseName);
+            if(house == null)
+            {
+                this.View.ShowMessage("信息提示", "不存在库房：" + houseName);
+                return false;
+            }
+            WH_AreaModel area = bllArea.GetModelByName(house.WareHouse_ID, logicAreaName);
             if(area == null)
             {
                 this.View.ShowMessage("信息提示", "区域名称错误！");

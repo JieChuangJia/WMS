@@ -267,8 +267,9 @@
             this.gv_PlanList.GroupPanelText = "单据列表";
             this.gv_PlanList.IndicatorWidth = 40;
             this.gv_PlanList.Name = "gv_PlanList";
-            this.gv_PlanList.OptionsSelection.MultiSelect = true;
-            this.gv_PlanList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_PlanList.OptionsBehavior.Editable = false;
+            this.gv_PlanList.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gv_PlanList.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_PlanList.OptionsView.ColumnAutoWidth = false;
             this.gv_PlanList.OptionsView.ShowGroupPanel = false;
             this.gv_PlanList.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gv_PlanList_FocusedRowChanged);
@@ -301,8 +302,9 @@
             this.gv_PlanGoodsList.GroupPanelText = "单据明细";
             this.gv_PlanGoodsList.IndicatorWidth = 40;
             this.gv_PlanGoodsList.Name = "gv_PlanGoodsList";
-            this.gv_PlanGoodsList.OptionsSelection.MultiSelect = true;
-            this.gv_PlanGoodsList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_PlanGoodsList.OptionsBehavior.Editable = false;
+            this.gv_PlanGoodsList.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gv_PlanGoodsList.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_PlanGoodsList.OptionsView.ShowGroupPanel = false;
             // 
             // PlanQueryView

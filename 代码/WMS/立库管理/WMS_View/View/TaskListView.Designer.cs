@@ -220,8 +220,9 @@
             this.gv_TaskList.GroupPanelText = "任务列表";
             this.gv_TaskList.IndicatorWidth = 40;
             this.gv_TaskList.Name = "gv_TaskList";
-            this.gv_TaskList.OptionsSelection.MultiSelect = true;
-            this.gv_TaskList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_TaskList.OptionsBehavior.Editable = false;
+            this.gv_TaskList.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gv_TaskList.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_TaskList.OptionsView.ShowGroupPanel = false;
             this.gv_TaskList.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gv_TaskList_FocusedRowChanged);
             // 
@@ -253,8 +254,9 @@
             this.gv_TaskDetail.GroupPanelText = "任务详细";
             this.gv_TaskDetail.IndicatorWidth = 40;
             this.gv_TaskDetail.Name = "gv_TaskDetail";
-            this.gv_TaskDetail.OptionsSelection.MultiSelect = true;
-            this.gv_TaskDetail.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_TaskDetail.OptionsBehavior.Editable = false;
+            this.gv_TaskDetail.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gv_TaskDetail.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_TaskDetail.OptionsView.ShowGroupPanel = false;
             // 
             // TaskListView

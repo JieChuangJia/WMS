@@ -382,8 +382,9 @@
             this.gv_PalletInfor.GridControl = this.gc_PalletGoodsInfor;
             this.gv_PalletInfor.GroupPanelText = "配盘物料信息";
             this.gv_PalletInfor.Name = "gv_PalletInfor";
-            this.gv_PalletInfor.OptionsSelection.MultiSelect = true;
-            this.gv_PalletInfor.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_PalletInfor.OptionsBehavior.Editable = false;
+            this.gv_PalletInfor.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gv_PalletInfor.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_PalletInfor.OptionsView.ShowGroupPanel = false;
             // 
             // groupControl2
@@ -414,8 +415,9 @@
             this.gv_PalletList.GridControl = this.gc_PalletList;
             this.gv_PalletList.GroupPanelText = "配盘列表";
             this.gv_PalletList.Name = "gv_PalletList";
-            this.gv_PalletList.OptionsSelection.MultiSelect = true;
-            this.gv_PalletList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gv_PalletList.OptionsBehavior.Editable = false;
+            this.gv_PalletList.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gv_PalletList.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_PalletList.OptionsView.ShowGroupPanel = false;
             // 
             // panelControl1
