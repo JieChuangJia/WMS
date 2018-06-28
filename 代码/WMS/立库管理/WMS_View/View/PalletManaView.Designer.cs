@@ -368,11 +368,11 @@
             // gc_PalletGoodsInfor
             // 
             this.gc_PalletGoodsInfor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_PalletGoodsInfor.Location = new System.Drawing.Point(2, 22);
+            this.gc_PalletGoodsInfor.Location = new System.Drawing.Point(2, 21);
             this.gc_PalletGoodsInfor.MainView = this.gv_PalletInfor;
             this.gc_PalletGoodsInfor.Margin = new System.Windows.Forms.Padding(0);
             this.gc_PalletGoodsInfor.Name = "gc_PalletGoodsInfor";
-            this.gc_PalletGoodsInfor.Size = new System.Drawing.Size(575, 114);
+            this.gc_PalletGoodsInfor.Size = new System.Drawing.Size(575, 115);
             this.gc_PalletGoodsInfor.TabIndex = 2;
             this.gc_PalletGoodsInfor.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_PalletInfor});
@@ -400,11 +400,11 @@
             // gc_PalletList
             // 
             this.gc_PalletList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_PalletList.Location = new System.Drawing.Point(2, 22);
+            this.gc_PalletList.Location = new System.Drawing.Point(2, 21);
             this.gc_PalletList.MainView = this.gv_PalletList;
             this.gc_PalletList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_PalletList.Name = "gc_PalletList";
-            this.gc_PalletList.Size = new System.Drawing.Size(574, 114);
+            this.gc_PalletList.Size = new System.Drawing.Size(574, 115);
             this.gc_PalletList.TabIndex = 1;
             this.gc_PalletList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_PalletList});
@@ -437,7 +437,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(379, 24);
+            this.labelControl3.Location = new System.Drawing.Point(216, 20);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(48, 14);
             this.labelControl3.TabIndex = 17;
@@ -445,7 +445,7 @@
             // 
             // cbe_PlanList
             // 
-            this.cbe_PlanList.Location = new System.Drawing.Point(439, 21);
+            this.cbe_PlanList.Location = new System.Drawing.Point(276, 17);
             this.cbe_PlanList.Name = "cbe_PlanList";
             this.cbe_PlanList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -456,7 +456,7 @@
             // sb_QueryPallet
             // 
             this.sb_QueryPallet.Image = ((System.Drawing.Image)(resources.GetObject("sb_QueryPallet.Image")));
-            this.sb_QueryPallet.Location = new System.Drawing.Point(610, 20);
+            this.sb_QueryPallet.Location = new System.Drawing.Point(447, 16);
             this.sb_QueryPallet.Name = "sb_QueryPallet";
             this.sb_QueryPallet.Size = new System.Drawing.Size(76, 22);
             this.sb_QueryPallet.TabIndex = 15;
@@ -465,7 +465,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(179, 24);
+            this.labelControl2.Location = new System.Drawing.Point(16, 20);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(48, 14);
             this.labelControl2.TabIndex = 12;
@@ -473,15 +473,16 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(5, 24);
+            this.labelControl1.Location = new System.Drawing.Point(816, 24);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(48, 14);
             this.labelControl1.TabIndex = 11;
             this.labelControl1.Text = "配盘库房";
+            this.labelControl1.Visible = false;
             // 
             // cbe_PalletPos
             // 
-            this.cbe_PalletPos.Location = new System.Drawing.Point(239, 21);
+            this.cbe_PalletPos.Location = new System.Drawing.Point(76, 17);
             this.cbe_PalletPos.Name = "cbe_PalletPos";
             this.cbe_PalletPos.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -491,13 +492,14 @@
             // 
             // cbe_HouseList
             // 
-            this.cbe_HouseList.Location = new System.Drawing.Point(65, 21);
+            this.cbe_HouseList.Location = new System.Drawing.Point(876, 21);
             this.cbe_HouseList.Name = "cbe_HouseList";
             this.cbe_HouseList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbe_HouseList.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbe_HouseList.Size = new System.Drawing.Size(102, 20);
             this.cbe_HouseList.TabIndex = 9;
+            this.cbe_HouseList.Visible = false;
             // 
             // panelControl2
             // 
@@ -641,11 +643,11 @@
             // gc_GoodsList
             // 
             this.gc_GoodsList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_GoodsList.Location = new System.Drawing.Point(2, 22);
+            this.gc_GoodsList.Location = new System.Drawing.Point(2, 21);
             this.gc_GoodsList.MainView = this.gv_GoodsList;
             this.gc_GoodsList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_GoodsList.Name = "gc_GoodsList";
-            this.gc_GoodsList.Size = new System.Drawing.Size(1165, 120);
+            this.gc_GoodsList.Size = new System.Drawing.Size(1165, 121);
             this.gc_GoodsList.TabIndex = 7;
             this.gc_GoodsList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_GoodsList});

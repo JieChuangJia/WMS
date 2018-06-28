@@ -60,11 +60,11 @@
             gridLevelNode1.RelationName = "Level1";
             this.gc_AreaList.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gc_AreaList.Location = new System.Drawing.Point(2, 21);
+            this.gc_AreaList.Location = new System.Drawing.Point(2, 22);
             this.gc_AreaList.MainView = this.gv_AreaList;
             this.gc_AreaList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_AreaList.Name = "gc_AreaList";
-            this.gc_AreaList.Size = new System.Drawing.Size(775, 268);
+            this.gc_AreaList.Size = new System.Drawing.Size(775, 267);
             this.gc_AreaList.TabIndex = 6;
             this.gc_AreaList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_AreaList});

@@ -78,7 +78,7 @@ namespace Aoyou_WMS
                 return;
             }
             MainFrame mainView = new MainFrame();
-            mainView.SetRoleLevel(roleLevel);
+            mainView.SetRoleLevel(roleLevel,user.UserName);
             mainView.Show();
             this.Hide();
         }

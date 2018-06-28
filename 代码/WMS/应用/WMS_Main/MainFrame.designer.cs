@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrame));
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.barStaticItem5 = new DevExpress.XtraBars.BarStaticItem();
+            this.bsi_CurrentUser = new DevExpress.XtraBars.BarStaticItem();
             this.ribbon_Title = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barBtnItem_PlanQuery = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnItem_WareQuery = new DevExpress.XtraBars.BarButtonItem();
@@ -54,25 +57,44 @@
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.richTextBoxLog = new System.Windows.Forms.RichTextBox();
+            this.cms_Log = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.清空日志ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon_Title)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
+            this.cms_Log.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonStatusBar
             // 
+            this.ribbonStatusBar.ItemLinks.Add(this.barStaticItem5);
+            this.ribbonStatusBar.ItemLinks.Add(this.bsi_CurrentUser);
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 564);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon_Title;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1072, 25);
+            // 
+            // barStaticItem5
+            // 
+            this.barStaticItem5.Caption = "当前用户：";
+            this.barStaticItem5.Id = 27;
+            this.barStaticItem5.Name = "barStaticItem5";
+            this.barStaticItem5.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // bsi_CurrentUser
+            // 
+            this.bsi_CurrentUser.Caption = "---";
+            this.bsi_CurrentUser.Id = 28;
+            this.bsi_CurrentUser.Name = "bsi_CurrentUser";
+            this.bsi_CurrentUser.TextAlignment = System.Drawing.StringAlignment.Near;
             // 
             // ribbon_Title
             // 
@@ -106,9 +128,11 @@
             this.barStaticItem1,
             this.barStaticItem2,
             this.barStaticItem3,
-            this.barStaticItem4});
+            this.barStaticItem4,
+            this.barStaticItem5,
+            this.bsi_CurrentUser});
             this.ribbon_Title.Location = new System.Drawing.Point(0, 0);
-            this.ribbon_Title.MaxItemId = 27;
+            this.ribbon_Title.MaxItemId = 29;
             this.ribbon_Title.Name = "ribbon_Title";
             this.ribbon_Title.RibbonCaptionAlignment = DevExpress.XtraBars.Ribbon.RibbonCaptionAlignment.Center;
             this.ribbon_Title.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.True;
@@ -117,7 +141,6 @@
             this.ribbon_Title.Size = new System.Drawing.Size(1072, 57);
             this.ribbon_Title.StatusBar = this.ribbonStatusBar;
             this.ribbon_Title.Toolbar.ShowCustomizeItem = false;
-            //this.ribbon_Title.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             // 
             // barBtnItem_PlanQuery
             // 
@@ -373,12 +396,27 @@
             // 
             // richTextBoxLog
             // 
+            this.richTextBoxLog.ContextMenuStrip = this.cms_Log;
             this.richTextBoxLog.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBoxLog.Location = new System.Drawing.Point(0, 0);
             this.richTextBoxLog.Name = "richTextBoxLog";
             this.richTextBoxLog.Size = new System.Drawing.Size(1066, 85);
             this.richTextBoxLog.TabIndex = 6;
             this.richTextBoxLog.Text = "";
+            // 
+            // cms_Log
+            // 
+            this.cms_Log.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.清空日志ToolStripMenuItem});
+            this.cms_Log.Name = "cms_Log";
+            this.cms_Log.Size = new System.Drawing.Size(125, 26);
+            // 
+            // 清空日志ToolStripMenuItem
+            // 
+            this.清空日志ToolStripMenuItem.Name = "清空日志ToolStripMenuItem";
+            this.清空日志ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.清空日志ToolStripMenuItem.Text = "清空日志";
+            this.清空日志ToolStripMenuItem.Click += new System.EventHandler(this.清空日志ToolStripMenuItem_Click);
             // 
             // MainFrame
             // 
@@ -387,6 +425,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1072, 589);
+            this.ContextMenuStrip = this.cms_Log;
             this.Controls.Add(this.dockPanel1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon_Title);
@@ -406,6 +445,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             this.dockPanel1.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
+            this.cms_Log.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -444,5 +484,9 @@
         private DevExpress.XtraBars.BarStaticItem barStaticItem2;
         private DevExpress.XtraBars.BarStaticItem barStaticItem3;
         private DevExpress.XtraBars.BarStaticItem barStaticItem4;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem5;
+        private DevExpress.XtraBars.BarStaticItem bsi_CurrentUser;
+        private System.Windows.Forms.ContextMenuStrip cms_Log;
+        private System.Windows.Forms.ToolStripMenuItem 清空日志ToolStripMenuItem;
     }
 }

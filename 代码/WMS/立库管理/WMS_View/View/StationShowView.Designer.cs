@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
@@ -77,7 +76,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.storageControl1 = new Storage.StorageControl();
-            this.cms_Property = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cms_Property = new System.Windows.Forms.ContextMenuStrip();
             this.tsmi_ModifyStatus = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_UnUseGs = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_UseGs = new System.Windows.Forms.ToolStripMenuItem();
@@ -351,7 +350,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1226, 596);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1230, 598);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panelControl1
@@ -373,7 +372,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1220, 54);
+            this.panelControl1.Size = new System.Drawing.Size(1224, 54);
             this.panelControl1.TabIndex = 5;
             // 
             // sb_CellSet
@@ -515,7 +514,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1220, 530);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1224, 532);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
             // tableLayoutPanel3
@@ -531,7 +530,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(934, 524);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(938, 526);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // storageControl1
@@ -548,7 +547,7 @@
             this.storageControl1.Layers = 0;
             this.storageControl1.Location = new System.Drawing.Point(3, 3);
             this.storageControl1.Name = "storageControl1";
-            this.storageControl1.Size = new System.Drawing.Size(928, 360);
+            this.storageControl1.Size = new System.Drawing.Size(932, 362);
             this.storageControl1.TabIndex = 14;
             this.storageControl1.PositionsClick += new Storage.StorageControl.ClickPositionsEventHandler(this.storageControl1_PositionsClick);
             // 
@@ -619,20 +618,20 @@
             // 
             this.groupControl2.Controls.Add(this.gc_CellGoodsDetail);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(3, 369);
+            this.groupControl2.Location = new System.Drawing.Point(3, 371);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(928, 152);
+            this.groupControl2.Size = new System.Drawing.Size(932, 152);
             this.groupControl2.TabIndex = 15;
             this.groupControl2.Text = "货位物料详细";
             // 
             // gc_CellGoodsDetail
             // 
             this.gc_CellGoodsDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_CellGoodsDetail.Location = new System.Drawing.Point(2, 21);
+            this.gc_CellGoodsDetail.Location = new System.Drawing.Point(2, 22);
             this.gc_CellGoodsDetail.MainView = this.gridView2;
             this.gc_CellGoodsDetail.Margin = new System.Windows.Forms.Padding(0);
             this.gc_CellGoodsDetail.Name = "gc_CellGoodsDetail";
-            this.gc_CellGoodsDetail.Size = new System.Drawing.Size(924, 129);
+            this.gc_CellGoodsDetail.Size = new System.Drawing.Size(928, 128);
             this.gc_CellGoodsDetail.TabIndex = 6;
             this.gc_CellGoodsDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -651,7 +650,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(943, 3);
+            this.splitContainer1.Location = new System.Drawing.Point(947, 3);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -663,7 +662,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel5);
-            this.splitContainer1.Size = new System.Drawing.Size(274, 524);
+            this.splitContainer1.Size = new System.Drawing.Size(274, 526);
             this.splitContainer1.SplitterDistance = 120;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -753,7 +752,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(274, 400);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(274, 402);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // groupControl1
@@ -897,18 +896,18 @@
             this.groupControl3.Location = new System.Drawing.Point(0, 100);
             this.groupControl3.Margin = new System.Windows.Forms.Padding(0);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(274, 300);
+            this.groupControl3.Size = new System.Drawing.Size(274, 302);
             this.groupControl3.TabIndex = 1;
             this.groupControl3.Text = "库存区域";
             // 
             // gc_Area
             // 
             this.gc_Area.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_Area.Location = new System.Drawing.Point(2, 21);
+            this.gc_Area.Location = new System.Drawing.Point(2, 22);
             this.gc_Area.MainView = this.gv_Area;
             this.gc_Area.Margin = new System.Windows.Forms.Padding(0);
             this.gc_Area.Name = "gc_Area";
-            this.gc_Area.Size = new System.Drawing.Size(270, 277);
+            this.gc_Area.Size = new System.Drawing.Size(270, 278);
             this.gc_Area.TabIndex = 7;
             this.gc_Area.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Area});
@@ -929,7 +928,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1226, 596);
+            this.ClientSize = new System.Drawing.Size(1230, 598);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "StationShowView";
             this.Text = "货位显示";

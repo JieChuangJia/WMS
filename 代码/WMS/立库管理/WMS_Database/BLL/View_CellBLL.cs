@@ -283,6 +283,11 @@ namespace WMS_Database
                             break;
                         }
                     }
+                    else
+                    {
+                        applyCell = cell; 
+                        break;
+                    }
                 }
 
                 return applyCell;

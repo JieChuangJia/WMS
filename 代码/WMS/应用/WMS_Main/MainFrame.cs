@@ -28,9 +28,11 @@ namespace Aoyou_WMS
         {
             InitializeComponent();
         }
-        public void SetRoleLevel(int roleLevel)
+        public void SetRoleLevel(int roleLevel,string userName)
         {
             this.RoleLevel = roleLevel;
+            this.CurrentUser = userName;
+            this.bsi_CurrentUser.Caption = userName;
         }
         private void MainView_Load(object sender, EventArgs e)
         {
@@ -315,6 +317,11 @@ namespace Aoyou_WMS
         private void batBtnItem_Modify_ItemClick(object sender, ItemClickEventArgs e)
         {
 
+        }
+
+        private void 清空日志ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBoxLog.Clear();
         }
     }
 }

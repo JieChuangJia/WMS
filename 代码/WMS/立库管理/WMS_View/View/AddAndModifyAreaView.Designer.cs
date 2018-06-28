@@ -185,7 +185,7 @@
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbonControl1.ShowQatLocationSelector = false;
             this.ribbonControl1.ShowToolbarCustomizeItem = false;
-            this.ribbonControl1.Size = new System.Drawing.Size(384, 27);
+            this.ribbonControl1.Size = new System.Drawing.Size(384, 33);
             this.ribbonControl1.Toolbar.ShowCustomizeItem = false;
             // 
             // AddAndModifyAreaView

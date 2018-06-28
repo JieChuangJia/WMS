@@ -201,8 +201,10 @@ namespace WMS_Kernel
 
         private void sBtn_Query_Click(object sender, EventArgs e)
         {
+            this.storageControl1.selectPositions = null;
             string cellName = this.te_CellName.Text.Trim();
             string[] cellRcl = cellName.Split('-');
+
             if(cellRcl == null || cellRcl.Length != 3)
             {
                 this.ShowMessage("信息提示","货位名称格式错误！示例1-2-4为一排二列四层。");
@@ -217,8 +219,9 @@ namespace WMS_Kernel
                 this.ShowMessage("信息提示", "货位名称格式错误！示例1-2-4为一排二列四层。");
                 return;
             }
+            ViewDataManager.STORAGEVIEWDATA.CellGoodsDetailData.Clear();
             GsSearch(columnth, layerth);
-            
+           
         }
 
         public void GsSearch(int columnth, int layerth)
@@ -264,7 +267,7 @@ namespace WMS_Kernel
                 }
                 this.storageControl1.Invalidate();
                 this.storageControl1.Invalidate();
-            
+
         }
 
         private void sb_Refresh_Click(object sender, EventArgs e)
@@ -291,7 +294,9 @@ namespace WMS_Kernel
 
         private void sb_QueryByPalletCode_Click(object sender, EventArgs e)
         {
-            this.Presenter.GetCellDetailByPalletCode(this.te_PalletCode.Text.Trim());
+            ViewDataManager.STORAGEVIEWDATA.CellGoodsDetailData.Clear();
+            this.storageControl1.selectPositions = null;
+            this.Presenter.GetCellDetailByPalletCode(this.cbe_HouseList.Text.Trim(), this.te_PalletCode.Text.Trim());
         }
 
         private void tsmi_ModifyStatus_Click(object sender, EventArgs e)

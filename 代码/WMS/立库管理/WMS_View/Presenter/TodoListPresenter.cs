@@ -30,7 +30,7 @@ namespace WMS_Kernel
             this.queryEDate = endDate;
             this.queryPlanType = planType;
             this.queryPlanCode = planCode;
-
+            ViewDataManager.TODOLISTDATA.PlanDetailData.Clear();
             List<View_PlanMainModel> planList = bllPlanMain.GetTodoListPlan(startDate, endDate, planType, planCode);
             ViewDataManager.TODOLISTDATA.PlanData.Clear();
             if (planList == null || planList.Count == 0)

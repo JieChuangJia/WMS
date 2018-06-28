@@ -236,9 +236,15 @@ namespace WMS_Kernel
                 ViewDataManager.WAREAREAVIEWDATA.AreaColorListData.Add(model);
             }
         }
-        public void GetCellDetailByPalletCode(string palletCode)
+        public void GetCellDetailByPalletCode(string houseName,string palletCode)
         {
-            View_StockListModel stockModel = bllViewStockList.GetModelByPalletCode(palletCode,EnumCellType.货位.ToString());
+            WH_WareHouseModel house = bllHouse.GetModelByName(houseName);
+            if(house ==null)
+            {
+                this.View.ShowMessage("信息提示", "不存在此库房！");
+                return;
+            }
+            View_StockListModel stockModel = bllViewStockList.GetModelByHousePallet(house.WareHouse_ID,palletCode, EnumCellType.货位.ToString());
             if(stockModel == null)
             {
                 this.View.ShowMessage("信息提示", "无此托盘库存信息!");

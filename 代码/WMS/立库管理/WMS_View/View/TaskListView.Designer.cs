@@ -204,11 +204,11 @@
             // gc_TaskList
             // 
             this.gc_TaskList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_TaskList.Location = new System.Drawing.Point(2, 21);
+            this.gc_TaskList.Location = new System.Drawing.Point(2, 22);
             this.gc_TaskList.MainView = this.gv_TaskList;
             this.gc_TaskList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_TaskList.Name = "gc_TaskList";
-            this.gc_TaskList.Size = new System.Drawing.Size(1171, 157);
+            this.gc_TaskList.Size = new System.Drawing.Size(1171, 156);
             this.gc_TaskList.TabIndex = 1;
             this.gc_TaskList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_TaskList});
@@ -239,11 +239,11 @@
             // gc_TaskDetail
             // 
             this.gc_TaskDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_TaskDetail.Location = new System.Drawing.Point(2, 21);
+            this.gc_TaskDetail.Location = new System.Drawing.Point(2, 22);
             this.gc_TaskDetail.MainView = this.gv_TaskDetail;
             this.gc_TaskDetail.Margin = new System.Windows.Forms.Padding(0);
             this.gc_TaskDetail.Name = "gc_TaskDetail";
-            this.gc_TaskDetail.Size = new System.Drawing.Size(1171, 157);
+            this.gc_TaskDetail.Size = new System.Drawing.Size(1171, 156);
             this.gc_TaskDetail.TabIndex = 2;
             this.gc_TaskDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_TaskDetail});

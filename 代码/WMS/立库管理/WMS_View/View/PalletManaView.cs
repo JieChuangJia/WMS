@@ -113,7 +113,7 @@ namespace WMS_Kernel
 
         private void sb_QueryPallet_Click(object sender, EventArgs e)
         {
-            this.presenter.QueryPallet(this.cbe_HouseList.Text.Trim(), this.cbe_PalletPos.Text.Trim(),this.cbe_PlanList.Text.Trim());
+            this.presenter.QueryPallet( this.cbe_PalletPos.Text.Trim(),this.cbe_PlanList.Text.Trim());
         }
 
         private void sb_QueryGoodsInfor_Click(object sender, EventArgs e)
@@ -201,6 +201,16 @@ namespace WMS_Kernel
             if (this.IWmsFrame.RoleLevel > 2)
             {
                 this.ShowMessage("信息提示", "当前用户没有此操作权限！");
+                return;
+            }
+            if (this.gv_PalletList.GetSelectedRows().Count() == 0)
+            {
+                this.ShowMessage("信息提示", "请选中要取消的托盘！");
+                return;
+            }
+            if (this.gv_PalletList.GetSelectedRows().Count() == 0)
+            {
+                this.ShowMessage("信息提示", "请选中要取消的托盘！");
                 return;
             }
             int status = this.AskMessage("信息提示", "您确定要取消当前选中配盘么？取消后将清空库存结束物料与托盘的绑定！！");

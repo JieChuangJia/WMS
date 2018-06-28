@@ -106,6 +106,11 @@ namespace WMS_Kernel
 
         private void sb_TrayQuery_Click(object sender, EventArgs e)
         {
+            if ((this.dateEdit_EndTime.DateTime - this.dateEdit_StartTime.DateTime).TotalSeconds < 0)
+            {
+                this.ShowMessage("信息提示", "开始时间大于结束时间！");
+                return;
+            }
             this.presenter.QueryPlan(this.dateEdit_StartTime.DateTime, this.dateEdit_EndTime.DateTime, this.ce_PlanType.Text.Trim(), this.cbe_PlanStatus.Text.Trim(), this.te_PlanID.Text.Trim());
 
         }
@@ -121,7 +126,8 @@ namespace WMS_Kernel
             string planCode = this.gv_PlanList.GetRowCellValue(currRow, "计划单号").ToString();
             this.presenter.QueryPlanList(planCode);
         }
-         
+
+    
 
     }
 }

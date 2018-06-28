@@ -22,6 +22,7 @@ namespace WMS_Kernel
         }
         public void QueryPlan(DateTime startDate,DateTime endDate,string planType,string planStatus,string planCode)
         {
+            ViewDataManager.PLANQUERYDATA.PlanDetailData.Clear();
             List<View_PlanMainModel> planList = bllPlanMain.GetModelList(startDate, endDate, planType, planStatus, planCode);
             ViewDataManager.PLANQUERYDATA.PlanData.Clear();
             if(planList == null||planList.Count==0)

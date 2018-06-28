@@ -162,15 +162,29 @@ namespace WMS_Database
             }
 
         }
+        public View_StockListModel GetModelByHousePallet(string houseID,string palletCode, string cellType)
+        {
+            string sqlStr = "WareHouse_ID = '"+houseID+"' and Stock_Tray_Barcode = '" + palletCode + "'and Cell_Type = '" + cellType + "'";
+            List<View_StockListModel> stockList = GetModelList(sqlStr);
+            if (stockList != null && stockList.Count > 0)
+            {
+                return stockList[0];
+            }
+            else
+            {
+                return null;
+            }
+
+        }
         public List<View_StockListModel> GetModelListByGoodsCode(string goodsCode,string cellType)
         {
             string sqlStr = "Goods_Code = '" + goodsCode + "' and Cell_Type ='" + cellType + "' order by Stock_List_Entry_Time asc";
             return GetModelList(sqlStr);
 
         }
-        public List<View_StockListModel> GetModelList(string houseName,string palletPos,string planCode)
+        public List<View_StockListModel> GetModelList(string palletPos,string planCode)
         {
-            string sqlStr = "WareHouse_Name = '" + houseName + "' and Cell_Name='" + palletPos + "'";
+            string sqlStr = " Cell_Name='" + palletPos + "'";
             if(planCode != "所有")
             {
                 sqlStr += " and Plan_List_ID in (select Plan_List_ID from View_PlanList where Plan_Code ='" + planCode + "')";
