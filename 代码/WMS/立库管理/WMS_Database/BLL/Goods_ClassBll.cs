@@ -150,6 +150,10 @@ namespace WMS_Database
                 return null;
             }
         }
+        public List<string> GetDistinctGoods()
+        {
+            return dal.GetDistinctGoods();
+        }
 		#endregion  ExtensionMethod
 	}
 }

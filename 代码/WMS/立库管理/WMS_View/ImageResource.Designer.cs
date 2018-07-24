@@ -143,6 +143,16 @@ namespace WMS_Kernel {
         /// <summary>
         ///   查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Icon cell {
+            get {
+                object obj = ResourceManager.GetObject("cell", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Icon code_class {
             get {
                 object obj = ResourceManager.GetObject("code_class", resourceCulture);
@@ -686,6 +696,16 @@ namespace WMS_Kernel {
         public static System.Drawing.Icon start {
             get {
                 object obj = ResourceManager.GetObject("start", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Icon stationLogic {
+            get {
+                object obj = ResourceManager.GetObject("stationLogic", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

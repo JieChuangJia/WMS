@@ -31,9 +31,9 @@ namespace WMS_Kernel
             string restr = "";
 
             Bitmap bitmap = ImageResource.WareHouseArea.ToBitmap();
-            this.IWmsFrame.AddTitlePage("库存管理", ref restr);
-            this.IWmsFrame.AddGroup("库存管理", "库存操作", ref restr);
-            this.IWmsFrame.AddButtonItem("库存管理", "库存操作", "库存区域设置", bitmap, ShowTabEventHandler, ref restr);
+            this.IWmsFrame.AddTitlePage("系统设置", ref restr);
+            this.IWmsFrame.AddGroup("系统设置", "系统设置", ref restr);
+            this.IWmsFrame.AddButtonItem("系统设置", "系统设置", "库存区域设置", bitmap, ShowTabEventHandler, ref restr);
         }
 
         #region 实现方法
@@ -59,7 +59,7 @@ namespace WMS_Kernel
 
         private void ShowTabEventHandler(object sender, ItemClickEventArgs e)
         {
-            if (this.IWmsFrame.RoleLevel > 2)
+            if (this.IWmsFrame.RoleLevel > 1)
             {
                 this.ShowMessage("信息提示", "当前用户没有此操作权限！");
                 return;

@@ -66,11 +66,11 @@ namespace WMS_Database
         private string _plan_from_user;
         private string _plan_to_user;
         private string _plan_import_flag;
-        private int? _plan_list_quantity;
-        private int? _plan_list_ordered_quantity;
+        private string _plan_list_quantity;
+        private string _plan_list_ordered_quantity;
         private string _plan_id;
         private string _plan_remark;
-        private int? _plan_list_finished_quantity;
+        private string _plan_list_finished_quantity;
         private string _plan_list_status;
         private string _plan_list_remark;
         private int? _goods_shelf_life;
@@ -101,6 +101,7 @@ namespace WMS_Database
         private int? _cell_column;
         private int? _cell_row;
         private string _goods_suppier_code;
+        private string _cell_id;
         /// <summary>
         /// 
         /// </summary>
@@ -552,7 +553,7 @@ namespace WMS_Database
         /// <summary>
         /// 
         /// </summary>
-        public int? Plan_List_Quantity
+        public string Plan_List_Quantity
         {
             set { _plan_list_quantity = value; }
             get { return _plan_list_quantity; }
@@ -560,7 +561,7 @@ namespace WMS_Database
         /// <summary>
         /// 
         /// </summary>
-        public int? Plan_List_Ordered_Quantity
+        public string Plan_List_Ordered_Quantity
         {
             set { _plan_list_ordered_quantity = value; }
             get { return _plan_list_ordered_quantity; }
@@ -584,7 +585,7 @@ namespace WMS_Database
         /// <summary>
         /// 
         /// </summary>
-        public int? Plan_List_Finished_Quantity
+        public string Plan_List_Finished_Quantity
         {
             set { _plan_list_finished_quantity = value; }
             get { return _plan_list_finished_quantity; }
@@ -828,6 +829,14 @@ namespace WMS_Database
         {
             set { _goods_suppier_code = value; }
             get { return _goods_suppier_code; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Cell_ID
+        {
+            set { _cell_id = value; }
+            get { return _cell_id; }
         }
         #endregion Model
 

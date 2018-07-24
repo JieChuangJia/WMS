@@ -148,12 +148,24 @@ namespace WMS_Database
 
         #endregion  BasicMethod
 		#region  ExtensionMethod
-        public List<WH_CellModel> GetModelListByCellType(string cellType)
+        public List<WH_CellModel> GetStationList()
         {
-            string sqlStr = "Cell_Type = '" + cellType + "'";
+            string sqlStr = "Cell_Type != '货位'";
             return GetModelList(sqlStr);
         }
-
+        public WH_CellModel GetStationByName(string stationName)
+        {
+            string sqlStr = "Cell_Name = '" + stationName + "' and  Cell_Type!='货位'";
+            List<WH_CellModel> cellList = GetModelList(sqlStr);
+            if (cellList != null && cellList.Count > 0)
+            {
+                return cellList[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
         public WH_CellModel GetCell(string areaID,int rowth,int colth,int layer)
         {
             string sqlStr = "Area_ID = '" + areaID + "' and Cell_Row =" + rowth + " and Cell_Column="+colth + " and Cell_Layer=" + layer;
@@ -184,6 +196,24 @@ namespace WMS_Database
                 dal.DeleteByAreaAndRCL(areas[i].Area_ID,rowth,colth,layerth);
             }
 
+            return true;
+        }
+        public bool DeleteAreaCells(string houseName)
+        {
+            WH_WareHouseModel wareHouse = bllWareHouse.GetModelByName(houseName);
+            if (wareHouse == null)
+            {
+                return false;
+            }
+            List<WH_AreaModel> areas = bllArea.GetModels(wareHouse.WareHouse_ID);
+            if (areas == null)
+            {
+                return false;
+            }
+            for (int i = 0; i < areas.Count; i++)
+            {
+                dal.DeleteByArea(areas[i].Area_ID);
+            }
             return true;
         }
         public bool DeleteColCells(string houseName, int rowth, int colth)
@@ -377,6 +407,78 @@ namespace WMS_Database
                         continue;
                     }
                     data.Add(row);
+                }
+                return data;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public List<string> GetColListByHouseRow(string device_Code,string row)
+        {
+            List<string> data = new List<string>();
+            string sqlStr = "select distinct";
+
+            sqlStr += " Cell_Column from WH_Cell";
+
+            sqlStr += " where Device_Code = '" + device_Code + "' and Cell_Type ='货位'";
+
+            if (row != "所有")
+            {
+                  sqlStr +=" and Cell_Row =" + row;
+            }
+            DataSet ds = DbHelperSQL.Query(sqlStr);
+            if (ds != null && ds.Tables.Count > 0)
+            {
+
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    string item = ds.Tables[0].Rows[i][0].ToString();
+                    if (item == "")
+                    {
+                        continue;
+                    }
+                    data.Add(item);
+                }
+                return data;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public List<string> GetLayerListByHouseRowCol(string device_Code, string row,string col)
+        {
+            List<string> data = new List<string>();
+            string sqlStr = "select distinct";
+
+            sqlStr += " Cell_Layer from WH_Cell";
+            sqlStr += " where Device_Code = '" + device_Code + "' and Cell_Type ='货位'";
+
+            if (row != "所有")
+            {
+                sqlStr += " and Cell_Row =" + row;
+            }
+            if(col!= "所有")
+            {
+                sqlStr += " and Cell_Column=" + col;
+            }
+
+          
+            DataSet ds = DbHelperSQL.Query(sqlStr);
+            if (ds != null && ds.Tables.Count > 0)
+            {
+
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    string item = ds.Tables[0].Rows[i][0].ToString();
+                    if (item == "")
+                    {
+                        continue;
+                    }
+                    data.Add(item);
                 }
                 return data;
             }

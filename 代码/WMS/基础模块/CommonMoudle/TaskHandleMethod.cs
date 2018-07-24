@@ -296,7 +296,13 @@ namespace CommonMoudle
         {
             ManageModel manage = new ManageModel();
             manage.Mange_CreateTime = DateTime.Now;
-            WH_Station_LogicModel stationCell = bllStationLogic.GetStationByName(putawayStationName);
+            WH_WareHouseModel house = bllWareHouse.GetModelByName(houseName);
+            if(house == null)
+            {
+                restr = "库房对象为空！";
+                return false;
+            }
+            WH_Station_LogicModel stationCell = bllStationLogic.GetStationByName(house.WareHouse_ID,putawayStationName);
             if (stationCell == null)
             {
                restr="上架站台不存在！";
@@ -409,11 +415,17 @@ namespace CommonMoudle
         }
        
 
-        public static bool CreateUnshelveManageTask(string planCode, string palletCode, string unshelveStationName, ref string manageID,ref string restr)
+        public static bool CreateUnshelveManageTask(string planCode, string palletCode,string houseName, string unshelveStationName, ref string manageID,ref string restr)
         {
             ManageModel manage = new ManageModel();
             manage.Mange_CreateTime = DateTime.Now;
-            WH_Station_LogicModel targetCell = bllStationLogic.GetStationByName(unshelveStationName);
+            WH_WareHouseModel wareHouse = bllWareHouse.GetModelByName(houseName);
+            if (wareHouse == null)
+            {
+                restr = "库房名称错误！";
+                return false;
+            }
+            WH_Station_LogicModel targetCell = bllStationLogic.GetStationByName(wareHouse.WareHouse_ID,unshelveStationName);
             if (targetCell == null)
             {
                 restr = "下架站台不存在！";

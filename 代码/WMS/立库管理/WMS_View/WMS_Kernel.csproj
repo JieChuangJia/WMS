@@ -84,11 +84,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IView\IAddAndModifyWHStationView.cs" />
+    <Compile Include="IView\IAddAndModifyWHCellView.cs" />
     <Compile Include="IView\IAddAndModifyAreaView.cs" />
     <Compile Include="IView\IAddUserView.cs" />
     <Compile Include="IView\IAddRoleView.cs" />
     <Compile Include="IView\IAddMaterialView.cs" />
     <Compile Include="IView\IInWareWithPlanView.cs" />
+    <Compile Include="IView\IRecordQueryView.cs" />
     <Compile Include="IView\IUserManaView.cs" />
     <Compile Include="IView\IRoleManaView.cs" />
     <Compile Include="IView\IMaterailManaView.cs" />
@@ -102,13 +105,20 @@
     <Compile Include="IView\ITaskListView.cs" />
     <Compile Include="IView\ITodoListView.cs" />
     <Compile Include="IView\IUnShelvePlanView.cs" />
+    <Compile Include="IView\IWHStationView.cs" />
+    <Compile Include="IView\IWHCellView.cs" />
     <Compile Include="IView\IWareAreaManaView.cs" />
+    <Compile Include="Presenter\AddAndModifyWHStationPresenter.cs" />
+    <Compile Include="Presenter\AddAndModifyWHCellPresenter.cs" />
     <Compile Include="Presenter\AddRolePresenter.cs" />
     <Compile Include="Presenter\AddAndModifyAreaPresenter.cs" />
     <Compile Include="Presenter\AddUserPresenter.cs" />
     <Compile Include="Presenter\AddMaterialPresenter.cs" />
     <Compile Include="Presenter\InWareWithPlanPresenter.cs" />
+    <Compile Include="Presenter\IStockQuery.cs" />
+    <Compile Include="Presenter\RecordQueryPresenter.cs" />
     <Compile Include="Presenter\RoleManaPresenter.cs" />
+    <Compile Include="Presenter\StockQueryPresenter.cs" />
     <Compile Include="Presenter\UserManaPresenter.cs" />
     <Compile Include="Presenter\MaterialManaPresenter.cs" />
     <Compile Include="Presenter\PalletManagePresenter.cs" />
@@ -121,6 +131,8 @@
     <Compile Include="Presenter\TaskListPresenter.cs" />
     <Compile Include="Presenter\TodoListPresenter.cs" />
     <Compile Include="Presenter\UnShelvePlanPresenter.cs" />
+    <Compile Include="Presenter\WHStationPresenter.cs" />
+    <Compile Include="Presenter\WHCellPresenter.cs" />
     <Compile Include="Presenter\WareAreaManaPresenter.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -131,6 +143,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ImageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddAndModifyWHStationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddAndModifyWHStationView.Designer.cs">
+      <DependentUpon>AddAndModifyWHStationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddAndModifyWHCellView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddAndModifyWHCellView.Designer.cs">
+      <DependentUpon>AddAndModifyWHCellView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\AddAndModifyAreaView.cs">
       <SubType>Form</SubType>
@@ -161,6 +185,18 @@
     </Compile>
     <Compile Include="View\AddRoleView.Designer.cs">
       <DependentUpon>AddRoleView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordQueryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RecordQueryView.Designer.cs">
+      <DependentUpon>RecordQueryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\StockQueryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\StockQueryView.Designer.cs">
+      <DependentUpon>StockQueryView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserManaView.cs">
       <SubType>Form</SubType>
@@ -221,6 +257,18 @@
     </Compile>
     <Compile Include="View\TodoListView.Designer.cs">
       <DependentUpon>TodoListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\WHStationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\WHStationView.designer.cs">
+      <DependentUpon>WHStationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\WHCellView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\WHCellView.designer.cs">
+      <DependentUpon>WHCellView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\WareAreaManaView.cs">
       <SubType>Form</SubType>
@@ -339,6 +387,12 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="View\AddAndModifyWHStationView.resx">
+      <DependentUpon>AddAndModifyWHStationView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddAndModifyWHCellView.resx">
+      <DependentUpon>AddAndModifyWHCellView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\AddAndModifyAreaView.resx">
       <DependentUpon>AddAndModifyAreaView.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,6 +407,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\AddRoleView.resx">
       <DependentUpon>AddRoleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RecordQueryView.resx">
+      <DependentUpon>RecordQueryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\StockQueryView.resx">
+      <DependentUpon>StockQueryView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserManaView.resx">
       <DependentUpon>UserManaView.cs</DependentUpon>
@@ -389,6 +449,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\StationShowView.resx">
       <DependentUpon>StationShowView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\WHStationView.resx">
+      <DependentUpon>WHStationView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\WHCellView.resx">
+      <DependentUpon>WHCellView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\WareAreaManaView.resx">
       <DependentUpon>WareAreaManaView.cs</DependentUpon>
@@ -460,6 +526,7 @@
     <ProjectReference Include="..\..\基础模块\CommonMoudle\CommonMoudle.csproj">
       <Project>{cb701bea-1ee0-42fd-9183-c2a0952f11e7}</Project>
       <Name>CommonMoudle</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\基础模块\LicenceManager\LicenceManager.csproj">
       <Project>{785aa2aa-cc7e-408b-b61c-2dfb906d1797}</Project>
@@ -720,6 +787,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\WareHouseArea.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cell.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stationLogic.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

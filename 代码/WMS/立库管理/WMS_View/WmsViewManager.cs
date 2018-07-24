@@ -42,9 +42,14 @@ namespace WMS_Kernel
 
         StationShowView stationView = new StationShowView();
 
+        StockQueryView stockQueryView = new StockQueryView();
+
         PlanQueryView planQueryView = new PlanQueryView();
 
         WareQueryView wareQueryView = new WareQueryView();
+
+        WHCellView cellView = new WHCellView();
+        WHStationView stationLogicView = new WHStationView();
 
         StockTakingUnshelveView stocktakingUnshelveView = new StockTakingUnshelveView();
         SysLogView sysLogView = new SysLogView();
@@ -104,6 +109,9 @@ namespace WMS_Kernel
             pallerManaView.FormClosing += FormCloseEventHandler;
             pallerManaView.Init(wmsFrame);
 
+            stockQueryView.FormClosing += FormCloseEventHandler;
+            stockQueryView.Init(wmsFrame);
+
             stationView.FormClosing += FormCloseEventHandler;
             stationView.Init(wmsFrame);
 
@@ -119,13 +127,19 @@ namespace WMS_Kernel
             inWareWithoutPlanView.FormClosing += FormCloseEventHandler;
             inWareWithoutPlanView.Init(wmsFrame);
 
-            sysLogView.FormClosing += FormCloseEventHandler;
-            sysLogView.Init(wmsFrame);
-
+         
             wareAreaManaView.FormClosing += FormCloseEventHandler;
             wareAreaManaView.Init(wmsFrame);
 
-       
+            cellView.FormClosing += FormCloseEventHandler;
+            cellView.Init(wmsFrame);
+
+            stationLogicView.FormClosing += FormCloseEventHandler;
+            stationLogicView.Init(wmsFrame);
+
+            sysLogView.FormClosing += FormCloseEventHandler;
+            sysLogView.Init(wmsFrame);
+
         }
 
         public void ResgistShowMaterialProperty(Action<string> showMaterialProperty)

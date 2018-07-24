@@ -66,7 +66,6 @@ namespace WMS_Kernel
                 ViewDataManager.TODOLISTDATA.PlanData.Add(planData);
             }
         }
-
         public void QueryPlanList(string planCode)
         {
             List<View_PlanListModel> planList = bllViewPlanList.GetModelByPlanCode(planCode);
@@ -90,6 +89,19 @@ namespace WMS_Kernel
                 ViewDataManager.TODOLISTDATA.PlanDetailData.Add(planDetailData);
 
             }
+        }
+        public void CompletePlanManual(string planCode)
+        {
+            PlanMainModel plan = bllPlan.GetModelByPlanCode(planCode);
+            if(plan == null)
+            {
+                this.View.ShowMessage("信息提示", "");
+                return;
+            }
+            plan.Plan_Status = EnumPlanStatus.完成.ToString();
+            bllPlan.Update(plan);
+            this.WmsFrame.WriteLog("代办工作逻辑", "", "提示", "计划手动完成成功！");
+            QueryPlan(this.querySDate, this.queryEDate, this.queryPlanType, this.queryPlanCode);
         }
         public void DeletePlanList(string planCode)
         {

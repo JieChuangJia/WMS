@@ -12,5 +12,8 @@ namespace WMS_Kernel
     {
         void IniPlanList(List<View_PlanMainModel> planList);
         void IniTargetList(List<string> targetStationList);
+        //void IniHouseName(List<WH_WareHouseModel> houseList);
+
+        //void SetHouseName(string houseName);
     }
 }

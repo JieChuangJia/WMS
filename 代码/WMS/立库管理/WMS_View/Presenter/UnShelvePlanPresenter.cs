@@ -39,6 +39,7 @@ namespace WMS_Kernel
         public override void Init()
         {
             IniPlanList();
+            IniHouseList();
             //GetUnShelveStation();
         }
        
@@ -55,14 +56,14 @@ namespace WMS_Kernel
                 return;
             }
             string houseID = "";
-            if (houseName == "A1库房" || houseName == "A2库房" || houseName == "A3库房" || houseName == "A4库房" || houseName == "A5库房")
-            {
-                houseID = "1-5库房";
-            }
-            else
-            {
+            //if (houseName == "A1库房" || houseName == "A2库房" || houseName == "A3库房" || houseName == "A4库房" || houseName == "A5库房")
+            //{
+            //    houseID = "1-5库房";
+            //}
+            //else
+            //{
                 houseID = house.WareHouse_ID;
-            }
+            //}
             List<WH_Station_LogicModel> staionList = bllStationLogic.GetModelListByHouseIDAndCellType(houseID, EnumCellType.下架工位.ToString());
             List<string> stationList = new List<string>();
 
@@ -106,7 +107,12 @@ namespace WMS_Kernel
 
             
         }
-        private void GetUnShelveStation()
+        private void IniHouseList()
+        {
+            //List<WH_WareHouseModel> houseList = bllWareHouse.GetModelList("");
+            //this.View.IniHouseName(houseList);
+        }
+        public void GetUnShelveStation(string houseName)
         {
             //if (palletCode.Trim() == "")
             //{
@@ -119,7 +125,14 @@ namespace WMS_Kernel
             //    this.View.ShowMessage("信息提示", "此货位无库存！");
             //    return;
             //}
-            List<WH_Station_LogicModel> staionList = bllStationLogic .GetStationListByType(EnumCellType.下架工位.ToString());
+            WH_WareHouseModel house = bllWareHouse.GetModelByName(houseName);
+            if (house == null)
+            {
+                this.View.ShowMessage("信息提示", "不存在此库房");
+                return;
+            }
+
+            List<WH_Station_LogicModel> staionList = bllStationLogic.GetStationListByType(house.WareHouse_ID,EnumCellType.下架工位.ToString());
             List<string> stationList = new List<string>();
 
 
@@ -167,7 +180,7 @@ namespace WMS_Kernel
 
         }
 
-        public void UnShelveTask(string planCode,string palletCode, string unshelveStationName)
+        public void UnShelveTask(string planCode,string palletCode,string houseName, string unshelveStationName)
         {
             //查看当前是否已经有此托盘条码的上架管理任务
             View_Manage_ListModel manage = bllViewManageList.GetModelByPalletCodeAndTaskType(palletCode, EnumManageTaskType.下架.ToString(), EnumManageTaskStatus.待执行.ToString());
@@ -189,7 +202,7 @@ namespace WMS_Kernel
             //}
 
 
-            if (CommonMoudle.TaskHandleMethod.CreateUnshelveManageTask(planCode, palletCode, unshelveStationName, ref manageID,ref restr) == false)
+            if (CommonMoudle.TaskHandleMethod.CreateUnshelveManageTask(planCode, palletCode, houseName, unshelveStationName, ref manageID, ref restr) == false)
             {
                 this.WmsFrame.WriteLog("下架逻辑", "", "提示", restr);
                 return;

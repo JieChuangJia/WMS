@@ -34,7 +34,7 @@ namespace WMS_Kernel
         {
             IniCellStatusColor();
         }
-        public void Init()
+        public  override void Init()
         {
             InitHouseList();
           
@@ -251,6 +251,7 @@ namespace WMS_Kernel
                 return;
             }
             GetGSDetail(stockModel.Cell_Child_ID);
+            this.View.SetRowTxt(stockModel.Cell_Row.ToString());
             this.View.SetPosTxt(stockModel.Cell_Chlid_Position);
             this.View.GsSearch((int)stockModel.Cell_Column, (int)stockModel.Cell_Layer);
      

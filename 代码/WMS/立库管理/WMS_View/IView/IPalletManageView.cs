@@ -10,7 +10,7 @@ namespace WMS_Kernel
     public interface IPalletManageView:IBaseView
     {
         void IniHouseName(List<WH_WareHouseModel> houseList);
-        void IniPalletPos(List<View_CellModel> stationList);
+        void IniPalletPos(List<string> stationList);
 
         void IniPlanList(List<string> planList);
     }

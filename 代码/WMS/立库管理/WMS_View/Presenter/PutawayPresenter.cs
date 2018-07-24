@@ -87,14 +87,14 @@ namespace WMS_Kernel
                 return;
             }
             string houseID = "";
-            if(houseName=="A1库房"||houseName=="A2库房"||houseName=="A3库房"||houseName=="A4库房"||houseName=="A5库房")
-            {
-                houseID = "1-5库房";
-            }
-            else
-            {
+            //if(houseName=="A1库房"||houseName=="A2库房"||houseName=="A3库房"||houseName=="A4库房"||houseName=="A5库房")
+            //{
+            //    houseID = "1-5库房";
+            //}
+            //else
+            //{
                 houseID = wareHouse.WareHouse_ID;
-            }
+            //}
 
             List<WH_Station_LogicModel> cellList = bllStationLogic.GetModelListByHouseIDAndCellType(houseID, EnumCellType.上架工位.ToString());
             if(cellList == null)

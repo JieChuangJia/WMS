@@ -17,6 +17,8 @@ namespace WMS_Kernel
         WmsViewManager wmsViewManager = new WmsViewManager();
         private WH_CellBll bllCell = new WH_CellBll();
         private WH_Cell_ChildrenBll bllCellChild = new WH_Cell_ChildrenBll();
+        private WH_AreaBll bllArea = new WH_AreaBll();
+        private WH_WareHouseBll bllHouse = new WH_WareHouseBll();
 
         XMLOperater xmlOper = new XMLOperater( AppDomain.CurrentDomain.BaseDirectory + @"\data\WMSClientConfig.xml");
         public WMSManager()
@@ -78,11 +80,13 @@ namespace WMS_Kernel
                 for (int i = 0; i < houseList.Count; i++)
                 {
                     XmlNode house = houseList[i];
+                    string houseName = house.Attributes["name"].Value.ToString();
                     bool rebuild = bool.Parse(house.SelectSingleNode("ReBuild").InnerText);
                     if (rebuild == false)//不需要重新创建进行下一个库房
                     {
                         continue;
                     }
+                   bllCell.DeleteAreaCells(houseName);
                     XmlNode rowsNode = house.SelectSingleNode("GSRows");
                     XmlNodeList rowNodeList = rowsNode.SelectNodes("GSRow");
 
@@ -98,7 +102,7 @@ namespace WMS_Kernel
 
               
                     }
-                    ClearInvalidGS(house.Attributes["name"].Value.ToString());
+                    ClearInvalidGS(houseName);
                 }
                 
                 return true;
@@ -110,7 +114,7 @@ namespace WMS_Kernel
             }
 
         }
-
+       
         /// <summary>
         /// 清除指定库房货位
         /// </summary>

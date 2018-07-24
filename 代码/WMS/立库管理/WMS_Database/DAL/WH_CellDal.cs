@@ -573,7 +573,7 @@ namespace WMS_Database
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("delete from WH_Cell ");
-            strSql.Append(" where Area_ID='" + areaID + "' ");
+            strSql.Append(" where Area_ID='" + areaID + "' and Cell_Type='货位'");
             int rowsAffected = DbHelperSQL.ExecuteSql(strSql.ToString());
             if (rowsAffected > 0)
             {
@@ -589,7 +589,23 @@ namespace WMS_Database
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("delete from WH_Cell ");
-            strSql.Append(" where Area_ID='" + areaID + "' and Cell_Row=" + row + " and Cell_Column=" + col + " and Cell_Layer =" + layer);
+            strSql.Append(" where Area_ID='" + areaID + "' and Cell_Row=" + row + " and Cell_Column=" + col + " and Cell_Layer =" + layer + " and Cell_Type='货位'");
+            int rowsAffected = DbHelperSQL.ExecuteSql(strSql.ToString());
+            if (rowsAffected > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool DeleteByArea(string areaID)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("delete from WH_Cell ");
+            strSql.Append(" where Area_ID='" + areaID + "' and Cell_Type='货位'");
             int rowsAffected = DbHelperSQL.ExecuteSql(strSql.ToString());
             if (rowsAffected > 0)
             {
@@ -604,7 +620,7 @@ namespace WMS_Database
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("delete from WH_Cell ");
-            strSql.Append(" where Area_ID='" + areaID + "' and Cell_Row=" + row + " and Cell_Column=" + col );
+            strSql.Append(" where Area_ID='" + areaID + "' and Cell_Row=" + row + " and Cell_Column=" + col + " and Cell_Type='货位'");
             int rowsAffected = DbHelperSQL.ExecuteSql(strSql.ToString());
             if (rowsAffected > 0)
             {
@@ -619,7 +635,7 @@ namespace WMS_Database
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("delete from WH_Cell ");
-            strSql.Append(" where Area_ID='" + areaID + "' and Cell_Row=" + row + " and Cell_Layer =" + layer);
+            strSql.Append(" where Area_ID='" + areaID + "' and Cell_Row=" + row + " and Cell_Layer =" + layer + " and Cell_Type='货位'");
             int rowsAffected = DbHelperSQL.ExecuteSql(strSql.ToString());
             if (rowsAffected > 0)
             {
@@ -633,7 +649,7 @@ namespace WMS_Database
         public bool DeleteUnnecessaryGs(string areaID, int totalRow, int totalCol, int totalLayer)
         {
             string sqlStr = "delete from WH_Cell where  Cell_Row > " + totalRow
-                + " or Cell_Column >" + totalCol + " or Cell_Layer > " + totalLayer + " and Area_ID = '" + areaID + "'";
+                + " or Cell_Column >" + totalCol + " or Cell_Layer > " + totalLayer + " and Area_ID = '" + areaID + "' and Cell_Type='货位'";
 
 
             int rows = DbHelperSQL.ExecuteSql(sqlStr);

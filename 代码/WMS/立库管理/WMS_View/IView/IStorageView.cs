@@ -16,6 +16,7 @@ namespace WMS_Kernel
         void InitPosTypeList(List<string> posList);
 
         void SetPosTxt(string posType);
+        void SetRowTxt(string rowIndex);
          void RefreshData();
         void GsSearch(int columnth, int layerth);
     }

@@ -24,6 +24,6 @@ namespace WMS_Kernel
     }
     public interface IAddAndModifyAreaView:IBaseView
     {
-
+        
     }
 }

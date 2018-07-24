@@ -138,6 +138,19 @@ namespace WMS_Database
 
         #endregion  BasicMethod
         #region  ExtensionMethod
+        public List<string> GetStationCellName()
+        {
+            DataSet ds = dal.GetStationCellName();
+            List<string> items = new List<string>();
+            if(ds!= null&&ds.Tables.Count>0)
+            {
+                for(int i=0;i<ds.Tables[0].Rows.Count;i++)
+                {
+                    items.Add(ds.Tables[0].Rows[i]["Cell_Name"].ToString());
+                }
+            }
+            return items;
+        }
         public List<WH_Station_LogicModel> GetModelListByHouseIDAndCellType(string houseID,string stationType)
         {
             
@@ -145,15 +158,15 @@ namespace WMS_Database
             List<WH_Station_LogicModel> cellList= GetModelList(sqlStr);
             return cellList;
         }
-        public List<WH_Station_LogicModel> GetStationListByType(string stationType)
+        public List<WH_Station_LogicModel> GetStationListByType(string houseID,string stationType)
         {
-            string sqlStr =  " WH_Station_Logic_Type='" + stationType + "'";
+            string sqlStr = " WH_Station_Logic_Type='" + stationType + "'" + " and WareHouse_ID='" + houseID + "'"; ;
             List<WH_Station_LogicModel> cellList = GetModelList(sqlStr);
             return cellList;
         }
-        public WH_Station_LogicModel GetStationByName(string stationName)
+        public WH_Station_LogicModel GetStationByName(string wareHouseID,string stationName)
         {
-            string sqlStr = " WH_Station_Logic_Name='" + stationName + "'";
+            string sqlStr = " WH_Station_Logic_Name='" + stationName + "' and WareHouse_ID='" + wareHouseID +"'";
             List<WH_Station_LogicModel> cellList = GetModelList(sqlStr);
             if (cellList != null && cellList.Count > 0)
             {
@@ -164,6 +177,7 @@ namespace WMS_Database
                 return null;
             }
         }
+        
         public WH_Station_LogicModel GetStationByIDAndType(string childCellID,string cellType)
         {
             string sqlStr = " Cell_Child_ID='" + childCellID + "' and WH_Station_Logic_Type ='"+ cellType+"'";
@@ -190,6 +204,19 @@ namespace WMS_Database
                 return null;
             }
         }
+        public WH_Station_LogicModel GetModelByHouseIDAndCellChlidID(string houseID, string chlidCellID)
+        {
+            string sqlStr = "WareHouse_ID ='" + houseID + "' and Cell_Child_ID='" + chlidCellID + "'";
+            List<WH_Station_LogicModel> cellList = GetModelList(sqlStr);
+            if (cellList != null && cellList.Count > 0)
+            {
+                return cellList[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
         public WH_Station_LogicModel GetModelByCellID(string cellChildID)
         {
             string sqlStr = "Cell_Child_ID ='" + cellChildID+"'";
@@ -202,6 +229,34 @@ namespace WMS_Database
             {
                 return null;
             }
+        }
+
+        public List<WH_Station_LogicModel> GetModelListByHouseID(string houseID)
+        {
+
+            string sqlStr = "WareHouse_ID ='" + houseID + "'";
+            List<WH_Station_LogicModel> cellList = GetModelList(sqlStr);
+            return cellList;
+        }
+        public List<WH_Station_LogicModel> GetAllStation(string houseID)
+        {
+
+            string sqlStr = "WareHouse_ID ='" + houseID + "'";
+            List<WH_Station_LogicModel> cellList = GetModelList(sqlStr);
+            return cellList;
+        }
+        public List<string> GetDistinctStationCate()
+        {
+            List<string> items = new List<string>();
+            DataSet ds = dal.GetDistinctStationCate();
+            if(ds!=null && ds.Tables.Count>0)
+            {
+                for(int i=0;i<ds.Tables[0].Rows.Count;i++)
+                {
+                    items.Add(ds.Tables[0].Rows[i][0].ToString());
+                }
+            }
+            return items;
         }
         #endregion  ExtensionMethod
     }
