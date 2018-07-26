@@ -37,5 +37,6 @@ namespace WMS_Interface
 
         public static WHCellViewData WHCELLVIEWDATA = new WHCellViewData();
         public static WHStationViewData WHSTATIONVIEWDATA = new WHStationViewData();
+        public static RecordQueryData RECORDQUERYDATA = new RecordQueryData();
     }
 }

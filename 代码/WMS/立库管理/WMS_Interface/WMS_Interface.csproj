@@ -74,6 +74,7 @@
     <Compile Include="ViewDataModel\PlanManageViewData.cs" />
     <Compile Include="ViewDataModel\PlanQueryViewData.cs" />
     <Compile Include="ViewDataModel\PutawayViewData.cs" />
+    <Compile Include="ViewDataModel\RecordQueryData.cs" />
     <Compile Include="ViewDataModel\StockQueryDataViewModel.cs" />
     <Compile Include="ViewDataModel\UserViewData.cs" />
     <Compile Include="ViewDataModel\RoleViewData.cs" />

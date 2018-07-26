@@ -137,4 +137,10 @@ namespace WMS_Interface
         前,
         后
     }
+    public enum EnumCellTransferType
+    {
+        入库,
+        出库,
+        移库
+    }
 }

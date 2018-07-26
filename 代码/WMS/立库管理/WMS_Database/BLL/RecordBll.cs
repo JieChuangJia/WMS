@@ -137,7 +137,11 @@ namespace WMS_Database
 
         #endregion  BasicMethod
 		#region  ExtensionMethod
-
+        public DataTable GetRecordViewData(string startTime,string endTime,string cellCode,string planCode )
+        {
+            string strSql = "redGrid.Manage_End_Time>='" + startTime + "' and redGrid.Manage_End_Time<='" + endTime +"'";
+            return null;
+        }
 		#endregion  ExtensionMethod
 	}
 }

@@ -1021,6 +1021,15 @@ namespace WMS_Service
                     response.Describe = "任务状态更改失败！无此任务ID！";
                 }
                 task.Mange_Status = taskStatus;
+                if(taskStatus == EnumManageTaskStatus.执行中.ToString())
+                {
+
+                    task.Manage_Begin_Time = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                }
+                else if(taskStatus == EnumManageTaskStatus.已完成.ToString())
+                {
+                    task.Manage_End_Time = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                }
                 bllManage.Update(task);
                 response.Status = true;
                 response.Describe = "任务状态更改成功！";
