@@ -392,8 +392,6 @@
       <LastGenOutput>ImageResource.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-<<<<<<< HEAD
-=======
     <EmbeddedResource Include="View\AboutView.resx">
       <DependentUpon>AboutView.cs</DependentUpon>
     </EmbeddedResource>
@@ -403,7 +401,6 @@
     <EmbeddedResource Include="View\AddAndModifyWHCellView.resx">
       <DependentUpon>AddAndModifyWHCellView.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> 8acd76e72a1aa7eda9f3a9fca8014e0c54f7fcd2
     <EmbeddedResource Include="View\AddAndModifyAreaView.resx">
       <DependentUpon>AddAndModifyAreaView.cs</DependentUpon>
     </EmbeddedResource>
