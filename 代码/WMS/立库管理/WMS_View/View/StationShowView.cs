@@ -98,6 +98,10 @@ namespace WMS_Kernel
         {
             this.IWmsFrame.ShowView(this, true);
         }
+        public void SetRowTxt(string rowIndex)
+        {
+            this.cbe_Row.Text = rowIndex;
+        }
         public void SetPosTxt(string posType)
         {
             this.cbe_PosTypeList.Text = posType;

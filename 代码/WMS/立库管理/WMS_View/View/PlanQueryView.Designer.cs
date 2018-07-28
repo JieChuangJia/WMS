@@ -43,8 +43,6 @@
             this.ce_PlanType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.dateEdit_EndTime = new DevExpress.XtraEditors.DateEdit();
             this.dateEdit_StartTime = new DevExpress.XtraEditors.DateEdit();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.gc_PlanList = new DevExpress.XtraGrid.GridControl();
             this.gv_PlanList = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -61,8 +59,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartTime.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartTime.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_PlanList)).BeginInit();
@@ -85,17 +81,15 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.panelControl1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panelControl2, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.groupControl2, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1175, 490);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -219,33 +213,13 @@
             this.dateEdit_StartTime.Size = new System.Drawing.Size(98, 20);
             this.dateEdit_StartTime.TabIndex = 6;
             // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.simpleButton1);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(3, 433);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1169, 54);
-            this.panelControl2.TabIndex = 1;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(35, 16);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 29);
-            this.simpleButton1.TabIndex = 15;
-            this.simpleButton1.Text = "删除";
-            this.simpleButton1.Visible = false;
-          
-            // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.gc_PlanList);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 63);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1169, 179);
+            this.groupControl1.Size = new System.Drawing.Size(1169, 209);
             this.groupControl1.TabIndex = 8;
             this.groupControl1.Text = "单据列表";
             // 
@@ -256,7 +230,7 @@
             this.gc_PlanList.MainView = this.gv_PlanList;
             this.gc_PlanList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_PlanList.Name = "gc_PlanList";
-            this.gc_PlanList.Size = new System.Drawing.Size(1165, 156);
+            this.gc_PlanList.Size = new System.Drawing.Size(1165, 186);
             this.gc_PlanList.TabIndex = 2;
             this.gc_PlanList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_PlanList});
@@ -279,9 +253,9 @@
             // 
             this.groupControl2.Controls.Add(this.gc_PlanGoodsList);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(3, 248);
+            this.groupControl2.Location = new System.Drawing.Point(3, 278);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1169, 179);
+            this.groupControl2.Size = new System.Drawing.Size(1169, 209);
             this.groupControl2.TabIndex = 9;
             this.groupControl2.Text = "单据明细";
             // 
@@ -292,7 +266,7 @@
             this.gc_PlanGoodsList.MainView = this.gv_PlanGoodsList;
             this.gc_PlanGoodsList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_PlanGoodsList.Name = "gc_PlanGoodsList";
-            this.gc_PlanGoodsList.Size = new System.Drawing.Size(1165, 156);
+            this.gc_PlanGoodsList.Size = new System.Drawing.Size(1165, 186);
             this.gc_PlanGoodsList.TabIndex = 7;
             this.gc_PlanGoodsList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_PlanGoodsList});
@@ -328,8 +302,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartTime.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartTime.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc_PlanList)).EndInit();
@@ -347,7 +319,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraGrid.GridControl gc_PlanList;
         private DevExpress.XtraGrid.Views.Grid.GridView gv_PlanList;
         private DevExpress.XtraGrid.GridControl gc_PlanGoodsList;
@@ -363,7 +334,6 @@
         private DevExpress.XtraEditors.SimpleButton sb_TrayQuery;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.ComboBoxEdit cbe_PlanStatus;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
     }

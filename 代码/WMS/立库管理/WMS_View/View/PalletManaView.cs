@@ -43,7 +43,7 @@ namespace WMS_Kernel
         public void IniHouseName(List<WH_WareHouseModel> houseList)
         {
             this.cbe_HouseList.Properties.Items.Clear();
-
+            //this.cbe_HouseList.Properties.Items.Add("所有");
             if (houseList == null)
             {
                 return;
@@ -75,7 +75,7 @@ namespace WMS_Kernel
                 this.cbe_PlanList.SelectedIndex = 0;
             }
         }
-        public void IniPalletPos(List<View_CellModel> stationList)
+        public void IniPalletPos(List<string> stationList)
         {
             this.cbe_PalletPos.Properties.Items.Clear();
 
@@ -83,9 +83,9 @@ namespace WMS_Kernel
             {
                 return;
             }
-            foreach (View_CellModel cell in stationList)
+            foreach (string item in stationList)
             {
-                this.cbe_PalletPos.Properties.Items.Add(cell.Cell_Name);
+                this.cbe_PalletPos.Properties.Items.Add(item);
             }
             if (this.cbe_PalletPos.Properties.Items.Count > 0)
             {
@@ -130,7 +130,9 @@ namespace WMS_Kernel
             }
             int currRow = this.gv_PalletList.GetSelectedRows()[0];
             string palletCode = this.gv_PalletList.GetRowCellValue(currRow, "托盘条码").ToString();
-            this.presenter.QueryPalletInfo(palletCode,this.cbe_PalletPos.Text.Trim());
+            string cellName = this.gv_PalletList.GetRowCellValue(currRow, "配盘工位名称").ToString();
+
+            this.presenter.QueryPalletInfo(palletCode, cellName);
         }
 
         private void sb_AddGoods_Click(object sender, EventArgs e)
@@ -191,7 +193,7 @@ namespace WMS_Kernel
             }
             int currRow = this.gv_PalletList.GetSelectedRows()[0];
             string palletCode = this.gv_PalletList.GetRowCellValue(currRow, "托盘条码").ToString();
-
+            string houseName = this.cbe_HouseList.Text.Trim();
             this.presenter.TrayConfirm(this.ce_IsFull.Checked, palletCode, this.cbe_PalletPos.Text);
 
         }
@@ -222,6 +224,11 @@ namespace WMS_Kernel
             string palletCode = this.gv_PalletList.GetRowCellValue(currRow, "托盘条码").ToString();
             
             this.presenter.CancelPallet(palletCode);
+        }
+
+        private void cbe_HouseList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //this.presenter.IniTargetPos(this.cbe_HouseList.Text.Trim());
         }     
     }
 }

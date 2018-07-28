@@ -60,6 +60,23 @@ namespace WMS_Kernel
             this.gc_Stock.DataBindings.Clear();
             this.gc_Stock.DataBindings.Add("DataSource", ViewDataManager.UNSHELVEPALNDATA, "PalletInforData", false, DataSourceUpdateMode.OnPropertyChanged);
         }
+        //public void IniHouseName(List<WH_WareHouseModel> houseList)
+        //{
+        //    this.cbe_HouseName.Properties.Items.Clear();
+
+        //    if (houseList == null)
+        //    {
+        //        return;
+        //    }
+        //    foreach (WH_WareHouseModel house in houseList)
+        //    {
+        //        this.cbe_HouseName.Properties.Items.Add(house.WareHouse_Name);
+        //    }
+        //    if (this.cbe_HouseName.Properties.Items.Count > 0)
+        //    {
+        //        this.cbe_HouseName.SelectedIndex = 0;
+        //    }
+        //}
         public void IniPlanList(List<View_PlanMainModel> planList)
         {
             this.cbe_PlanList.Properties.Items.Clear();
@@ -178,8 +195,9 @@ namespace WMS_Kernel
             }
             int currRow = this.gv_Stock.GetSelectedRows()[0];
             string palletCode = this.gv_Stock.GetRowCellValue(currRow, "托盘条码").ToString();
+            string houseName = this.gv_Stock.GetRowCellValue(currRow, "库房").ToString();
             string unshelveStationName = this.ce_TargetStation.Text.Trim();
-            this.presenter.UnShelveTask(this.cbe_PlanList.Text.Trim(),palletCode, unshelveStationName);
+            this.presenter.UnShelveTask(this.cbe_PlanList.Text.Trim(), palletCode, houseName, unshelveStationName);
         }
 
         private void gv_PlanList_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -193,6 +211,11 @@ namespace WMS_Kernel
             string goodsCode = this.gv_PlanList.GetRowCellValue(currRow, "物料编码").ToString();
 
             this.presenter.QueryStockInfor(goodsCode);
+        }
+
+        private void cbe_HouseName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //this.presenter.GetUnShelveStation(this.cbe_HouseName.Text.Trim());
         }
 
     

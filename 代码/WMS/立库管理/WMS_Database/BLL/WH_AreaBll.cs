@@ -156,6 +156,24 @@ namespace WMS_Database
                 return null;
             }
         }
+        public WH_AreaModel GetModelByCode(string houseID,string areaCode)
+        {
+            string sqlStr = "Area_Code ='" + areaCode + "' and WareHouse_ID='" + houseID + "'";
+            List<WH_AreaModel> areaList = GetModelList(sqlStr);
+            if(areaList!= null&& areaList.Count>0)
+            {
+                return areaList[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public List<WH_AreaModel> GetModelListByAreaType(string areaType)
+        {
+            string sqlStr = "Area_Type ='" + areaType + "'";
+            return GetModelList(sqlStr);
+        }
 		#endregion  ExtensionMethod
 	}
 }

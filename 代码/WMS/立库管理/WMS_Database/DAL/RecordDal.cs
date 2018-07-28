@@ -43,6 +43,11 @@ namespace WMS_Database
                 strSql1.Append("Plan_ID,");
                 strSql2.Append("'" + model.Plan_ID + "',");
             }
+            if (model.Record_OperateType != null)
+            {
+                strSql1.Append("Record_OperateType,");
+                strSql2.Append("'" + model.Record_OperateType + "',");
+            }
             if (model.Manage_Type_Code != null)
             {
                 strSql1.Append("Manage_Type_Code,");
@@ -139,6 +144,14 @@ namespace WMS_Database
             else
             {
                 strSql.Append("Plan_ID= null ,");
+            }
+            if (model.Record_OperateType != null)
+            {
+                strSql.Append("Record_OperateType='" + model.Record_OperateType + "',");
+            }
+            else
+            {
+                strSql.Append("Record_OperateType= null ,");
             }
             if (model.Manage_Type_Code != null)
             {
@@ -302,7 +315,7 @@ namespace WMS_Database
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select  top 1  ");
-            strSql.Append(" Record_ID,Plan_ID,Manage_Type_Code,Stock_Tray_Barcode,Start_Cell_ID,End_Cell_ID,Manage_Operater,Manage_Begin_Time,Manage_End_Time,Record_Remark,Record_Reserve1,Record_Reserve2,Record_Reserve3,Record_Reserve4,Record_Reserve5 ");
+            strSql.Append(" Record_ID,Plan_ID,Record_OperateType,Manage_Type_Code,Stock_Tray_Barcode,Start_Cell_ID,End_Cell_ID,Manage_Operater,Manage_Begin_Time,Manage_End_Time,Record_Remark,Record_Reserve1,Record_Reserve2,Record_Reserve3,Record_Reserve4,Record_Reserve5 ");
             strSql.Append(" from Record ");
             strSql.Append(" where Record_ID='" + Record_ID + "' ");
             WMS_Database.RecordModel model = new WMS_Database.RecordModel();
@@ -332,6 +345,10 @@ namespace WMS_Database
                 if (row["Plan_ID"] != null)
                 {
                     model.Plan_ID = row["Plan_ID"].ToString();
+                }
+                if (row["Record_OperateType"] != null)
+                {
+                    model.Record_OperateType = row["Record_OperateType"].ToString();
                 }
                 if (row["Manage_Type_Code"] != null)
                 {
@@ -395,7 +412,7 @@ namespace WMS_Database
         public DataSet GetList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select Record_ID,Plan_ID,Manage_Type_Code,Stock_Tray_Barcode,Start_Cell_ID,End_Cell_ID,Manage_Operater,Manage_Begin_Time,Manage_End_Time,Record_Remark,Record_Reserve1,Record_Reserve2,Record_Reserve3,Record_Reserve4,Record_Reserve5 ");
+            strSql.Append("select Record_ID,Plan_ID,Record_OperateType,Manage_Type_Code,Stock_Tray_Barcode,Start_Cell_ID,End_Cell_ID,Manage_Operater,Manage_Begin_Time,Manage_End_Time,Record_Remark,Record_Reserve1,Record_Reserve2,Record_Reserve3,Record_Reserve4,Record_Reserve5 ");
             strSql.Append(" FROM Record ");
             if (strWhere.Trim() != "")
             {
@@ -415,7 +432,7 @@ namespace WMS_Database
             {
                 strSql.Append(" top " + Top.ToString());
             }
-            strSql.Append(" Record_ID,Plan_ID,Manage_Type_Code,Stock_Tray_Barcode,Start_Cell_ID,End_Cell_ID,Manage_Operater,Manage_Begin_Time,Manage_End_Time,Record_Remark,Record_Reserve1,Record_Reserve2,Record_Reserve3,Record_Reserve4,Record_Reserve5 ");
+            strSql.Append(" Record_ID,Plan_ID,Record_OperateType,Manage_Type_Code,Stock_Tray_Barcode,Start_Cell_ID,End_Cell_ID,Manage_Operater,Manage_Begin_Time,Manage_End_Time,Record_Remark,Record_Reserve1,Record_Reserve2,Record_Reserve3,Record_Reserve4,Record_Reserve5 ");
             strSql.Append(" FROM Record ");
             if (strWhere.Trim() != "")
             {

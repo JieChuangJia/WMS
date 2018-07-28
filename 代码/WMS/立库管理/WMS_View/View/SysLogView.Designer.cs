@@ -193,7 +193,7 @@
             this.gc_SysLog.EmbeddedNavigator.Buttons.Prev.Visible = false;
             this.gc_SysLog.EmbeddedNavigator.Buttons.Remove.Visible = false;
             this.gc_SysLog.EmbeddedNavigator.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.gc_SysLog.EmbeddedNavigator.TextStringFormat = " 第{0}页 总页数{1}页";
+            this.gc_SysLog.EmbeddedNavigator.TextStringFormat = " 第{0}条 总条数{1}条";
             this.gc_SysLog.Location = new System.Drawing.Point(2, 21);
             this.gc_SysLog.MainView = this.gv_Syslog;
             this.gc_SysLog.Margin = new System.Windows.Forms.Padding(0);

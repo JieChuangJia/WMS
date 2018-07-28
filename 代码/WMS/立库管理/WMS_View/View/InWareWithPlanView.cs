@@ -59,23 +59,23 @@ namespace WMS_Kernel
             this.IWmsFrame.ShowView(this, true);
         }
 
-        //public void IniHouseName(List<WH_WareHouseModel> houseList)
-        //{
-        //    this.cbe_HouseName.Properties.Items.Clear();
+        public void IniHouseName(List<WH_WareHouseModel> houseList)
+        {
+            this.cbe_HouseName.Properties.Items.Clear();
 
-        //    if(houseList == null)
-        //    {
-        //        return;
-        //    }
-        //   foreach(WH_WareHouseModel house in houseList)
-        //   {
-        //       this.cbe_HouseName.Properties.Items.Add(house.WareHouse_Name);
-        //   }
-        //    if(this.cbe_HouseName.Properties.Items.Count>0)
-        //    {
-        //        this.cbe_HouseName.SelectedIndex = 0;
-        //    }
-        //}
+            if (houseList == null)
+            {
+                return;
+            }
+            foreach (WH_WareHouseModel house in houseList)
+            {
+                this.cbe_HouseName.Properties.Items.Add(house.WareHouse_Name);
+            }
+            if (this.cbe_HouseName.Properties.Items.Count > 0)
+            {
+                this.cbe_HouseName.SelectedIndex = 0;
+            }
+        }
         public void IniPlanList(List<View_PlanMainModel> planList)
         {
             this.cbe_PlanID.Properties.Items.Clear();
@@ -151,7 +151,12 @@ namespace WMS_Kernel
         }
  
         private void sb_DeleteGoods_Click(object sender, EventArgs e)
-        {   
+        {
+            if (this.gv_TrayGoods.GetSelectedRows() == null || this.gv_TrayGoods.GetSelectedRows().Count() == 0)
+            {
+                this.ShowMessage("信息提示", "请选择物料编号！");
+                return;
+            }
             int currRow = this.gv_TrayGoods.GetSelectedRows()[0];
             string goodsCode = this.gv_TrayGoods.GetRowCellValue(currRow, "物料编码").ToString();
             if(goodsCode == "")
@@ -179,12 +184,13 @@ namespace WMS_Kernel
             }
             if (this.gv_PlanList.GetSelectedRows().Count() == 0)
             {
+                this.ShowMessage("信息提示", "无计划数据！");
                 return;
             }
             int currRow = this.gv_PlanList.GetSelectedRows()[0];
             string planListID = this.gv_PlanList.GetRowCellValue(currRow, "计划列表编码").ToString();
-
-            this.presenter.TrayConfirm(planListID, this.cbe_TargetCell.Text);
+             
+            this.presenter.TrayConfirm(planListID,this.cbe_TargetCell.Text);
         }
 
         private void sb_ClearTrayData_Click(object sender, EventArgs e)
@@ -205,6 +211,11 @@ namespace WMS_Kernel
                 return;
             }
             this.presenter.QueryPlan(this.cbe_PlanID.Text.Trim());
+        }
+
+        private void cbe_HouseName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.presenter.IniTargetPos(this.cbe_HouseName.Text.Trim());
         }
 
      

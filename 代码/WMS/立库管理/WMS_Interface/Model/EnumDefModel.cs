@@ -5,6 +5,16 @@ using System.Text;
 
 namespace WMS_Interface
 {
+    public enum EnumStationCate
+    {
+        配盘工位,
+        上架工位,
+        下架工位,
+        空托盘出口,
+        空托盘入口,
+        分选下架,
+
+    }
     public enum EnumAsrsCheckoutMode
     {
         计时出库 =1,
@@ -126,5 +136,11 @@ namespace WMS_Interface
     {
         前,
         后
+    }
+    public enum EnumCellTransferType
+    {
+        入库,
+        出库,
+        移库
     }
 }

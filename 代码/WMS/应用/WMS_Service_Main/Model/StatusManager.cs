@@ -37,27 +37,35 @@ namespace WMS_Service_Main
         /// </summary>
         private void TaskHandleThread()
         {
-            List<View_ManageModel> manageList = bllViewManage.GetModelList("");
-            if (manageList == null)
+            try
             {
-                return;
-            }
-            TaskContext taskContext = TaskContext.GetContext();
-
-            foreach (View_ManageModel task in manageList)
-            {
-                //if (task.Mange_Status == EnumManageTaskStatus.执行中.ToString())
-                //{
-                //    taskContext.SetStatus(task, new TaskRunning());
-                //    taskContext.ChangeStatus();
-                //}
-                 if (task.Mange_Status == EnumManageTaskStatus.已完成.ToString()&&task.Manage_BreakDown_Status ==EnumBreakDowmStatus.待分解.ToString())
+                List<View_ManageModel> manageList = bllViewManage.GetModelList("");
+                if (manageList == null)
                 {
-                    taskContext.SetStatus(task, new TaskComplete());
-                    taskContext.ChangeStatus();
+                    return;
                 }
+                TaskContext taskContext = TaskContext.GetContext();
 
+                foreach (View_ManageModel task in manageList)
+                {
+                    //if (task.Mange_Status == EnumManageTaskStatus.执行中.ToString())
+                    //{
+                    //    taskContext.SetStatus(task, new TaskRunning());
+                    //    taskContext.ChangeStatus();
+                    //}
+                    if (task.Mange_Status == EnumManageTaskStatus.已完成.ToString() && task.Manage_BreakDown_Status == EnumBreakDowmStatus.待分解.ToString())
+                    {
+                        taskContext.SetStatus(task, new TaskComplete());
+                        taskContext.ChangeStatus();
+                    }
+
+                }
             }
+            catch(Exception ex)
+            {
+                Console.WriteLine("系统发送异常：" + ex.Message);
+            }
+            
         }
 
     }
@@ -125,6 +133,7 @@ namespace WMS_Service_Main
                 {
                     TaskHandleMethod.UpdateCellStatus(manageTask.Mange_End_Cell_ID, EnumCellStatus.空料框, EnumGSTaskStatus.完成, EnumGSOperate.入库);
                     TaskHandleMethod.AddCellOperRecord(manageTask.Mange_End_Cell_ID, EnumGSOperateType.系统添加空料框, "空托盘上架任务完成，更新货位状态",ref restr);
+                    TaskHandleMethod.AddStockRecord(manageTask.Mange_ID);
 
                 }
                 else if (manageTask.Manage_Type_Name == EnumManageTaskType.上架.ToString())
@@ -134,6 +143,7 @@ namespace WMS_Service_Main
                     TaskHandleMethod.UpdatePlanCompleteNum(manageTask.Mange_ID);
                     TaskHandleMethod.UpdateStockUpdateTime(manageTask.Mange_Stock_Barcode, DateTime.Now);
                     TaskHandleMethod.UpdateStockPos(manageTask.Mange_Stock_Barcode, manageTask.Mange_End_Cell_ID, ref restr);
+                    TaskHandleMethod.AddStockRecord(manageTask.Mange_ID);
 
                 }
                 else if (manageTask.Manage_Type_Name == EnumManageTaskType.空托盘下架.ToString())
@@ -146,6 +156,7 @@ namespace WMS_Service_Main
                     TaskHandleMethod.UpdateCellStatus(manageTask.Mange_Start_Cell_ID, EnumCellStatus.空闲, EnumGSTaskStatus.完成, EnumGSOperate.出库);
                     TaskHandleMethod.AddCellOperRecord(manageTask.Mange_Start_Cell_ID, EnumGSOperateType.系统更新货位操作, "货物下架任务完成，更新货位状态", ref restr);
                     TaskHandleMethod.UpdatePlanCompleteNum(manageTask.Mange_ID);
+                    TaskHandleMethod.AddStockRecord(manageTask.Mange_ID);//删除stock前
                     TaskHandleMethod.DeleteStock(manageTask.Mange_Stock_Barcode);
                 }
                 else if (manageTask.Manage_Type_Name == EnumManageTaskType.盘点下架.ToString())
@@ -153,7 +164,7 @@ namespace WMS_Service_Main
                     TaskHandleMethod.UpdateCellStatus(manageTask.Mange_Start_Cell_ID, EnumCellStatus.空闲, EnumGSTaskStatus.完成, EnumGSOperate.出库);
                     TaskHandleMethod.AddCellOperRecord(manageTask.Mange_Start_Cell_ID, EnumGSOperateType.系统更新货位操作, "货物下架任务完成，更新货位状态", ref restr);
                     //TaskHandleMethod.UpdatePlanCompleteNum(manageTask.Mange_ID);
-
+                    TaskHandleMethod.AddStockRecord(manageTask.Mange_ID);
                     TaskHandleMethod.DeleteStock(manageTask.Mange_ID);
                 }
                 else if (manageTask.Manage_Type_Name == EnumManageTaskType.拣选下架.ToString())
@@ -163,6 +174,8 @@ namespace WMS_Service_Main
                     TaskHandleMethod.UpdateCellStatus(manageTask.Mange_Start_Cell_ID, EnumCellStatus.空闲, EnumGSTaskStatus.完成, EnumGSOperate.出库);
                     TaskHandleMethod.UpdateCellStatus(manageTask.Mange_End_Cell_ID, EnumCellStatus.满位, EnumGSTaskStatus.完成, EnumGSOperate.入库);
                     TaskHandleMethod.UpdateStockCell(manageTask.Mange_Stock_Barcode, manageTask.Mange_End_Cell_ID, ref restr);
+                    TaskHandleMethod.AddCellOperRecord(manageTask.Mange_Start_Cell_ID, EnumGSOperateType.系统更新货位操作, "货物移库任务完成，更新货位状态", ref restr);
+                    TaskHandleMethod.AddStockRecord(manageTask.Mange_ID);
 
                 }
                 else
@@ -170,10 +183,9 @@ namespace WMS_Service_Main
                     return false;
                 }
                 TaskHandleMethod.CheckPlanCompleteStatus(manageTask.Plan_ID, ref restr);//检查计划是否完成，如果完成自动更新计划通过计划数量和完成数量相等判断
-                TaskHandleMethod.UpdateManageCompleteTime(manageTask.Plan_ID, DateTime.Now);
+                TaskHandleMethod.UpdateManageCompleteTime(manageTask.Mange_ID, DateTime.Now);
                 TaskHandleMethod.UpdateManageHandleStatus(manageTask.Mange_ID, EnumBreakDowmStatus.已处理);
-                //TaskHandleMethod.DeleteManageTask(manageTask.Mange_ID);//删除管理任务,添加数据时自动删除前30天的数据            
-                TaskHandleMethod.AddStockRecord(manageTask.Mange_ID);
+                       
                 StatusManager.wmsFrame.WriteLog("服务管理", "", "提示", restr);
                 return true;
             }
@@ -206,14 +218,14 @@ namespace WMS_Service_Main
                     return false;
                 }
                 //更新计划，无计划可不更新，无计划的计划ID为-1
-                if (manageTask.Plan_ID != "-1")//有计划任务
-                {
-                    if (TaskHandleMethod.UpdatePlanStatus(manageTask.Plan_ID, EnumPlanStatus.执行中) == false)
-                    {
-                        StatusManager.wmsFrame.WriteLog("TaskRunning", "", "错误", "计划状态更新失败！");
-                        return false;
-                    }
-                }
+                //if (manageTask.Plan_ID != "-1")//有计划任务
+                //{
+                //    if (TaskHandleMethod.UpdatePlanStatus(manageTask.Plan_ID, EnumPlanStatus.执行中) == false)
+                //    {
+                //        StatusManager.wmsFrame.WriteLog("TaskRunning", "", "错误", "计划状态更新失败！");
+                //        return false;
+                //    }
+                //}
 
                 if (manageTask.Manage_Type_Name == EnumManageTaskType.空托盘上架.ToString())
                 {

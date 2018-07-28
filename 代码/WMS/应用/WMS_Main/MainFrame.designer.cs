@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrame));
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.barStaticItem5 = new DevExpress.XtraBars.BarStaticItem();
@@ -57,14 +56,15 @@
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.richTextBoxLog = new System.Windows.Forms.RichTextBox();
-            this.cms_Log = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cms_Log = new System.Windows.Forms.ContextMenuStrip();
             this.清空日志ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bti_About = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon_Title)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -130,10 +130,12 @@
             this.barStaticItem3,
             this.barStaticItem4,
             this.barStaticItem5,
-            this.bsi_CurrentUser});
+            this.bsi_CurrentUser,
+            this.bti_About});
             this.ribbon_Title.Location = new System.Drawing.Point(0, 0);
-            this.ribbon_Title.MaxItemId = 29;
+            this.ribbon_Title.MaxItemId = 31;
             this.ribbon_Title.Name = "ribbon_Title";
+            this.ribbon_Title.PageHeaderItemLinks.Add(this.bti_About);
             this.ribbon_Title.RibbonCaptionAlignment = DevExpress.XtraBars.Ribbon.RibbonCaptionAlignment.Center;
             this.ribbon_Title.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.True;
             this.ribbon_Title.ShowPageHeadersInFormCaption = DevExpress.Utils.DefaultBoolean.True;
@@ -418,6 +420,16 @@
             this.清空日志ToolStripMenuItem.Text = "清空日志";
             this.清空日志ToolStripMenuItem.Click += new System.EventHandler(this.清空日志ToolStripMenuItem_Click);
             // 
+            // bti_About
+            // 
+            this.bti_About.Caption = "关于";
+            this.bti_About.Id = 29;
+            this.bti_About.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.bti_About.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.bti_About.Name = "bti_About";
+            this.bti_About.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
+            this.bti_About.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bti_About_ItemClick);
+            // 
             // MainFrame
             // 
             this.ActiveGlowColor = System.Drawing.Color.WhiteSmoke;
@@ -488,5 +500,6 @@
         private DevExpress.XtraBars.BarStaticItem bsi_CurrentUser;
         private System.Windows.Forms.ContextMenuStrip cms_Log;
         private System.Windows.Forms.ToolStripMenuItem 清空日志ToolStripMenuItem;
+        private DevExpress.XtraBars.BarButtonItem bti_About;
     }
 }

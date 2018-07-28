@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
@@ -76,7 +77,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.storageControl1 = new Storage.StorageControl();
-            this.cms_Property = new System.Windows.Forms.ContextMenuStrip();
+            this.cms_Property = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmi_ModifyStatus = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_UnUseGs = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_UseGs = new System.Windows.Forms.ToolStripMenuItem();
@@ -378,7 +379,7 @@
             // sb_CellSet
             // 
             this.sb_CellSet.Image = ((System.Drawing.Image)(resources.GetObject("sb_CellSet.Image")));
-            this.sb_CellSet.Location = new System.Drawing.Point(974, 16);
+            this.sb_CellSet.Location = new System.Drawing.Point(964, 16);
             this.sb_CellSet.Name = "sb_CellSet";
             this.sb_CellSet.Size = new System.Drawing.Size(85, 22);
             this.sb_CellSet.TabIndex = 30;
@@ -387,7 +388,7 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(725, 20);
+            this.labelControl7.Location = new System.Drawing.Point(720, 20);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(48, 14);
             this.labelControl7.TabIndex = 29;
@@ -396,7 +397,7 @@
             // sb_QueryByPalletCode
             // 
             this.sb_QueryByPalletCode.Image = ((System.Drawing.Image)(resources.GetObject("sb_QueryByPalletCode.Image")));
-            this.sb_QueryByPalletCode.Location = new System.Drawing.Point(903, 16);
+            this.sb_QueryByPalletCode.Location = new System.Drawing.Point(898, 16);
             this.sb_QueryByPalletCode.Name = "sb_QueryByPalletCode";
             this.sb_QueryByPalletCode.Size = new System.Drawing.Size(56, 22);
             this.sb_QueryByPalletCode.TabIndex = 28;
@@ -405,7 +406,7 @@
             // 
             // te_PalletCode
             // 
-            this.te_PalletCode.Location = new System.Drawing.Point(779, 18);
+            this.te_PalletCode.Location = new System.Drawing.Point(774, 18);
             this.te_PalletCode.Name = "te_PalletCode";
             this.te_PalletCode.Size = new System.Drawing.Size(119, 20);
             this.te_PalletCode.TabIndex = 27;
@@ -413,7 +414,7 @@
             // sb_Refresh
             // 
             this.sb_Refresh.Image = ((System.Drawing.Image)(resources.GetObject("sb_Refresh.Image")));
-            this.sb_Refresh.Location = new System.Drawing.Point(657, 16);
+            this.sb_Refresh.Location = new System.Drawing.Point(653, 16);
             this.sb_Refresh.Name = "sb_Refresh";
             this.sb_Refresh.Size = new System.Drawing.Size(56, 22);
             this.sb_Refresh.TabIndex = 26;
@@ -771,13 +772,13 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 21);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 22);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(270, 70);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(270, 69);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // panel1
@@ -795,7 +796,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(264, 64);
+            this.panel1.Size = new System.Drawing.Size(264, 63);
             this.panel1.TabIndex = 0;
             // 
             // label14

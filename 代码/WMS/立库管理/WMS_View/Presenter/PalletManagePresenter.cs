@@ -20,6 +20,7 @@ namespace WMS_Kernel
          StockBll bllStock = new StockBll();
          Stock_ListBll bllStockList = new Stock_ListBll();
          WH_Station_LogicBLL bllStationLogic = new WH_Station_LogicBLL();
+        WH_CellBll bllCell = new WH_CellBll();
          GoodsBll bllGoods = new GoodsBll();
         string currHouseName="";
         string currPalletPos="";
@@ -28,10 +29,42 @@ namespace WMS_Kernel
         { }
         public override void Init()
         {
-            IniHouseList();
-            IniPalletPos();
+            //IniHouseList();
+            IniTargetPos();
             IniPlanList();
         }
+        public void IniTargetPos( )
+        {
+            List<string> palletSta = new List<string>();
+            //if(houseName == "所有")
+            //{
+            //    palletSta.Add("所有");
+            //    this.View.IniPalletPos(palletSta);
+            //    return;
+                    
+            //}
+            //WH_WareHouseModel house = bllWareHouse.GetModelByName(houseName);
+            //if (house == null)
+            //{
+            //    this.View.ShowMessage("信息提示", "不存在此库房");
+            //    return;
+            //}
+            //List<WH_Station_LogicModel> statinList = bllStationLogic.GetStationListByType(house.WareHouse_ID, EnumCellType.配盘工位.ToString());
+
+           
+            //if (statinList == null)
+            //{
+            //    this.View.ShowMessage("信息提示", "此库房不存在配盘工位，请检查配置！");
+            //    return;
+            //}
+            //foreach (WH_Station_LogicModel station in statinList)
+            //{
+            //    palletSta.Add(station.WH_Station_Logic_Name);
+            //}
+            List<string> statinList = bllStationLogic.GetStationCellName();
+            this.View.IniPalletPos(statinList);
+        }
+
         private void IniHouseList()
         {
             List<WH_WareHouseModel> houseList = bllWareHouse.GetModelList("");
@@ -51,11 +84,17 @@ namespace WMS_Kernel
             }
             this.View.IniPlanList(planList);
         }
-        private void IniPalletPos()
-        {
-            List<View_CellModel> cellList = bllViewCell.GetPalletStation();
-            this.View.IniPalletPos(cellList);
-        }
+        //private void IniPalletPos(string houseName)
+        //{
+        //    WH_WareHouseModel house = bllWareHouse.GetModelByName(houseName);
+        //    if (house == null)
+        //    {
+
+        //        return;
+        //    }
+        //    List<WH_Station_LogicModel> logicStaion = bllStationLogic.GetAllStation(house.WareHouse_ID);
+        //    this.View.IniPalletPos(logicStaion);
+        //}
         public void QueryPalletInfo(string palletCode,string palletCellName)
         {
             List<View_StockListModel> stockList = bllViewStockList.GetPalletStock(palletCode, palletCellName);
@@ -66,7 +105,7 @@ namespace WMS_Kernel
             }
             foreach (View_StockListModel stock in stockList)
             {
-                TrayGoodsListModel pallet = new TrayGoodsListModel();
+                PalletGoodsListModel pallet = new PalletGoodsListModel();
                 //pallet.保质期 = stock.Goods_Shelf_Life.ToString();
                 pallet.单位 = stock.Goods_Unit;
                 pallet.规格型号 = stock.Goods_Model;
@@ -74,13 +113,13 @@ namespace WMS_Kernel
                 //pallet.生产日期 = (DateTime)stock.Goods_ProduceDate;
                 pallet.数量 = int.Parse(stock.Stock_List_Quantity);
                 pallet.物料编码 = stock.Goods_Code;
-                pallet.计划列表编号 = stock.Plan_List_ID;
+                //pallet.计划列表编号 = stock.Plan_List_ID;
 
-                Plan_ListModel planListModel = bllPlanList.GetModel(stock.Plan_List_ID);
-                if(planListModel !=null )
-                {
-                    pallet.计划单号 = planListModel.Plan_ID;
-                }
+                //Plan_ListModel planListModel = bllPlanList.GetModel(stock.Plan_List_ID);
+                //if(planListModel !=null )
+                //{
+                //    pallet.计划单号 = planListModel.Plan_ID;
+                //}
                 ViewDataManager.PALLETMANAGEDATA.PalletInforData.Add(pallet);
             }
         }
@@ -89,26 +128,55 @@ namespace WMS_Kernel
         /// </summary>
         /// <param name="houseName">库房名称</param>
         /// <param name="palletPos">配盘工位</param>
-        public void QueryPallet(string palletPos,string planCode)
+        public void QueryPallet( string palletPos, string planCode)
         {
             //this.currHouseName = houseName;
             this.currPalletPos = palletPos;
             this.currPlanCode = planCode;
-            List<View_StockListModel> stockList = bllViewStockList.GetModelList( palletPos,planCode);
+            string cellChildID = "";
+            //if (houseName == "所有")
+            //{
+
+            //    cellChildID = "所有";
+            //}
+            //else
+            //{
+
+
+                //WH_WareHouseModel house = bllWareHouse.GetModelByName(houseName);
+                //if (house == null)
+                //{
+
+                //    return;
+                //}
+                //WH_CellModel station = bllStationLogic.GetModelByHouseIDAndCellName(house.WareHouse_ID, palletPos);
+                            WH_CellModel station =bllCell.GetStationByName(palletPos);
+                if (station == null)
+                {
+                    this.View.ShowMessage("信息提示", "配盘工位获取失败！");
+                    return;
+                }
+
+                cellChildID = station.Cell_ID;
+            
+         
+
+        
+            List<View_StockListModel> stockList = bllViewStockList.GetModelList(cellChildID, planCode);
 
             //var p1 = stockList.Distinct(sl=>sl.Stpcl);  
-            
+
             ViewDataManager.PALLETMANAGEDATA.PalletList.Clear();
-            if(stockList == null)
+            if (stockList == null)
             {
                 return;
             }
 
             List<View_StockListModel> distinctPallet = new List<View_StockListModel>();//去除重复数据
-            foreach(View_StockListModel vsm in stockList)
+            foreach (View_StockListModel vsm in stockList)
             {
-               var existPallet= distinctPallet.Where(s=>s.Stock_Tray_Barcode== vsm.Stock_Tray_Barcode);
-                if(existPallet==null||existPallet.Count()==0)
+                var existPallet = distinctPallet.Where(s => s.Stock_Tray_Barcode == vsm.Stock_Tray_Barcode);
+                if (existPallet == null || existPallet.Count() == 0)
                 {
                     distinctPallet.Add(vsm);
                 }
@@ -118,27 +186,27 @@ namespace WMS_Kernel
             foreach (View_StockListModel stock in distinctPallet)
             {
                 View_PlanListModel planList = bllViewPlanList.GetModelByPlanListID(stock.Plan_List_ID);
-             if(planList == null)
-             {
-                 return;
-             }
+                if (planList == null)
+                {
+                    return;
+                }
 
                 PalletListData pallet = new PalletListData();
-                if(stock.Plan_List_ID =="-1")
+                if (stock.Plan_List_ID == "-1")
                 {
                     pallet.按计划配盘 = "否";
                 }
                 else
                 {
                     pallet.按计划配盘 = "是";
-                    
+
                     pallet.计划单号 = planList.Plan_Code;
                 }
                 pallet.配盘时间 = stock.Stock_List_Entry_Time.ToString();
                 pallet.托盘条码 = stock.Stock_Tray_Barcode;
                 pallet.配盘工位名称 = stock.Cell_Name;
                 ViewDataManager.PALLETMANAGEDATA.PalletList.Add(pallet);
-                
+
             }
         }
 
@@ -188,7 +256,7 @@ namespace WMS_Kernel
             {
                 return;
             }
-            TrayGoodsListModel tglm = new TrayGoodsListModel();
+            PalletGoodsListModel tglm = new PalletGoodsListModel();
             tglm.单位 = goodsModel.Goods_Unit;
             tglm.规格型号 = goodsModel.Goods_Model;
             tglm.托盘条码 = trayCode;
@@ -202,7 +270,7 @@ namespace WMS_Kernel
         {
             for (int i = 0; i < ViewDataManager.PALLETMANAGEDATA.PalletInforData.Count; i++)
             {
-                TrayGoodsListModel tglm = ViewDataManager.PALLETMANAGEDATA.PalletInforData[i];
+                PalletGoodsListModel tglm = ViewDataManager.PALLETMANAGEDATA.PalletInforData[i];
                 if (tglm.物料编码 == goodsCode)
                 {
                     ViewDataManager.PALLETMANAGEDATA.PalletInforData.Remove(tglm);
@@ -220,9 +288,16 @@ namespace WMS_Kernel
                 {
                     this.View.ShowMessage("信息提示", "请添加配盘物料！");
                     return;
-                }
-               
-                WH_Station_LogicModel cell = bllStationLogic.GetStationByName(recCellName);
+                } 
+                //WH_WareHouseModel house = bllWareHouse.GetModelByName(houseName);
+                //if (house == null)
+                //{
+                   
+                //    return ;
+                //}
+                WH_CellModel cell = bllCell.GetStationByName(recCellName);
+
+                //WH_Station_LogicModel cell = bllStationLogic.GetStationByName(house.WareHouse_ID,recCellName);
                 if (cell == null)
                 {
                     this.View.ShowMessage("信息提示", "配盘地点错误！");
@@ -234,7 +309,7 @@ namespace WMS_Kernel
                     this.View.ShowMessage("信息提示", "此托盘条码不在库存中！");
                     return;
                 }
-                stockModel.Cell_Child_ID = cell.Cell_Child_ID;
+                stockModel.Cell_Child_ID = cell.Cell_ID;
                 stockModel.Stock_Tray_Barcode = palletCode;
                 if (isFull == true)
                 {
@@ -258,7 +333,7 @@ namespace WMS_Kernel
                     Stock_ListModel stockList = new Stock_ListModel();
                     stockList.Stock_List_ID = Guid.NewGuid().ToString();
                     stockList.Stock_ID = stockModel.Stock_ID;
-                    TrayGoodsListModel trayGoodsModel = ViewDataManager.PALLETMANAGEDATA.PalletInforData[i];
+                    PalletGoodsListModel trayGoodsModel = ViewDataManager.PALLETMANAGEDATA.PalletInforData[i];
                     GoodsModel goods = bllGoods.GetModelByCode(trayGoodsModel.物料编码);
                     if (goods == null)
                     {
@@ -341,7 +416,7 @@ namespace WMS_Kernel
         }
         private bool IsExistPalletGoods(string goodsCode)
         {
-            foreach (TrayGoodsListModel goods in ViewDataManager.PALLETMANAGEDATA.PalletInforData)
+            foreach (PalletGoodsListModel goods in ViewDataManager.PALLETMANAGEDATA.PalletInforData)
             {
                 if (goods.物料编码 == goodsCode)
                 {

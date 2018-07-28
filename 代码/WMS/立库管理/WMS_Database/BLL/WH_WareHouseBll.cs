@@ -150,6 +150,20 @@ namespace WMS_Database
                 return null;
             }
         }
+
+        public WH_WareHouseModel GetModelByCode(string houseCode)
+        {
+            string sqlStr = "WareHouse_Code = '" + houseCode + "'";
+            List<WH_WareHouseModel> houseList = GetModelList(sqlStr);
+            if (houseList != null && houseList.Count > 0)
+            {
+                return houseList[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
         
 		#endregion  ExtensionMethod
 	}

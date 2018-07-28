@@ -11,6 +11,7 @@ namespace CommonMoudle
     {
         private static PlanBll bllPlan = new PlanBll();
         private static WH_Cell_ChildrenBll bllCellChild = new WH_Cell_ChildrenBll();
+        private static WH_CellBll bllCell = new WH_CellBll();
         private static ManageBll bllManage = new ManageBll();
         private static Stock_ListBll bllStockList = new Stock_ListBll();
         private static WH_Cell_Operate_RecordBLL bllCellOperateRecord = new WH_Cell_Operate_RecordBLL();
@@ -246,35 +247,72 @@ namespace CommonMoudle
             restr = "更新计划完成状态成功！";
             return true;
         }
+
+        
         public static bool AddStockRecord(string manageID)
         {
             List<View_ManageStockListModel> manageStockList = bllViewManageStockList.GetModelListByManageID(manageID);
+
+         
+           var sdf = manageStockList.Distinct(new ListCompare<View_ManageStockListModel>((x, y) 
+                => x.Stock_Tray_Barcode == y.Stock_Tray_Barcode));
+
+           List<View_ManageStockListModel> distintStockList = sdf.ToList();
+
+            if (distintStockList == null && distintStockList.Count == 0)
+            {
+                return false;
+            }
             if (manageStockList == null && manageStockList.Count == 0)
             {
                 return false;
             }
-            foreach (View_ManageStockListModel manageStock in manageStockList)
+            foreach (View_ManageStockListModel manageStock in distintStockList)
             {
                 RecordModel record = new RecordModel();
-                record.End_Cell_ID = manageStock.Mange_End_Cell_ID;
+
                 record.Manage_Begin_Time = manageStock.Manage_Begin_Time;
                 record.Manage_End_Time = manageStock.Manage_End_Time;
                 record.Manage_Type_Code = manageStock.Mange_Type_ID;
+
+
                 record.Plan_ID = manageStock.Plan_ID;
                 record.Record_ID = Guid.NewGuid().ToString();
                 record.Start_Cell_ID = manageStock.Mange_Start_Cell_ID;
+                record.End_Cell_ID = manageStock.Mange_End_Cell_ID;
+
+                View_CellModel startCell = bllViewCell.GetModelByChildCellID(manageStock.Mange_Start_Cell_ID);
+                View_CellModel endCell = bllViewCell.GetModelByChildCellID(manageStock.Mange_End_Cell_ID);
+                if (startCell.Cell_Type == EnumCellType.货位.ToString() && endCell.Cell_Type == EnumCellType.货位.ToString())
+                {
+                    record.Record_OperateType = EnumCellTransferType.移库.ToString();
+                }
+                else if (startCell.Cell_Type == EnumCellType.货位.ToString() && endCell.Cell_Type != EnumCellType.货位.ToString())
+                {
+                    record.Record_OperateType = EnumCellTransferType.出库.ToString();
+                }
+                else if (startCell.Cell_Type != EnumCellType.货位.ToString() && endCell.Cell_Type == EnumCellType.货位.ToString())
+                {
+                    record.Record_OperateType = EnumCellTransferType.入库.ToString();
+                }
+
                 record.Stock_Tray_Barcode = manageStock.Stock_Tray_Barcode;
                 bllRecord.Add(record);
+                foreach (View_ManageStockListModel stockList in manageStockList)
+                {
 
-                Record_ListModel recordList = new Record_ListModel();
-                recordList.Goods_ID = manageStock.Goods_ID;
-                recordList.Plan_List_ID = manageStock.Plan_List_ID;
-                recordList.Record_Box_Barcode = manageStock.Stock_List_Box_Barcode;
-                recordList.Record_ID = record.Record_ID;
-                recordList.Record_List_ID = Guid.NewGuid().ToString();
-                recordList.Record_List_Quantity = manageStock.Stock_List_Quantity;
-                bllRecordList.Add(recordList);
+
+                    Record_ListModel recordList = new Record_ListModel();
+                    recordList.Goods_ID = stockList.Goods_ID;
+                    recordList.Plan_List_ID = stockList.Plan_List_ID;
+                    recordList.Record_Box_Barcode = stockList.Stock_List_Box_Barcode;
+                    recordList.Record_ID = record.Record_ID;
+                    recordList.Record_List_ID = Guid.NewGuid().ToString();
+                    recordList.Record_List_Quantity = stockList.Stock_List_Quantity;
+                    bllRecordList.Add(recordList);
+                }
             }
+          
             return true;
 
         }
@@ -296,7 +334,13 @@ namespace CommonMoudle
         {
             ManageModel manage = new ManageModel();
             manage.Mange_CreateTime = DateTime.Now;
-            WH_Station_LogicModel stationCell = bllStationLogic.GetStationByName(putawayStationName);
+            WH_WareHouseModel house = bllWareHouse.GetModelByName(houseName);
+            if(house == null)
+            {
+                restr = "库房对象为空！";
+                return false;
+            }
+            WH_Station_LogicModel stationCell = bllStationLogic.GetStationByName(house.WareHouse_ID,putawayStationName);
             if (stationCell == null)
             {
                restr="上架站台不存在！";
@@ -409,11 +453,17 @@ namespace CommonMoudle
         }
        
 
-        public static bool CreateUnshelveManageTask(string planCode, string palletCode, string unshelveStationName, ref string manageID,ref string restr)
+        public static bool CreateUnshelveManageTask(string planCode, string palletCode,string houseName, string unshelveStationName, ref string manageID,ref string restr)
         {
             ManageModel manage = new ManageModel();
             manage.Mange_CreateTime = DateTime.Now;
-            WH_Station_LogicModel targetCell = bllStationLogic.GetStationByName(unshelveStationName);
+            WH_WareHouseModel wareHouse = bllWareHouse.GetModelByName(houseName);
+            if (wareHouse == null)
+            {
+                restr = "库房名称错误！";
+                return false;
+            }
+            WH_Station_LogicModel targetCell = bllStationLogic.GetStationByName(wareHouse.WareHouse_ID,unshelveStationName);
             if (targetCell == null)
             {
                 restr = "下架站台不存在！";
@@ -642,5 +692,34 @@ namespace CommonMoudle
         }
 
         
+    }
+
+    
+
+    public delegate bool CompareDelegate<T>(T x, T y);
+    public class ListCompare<T> : IEqualityComparer<T>
+    {
+        private CompareDelegate<T> _compare;
+        public ListCompare(CompareDelegate<T> d)
+        {
+            this._compare = d;
+        }
+
+        public bool Equals(T x, T y)
+        {
+            if (_compare != null)
+            {
+                return this._compare(x, y);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public int GetHashCode(T obj)
+        {
+            return obj.ToString().GetHashCode();
+        }
     }
 }

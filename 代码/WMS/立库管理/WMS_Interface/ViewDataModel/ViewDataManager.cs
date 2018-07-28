@@ -8,6 +8,7 @@ namespace WMS_Interface
     public static class ViewDataManager
     {
         public static GoodsViewData GOODSVIEWDATA = new GoodsViewData();
+        public static StockQueryDataViewModel STOCKQUERYDATAVIEWDATA = new StockQueryDataViewModel();
 
         public static StorageViewData STORAGEVIEWDATA = new StorageViewData();
 
@@ -33,5 +34,9 @@ namespace WMS_Interface
         public static RoleViewData ROLEVIEWDATA = new RoleViewData();
 
         public static WareAreaViewData WAREAREAVIEWDATA = new WareAreaViewData();
+
+        public static WHCellViewData WHCELLVIEWDATA = new WHCellViewData();
+        public static WHStationViewData WHSTATIONVIEWDATA = new WHStationViewData();
+        public static RecordQueryData RECORDQUERYDATA = new RecordQueryData();
     }
 }

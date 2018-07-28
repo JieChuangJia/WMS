@@ -2,6 +2,7 @@
 using System.Data;
 using System.Text;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 namespace WMS_Database
 {
 	/// <summary>
@@ -426,6 +427,27 @@ namespace WMS_Database
 
         #endregion  Method
 		#region  ExtensionMethod
+        /// <summary>
+        /// 得到一个对象实体
+        /// </summary>
+        public List<string> GetDistinctGoods()
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select  distinct  Goods_Class_Name  ");
+            
+            strSql.Append(" from Goods_Class ");
+            List<string> items= new List<string>();
+           
+            DataSet ds = DbHelperSQL.Query(strSql.ToString());
+            if(ds!= null&&ds.Tables.Count>0)
+            {
+                for(int i=0;i<ds.Tables[0].Rows.Count;i++)
+                {
+                    items.Add(ds.Tables[0].Rows[i][0].ToString());
+                }
+            }
+            return items;
+        }
 
 		#endregion  ExtensionMethod
 	}

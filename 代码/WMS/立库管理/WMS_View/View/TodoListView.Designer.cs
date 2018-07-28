@@ -42,10 +42,9 @@
             this.dateEdit_EndTime = new DevExpress.XtraEditors.DateEdit();
             this.dateEdit_StartTime = new DevExpress.XtraEditors.DateEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.sb_CompletePlan = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.sb_DeleteTask = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.sb_ExePlan = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.gc_PlanList = new DevExpress.XtraGrid.GridControl();
@@ -202,10 +201,9 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.simpleButton6);
+            this.groupControl1.Controls.Add(this.sb_CompletePlan);
             this.groupControl1.Controls.Add(this.simpleButton5);
             this.groupControl1.Controls.Add(this.sb_DeleteTask);
-            this.groupControl1.Controls.Add(this.simpleButton3);
             this.groupControl1.Controls.Add(this.sb_ExePlan);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 423);
@@ -214,21 +212,21 @@
             this.groupControl1.TabIndex = 8;
             this.groupControl1.Text = "操作区";
             // 
-            // simpleButton6
+            // sb_CompletePlan
             // 
-            this.simpleButton6.Enabled = false;
-            this.simpleButton6.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.Image")));
-            this.simpleButton6.Location = new System.Drawing.Point(337, 31);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(68, 23);
-            this.simpleButton6.TabIndex = 19;
-            this.simpleButton6.Text = "完成";
+            this.sb_CompletePlan.Image = ((System.Drawing.Image)(resources.GetObject("sb_CompletePlan.Image")));
+            this.sb_CompletePlan.Location = new System.Drawing.Point(249, 31);
+            this.sb_CompletePlan.Name = "sb_CompletePlan";
+            this.sb_CompletePlan.Size = new System.Drawing.Size(68, 23);
+            this.sb_CompletePlan.TabIndex = 19;
+            this.sb_CompletePlan.Text = "完成";
+            this.sb_CompletePlan.Click += new System.EventHandler(this.sb_CompletePlan_Click);
             // 
             // simpleButton5
             // 
             this.simpleButton5.Enabled = false;
             this.simpleButton5.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.Image")));
-            this.simpleButton5.Location = new System.Drawing.Point(255, 31);
+            this.simpleButton5.Location = new System.Drawing.Point(169, 31);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(68, 23);
             this.simpleButton5.TabIndex = 18;
@@ -237,22 +235,12 @@
             // sb_DeleteTask
             // 
             this.sb_DeleteTask.Image = ((System.Drawing.Image)(resources.GetObject("sb_DeleteTask.Image")));
-            this.sb_DeleteTask.Location = new System.Drawing.Point(173, 31);
+            this.sb_DeleteTask.Location = new System.Drawing.Point(89, 31);
             this.sb_DeleteTask.Name = "sb_DeleteTask";
             this.sb_DeleteTask.Size = new System.Drawing.Size(68, 23);
             this.sb_DeleteTask.TabIndex = 17;
             this.sb_DeleteTask.Text = "删除";
             this.sb_DeleteTask.Click += new System.EventHandler(this.sb_DeleteTask_Click);
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Enabled = false;
-            this.simpleButton3.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(91, 31);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(68, 23);
-            this.simpleButton3.TabIndex = 16;
-            this.simpleButton3.Text = "停止";
             // 
             // sb_ExePlan
             // 
@@ -277,11 +265,11 @@
             // gc_PlanList
             // 
             this.gc_PlanList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_PlanList.Location = new System.Drawing.Point(2, 22);
+            this.gc_PlanList.Location = new System.Drawing.Point(2, 21);
             this.gc_PlanList.MainView = this.gv_PlanList;
             this.gc_PlanList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_PlanList.Name = "gc_PlanList";
-            this.gc_PlanList.Size = new System.Drawing.Size(1167, 150);
+            this.gc_PlanList.Size = new System.Drawing.Size(1167, 151);
             this.gc_PlanList.TabIndex = 2;
             this.gc_PlanList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_PlanList});
@@ -313,11 +301,11 @@
             // gc_PlanGoodsList
             // 
             this.gc_PlanGoodsList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_PlanGoodsList.Location = new System.Drawing.Point(2, 22);
+            this.gc_PlanGoodsList.Location = new System.Drawing.Point(2, 21);
             this.gc_PlanGoodsList.MainView = this.gv_PlanGoodsList;
             this.gc_PlanGoodsList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_PlanGoodsList.Name = "gc_PlanGoodsList";
-            this.gc_PlanGoodsList.Size = new System.Drawing.Size(1167, 150);
+            this.gc_PlanGoodsList.Size = new System.Drawing.Size(1167, 151);
             this.gc_PlanGoodsList.TabIndex = 7;
             this.gc_PlanGoodsList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_PlanGoodsList});
@@ -385,10 +373,9 @@
         private DevExpress.XtraEditors.TextEdit te_PlanID;
         private DevExpress.XtraEditors.SimpleButton sb_TrayQuery;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraEditors.SimpleButton sb_CompletePlan;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraEditors.SimpleButton sb_DeleteTask;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton sb_ExePlan;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.GroupControl groupControl3;

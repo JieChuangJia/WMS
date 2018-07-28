@@ -12,13 +12,14 @@ namespace WMS_Database
         #region Model
         private string _record_id;
         private string _plan_id = "-1";
+        private string _record_operatetype;
         private string _manage_type_code = "";
         private string _stock_tray_barcode = "";
         private string _start_cell_id = "-1";
         private string _end_cell_id = "-1";
         private string _manage_operater = "-1";
-        private DateTime? _manage_begin_time;
-        private DateTime? _manage_end_time;
+        private DateTime? _manage_begin_time ;
+        private DateTime? _manage_end_time  ;
         private string _record_remark = "";
         private string _record_reserve1;
         private string _record_reserve2;
@@ -40,6 +41,14 @@ namespace WMS_Database
         {
             set { _plan_id = value; }
             get { return _plan_id; }
+        }
+        /// <summary>
+        /// 出库、入库、移库
+        /// </summary>
+        public string Record_OperateType
+        {
+            set { _record_operatetype = value; }
+            get { return _record_operatetype; }
         }
         /// <summary>
         /// 任务类型

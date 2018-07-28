@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PalletManaView));
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition4 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition5 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition6 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition7 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition8 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition9 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition10 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition6 = new DevExpress.XtraLayout.RowDefinition();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -231,23 +231,23 @@
             this.layoutControlGroup8.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.layoutControlGroup8.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup8.Name = "layoutControlGroup8";
-            columnDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition1.Width = 60D;
-            columnDefinition2.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition2.Width = 60D;
-            columnDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition3.Width = 60D;
-            columnDefinition4.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition4.Width = 100D;
+            columnDefinition6.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition6.Width = 60D;
+            columnDefinition7.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition7.Width = 60D;
+            columnDefinition8.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition8.Width = 60D;
+            columnDefinition9.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition9.Width = 100D;
             this.layoutControlGroup8.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition1,
-            columnDefinition2,
-            columnDefinition3,
-            columnDefinition4});
-            rowDefinition1.Height = 100D;
-            rowDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition6,
+            columnDefinition7,
+            columnDefinition8,
+            columnDefinition9});
+            rowDefinition4.Height = 100D;
+            rowDefinition4.SizeType = System.Windows.Forms.SizeType.Percent;
             this.layoutControlGroup8.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition1});
+            rowDefinition4});
             this.layoutControlGroup8.Size = new System.Drawing.Size(1139, 30);
             this.layoutControlGroup8.TextVisible = false;
             // 
@@ -284,17 +284,17 @@
             this.layoutControlGroup6.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.layoutControlGroup6.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup6.Name = "layoutControlGroup6";
-            columnDefinition5.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition5.Width = 100D;
+            columnDefinition10.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition10.Width = 100D;
             this.layoutControlGroup6.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition5});
-            rowDefinition2.Height = 100D;
-            rowDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
-            rowDefinition3.Height = 30D;
-            rowDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition10});
+            rowDefinition5.Height = 100D;
+            rowDefinition5.SizeType = System.Windows.Forms.SizeType.Percent;
+            rowDefinition6.Height = 30D;
+            rowDefinition6.SizeType = System.Windows.Forms.SizeType.Absolute;
             this.layoutControlGroup6.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition2,
-            rowDefinition3});
+            rowDefinition5,
+            rowDefinition6});
             this.layoutControlGroup6.Size = new System.Drawing.Size(1143, 152);
             this.layoutControlGroup6.TextVisible = false;
             // 
@@ -437,7 +437,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(216, 20);
+            this.labelControl3.Location = new System.Drawing.Point(274, 25);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(48, 14);
             this.labelControl3.TabIndex = 17;
@@ -445,7 +445,7 @@
             // 
             // cbe_PlanList
             // 
-            this.cbe_PlanList.Location = new System.Drawing.Point(276, 17);
+            this.cbe_PlanList.Location = new System.Drawing.Point(334, 22);
             this.cbe_PlanList.Name = "cbe_PlanList";
             this.cbe_PlanList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -456,7 +456,7 @@
             // sb_QueryPallet
             // 
             this.sb_QueryPallet.Image = ((System.Drawing.Image)(resources.GetObject("sb_QueryPallet.Image")));
-            this.sb_QueryPallet.Location = new System.Drawing.Point(447, 16);
+            this.sb_QueryPallet.Location = new System.Drawing.Point(505, 21);
             this.sb_QueryPallet.Name = "sb_QueryPallet";
             this.sb_QueryPallet.Size = new System.Drawing.Size(76, 22);
             this.sb_QueryPallet.TabIndex = 15;
@@ -465,7 +465,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(16, 20);
+            this.labelControl2.Location = new System.Drawing.Point(22, 25);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(48, 14);
             this.labelControl2.TabIndex = 12;
@@ -473,26 +473,26 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(816, 24);
+            this.labelControl1.Location = new System.Drawing.Point(765, 21);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(48, 14);
             this.labelControl1.TabIndex = 11;
-            this.labelControl1.Text = "配盘库房";
+            this.labelControl1.Text = "接收库房";
             this.labelControl1.Visible = false;
             // 
             // cbe_PalletPos
             // 
-            this.cbe_PalletPos.Location = new System.Drawing.Point(76, 17);
+            this.cbe_PalletPos.Location = new System.Drawing.Point(82, 22);
             this.cbe_PalletPos.Name = "cbe_PalletPos";
             this.cbe_PalletPos.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbe_PalletPos.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbe_PalletPos.Size = new System.Drawing.Size(128, 20);
+            this.cbe_PalletPos.Size = new System.Drawing.Size(174, 20);
             this.cbe_PalletPos.TabIndex = 10;
             // 
             // cbe_HouseList
             // 
-            this.cbe_HouseList.Location = new System.Drawing.Point(876, 21);
+            this.cbe_HouseList.Location = new System.Drawing.Point(825, 18);
             this.cbe_HouseList.Name = "cbe_HouseList";
             this.cbe_HouseList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -500,6 +500,7 @@
             this.cbe_HouseList.Size = new System.Drawing.Size(102, 20);
             this.cbe_HouseList.TabIndex = 9;
             this.cbe_HouseList.Visible = false;
+            this.cbe_HouseList.SelectedIndexChanged += new System.EventHandler(this.cbe_HouseList_SelectedIndexChanged);
             // 
             // panelControl2
             // 
@@ -658,8 +659,6 @@
             this.gv_GoodsList.GroupPanelText = "物料清单";
             this.gv_GoodsList.IndicatorWidth = 40;
             this.gv_GoodsList.Name = "gv_GoodsList";
-            this.gv_GoodsList.OptionsSelection.MultiSelect = true;
-            this.gv_GoodsList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
             this.gv_GoodsList.OptionsView.ShowGroupPanel = false;
             // 
             // PalletManaView

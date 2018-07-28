@@ -52,7 +52,7 @@
             // 
             // sb_Add
             // 
-            this.sb_Add.Location = new System.Drawing.Point(190, 153);
+            this.sb_Add.Location = new System.Drawing.Point(196, 149);
             this.sb_Add.Name = "sb_Add";
             this.sb_Add.Size = new System.Drawing.Size(82, 22);
             this.sb_Add.TabIndex = 6;
@@ -61,7 +61,7 @@
             // 
             // sb_Cancel
             // 
-            this.sb_Cancel.Location = new System.Drawing.Point(287, 153);
+            this.sb_Cancel.Location = new System.Drawing.Point(286, 149);
             this.sb_Cancel.Name = "sb_Cancel";
             this.sb_Cancel.Size = new System.Drawing.Size(82, 22);
             this.sb_Cancel.TabIndex = 5;
@@ -70,7 +70,7 @@
             // 
             // cb_AreaEnable
             // 
-            this.cb_AreaEnable.Location = new System.Drawing.Point(66, 150);
+            this.cb_AreaEnable.Location = new System.Drawing.Point(70, 150);
             this.cb_AreaEnable.Name = "cb_AreaEnable";
             this.cb_AreaEnable.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.cb_AreaEnable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -185,7 +185,7 @@
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbonControl1.ShowQatLocationSelector = false;
             this.ribbonControl1.ShowToolbarCustomizeItem = false;
-            this.ribbonControl1.Size = new System.Drawing.Size(384, 33);
+            this.ribbonControl1.Size = new System.Drawing.Size(384, 27);
             this.ribbonControl1.Toolbar.ShowCustomizeItem = false;
             // 
             // AddAndModifyAreaView

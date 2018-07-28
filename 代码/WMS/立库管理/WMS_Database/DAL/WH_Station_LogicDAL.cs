@@ -353,6 +353,11 @@ namespace WMS_Database
             }
             return DbHelperSQL.Query(strSql.ToString());
         }
+        public DataSet GetStationCellName()
+        {
+            string sqlStr = "SELECT TOP 1000 [Cell_ID],[Cell_Name]FROM [WMSDB2].[dbo].[WH_Cell] where Cell_Type != '货位' and Cell_ID in (SELECT  distinct [Cell_Child_ID]FROM [WMSDB2].[dbo].[WH_Station_Logic] where WH_Station_Logic_Type='配盘工位')";
+            return DbHelperSQL.Query(sqlStr);
+        }
 
         /// <summary>
         /// 获得前几行数据
@@ -427,7 +432,14 @@ namespace WMS_Database
 
         #endregion  Method
         #region  MethodEx
-
+        public DataSet GetDistinctStationCate()
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select distinct WH_Station_Logic_Type ");
+            strSql.Append(" FROM WH_Station_Logic ");
+         
+            return DbHelperSQL.Query(strSql.ToString());
+        }
         #endregion  MethodEx
     }
 }

@@ -186,12 +186,12 @@ namespace WMS_Database
             return GetModelList(cellListStr);
         }
 
-        public List<View_CellModel> GetPalletStation()
-        {
+        //public List<View_CellModel> GetPalletStation()
+        //{
 
-            string cellListStr = " Cell_Type = '配盘工位'";
-            return GetModelList(cellListStr);
-        }
+        //    string cellListStr = " Cell_Type = '配盘工位'";
+        //    return GetModelList(cellListStr);
+        //}
         public View_CellModel GetStationCell(string putawayStationName)
         {
             string sqlTypeStr = "Cell_Name = '" + putawayStationName + "'";

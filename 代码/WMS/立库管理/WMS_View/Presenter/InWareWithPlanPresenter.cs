@@ -33,7 +33,7 @@ namespace WMS_Kernel
 
        public override void Init()
        {
-           IniHouseList();
+           //IniHouseList();
            IniPlanList();
            IniTargetPos();
        }
@@ -112,11 +112,39 @@ namespace WMS_Kernel
            }
            return false;
        }
+       private void IniTargetPos()
+       {
+           //WH_WareHouseModel house = bllWareHouse.GetModelByName(wareHouseName);
+           //if(house ==null)
+           //{
+           //    this.View.ShowMessage("信息提示", "不存在此库房");
+           //    return;
+           //}
+           List<string> statinList = bllStationLogic.GetStationCellName();
 
-       public void TrayConfirm(string planListID, string recCellName)
+           //List<string> palletSta = new List<string>();
+           if (statinList == null)
+           {
+               this.View.ShowMessage("信息提示", "此库房不存在配盘工位，请检查配置！");
+               return;
+           }
+
+           this.View.IniTargetPos(statinList);
+       }
+       public void TrayConfirm(string planListID,string recCellName)
        {
            try
            {
+               View_PlanListModel planlistView = bllViewPlanList.GetModelByPlanListID(planListID);
+               if(planlistView == null)
+               {
+                   return;
+               }
+               if(planlistView.Plan_Status == EnumPlanStatus.完成.ToString())
+               {
+                   this.View.ShowMessage("信息提示", "已完成的计划不允许再进行配盘操作！");
+                   return;
+               }
                string restr = "";
                if (ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData.Count == 0)
                {
@@ -131,7 +159,13 @@ namespace WMS_Kernel
                //{
                //    stock.Stock_Full_Flag = "0";
                //}
-               WH_Station_LogicModel cell = bllStationLogic.GetStationByName(recCellName);
+               //WH_WareHouseModel house = bllWareHouse.GetModelByName(houseName);
+               //if (house == null)
+               //{
+               //    restr = "库房对象为空！";
+               //    return ;
+               //}
+               WH_CellModel cell = bllCell.GetStationByName(recCellName);
                if (cell == null)
                {
                    this.View.ShowMessage("信息提示", "配盘地点错误！");
@@ -151,6 +185,7 @@ namespace WMS_Kernel
                    if (stockModel != null)
                    {
                        this.View.ShowMessage("信息提示", "托盘条码" + tray + "已经在库存中，请确认托盘条码！");
+                       ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData.Clear();
                        return;
                    }
                }
@@ -164,7 +199,7 @@ namespace WMS_Kernel
                {
                    StockModel stock = new StockModel();
                    stock.Stock_ID = Guid.NewGuid().ToString();
-                   stock.Cell_Child_ID = cell.Cell_Child_ID;
+                   stock.Cell_Child_ID = cell.Cell_ID;
                    stock.Stock_Tray_Barcode = tray;
                    bllStock.Add(stock);
 
@@ -317,8 +352,8 @@ namespace WMS_Kernel
        }
        private void IniHouseList()
        {
-           //List<WH_WareHouseModel> houseList = bllWareHouse.GetModelList("");
-           //this.View.IniHouseName(houseList);
+           List<WH_WareHouseModel> houseList = bllWareHouse.GetModelList("");
+           this.View.IniHouseName(houseList);
        }
        public void IniPlanList()
        {
@@ -326,15 +361,15 @@ namespace WMS_Kernel
            this.View.IniPlanList(planList);
        }
 
-       private void IniTargetPos()
+       public void IniTargetPos(string houseName)
        {
-           //WH_WareHouseModel house = bllWareHouse.GetModelByName(wareHouseName);
-           //if(house ==null)
-           //{
-           //    this.View.ShowMessage("信息提示", "不存在此库房");
-           //    return;
-           //}
-           List<WH_Station_LogicModel> statinList = bllStationLogic.GetStationListByType( EnumCellType.配盘工位.ToString());
+           WH_WareHouseModel house = bllWareHouse.GetModelByName(houseName);
+           if (house == null)
+           {
+               this.View.ShowMessage("信息提示", "不存在此库房");
+               return;
+           }
+           List<WH_Station_LogicModel> statinList = bllStationLogic.GetStationListByType(house.WareHouse_ID,EnumCellType.配盘工位.ToString());
 
            List<string> palletSta = new List<string>();
            if(statinList == null)

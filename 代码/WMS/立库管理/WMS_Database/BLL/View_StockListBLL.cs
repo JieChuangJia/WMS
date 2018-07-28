@@ -182,13 +182,20 @@ namespace WMS_Database
             return GetModelList(sqlStr);
 
         }
-        public List<View_StockListModel> GetModelList(string palletPos,string planCode)
+        public List<View_StockListModel> GetModelList(string cellChildID,string planCode)
         {
-            string sqlStr = " Cell_Name='" + palletPos + "'";
+            string sqlStr = "[Cell_Type] ='配盘工位'";
+            if(cellChildID!= "所有")
+            {
+                 sqlStr +="and Cell_Child_ID='" + cellChildID + "'";
+            }
+          
+
             if(planCode != "所有")
             {
                 sqlStr += " and Plan_List_ID in (select Plan_List_ID from View_PlanList where Plan_Code ='" + planCode + "')";
             }
+             
             
             return GetModelList(sqlStr);
         }
@@ -197,7 +204,11 @@ namespace WMS_Database
             string sqlStr = "Stock_Tray_Barcode = '" + palletCode + "' and Cell_Name='" + cellName + "' and Cell_Type='配盘工位'";
             return GetModelList(sqlStr);
         }
-
+        public List<View_StockListModel> GetStockDetail(string cellCode)
+        {
+            string sqlStr = "Cell_Chlid_ID = '" + cellCode + "'";
+            return GetModelList(sqlStr);
+        }
         public List<string> GetPalletCodeList()
         {
             DataSet ds = dal.GetPalletCodeList();

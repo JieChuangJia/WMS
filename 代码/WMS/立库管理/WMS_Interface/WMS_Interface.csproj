@@ -65,6 +65,7 @@
     <Compile Include="Model\EnumDefModel.cs" />
     <Compile Include="Model\ExpandFormEventArgs.cs" />
     <Compile Include="Model\GSMemTempModel.cs" />
+    <Compile Include="Model\StockQueryParm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewDataModel\GoodsViewData.cs" />
     <Compile Include="ViewDataModel\PalletManageViewData.cs" />
@@ -73,6 +74,8 @@
     <Compile Include="ViewDataModel\PlanManageViewData.cs" />
     <Compile Include="ViewDataModel\PlanQueryViewData.cs" />
     <Compile Include="ViewDataModel\PutawayViewData.cs" />
+    <Compile Include="ViewDataModel\RecordQueryData.cs" />
+    <Compile Include="ViewDataModel\StockQueryDataViewModel.cs" />
     <Compile Include="ViewDataModel\UserViewData.cs" />
     <Compile Include="ViewDataModel\RoleViewData.cs" />
     <Compile Include="ViewDataModel\StorageViewData.cs" />
@@ -81,6 +84,8 @@
     <Compile Include="ViewDataModel\TrayGoodsManageViewData.cs" />
     <Compile Include="ViewDataModel\UnShelvePlanViewData.cs" />
     <Compile Include="ViewDataModel\ViewDataManager.cs" />
+    <Compile Include="ViewDataModel\WHStationViewData.cs" />
+    <Compile Include="ViewDataModel\WHCellViewData.cs" />
     <Compile Include="ViewDataModel\WareAreaViewData.cs" />
   </ItemGroup>
   <ItemGroup>
