@@ -11,12 +11,14 @@ using DevExpress.XtraEditors;
 using WMS_Interface;
 using WMS_Kernel;
 using System.Configuration;
+using DevExpress.XtraSplashScreen;
 
-namespace Aoyou_WMS
+namespace WMS_Main
 {
     public partial class LoginView : ChildViewBase,IAddUserView
     {
         private AddUserPresenter presenter = null;
+        private SplashScreenManager _loadForm;
         public LoginView()
         {
             InitializeComponent();
@@ -29,6 +31,39 @@ namespace Aoyou_WMS
         public override void Init(IWMSFrame wmsFrame)
         {
             base.Init(wmsFrame); 
+        }
+
+       
+        protected SplashScreenManager LoadForm
+        {
+            get
+            {
+                if (_loadForm == null)
+                {
+                    this._loadForm = new SplashScreenManager(this, typeof(WaitForm1), true, true);
+                    this._loadForm.ClosingDelay = 0;
+                }
+                return _loadForm;
+            }
+        }
+ 
+
+        public void ShowWaitForm()
+        {
+            bool flag = !this.LoadForm.IsSplashFormVisible;
+            if (flag)
+            {
+                this.LoadForm.ShowWaitForm();
+            }
+        }
+
+        public void HideWaitForm()
+        {
+            bool isSplashFormVisible = this.LoadForm.IsSplashFormVisible;
+            if (isSplashFormVisible)
+            {
+                this.LoadForm.CloseWaitForm();
+            }
         }
 
         #region 私有方法
@@ -63,6 +98,7 @@ namespace Aoyou_WMS
         }
         private void sBtn_Sure_Click(object sender, EventArgs e)
         {
+            this.ShowWaitForm();
             User user = new User();
             user.UserName = this.txtEdit_UserName.Text;
             user.UserPassword = this.txtEdit_UserPassword.Text;
@@ -81,6 +117,7 @@ namespace Aoyou_WMS
             mainView.SetRoleLevel(roleLevel,user.UserName);
             mainView.Show();
             this.Hide();
+            this.HideWaitForm();
         }
 
      

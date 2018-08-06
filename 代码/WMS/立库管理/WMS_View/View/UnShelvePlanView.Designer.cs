@@ -60,8 +60,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.sb_CheckUnShelve = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.se_UnshelveNum = new DevExpress.XtraEditors.SpinEdit();
             this.sb_UnShelveTask = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.ce_TargetStation = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -84,7 +82,6 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.se_UnshelveNum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ce_TargetStation.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -300,8 +297,6 @@
             // groupControl3
             // 
             this.groupControl3.Controls.Add(this.sb_CheckUnShelve);
-            this.groupControl3.Controls.Add(this.labelControl2);
-            this.groupControl3.Controls.Add(this.se_UnshelveNum);
             this.groupControl3.Controls.Add(this.sb_UnShelveTask);
             this.groupControl3.Controls.Add(this.labelControl6);
             this.groupControl3.Controls.Add(this.ce_TargetStation);
@@ -314,44 +309,12 @@
             // 
             // sb_CheckUnShelve
             // 
-            this.sb_CheckUnShelve.Enabled = false;
             this.sb_CheckUnShelve.Image = ((System.Drawing.Image)(resources.GetObject("sb_CheckUnShelve.Image")));
-            this.sb_CheckUnShelve.Location = new System.Drawing.Point(523, 34);
+            this.sb_CheckUnShelve.Location = new System.Drawing.Point(348, 34);
             this.sb_CheckUnShelve.Name = "sb_CheckUnShelve";
             this.sb_CheckUnShelve.Size = new System.Drawing.Size(108, 22);
             this.sb_CheckUnShelve.TabIndex = 57;
             this.sb_CheckUnShelve.Text = "拣选下架";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Enabled = false;
-            this.labelControl2.Location = new System.Drawing.Point(350, 38);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(48, 14);
-            this.labelControl2.TabIndex = 56;
-            this.labelControl2.Text = "下架数量";
-            // 
-            // se_UnshelveNum
-            // 
-            this.se_UnshelveNum.EditValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.se_UnshelveNum.Enabled = false;
-            this.se_UnshelveNum.Location = new System.Drawing.Point(405, 35);
-            this.se_UnshelveNum.Name = "se_UnshelveNum";
-            this.se_UnshelveNum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.se_UnshelveNum.Properties.IsFloatValue = false;
-            this.se_UnshelveNum.Properties.Mask.EditMask = "N00";
-            this.se_UnshelveNum.Properties.MaxValue = new decimal(new int[] {
-            9999999,
-            0,
-            0,
-            0});
-            this.se_UnshelveNum.Size = new System.Drawing.Size(100, 20);
-            this.se_UnshelveNum.TabIndex = 55;
             // 
             // sb_UnShelveTask
             // 
@@ -396,10 +359,10 @@
             // gc_Stock
             // 
             this.gc_Stock.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_Stock.Location = new System.Drawing.Point(2, 21);
+            this.gc_Stock.Location = new System.Drawing.Point(2, 22);
             this.gc_Stock.MainView = this.gv_Stock;
             this.gc_Stock.Name = "gc_Stock";
-            this.gc_Stock.Size = new System.Drawing.Size(1169, 177);
+            this.gc_Stock.Size = new System.Drawing.Size(1169, 176);
             this.gc_Stock.TabIndex = 7;
             this.gc_Stock.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Stock});
@@ -504,7 +467,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             this.groupControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.se_UnshelveNum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ce_TargetStation.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
@@ -556,8 +518,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.ComboBoxEdit ce_TargetStation;
         private DevExpress.XtraEditors.SimpleButton sb_PlanQuery;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.SpinEdit se_UnshelveNum;
         private DevExpress.XtraEditors.SimpleButton sb_CheckUnShelve;
     }
 }

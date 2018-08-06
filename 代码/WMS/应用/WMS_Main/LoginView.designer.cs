@@ -1,4 +1,4 @@
-﻿namespace Aoyou_WMS
+﻿namespace WMS_Main
 {
     partial class LoginView
     {
@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginView));
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::WMS_Main.WaitForm1), true, true);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -42,7 +44,6 @@
             this.sBtn_Sure = new DevExpress.XtraEditors.SimpleButton();
             this.txtEdit_UserPassword = new DevExpress.XtraEditors.TextEdit();
             this.txtEdit_UserName = new DevExpress.XtraEditors.TextEdit();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -51,8 +52,11 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtEdit_UserPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEdit_UserName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // splashScreenManager1
+            // 
+            this.splashScreenManager1.ClosingDelay = 500;
             // 
             // defaultLookAndFeel1
             // 
@@ -193,10 +197,6 @@
             this.txtEdit_UserName.Size = new System.Drawing.Size(227, 20);
             this.txtEdit_UserName.TabIndex = 5;
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // LoginView
             // 
             this.AcceptButton = this.sBtn_Sure;
@@ -222,7 +222,6 @@
             this.panelControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtEdit_UserPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEdit_UserName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,7 +242,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
 
 
     }

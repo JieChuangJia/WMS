@@ -163,12 +163,13 @@
             // 
             // sb_ChooseConfirm
             // 
-            this.sb_ChooseConfirm.Location = new System.Drawing.Point(121, 28);
+            this.sb_ChooseConfirm.Image = ((System.Drawing.Image)(resources.GetObject("sb_ChooseConfirm.Image")));
+            this.sb_ChooseConfirm.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.sb_ChooseConfirm.Location = new System.Drawing.Point(106, 28);
             this.sb_ChooseConfirm.Name = "sb_ChooseConfirm";
-            this.sb_ChooseConfirm.Size = new System.Drawing.Size(92, 22);
+            this.sb_ChooseConfirm.Size = new System.Drawing.Size(95, 22);
             this.sb_ChooseConfirm.TabIndex = 8;
-            this.sb_ChooseConfirm.Text = "拣选完成确认";
-            this.sb_ChooseConfirm.Visible = false;
+            this.sb_ChooseConfirm.Text = "拣选确认";
             // 
             // sb_TaskComplete
             // 
