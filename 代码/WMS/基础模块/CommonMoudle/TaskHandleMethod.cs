@@ -357,7 +357,7 @@ namespace CommonMoudle
             {
                restr="库存中已经有此托盘条码！";
                 return false;
-            }
+            } 
             View_CellModel targetCell = null;
             if (isAssign == true)//分配货位要做校验
             {
@@ -428,17 +428,32 @@ namespace CommonMoudle
                 restr = "任务类型错误！";
                 return false;
             }
-            View_Plan_StockListModel plan = bllViewPalnStockList.GetModelByPalletCode(palletCode);
-            if (plan == null)
+            View_StockListModel vslm = bllViewStockList.GetModelByPalletCode(palletCode, EnumCellType.配盘工位.ToString());//
+            if(vslm == null)
             {
-              restr="当前库存没有对应计划！";
+                restr = "没有配盘，请查看！";
                 return false;
             }
-
-            manage.Plan_ID = plan.Plan_ID;
+            EnumOrderType orderType = EnumOrderType.计划;
+            if (vslm.Plan_List_ID == "-1")//无计划的
+            {
+                manage.Plan_ID = "-1";
+                orderType = EnumOrderType.非计划;
+            }
+            else
+            {
+                orderType = EnumOrderType.计划;
+                View_Plan_StockListModel plan = bllViewPalnStockList.GetModelByPalletCode(palletCode);
+                if (plan == null)
+                {
+                    restr = "当前库存没有对应计划！";
+                    return false;
+                }
+                manage.Plan_ID = plan.Plan_ID;
+            }
             manageID = manage.Mange_ID;
             bllManage.Add(manage);
-            bool status = CreatePutawayManageListTask(manage.Mange_ID, palletCode, ref restr); 
+            bool status = CreatePutawayManageListTask(manage.Mange_ID,orderType, palletCode, ref restr); 
             if(status == true)
             {
                 restr += "生成上架任务成功：终点：" + houseName + targetCell.Cell_Name + targetCell.Cell_Chlid_Position;
@@ -511,14 +526,23 @@ namespace CommonMoudle
 
             //manage.Mange_Type_ID = EnumManageTaskType.下架.ToString();
             manage.Mange_Type_ID = "8";//下架
-            PlanMainModel planModel = bllPlan.GetModelByPlanCode(planCode);
-            if (planModel == null)
+            PlanMainModel planModel = null;
+            if (planCode == "-1")
             {
-               restr = "不存在此计划！";
-                return false;
+                manage.Plan_ID = "-1";
+           
             }
-            manage.Plan_ID = planModel.Plan_ID;
-
+            else
+            {
+                planModel = bllPlan.GetModelByPlanCode(planCode);
+                if (planModel == null)
+                {
+                    restr = "不存在此计划！";
+                    return false;
+                }
+                manage.Plan_ID = planModel.Plan_ID;
+            }
+                 
             manageID = manage.Mange_ID;
             bllManage.Add(manage);
 
@@ -664,7 +688,7 @@ namespace CommonMoudle
             }
             return true;
         }
-        private static bool CreatePutawayManageListTask(string manageID, string palletCode, ref string restr)
+        private static bool CreatePutawayManageListTask(string manageID, EnumOrderType orderType,string palletCode, ref string restr)
         {
             List<View_StockListModel> stockList = bllViewStockList.GetModelListByPalletCode(palletCode, EnumCellType.配盘工位.ToString());
             if (stockList == null)
@@ -672,15 +696,20 @@ namespace CommonMoudle
                 restr = "储存为空！";
                 return false;
             }
-            //View_Plan_StockListModel plan = bllViewPalnStockList.GetModelByPalletCode(palletCode);
+           
 
             foreach (View_StockListModel stock in stockList)
             {
                 Manage_ListModel manageListModel = new Manage_ListModel();
-                Plan_ListModel planList = bllPlanList.GetModel(stock.Plan_List_ID);
+                if(orderType == EnumOrderType.计划)
+                {
+                    Plan_ListModel planList = bllPlanList.GetModel(stock.Plan_List_ID);
 
-                planList.Plan_List_Ordered_Quantity = stock.Stock_List_Quantity;
-                bllPlanList.Update(planList);
+                    planList.Plan_List_Ordered_Quantity = stock.Stock_List_Quantity;
+                    bllPlanList.Update(planList);
+                }
+               
+            
 
                 manageListModel.Manage_List_ID = Guid.NewGuid().ToString();
                 manageListModel.Manage_List_Quantity = stock.Stock_List_Quantity;

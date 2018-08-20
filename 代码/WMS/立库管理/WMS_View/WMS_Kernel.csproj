@@ -91,7 +91,9 @@
     <Compile Include="IView\IAddRoleView.cs" />
     <Compile Include="IView\IAddMaterialView.cs" />
     <Compile Include="IView\IInWareWithPlanView.cs" />
+    <Compile Include="IView\IPalletWithoutPlanView.cs" />
     <Compile Include="IView\IRecordQueryView.cs" />
+    <Compile Include="IView\IUnShelveWithoutPlanView.cs" />
     <Compile Include="IView\IUserManaView.cs" />
     <Compile Include="IView\IRoleManaView.cs" />
     <Compile Include="IView\IMaterailManaView.cs" />
@@ -116,9 +118,11 @@
     <Compile Include="Presenter\AddMaterialPresenter.cs" />
     <Compile Include="Presenter\InWareWithPlanPresenter.cs" />
     <Compile Include="Presenter\IStockQuery.cs" />
+    <Compile Include="Presenter\PalletWithoutPlanPresenter.cs" />
     <Compile Include="Presenter\RecordQueryPresenter.cs" />
     <Compile Include="Presenter\RoleManaPresenter.cs" />
     <Compile Include="Presenter\StockQueryPresenter.cs" />
+    <Compile Include="Presenter\UnShelveWithoutPlanPresenter.cs" />
     <Compile Include="Presenter\UserManaPresenter.cs" />
     <Compile Include="Presenter\MaterialManaPresenter.cs" />
     <Compile Include="Presenter\PalletManagePresenter.cs" />
@@ -168,6 +172,12 @@
     <Compile Include="View\AddAndModifyAreaView.Designer.cs">
       <DependentUpon>AddAndModifyAreaView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\PalletWithoutPlanView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PalletWithoutPlanView.Designer.cs">
+      <DependentUpon>PalletWithoutPlanView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ModifyUserView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +213,12 @@
     </Compile>
     <Compile Include="View\StockQueryView.Designer.cs">
       <DependentUpon>StockQueryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UnShelveWithoutPlanView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UnShelveWithoutPlanView.Designer.cs">
+      <DependentUpon>UnShelveWithoutPlanView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserManaView.cs">
       <SubType>Form</SubType>
@@ -405,6 +421,9 @@
     <EmbeddedResource Include="View\AddAndModifyAreaView.resx">
       <DependentUpon>AddAndModifyAreaView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\PalletWithoutPlanView.resx">
+      <DependentUpon>PalletWithoutPlanView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ModifyUserView.resx">
       <DependentUpon>ModifyUserView.cs</DependentUpon>
     </EmbeddedResource>
@@ -422,6 +441,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\StockQueryView.resx">
       <DependentUpon>StockQueryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UnShelveWithoutPlanView.resx">
+      <DependentUpon>UnShelveWithoutPlanView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserManaView.resx">
       <DependentUpon>UserManaView.cs</DependentUpon>
@@ -759,9 +781,6 @@
     <None Include="Resources\user1.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\view-list-icons.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\view-list-text-2.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -802,6 +821,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\stationLogic.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view-list-icons.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\object-rotate-right.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

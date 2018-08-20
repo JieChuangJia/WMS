@@ -38,8 +38,8 @@ namespace WMS_Kernel
 
             Bitmap bitmap = ImageResource.MaterialUnload.ToBitmap();
             this.IWmsFrame.AddTitlePage("任务管理", ref restr);
-            this.IWmsFrame.AddGroup("任务管理", "任务操作", ref restr);
-            this.IWmsFrame.AddButtonItem("任务管理", "任务操作", "上架管理", bitmap, ShowTabEventHandler, ref restr);
+            this.IWmsFrame.AddGroup("任务管理", "通用操作", ref restr);
+            this.IWmsFrame.AddButtonItem("任务管理", "通用操作", "上架管理", bitmap, ShowTabEventHandler, ref restr);
         }
         private void TabChangeEventHandler(object sender, EventArgs e)
         {
@@ -316,7 +316,7 @@ namespace WMS_Kernel
             int rowth =  int.Parse(this.cbe_Row.Text.Trim());
             int colth = int.Parse(this.cbe_Col.Text.Trim());
             int layerth = int.Parse(this.cbe_Layer.Text.Trim());
-            this.presenter.IniLayers(this.cbe_HouseName.Text.Trim(), rowth, colth, layerth);
+            this.presenter.IniPos(this.cbe_HouseName.Text.Trim(), rowth, colth, layerth);
         }
 
         private void ce_PalletCode_SelectedIndexChanged(object sender, EventArgs e)

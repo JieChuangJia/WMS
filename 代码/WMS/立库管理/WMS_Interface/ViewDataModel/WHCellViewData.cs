@@ -15,19 +15,5 @@ namespace WMS_Interface
         { }
     }
 
-    public class WHCellDataModel
-    {
-        public string 工位编号 { get; set; }
-        public string 库区编码 { get; set; }
-        public string 工位编码 { get; set; }
-        public string 工位名称 { get; set; }
-        public string 设备编码 { get; set; }
-        public string 工位方向 { get; set; }
-        public string 工位类型 { get; set; }
-
-        public WHCellDataModel()
-        { }
-
-    }
-
+    
 }

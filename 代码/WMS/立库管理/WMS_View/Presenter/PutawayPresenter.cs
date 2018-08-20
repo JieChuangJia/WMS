@@ -35,7 +35,7 @@ namespace WMS_Kernel
         {
             if(palletNum == "")
             {
-                this.View.ShowMessage("信息提示", "请输入托盘条码！");
+                this.View.ShowMessage("信息提示", "请选择托盘条码！");
                 return;
             }
             List<View_StockListModel> stockList = bllViewStockList.GetModelListByPalletCode(palletNum,EnumCellType.配盘工位.ToString());
@@ -144,7 +144,7 @@ namespace WMS_Kernel
             List<string> layers = bllViewCell.GetRCL(wareHouse.WareHouse_ID, rowth, colth, 0, 2);
             this.View.IniLayers(layers);
         }
-        public void IniLayers(string houseName, int rowth, int colth,int layerth)
+        public void IniPos(string houseName, int rowth, int colth,int layerth)
         {
             WH_WareHouseModel wareHouse = bllWareHouse.GetModelByName(houseName);
             if (wareHouse == null)
@@ -161,7 +161,7 @@ namespace WMS_Kernel
             string restr = "";
             if (palletCode == "")
             {
-                this.View.ShowMessage("信息提示", "请输入托盘条码！");
+                this.View.ShowMessage("信息提示", "请选择托盘条码！");
                 return;
             }
             //if(isEmptyPallet == false)//不是空托盘，没有库存判断
@@ -191,7 +191,9 @@ namespace WMS_Kernel
             ////{
                 //manaTask = EnumManageTaskType.上架;
             //}
-            if (TaskHandleMethod.CreatePutawayManageTask(palletCode, houseName, putawayStationName, isAssign, targetCell, manaTask, ref manageID, ref restr) == false)
+
+
+            if (TaskHandleMethod.CreatePutawayManageTask(palletCode, houseName, putawayStationName, isAssign, targetCell,manaTask, ref manageID, ref restr) == false)
             {
                 this.WmsFrame.WriteLog("上架逻辑", "", "提示", "创建管理任务失败：" + restr);
                 return;

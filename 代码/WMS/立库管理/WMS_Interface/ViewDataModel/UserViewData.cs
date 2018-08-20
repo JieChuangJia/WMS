@@ -16,16 +16,5 @@ namespace WMS_Interface
         { }
     }
 
-    public class UserDataModel
-    {
-        public string 用户名称 { get; set; }
-        public string 用户密码 { get; set; }
-
-        public string 角色名称 { get; set; }
-        public string 用户预留 { get; set; }
-
-        public UserDataModel()
-        { }
-
-    }
+  
 }

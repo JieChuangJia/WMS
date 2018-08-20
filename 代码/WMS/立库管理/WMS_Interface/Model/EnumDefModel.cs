@@ -112,6 +112,11 @@ namespace WMS_Interface
         空托盘上架,
         空托盘下架
     }
+    public enum EnumOrderType
+    {
+        计划,
+        非计划
+    }
     public enum EnumShelfType
     {
         单深,

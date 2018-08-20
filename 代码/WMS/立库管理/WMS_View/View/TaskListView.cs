@@ -36,8 +36,8 @@ namespace WMS_Kernel
 
             Bitmap bitmap = ImageResource.TaskList.ToBitmap();
             this.IWmsFrame.AddTitlePage("任务管理", ref restr);
-            this.IWmsFrame.AddGroup("任务管理", "任务操作", ref restr);
-            this.IWmsFrame.AddButtonItem("任务管理", "任务操作", "任务列表", bitmap, ShowTabEventHandler, ref restr);
+            this.IWmsFrame.AddGroup("任务管理", "通用操作", ref restr);
+            this.IWmsFrame.AddButtonItem("任务管理", "通用操作", "任务列表", bitmap, ShowTabEventHandler, ref restr);
         }
         private void DataBingding()
         {
