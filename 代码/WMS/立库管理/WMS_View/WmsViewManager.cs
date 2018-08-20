@@ -55,6 +55,8 @@ namespace WMS_Kernel
         SysLogView sysLogView = new SysLogView();
         WareAreaManaView wareAreaManaView = new WareAreaManaView();
         RecordQueryView recordQueryView = new RecordQueryView();
+        PalletWithoutPlanView palletWithoutPlanView = new PalletWithoutPlanView();
+        UnShelveWithoutPlanView unshelveWithoutPlanView = new UnShelveWithoutPlanView();
         public WmsViewManager()
         { }
         public void InitView(IWMSFrame wmsFrame)
@@ -103,9 +105,7 @@ namespace WMS_Kernel
 
             stocktakingUnshelveView.FormClosing += FormCloseEventHandler;
             stocktakingUnshelveView.Init(wmsFrame);
-
-            //outWarePlanView.FormClosing += FormCloseEventHandler;
-            //outWarePlanView.Init(wmsFrame);
+        
 
             pallerManaView.FormClosing += FormCloseEventHandler;
             pallerManaView.Init(wmsFrame);
@@ -142,8 +142,13 @@ namespace WMS_Kernel
             sysLogView.Init(wmsFrame);
 
             recordQueryView.FormClosing += FormCloseEventHandler;
-
             recordQueryView.Init(wmsFrame);
+
+            palletWithoutPlanView.FormClosing += FormCloseEventHandler;
+            palletWithoutPlanView.Init(wmsFrame);
+
+            unshelveWithoutPlanView.FormClosing += FormCloseEventHandler;
+            unshelveWithoutPlanView.Init(wmsFrame);
         }
 
         public void ResgistShowMaterialProperty(Action<string> showMaterialProperty)

@@ -182,6 +182,34 @@ namespace WMS_Database
             return GetModelList(sqlStr);
 
         }
+
+        public List<View_StockListModel> GetStockList(string houseName, string rowth,string colth,string layerth,string pos,string palletCode)
+        {
+            string sqlStr = "1=1";
+            if(rowth!="所有")
+            {
+                sqlStr += " and Cell_Row = " + rowth;
+            }
+            if (rowth != "所有")
+            {
+                sqlStr += " and Cell_Column = " + colth;
+            }
+            if (rowth != "所有")
+            {
+                sqlStr += " and Cell_Layer = " + layerth;
+            }
+            if (rowth != "所有")
+            {
+                sqlStr += " and Cell_Chlid_Position = '" + pos+"'";
+            }
+            if(palletCode.Trim() != "")
+            {
+                sqlStr += " and Stock_Tray_Barcode = '" + palletCode+"'";
+            }
+            sqlStr += " and WareHouse_Name = '" + houseName + "'";
+            return GetModelList(sqlStr);
+
+        }
         public List<View_StockListModel> GetModelList(string cellChildID,string planCode)
         {
             string sqlStr = "[Cell_Type] ='配盘工位'";

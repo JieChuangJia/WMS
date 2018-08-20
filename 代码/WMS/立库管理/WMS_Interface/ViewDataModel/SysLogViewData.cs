@@ -16,11 +16,5 @@ namespace WMS_Interface
         }
     }
 
-    public class SysLogViewDataModel
-    {
-        public DataTable SysLogData { get; set; }
-        public SysLogViewDataModel()
-        { }
-
-    }
+   
 }

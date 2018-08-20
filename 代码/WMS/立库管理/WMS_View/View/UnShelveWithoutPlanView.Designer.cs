@@ -1,6 +1,6 @@
 ﻿namespace WMS_Kernel
 {
-    partial class UnShelvePlanView
+    partial class UnShelveWithoutPlanView
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@
             DevExpress.XtraLayout.ColumnDefinition columnDefinition5 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UnShelvePlanView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UnShelveWithoutPlanView));
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,20 +58,30 @@
             this.layoutControlItem31 = new DevExpress.XtraLayout.LayoutControlItem();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.gc_StockDetail = new DevExpress.XtraGrid.GridControl();
+            this.gv_StockDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.cbe_Layer = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.cbe_Col = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.te_PalletCode = new DevExpress.XtraEditors.TextEdit();
+            this.cbe_PosTypeList = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbe_Row = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.sb_Query = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.cbe_HouseName = new DevExpress.XtraEditors.ComboBoxEdit();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.sb_CheckUnShelve = new DevExpress.XtraEditors.SimpleButton();
             this.sb_UnShelveTask = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.ce_TargetStation = new DevExpress.XtraEditors.ComboBoxEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.gc_Stock = new DevExpress.XtraGrid.GridControl();
             this.gv_Stock = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.sb_PlanQuery = new DevExpress.XtraEditors.SimpleButton();
-            this.gc_PlanList = new DevExpress.XtraGrid.GridControl();
-            this.gv_PlanList = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.cbe_PlanList = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
@@ -80,6 +90,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_StockDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_StockDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_Layer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_Col.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_PalletCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_PosTypeList.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_Row.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_HouseName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ce_TargetStation.Properties)).BeginInit();
@@ -87,11 +109,6 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Stock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Stock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gc_PlanList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gv_PlanList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbe_PlanList.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridColumn10
@@ -281,22 +298,191 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panelControl1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupControl3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.groupControl2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1179, 492);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.gc_StockDetail);
+            this.groupControl1.Location = new System.Drawing.Point(3, 234);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(1173, 175);
+            this.groupControl1.TabIndex = 4;
+            this.groupControl1.Text = "库存详细";
+            // 
+            // gc_StockDetail
+            // 
+            this.gc_StockDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_StockDetail.Location = new System.Drawing.Point(2, 21);
+            this.gc_StockDetail.MainView = this.gv_StockDetail;
+            this.gc_StockDetail.Name = "gc_StockDetail";
+            this.gc_StockDetail.Size = new System.Drawing.Size(1169, 152);
+            this.gc_StockDetail.TabIndex = 7;
+            this.gc_StockDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gv_StockDetail});
+            // 
+            // gv_StockDetail
+            // 
+            this.gv_StockDetail.GridControl = this.gc_StockDetail;
+            this.gv_StockDetail.IndicatorWidth = 40;
+            this.gv_StockDetail.Name = "gv_StockDetail";
+            this.gv_StockDetail.OptionsBehavior.Editable = false;
+            this.gv_StockDetail.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gv_StockDetail.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gv_StockDetail.OptionsView.ColumnAutoWidth = false;
+            this.gv_StockDetail.OptionsView.ShowGroupPanel = false;
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.labelControl7);
+            this.panelControl1.Controls.Add(this.cbe_Layer);
+            this.panelControl1.Controls.Add(this.labelControl4);
+            this.panelControl1.Controls.Add(this.cbe_Col);
+            this.panelControl1.Controls.Add(this.labelControl5);
+            this.panelControl1.Controls.Add(this.labelControl3);
+            this.panelControl1.Controls.Add(this.labelControl2);
+            this.panelControl1.Controls.Add(this.te_PalletCode);
+            this.panelControl1.Controls.Add(this.cbe_PosTypeList);
+            this.panelControl1.Controls.Add(this.cbe_Row);
+            this.panelControl1.Controls.Add(this.sb_Query);
+            this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Controls.Add(this.cbe_HouseName);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl1.Location = new System.Drawing.Point(3, 3);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1173, 44);
+            this.panelControl1.TabIndex = 3;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(409, 20);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(12, 14);
+            this.labelControl7.TabIndex = 45;
+            this.labelControl7.Text = "层";
+            // 
+            // cbe_Layer
+            // 
+            this.cbe_Layer.Location = new System.Drawing.Point(433, 17);
+            this.cbe_Layer.Name = "cbe_Layer";
+            this.cbe_Layer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_Layer.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbe_Layer.Size = new System.Drawing.Size(64, 20);
+            this.cbe_Layer.TabIndex = 44;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(309, 20);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(12, 14);
+            this.labelControl4.TabIndex = 43;
+            this.labelControl4.Text = "列";
+            // 
+            // cbe_Col
+            // 
+            this.cbe_Col.Location = new System.Drawing.Point(333, 17);
+            this.cbe_Col.Name = "cbe_Col";
+            this.cbe_Col.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_Col.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbe_Col.Size = new System.Drawing.Size(64, 20);
+            this.cbe_Col.TabIndex = 42;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(626, 20);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(48, 14);
+            this.labelControl5.TabIndex = 41;
+            this.labelControl5.Text = "托盘条码";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(509, 20);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(24, 14);
+            this.labelControl3.TabIndex = 39;
+            this.labelControl3.Text = "位置";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(209, 20);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(12, 14);
+            this.labelControl2.TabIndex = 38;
+            this.labelControl2.Text = "排";
+            // 
+            // te_PalletCode
+            // 
+            this.te_PalletCode.Location = new System.Drawing.Point(686, 17);
+            this.te_PalletCode.Name = "te_PalletCode";
+            this.te_PalletCode.Size = new System.Drawing.Size(119, 20);
+            this.te_PalletCode.TabIndex = 30;
+            // 
+            // cbe_PosTypeList
+            // 
+            this.cbe_PosTypeList.Location = new System.Drawing.Point(545, 17);
+            this.cbe_PosTypeList.Name = "cbe_PosTypeList";
+            this.cbe_PosTypeList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_PosTypeList.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbe_PosTypeList.Size = new System.Drawing.Size(69, 20);
+            this.cbe_PosTypeList.TabIndex = 27;
+            // 
+            // cbe_Row
+            // 
+            this.cbe_Row.Location = new System.Drawing.Point(233, 17);
+            this.cbe_Row.Name = "cbe_Row";
+            this.cbe_Row.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_Row.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbe_Row.Size = new System.Drawing.Size(64, 20);
+            this.cbe_Row.TabIndex = 25;
+            // 
+            // sb_Query
+            // 
+            this.sb_Query.Image = ((System.Drawing.Image)(resources.GetObject("sb_Query.Image")));
+            this.sb_Query.Location = new System.Drawing.Point(854, 15);
+            this.sb_Query.Name = "sb_Query";
+            this.sb_Query.Size = new System.Drawing.Size(76, 22);
+            this.sb_Query.TabIndex = 20;
+            this.sb_Query.Text = "查询";
+            this.sb_Query.Click += new System.EventHandler(this.sb_Query_Click);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(14, 20);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(48, 14);
+            this.labelControl1.TabIndex = 19;
+            this.labelControl1.Text = "库房名称";
+            // 
+            // cbe_HouseName
+            // 
+            this.cbe_HouseName.Location = new System.Drawing.Point(74, 17);
+            this.cbe_HouseName.Name = "cbe_HouseName";
+            this.cbe_HouseName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_HouseName.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbe_HouseName.Size = new System.Drawing.Size(123, 20);
+            this.cbe_HouseName.TabIndex = 18;
+            this.cbe_HouseName.SelectedIndexChanged += new System.EventHandler(this.cbe_HouseName_SelectedIndexChanged);
+            // 
             // groupControl3
             // 
-            this.groupControl3.Controls.Add(this.sb_CheckUnShelve);
             this.groupControl3.Controls.Add(this.sb_UnShelveTask);
             this.groupControl3.Controls.Add(this.labelControl6);
             this.groupControl3.Controls.Add(this.ce_TargetStation);
@@ -306,15 +492,6 @@
             this.groupControl3.Size = new System.Drawing.Size(1173, 74);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "操作";
-            // 
-            // sb_CheckUnShelve
-            // 
-            this.sb_CheckUnShelve.Image = ((System.Drawing.Image)(resources.GetObject("sb_CheckUnShelve.Image")));
-            this.sb_CheckUnShelve.Location = new System.Drawing.Point(348, 34);
-            this.sb_CheckUnShelve.Name = "sb_CheckUnShelve";
-            this.sb_CheckUnShelve.Size = new System.Drawing.Size(108, 22);
-            this.sb_CheckUnShelve.TabIndex = 57;
-            this.sb_CheckUnShelve.Text = "拣选下架";
             // 
             // sb_UnShelveTask
             // 
@@ -350,19 +527,19 @@
             // 
             this.groupControl2.Controls.Add(this.gc_Stock);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(3, 209);
+            this.groupControl2.Location = new System.Drawing.Point(3, 53);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1173, 200);
+            this.groupControl2.Size = new System.Drawing.Size(1173, 175);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "库存清单";
             // 
             // gc_Stock
             // 
             this.gc_Stock.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_Stock.Location = new System.Drawing.Point(2, 22);
+            this.gc_Stock.Location = new System.Drawing.Point(2, 21);
             this.gc_Stock.MainView = this.gv_Stock;
             this.gc_Stock.Name = "gc_Stock";
-            this.gc_Stock.Size = new System.Drawing.Size(1169, 176);
+            this.gc_Stock.Size = new System.Drawing.Size(1169, 152);
             this.gc_Stock.TabIndex = 7;
             this.gc_Stock.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Stock});
@@ -379,82 +556,14 @@
             this.gv_Stock.OptionsView.ColumnAutoWidth = false;
             this.gv_Stock.OptionsView.ShowGroupPanel = false;
             // 
-            // groupControl1
-            // 
-            this.groupControl1.Controls.Add(this.sb_PlanQuery);
-            this.groupControl1.Controls.Add(this.gc_PlanList);
-            this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Controls.Add(this.cbe_PlanList);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(3, 3);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1173, 200);
-            this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "计划查询";
-            // 
-            // sb_PlanQuery
-            // 
-            this.sb_PlanQuery.Image = ((System.Drawing.Image)(resources.GetObject("sb_PlanQuery.Image")));
-            this.sb_PlanQuery.Location = new System.Drawing.Point(246, 27);
-            this.sb_PlanQuery.Name = "sb_PlanQuery";
-            this.sb_PlanQuery.Size = new System.Drawing.Size(76, 22);
-            this.sb_PlanQuery.TabIndex = 17;
-            this.sb_PlanQuery.Text = "查询";
-            this.sb_PlanQuery.Click += new System.EventHandler(this.sb_PlanQuery_Click);
-            // 
-            // gc_PlanList
-            // 
-            this.gc_PlanList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gc_PlanList.Location = new System.Drawing.Point(4, 59);
-            this.gc_PlanList.MainView = this.gv_PlanList;
-            this.gc_PlanList.Name = "gc_PlanList";
-            this.gc_PlanList.Size = new System.Drawing.Size(1163, 136);
-            this.gc_PlanList.TabIndex = 13;
-            this.gc_PlanList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gv_PlanList});
-            this.gc_PlanList.Click += new System.EventHandler(this.gc_PlanList_Click);
-            // 
-            // gv_PlanList
-            // 
-            this.gv_PlanList.GridControl = this.gc_PlanList;
-            this.gv_PlanList.IndicatorWidth = 40;
-            this.gv_PlanList.Name = "gv_PlanList";
-            this.gv_PlanList.OptionsBehavior.Editable = false;
-            this.gv_PlanList.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
-            this.gv_PlanList.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gv_PlanList.OptionsView.ColumnAutoWidth = false;
-            this.gv_PlanList.OptionsView.ShowGroupPanel = false;
-            this.gv_PlanList.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gv_PlanList_FocusedRowChanged);
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(22, 32);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(48, 14);
-            this.labelControl1.TabIndex = 9;
-            this.labelControl1.Text = "计划单号";
-            // 
-            // cbe_PlanList
-            // 
-            this.cbe_PlanList.Location = new System.Drawing.Point(76, 29);
-            this.cbe_PlanList.Name = "cbe_PlanList";
-            this.cbe_PlanList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbe_PlanList.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbe_PlanList.Size = new System.Drawing.Size(143, 20);
-            this.cbe_PlanList.TabIndex = 8;
-            this.cbe_PlanList.SelectedIndexChanged += new System.EventHandler(this.cbe_PlanList_SelectedIndexChanged);
-            // 
-            // UnShelvePlanView
+            // UnShelveWithoutPlanView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1179, 492);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "UnShelvePlanView";
-            this.Text = "按计划下架";
+            this.Name = "UnShelveWithoutPlanView";
+            this.Text = "无计划下架";
             this.Load += new System.EventHandler(this.UnShelvePlanView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).EndInit();
@@ -464,6 +573,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gc_StockDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_StockDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_Layer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_Col.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_PalletCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_PosTypeList.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_Row.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_HouseName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             this.groupControl3.PerformLayout();
@@ -472,12 +594,6 @@
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc_Stock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Stock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gc_PlanList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gv_PlanList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbe_PlanList.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -507,17 +623,27 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.ComboBoxEdit cbe_PlanList;
-        private DevExpress.XtraGrid.GridControl gc_PlanList;
-        private DevExpress.XtraGrid.Views.Grid.GridView gv_PlanList;
         private DevExpress.XtraGrid.GridControl gc_Stock;
         private DevExpress.XtraGrid.Views.Grid.GridView gv_Stock;
         private DevExpress.XtraEditors.SimpleButton sb_UnShelveTask;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.ComboBoxEdit ce_TargetStation;
-        private DevExpress.XtraEditors.SimpleButton sb_PlanQuery;
-        private DevExpress.XtraEditors.SimpleButton sb_CheckUnShelve;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.SimpleButton sb_Query;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.ComboBoxEdit cbe_HouseName;
+        private DevExpress.XtraEditors.ComboBoxEdit cbe_PosTypeList;
+        private DevExpress.XtraEditors.ComboBoxEdit cbe_Row;
+        private DevExpress.XtraEditors.TextEdit te_PalletCode;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.ComboBoxEdit cbe_Layer;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.ComboBoxEdit cbe_Col;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraGrid.GridControl gc_StockDetail;
+        private DevExpress.XtraGrid.Views.Grid.GridView gv_StockDetail;
     }
 }

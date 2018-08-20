@@ -15,21 +15,5 @@ namespace WMS_Interface
         public BindingList<PalletInfor> TaskDetailData { get { return this.taskDetailData; } set { this.taskDetailData = value; } }
 
     }
-    public class ManageTask
-    {
-        public string 托盘条码 { get; set; }
-        public string 任务类型 { get; set; }
-        public string 任务状态 { get; set; }
-      
-        public string 起始位置 { get; set; }
-        public string 终止位置 { get; set; }
-        public string 操作员 { get; set; }
-        public string 创建时间 { get; set; }
-        //public string 开始时间 { get; set; }
-        public string 完成时间 { get; set; }
-
-
-        public ManageTask()
-        { }
-    }
+    
 }

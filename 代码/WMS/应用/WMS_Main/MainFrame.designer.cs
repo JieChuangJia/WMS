@@ -1,4 +1,4 @@
-﻿namespace Aoyou_WMS
+﻿namespace WMS_Main
 {
     partial class MainFrame
     {

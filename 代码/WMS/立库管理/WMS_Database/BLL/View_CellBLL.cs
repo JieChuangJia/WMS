@@ -311,7 +311,70 @@ namespace WMS_Database
                 return null;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="houseName"></param>
+        /// <param name="cate">0:排数，1：列数，2：层数，3：位置</param>
+        /// <returns></returns>
+        public List<string> GetGsRCLData(string houseName,  int cate)
+        {
+            WH_WareHouseModel cell = bllWareHouse.GetModelByName(houseName);
+            if (cell == null)
+            {
+                return null;
+            }
+            List<string> data = new List<string>();
+            string sqlStr = "select distinct";
+            if (0 == cate)// 获取排数量
+            {
+                sqlStr += " Cell_Row from View_Cell";
+                sqlStr += " where WareHouse_ID = " + cell.WareHouse_ID +" order by Cell_Row asc";
+            }
+            else if (1 == cate)// 获取列数量
+            {
+                sqlStr += " Cell_Column from View_Cell ";
+                sqlStr += " where WareHouse_ID = " + cell.WareHouse_ID + " order by Cell_Column asc";
+            }
+            else if (2 == cate)// 获取层数量
+            {
+                sqlStr += " Cell_Layer from View_Cell ";
+                sqlStr += " where WareHouse_ID = " + cell.WareHouse_ID + " order by Cell_Layer asc";
+            }
+             else if(3==cate)
+            {
+                sqlStr += " Cell_Chlid_Position from View_Cell";
+                sqlStr += " where WareHouse_ID = " + cell.WareHouse_ID + " order by Cell_Chlid_Position asc";
+            }
+            else
+            {
+                return null;
+            }
+            
+            DataSet ds = DbHelperSQL.Query(sqlStr);
+            if (ds != null && ds.Tables.Count > 0)
+            {
 
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    string item = ds.Tables[0].Rows[i][0].ToString();
+                    if(item.Trim()==""||item.Trim()=="0")
+                    {
+                        continue;
+                    }
+                    data.Add(item);
+                }
+            }
+            else
+            {
+                return null;
+            }
+            //data.Sort();
+
+          
+            return data;
+        }
+     
         /// <summary>
         /// 
         /// </summary>
@@ -321,7 +384,7 @@ namespace WMS_Database
         /// <param name="layer"></param>
         /// <param name="cate">0:获取所有不重复行；1：获取当前行下的所有不重复列；2当前行列下获取不重复层；3：当前排列层下不重复位置</param>
         /// <returns></returns>
-        public List<string> GetRCL(string houseID,int row,int col,int layer,int cate)
+        public List<string> GetRCL(string houseID, int row, int col, int layer, int cate)
         {
             List<string> data = new List<string>();
             string sqlStr = "select distinct";

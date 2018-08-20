@@ -185,23 +185,32 @@ namespace WMS_Kernel
 
             foreach (View_StockListModel stock in distinctPallet)
             {
-                View_PlanListModel planList = bllViewPlanList.GetModelByPlanListID(stock.Plan_List_ID);
-                if (planList == null)
-                {
-                    return;
-                }
-
                 PalletListData pallet = new PalletListData();
-                if (stock.Plan_List_ID == "-1")
+                if (planCode != "所有")
                 {
-                    pallet.按计划配盘 = "否";
+                    View_PlanListModel planList = bllViewPlanList.GetModelByPlanListID(stock.Plan_List_ID);
+                    if (planList == null)
+                    {
+                        return;
+                    }
+                    if (stock.Plan_List_ID == "-1")
+                    {
+                        pallet.按计划配盘 = "否";
+                    }
+                    else
+                    {
+                        pallet.按计划配盘 = "是";
+
+                        pallet.计划单号 = planList.Plan_Code;
+                    }
                 }
                 else
                 {
-                    pallet.按计划配盘 = "是";
-
-                    pallet.计划单号 = planList.Plan_Code;
+                    pallet.按计划配盘 = "否";
+                    pallet.计划单号 = "-1";
                 }
+              
+           
                 pallet.配盘时间 = stock.Stock_List_Entry_Time.ToString();
                 pallet.托盘条码 = stock.Stock_Tray_Barcode;
                 pallet.配盘工位名称 = stock.Cell_Name;

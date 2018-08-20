@@ -633,6 +633,16 @@ namespace WMS_Kernel {
         /// <summary>
         ///   查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Icon PalletWithoutPlan {
+            get {
+                object obj = ResourceManager.GetObject("PalletWithoutPlan", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Icon pause {
             get {
                 object obj = ResourceManager.GetObject("pause", resourceCulture);
@@ -656,16 +666,6 @@ namespace WMS_Kernel {
         public static System.Drawing.Icon PlanQuery {
             get {
                 object obj = ResourceManager.GetObject("PlanQuery", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
-        /// </summary>
-        public static System.Drawing.Icon PrepareWork {
-            get {
-                object obj = ResourceManager.GetObject("PrepareWork", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -756,6 +756,16 @@ namespace WMS_Kernel {
         public static System.Drawing.Icon tool_delete {
             get {
                 object obj = ResourceManager.GetObject("tool_delete", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Icon UnshelveWithoutPlan {
+            get {
+                object obj = ResourceManager.GetObject("UnshelveWithoutPlan", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

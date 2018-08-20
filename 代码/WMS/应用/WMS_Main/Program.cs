@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Aoyou_WMS
+namespace WMS_Main
 {
     static class Program
     { 

@@ -126,7 +126,7 @@ namespace WMS_Kernel
                 }
                 else
                 {
-                    this.ShowMessage("信息提示", "库房工位修改失败");
+                    this.ShowMessage("信息提示", "不存在此工位编号："+cell.CellID+",库房工位修改失败");
                 }
 
             }

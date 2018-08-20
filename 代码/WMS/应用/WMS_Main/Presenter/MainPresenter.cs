@@ -7,7 +7,7 @@ using WMS_Database;
 using WMS_Interface;
 using WMS_Kernel;
 
-namespace Aoyou_WMS
+namespace WMS_Main
 {
     public class MainPresenter
     {

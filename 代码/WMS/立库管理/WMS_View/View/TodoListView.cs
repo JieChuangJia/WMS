@@ -35,7 +35,7 @@ namespace WMS_Kernel
             this.presenter = new  TodoListPresenter(this, wmsFrame);
             this.presenter.Init();
             string restr = "";
-            Bitmap bitmap = ImageResource.PrepareWork.ToBitmap();
+            Bitmap bitmap = ImageResource.TaskList.ToBitmap();
             this.IWmsFrame.AddTitlePage("计划管理", ref restr);
             this.IWmsFrame.AddGroup("计划管理", "计划操作", ref restr);
             this.IWmsFrame.AddButtonItem("计划管理", "计划操作", "待办工作", bitmap, ShowTabEventHandler, ref restr);

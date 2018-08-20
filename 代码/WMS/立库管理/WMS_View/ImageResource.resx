@@ -169,7 +169,7 @@
   <data name="dialog_ok_apply_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\dialog-ok-apply-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PrepareWork" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="PalletWithoutPlan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\view-list-icons.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="view_refresh_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -348,5 +348,8 @@
   </data>
   <data name="stationLogic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\stationLogic.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UnshelveWithoutPlan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\object-rotate-right.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
