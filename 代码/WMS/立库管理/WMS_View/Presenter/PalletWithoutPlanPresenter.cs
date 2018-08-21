@@ -39,7 +39,7 @@ namespace WMS_Kernel
        public void QueryPlan(string goodsInfor)
        {
            List<View_GoodsModel> goodsList = bllViewGoods.GetModelByGoosInfo(goodsInfor);
-           ViewDataManager.PALLETMANAGEDATA.PalletGoodsData.Clear();
+           ViewDataManager.PALLETWITHOUTPLANDATA.PalletGoodsData.Clear();
            if (goodsList == null)
            {
                return;
@@ -55,7 +55,7 @@ namespace WMS_Kernel
                gsdModel.物料类别 = goods.Goods_Category;
                gsdModel.物料名称 = goods.Goods_Name;
                gsdModel.物料内部编码 = goods.Goods_ID.ToString();
-
+               gsdModel.规格型号 = goods.Goods_Model;
                ViewDataManager.PALLETWITHOUTPLANDATA.PalletGoodsData.Add(gsdModel);
            }
        }

@@ -137,6 +137,34 @@ namespace WMS_Database
             return GetModelList(sqlStr);
 
         }
+        public List<View_StockListModel> GetListByParams(string housename, string row, string col, string layer, string goodsClassID, string palletCode)
+        {
+            string sqlStr = " WareHouse_Name ='" + housename + "'";
+            if (row != "所有")
+            {
+                sqlStr += " and Cell_Row =" + row;
+            }
+            if (col != "所有")
+            {
+                sqlStr += " and Cell_Column =" + col;
+            }
+            if (layer != "所有")
+            {
+                sqlStr += " and Cell_Layer =" + layer;
+            }
+            if (goodsClassID != "所有")
+            {
+                sqlStr += " and Goods_Class_ID ='" + goodsClassID + "'";
+            }
+            if (palletCode != "所有")
+            {
+                sqlStr += " and Stock_List_Box_Barcode ='" + palletCode + "'";
+            }
+
+            return GetModelList(sqlStr);
+        }
+
+        
         public List<View_StockListModel> GetModelListByPalletCode(string palletCode)
         {
             string sqlStr = "Stock_Tray_Barcode = '" + palletCode + "'";

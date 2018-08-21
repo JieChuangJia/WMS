@@ -316,6 +316,7 @@
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.gc_StockDetail);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 234);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(1173, 175);
@@ -555,6 +556,7 @@
             this.gv_Stock.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_Stock.OptionsView.ColumnAutoWidth = false;
             this.gv_Stock.OptionsView.ShowGroupPanel = false;
+            this.gv_Stock.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gv_Stock_FocusedRowChanged);
             // 
             // UnShelveWithoutPlanView
             // 

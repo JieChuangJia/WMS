@@ -248,6 +248,23 @@ namespace WMS_Kernel
             this.presenter.QueryStockInfor(this.cbe_HouseName.Text.Trim(), this.cbe_Row.Text.Trim(), this.cbe_Col.Text.Trim()
                 , this.cbe_Layer.Text.Trim(), this.cbe_PosTypeList.Text.Trim(), this.te_PalletCode.Text.Trim());
         }
+
+        private void gv_Stock_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (this.gv_Stock == null || this.gv_Stock.GetSelectedRows().Count() == 0)
+            { 
+                return;
+            }
+            if (this.gv_Stock.GetSelectedRows().Count() == 0)
+            {
+                return;
+            }
+            int currRow = this.gv_Stock.GetSelectedRows()[0];
+            string houseName = this.gv_Stock.GetRowCellValue(currRow, "库房").ToString();
+            string palletCode = this.gv_Stock.GetRowCellValue(currRow, "托盘条码").ToString();
+            this.presenter.IniUnShelveStationList(houseName);
+            this.presenter.PalletDetail(palletCode);
+        }
       
 
         //private void cbe_Row_SelectedIndexChanged(object sender, EventArgs e)

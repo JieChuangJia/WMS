@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrame));
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.barStaticItem5 = new DevExpress.XtraBars.BarStaticItem();
@@ -56,15 +57,15 @@
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.bti_About = new DevExpress.XtraBars.BarButtonItem();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.richTextBoxLog = new System.Windows.Forms.RichTextBox();
-            this.cms_Log = new System.Windows.Forms.ContextMenuStrip();
+            this.cms_Log = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.清空日志ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bti_About = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon_Title)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -350,6 +351,16 @@
             this.barStaticItem4.Name = "barStaticItem4";
             this.barStaticItem4.TextAlignment = System.Drawing.StringAlignment.Near;
             // 
+            // bti_About
+            // 
+            this.bti_About.Caption = "关于";
+            this.bti_About.Id = 29;
+            this.bti_About.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bti_About.ImageOptions.Image")));
+            this.bti_About.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bti_About.ImageOptions.LargeImage")));
+            this.bti_About.Name = "bti_About";
+            this.bti_About.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
+            this.bti_About.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bti_About_ItemClick);
+            // 
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
@@ -420,16 +431,6 @@
             this.清空日志ToolStripMenuItem.Text = "清空日志";
             this.清空日志ToolStripMenuItem.Click += new System.EventHandler(this.清空日志ToolStripMenuItem_Click);
             // 
-            // bti_About
-            // 
-            this.bti_About.Caption = "关于";
-            this.bti_About.Id = 29;
-            this.bti_About.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.bti_About.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.bti_About.Name = "bti_About";
-            this.bti_About.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
-            this.bti_About.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bti_About_ItemClick);
-            // 
             // MainFrame
             // 
             this.ActiveGlowColor = System.Drawing.Color.WhiteSmoke;
@@ -450,6 +451,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "WMS库存管理系统";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainView_FormClosing);
             this.Load += new System.EventHandler(this.MainView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon_Title)).EndInit();

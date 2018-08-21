@@ -237,19 +237,6 @@ namespace WMS_Kernel
         }
 
       
-
-        private void cbe_HouseName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //this.presenter.IniTargetPos(this.cbe_HouseName.Text.Trim());
-        }
-
-     
-
-        //private void cbe_HouseName_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    this.presenter.IniTargetPos(this.cbe_HouseName.Text.Trim());
-        //}
-  
  
       
     }

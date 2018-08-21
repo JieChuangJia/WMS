@@ -93,6 +93,7 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.gc_MaterialList = new DevExpress.XtraGrid.GridControl();
             this.gv_MaterialList = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtEdit_MaterialInfo = new DevExpress.XtraEditors.TextEdit();
@@ -106,7 +107,6 @@
             this.sb_AddGoods = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
@@ -142,6 +142,7 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_MaterialList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_MaterialList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtEdit_MaterialInfo.Properties)).BeginInit();
@@ -151,7 +152,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.se_GoodsNum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridColumn10
@@ -575,7 +575,7 @@
             this.cbe_HouseName.Size = new System.Drawing.Size(113, 20);
             this.cbe_HouseName.TabIndex = 45;
             this.cbe_HouseName.Visible = false;
-            this.cbe_HouseName.SelectedIndexChanged += new System.EventHandler(this.cbe_HouseName_SelectedIndexChanged);
+           
             // 
             // tableLayoutPanel2
             // 
@@ -611,10 +611,10 @@
             // gc_TrayGoodsList
             // 
             this.gc_TrayGoodsList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_TrayGoodsList.Location = new System.Drawing.Point(2, 22);
+            this.gc_TrayGoodsList.Location = new System.Drawing.Point(2, 21);
             this.gc_TrayGoodsList.MainView = this.gv_TrayGoods;
             this.gc_TrayGoodsList.Name = "gc_TrayGoodsList";
-            this.gc_TrayGoodsList.Size = new System.Drawing.Size(1000, 144);
+            this.gc_TrayGoodsList.Size = new System.Drawing.Size(1000, 145);
             this.gc_TrayGoodsList.TabIndex = 14;
             this.gc_TrayGoodsList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_TrayGoods});
@@ -646,10 +646,10 @@
             gridLevelNode1.RelationName = "Level1";
             this.gc_MaterialList.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gc_MaterialList.Location = new System.Drawing.Point(2, 22);
+            this.gc_MaterialList.Location = new System.Drawing.Point(2, 21);
             this.gc_MaterialList.MainView = this.gv_MaterialList;
             this.gc_MaterialList.Name = "gc_MaterialList";
-            this.gc_MaterialList.Size = new System.Drawing.Size(1000, 144);
+            this.gc_MaterialList.Size = new System.Drawing.Size(1000, 145);
             this.gc_MaterialList.TabIndex = 13;
             this.gc_MaterialList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_MaterialList,
@@ -665,6 +665,12 @@
             this.gv_MaterialList.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_MaterialList.OptionsView.ColumnAutoWidth = false;
             this.gv_MaterialList.OptionsView.ShowGroupPanel = false;
+           
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gc_MaterialList;
+            this.gridView1.Name = "gridView1";
             // 
             // panelControl1
             // 
@@ -793,11 +799,6 @@
             // 
             this.gridView3.Name = "gridView3";
             // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gc_MaterialList;
-            this.gridView1.Name = "gridView1";
-            // 
             // PalletWithoutPlanView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -805,7 +806,7 @@
             this.ClientSize = new System.Drawing.Size(1010, 484);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "PalletWithoutPlanView";
-            this.Text = "按计划配盘";
+            this.Text = "无计划配盘";
             this.Load += new System.EventHandler(this.InWareWithPlanView_Load);
             this.Click += new System.EventHandler(this.InWareWithPlanView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).EndInit();
@@ -844,6 +845,7 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc_MaterialList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_MaterialList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -855,7 +857,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.se_GoodsNum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

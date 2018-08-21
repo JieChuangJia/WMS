@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommonMoudle;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -118,20 +119,25 @@ namespace WMS_Kernel
            }
            ViewDataManager.STOCKQUERYDATAVIEWDATA.StockList.Clear();
            ViewDataManager.STOCKQUERYDATAVIEWDATA.StockDetailList.Clear();
-           List<View_Plan_StockListModel> stockList = bllViewPlanStockList.GetListByParams(stockParam.HouseName, stockParam.Rowth, stockParam.Colth, stockParam.Layer, materialClassID, stockParam.PalletCode);
+           List<View_StockListModel> stockList =bllViewStockList.GetListByParams(stockParam.HouseName, stockParam.Rowth, stockParam.Colth, stockParam.Layer, materialClassID, stockParam.PalletCode);
 
 
-           List<View_Plan_StockListModel> distinctStockList = new List<View_Plan_StockListModel>();//去除重复数据
-           foreach (View_Plan_StockListModel vsm in stockList)
-           {
-               var existPallet = distinctStockList.Where(s => s.Stock_Tray_Barcode == vsm.Stock_Tray_Barcode);
-               if (existPallet == null || existPallet.Count() == 0)
-               {
-                   distinctStockList.Add(vsm);
-               }
-           }
+         
 
-           foreach (View_Plan_StockListModel item in distinctStockList)
+
+           var sdf = stockList.Distinct(new ListCompare<View_StockListModel>((x, y)
+                => x.Stock_Tray_Barcode == y.Stock_Tray_Barcode));
+           List<View_StockListModel> distinctStockList = sdf.ToList();
+           //foreach (View_StockListModel vsm in stockList)
+           //{
+           //    var existPallet = distinctStockList.Where(s => s.Stock_Tray_Barcode == vsm.Stock_Tray_Barcode);
+           //    if (existPallet == null || existPallet.Count() == 0)
+           //    {
+           //        distinctStockList.Add(vsm);
+           //    }
+           //}
+
+           foreach (View_StockListModel item in distinctStockList)
            {
                StockViewModel svm = new StockViewModel();
                svm.货位编码 = item.Cell_Chlid_ID;
