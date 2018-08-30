@@ -18,10 +18,16 @@ namespace WMS_Kernel
 
 
 
-        public void QueryStationList(string houseID)
+        public void QueryStationList(string houseName)
         {
             ViewDataManager.WHSTATIONVIEWDATA.WHStationListData.Clear();
-            List<WH_Station_LogicModel> logicModelList = bllStationLogic.GetModelListByHouseID(houseID);
+            WH_WareHouseModel house = bllWareHouse.GetModelByName(houseName);
+            if(house == null)
+            {
+                this.View.ShowMessage("信息提示", "无此库房！");
+                return;
+            }
+            List<WH_Station_LogicModel> logicModelList = bllStationLogic.GetModelListByHouseID(house.WareHouse_ID);
             if(logicModelList == null || logicModelList.Count == 0)
             {
                 return;
@@ -66,7 +72,7 @@ namespace WMS_Kernel
             {
                 for (int i = 0; i < houseList.Count;i++ )
                 {
-                    houseIDList.Add(houseList[i].WareHouse_ID);
+                    houseIDList.Add(houseList[i].WareHouse_Name);
                 }
                    
             }

@@ -176,6 +176,21 @@ namespace WMS_Database
             string sqlStr = "Cell_Child_ID='" + cellChildID+"'";
             return GetModelList(sqlStr);
         }
+
+        public View_StockListModel GetModelByPalletCode(string palletCode)
+        {
+            string sqlStr = "Stock_Tray_Barcode = '" + palletCode + "'";
+            List<View_StockListModel> stockList = GetModelList(sqlStr);
+            if (stockList != null && stockList.Count > 0)
+            {
+                return stockList[0];
+            }
+            else
+            {
+                return null;
+            }
+
+        }
         public View_StockListModel GetModelByPalletCode(string palletCode, string cellType)
         {
             string sqlStr = "Stock_Tray_Barcode = '" + palletCode + "'and Cell_Type = '" + cellType + "'";
@@ -234,7 +249,7 @@ namespace WMS_Database
             {
                 sqlStr += " and Stock_Tray_Barcode = '" + palletCode+"'";
             }
-            sqlStr += " and WareHouse_Name = '" + houseName + "'";
+            sqlStr += " and WareHouse_Name = '" + houseName + "' and  Cell_Type ='货位'";
             return GetModelList(sqlStr);
 
         }

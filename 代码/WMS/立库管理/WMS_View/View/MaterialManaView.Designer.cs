@@ -133,6 +133,7 @@
             this.gv_MaterialList.OptionsBehavior.Editable = false;
             this.gv_MaterialList.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
             this.gv_MaterialList.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gv_MaterialList.OptionsView.ColumnAutoWidth = false;
             this.gv_MaterialList.OptionsView.ShowGroupPanel = false;
             // 
             // groupControl3

@@ -176,8 +176,8 @@ namespace WMS_Kernel
                 return;
             }
             int currRow = this.gv_CellList.GetSelectedRows()[0];
-            string cellCode = this.gv_CellList.GetRowCellValue(currRow, "货位编码").ToString();
-            this.presenter.QueryStockDetail(cellCode);
+            string palletCode = this.gv_CellList.GetRowCellValue(currRow, "托盘条码").ToString();
+            this.presenter.QueryStockDetail(palletCode);
             //this.presenter.QueryPlanList(planCode);
 
         }
@@ -214,8 +214,9 @@ namespace WMS_Kernel
                 return;
             }
             int currRow = e.FocusedRowHandle;
-            //string planCode = this.gv_CellList.GetRowCellValue(currRow, "计划单号").ToString();
-            //this.presenter.QueryPlanList(planCode);
+           
+            string palletCode = this.gv_CellList.GetRowCellValue(currRow, "托盘条码").ToString();
+            this.presenter.QueryStockDetail(palletCode);
         }
 
         private void cbe_HouseList_SelectedIndexChanged(object sender, EventArgs e)

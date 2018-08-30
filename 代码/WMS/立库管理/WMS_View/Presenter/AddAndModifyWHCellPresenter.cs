@@ -19,13 +19,20 @@ namespace WMS_Kernel
 
         public bool AddCellModel(WHCell cell)
         {
-            WH_CellModel cellModel = new WH_CellModel();
+          
             WH_Cell_ChildrenModel childModel = new WH_Cell_ChildrenModel();
             WH_AreaModel area = bllArea.GetModelByCode("11001", cell.AreaID);
             if(area == null)
             {
                 return false;
             }
+            WH_CellModel cellModel = bllCell.GetModel(cell.CellID);
+            if(cellModel!= null)
+            {
+                this.View.ShowMessage("信息提示","此工位编号已存在！");
+                return false;
+            }
+            cellModel = new WH_CellModel();
             cellModel.Cell_ID =cell.CellID;
             cellModel.Area_ID = area.Area_ID;
             cellModel.Cell_Code = cell.CellCode;

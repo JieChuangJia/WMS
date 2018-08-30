@@ -98,6 +98,7 @@ namespace WMS_Main
         }
         private void sBtn_Sure_Click(object sender, EventArgs e)
         {
+            this.Hide();
             this.ShowWaitForm();
             User user = new User();
             user.UserName = this.txtEdit_UserName.Text;
@@ -115,9 +116,11 @@ namespace WMS_Main
             }
             MainFrame mainView = new MainFrame();
             mainView.SetRoleLevel(roleLevel,user.UserName);
-            mainView.Show();
-            this.Hide();
+            mainView.Init();
             this.HideWaitForm();
+            mainView.Show();
+           
+          
         }
 
      

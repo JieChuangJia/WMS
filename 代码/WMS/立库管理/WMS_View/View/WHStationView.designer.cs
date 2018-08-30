@@ -35,12 +35,12 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.sb_query = new DevExpress.XtraEditors.SimpleButton();
+            this.cbe_HouseList = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.sb_ModifyStation = new DevExpress.XtraEditors.SimpleButton();
             this.sb_DeleteStation = new DevExpress.XtraEditors.SimpleButton();
             this.sb_AddStation = new DevExpress.XtraEditors.SimpleButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbe_HouseList = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.sb_query = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gc_StationList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_StationList)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -48,8 +48,8 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_HouseList.Properties)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gc_StationList
@@ -58,11 +58,11 @@
             gridLevelNode1.RelationName = "Level1";
             this.gc_StationList.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gc_StationList.Location = new System.Drawing.Point(2, 21);
+            this.gc_StationList.Location = new System.Drawing.Point(2, 22);
             this.gc_StationList.MainView = this.gv_StationList;
             this.gc_StationList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_StationList.Name = "gc_StationList";
-            this.gc_StationList.Size = new System.Drawing.Size(775, 317);
+            this.gc_StationList.Size = new System.Drawing.Size(777, 317);
             this.gc_StationList.TabIndex = 6;
             this.gc_StationList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_StationList});
@@ -92,7 +92,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(785, 462);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(787, 463);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // groupControl2
@@ -101,7 +101,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(3, 63);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(779, 340);
+            this.groupControl2.Size = new System.Drawing.Size(781, 341);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "库房工位详细";
             // 
@@ -112,8 +112,41 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(779, 54);
+            this.panelControl1.Size = new System.Drawing.Size(781, 54);
             this.panelControl1.TabIndex = 10;
+            // 
+            // sb_query
+            // 
+            this.sb_query.Image = ((System.Drawing.Image)(resources.GetObject("sb_query.Image")));
+            this.sb_query.Location = new System.Drawing.Point(191, 8);
+            this.sb_query.Name = "sb_query";
+            this.sb_query.Size = new System.Drawing.Size(75, 23);
+            this.sb_query.TabIndex = 15;
+            this.sb_query.Text = "查询";
+            this.sb_query.Click += new System.EventHandler(this.sb_query_Click);
+            // 
+            // cbe_HouseList
+            // 
+            this.cbe_HouseList.Location = new System.Drawing.Point(22, 9);
+            this.cbe_HouseList.Name = "cbe_HouseList";
+            this.cbe_HouseList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_HouseList.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbe_HouseList.Size = new System.Drawing.Size(148, 20);
+            this.cbe_HouseList.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.sb_ModifyStation);
+            this.groupBox1.Controls.Add(this.sb_DeleteStation);
+            this.groupBox1.Controls.Add(this.sb_AddStation);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(3, 410);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(781, 50);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "操作";
             // 
             // sb_ModifyStation
             // 
@@ -145,44 +178,11 @@
             this.sb_AddStation.Text = "添加";
             this.sb_AddStation.Click += new System.EventHandler(this.sb_AddStation_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.sb_ModifyStation);
-            this.groupBox1.Controls.Add(this.sb_DeleteStation);
-            this.groupBox1.Controls.Add(this.sb_AddStation);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 409);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(779, 50);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "操作";
-            // 
-            // cbe_HouseList
-            // 
-            this.cbe_HouseList.Location = new System.Drawing.Point(22, 9);
-            this.cbe_HouseList.Name = "cbe_HouseList";
-            this.cbe_HouseList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbe_HouseList.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbe_HouseList.Size = new System.Drawing.Size(148, 20);
-            this.cbe_HouseList.TabIndex = 0;
-            // 
-            // sb_query
-            // 
-            this.sb_query.Image = ((System.Drawing.Image)(resources.GetObject("sb_query.Image")));
-            this.sb_query.Location = new System.Drawing.Point(191, 8);
-            this.sb_query.Name = "sb_query";
-            this.sb_query.Size = new System.Drawing.Size(75, 23);
-            this.sb_query.TabIndex = 15;
-            this.sb_query.Text = "查询";
-            this.sb_query.Click += new System.EventHandler(this.sb_query_Click);
-            // 
             // WHStationView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 462);
+            this.ClientSize = new System.Drawing.Size(787, 463);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "WHStationView";
             this.Text = "工位逻辑设置";
@@ -194,8 +194,8 @@
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbe_HouseList.Properties)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

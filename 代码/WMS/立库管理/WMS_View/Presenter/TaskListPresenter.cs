@@ -47,6 +47,12 @@ namespace WMS_Kernel
                 //}
                
                 View_CellModel viewStartCell = bllViewCell.GetModelByChildCellID(manage.Mange_Start_Cell_ID);
+
+                if (viewStartCell== null)
+                {
+                    this.View.ShowMessage("信息提示", "任务起始工位数据为空：工位号，" + manage.Mange_Start_Cell_ID+",系统错误请联系管理员！");
+                    return;
+                }
                 if (manage.Manage_Type_Name == EnumManageTaskType.空托盘上架.ToString()
                     || manage.Manage_Type_Name == EnumManageTaskType.上架.ToString())
                 {
@@ -59,7 +65,11 @@ namespace WMS_Kernel
                     task.起始位置 = viewStartCell.WareHouse_Name + ":" + viewStartCell.Cell_Name + ":" + viewStartCell.Cell_Chlid_Position;
                 }
                 View_CellModel viewEndCell = bllViewCell.GetModelByChildCellID(manage.Mange_End_Cell_ID);
-
+                if (viewEndCell == null)
+                {
+                    this.View.ShowMessage("信息提示", "任务终止工位数据为空：工位号，" + manage.Mange_End_Cell_ID+",系统错误请联系管理员！");
+                    return;
+                }
                 if (manage.Manage_Type_Name == EnumManageTaskType.空托盘上架.ToString()
                    || manage.Manage_Type_Name == EnumManageTaskType.上架.ToString())
                 {

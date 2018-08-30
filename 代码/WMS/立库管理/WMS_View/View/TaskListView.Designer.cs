@@ -87,7 +87,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1181, 493);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1183, 494);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panelControl1
@@ -100,7 +100,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1175, 54);
+            this.panelControl1.Size = new System.Drawing.Size(1177, 54);
             this.panelControl1.TabIndex = 0;
             // 
             // labelControl2
@@ -155,9 +155,9 @@
             this.groupControl1.Controls.Add(this.sb_TaskComplete);
             this.groupControl1.Controls.Add(this.sBtn_Cancel);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(3, 435);
+            this.groupControl1.Location = new System.Drawing.Point(3, 437);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1175, 55);
+            this.groupControl1.Size = new System.Drawing.Size(1177, 54);
             this.groupControl1.TabIndex = 3;
             this.groupControl1.Text = "操作区";
             // 
@@ -198,7 +198,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(3, 63);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1175, 180);
+            this.groupControl2.Size = new System.Drawing.Size(1177, 181);
             this.groupControl2.TabIndex = 4;
             this.groupControl2.Text = "任务列表";
             // 
@@ -209,7 +209,7 @@
             this.gc_TaskList.MainView = this.gv_TaskList;
             this.gc_TaskList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_TaskList.Name = "gc_TaskList";
-            this.gc_TaskList.Size = new System.Drawing.Size(1171, 156);
+            this.gc_TaskList.Size = new System.Drawing.Size(1173, 157);
             this.gc_TaskList.TabIndex = 1;
             this.gc_TaskList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_TaskList});
@@ -224,6 +224,7 @@
             this.gv_TaskList.OptionsBehavior.Editable = false;
             this.gv_TaskList.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
             this.gv_TaskList.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gv_TaskList.OptionsView.ColumnAutoWidth = false;
             this.gv_TaskList.OptionsView.ShowGroupPanel = false;
             this.gv_TaskList.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gv_TaskList_FocusedRowChanged);
             // 
@@ -231,9 +232,9 @@
             // 
             this.groupControl3.Controls.Add(this.gc_TaskDetail);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(3, 249);
+            this.groupControl3.Location = new System.Drawing.Point(3, 250);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(1175, 180);
+            this.groupControl3.Size = new System.Drawing.Size(1177, 181);
             this.groupControl3.TabIndex = 5;
             this.groupControl3.Text = "任务详细";
             // 
@@ -244,7 +245,7 @@
             this.gc_TaskDetail.MainView = this.gv_TaskDetail;
             this.gc_TaskDetail.Margin = new System.Windows.Forms.Padding(0);
             this.gc_TaskDetail.Name = "gc_TaskDetail";
-            this.gc_TaskDetail.Size = new System.Drawing.Size(1171, 156);
+            this.gc_TaskDetail.Size = new System.Drawing.Size(1173, 157);
             this.gc_TaskDetail.TabIndex = 2;
             this.gc_TaskDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_TaskDetail});
@@ -258,13 +259,14 @@
             this.gv_TaskDetail.OptionsBehavior.Editable = false;
             this.gv_TaskDetail.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
             this.gv_TaskDetail.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gv_TaskDetail.OptionsView.ColumnAutoWidth = false;
             this.gv_TaskDetail.OptionsView.ShowGroupPanel = false;
             // 
             // TaskListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1181, 493);
+            this.ClientSize = new System.Drawing.Size(1183, 494);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "TaskListView";
             this.Text = "任务列表";

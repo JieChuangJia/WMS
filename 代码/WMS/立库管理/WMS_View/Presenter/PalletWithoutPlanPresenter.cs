@@ -94,7 +94,7 @@ namespace WMS_Kernel
        }
        private bool IsExistPalletGoods(string palletCode, string goodsCode)
        {
-           foreach (TrayGoodsListModel goods in ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData)
+           foreach (PalletGoodsList goods in ViewDataManager.PALLETWITHOUTPLANDATA.PalletInforData)
            {
                if (goods.物料编码 == goodsCode && goods.托盘条码 == palletCode)
                {
