@@ -185,14 +185,14 @@
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbonControl1.ShowQatLocationSelector = false;
             this.ribbonControl1.ShowToolbarCustomizeItem = false;
-            this.ribbonControl1.Size = new System.Drawing.Size(384, 27);
+            this.ribbonControl1.Size = new System.Drawing.Size(386, 33);
             this.ribbonControl1.Toolbar.ShowCustomizeItem = false;
             // 
             // AddAndModifyAreaView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 186);
+            this.ClientSize = new System.Drawing.Size(386, 187);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.textEdit_AreaCode);
             this.Controls.Add(this.sb_SetColor);

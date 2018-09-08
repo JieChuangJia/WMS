@@ -27,6 +27,7 @@ namespace WMS_Interface
     {
         public string 货位编码 { get; set; }
         public string 库房名称 { get; set; }
+        public string 托盘条码 { get; set; }
         public string 库区 { get; set; }
         public string 货位名称 { get; set; }
         public string 位置 { get; set; }

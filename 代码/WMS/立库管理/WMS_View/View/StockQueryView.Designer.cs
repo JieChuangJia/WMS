@@ -91,7 +91,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1175, 490);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1177, 491);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panelControl1
@@ -112,7 +112,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1169, 50);
+            this.panelControl1.Size = new System.Drawing.Size(1171, 50);
             this.panelControl1.TabIndex = 0;
             // 
             // cbe_MaterialCate
@@ -241,18 +241,18 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 59);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1169, 211);
+            this.groupControl1.Size = new System.Drawing.Size(1171, 211);
             this.groupControl1.TabIndex = 8;
             this.groupControl1.Text = "货位列表";
             // 
             // gc_CellList
             // 
             this.gc_CellList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_CellList.Location = new System.Drawing.Point(2, 21);
+            this.gc_CellList.Location = new System.Drawing.Point(2, 22);
             this.gc_CellList.MainView = this.gv_CellList;
             this.gc_CellList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_CellList.Name = "gc_CellList";
-            this.gc_CellList.Size = new System.Drawing.Size(1165, 188);
+            this.gc_CellList.Size = new System.Drawing.Size(1167, 187);
             this.gc_CellList.TabIndex = 2;
             this.gc_CellList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_CellList});
@@ -277,18 +277,18 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(3, 276);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1169, 211);
+            this.groupControl2.Size = new System.Drawing.Size(1171, 212);
             this.groupControl2.TabIndex = 9;
             this.groupControl2.Text = "货位库存详细";
             // 
             // gC_CellDetailList
             // 
             this.gC_CellDetailList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gC_CellDetailList.Location = new System.Drawing.Point(2, 21);
+            this.gC_CellDetailList.Location = new System.Drawing.Point(2, 22);
             this.gC_CellDetailList.MainView = this.gv_CellDetailList;
             this.gC_CellDetailList.Margin = new System.Windows.Forms.Padding(0);
             this.gC_CellDetailList.Name = "gC_CellDetailList";
-            this.gC_CellDetailList.Size = new System.Drawing.Size(1165, 188);
+            this.gC_CellDetailList.Size = new System.Drawing.Size(1167, 188);
             this.gC_CellDetailList.TabIndex = 7;
             this.gC_CellDetailList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_CellDetailList});
@@ -309,7 +309,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1175, 490);
+            this.ClientSize = new System.Drawing.Size(1177, 491);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "StockQueryView";
             this.Text = "库存查询";

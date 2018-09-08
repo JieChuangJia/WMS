@@ -27,7 +27,8 @@ namespace WMS_Database
         /// </summary>
         public bool Add(WMS_Database.WH_CellModel model)
         {
-            WH_CellModel cellTemp = GetCell(model.Area_ID, (int)model.Cell_Row, (int)model.Cell_Column, (int)model.Cell_Layer);
+            //WH_CellModel cellTemp = GetCell(model.Area_ID, (int)model.Cell_Row, (int)model.Cell_Column, (int)model.Cell_Layer);
+            WH_CellModel cellTemp = GetModel(model.Cell_ID);
             if(cellTemp==null)
             {  return dal.Add(model);
               

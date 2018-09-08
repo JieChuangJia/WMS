@@ -310,26 +310,26 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1179, 492);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1185, 495);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.gc_StockDetail);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(3, 234);
+            this.groupControl1.Location = new System.Drawing.Point(3, 235);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1173, 175);
+            this.groupControl1.Size = new System.Drawing.Size(1179, 176);
             this.groupControl1.TabIndex = 4;
             this.groupControl1.Text = "库存详细";
             // 
             // gc_StockDetail
             // 
             this.gc_StockDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_StockDetail.Location = new System.Drawing.Point(2, 21);
+            this.gc_StockDetail.Location = new System.Drawing.Point(2, 22);
             this.gc_StockDetail.MainView = this.gv_StockDetail;
             this.gc_StockDetail.Name = "gc_StockDetail";
-            this.gc_StockDetail.Size = new System.Drawing.Size(1169, 152);
+            this.gc_StockDetail.Size = new System.Drawing.Size(1175, 152);
             this.gc_StockDetail.TabIndex = 7;
             this.gc_StockDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_StockDetail});
@@ -363,7 +363,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1173, 44);
+            this.panelControl1.Size = new System.Drawing.Size(1179, 44);
             this.panelControl1.TabIndex = 3;
             // 
             // labelControl7
@@ -488,9 +488,9 @@
             this.groupControl3.Controls.Add(this.labelControl6);
             this.groupControl3.Controls.Add(this.ce_TargetStation);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(3, 415);
+            this.groupControl3.Location = new System.Drawing.Point(3, 417);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(1173, 74);
+            this.groupControl3.Size = new System.Drawing.Size(1179, 75);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "操作";
             // 
@@ -530,17 +530,17 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(3, 53);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1173, 175);
+            this.groupControl2.Size = new System.Drawing.Size(1179, 176);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "库存清单";
             // 
             // gc_Stock
             // 
             this.gc_Stock.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_Stock.Location = new System.Drawing.Point(2, 21);
+            this.gc_Stock.Location = new System.Drawing.Point(2, 22);
             this.gc_Stock.MainView = this.gv_Stock;
             this.gc_Stock.Name = "gc_Stock";
-            this.gc_Stock.Size = new System.Drawing.Size(1169, 152);
+            this.gc_Stock.Size = new System.Drawing.Size(1175, 152);
             this.gc_Stock.TabIndex = 7;
             this.gc_Stock.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Stock});
@@ -562,7 +562,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1179, 492);
+            this.ClientSize = new System.Drawing.Size(1185, 495);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UnShelveWithoutPlanView";
             this.Text = "无计划下架";

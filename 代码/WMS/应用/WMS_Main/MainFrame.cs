@@ -34,13 +34,17 @@ namespace WMS_Main
             this.CurrentUser = userName;
             this.bsi_CurrentUser.Caption = userName;
         }
-        private void MainView_Load(object sender, EventArgs e)
+        public void Init()
         {
             DatabaseCfg();
             Console.SetOut(new TextBoxWriter(this.richTextBoxLog));
             InitTabbedMDI();
             this.LoadChildForms();
             this.mainPresenter.Init(this);
+        }
+        private void MainView_Load(object sender, EventArgs e)
+        {
+           
         }
         #region 实现IWMS
     
@@ -327,9 +331,9 @@ namespace WMS_Main
         private void bti_About_ItemClick(object sender, ItemClickEventArgs e)
         {
             AboutView av = new AboutView();
-            string sysVersion = "1.0.5";
+            string sysVersion = "1.0.6";
             string aboutStr = "版本：" + sysVersion + " \r\n \r\n"
-                + "日期：" +"2018-08-21" + "\r\n \r\n"
+                + "日期：" +"2018-08-30" + "\r\n \r\n"
                 + "（Copyright）深圳捷创嘉智能物流装备有限公司";
                av.SetVersion(aboutStr);
             av.ShowDialog();

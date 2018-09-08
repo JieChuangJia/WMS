@@ -550,9 +550,9 @@
             this.groupControl5.Controls.Add(this.ce_IsFull);
             this.groupControl5.Controls.Add(this.labelControl7);
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl5.Location = new System.Drawing.Point(3, 431);
+            this.groupControl5.Location = new System.Drawing.Point(3, 433);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(1004, 50);
+            this.groupControl5.Size = new System.Drawing.Size(1006, 49);
             this.groupControl5.TabIndex = 51;
             this.groupControl5.Text = "配盘操作";
             // 
@@ -575,7 +575,6 @@
             this.cbe_HouseName.Size = new System.Drawing.Size(113, 20);
             this.cbe_HouseName.TabIndex = 45;
             this.cbe_HouseName.Visible = false;
-           
             // 
             // tableLayoutPanel2
             // 
@@ -595,26 +594,26 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1010, 484);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1012, 485);
             this.tableLayoutPanel2.TabIndex = 52;
             // 
             // groupControl7
             // 
             this.groupControl7.Controls.Add(this.gc_TrayGoodsList);
             this.groupControl7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl7.Location = new System.Drawing.Point(3, 257);
+            this.groupControl7.Location = new System.Drawing.Point(3, 258);
             this.groupControl7.Name = "groupControl7";
-            this.groupControl7.Size = new System.Drawing.Size(1004, 168);
+            this.groupControl7.Size = new System.Drawing.Size(1006, 169);
             this.groupControl7.TabIndex = 56;
             this.groupControl7.Text = "配盘物料列表";
             // 
             // gc_TrayGoodsList
             // 
             this.gc_TrayGoodsList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_TrayGoodsList.Location = new System.Drawing.Point(2, 21);
+            this.gc_TrayGoodsList.Location = new System.Drawing.Point(2, 22);
             this.gc_TrayGoodsList.MainView = this.gv_TrayGoods;
             this.gc_TrayGoodsList.Name = "gc_TrayGoodsList";
-            this.gc_TrayGoodsList.Size = new System.Drawing.Size(1000, 145);
+            this.gc_TrayGoodsList.Size = new System.Drawing.Size(1002, 145);
             this.gc_TrayGoodsList.TabIndex = 14;
             this.gc_TrayGoodsList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_TrayGoods});
@@ -636,7 +635,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 43);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1004, 168);
+            this.groupControl1.Size = new System.Drawing.Size(1006, 169);
             this.groupControl1.TabIndex = 53;
             this.groupControl1.Text = "物料列表";
             // 
@@ -646,10 +645,10 @@
             gridLevelNode1.RelationName = "Level1";
             this.gc_MaterialList.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gc_MaterialList.Location = new System.Drawing.Point(2, 21);
+            this.gc_MaterialList.Location = new System.Drawing.Point(2, 22);
             this.gc_MaterialList.MainView = this.gv_MaterialList;
             this.gc_MaterialList.Name = "gc_MaterialList";
-            this.gc_MaterialList.Size = new System.Drawing.Size(1000, 145);
+            this.gc_MaterialList.Size = new System.Drawing.Size(1002, 145);
             this.gc_MaterialList.TabIndex = 13;
             this.gc_MaterialList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_MaterialList,
@@ -665,7 +664,6 @@
             this.gv_MaterialList.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_MaterialList.OptionsView.ColumnAutoWidth = false;
             this.gv_MaterialList.OptionsView.ShowGroupPanel = false;
-           
             // 
             // gridView1
             // 
@@ -680,7 +678,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1004, 34);
+            this.panelControl1.Size = new System.Drawing.Size(1006, 34);
             this.panelControl1.TabIndex = 54;
             // 
             // labelControl1
@@ -717,9 +715,9 @@
             this.panelControl2.Controls.Add(this.labelControl5);
             this.panelControl2.Controls.Add(this.sb_AddGoods);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(3, 217);
+            this.panelControl2.Location = new System.Drawing.Point(3, 218);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1004, 34);
+            this.panelControl2.Size = new System.Drawing.Size(1006, 34);
             this.panelControl2.TabIndex = 55;
             // 
             // te_TrayCode
@@ -803,7 +801,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1010, 484);
+            this.ClientSize = new System.Drawing.Size(1012, 485);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "PalletWithoutPlanView";
             this.Text = "无计划配盘";

@@ -83,10 +83,10 @@ namespace WMS_Kernel
            List<string> items = bllCell.GetLayerListByHouseRowCol(wareHouse.WareHouse_ID, row,col);
            this.View.IniLayerList(items);
        }
-       public void QueryStockDetail(string cellCode)
+       public void QueryStockDetail(string palletCode)
        {
            ViewDataManager.STOCKQUERYDATAVIEWDATA.StockDetailList.Clear();
-           List<View_StockListModel> stockList = bllViewStockList.GetStockDetail(cellCode);
+           List<View_StockListModel> stockList = bllViewStockList.GetModelListByPalletCode(palletCode);
            foreach(View_StockListModel stockDetail in stockList)
            {
                StockDetailViewModel sdm = new StockDetailViewModel();
@@ -141,10 +141,21 @@ namespace WMS_Kernel
            {
                StockViewModel svm = new StockViewModel();
                svm.货位编码 = item.Cell_Chlid_ID;
+               svm.托盘条码 = item.Stock_Tray_Barcode;
                svm.货位名称 = item.Cell_Name;
-               svm.库房名称 = item.WareHouse_Name;
+               if (item.Cell_Type != EnumCellType.货位.ToString())
+               {
+                   svm.库房名称 = "暂存工位";
+                   svm.位置 = item.Cell_Name;
+               }
+               else
+               {
+                   svm.库房名称 = item.WareHouse_Name;
+                   svm.位置 = item.Cell_Chlid_Position;
+               }
+             
                svm.库区 = item.Area_Name;
-               svm.位置 = item.Cell_Chlid_Position;
+             
                if (item.Stock_List_Entry_Time != null)
                {
                    svm.入库时间 = item.Stock_List_Entry_Time.ToString();

@@ -168,7 +168,7 @@
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbonControl1.ShowQatLocationSelector = false;
             this.ribbonControl1.ShowToolbarCustomizeItem = false;
-            this.ribbonControl1.Size = new System.Drawing.Size(400, 27);
+            this.ribbonControl1.Size = new System.Drawing.Size(402, 33);
             this.ribbonControl1.Toolbar.ShowCustomizeItem = false;
             // 
             // cb_AreaID
@@ -203,7 +203,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 154);
+            this.ClientSize = new System.Drawing.Size(402, 155);
             this.Controls.Add(this.te_StationCode);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.cb_AreaID);
