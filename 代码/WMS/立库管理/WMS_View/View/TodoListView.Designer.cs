@@ -265,11 +265,11 @@
             // gc_PlanList
             // 
             this.gc_PlanList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_PlanList.Location = new System.Drawing.Point(2, 21);
+            this.gc_PlanList.Location = new System.Drawing.Point(2, 22);
             this.gc_PlanList.MainView = this.gv_PlanList;
             this.gc_PlanList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_PlanList.Name = "gc_PlanList";
-            this.gc_PlanList.Size = new System.Drawing.Size(1167, 151);
+            this.gc_PlanList.Size = new System.Drawing.Size(1167, 150);
             this.gc_PlanList.TabIndex = 2;
             this.gc_PlanList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_PlanList});
@@ -301,11 +301,11 @@
             // gc_PlanGoodsList
             // 
             this.gc_PlanGoodsList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_PlanGoodsList.Location = new System.Drawing.Point(2, 21);
+            this.gc_PlanGoodsList.Location = new System.Drawing.Point(2, 22);
             this.gc_PlanGoodsList.MainView = this.gv_PlanGoodsList;
             this.gc_PlanGoodsList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_PlanGoodsList.Name = "gc_PlanGoodsList";
-            this.gc_PlanGoodsList.Size = new System.Drawing.Size(1167, 151);
+            this.gc_PlanGoodsList.Size = new System.Drawing.Size(1167, 150);
             this.gc_PlanGoodsList.TabIndex = 7;
             this.gc_PlanGoodsList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_PlanGoodsList});

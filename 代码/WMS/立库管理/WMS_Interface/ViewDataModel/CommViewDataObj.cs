@@ -262,4 +262,17 @@ namespace WMS_Interface
         { }
 
     }
+
+    public class WareHouseDataModel
+    {
+        public string 库房编号 { get; set; }
+        public string 库房编码 { get; set; }
+
+        public string 库房名称 { get; set; }
+        public string 库房类型 { get; set; }
+        public string 库房启用 { get; set; }
+        public string 库房备注 { get; set; }
+        public WareHouseDataModel()
+        { }
+    }
 }

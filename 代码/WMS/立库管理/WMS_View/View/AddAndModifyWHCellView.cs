@@ -34,12 +34,13 @@ namespace WMS_Kernel
         {
             InitializeComponent();
             this.presenter = new AddAndModifyWHCellPresenter(this);
+         
         }
          public void InitControl()
         {
             this.txtEdit_StationID.Text = "";
             this.txtEdit_CellName.Text = "";
-            this.txtEdit_CellType.Text = "";
+            this.cbe_StationType.Text = "";
             this.te_StationCode.Text = "";
         }
         #region 实现方法
@@ -60,7 +61,23 @@ namespace WMS_Kernel
         #endregion
 
       
-
+        private void IniStationType()
+        {
+            this.cbe_StationType.Properties.Items.Clear();
+            for( int i=0;i<Enum.GetNames(typeof(EnumCellType)).Count();i++)
+            {
+                string item = Enum.GetNames(typeof(EnumCellType))[i];
+                if(item== EnumCellType.工位.ToString() || item== EnumCellType.货位.ToString())
+                {
+                    continue;
+                }
+                this.cbe_StationType.Properties.Items.Add(item);
+            }
+            if(this.cbe_StationType.Properties.Items.Count>0)
+            {
+                this.cbe_StationType.SelectedIndex = 0;
+            }
+        }
 
         private void sb_Cancel_Click(object sender, EventArgs e)
         {
@@ -79,7 +96,7 @@ namespace WMS_Kernel
                 this.ShowMessage("信息提示", "请输入工位编号");
                 return;
             }
-            if (this.txtEdit_CellType.Text == null || this.txtEdit_CellType.Text == "")
+            if (this.cbe_StationType.Text == null || this.cbe_StationType.Text == "")
             {
                 this.ShowMessage("信息提示", "请输入工位类型");
                 return;
@@ -105,7 +122,7 @@ namespace WMS_Kernel
             cell.CellCode = this.te_StationCode.Text.Trim();
             cell.CellInOut = this.cb_CellDirection.Text.Trim();
             cell.CellName = this.txtEdit_CellName.Text;
-            cell.CellType = this.txtEdit_CellType.Text;
+            cell.CellType = this.cbe_StationType.Text;
             cell.DeviceCode = cell.CellCode;
             if (this.operateName == "添加")
             {
@@ -157,7 +174,7 @@ namespace WMS_Kernel
                 this.cb_CellDirection.Properties.Items.Add("出入");
                 this.cb_CellDirection.Properties.Items.Add("入");
                 this.cb_CellDirection.Properties.Items.Add("出");
-                this.txtEdit_CellType.Text = cell.CellType;
+                this.cbe_StationType.Text = cell.CellType;
                 this.txtEdit_CellName.Text = cell.CellName;
                 this.txtEdit_StationID.Text = cell.CellID;
                 this.cb_CellDirection.Text = cell.CellInOut;
@@ -167,6 +184,8 @@ namespace WMS_Kernel
                 this.Text = "修改工位";
                 this.sb_Add.Text = "修改";
             }
+
+            IniStationType();
         }
 
     }

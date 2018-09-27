@@ -32,7 +32,6 @@
             this.sb_Cancel = new DevExpress.XtraEditors.SimpleButton();
             this.cb_CellDirection = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.txtEdit_CellType = new DevExpress.XtraEditors.TextEdit();
             this.txtEdit_StationID = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -43,18 +42,19 @@
             this.cb_AreaID = new DevExpress.XtraEditors.ComboBoxEdit();
             this.te_StationCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.cbe_StationType = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_CellDirection.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEdit_CellType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEdit_StationID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEdit_CellName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_AreaID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.te_StationCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_StationType.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // sb_Add
             // 
-            this.sb_Add.Location = new System.Drawing.Point(214, 122);
+            this.sb_Add.Location = new System.Drawing.Point(239, 122);
             this.sb_Add.Name = "sb_Add";
             this.sb_Add.Size = new System.Drawing.Size(82, 22);
             this.sb_Add.TabIndex = 6;
@@ -63,7 +63,7 @@
             // 
             // sb_Cancel
             // 
-            this.sb_Cancel.Location = new System.Drawing.Point(304, 122);
+            this.sb_Cancel.Location = new System.Drawing.Point(329, 122);
             this.sb_Cancel.Name = "sb_Cancel";
             this.sb_Cancel.Size = new System.Drawing.Size(82, 22);
             this.sb_Cancel.TabIndex = 5;
@@ -88,14 +88,6 @@
             this.labelControl6.Size = new System.Drawing.Size(48, 14);
             this.labelControl6.TabIndex = 17;
             this.labelControl6.Text = "工位类型";
-            // 
-            // txtEdit_CellType
-            // 
-            this.txtEdit_CellType.Location = new System.Drawing.Point(268, 94);
-            this.txtEdit_CellType.Name = "txtEdit_CellType";
-            this.txtEdit_CellType.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.txtEdit_CellType.Size = new System.Drawing.Size(118, 20);
-            this.txtEdit_CellType.TabIndex = 18;
             // 
             // txtEdit_StationID
             // 
@@ -168,7 +160,7 @@
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbonControl1.ShowQatLocationSelector = false;
             this.ribbonControl1.ShowToolbarCustomizeItem = false;
-            this.ribbonControl1.Size = new System.Drawing.Size(402, 33);
+            this.ribbonControl1.Size = new System.Drawing.Size(428, 33);
             this.ribbonControl1.Toolbar.ShowCustomizeItem = false;
             // 
             // cb_AreaID
@@ -179,7 +171,7 @@
             this.cb_AreaID.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cb_AreaID.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cb_AreaID.Size = new System.Drawing.Size(118, 20);
+            this.cb_AreaID.Size = new System.Drawing.Size(143, 20);
             this.cb_AreaID.TabIndex = 24;
             // 
             // te_StationCode
@@ -188,7 +180,7 @@
             this.te_StationCode.Location = new System.Drawing.Point(268, 40);
             this.te_StationCode.Name = "te_StationCode";
             this.te_StationCode.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.te_StationCode.Size = new System.Drawing.Size(117, 20);
+            this.te_StationCode.Size = new System.Drawing.Size(142, 20);
             this.te_StationCode.TabIndex = 26;
             // 
             // labelControl5
@@ -199,11 +191,23 @@
             this.labelControl5.TabIndex = 27;
             this.labelControl5.Text = "工位编码";
             // 
+            // cbe_StationType
+            // 
+            this.cbe_StationType.Location = new System.Drawing.Point(268, 96);
+            this.cbe_StationType.MenuManager = this.ribbonControl1;
+            this.cbe_StationType.Name = "cbe_StationType";
+            this.cbe_StationType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_StationType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbe_StationType.Size = new System.Drawing.Size(143, 20);
+            this.cbe_StationType.TabIndex = 29;
+            // 
             // AddAndModifyWHCellView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 155);
+            this.ClientSize = new System.Drawing.Size(428, 155);
+            this.Controls.Add(this.cbe_StationType);
             this.Controls.Add(this.te_StationCode);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.cb_AreaID);
@@ -211,7 +215,6 @@
             this.Controls.Add(this.txtEdit_CellName);
             this.Controls.Add(this.cb_CellDirection);
             this.Controls.Add(this.labelControl6);
-            this.Controls.Add(this.txtEdit_CellType);
             this.Controls.Add(this.txtEdit_StationID);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
@@ -228,12 +231,12 @@
             this.Text = "添加工位";
             this.Load += new System.EventHandler(this.AddAndModifyCellView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cb_CellDirection.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEdit_CellType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEdit_StationID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEdit_CellName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_AreaID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.te_StationCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_StationType.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,7 +248,6 @@
         private DevExpress.XtraEditors.SimpleButton sb_Add;
         private DevExpress.XtraEditors.ComboBoxEdit cb_CellDirection;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.TextEdit txtEdit_CellType;
         private DevExpress.XtraEditors.TextEdit txtEdit_StationID;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
@@ -256,6 +258,7 @@
         private DevExpress.XtraEditors.ComboBoxEdit cb_AreaID;
         private DevExpress.XtraEditors.TextEdit te_StationCode;
         private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.ComboBoxEdit cbe_StationType;
 
     }
 }

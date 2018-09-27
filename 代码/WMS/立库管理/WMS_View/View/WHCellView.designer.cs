@@ -38,6 +38,8 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.gc_CellList = new DevExpress.XtraGrid.GridControl();
             this.gv_CellList = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.sb_QueryWare = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -45,18 +47,22 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_CellList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_CellList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.panelControl1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.groupControl2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panelControl1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panelControl2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(785, 417);
@@ -107,9 +113,9 @@
             // 
             this.groupControl2.Controls.Add(this.gc_CellList);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(3, 3);
+            this.groupControl2.Location = new System.Drawing.Point(3, 53);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(779, 351);
+            this.groupControl2.Size = new System.Drawing.Size(779, 301);
             this.groupControl2.TabIndex = 12;
             this.groupControl2.Text = "工位详细";
             // 
@@ -123,7 +129,7 @@
             this.gc_CellList.MainView = this.gv_CellList;
             this.gc_CellList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_CellList.Name = "gc_CellList";
-            this.gc_CellList.Size = new System.Drawing.Size(775, 327);
+            this.gc_CellList.Size = new System.Drawing.Size(775, 277);
             this.gc_CellList.TabIndex = 6;
             this.gc_CellList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_CellList});
@@ -138,6 +144,25 @@
             this.gv_CellList.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_CellList.OptionsView.ColumnAutoWidth = false;
             this.gv_CellList.OptionsView.ShowGroupPanel = false;
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(this.sb_QueryWare);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl2.Location = new System.Drawing.Point(3, 3);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(779, 44);
+            this.panelControl2.TabIndex = 13;
+            // 
+            // sb_QueryWare
+            // 
+            this.sb_QueryWare.Image = ((System.Drawing.Image)(resources.GetObject("sb_QueryWare.Image")));
+            this.sb_QueryWare.Location = new System.Drawing.Point(21, 9);
+            this.sb_QueryWare.Name = "sb_QueryWare";
+            this.sb_QueryWare.Size = new System.Drawing.Size(102, 22);
+            this.sb_QueryWare.TabIndex = 11;
+            this.sb_QueryWare.Text = "查询";
+            this.sb_QueryWare.Click += new System.EventHandler(this.sb_QueryWare_Click);
             // 
             // WHCellView
             // 
@@ -155,6 +180,8 @@
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc_CellList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_CellList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -169,5 +196,7 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraGrid.GridControl gc_CellList;
         private DevExpress.XtraGrid.Views.Grid.GridView gv_CellList;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraEditors.SimpleButton sb_QueryWare;
     }
 }

@@ -343,10 +343,10 @@
             this.layoutControl6.Controls.Add(this.txtEdit_PalletID);
             this.layoutControl6.Controls.Add(this.cbEdit_RecvPlace);
             this.layoutControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl6.Location = new System.Drawing.Point(2, 21);
+            this.layoutControl6.Location = new System.Drawing.Point(2, 22);
             this.layoutControl6.Name = "layoutControl6";
             this.layoutControl6.Root = this.layoutControlGroup5;
-            this.layoutControl6.Size = new System.Drawing.Size(196, 77);
+            this.layoutControl6.Size = new System.Drawing.Size(196, 76);
             this.layoutControl6.TabIndex = 0;
             this.layoutControl6.Text = "layoutControl6";
             // 
@@ -437,7 +437,7 @@
             this.layoutControlGroup5.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
             rowDefinition4});
             this.layoutControlGroup5.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 4, 4);
-            this.layoutControlGroup5.Size = new System.Drawing.Size(731, 60);
+            this.layoutControlGroup5.Size = new System.Drawing.Size(731, 59);
             this.layoutControlGroup5.TextVisible = false;
             // 
             // layoutControlItem24
@@ -446,7 +446,7 @@
             this.layoutControlItem24.Location = new System.Drawing.Point(190, 0);
             this.layoutControlItem24.Name = "layoutControlItem24";
             this.layoutControlItem24.OptionsTableLayoutItem.ColumnIndex = 2;
-            this.layoutControlItem24.Size = new System.Drawing.Size(180, 52);
+            this.layoutControlItem24.Size = new System.Drawing.Size(180, 51);
             this.layoutControlItem24.Text = "接收地点";
             this.layoutControlItem24.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.layoutControlItem24.TextSize = new System.Drawing.Size(48, 14);
@@ -458,7 +458,7 @@
             this.layoutControlItem35.Location = new System.Drawing.Point(370, 0);
             this.layoutControlItem35.Name = "layoutControlItem35";
             this.layoutControlItem35.OptionsTableLayoutItem.ColumnIndex = 3;
-            this.layoutControlItem35.Size = new System.Drawing.Size(200, 52);
+            this.layoutControlItem35.Size = new System.Drawing.Size(200, 51);
             this.layoutControlItem35.Text = "配盘托盘条码";
             this.layoutControlItem35.TextSize = new System.Drawing.Size(72, 14);
             // 
@@ -468,7 +468,7 @@
             this.layoutControlItem36.Location = new System.Drawing.Point(570, 0);
             this.layoutControlItem36.Name = "layoutControlItem36";
             this.layoutControlItem36.OptionsTableLayoutItem.ColumnIndex = 4;
-            this.layoutControlItem36.Size = new System.Drawing.Size(80, 52);
+            this.layoutControlItem36.Size = new System.Drawing.Size(80, 51);
             this.layoutControlItem36.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem36.TextVisible = false;
             // 
@@ -478,7 +478,7 @@
             this.layoutControlItem37.Location = new System.Drawing.Point(650, 0);
             this.layoutControlItem37.Name = "layoutControlItem37";
             this.layoutControlItem37.OptionsTableLayoutItem.ColumnIndex = 5;
-            this.layoutControlItem37.Size = new System.Drawing.Size(80, 52);
+            this.layoutControlItem37.Size = new System.Drawing.Size(80, 51);
             this.layoutControlItem37.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem37.TextVisible = false;
             // 
@@ -488,7 +488,7 @@
             this.layoutControlItem25.Location = new System.Drawing.Point(10, 0);
             this.layoutControlItem25.Name = "layoutControlItem25";
             this.layoutControlItem25.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.layoutControlItem25.Size = new System.Drawing.Size(180, 52);
+            this.layoutControlItem25.Size = new System.Drawing.Size(180, 51);
             this.layoutControlItem25.Text = "接收库区";
             this.layoutControlItem25.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.layoutControlItem25.TextLocation = DevExpress.Utils.Locations.Left;

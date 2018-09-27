@@ -15,12 +15,11 @@ namespace WMS_Kernel
 {
     public partial class PutawayView : ChildViewBase,IPutawayView
     {
-        PutawayPresenter presenter = null;
+        public  PutawayPresenter presenter = null;
         public PutawayView()
         {
             InitializeComponent();
            
-
         }
         private void PutawayView_Load(object sender, EventArgs e)
         {

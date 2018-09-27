@@ -177,5 +177,10 @@ namespace WMS_Kernel
             CellListDataBind();
             RefreshCell();
         }
+
+        private void sb_QueryWare_Click(object sender, EventArgs e)
+        {
+            RefreshCell();
+        }
     }
 }

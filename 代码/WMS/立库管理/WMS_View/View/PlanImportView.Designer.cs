@@ -135,7 +135,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(973, 486);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(975, 487);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panelControl1
@@ -146,7 +146,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(967, 54);
+            this.panelControl1.Size = new System.Drawing.Size(969, 54);
             this.panelControl1.TabIndex = 0;
             // 
             // labelControl1
@@ -183,7 +183,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(3, 246);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(967, 54);
+            this.panelControl2.Size = new System.Drawing.Size(969, 54);
             this.panelControl2.TabIndex = 1;
             // 
             // se_PlanNum
@@ -239,7 +239,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(3, 63);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(967, 177);
+            this.groupControl2.Size = new System.Drawing.Size(969, 177);
             this.groupControl2.TabIndex = 11;
             this.groupControl2.Text = "物料列表";
             // 
@@ -250,7 +250,7 @@
             this.gc_MaterialList.MainView = this.gv_GoodsList;
             this.gc_MaterialList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_MaterialList.Name = "gc_MaterialList";
-            this.gc_MaterialList.Size = new System.Drawing.Size(963, 153);
+            this.gc_MaterialList.Size = new System.Drawing.Size(965, 153);
             this.gc_MaterialList.TabIndex = 9;
             this.gc_MaterialList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_GoodsList});
@@ -271,7 +271,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(3, 306);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(967, 177);
+            this.groupControl3.Size = new System.Drawing.Size(969, 178);
             this.groupControl3.TabIndex = 12;
             this.groupControl3.Text = "计划物料清单";
             // 
@@ -282,7 +282,7 @@
             this.gc_PlanGoodsList.MainView = this.gv_PlanGoodsList;
             this.gc_PlanGoodsList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_PlanGoodsList.Name = "gc_PlanGoodsList";
-            this.gc_PlanGoodsList.Size = new System.Drawing.Size(963, 153);
+            this.gc_PlanGoodsList.Size = new System.Drawing.Size(965, 154);
             this.gc_PlanGoodsList.TabIndex = 10;
             this.gc_PlanGoodsList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_PlanGoodsList});
@@ -309,7 +309,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1179, 492);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1181, 493);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // groupControl1
@@ -328,7 +328,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(194, 486);
+            this.groupControl1.Size = new System.Drawing.Size(194, 487);
             this.groupControl1.TabIndex = 5;
             this.groupControl1.Text = "计划";
             // 
@@ -430,7 +430,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1179, 492);
+            this.ClientSize = new System.Drawing.Size(1181, 493);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "PlanImportView";
             this.Text = "计划录入";

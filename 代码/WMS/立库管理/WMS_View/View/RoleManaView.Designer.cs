@@ -68,7 +68,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(710, 400);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(712, 401);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl2
@@ -77,7 +77,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(3, 63);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(704, 274);
+            this.groupControl2.Size = new System.Drawing.Size(706, 275);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "角色清单";
             // 
@@ -91,7 +91,7 @@
             this.gc_RoleList.MainView = this.gv_RoleList;
             this.gc_RoleList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_RoleList.Name = "gc_RoleList";
-            this.gc_RoleList.Size = new System.Drawing.Size(700, 250);
+            this.gc_RoleList.Size = new System.Drawing.Size(702, 251);
             this.gc_RoleList.TabIndex = 6;
             this.gc_RoleList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_RoleList});
@@ -116,7 +116,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(704, 54);
+            this.panelControl1.Size = new System.Drawing.Size(706, 54);
             this.panelControl1.TabIndex = 10;
             // 
             // labelControl1
@@ -150,9 +150,9 @@
             this.groupControl1.Controls.Add(this.sb_DeleteRole);
             this.groupControl1.Controls.Add(this.sb_AddRole);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(3, 343);
+            this.groupControl1.Location = new System.Drawing.Point(3, 344);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(704, 54);
+            this.groupControl1.Size = new System.Drawing.Size(706, 54);
             this.groupControl1.TabIndex = 11;
             this.groupControl1.Text = "操作区";
             // 
@@ -190,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 400);
+            this.ClientSize = new System.Drawing.Size(712, 401);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "RoleManaView";
             this.Text = "角色维护";

@@ -456,13 +456,13 @@ namespace CommonMoudle
             bool status = CreatePutawayManageListTask(manage.Mange_ID,orderType, palletCode, ref restr); 
             if(status == true)
             {
-                restr += "生成上架任务成功：终点：" + houseName + targetCell.Cell_Name + targetCell.Cell_Chlid_Position;
+                restr += "生成托盘["+palletCode+"]上架任务成功：终点：" + houseName + targetCell.Cell_Name + targetCell.Cell_Chlid_Position;
                 UpdateCellStatus(targetCell.Cell_Chlid_ID, EnumCellStatus.空闲, EnumGSTaskStatus.锁定,  EnumGSOperate.入库);
                 return true;
             }
             else
             {
-                restr += "生成上架任务失败：终点：" + houseName + targetCell.Cell_Name + targetCell.Cell_Chlid_Position;
+                restr += "生成托盘[" + palletCode + "]上架任务失败：终点：" + houseName + targetCell.Cell_Name + targetCell.Cell_Chlid_Position;
                 return false;
             }
         }
@@ -549,14 +549,14 @@ namespace CommonMoudle
             bool status = CreateUnshelveManageListTask(planCode, manage.Mange_ID, palletCode, ref restr);
             if (status == true)
             {
-                restr += "生成下架任务成功：起点：" + startCell.WareHouse_Name + startCell.Cell_Name + startCell.Cell_Chlid_Position;
+                restr += "生成托盘[" + palletCode + "]下架任务成功：起点：" + startCell.WareHouse_Name + startCell.Cell_Name + startCell.Cell_Chlid_Position;
                 EnumCellStatus cellStatus = (EnumCellStatus)Enum.Parse(typeof(EnumCellStatus), startCell.Cell_Child_Status);
                 UpdateCellStatus(startCell.Cell_Chlid_ID, cellStatus, EnumGSTaskStatus.锁定,  EnumGSOperate.出库);
                 return true;
             }
             else
             {
-                restr += "生成下架任务失败：起点：" + startCell.WareHouse_Name + startCell.Cell_Name + startCell.Cell_Chlid_Position;
+                restr += "生成托盘[" + palletCode + "]下架任务失败：起点：" + startCell.WareHouse_Name + startCell.Cell_Name + startCell.Cell_Chlid_Position;
                 return false;
             }
         }
@@ -617,7 +617,7 @@ namespace CommonMoudle
             bool status = CreateMoveMangeListTask(startCellID, manage.Mange_ID, ref restr);
             if (status == true)
             {
-                restr += "生成移库任务成功：起点：" + startCell.WareHouse_Name + startCell.Cell_Name + startCell.Cell_Chlid_Position
+                restr += "生成托盘[" + manage.Mange_Stock_Barcode + "]移库任务成功：起点：" + startCell.WareHouse_Name + startCell.Cell_Name + startCell.Cell_Chlid_Position
                     + "终点：" + endCell.WareHouse_Name + endCell.Cell_Name + endCell.Cell_Chlid_Position ;
 
                 EnumCellStatus cellStatus = (EnumCellStatus)Enum.Parse(typeof(EnumCellStatus), startCell.Cell_Child_Status);
@@ -627,7 +627,7 @@ namespace CommonMoudle
             }
             else
             {
-                restr += "生成移库任务失败：起点：" + startCell.WareHouse_Name + startCell.Cell_Name + startCell.Cell_Chlid_Position
+                restr += "生成托盘[" + manage.Mange_Stock_Barcode + "]移库任务失败：起点：" + startCell.WareHouse_Name + startCell.Cell_Name + startCell.Cell_Chlid_Position
                    + "终点：" + endCell.WareHouse_Name + endCell.Cell_Name + endCell.Cell_Chlid_Position;
                 return false;
             }
