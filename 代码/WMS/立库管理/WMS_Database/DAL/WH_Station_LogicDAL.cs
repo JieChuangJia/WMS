@@ -355,7 +355,7 @@ namespace WMS_Database
         }
         public DataSet GetStationCellName()
         {
-            string sqlStr = "SELECT TOP 1000 [Cell_ID],[Cell_Name]FROM [WMSDB2].[dbo].[WH_Cell] where Cell_Type != '货位' and Cell_ID in (SELECT  distinct [Cell_Child_ID]FROM [WMSDB2].[dbo].[WH_Station_Logic] where WH_Station_Logic_Type='配盘工位')";
+            string sqlStr = "SELECT  [Cell_ID],[Cell_Name] FROM [WH_Cell] where Cell_Type != '货位' and Cell_ID in (SELECT  distinct [Cell_Child_ID]FROM [WH_Station_Logic] where WH_Station_Logic_Type='配盘工位')";
             return DbHelperSQL.Query(sqlStr);
         }
 

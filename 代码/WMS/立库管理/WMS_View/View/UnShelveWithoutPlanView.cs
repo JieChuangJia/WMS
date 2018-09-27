@@ -230,6 +230,8 @@ namespace WMS_Kernel
             string houseName = this.gv_Stock.GetRowCellValue(currRow, "库房").ToString();
             string unshelveStationName = this.ce_TargetStation.Text.Trim();
             this.presenter.UnShelveTask( palletCode, houseName, unshelveStationName);
+            this.presenter.QueryStockInfor(this.cbe_HouseName.Text.Trim(), this.cbe_Row.Text.Trim(), this.cbe_Col.Text.Trim()
+               , this.cbe_Layer.Text.Trim(), this.cbe_PosTypeList.Text.Trim(), this.te_PalletCode.Text.Trim());
         }
 
      

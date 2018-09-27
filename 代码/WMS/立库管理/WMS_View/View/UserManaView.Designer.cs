@@ -68,7 +68,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(706, 398);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(708, 399);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl2
@@ -77,7 +77,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(3, 63);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(700, 272);
+            this.groupControl2.Size = new System.Drawing.Size(702, 273);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "用户清单";
             // 
@@ -91,7 +91,7 @@
             this.gc_UserList.MainView = this.gv_UserList;
             this.gc_UserList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_UserList.Name = "gc_UserList";
-            this.gc_UserList.Size = new System.Drawing.Size(696, 248);
+            this.gc_UserList.Size = new System.Drawing.Size(698, 249);
             this.gc_UserList.TabIndex = 6;
             this.gc_UserList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_UserList});
@@ -116,7 +116,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(700, 54);
+            this.panelControl1.Size = new System.Drawing.Size(702, 54);
             this.panelControl1.TabIndex = 10;
             // 
             // labelControl1
@@ -150,9 +150,9 @@
             this.groupControl1.Controls.Add(this.sb_DeleteUser);
             this.groupControl1.Controls.Add(this.sb_AddUser);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(3, 341);
+            this.groupControl1.Location = new System.Drawing.Point(3, 342);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(700, 54);
+            this.groupControl1.Size = new System.Drawing.Size(702, 54);
             this.groupControl1.TabIndex = 11;
             this.groupControl1.Text = "操作区";
             // 
@@ -190,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(706, 398);
+            this.ClientSize = new System.Drawing.Size(708, 399);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UserManaView";
             this.Text = "用户维护";

@@ -9,6 +9,17 @@ using System.Xml;
 
 namespace WMS_Kernel
 {
+    public enum WMSFuncModule
+    {
+        按计划配盘,
+        无计划配盘,
+        无计划下架,
+        按计划下架,
+        计划录入,
+        计划查询,
+        待办工作,
+        搬运记录
+    }
     public class WMSManager
     {
         public static  IWMSFrame wmsFrame = null;  
@@ -20,20 +31,17 @@ namespace WMS_Kernel
         private WH_AreaBll bllArea = new WH_AreaBll();
         private WH_WareHouseBll bllHouse = new WH_WareHouseBll();
 
-        XMLOperater xmlOper = new XMLOperater( AppDomain.CurrentDomain.BaseDirectory + @"\data\WMSClientConfig.xml");
+        XMLOperater xmlOper = null;
+        
         public WMSManager()
         { }
-        public bool Init(IWMSFrame wmsFrame)
+        public bool Init(IWMSFrame wmsFrame,string wmsClientCfg,List<WMSFuncModule> moduleList)
         {
             string restr="";
-            //threadTaskHandler = new ThreadBaseModel(1, "任务状态监控线程");
-            //threadTaskHandler.LoopInterval = 100;
-            //threadTaskHandler.SetThreadRoutine(TaskHandleThread);
-            //threadTaskHandler.TaskInit(ref restr);
-            //threadTaskHandler.Start(ref restr);
-
+            xmlOper = new XMLOperater(wmsClientCfg);
+         
             WMSManager.wmsFrame = wmsFrame;
-            wmsViewManager.InitView(wmsFrame);
+            wmsViewManager.InitView(wmsFrame, moduleList);
 
             IniGoodsSite(ref restr);
             return true;
@@ -44,21 +52,25 @@ namespace WMS_Kernel
         {
             this.wmsViewManager.ResgistShowMaterialProperty(showMaterialProperty);
         }
-
-        public void ResgistShowUserProperty(Action<string> showUserProperty)
+        public void RegistAllowPutaway(Func<bool> AllowPutaway)
         {
-            this.wmsViewManager.ResgistShowUserProperty(showUserProperty);
+            this.wmsViewManager.RegistAllowPutaway(AllowPutaway);
         }
 
-        public void ResgistShowRoleProperty(Action<string> showRoleProperty)
-        {
-            this.wmsViewManager.ResgistShowRoleProperty(showRoleProperty);
-        }
+        //public void ResgistShowUserProperty(Action<string> showUserProperty)
+        //{
+        //    this.wmsViewManager.ResgistShowUserProperty(showUserProperty);
+        //}
 
-        public void ResgistShowAreaProperty(Action<string> showAreaProperty)
-        {
-            this.wmsViewManager.ResgistShowAreaProperty(showAreaProperty);
-        }
+        //public void ResgistShowRoleProperty(Action<string> showRoleProperty)
+        //{
+        //    this.wmsViewManager.ResgistShowRoleProperty(showRoleProperty);
+        //}
+
+        //public void ResgistShowAreaProperty(Action<string> showAreaProperty)
+        //{
+        //    this.wmsViewManager.ResgistShowAreaProperty(showAreaProperty);
+        //}
 
 
      

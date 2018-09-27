@@ -194,11 +194,11 @@
             this.gc_SysLog.EmbeddedNavigator.Buttons.Remove.Visible = false;
             this.gc_SysLog.EmbeddedNavigator.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.gc_SysLog.EmbeddedNavigator.TextStringFormat = " 第{0}条 总条数{1}条";
-            this.gc_SysLog.Location = new System.Drawing.Point(2, 21);
+            this.gc_SysLog.Location = new System.Drawing.Point(2, 22);
             this.gc_SysLog.MainView = this.gv_Syslog;
             this.gc_SysLog.Margin = new System.Windows.Forms.Padding(0);
             this.gc_SysLog.Name = "gc_SysLog";
-            this.gc_SysLog.Size = new System.Drawing.Size(1101, 438);
+            this.gc_SysLog.Size = new System.Drawing.Size(1101, 437);
             this.gc_SysLog.TabIndex = 7;
             this.gc_SysLog.UseEmbeddedNavigator = true;
             this.gc_SysLog.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {

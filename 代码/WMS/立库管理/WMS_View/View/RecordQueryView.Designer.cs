@@ -32,6 +32,8 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.cbe_HouseList = new DevExpress.XtraEditors.ComboBoxEdit();
             this.te_PlanCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.sb_TrayQuery = new DevExpress.XtraEditors.SimpleButton();
@@ -47,11 +49,10 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.gc_RecordDetail = new DevExpress.XtraGrid.GridControl();
             this.gv_RecordDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.cbe_HouseList = new DevExpress.XtraEditors.ComboBoxEdit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_HouseList.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.te_PlanCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.te_cellCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndTime.Properties.CalendarTimeProperties)).BeginInit();
@@ -66,7 +67,6 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_RecordDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_RecordDetail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbe_HouseList.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleButton2
@@ -111,6 +111,24 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1169, 54);
             this.panelControl1.TabIndex = 0;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(338, 25);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(24, 14);
+            this.labelControl3.TabIndex = 20;
+            this.labelControl3.Text = "库房";
+            // 
+            // cbe_HouseList
+            // 
+            this.cbe_HouseList.Location = new System.Drawing.Point(373, 22);
+            this.cbe_HouseList.Name = "cbe_HouseList";
+            this.cbe_HouseList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_HouseList.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbe_HouseList.Size = new System.Drawing.Size(108, 20);
+            this.cbe_HouseList.TabIndex = 19;
             // 
             // te_PlanCode
             // 
@@ -207,11 +225,11 @@
             // gc_RecordList
             // 
             this.gc_RecordList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_RecordList.Location = new System.Drawing.Point(2, 21);
+            this.gc_RecordList.Location = new System.Drawing.Point(2, 22);
             this.gc_RecordList.MainView = this.gv_RecordList;
             this.gc_RecordList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_RecordList.Name = "gc_RecordList";
-            this.gc_RecordList.Size = new System.Drawing.Size(1165, 186);
+            this.gc_RecordList.Size = new System.Drawing.Size(1165, 185);
             this.gc_RecordList.TabIndex = 2;
             this.gc_RecordList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_RecordList});
@@ -243,11 +261,11 @@
             // gc_RecordDetail
             // 
             this.gc_RecordDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_RecordDetail.Location = new System.Drawing.Point(2, 21);
+            this.gc_RecordDetail.Location = new System.Drawing.Point(2, 22);
             this.gc_RecordDetail.MainView = this.gv_RecordDetail;
             this.gc_RecordDetail.Margin = new System.Windows.Forms.Padding(0);
             this.gc_RecordDetail.Name = "gc_RecordDetail";
-            this.gc_RecordDetail.Size = new System.Drawing.Size(1165, 186);
+            this.gc_RecordDetail.Size = new System.Drawing.Size(1165, 185);
             this.gc_RecordDetail.TabIndex = 7;
             this.gc_RecordDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_RecordDetail});
@@ -264,24 +282,6 @@
             this.gv_RecordDetail.OptionsView.ColumnAutoWidth = false;
             this.gv_RecordDetail.OptionsView.ShowGroupPanel = false;
             // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(338, 25);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(24, 14);
-            this.labelControl3.TabIndex = 20;
-            this.labelControl3.Text = "库房";
-            // 
-            // cbe_HouseList
-            // 
-            this.cbe_HouseList.Location = new System.Drawing.Point(373, 22);
-            this.cbe_HouseList.Name = "cbe_HouseList";
-            this.cbe_HouseList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbe_HouseList.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbe_HouseList.Size = new System.Drawing.Size(108, 20);
-            this.cbe_HouseList.TabIndex = 19;
-            // 
             // RecordQueryView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -295,6 +295,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_HouseList.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.te_PlanCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.te_cellCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndTime.Properties.CalendarTimeProperties)).EndInit();
@@ -309,7 +310,6 @@
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc_RecordDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_RecordDetail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbe_HouseList.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

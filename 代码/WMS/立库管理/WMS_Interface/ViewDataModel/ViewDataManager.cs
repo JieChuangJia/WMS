@@ -40,5 +40,6 @@ namespace WMS_Interface
         public static RecordQueryData RECORDQUERYDATA = new RecordQueryData();
         public static PalletWithoutPlanViewData PALLETWITHOUTPLANDATA = new PalletWithoutPlanViewData();
         public static UnShelveWithoutPlanViewData UNSHELVEWITHPPLANVIEWDATA = new UnShelveWithoutPlanViewData();
+        public static WareHouseViewData WHVIEWDATA = new WareHouseViewData();
     }
 }

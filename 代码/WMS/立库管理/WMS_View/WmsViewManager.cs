@@ -26,18 +26,9 @@ namespace WMS_Kernel
 
         TodoListView prepareView = new TodoListView();
 
-        InWareWithoutPlanView inWareWithoutPlanView = new InWareWithoutPlanView();
-
         PutawayView materialUnloadView = new PutawayView();
-
-        OutWareWithoutPlanView outWareWithoutPlanView = new OutWareWithoutPlanView();
-
         InWareWithPlanView inWareWithPlanView = new InWareWithPlanView();
-
         UnShelvePlanView materialLoadWithPlanView = new UnShelvePlanView();
-
-        OutWareWithPlanView outWarePlanView = new OutWareWithPlanView();
-
         PalletManaView pallerManaView = new PalletManaView();
 
         StationShowView stationView = new StationShowView();
@@ -57,77 +48,82 @@ namespace WMS_Kernel
         RecordQueryView recordQueryView = new RecordQueryView();
         PalletWithoutPlanView palletWithoutPlanView = new PalletWithoutPlanView();
         UnShelveWithoutPlanView unshelveWithoutPlanView = new UnShelveWithoutPlanView();
+        WHManaView houseManaView = new WHManaView();
         public WmsViewManager()
         { }
-        public void InitView(IWMSFrame wmsFrame)
+        public void InitView(IWMSFrame wmsFrame, List<WMSFuncModule> moduleList)
         {
 
             modPV.FormClosing += FormCloseEventHandler;
-            modPV.Init(wmsFrame);
+            modPV.Init(wmsFrame);//密码修改
 
             roleView.FormClosing += FormCloseEventHandler;
-            roleView.Init(wmsFrame);
+            roleView.Init(wmsFrame);//角色管理
 
             userView.FormClosing += FormCloseEventHandler;
-            userView.Init(wmsFrame);
+            userView.Init(wmsFrame);//用户管理
 
             limitView.FormClosing += FormCloseEventHandler;
-            limitView.Init(wmsFrame);
+            limitView.Init(wmsFrame);//权限管理
 
             wareLimitView.FormClosing += FormCloseEventHandler;
             wareLimitView.Init(wmsFrame);
 
             materialView.FormClosing += FormCloseEventHandler;
-            materialView.Init(wmsFrame);
+            materialView.Init(wmsFrame);//物料管理
 
-         
-            planManaView.FormClosing += FormCloseEventHandler;
-            planManaView.Init(wmsFrame);
-
+            if(moduleList.Contains(WMSFuncModule.计划录入) == true)
+            {
+                planManaView.FormClosing += FormCloseEventHandler;
+                planManaView.Init(wmsFrame);//计划录入
+            }
+          
             taskView.FormClosing += FormCloseEventHandler;
-            taskView.Init(wmsFrame);
+            taskView.Init(wmsFrame);//任务管理
 
+            if(moduleList.Contains(WMSFuncModule.待办工作)== true)
+            {
+                prepareView.FormClosing += FormCloseEventHandler;
+                prepareView.Init(wmsFrame);//代办工作
+            }
 
-            prepareView.FormClosing += FormCloseEventHandler;
-            prepareView.Init(wmsFrame);
-
-
-            inWareWithPlanView.FormClosing += FormCloseEventHandler;
-            inWareWithPlanView.Init(wmsFrame);
+            if (moduleList.Contains(WMSFuncModule.按计划配盘) == true)
+            {
+                inWareWithPlanView.FormClosing += FormCloseEventHandler;
+                inWareWithPlanView.Init(wmsFrame);//按计划配盘
+            }
 
             materialUnloadView.FormClosing += FormCloseEventHandler;
-            materialUnloadView.Init(wmsFrame);
+            materialUnloadView.Init(wmsFrame);//上架
 
-        
 
-            materialLoadWithPlanView.FormClosing += FormCloseEventHandler;
-            materialLoadWithPlanView.Init(wmsFrame);
+            if (moduleList.Contains(WMSFuncModule.按计划下架) == true)
+            {
+                materialLoadWithPlanView.FormClosing += FormCloseEventHandler;
+                materialLoadWithPlanView.Init(wmsFrame);//按计划下架
+            }
 
             stocktakingUnshelveView.FormClosing += FormCloseEventHandler;
             stocktakingUnshelveView.Init(wmsFrame);
+            
         
-
             pallerManaView.FormClosing += FormCloseEventHandler;
-            pallerManaView.Init(wmsFrame);
+            pallerManaView.Init(wmsFrame);//配盘管理
 
             stockQueryView.FormClosing += FormCloseEventHandler;
-            stockQueryView.Init(wmsFrame);
+            stockQueryView.Init(wmsFrame);//库存查询
 
             stationView.FormClosing += FormCloseEventHandler;
-            stationView.Init(wmsFrame);
-
-            planQueryView.FormClosing += FormCloseEventHandler;
-            planQueryView.Init(wmsFrame);
-
+            stationView.Init(wmsFrame);//库存看板
+            if (moduleList.Contains(WMSFuncModule.计划查询) == true)
+            {
+                planQueryView.FormClosing += FormCloseEventHandler;
+                planQueryView.Init(wmsFrame);//计划查询
+            }
             wareQueryView.FormClosing += FormCloseEventHandler;
             wareQueryView.Init(wmsFrame);
-
-            outWareWithoutPlanView.FormClosing += FormCloseEventHandler;
-            outWareWithoutPlanView.Init(wmsFrame);
-
-            inWareWithoutPlanView.FormClosing += FormCloseEventHandler;
-            inWareWithoutPlanView.Init(wmsFrame);
-
+            
+           
          
             wareAreaManaView.FormClosing += FormCloseEventHandler;
             wareAreaManaView.Init(wmsFrame);
@@ -140,36 +136,47 @@ namespace WMS_Kernel
 
             sysLogView.FormClosing += FormCloseEventHandler;
             sysLogView.Init(wmsFrame);
-
-            recordQueryView.FormClosing += FormCloseEventHandler;
-            recordQueryView.Init(wmsFrame);
-
-            palletWithoutPlanView.FormClosing += FormCloseEventHandler;
-            palletWithoutPlanView.Init(wmsFrame);
-
-            unshelveWithoutPlanView.FormClosing += FormCloseEventHandler;
-            unshelveWithoutPlanView.Init(wmsFrame);
+            if (moduleList.Contains(WMSFuncModule.搬运记录) == true)
+            {
+                recordQueryView.FormClosing += FormCloseEventHandler;
+                recordQueryView.Init(wmsFrame);
+            }
+            if (moduleList.Contains(WMSFuncModule.无计划配盘) == true)
+            {
+                palletWithoutPlanView.FormClosing += FormCloseEventHandler;
+                palletWithoutPlanView.Init(wmsFrame);//无计划配盘
+            }
+            if (moduleList.Contains(WMSFuncModule.无计划下架) == true)
+            {
+                unshelveWithoutPlanView.FormClosing += FormCloseEventHandler;
+                unshelveWithoutPlanView.Init(wmsFrame);//无计划下架
+            }
+houseManaView.FormClosing += FormCloseEventHandler;
+            houseManaView.Init(wmsFrame);
         }
 
         public void ResgistShowMaterialProperty(Action<string> showMaterialProperty)
         {
             this.materialView.presenter.ResgistShowMaterialProperty(showMaterialProperty);
         }
-
-        public void ResgistShowUserProperty(Action<string> showUserProperty)
+        public void RegistAllowPutaway(Func<bool> AllowPutaway)
         {
-            this.userView.presenter.ResgistShowUserProperty(showUserProperty);
+            this.materialUnloadView.presenter.RegistAllowPutaway(AllowPutaway);
         }
+        //public void ResgistShowUserProperty(Action<string> showUserProperty)
+        //{
+        //    this.userView.presenter.ResgistShowUserProperty(showUserProperty);
+        //}
 
-        public void ResgistShowRoleProperty(Action<string> showRoleProperty)
-        {
-            this.roleView.presenter.ResgistShowRoleProperty(showRoleProperty);
-        }
+        //public void ResgistShowRoleProperty(Action<string> showRoleProperty)
+        //{
+        //    this.roleView.presenter.ResgistShowRoleProperty(showRoleProperty);
+        //}
 
-        public void ResgistShowAreaProperty(Action<string> showAreaProperty)
-        {
-            this.wareAreaManaView.presenter.ResgistShowAreaProperty(showAreaProperty);
-        }
+        //public void ResgistShowAreaProperty(Action<string> showAreaProperty)
+        //{
+        //    this.wareAreaManaView.presenter.ResgistShowAreaProperty(showAreaProperty);
+        //}
 
         private void FormCloseEventHandler(object sender, FormClosingEventArgs e)
         {

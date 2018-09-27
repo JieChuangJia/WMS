@@ -157,7 +157,12 @@ namespace WMS_Database
         /// </summary>
         /// <param name="days"></param>
         /// <returns></returns>
-
+        public List<ManageModel> GetWaitRunTaskListByType(string taskTypeID)
+        {
+            string sqlStr = "Mange_Type_ID = '" + taskTypeID + "' and (Mange_Status ='待执行' or Mange_Status ='执行中')";
+            List<ManageModel> manageList = GetModelList(sqlStr);
+            return manageList;
+        }
         public bool DeleteManage(int days)
         {
             return dal.DeleteManage(days);

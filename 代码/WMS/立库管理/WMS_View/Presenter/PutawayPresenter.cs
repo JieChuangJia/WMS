@@ -22,6 +22,8 @@ namespace WMS_Kernel
         WH_WareHouseBll bllWareHouse = new WH_WareHouseBll();
         WH_Station_LogicBLL bllStationLogic = new WH_Station_LogicBLL();
         Plan_ListBll bllPlanList = new Plan_ListBll();
+        Func<bool> AllowPutaway = null;
+
 
         public PutawayPresenter(IPutawayView view, IWMSFrame wmsFrame)
             : base(view, wmsFrame)
@@ -30,6 +32,11 @@ namespace WMS_Kernel
         {
             //IniPutawayList();
             IniHouseList();
+        }
+
+        public void RegistAllowPutaway(Func<bool> AllowPutaway)
+        {
+            this.AllowPutaway = AllowPutaway;
         }
         public void QueryPalletInfor(string palletNum)
         {
@@ -191,8 +198,16 @@ namespace WMS_Kernel
             ////{
                 //manaTask = EnumManageTaskType.上架;
             //}
-
-
+            bool allowCreateTask= true;
+            if(this.AllowPutaway!=null)
+            {
+                allowCreateTask = this.AllowPutaway();
+            }
+            if(allowCreateTask == false)
+            {
+                this.View.ShowMessage("信息提示","当前系统不允许下达上架任务！");
+                return;
+            }
             if (TaskHandleMethod.CreatePutawayManageTask(palletCode, houseName, putawayStationName, isAssign, targetCell,manaTask, ref manageID, ref restr) == false)
             {
                 this.WmsFrame.WriteLog("上架逻辑", "", "提示", "创建管理任务失败：" + restr);
@@ -203,7 +218,7 @@ namespace WMS_Kernel
             //    this.WmsFrame.WriteLog("上架逻辑", "", "提示", "创建管理任务列表失败：" + restr);
             //    return;
             //}
-            this.WmsFrame.WriteLog("上架逻辑", "", "提示", "上架任务下达成功！"+restr);
+            this.WmsFrame.WriteLog("上架逻辑", "", "提示", "上架任务下达成功！"+ restr);
         }
 
         public void IniPutawayPalletCode()

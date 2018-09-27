@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<WMSServerConfig>
+  <Station>
+    <Item id ="12115" type="工位" name ="空托盘入库工位1" desc=""></Item>
+    <Item id ="12116" type="工位" name ="空托盘入库工位2" desc=""></Item>
+    <Item id ="12113" type="工位" name ="配盘工位" desc="配盘上料5个库房配盘入库公用"></Item>
+  </Station>
+  <WareHouse>
+    <Item id ="11001" name ="A1库房" desc=""> </Item>
+    <Item id ="11002" name ="A2库房" desc=""> </Item>
+    <Item id ="11003" name ="A3库房" desc=""> </Item>
+  </WareHouse>
+  
+</WMSServerConfig>

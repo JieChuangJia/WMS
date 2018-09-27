@@ -167,5 +167,10 @@ namespace WMS_Kernel
                 e.Appearance.ForeColor = Color.FromArgb(Convert.ToByte(colorArray[0]), Convert.ToByte(colorArray[1]), Convert.ToByte(colorArray[2]));
             }  
         }
+
+        private void sb_AddStationArea_Click(object sender, EventArgs e)
+        {
+            this.presenter.AddStationArea();
+        }
     }
 }

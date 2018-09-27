@@ -15,9 +15,9 @@ namespace WMS_Database
     public abstract class DbHelperSQL
     {
         //数据库连接字符串(web.config来配置)，多数据库可使用DbHelperSQLSQLP来实现.
-        public static string connectionString = PubConstant.ConnectionString;
+        public static string connectionString = "";
         public DbHelperSQL()
-        {
+        { 
         }
 
         #region 公用方法

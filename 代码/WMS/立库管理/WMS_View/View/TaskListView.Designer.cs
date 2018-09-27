@@ -170,6 +170,7 @@
             this.sb_ChooseConfirm.Size = new System.Drawing.Size(95, 22);
             this.sb_ChooseConfirm.TabIndex = 8;
             this.sb_ChooseConfirm.Text = "拣选确认";
+            this.sb_ChooseConfirm.Visible = false;
             // 
             // sb_TaskComplete
             // 

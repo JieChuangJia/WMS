@@ -84,6 +84,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ImageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="IView\IAddAndModifyWHHouseView.cs" />
     <Compile Include="IView\IAddAndModifyWHStationView.cs" />
     <Compile Include="IView\IAddAndModifyWHCellView.cs" />
     <Compile Include="IView\IAddAndModifyAreaView.cs" />
@@ -107,9 +113,11 @@
     <Compile Include="IView\ITaskListView.cs" />
     <Compile Include="IView\ITodoListView.cs" />
     <Compile Include="IView\IUnShelvePlanView.cs" />
+    <Compile Include="IView\IWHManaView.cs" />
     <Compile Include="IView\IWHStationView.cs" />
     <Compile Include="IView\IWHCellView.cs" />
     <Compile Include="IView\IWareAreaManaView.cs" />
+    <Compile Include="Presenter\AddAndModifyWHHousePresenter.cs" />
     <Compile Include="Presenter\AddAndModifyWHStationPresenter.cs" />
     <Compile Include="Presenter\AddAndModifyWHCellPresenter.cs" />
     <Compile Include="Presenter\AddRolePresenter.cs" />
@@ -135,6 +143,7 @@
     <Compile Include="Presenter\TaskListPresenter.cs" />
     <Compile Include="Presenter\TodoListPresenter.cs" />
     <Compile Include="Presenter\UnShelvePlanPresenter.cs" />
+    <Compile Include="Presenter\WHManaPresenter.cs" />
     <Compile Include="Presenter\WHStationPresenter.cs" />
     <Compile Include="Presenter\WHCellPresenter.cs" />
     <Compile Include="Presenter\WareAreaManaPresenter.cs" />
@@ -143,16 +152,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ImageResource.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ImageResource.resx</DependentUpon>
-    </Compile>
     <Compile Include="View\AboutView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\AboutView.Designer.cs">
       <DependentUpon>AboutView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddAndModifyWHHouseView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddAndModifyWHHouseView.Designer.cs">
+      <DependentUpon>AddAndModifyWHHouseView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\AddAndModifyWHStationView.cs">
       <SubType>Form</SubType>
@@ -280,6 +290,12 @@
     <Compile Include="View\TodoListView.Designer.cs">
       <DependentUpon>TodoListView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\WHManaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\WHManaView.designer.cs">
+      <DependentUpon>WHManaView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\WHStationView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,12 +340,6 @@
     <Compile Include="View\PalletManaView.Designer.cs">
       <DependentUpon>PalletManaView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\OutWareWithPlanView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\OutWareWithPlanView.Designer.cs">
-      <DependentUpon>OutWareWithPlanView.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\UnShelvePlanView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -342,23 +352,11 @@
     <Compile Include="View\InWareWithPlanView.Designer.cs">
       <DependentUpon>InWareWithPlanView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\OutWareWithoutPlanView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\OutWareWithoutPlanView.Designer.cs">
-      <DependentUpon>OutWareWithoutPlanView.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\PutawayView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\PutawayView.Designer.cs">
       <DependentUpon>PutawayView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\InWareWithoutPlanView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\InWareWithoutPlanView.Designer.cs">
-      <DependentUpon>InWareWithoutPlanView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\PlanImportView.cs">
       <SubType>Form</SubType>
@@ -405,11 +403,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ImageResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ImageResource.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>ImageResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\AboutView.resx">
       <DependentUpon>AboutView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddAndModifyWHHouseView.resx">
+      <DependentUpon>AddAndModifyWHHouseView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\AddAndModifyWHStationView.resx">
       <DependentUpon>AddAndModifyWHStationView.cs</DependentUpon>
@@ -480,6 +481,9 @@
     <EmbeddedResource Include="View\StationShowView.resx">
       <DependentUpon>StationShowView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\WHManaView.resx">
+      <DependentUpon>WHManaView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\WHStationView.resx">
       <DependentUpon>WHStationView.cs</DependentUpon>
     </EmbeddedResource>
@@ -495,23 +499,14 @@
     <EmbeddedResource Include="View\PalletManaView.resx">
       <DependentUpon>PalletManaView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\OutWareWithPlanView.resx">
-      <DependentUpon>OutWareWithPlanView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\UnShelvePlanView.resx">
       <DependentUpon>UnShelvePlanView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\InWareWithPlanView.resx">
       <DependentUpon>InWareWithPlanView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\OutWareWithoutPlanView.resx">
-      <DependentUpon>OutWareWithoutPlanView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\PutawayView.resx">
       <DependentUpon>PutawayView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\InWareWithoutPlanView.resx">
-      <DependentUpon>InWareWithoutPlanView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PlanImportView.resx">
       <DependentUpon>PlanImportView.cs</DependentUpon>
@@ -826,6 +821,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\object-rotate-right.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\go-home1.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

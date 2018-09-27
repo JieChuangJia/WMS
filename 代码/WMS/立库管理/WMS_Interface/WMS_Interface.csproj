@@ -88,6 +88,7 @@
     <Compile Include="ViewDataModel\TrayGoodsManageViewData.cs" />
     <Compile Include="ViewDataModel\UnShelvePlanViewData.cs" />
     <Compile Include="ViewDataModel\ViewDataManager.cs" />
+    <Compile Include="ViewDataModel\WareHouseViewData.cs" />
     <Compile Include="ViewDataModel\WHStationViewData.cs" />
     <Compile Include="ViewDataModel\WHCellViewData.cs" />
     <Compile Include="ViewDataModel\WareAreaViewData.cs" />

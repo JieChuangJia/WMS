@@ -39,6 +39,7 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.sb_QueryWare = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.sb_AddStationArea = new DevExpress.XtraEditors.SimpleButton();
             this.sb_ModifyArea = new DevExpress.XtraEditors.SimpleButton();
             this.sb_DeleteArea = new DevExpress.XtraEditors.SimpleButton();
             this.sb_AddArea = new DevExpress.XtraEditors.SimpleButton();
@@ -149,6 +150,7 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.sb_AddStationArea);
             this.groupControl1.Controls.Add(this.sb_ModifyArea);
             this.groupControl1.Controls.Add(this.sb_DeleteArea);
             this.groupControl1.Controls.Add(this.sb_AddArea);
@@ -158,6 +160,17 @@
             this.groupControl1.Size = new System.Drawing.Size(779, 54);
             this.groupControl1.TabIndex = 11;
             this.groupControl1.Text = "操作区";
+            // 
+            // sb_AddStationArea
+            // 
+            this.sb_AddStationArea.Image = ((System.Drawing.Image)(resources.GetObject("sb_AddStationArea.Image")));
+            this.sb_AddStationArea.Location = new System.Drawing.Point(323, 26);
+            this.sb_AddStationArea.Name = "sb_AddStationArea";
+            this.sb_AddStationArea.Size = new System.Drawing.Size(120, 23);
+            this.sb_AddStationArea.TabIndex = 3;
+            this.sb_AddStationArea.Text = "添加工位区域";
+            this.sb_AddStationArea.ToolTip = "添加工位区域，工位区域的区域类型为暂存区，默认是不允许删除修改的";
+            this.sb_AddStationArea.Click += new System.EventHandler(this.sb_AddStationArea_Click);
             // 
             // sb_ModifyArea
             // 
@@ -227,5 +240,6 @@
         private DevExpress.XtraEditors.SimpleButton sb_DeleteArea;
         private DevExpress.XtraEditors.SimpleButton sb_AddArea;
         private DevExpress.XtraEditors.ComboBoxEdit cbe_HouseList;
+        private DevExpress.XtraEditors.SimpleButton sb_AddStationArea;
     }
 }
