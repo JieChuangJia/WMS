@@ -17,7 +17,7 @@ using System.Configuration;
 using CommonMoudle;
 using WMS_Database;
 using DevExpress.Utils;
-namespace WMS_Main
+namespace WMS_Main_Aoyou
 {
     public partial class MainFrame :ChildViewBase,IWMSFrame
     {

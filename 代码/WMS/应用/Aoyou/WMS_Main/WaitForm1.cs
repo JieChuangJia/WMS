@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraWaitForm;
 
-namespace WMS_Main
+namespace WMS_Main_Aoyou
 {
     public partial class WaitForm1 : WaitForm
     {
