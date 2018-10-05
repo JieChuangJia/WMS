@@ -13,7 +13,7 @@ using WMS_Kernel;
 using System.Configuration;
 using DevExpress.XtraSplashScreen;
 
-namespace WMS_Main
+namespace WMS_Main_Aoyou
 {
     public partial class LoginView : ChildViewBase,IAddUserView
     {
@@ -122,15 +122,7 @@ namespace WMS_Main
            
           
         }
-        private void DatabaseCfg()
-        {
-            string dbSrc = ConfigurationManager.AppSettings["DBSource"];
-            //CtlDBAccess.DBUtility.PubConstant.ConnectionString = string.Format(@"{0}Initial Catalog=ACEcams;User ID=sa;Password=123456;", dbSrc);
-            string dbConn1 = string.Format(@"{0}Initial Catalog=WMSDB2;User ID=sa;Password=123456;", dbSrc);
-            // string dbConn1 = string.Format(@"{0}Initial Catalog=WMSDB2;User ID=AoyouWmsSA;Password=Aa123456;", dbSrc);
-
-            WMS_Database.PubConstant.SetConnectStr(dbConn1);
-        }
+       
         private void LoginView_Load(object sender, EventArgs e)
         {
             DatabaseCfg();

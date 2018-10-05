@@ -1,4 +1,4 @@
-﻿namespace WMS_Main
+﻿namespace WMS_Main_Aoyou
 {
     partial class WaitForm1
     {
