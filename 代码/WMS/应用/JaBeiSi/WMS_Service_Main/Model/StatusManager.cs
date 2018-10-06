@@ -112,6 +112,7 @@ namespace WMS_Service_Main
     
     public class TaskComplete : TaskStatus
     {
+        View_CellBLL bllView = new View_CellBLL();
         public TaskComplete()
         { }
         /// <summary>
@@ -128,13 +129,17 @@ namespace WMS_Service_Main
                 {
                     return false;
                 }
-
+                View_CellModel viewCell = null;
                 if (manageTask.Manage_Type_Name == EnumManageTaskType.空托盘上架.ToString())  //空托盘没有库存，无计划
                 {
                     TaskHandleMethod.UpdateCellStatus(manageTask.Mange_End_Cell_ID, EnumCellStatus.空料框, EnumGSTaskStatus.完成, EnumGSOperate.入库);
                     TaskHandleMethod.AddCellOperRecord(manageTask.Mange_End_Cell_ID, EnumGSOperateType.系统添加空料框, "空托盘上架任务完成，更新货位状态",ref restr);
                     TaskHandleMethod.AddStockRecord(manageTask.Mange_ID);
-
+                    viewCell = bllView.GetModelByChildCellID(manageTask.Mange_End_Cell_ID);
+                    if(viewCell!=null)
+                    {
+                        restr = "空托盘上架任务完成，更新货位[" + viewCell.WareHouse_Name + "," + viewCell.Cell_Name + "," + viewCell.Cell_Chlid_Position + "]状态,空料框、完成。";
+                    }
                 }
                 else if (manageTask.Manage_Type_Name == EnumManageTaskType.上架.ToString())
                 {
@@ -144,12 +149,22 @@ namespace WMS_Service_Main
                     TaskHandleMethod.UpdateStockUpdateTime(manageTask.Mange_Stock_Barcode, DateTime.Now);
                     TaskHandleMethod.UpdateStockPos(manageTask.Mange_Stock_Barcode, manageTask.Mange_End_Cell_ID, ref restr);
                     TaskHandleMethod.AddStockRecord(manageTask.Mange_ID);
+                    viewCell = bllView.GetModelByChildCellID(manageTask.Mange_End_Cell_ID);
+                    if (viewCell != null)
+                    {
+                        restr = "上架任务完成，更新货位[" + viewCell.WareHouse_Name + "," + viewCell.Cell_Name + "," + viewCell.Cell_Chlid_Position + "]状态,满筐、完成。";
+                    }
 
                 }
                 else if (manageTask.Manage_Type_Name == EnumManageTaskType.空托盘下架.ToString())
                 {
                     TaskHandleMethod.UpdateCellStatus(manageTask.Mange_Start_Cell_ID, EnumCellStatus.空闲, EnumGSTaskStatus.完成 ,EnumGSOperate.出库);
                     TaskHandleMethod.AddCellOperRecord(manageTask.Mange_Start_Cell_ID, EnumGSOperateType.系统更新货位操作, "空托盘下架任务完成，更新货位状态", ref restr);
+                    viewCell = bllView.GetModelByChildCellID(manageTask.Mange_Start_Cell_ID);
+                    if (viewCell != null)
+                    {
+                        restr = "空托盘下架任务完成，更新货位[" + viewCell.WareHouse_Name + "," + viewCell.Cell_Name + "," + viewCell.Cell_Chlid_Position + "]状态,空闲、完成。";
+                    }
                 }
                 else if (manageTask.Manage_Type_Name == EnumManageTaskType.下架.ToString())//下架完成后，删除库存
                 {
@@ -158,6 +173,11 @@ namespace WMS_Service_Main
                     TaskHandleMethod.UpdatePlanCompleteNum(manageTask.Mange_ID);
                     TaskHandleMethod.AddStockRecord(manageTask.Mange_ID);//删除stock前
                     TaskHandleMethod.DeleteStock(manageTask.Mange_Stock_Barcode);
+                    viewCell = bllView.GetModelByChildCellID(manageTask.Mange_Start_Cell_ID);
+                    if (viewCell != null)
+                    {
+                        restr = "下架任务完成，更新货位[" + viewCell.WareHouse_Name + "," + viewCell.Cell_Name + "," + viewCell.Cell_Chlid_Position + "]状态,空闲、完成。";
+                    }
                 }
                 else if (manageTask.Manage_Type_Name == EnumManageTaskType.盘点下架.ToString())
                 {
@@ -166,6 +186,11 @@ namespace WMS_Service_Main
                     //TaskHandleMethod.UpdatePlanCompleteNum(manageTask.Mange_ID);
                     TaskHandleMethod.AddStockRecord(manageTask.Mange_ID);
                     TaskHandleMethod.DeleteStock(manageTask.Mange_ID);
+                    viewCell = bllView.GetModelByChildCellID(manageTask.Mange_Start_Cell_ID);
+                    if (viewCell != null)
+                    {
+                        restr = "盘点下架任务完成，更新货位[" + viewCell.WareHouse_Name + "," + viewCell.Cell_Name + "," + viewCell.Cell_Chlid_Position + "]状态,空闲、完成。";
+                    }
                 }
                 else if (manageTask.Manage_Type_Name == EnumManageTaskType.拣选下架.ToString())
                 { }
@@ -176,17 +201,25 @@ namespace WMS_Service_Main
                     TaskHandleMethod.UpdateStockCell(manageTask.Mange_Stock_Barcode, manageTask.Mange_End_Cell_ID, ref restr);
                     TaskHandleMethod.AddCellOperRecord(manageTask.Mange_Start_Cell_ID, EnumGSOperateType.系统更新货位操作, "货物移库任务完成，更新货位状态", ref restr);
                     TaskHandleMethod.AddStockRecord(manageTask.Mange_ID);
+                    View_CellModel startCell = bllView.GetModelByChildCellID(manageTask.Mange_Start_Cell_ID);
+                    View_CellModel endCell = bllView.GetModelByChildCellID(manageTask.Mange_End_Cell_ID);
 
+                    if (startCell != null&&endCell!=null)
+                    {
+                        restr = "移库任务完成，更新货位[" + startCell.WareHouse_Name + "," + startCell.Cell_Name + "," + startCell.Cell_Chlid_Position + "]状态,空闲、完成;";
+                        restr = "更新货位[" + endCell.WareHouse_Name + "," + endCell.Cell_Name + "," + endCell.Cell_Chlid_Position + "]状态,满位、完成。";
+                    }
                 }
                 else
                 {
                     return false;
                 }
+                StatusManager.wmsFrame.WriteLog("服务管理", "", "提示", restr);
                 TaskHandleMethod.CheckPlanCompleteStatus(manageTask.Plan_ID, ref restr);//检查计划是否完成，如果完成自动更新计划通过计划数量和完成数量相等判断
                 TaskHandleMethod.UpdateManageCompleteTime(manageTask.Mange_ID, DateTime.Now);
                 TaskHandleMethod.UpdateManageHandleStatus(manageTask.Mange_ID, EnumBreakDowmStatus.已处理);
                        
-                StatusManager.wmsFrame.WriteLog("服务管理", "", "提示", restr);
+              
                 return true;
             }
             catch (Exception ex)

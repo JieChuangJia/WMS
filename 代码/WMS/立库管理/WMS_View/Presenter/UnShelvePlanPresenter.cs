@@ -218,7 +218,7 @@ namespace WMS_Kernel
             {
                 return;
             }
-            this.WmsFrame.WriteLog("下架逻辑", "", "提示","托盘："+palletCode+ "下达下架任务成功！");
+            this.WmsFrame.WriteLog("下架逻辑", "", "提示", restr);
         }
 
         private bool CheckMaterialNum(ref string restr)
