@@ -44,7 +44,7 @@ namespace WMS_Main
         }
         private void MainView_Load(object sender, EventArgs e)
         {
-            /*
+            
             string licenseFile = AppDomain.CurrentDomain.BaseDirectory + @"\JCJLicense.lic";
             this.licenseMonitor = new LicenseMonitor(this, 2000, licenseFile, "zzkeyFT1");
             if (!this.licenseMonitor.StartMonitor())
@@ -56,7 +56,7 @@ namespace WMS_Main
             {
                 MessageBox.Show(reStr);
                 return;
-            }*/
+            }
         }
         #region ILicenseNotify接口实现
         public void ShowWarninfo(string info)

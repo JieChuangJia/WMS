@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<WMSClientConfig>
+  <StoreHouseCfg>
+    <!--库房名称-->
+    <StoreHouse name ="A1库房" DeviceID ="11001" AreaID="3363e4a5-f1b4-4509-8863-316a4133b1e7">
+      <!--是否重新创建货位false：fou，true：是-->
+      <ReBuild>false</ReBuild>
+      <!--库存排数-->
+      <GSRows>
+        <GSRow Index ="1" ShelfType ="双深" Cols="16" Layers="4"> </GSRow>
+        <GSRow Index ="2" ShelfType ="双深" Cols="14" Layers="4"> </GSRow>
+      
+      </GSRows>
+      <!--不可用货位列表-->
+      <GSInvalidList>
+        <!--无效列-->
+        <!--<GSInvalidCol> </GSInvalidCol>>-->
+        <!--无效层-->
+        <!--<GSInvalidLayer> </GSInvalidLayer>>-->
+        <!-- <GSItem>1-2-1</GSItem>-->
+     
+      </GSInvalidList>
+    </StoreHouse>
+  </StoreHouseCfg>
+  
+</WMSClientConfig>
