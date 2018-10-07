@@ -74,7 +74,7 @@ namespace WMS_Main_Aoyou
             string dbConn1 = string.Format(@"{0}Initial Catalog=WMSDB2;User ID=sa;Password=123456;", dbSrc);
             // string dbConn1 = string.Format(@"{0}Initial Catalog=WMSDB2;User ID=AoyouWmsSA;Password=Aa123456;", dbSrc);
 
-            WMS_Database.PubConstant.ConnectionString = dbConn1;
+            WMS_Database.PubConstant.SetConnectStr(dbConn1);
         }
         public void ShowMessage(string title, string content)
         {
