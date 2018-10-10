@@ -242,7 +242,8 @@ namespace WMS_Kernel
             {
                 return;
             }
-            this.presenter.IniRclp(this.cbe_HouseName.Text.Trim());  
+            this.presenter.IniRclp(this.cbe_HouseName.Text.Trim());
+            this.presenter.IniUnShelveStationList(this.cbe_HouseName.Text.Trim());
         }
 
         private void sb_Query_Click(object sender, EventArgs e)
@@ -264,7 +265,7 @@ namespace WMS_Kernel
             int currRow = this.gv_Stock.GetSelectedRows()[0];
             string houseName = this.gv_Stock.GetRowCellValue(currRow, "库房").ToString();
             string palletCode = this.gv_Stock.GetRowCellValue(currRow, "托盘条码").ToString();
-            this.presenter.IniUnShelveStationList(houseName);
+         
             this.presenter.PalletDetail(palletCode);
         }
       

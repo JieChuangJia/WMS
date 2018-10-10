@@ -82,11 +82,7 @@ namespace WMS_Kernel
             }
             
         
-            if( bllArea.Delete(areaID)== false)
-            {
-                this.View.ShowMessage("信息提示", "删除区域失败（数据库操作）！");
-                return false;
-            }
+          
             //删除区域前，要讲当前对应的货位区域修改为默认库房区域
             WH_AreaModel defaultArea = bllArea.GetModelByName(areaModel.WareHouse_ID,"默认库区");
             if (defaultArea == null)
@@ -97,6 +93,12 @@ namespace WMS_Kernel
             if (bllCell.UpdateCellArea(areaModel.Area_ID, defaultArea.Area_ID) == false)
             {
                 this.View.ShowMessage("信息提示", "更改货位默认区域失败！");
+                return false;
+            }
+
+            if (bllArea.Delete(areaID) == false)
+            {
+                this.View.ShowMessage("信息提示", "删除区域失败（数据库操作）！");
                 return false;
             }
             return true;

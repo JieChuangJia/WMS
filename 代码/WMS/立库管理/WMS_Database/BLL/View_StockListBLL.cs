@@ -233,19 +233,19 @@ namespace WMS_Database
             {
                 sqlStr += " and Cell_Row = " + rowth;
             }
-            if (rowth != "所有")
+            if (colth != "所有")
             {
                 sqlStr += " and Cell_Column = " + colth;
             }
-            if (rowth != "所有")
+            if (layerth != "所有")
             {
                 sqlStr += " and Cell_Layer = " + layerth;
             }
-            if (rowth != "所有")
+            if (pos != "所有")
             {
                 sqlStr += " and Cell_Chlid_Position = '" + pos+"'";
             }
-            if(palletCode.Trim() != "")
+            if (palletCode.Trim() != "")
             {
                 sqlStr += " and Stock_Tray_Barcode = '" + palletCode+"'";
             }

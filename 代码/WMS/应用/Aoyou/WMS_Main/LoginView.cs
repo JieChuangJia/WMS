@@ -106,12 +106,18 @@ namespace WMS_Main_Aoyou
             int roleLevel = 0;
             if(!this.presenter.CheckLoginUser(user,ref roleLevel))
             {
+                this.HideWaitForm();
                 this.ShowMessage("信息提示", "该用户不存在，请重新输入用户名称！");
+                
+                this.Show();
                 return;
             }
             if (!this.presenter.CheckLoginPassword(user))
             {
+                this.HideWaitForm();
+               
                 this.ShowMessage("信息提示", "用户密码不正确，请重新输入用户密码！");
+                this.Show();
                 return;
             }
             MainFrame mainView = new MainFrame();
