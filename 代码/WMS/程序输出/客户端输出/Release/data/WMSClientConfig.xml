@@ -2,7 +2,7 @@
 <WMSClientConfig>
   <StoreHouseCfg>
     <!--库房名称-->
-    <StoreHouse name ="A1库房" DeviceID ="11001" AreaID="1">
+    <StoreHouse name ="A1库房" DeviceID ="11001" AreaID="30f752dc-afb5-48a4-86d1-9d556c992be8">
       <!--是否重新创建货位false：fou，true：是-->
       <ReBuild>false</ReBuild>
       <!--库存排数-->
