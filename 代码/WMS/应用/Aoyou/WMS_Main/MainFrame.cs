@@ -44,7 +44,7 @@ namespace WMS_Main_Aoyou
         }
         private void MainView_Load(object sender, EventArgs e)
         {
-           
+            this.ribbon_Title.ApplicationCaption = LoginView.WMSName;
         }
         #region 实现IWMS
     
@@ -330,7 +330,7 @@ namespace WMS_Main_Aoyou
 
         private void bti_About_ItemClick(object sender, ItemClickEventArgs e)
         {
-            AboutView av = new AboutView();
+            AboutView av = new AboutView(LoginView.WMSName);
             string sysVersion = "1.0.6";
             string aboutStr = "版本：" + sysVersion + " \r\n \r\n"
                 + "日期：" +"2018-08-30" + "\r\n \r\n"

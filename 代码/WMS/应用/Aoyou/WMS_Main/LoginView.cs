@@ -17,15 +17,17 @@ namespace WMS_Main_Aoyou
 {
     public partial class LoginView : ChildViewBase,IAddUserView
     {
+        public static string WMSName = "WMS立库管理系统";//系统名称配置
         private AddUserPresenter presenter = null;
         private SplashScreenManager _loadForm;
         public LoginView()
         {
+            
             InitializeComponent();
             this.presenter = new AddUserPresenter(this);
             DatabaseCfg();
             InitTabbedMDI();
-          
+            this.lc_WMSName.Text = WMSName;
         }
 
         public override void Init(IWMSFrame wmsFrame)

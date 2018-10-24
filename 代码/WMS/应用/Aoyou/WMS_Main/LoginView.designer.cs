@@ -36,7 +36,6 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -44,6 +43,7 @@
             this.sBtn_Sure = new DevExpress.XtraEditors.SimpleButton();
             this.txtEdit_UserPassword = new DevExpress.XtraEditors.TextEdit();
             this.txtEdit_UserName = new DevExpress.XtraEditors.TextEdit();
+            this.lc_WMSName = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -119,26 +119,12 @@
             this.panelControl1.Appearance.BackColor = System.Drawing.Color.LightSlateGray;
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl1.Controls.Add(this.labelControl3);
+            this.panelControl1.Controls.Add(this.lc_WMSName);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(465, 141);
             this.panelControl1.TabIndex = 0;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl3.Appearance.Options.UseBackColor = true;
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Location = new System.Drawing.Point(96, 64);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(254, 35);
-            this.labelControl3.TabIndex = 10;
-            this.labelControl3.Text = "WMS立库管理系统";
             // 
             // panelControl2
             // 
@@ -205,6 +191,25 @@
             this.txtEdit_UserName.Size = new System.Drawing.Size(227, 20);
             this.txtEdit_UserName.TabIndex = 5;
             // 
+            // lc_WMSName
+            // 
+            this.lc_WMSName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lc_WMSName.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.lc_WMSName.Appearance.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lc_WMSName.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lc_WMSName.Appearance.Options.UseBackColor = true;
+            this.lc_WMSName.Appearance.Options.UseFont = true;
+            this.lc_WMSName.Appearance.Options.UseForeColor = true;
+            this.lc_WMSName.Appearance.Options.UseTextOptions = true;
+            this.lc_WMSName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lc_WMSName.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lc_WMSName.Location = new System.Drawing.Point(3, 53);
+            this.lc_WMSName.Name = "lc_WMSName";
+            this.lc_WMSName.Size = new System.Drawing.Size(459, 35);
+            this.lc_WMSName.TabIndex = 11;
+            this.lc_WMSName.Text = "WMS立库管理系统";
+            // 
             // LoginView
             // 
             this.AcceptButton = this.sBtn_Sure;
@@ -225,7 +230,6 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
@@ -249,10 +253,10 @@
         private DevExpress.XtraEditors.SimpleButton sBtn_Cancel;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraEditors.LabelControl lc_WMSName;
 
 
     }

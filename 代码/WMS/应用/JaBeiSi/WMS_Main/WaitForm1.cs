@@ -15,6 +15,8 @@ namespace WMS_Main
         {
             InitializeComponent();
             this.progressPanel1.AutoHeight = true;
+            this.lc_WmsName.Text = LoginView.WMSName;
+           
         }
 
         #region Overrides

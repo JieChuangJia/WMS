@@ -44,7 +44,7 @@ namespace WMS_Main
         }
         private void MainView_Load(object sender, EventArgs e)
         {
-            
+            this.ribbon_Title.ApplicationCaption = LoginView.WMSName;
             string licenseFile = AppDomain.CurrentDomain.BaseDirectory + @"\JCJLicense.lic";
             this.licenseMonitor = new LicenseMonitor(this, 2000, licenseFile, "zzkeyFT1");
             if (!this.licenseMonitor.StartMonitor())
@@ -383,10 +383,10 @@ namespace WMS_Main
 
         private void bti_About_ItemClick(object sender, ItemClickEventArgs e)
         {
-            AboutView av = new AboutView();
-            string sysVersion = "1.0.7";
+            AboutView av = new AboutView(LoginView.WMSName);
+            string sysVersion = "1.0.8";
             string aboutStr = "版本：" + sysVersion + " \r\n \r\n"
-                + "日期：" +"2018-09-27" + "\r\n \r\n"
+                + "日期：" +"2018-10-24" + "\r\n \r\n"
                 + "（Copyright）深圳捷创嘉智能物流装备有限公司";
                av.SetVersion(aboutStr);
             av.ShowDialog();

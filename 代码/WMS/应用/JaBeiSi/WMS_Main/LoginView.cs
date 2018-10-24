@@ -19,12 +19,14 @@ namespace WMS_Main
     {
         private AddUserPresenter presenter = null;
         private SplashScreenManager _loadForm;
+        public static string WMSName = "佳贝斯-WMS立库管理系统";//系统名称配置
         public LoginView()
         {
             InitializeComponent();
             this.presenter = new AddUserPresenter(this);
             DatabaseCfg();
             InitTabbedMDI();
+            this.lc_WMSName.Text = WMSName;
           
         }
 

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.progressPanel1 = new DevExpress.XtraWaitForm.ProgressPanel();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.lc_WmsName = new DevExpress.XtraEditors.LabelControl();
             this.SuspendLayout();
             // 
             // progressPanel1
@@ -55,19 +55,25 @@
             this.progressPanel1.Text = "progressPanel1";
             this.progressPanel1.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Line;
             // 
-            // labelControl3
+            // lc_WmsName
             // 
-            this.labelControl3.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.labelControl3.Appearance.Options.UseBackColor = true;
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Location = new System.Drawing.Point(76, 99);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(254, 35);
-            this.labelControl3.TabIndex = 11;
-            this.labelControl3.Text = "WMS立库管理系统";
+            this.lc_WmsName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lc_WmsName.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.lc_WmsName.Appearance.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lc_WmsName.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.lc_WmsName.Appearance.Options.UseBackColor = true;
+            this.lc_WmsName.Appearance.Options.UseFont = true;
+            this.lc_WmsName.Appearance.Options.UseForeColor = true;
+            this.lc_WmsName.Appearance.Options.UseTextOptions = true;
+            this.lc_WmsName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lc_WmsName.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lc_WmsName.LineLocation = DevExpress.XtraEditors.LineLocation.Top;
+            this.lc_WmsName.Location = new System.Drawing.Point(3, 99);
+            this.lc_WmsName.Name = "lc_WmsName";
+            this.lc_WmsName.Size = new System.Drawing.Size(430, 35);
+            this.lc_WmsName.TabIndex = 11;
+            this.lc_WmsName.Text = "WMS立库管理系统";
             // 
             // WaitForm1
             // 
@@ -75,21 +81,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(436, 270);
-            this.Controls.Add(this.labelControl3);
+            this.Controls.Add(this.lc_WmsName);
             this.Controls.Add(this.progressPanel1);
             this.DoubleBuffered = true;
             this.Name = "WaitForm1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Form1";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private DevExpress.XtraWaitForm.ProgressPanel progressPanel1;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl lc_WmsName;
 
     }
 }

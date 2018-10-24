@@ -12,9 +12,10 @@ namespace WMS_Kernel
 {
     public partial class AboutView : ChildViewBase
     {
-        public AboutView()
+        public AboutView(string wmsName)
         {
             InitializeComponent();
+            this.lc_WMSname.Text = wmsName;
         }
         public void SetVersion(string version)
         {
