@@ -4,7 +4,7 @@
     <!--库房名称-->
     <StoreHouse name ="A1库房" DeviceID ="11001" AreaID="3363e4a5-f1b4-4509-8863-316a4133b1e7">
       <!--是否重新创建货位false：fou，true：是-->
-      <ReBuild>true</ReBuild>
+      <ReBuild>false</ReBuild>
       <!--库存排数-->
       <GSRows>
         <GSRow Index ="1" ShelfType ="双深" Cols="16" Layers="4"> </GSRow>

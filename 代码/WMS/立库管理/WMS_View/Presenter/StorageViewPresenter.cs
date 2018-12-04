@@ -89,27 +89,33 @@ namespace WMS_Kernel
         public void ModifyGsStatus(string cellChildID, string cellStatus, string cellTaskStatus)
         {
             string restr = "";
-            WH_Cell_ChildrenModel oldgsm =  bllChildCell.GetModel(cellChildID);
+            WH_Cell_ChildrenModel oldgsm = bllChildCell.GetModel(cellChildID);
             if (oldgsm == null)
             {
                 return;
             }
             if (oldgsm.Cell_Child_Flag != "1")
             {
-                this.WmsFrame.WriteLog("库存看板", "","提示","被禁用的货位不允许修改状态!");
+                this.WmsFrame.WriteLog("库存看板", "", "提示", "被禁用的货位不允许修改状态!");
                 return;
             }
             View_CellModel cellModel = bllViewCell.GetModelByChildCellID(cellChildID);
 
-            string operteDetail =  cellModel .WareHouse_Name+ "：[" + cellModel.Cell_Name + "]货位状态由[" + oldgsm.Cell_Child_Status + "]变更为[" + cellStatus + "]；" + "货位任务状态由[" + oldgsm.Cell_Child_Run_Status + "]变更为[" + cellTaskStatus + "]";
+            string operteDetail = cellModel.WareHouse_Name + "：[" + cellModel.Cell_Name + "]货位状态由[" + oldgsm.Cell_Child_Status + "]变更为[" + cellStatus + "]；" + "货位任务状态由[" + oldgsm.Cell_Child_Run_Status + "]变更为[" + cellTaskStatus + "]";
 
-            oldgsm.Cell_Child_Status =cellStatus;
+            oldgsm.Cell_Child_Status = cellStatus;
             oldgsm.Cell_Child_Run_Status = cellTaskStatus;
             bllChildCell.Update(oldgsm);
-           TaskHandleMethod.AddCellOperRecord(cellChildID, EnumGSOperateType.手动修改状态,operteDetail,ref restr);
+            TaskHandleMethod.AddCellOperRecord(cellChildID, EnumGSOperateType.手动修改状态, operteDetail, ref restr);
+            if (cellStatus == EnumCellStatus.空闲.ToString() && cellTaskStatus == EnumGSTaskStatus.完成.ToString())
+            {
+                if( this.View.AskMessage("询问","您确定要清空此货位么？清空后货位的库存物料信息也将清空！")==0)
+                {
+                    TaskHandleMethod.DeleteStockByCellChildID(cellModel.Cell_Chlid_ID);
+                }
+            }
 
-
-           this.View.RefreshData();
+            this.View.RefreshData();
         }
 
         public void SetGsStatus(string gsID, bool status)

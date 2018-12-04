@@ -200,6 +200,21 @@ namespace CommonMoudle
             }
             return bllStock.Delete(stockModel.Stock_ID);
         }
+        /// <summary>
+        /// 删除库存
+        /// </summary>
+        /// <param name="manageID"></param>
+        /// <returns></returns>
+        public static bool DeleteStockByCellChildID(string childCellID)
+        {
+
+            List<View_StockListModel> stockList = bllViewStockList.GetModelListByCellID(childCellID);
+            if (stockList == null&&stockList.Count ==0)
+            {
+                return false;
+            }
+            return bllStock.Delete(stockList[0].Stock_ID);
+        }
         public static bool DeleteManageTask(string manageID)
         {
             return bllManage.Delete(manageID);
