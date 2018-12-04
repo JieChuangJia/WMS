@@ -209,7 +209,7 @@ namespace CommonMoudle
         {
 
             List<View_StockListModel> stockList = bllViewStockList.GetModelListByCellID(childCellID);
-            if (stockList == null&&stockList.Count ==0)
+            if (stockList == null||stockList.Count ==0)
             {
                 return false;
             }
