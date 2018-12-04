@@ -196,8 +196,10 @@ namespace WMS_Kernel
                        stockList.Plan_List_ID = "-1";
                        stockList.Stock_List_Box_Barcode = trayGoodsModel.托盘条码;
                        stockList.Stock_List_Entry_Time = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                       
+                      
                        stockList.Stock_List_Quantity = trayGoodsModel.数量.ToString();
-
+                  
                        bllStockList.Add(stockList);
 
                        //if (UpdatePlanNum(trayGoodsModel.计划列表编号, goods.Goods_ID, trayGoodsModel.数量, ref restr) == false)

@@ -39,7 +39,19 @@ namespace WMS_Service_Main
         
         }
         public void StopWMSSvr(Uri svrAddr)
-        { }
+        {
+            string restr = "";
+            if (wmsSvrManager.StartWMSServ(svrAddr, ref restr) == false)
+            {
+                this.View.ShowMessage("信息提示", "WMS服务接口停止失败：" + restr);
+                this.wmsFrame.WriteLog("服务管理", "", "错误", "WMS服务接口停止失败！");
+                return;
+            }
+            else
+            {
+                this.wmsFrame.WriteLog("服务管理", "", "提示", "WMS服务接口停止成功！");
+            }
+        }
         public void StartMESSvr(Uri svrAddr)
         { }
         public void StopMESSvr(Uri svrAddr)

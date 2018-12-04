@@ -73,7 +73,7 @@ namespace WMS_Main_Aoyou
         {
             string dbSrc = ConfigurationManager.AppSettings["DBSource"];
             //CtlDBAccess.DBUtility.PubConstant.ConnectionString = string.Format(@"{0}Initial Catalog=ACEcams;User ID=sa;Password=123456;", dbSrc);
-            string dbConn1 = string.Format(@"{0}Initial Catalog=WMSDB2;User ID=sa;Password=123456;", dbSrc);
+            string dbConn1 = string.Format(@"{0}Initial Catalog=WMSDB2;User ID=sa;Password=Aa123456;", dbSrc);
             // string dbConn1 = string.Format(@"{0}Initial Catalog=WMSDB2;User ID=AoyouWmsSA;Password=Aa123456;", dbSrc);
 
             WMS_Database.PubConstant.SetConnectStr(dbConn1);
@@ -100,8 +100,7 @@ namespace WMS_Main_Aoyou
         }
         private void sBtn_Sure_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.ShowWaitForm();
+           
             User user = new User();
             user.UserName = this.txtEdit_UserName.Text;
             user.UserPassword = this.txtEdit_UserPassword.Text;
@@ -122,6 +121,8 @@ namespace WMS_Main_Aoyou
                 this.Show();
                 return;
             }
+            this.Hide();
+            this.ShowWaitForm();
             MainFrame mainView = new MainFrame();
             mainView.SetRoleLevel(roleLevel,user.UserName);
             mainView.Init();

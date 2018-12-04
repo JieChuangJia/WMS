@@ -184,9 +184,9 @@ namespace WMS_Service_Main
         private void DatabaseCfg()
         {
             string dbSrc = ConfigurationManager.AppSettings["WMS_Database_Path"];
-            string dbAoyou = ConfigurationManager.AppSettings["WMS_AoyouDatabase_Path"];
+            //string dbAoyou = ConfigurationManager.AppSettings["WMS_AoyouDatabase_Path"];
             //CtlDBAccess.DBUtility.PubConstant.ConnectionString = string.Format(@"{0}Initial Catalog=ACEcams;User ID=sa;Password=123456;", dbSrc);
-            string dbConn1 = string.Format(@"{0}Initial Catalog=JBSWmsDB;User ID=AoyouWmsSA;Password=Aa123456;", dbSrc);
+            string dbConn1 = string.Format(@"{0}Initial Catalog=JBSWmsDB;User ID=sa;Password=Aa123456;", dbSrc);
             //string dbAoyouConn = string.Format(@"{0}Initial Catalog=Aoyou_BusinessDB;User ID=sa;Password=Aa123456;", dbAoyou);
              WMS_Database.PubConstant.SetConnectStr(dbConn1);
              //Aoyou_BusinessDB.PubConstant.ConnectionString = dbAoyouConn;

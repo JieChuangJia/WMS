@@ -56,8 +56,8 @@ namespace WMS_Service_Main
 
         private void sb_StopSvr_Click(object sender, EventArgs e)
         {   
-            string ERP_SvrAddr = ConfigurationManager.AppSettings["ERP_SvrAddr"];
-            this.presenter.StopERPSvr(new Uri(ERP_SvrAddr));
+            //string ERP_SvrAddr = ConfigurationManager.AppSettings["ERP_SvrAddr"];
+            //this.presenter.StopERPSvr(new Uri(ERP_SvrAddr));
             string wms_SvrAddr = ConfigurationManager.AppSettings["WMS_SvrAddr"];
             this.presenter.StopWMSSvr(new Uri(wms_SvrAddr));
         }

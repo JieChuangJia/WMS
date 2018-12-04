@@ -196,7 +196,7 @@
             // 
             // txtEdit_UserPassword
             // 
-            this.txtEdit_UserPassword.EditValue = "123456";
+            this.txtEdit_UserPassword.EditValue = "";
             this.txtEdit_UserPassword.Location = new System.Drawing.Point(170, 51);
             this.txtEdit_UserPassword.Name = "txtEdit_UserPassword";
             this.txtEdit_UserPassword.Properties.UseSystemPasswordChar = true;
@@ -205,7 +205,7 @@
             // 
             // txtEdit_UserName
             // 
-            this.txtEdit_UserName.EditValue = "admin";
+            this.txtEdit_UserName.EditValue = "";
             this.txtEdit_UserName.Location = new System.Drawing.Point(170, 16);
             this.txtEdit_UserName.Name = "txtEdit_UserName";
             this.txtEdit_UserName.Size = new System.Drawing.Size(227, 20);

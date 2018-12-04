@@ -128,15 +128,16 @@ namespace WMS_Interface
       /// <returns>执行结果</returns>
        [OperationContract]
       bool UpdateGsStatus(string houseName, CellCoordModel cellCoord, EnumCellStatus cellStat, ref string reStr);
-      /// <summary>
-      /// 更新货位任务状态，货位申请、出库、入库等改变货位状态后需要调用
-      /// </summary>
-      /// <param name="houseName">库房名称</param>
-      /// <param name="cellCoord">货位位置</param>
-      /// <param name="taskStatus">货位任务状态</param>
-      /// <param name="reStr">执行状态描述</param>
-      /// <returns>执行结果</returns>
-      bool UpdateGsTaskStatus(string houseName, CellCoordModel cellCoord, EnumGSTaskStatus taskStatus, ref string reStr);
+        /// <summary>
+        /// 更新货位任务状态，货位申请、出库、入库等改变货位状态后需要调用
+        /// </summary>
+        /// <param name="houseName">库房名称</param>
+        /// <param name="cellCoord">货位位置</param>
+        /// <param name="taskStatus">货位任务状态</param>
+        /// <param name="reStr">执行状态描述</param>
+        /// <returns>执行结果</returns>
+        [OperationContract]
+        bool UpdateGsTaskStatus(string houseName, CellCoordModel cellCoord, EnumGSTaskStatus taskStatus, ref string reStr);
       /// <summary>
       /// 更新货位启用状态
       /// </summary>

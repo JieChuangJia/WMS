@@ -386,6 +386,10 @@ namespace WMS_Kernel
              
                 foreach(Stock_ListModel slModel in stockList)
                 {
+                    if (slModel.Plan_List_ID == "-1")
+                    {
+                        continue;
+                    }
                     if (UpdatePlanNum(slModel.Plan_List_ID, slModel.Goods_ID, int.Parse(slModel.Stock_List_Quantity), ref restr) == false)
                     {
                         this.View.ShowMessage("信息提示", "取消配盘是失败！"+ restr);
