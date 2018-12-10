@@ -18,6 +18,7 @@ namespace WMS_Kernel
         计划录入,
         计划查询,
         待办工作,
+        系统操作,
         搬运记录
     }
     public class WMSManager

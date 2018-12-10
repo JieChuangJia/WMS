@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
@@ -76,7 +77,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.storageControl1 = new Storage.StorageControl();
-            this.cms_Property = new System.Windows.Forms.ContextMenuStrip();
+            this.cms_Property = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmi_ModifyStatus = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_UnUseGs = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_UseGs = new System.Windows.Forms.ToolStripMenuItem();
@@ -113,6 +114,7 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.gc_Area = new DevExpress.XtraGrid.GridControl();
             this.gv_Area = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.tsm_StockAdjust = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
@@ -559,35 +561,36 @@
             this.tsmi_UnUseGs,
             this.tsmi_UseGs,
             this.tsmi_Refresh,
+            this.tsm_StockAdjust,
             this.手动移库ToolStripMenuItem});
             this.cms_Property.Name = "contextMenuStrip1";
-            this.cms_Property.Size = new System.Drawing.Size(125, 114);
+            this.cms_Property.Size = new System.Drawing.Size(153, 158);
             // 
             // tsmi_ModifyStatus
             // 
             this.tsmi_ModifyStatus.Name = "tsmi_ModifyStatus";
-            this.tsmi_ModifyStatus.Size = new System.Drawing.Size(124, 22);
+            this.tsmi_ModifyStatus.Size = new System.Drawing.Size(152, 22);
             this.tsmi_ModifyStatus.Text = "状态修改";
             this.tsmi_ModifyStatus.Click += new System.EventHandler(this.tsmi_ModifyStatus_Click);
             // 
             // tsmi_UnUseGs
             // 
             this.tsmi_UnUseGs.Name = "tsmi_UnUseGs";
-            this.tsmi_UnUseGs.Size = new System.Drawing.Size(124, 22);
+            this.tsmi_UnUseGs.Size = new System.Drawing.Size(152, 22);
             this.tsmi_UnUseGs.Text = "禁用货位";
             this.tsmi_UnUseGs.Click += new System.EventHandler(this.tsmi_UnUseGs_Click);
             // 
             // tsmi_UseGs
             // 
             this.tsmi_UseGs.Name = "tsmi_UseGs";
-            this.tsmi_UseGs.Size = new System.Drawing.Size(124, 22);
+            this.tsmi_UseGs.Size = new System.Drawing.Size(152, 22);
             this.tsmi_UseGs.Text = "启用货位";
             this.tsmi_UseGs.Click += new System.EventHandler(this.tsmi_UseGs_Click);
             // 
             // tsmi_Refresh
             // 
             this.tsmi_Refresh.Name = "tsmi_Refresh";
-            this.tsmi_Refresh.Size = new System.Drawing.Size(124, 22);
+            this.tsmi_Refresh.Size = new System.Drawing.Size(152, 22);
             this.tsmi_Refresh.Text = "刷      新";
             this.tsmi_Refresh.Click += new System.EventHandler(this.tsmi_Refresh_Click);
             // 
@@ -597,7 +600,7 @@
             this.tsmi_StartPos,
             this.tsmi_EndPos});
             this.手动移库ToolStripMenuItem.Name = "手动移库ToolStripMenuItem";
-            this.手动移库ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.手动移库ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.手动移库ToolStripMenuItem.Text = "手动移库";
             // 
             // tsmi_StartPos
@@ -627,11 +630,11 @@
             // gc_CellGoodsDetail
             // 
             this.gc_CellGoodsDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_CellGoodsDetail.Location = new System.Drawing.Point(2, 22);
+            this.gc_CellGoodsDetail.Location = new System.Drawing.Point(2, 21);
             this.gc_CellGoodsDetail.MainView = this.gridView2;
             this.gc_CellGoodsDetail.Margin = new System.Windows.Forms.Padding(0);
             this.gc_CellGoodsDetail.Name = "gc_CellGoodsDetail";
-            this.gc_CellGoodsDetail.Size = new System.Drawing.Size(932, 129);
+            this.gc_CellGoodsDetail.Size = new System.Drawing.Size(932, 130);
             this.gc_CellGoodsDetail.TabIndex = 6;
             this.gc_CellGoodsDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -771,13 +774,13 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 22);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 21);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(270, 69);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(270, 70);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // panel1
@@ -795,7 +798,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(264, 63);
+            this.panel1.Size = new System.Drawing.Size(264, 64);
             this.panel1.TabIndex = 0;
             // 
             // label14
@@ -903,11 +906,11 @@
             // gc_Area
             // 
             this.gc_Area.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_Area.Location = new System.Drawing.Point(2, 22);
+            this.gc_Area.Location = new System.Drawing.Point(2, 21);
             this.gc_Area.MainView = this.gv_Area;
             this.gc_Area.Margin = new System.Windows.Forms.Padding(0);
             this.gc_Area.Name = "gc_Area";
-            this.gc_Area.Size = new System.Drawing.Size(270, 280);
+            this.gc_Area.Size = new System.Drawing.Size(270, 281);
             this.gc_Area.TabIndex = 7;
             this.gc_Area.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Area});
@@ -923,6 +926,13 @@
             this.gv_Area.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_Area.OptionsView.ShowGroupPanel = false;
             this.gv_Area.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gv_Area_RowCellStyle);
+            // 
+            // tsm_StockAdjust
+            // 
+            this.tsm_StockAdjust.Name = "tsm_StockAdjust";
+            this.tsm_StockAdjust.Size = new System.Drawing.Size(152, 22);
+            this.tsm_StockAdjust.Text = "库存调整";
+            this.tsm_StockAdjust.Click += new System.EventHandler(this.tsm_StockAdjust_Click);
             // 
             // StationShowView
             // 
@@ -1058,5 +1068,6 @@
         private DevExpress.XtraGrid.GridControl gc_Area;
         private DevExpress.XtraGrid.Views.Grid.GridView gv_Area;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.ToolStripMenuItem tsm_StockAdjust;
     }
 }

@@ -182,6 +182,7 @@ namespace CommonMoudle
             cellOperate.WH_Cell_Code = cell.Cell_Code + ":" + cell.Cell_Chlid_Position;
             cellOperate.WH_Cell_Oper_Datetime = DateTime.Now;
             cellOperate.WH_Cell_Oper_Detail = operDetail;
+            cellOperate.WH_Cell_Oper_Type = operType.ToString();
             cellOperate.WH_Cell_Oper_RecID = Guid.NewGuid().ToString();
             return bllCellOperateRecord.Add(cellOperate);
         }

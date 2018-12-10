@@ -49,6 +49,7 @@ namespace WMS_Kernel
         PalletWithoutPlanView palletWithoutPlanView = new PalletWithoutPlanView();
         UnShelveWithoutPlanView unshelveWithoutPlanView = new UnShelveWithoutPlanView();
         WHManaView houseManaView = new WHManaView();
+        SysOperateView sysOperateView = new SysOperateView();
         public WmsViewManager()
         { }
         public void InitView(IWMSFrame wmsFrame, List<WMSFuncModule> moduleList)
@@ -102,7 +103,9 @@ namespace WMS_Kernel
                 materialLoadWithPlanView.FormClosing += FormCloseEventHandler;
                 materialLoadWithPlanView.Init(wmsFrame);//按计划下架
             }
-
+            
+        
+            
             stocktakingUnshelveView.FormClosing += FormCloseEventHandler;
             stocktakingUnshelveView.Init(wmsFrame);
             
@@ -151,7 +154,10 @@ namespace WMS_Kernel
                 unshelveWithoutPlanView.FormClosing += FormCloseEventHandler;
                 unshelveWithoutPlanView.Init(wmsFrame);//无计划下架
             }
-houseManaView.FormClosing += FormCloseEventHandler;
+            sysOperateView.FormClosing += FormCloseEventHandler;
+            sysOperateView.Init(wmsFrame);//按计划下架
+
+            houseManaView.FormClosing += FormCloseEventHandler;
             houseManaView.Init(wmsFrame);
         }
 

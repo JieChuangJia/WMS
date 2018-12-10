@@ -1,29 +1,31 @@
 ﻿using System;
 using System.Data;
 using System.Collections.Generic;
-namespace WMS_Database
+ 
+using AsrsStorDBAcc.Model;
+namespace AsrsStorDBAcc.BLL
 {
-	/// <summary>
-	/// 计划列表明细
-	/// </summary>
-	public partial class StockBll
-	{
-        private readonly StockDal dal = new StockDal();
-        public StockBll()
-		{}
+    /// <summary>
+    /// View_Cell_Operate
+    /// </summary>
+    public partial class View_Cell_OperateBLL
+    {
+        private readonly AsrsStorDBAcc.DAL.View_Cell_OperateDAL dal = new AsrsStorDBAcc.DAL.View_Cell_OperateDAL();
+        public View_Cell_OperateBLL()
+        { }
         #region  BasicMethod
         /// <summary>
         /// 是否存在该记录
         /// </summary>
-        public bool Exists(string Stock_ID)
+        public bool Exists(string WH_Cell_Oper_RecID, string WareHouse_ID, string WH_Cell_Code, string WH_Cell_Oper_Type, string WH_Cell_Oper_Detail, DateTime WH_Cell_Oper_Datetime, string WareHouse_Code, string WareHouse_Name, string WareHouse_Type, string WareHouse_Flag)
         {
-            return dal.Exists(Stock_ID);
+            return dal.Exists(WH_Cell_Oper_RecID, WareHouse_ID, WH_Cell_Code, WH_Cell_Oper_Type, WH_Cell_Oper_Detail, WH_Cell_Oper_Datetime, WareHouse_Code, WareHouse_Name, WareHouse_Type, WareHouse_Flag);
         }
 
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public bool Add(WMS_Database.StockModel model)
+        public bool Add(AsrsStorDBAcc.Model.View_Cell_OperateModel model)
         {
             return dal.Add(model);
         }
@@ -31,7 +33,7 @@ namespace WMS_Database
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(WMS_Database.StockModel model)
+        public bool Update(AsrsStorDBAcc.Model.View_Cell_OperateModel model)
         {
             return dal.Update(model);
         }
@@ -39,27 +41,22 @@ namespace WMS_Database
         /// <summary>
         /// 删除一条数据
         /// </summary>
-        public bool Delete(string Stock_ID)
+        public bool Delete(string WH_Cell_Oper_RecID, string WareHouse_ID, string WH_Cell_Code, string WH_Cell_Oper_Type, string WH_Cell_Oper_Detail, DateTime WH_Cell_Oper_Datetime, string WareHouse_Code, string WareHouse_Name, string WareHouse_Type, string WareHouse_Flag)
         {
 
-            return dal.Delete(Stock_ID);
-        }
-        /// <summary>
-        /// 删除一条数据
-        /// </summary>
-        public bool DeleteList(string Stock_IDlist)
-        {
-            return dal.DeleteList(Stock_IDlist);
+            return dal.Delete(WH_Cell_Oper_RecID, WareHouse_ID, WH_Cell_Code, WH_Cell_Oper_Type, WH_Cell_Oper_Detail, WH_Cell_Oper_Datetime, WareHouse_Code, WareHouse_Name, WareHouse_Type, WareHouse_Flag);
         }
 
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public WMS_Database.StockModel GetModel(string Stock_ID)
+        public AsrsStorDBAcc.Model.View_Cell_OperateModel GetModel(string WH_Cell_Oper_RecID, string WareHouse_ID, string WH_Cell_Code, string WH_Cell_Oper_Type, string WH_Cell_Oper_Detail, DateTime WH_Cell_Oper_Datetime, string WareHouse_Code, string WareHouse_Name, string WareHouse_Type, string WareHouse_Flag)
         {
 
-            return dal.GetModel(Stock_ID);
+            return dal.GetModel(WH_Cell_Oper_RecID, WareHouse_ID, WH_Cell_Code, WH_Cell_Oper_Type, WH_Cell_Oper_Detail, WH_Cell_Oper_Datetime, WareHouse_Code, WareHouse_Name, WareHouse_Type, WareHouse_Flag);
         }
+
+       
 
         /// <summary>
         /// 获得数据列表
@@ -78,7 +75,7 @@ namespace WMS_Database
         /// <summary>
         /// 获得数据列表
         /// </summary>
-        public List<WMS_Database.StockModel> GetModelList(string strWhere)
+        public List<AsrsStorDBAcc.Model.View_Cell_OperateModel> GetModelList(string strWhere)
         {
             DataSet ds = dal.GetList(strWhere);
             return DataTableToList(ds.Tables[0]);
@@ -86,13 +83,13 @@ namespace WMS_Database
         /// <summary>
         /// 获得数据列表
         /// </summary>
-        public List<WMS_Database.StockModel> DataTableToList(DataTable dt)
+        public List<AsrsStorDBAcc.Model.View_Cell_OperateModel> DataTableToList(DataTable dt)
         {
-            List<WMS_Database.StockModel> modelList = new List<WMS_Database.StockModel>();
+            List<AsrsStorDBAcc.Model.View_Cell_OperateModel> modelList = new List<AsrsStorDBAcc.Model.View_Cell_OperateModel>();
             int rowsCount = dt.Rows.Count;
             if (rowsCount > 0)
             {
-                WMS_Database.StockModel model;
+                AsrsStorDBAcc.Model.View_Cell_OperateModel model;
                 for (int n = 0; n < rowsCount; n++)
                 {
                     model = dal.DataRowToModel(dt.Rows[n]);
@@ -136,27 +133,12 @@ namespace WMS_Database
         //}
 
         #endregion  BasicMethod
-		#region  ExtensionMethod
-        public StockModel GetModelByTrayCode(string trayCode)
+        #region  ExtensionMethod
+        public DataTable GetOperate(DateTime stDt, DateTime edDt, string level, bool likeQueryChecked, string likeQueryValue)
         {
-            string sqlStr = "Stock_Tray_Barcode = '" + trayCode + "'";
-            List<StockModel> stockList = GetModelList(sqlStr);
-            if(stockList!=null&&stockList.Count>0)
-            {
-                return stockList[0];
-            }
-            else
-            {
-                return null;
-            }
+            return dal.GetOperate(stDt, edDt, level, likeQueryChecked, likeQueryValue);
         }
-        public List<StockModel> GetModelListByTrayCode(string trayCode)
-        {
-            string sqlStr = "Stock_Tray_Barcode = '" + trayCode + "'";
-            List<StockModel> stockList = GetModelList(sqlStr);
-            return stockList;
-        }
-		#endregion  ExtensionMethod
-	}
+        #endregion  ExtensionMethod
+    }
 }
 

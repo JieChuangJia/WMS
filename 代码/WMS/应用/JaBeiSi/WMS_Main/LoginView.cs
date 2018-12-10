@@ -88,6 +88,7 @@ namespace WMS_Main
         {
             this.txtEdit_UserName.Text = string.Empty;
             this.txtEdit_UserPassword.Text = string.Empty;
+            this.Close();
             
         }
         private void InitTabbedMDI()

@@ -139,7 +139,11 @@ namespace WMS_Database
 
         #endregion  BasicMethod
         #region  ExtensionMethod
-
+        public DataTable GetOperate(DateTime stDt, DateTime edDt, string operateType, bool likeQueryChecked, string likeQueryValue,string houseName,bool gsChecked,string gsName)
+     
+        {
+            return dal.GetOperate(stDt, edDt, operateType, likeQueryChecked, likeQueryValue,houseName,gsChecked,gsName);
+        }
         #endregion  ExtensionMethod
     }
 }

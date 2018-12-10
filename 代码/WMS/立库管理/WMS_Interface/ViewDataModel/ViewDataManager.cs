@@ -41,5 +41,7 @@ namespace WMS_Interface
         public static PalletWithoutPlanViewData PALLETWITHOUTPLANDATA = new PalletWithoutPlanViewData();
         public static UnShelveWithoutPlanViewData UNSHELVEWITHPPLANVIEWDATA = new UnShelveWithoutPlanViewData();
         public static WareHouseViewData WHVIEWDATA = new WareHouseViewData();
+        public static StockAdjustViewData STOCKADJUSTVIEWDATA = new StockAdjustViewData();
+
     }
 }

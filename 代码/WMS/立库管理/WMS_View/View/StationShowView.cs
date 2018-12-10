@@ -38,7 +38,7 @@ namespace WMS_Kernel
             base.Init(wmsFrame);
             Presenter = new StorageViewPresenter(this,wmsFrame);
             string restr = "";
-
+         
             Bitmap bitmap = ImageResource.StationShow.ToBitmap();
             this.IWmsFrame.AddTitlePage("库存管理", ref restr);
             this.IWmsFrame.AddGroup("库存管理", "库存操作", ref restr);
@@ -282,13 +282,17 @@ namespace WMS_Kernel
         private void storageControl1_PositionsClick(object sender, StorageControl.ClickPositionsEventArgs e)
         {
             this.storageControl1.selectPositions = e.Positions;
+          
+            OnClickGs();
+        }
+        private void OnClickGs( )
+        {
             if (this.storageControl1.selectPositions != null && this.storageControl1.selectPositions.Visible == true)
             {
-                this.Presenter.GetGSDetail(e.Positions.GoodsSiteID.ToString());
+                this.Presenter.GetGSDetail(this.storageControl1.selectPositions.GoodsSiteID.ToString());
                 //OnShowExterProperty();
             }
             
-
         }
 
         private void cbe_PosTypeList_SelectedIndexChanged(object sender, EventArgs e)
@@ -315,6 +319,12 @@ namespace WMS_Kernel
 
         private void OnModifyGsStatus()
         {
+            if (this.IWmsFrame.RoleLevel > 2)
+            {
+                ShowMessage("信息提示", "当前用户没有此功能的操作权限！");
+
+                return;
+            }
             if (this.storageControl1.selectPositions == null)
             {
                 MessageBox.Show("请选中要要修改的货位！", "信息提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -491,6 +501,30 @@ namespace WMS_Kernel
                 e.Appearance.BackColor2 = Color.FromArgb(Convert.ToByte(colorArray[0]), Convert.ToByte(colorArray[1]), Convert.ToByte(colorArray[2]));
                 e.Appearance.ForeColor = Color.FromArgb(Convert.ToByte(colorArray[0]), Convert.ToByte(colorArray[1]), Convert.ToByte(colorArray[2]));
             }  
+        }
+
+        private void tsm_StockAdjust_Click(object sender, EventArgs e)
+        {
+            if (this.IWmsFrame.RoleLevel > 2)
+            {
+                ShowMessage("信息提示", "当前用户没有此功能的操作权限！");
+
+                return;
+            }
+            if (this.storageControl1.selectPositions == null)
+            {
+                return;
+            }
+            Positions pos = this.storageControl1.selectPositions;
+            if (pos == null)
+            {
+                return;
+            }
+            StockAdjustView sav = new StockAdjustView(pos.GoodsSiteID);
+            sav.Init(this.IWmsFrame);
+            sav.ShowDialog();
+            RefreshData();
+            OnClickGs();
         }
 
         //  private void RefreshColor()

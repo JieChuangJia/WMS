@@ -71,6 +71,7 @@
     <Compile Include="ViewDataModel\CommViewDataObj.cs" />
     <Compile Include="ViewDataModel\GoodsViewData.cs" />
     <Compile Include="ViewDataModel\PalletManageViewData.cs" />
+    <Compile Include="ViewDataModel\StockAdjustViewData.cs" />
     <Compile Include="ViewDataModel\PalletWithoutPlanViewData.cs" />
     <Compile Include="ViewDataModel\PalletWithPlanViewData.cs" />
     <Compile Include="ViewDataModel\PlanInputDataViewModel.cs" />
