@@ -133,9 +133,11 @@ namespace WMS_Database
 
         #endregion  BasicMethod
         #region  ExtensionMethod
-        public List<View_ManageModel> GetModelList(string taskType, string taskStatus)
+        public List<View_ManageModel> GetModelList(DateTime dtStart, DateTime dtEnd, string taskType, string taskStatus)
         {
-            string sqlstr = " 1=1";
+            string startTime = dtStart.ToString("yyyy-MM-dd 0:00:00");
+            string endTime = dtEnd.ToString("yyyy-MM-dd 23:59:59");
+            string sqlstr = " 1=1 and Mange_CreateTime >='" + dtStart + "' and Mange_CreateTime<='" +dtEnd +"'";
             if (taskStatus != "所有")
             {
                 sqlstr += "and Mange_Status ='" + taskStatus + "' ";

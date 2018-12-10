@@ -18,6 +18,8 @@ namespace WMS_Kernel
         WH_Station_LogicBLL bllStationLogic = new WH_Station_LogicBLL();
         string currtaskType = "";
         string currtaskStatus = "";
+        DateTime currentDtStart = DateTime.Now;
+        DateTime currentDtEnd = DateTime.Now;
         public TaskListPresenter(ITaskListView view,IWMSFrame wmsFrame):base(view,wmsFrame)
         { }
 
@@ -26,11 +28,13 @@ namespace WMS_Kernel
         
         }
 
-        public void QueryTask(string taskType, string taskStatus)
+        public void QueryTask(DateTime dtStart, DateTime dtEnd, string taskType, string taskStatus)
         {
+            currentDtStart = dtStart;
+            currentDtEnd = dtEnd;
             currtaskType = taskType;
             currtaskStatus = taskStatus;
-            List<View_ManageModel> taskList = bllViewManage.GetModelList(taskType, taskStatus);
+            List<View_ManageModel> taskList = bllViewManage.GetModelList(dtStart, dtEnd,taskType, taskStatus);
             ViewDataManager.TASKLISTDATA.TaskListData.Clear();
             if (taskList == null)
             {
@@ -117,7 +121,7 @@ namespace WMS_Kernel
             }
             task.Mange_Status = EnumManageTaskStatus.已完成.ToString();
             bllManage.Update(task);
-            QueryTask(this.currtaskType, this.currtaskStatus);
+            QueryTask(currentDtStart, currentDtEnd, this.currtaskType, this.currtaskStatus);
         }
 
         public void CancelTask(string palletCode)
@@ -156,7 +160,7 @@ namespace WMS_Kernel
             this.View.ShowMessage("信息提示", "取消任务成功！");
             this.WmsFrame.WriteLog("任务列表", "", "提示", "手动取消任务：托盘[" + palletCode + "]" + ",任务类型：" + manage.Mange_Type_ID);
             ViewDataManager.TASKLISTDATA.TaskDetailData.Clear();//取消配盘后要将任务详细清楚
-            QueryTask(this.currtaskType, this.currtaskStatus);
+            QueryTask(currentDtStart,currentDtEnd,this.currtaskType, this.currtaskStatus);
         }
         public void QueryTaskDetail(string palletCode)
         {

@@ -22,6 +22,8 @@ namespace WMS_Kernel
         }
         private void TaskListView_Load(object sender, EventArgs e)
         {
+            this.de_StartTime.DateTime = DateTime.Now.AddDays(-2);
+            this.de_EndTime.DateTime = DateTime.Now;
             DataBingding();
             IniTaskStatusList();
             IniTaskTypeList();
@@ -88,7 +90,7 @@ namespace WMS_Kernel
 
         private void sb_TaskQuery_Click(object sender, EventArgs e)
         {
-            this.presenter.QueryTask(this.cbEdit_TaskType.Text.Trim(), this.cbe_TaskStatus.Text.Trim());
+            this.presenter.QueryTask(this.de_StartTime.DateTime,this.de_EndTime.DateTime, this.cbEdit_TaskType.Text.Trim(), this.cbe_TaskStatus.Text.Trim());
         }
 
         //private void gc_TaskList_Click(object sender, EventArgs e)
