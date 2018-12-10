@@ -82,6 +82,8 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.gc_Stock = new DevExpress.XtraGrid.GridControl();
             this.gv_Stock = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.te_MaterialNameOrID = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
@@ -109,6 +111,7 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Stock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Stock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_MaterialNameOrID.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridColumn10
@@ -326,10 +329,10 @@
             // gc_StockDetail
             // 
             this.gc_StockDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_StockDetail.Location = new System.Drawing.Point(2, 22);
+            this.gc_StockDetail.Location = new System.Drawing.Point(2, 21);
             this.gc_StockDetail.MainView = this.gv_StockDetail;
             this.gc_StockDetail.Name = "gc_StockDetail";
-            this.gc_StockDetail.Size = new System.Drawing.Size(1175, 152);
+            this.gc_StockDetail.Size = new System.Drawing.Size(1175, 153);
             this.gc_StockDetail.TabIndex = 7;
             this.gc_StockDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_StockDetail});
@@ -347,6 +350,8 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.labelControl8);
+            this.panelControl1.Controls.Add(this.te_MaterialNameOrID);
             this.panelControl1.Controls.Add(this.labelControl7);
             this.panelControl1.Controls.Add(this.cbe_Layer);
             this.panelControl1.Controls.Add(this.labelControl4);
@@ -456,7 +461,7 @@
             // sb_Query
             // 
             this.sb_Query.Image = ((System.Drawing.Image)(resources.GetObject("sb_Query.Image")));
-            this.sb_Query.Location = new System.Drawing.Point(854, 15);
+            this.sb_Query.Location = new System.Drawing.Point(1001, 16);
             this.sb_Query.Name = "sb_Query";
             this.sb_Query.Size = new System.Drawing.Size(76, 22);
             this.sb_Query.TabIndex = 20;
@@ -537,10 +542,10 @@
             // gc_Stock
             // 
             this.gc_Stock.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_Stock.Location = new System.Drawing.Point(2, 22);
+            this.gc_Stock.Location = new System.Drawing.Point(2, 21);
             this.gc_Stock.MainView = this.gv_Stock;
             this.gc_Stock.Name = "gc_Stock";
-            this.gc_Stock.Size = new System.Drawing.Size(1175, 152);
+            this.gc_Stock.Size = new System.Drawing.Size(1175, 153);
             this.gc_Stock.TabIndex = 7;
             this.gc_Stock.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Stock});
@@ -557,6 +562,21 @@
             this.gv_Stock.OptionsView.ColumnAutoWidth = false;
             this.gv_Stock.OptionsView.ShowGroupPanel = false;
             this.gv_Stock.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gv_Stock_FocusedRowChanged);
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(816, 20);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(48, 14);
+            this.labelControl8.TabIndex = 47;
+            this.labelControl8.Text = "物料信息";
+            // 
+            // te_MaterialNameOrID
+            // 
+            this.te_MaterialNameOrID.Location = new System.Drawing.Point(876, 17);
+            this.te_MaterialNameOrID.Name = "te_MaterialNameOrID";
+            this.te_MaterialNameOrID.Size = new System.Drawing.Size(119, 20);
+            this.te_MaterialNameOrID.TabIndex = 46;
             // 
             // UnShelveWithoutPlanView
             // 
@@ -596,6 +616,7 @@
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc_Stock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Stock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_MaterialNameOrID.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -647,5 +668,7 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraGrid.GridControl gc_StockDetail;
         private DevExpress.XtraGrid.Views.Grid.GridView gv_StockDetail;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.TextEdit te_MaterialNameOrID;
     }
 }

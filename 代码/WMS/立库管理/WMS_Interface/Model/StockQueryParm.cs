@@ -13,6 +13,7 @@ namespace WMS_Interface
         public string Layer { get; set; }
         public string MaterialCate { get; set; }
         public string PalletCode { get; set; }
+        public string goodsInfo { get; set; }
         public StockQueryParm()
         { }
 

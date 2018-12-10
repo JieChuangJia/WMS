@@ -202,7 +202,7 @@ namespace WMS_Kernel
             paramModel.Layer = this.cbe_Layer.Text.Trim();
             paramModel.MaterialCate = this.cbe_MaterialCate.Text.Trim();
             paramModel.PalletCode = this.cbe_PalletCode.Text.Trim();
-
+            paramModel.goodsInfo = this.te_MaterialNameOrID.Text.Trim();
             this.presenter.QueryStock(paramModel);
         }
          

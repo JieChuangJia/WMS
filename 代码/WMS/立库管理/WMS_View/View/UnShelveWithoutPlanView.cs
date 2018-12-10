@@ -231,7 +231,7 @@ namespace WMS_Kernel
             string unshelveStationName = this.ce_TargetStation.Text.Trim();
             this.presenter.UnShelveTask( palletCode, houseName, unshelveStationName);
             this.presenter.QueryStockInfor(this.cbe_HouseName.Text.Trim(), this.cbe_Row.Text.Trim(), this.cbe_Col.Text.Trim()
-               , this.cbe_Layer.Text.Trim(), this.cbe_PosTypeList.Text.Trim(), this.te_PalletCode.Text.Trim());
+               , this.cbe_Layer.Text.Trim(), this.cbe_PosTypeList.Text.Trim(), this.te_PalletCode.Text.Trim(),this.te_MaterialNameOrID.Text.Trim());
         }
 
      
@@ -249,7 +249,7 @@ namespace WMS_Kernel
         private void sb_Query_Click(object sender, EventArgs e)
         {
             this.presenter.QueryStockInfor(this.cbe_HouseName.Text.Trim(), this.cbe_Row.Text.Trim(), this.cbe_Col.Text.Trim()
-                , this.cbe_Layer.Text.Trim(), this.cbe_PosTypeList.Text.Trim(), this.te_PalletCode.Text.Trim());
+                , this.cbe_Layer.Text.Trim(), this.cbe_PosTypeList.Text.Trim(), this.te_PalletCode.Text.Trim(),this.te_MaterialNameOrID.Text.Trim());
         }
 
         private void gv_Stock_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)

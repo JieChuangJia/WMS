@@ -119,7 +119,7 @@ namespace WMS_Kernel
            }
            ViewDataManager.STOCKQUERYDATAVIEWDATA.StockList.Clear();
            ViewDataManager.STOCKQUERYDATAVIEWDATA.StockDetailList.Clear();
-           List<View_StockListModel> stockList =bllViewStockList.GetListByParams(stockParam.HouseName, stockParam.Rowth, stockParam.Colth, stockParam.Layer, materialClassID, stockParam.PalletCode);
+           List<View_StockListModel> stockList =bllViewStockList.GetListByParams(stockParam.HouseName, stockParam.Rowth, stockParam.Colth, stockParam.Layer, materialClassID, stockParam.PalletCode,stockParam.goodsInfo);
 
 
          

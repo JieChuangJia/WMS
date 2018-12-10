@@ -171,7 +171,7 @@ namespace WMS_Kernel
 
        }
       
-       public void QueryStockInfor(string houseName,string row,string col,string layer,string pos,string palletCode)
+       public void QueryStockInfor(string houseName,string row,string col,string layer,string pos,string palletCode,string materialInfo)
        {
            //if (houseName== "")
            //{
@@ -179,7 +179,7 @@ namespace WMS_Kernel
            //    return;
            //}
            //string querySql =
-           List<View_StockListModel> stockList = bllViewStockList.GetStockList(houseName,row,col,layer,pos,palletCode);
+           List<View_StockListModel> stockList = bllViewStockList.GetStockList(houseName, row, col, layer, pos, palletCode, materialInfo);
 
            var sdf = stockList.Distinct(new ListCompare<View_StockListModel>((x, y)
                => x.Stock_Tray_Barcode == y.Stock_Tray_Barcode));

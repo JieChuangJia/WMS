@@ -51,6 +51,8 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.gC_CellDetailList = new DevExpress.XtraGrid.GridControl();
             this.gv_CellDetailList = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.te_MaterialNameOrID = new DevExpress.XtraEditors.TextEdit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -68,6 +70,7 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gC_CellDetailList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_CellDetailList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_MaterialNameOrID.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleButton2
@@ -96,6 +99,8 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.labelControl8);
+            this.panelControl1.Controls.Add(this.te_MaterialNameOrID);
             this.panelControl1.Controls.Add(this.cbe_MaterialCate);
             this.panelControl1.Controls.Add(this.labelControl5);
             this.panelControl1.Controls.Add(this.cbe_PalletCode);
@@ -117,7 +122,7 @@
             // 
             // cbe_MaterialCate
             // 
-            this.cbe_MaterialCate.Location = new System.Drawing.Point(496, 14);
+            this.cbe_MaterialCate.Location = new System.Drawing.Point(496, 16);
             this.cbe_MaterialCate.Name = "cbe_MaterialCate";
             this.cbe_MaterialCate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -127,7 +132,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(435, 17);
+            this.labelControl5.Location = new System.Drawing.Point(435, 19);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(48, 14);
             this.labelControl5.TabIndex = 38;
@@ -135,7 +140,7 @@
             // 
             // cbe_PalletCode
             // 
-            this.cbe_PalletCode.Location = new System.Drawing.Point(653, 14);
+            this.cbe_PalletCode.Location = new System.Drawing.Point(653, 16);
             this.cbe_PalletCode.Name = "cbe_PalletCode";
             this.cbe_PalletCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -144,7 +149,7 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(592, 17);
+            this.labelControl7.Location = new System.Drawing.Point(592, 19);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(48, 14);
             this.labelControl7.TabIndex = 36;
@@ -152,7 +157,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(341, 17);
+            this.labelControl2.Location = new System.Drawing.Point(341, 19);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(12, 14);
             this.labelControl2.TabIndex = 34;
@@ -160,7 +165,7 @@
             // 
             // cbe_Layer
             // 
-            this.cbe_Layer.Location = new System.Drawing.Point(366, 14);
+            this.cbe_Layer.Location = new System.Drawing.Point(366, 16);
             this.cbe_Layer.Name = "cbe_Layer";
             this.cbe_Layer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -170,7 +175,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(245, 17);
+            this.labelControl6.Location = new System.Drawing.Point(245, 19);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(12, 14);
             this.labelControl6.TabIndex = 30;
@@ -178,7 +183,7 @@
             // 
             // cbe_Col
             // 
-            this.cbe_Col.Location = new System.Drawing.Point(270, 14);
+            this.cbe_Col.Location = new System.Drawing.Point(270, 16);
             this.cbe_Col.Name = "cbe_Col";
             this.cbe_Col.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -189,7 +194,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(150, 17);
+            this.labelControl4.Location = new System.Drawing.Point(150, 19);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(12, 14);
             this.labelControl4.TabIndex = 28;
@@ -197,7 +202,7 @@
             // 
             // cbe_Row
             // 
-            this.cbe_Row.Location = new System.Drawing.Point(175, 14);
+            this.cbe_Row.Location = new System.Drawing.Point(175, 16);
             this.cbe_Row.Name = "cbe_Row";
             this.cbe_Row.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -208,7 +213,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(17, 17);
+            this.labelControl3.Location = new System.Drawing.Point(17, 19);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(24, 14);
             this.labelControl3.TabIndex = 26;
@@ -216,7 +221,7 @@
             // 
             // cbe_HouseList
             // 
-            this.cbe_HouseList.Location = new System.Drawing.Point(54, 14);
+            this.cbe_HouseList.Location = new System.Drawing.Point(54, 16);
             this.cbe_HouseList.Name = "cbe_HouseList";
             this.cbe_HouseList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -228,7 +233,7 @@
             // sb_TrayQuery
             // 
             this.sb_TrayQuery.Image = ((System.Drawing.Image)(resources.GetObject("sb_TrayQuery.Image")));
-            this.sb_TrayQuery.Location = new System.Drawing.Point(807, 13);
+            this.sb_TrayQuery.Location = new System.Drawing.Point(998, 15);
             this.sb_TrayQuery.Name = "sb_TrayQuery";
             this.sb_TrayQuery.Size = new System.Drawing.Size(75, 23);
             this.sb_TrayQuery.TabIndex = 14;
@@ -248,11 +253,11 @@
             // gc_CellList
             // 
             this.gc_CellList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_CellList.Location = new System.Drawing.Point(2, 22);
+            this.gc_CellList.Location = new System.Drawing.Point(2, 21);
             this.gc_CellList.MainView = this.gv_CellList;
             this.gc_CellList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_CellList.Name = "gc_CellList";
-            this.gc_CellList.Size = new System.Drawing.Size(1169, 188);
+            this.gc_CellList.Size = new System.Drawing.Size(1169, 189);
             this.gc_CellList.TabIndex = 2;
             this.gc_CellList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_CellList});
@@ -284,11 +289,11 @@
             // gC_CellDetailList
             // 
             this.gC_CellDetailList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gC_CellDetailList.Location = new System.Drawing.Point(2, 22);
+            this.gC_CellDetailList.Location = new System.Drawing.Point(2, 21);
             this.gC_CellDetailList.MainView = this.gv_CellDetailList;
             this.gC_CellDetailList.Margin = new System.Windows.Forms.Padding(0);
             this.gC_CellDetailList.Name = "gC_CellDetailList";
-            this.gC_CellDetailList.Size = new System.Drawing.Size(1169, 188);
+            this.gC_CellDetailList.Size = new System.Drawing.Size(1169, 189);
             this.gC_CellDetailList.TabIndex = 7;
             this.gC_CellDetailList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_CellDetailList});
@@ -304,6 +309,21 @@
             this.gv_CellDetailList.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_CellDetailList.OptionsView.ColumnAutoWidth = false;
             this.gv_CellDetailList.OptionsView.ShowGroupPanel = false;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(805, 19);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(48, 14);
+            this.labelControl8.TabIndex = 49;
+            this.labelControl8.Text = "物料信息";
+            // 
+            // te_MaterialNameOrID
+            // 
+            this.te_MaterialNameOrID.Location = new System.Drawing.Point(866, 16);
+            this.te_MaterialNameOrID.Name = "te_MaterialNameOrID";
+            this.te_MaterialNameOrID.Size = new System.Drawing.Size(119, 20);
+            this.te_MaterialNameOrID.TabIndex = 48;
             // 
             // StockQueryView
             // 
@@ -332,6 +352,7 @@
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gC_CellDetailList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_CellDetailList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_MaterialNameOrID.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -360,5 +381,7 @@
         private DevExpress.XtraEditors.ComboBoxEdit cbe_MaterialCate;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.ComboBoxEdit cbe_PalletCode;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.TextEdit te_MaterialNameOrID;
     }
 }

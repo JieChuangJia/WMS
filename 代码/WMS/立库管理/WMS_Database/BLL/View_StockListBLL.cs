@@ -137,7 +137,7 @@ namespace WMS_Database
             return GetModelList(sqlStr);
 
         }
-        public List<View_StockListModel> GetListByParams(string housename, string row, string col, string layer, string goodsClassID, string palletCode)
+        public List<View_StockListModel> GetListByParams(string housename, string row, string col, string layer, string goodsClassID, string palletCode,string goodsInfo)
         {
             string sqlStr = " WareHouse_Name ='" + housename + "'";
             if (row != "所有")
@@ -160,7 +160,10 @@ namespace WMS_Database
             {
                 sqlStr += " and Stock_List_Box_Barcode ='" + palletCode + "'";
             }
-
+            if(goodsInfo!="")
+            {
+                sqlStr += " and Goods_Code like '%" + goodsInfo + "%' or Goods_Name like '%" + goodsInfo + "%'";
+            }
             return GetModelList(sqlStr);
         }
 
@@ -226,7 +229,7 @@ namespace WMS_Database
 
         }
 
-        public List<View_StockListModel> GetStockList(string houseName, string rowth,string colth,string layerth,string pos,string palletCode)
+        public List<View_StockListModel> GetStockList(string houseName, string rowth,string colth,string layerth,string pos,string palletCode,string materialInfo)
         {
             string sqlStr = "1=1";
             if(rowth!="所有")
@@ -248,6 +251,10 @@ namespace WMS_Database
             if (palletCode.Trim() != "")
             {
                 sqlStr += " and Stock_Tray_Barcode = '" + palletCode+"'";
+            }
+            if(materialInfo.Trim() !="")
+            {
+                sqlStr += " and Goods_Code like '%" + materialInfo + "%' or Goods_Name like '%" + materialInfo + "%'";
             }
             sqlStr += " and WareHouse_Name = '" + houseName + "' and  Cell_Type ='货位'";
             return GetModelList(sqlStr);
