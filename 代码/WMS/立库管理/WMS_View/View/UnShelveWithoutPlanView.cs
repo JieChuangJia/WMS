@@ -15,7 +15,7 @@ namespace WMS_Kernel
 {
     public partial class UnShelveWithoutPlanView : ChildViewBase,IUnShelveWithoutPlanView
     {
-        UnShelveWithoutPlanPresenter presenter = null;
+       public UnShelveWithoutPlanPresenter presenter = null;
         public UnShelveWithoutPlanView()
         {
             InitializeComponent();

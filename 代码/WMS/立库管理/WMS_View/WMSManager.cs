@@ -57,6 +57,10 @@ namespace WMS_Kernel
         {
             this.wmsViewManager.RegistAllowPutaway(AllowPutaway);
         }
+        public void RegistUnShelve(Func<bool> unShelve)
+        {
+            this.wmsViewManager.RegistUnShelve(unShelve);
+        }
 
         //public void ResgistShowUserProperty(Action<string> showUserProperty)
         //{

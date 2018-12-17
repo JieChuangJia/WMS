@@ -32,7 +32,7 @@ namespace WMS_Kernel
        View_PlanMainBLL bllViewPlanMain = new View_PlanMainBLL();
        WH_Station_LogicBLL bllStationLogic = new WH_Station_LogicBLL();
        WH_WareHouseBll bllWareHouse = new WH_WareHouseBll();
-
+       Func<bool> allowUnShelve = null;
        public UnShelveWithoutPlanPresenter(IUnShelveWithoutPlanView view, IWMSFrame wmsFrame)
            : base(view, wmsFrame)
        {
@@ -91,6 +91,10 @@ namespace WMS_Kernel
            this.View.IniCols(cols);
            this.View.IniLayers(layers);
            this.View.IniPoses(poses);
+       }
+       public void RegistUnShelve(Func<bool> unShelve)
+       {
+           this.allowUnShelve = unShelve;
        }
        //public void IniRows(string houseName)
        //{
@@ -244,8 +248,10 @@ namespace WMS_Kernel
        {
            string planCode = "-1";
            //查看当前是否已经有此托盘条码的上架管理任务
-           View_Manage_ListModel manage = bllViewManageList.GetModelByPalletCodeAndTaskType(palletCode, EnumManageTaskType.下架.ToString(), EnumManageTaskStatus.待执行.ToString());
-           if (manage != null)
+           View_Manage_ListModel manageWait = bllViewManageList.GetModelByPalletCodeAndTaskType(palletCode, EnumManageTaskType.下架.ToString(), EnumManageTaskStatus.待执行.ToString());
+           View_Manage_ListModel manageRun = bllViewManageList.GetModelByPalletCodeAndTaskType(palletCode, EnumManageTaskType.下架.ToString(), EnumManageTaskStatus.执行中.ToString());
+
+           if (manageWait != null||manageRun!=null)
            {
                //this.WmsFrame.WriteLog("下架逻辑", "", "提示", "当前托盘下架任务已经下发！");
                this.View.ShowMessage("信息提示", "当前托盘下架任务已经下发！");
@@ -261,14 +267,23 @@ namespace WMS_Kernel
            //    this.View.ShowMessage("信息提示", restr);
            //    return ;
            //}
-
+           bool allowCreateTask = true;
+           if (this.allowUnShelve != null)
+           {
+               allowCreateTask = this.allowUnShelve();
+           }
+           if (allowCreateTask == false)
+           {
+               this.View.ShowMessage("信息提示", "当前系统不允许下达下架任务，只允许执行一个任务！");
+               return;
+           }
 
            if (CommonMoudle.TaskHandleMethod.CreateUnshelveManageTask(planCode, palletCode, houseName, unshelveStationName, ref manageID, ref restr) == false)
            {
                this.WmsFrame.WriteLog("下架逻辑", "", "提示", restr);
                return;
            }
-           
+
 
            //下架管理任务生成完毕后需要更新货位状态,计划状态根据管理任务状态更新
            if (UpateCellStatus(palletCode, EnumGSOperate.出库, EnumGSTaskStatus.锁定) == false)
@@ -277,6 +292,7 @@ namespace WMS_Kernel
            }
            this.WmsFrame.WriteLog("下架逻辑", "", "提示", restr);
        }
+        
 
        private bool CheckMaterialNum(ref string restr)
        {

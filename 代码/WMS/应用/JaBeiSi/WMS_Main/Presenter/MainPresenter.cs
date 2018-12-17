@@ -40,7 +40,7 @@ namespace WMS_Main
             wmsManager.Init(wmsFrame, wmsconfig, wmsFuncList);
             wmsManager.ResgistShowMaterialProperty(ShowMaterialProperty);
             wmsManager.RegistAllowPutaway(AllowPutaway);
-         
+            wmsManager.RegistUnShelve(AllowUnShelve);
             
         }
         /// <summary>
@@ -55,6 +55,19 @@ namespace WMS_Main
                 return false;
             }
             if (taskList != null&&taskList.Count>0)
+            {
+                return false;
+            }
+            return true;
+        }
+        private bool AllowUnShelve()
+        {
+            List<ManageModel> taskList = bllManage.GetWaitRunTaskListByType("8");//下架任务
+            if (taskList == null)
+            {
+                return false;
+            }
+            if (taskList != null && taskList.Count > 0)
             {
                 return false;
             }
