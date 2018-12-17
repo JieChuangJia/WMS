@@ -51,7 +51,7 @@ namespace WMS_Interface
     {
         public string 计划单号 { get; set; }
         public string 计划列表编号 { get; set; }
-        public int 数量 { get; set; }
+        public string 数量 { get; set; }
         //public DateTime 生产日期 { get; set; }
         public string 托盘条码 { get; set; }
         public string 物料编码 { get; set; }

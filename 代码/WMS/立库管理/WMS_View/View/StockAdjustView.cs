@@ -183,7 +183,7 @@ namespace WMS_Kernel
             string goodsCode = this.gv_MaterialList.GetRowCellValue(currRow, "物料编码").ToString();
             string planCode = "-1";//无计划
             
-            this.presenter.AddTrayGoods(this.te_TrayCode.Text, (int)this.se_GoodsNum.Value, goodsCode, planCode);
+            this.presenter.AddTrayGoods(this.te_TrayCode.Text,this.se_GoodsNum.Value.ToString(), goodsCode, planCode);
         }
  
         private void sb_DeleteGoods_Click(object sender, EventArgs e)

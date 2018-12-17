@@ -72,7 +72,7 @@ namespace WMS_Kernel
               
                 //palletInfor.生产日期 = stock.Goods_ProduceDate;
                 palletInfor.是否满盘 = stock.Stock_Full_Flag;
-                palletInfor.数量 = int.Parse(stock.Stock_List_Quantity);
+                palletInfor.数量 = stock.Stock_List_Quantity;
                 palletInfor.托盘条码 = stock.Stock_Tray_Barcode;
                 palletInfor.物料编码 = stock.Goods_Code;
                 palletInfor.物料名称 = stock.Goods_Name;

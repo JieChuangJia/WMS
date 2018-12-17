@@ -51,7 +51,7 @@ namespace WMS_Interface
     public class PalletGoodsList
     {
 
-        public int 数量 { get; set; }
+        public string 数量 { get; set; }
 
         public string 托盘条码 { get; set; }
         public string 物料编码 { get; set; }
@@ -80,7 +80,7 @@ namespace WMS_Interface
         public string 物料编码 { get; set; }
         public string 物料名称 { get; set; }
         public string 规格型号 { get; set; }
-        public int 数量 { get; set; }
+        public string 数量 { get; set; }
         //public string 生产日期 { get; set; }
         public string 库房 { get; set; }
         public string 存储货位 { get; set; }

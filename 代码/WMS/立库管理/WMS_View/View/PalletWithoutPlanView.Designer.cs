@@ -610,10 +610,10 @@
             // gc_TrayGoodsList
             // 
             this.gc_TrayGoodsList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_TrayGoodsList.Location = new System.Drawing.Point(2, 22);
+            this.gc_TrayGoodsList.Location = new System.Drawing.Point(2, 21);
             this.gc_TrayGoodsList.MainView = this.gv_TrayGoods;
             this.gc_TrayGoodsList.Name = "gc_TrayGoodsList";
-            this.gc_TrayGoodsList.Size = new System.Drawing.Size(1004, 145);
+            this.gc_TrayGoodsList.Size = new System.Drawing.Size(1004, 146);
             this.gc_TrayGoodsList.TabIndex = 14;
             this.gc_TrayGoodsList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_TrayGoods});
@@ -645,10 +645,10 @@
             gridLevelNode1.RelationName = "Level1";
             this.gc_MaterialList.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gc_MaterialList.Location = new System.Drawing.Point(2, 22);
+            this.gc_MaterialList.Location = new System.Drawing.Point(2, 21);
             this.gc_MaterialList.MainView = this.gv_MaterialList;
             this.gc_MaterialList.Name = "gc_MaterialList";
-            this.gc_MaterialList.Size = new System.Drawing.Size(1004, 145);
+            this.gc_MaterialList.Size = new System.Drawing.Size(1004, 146);
             this.gc_MaterialList.TabIndex = 13;
             this.gc_MaterialList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_MaterialList,
@@ -756,8 +756,8 @@
             this.se_GoodsNum.Name = "se_GoodsNum";
             this.se_GoodsNum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.se_GoodsNum.Properties.IsFloatValue = false;
-            this.se_GoodsNum.Properties.Mask.EditMask = "N00";
+            this.se_GoodsNum.Properties.DisplayFormat.FormatString = "0.000";
+            this.se_GoodsNum.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.se_GoodsNum.Properties.MaxValue = new decimal(new int[] {
             9999999,
             0,

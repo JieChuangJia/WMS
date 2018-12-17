@@ -171,7 +171,7 @@ namespace WMS_Kernel
                 //palletInfor.生产日期 = stock.Goods_ProduceDate;
                 palletInfor.是否满盘 = stock.Stock_Full_Flag;
                
-                palletInfor.数量 = int.Parse(stock.Stock_List_Quantity);
+                palletInfor.数量 = stock.Stock_List_Quantity;
                 palletInfor.托盘条码 = stock.Stock_Tray_Barcode;
                 palletInfor.物料编码 = stock.Goods_Code;
                 palletInfor.物料名称 = stock.Goods_Name;
@@ -223,18 +223,18 @@ namespace WMS_Kernel
 
         private bool CheckMaterialNum(ref string restr)
         {
-            Dictionary<string, int> materialNum = new Dictionary<string, int>();
+            Dictionary<string, float> materialNum = new Dictionary<string, float>();
             for (int i = 0; i <  ViewDataManager.UNSHELVEPALNDATA.PalletInforData.Count; i++)  
             {
                 PalletInfor trayGoodsModel = ViewDataManager.UNSHELVEPALNDATA.PalletInforData[i];
                 if (materialNum.Keys.Contains(trayGoodsModel.物料编码) == false)
                 {
-                    materialNum[trayGoodsModel.物料编码] = trayGoodsModel.数量;
+                    materialNum[trayGoodsModel.物料编码] = float.Parse(trayGoodsModel.数量);
                     continue;
                 }
-                materialNum[trayGoodsModel.物料编码] += trayGoodsModel.数量;
+                materialNum[trayGoodsModel.物料编码] += float.Parse(trayGoodsModel.数量);
             }
-            foreach (KeyValuePair<string, int> keyValue in materialNum)
+            foreach (KeyValuePair<string, float> keyValue in materialNum)
             {
                 int planNum = GetPlanMateriNum(keyValue.Key);
                 if (keyValue.Value > planNum)

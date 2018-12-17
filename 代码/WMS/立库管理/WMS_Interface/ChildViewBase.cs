@@ -18,7 +18,7 @@ namespace WMS_Interface
         public ChildViewBase ()
         {
             InitializeComponent();
-            
+            this.FormClosing += FormCloseEventHandler;
             //ChildViewList.Add(this);
         }
         public static ChildViewBase GetView(string viewType)
@@ -53,11 +53,22 @@ namespace WMS_Interface
                 return 1;
             }
         }
-        protected override void OnFormClosing(FormClosingEventArgs e)
+
+        private void FormCloseEventHandler(object sender, FormClosingEventArgs e)
         {
-            base.OnFormClosing(e);
-            //ChildViewList.Remove(this);
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                Form f = (Form)sender;
+                f.Visible = false;
+            }
+
         }
+        //protected override void OnFormClosing(FormClosingEventArgs e)
+        //{
+        //    base.OnFormClosing(e);
+        //    //ChildViewList.Remove(this);
+        //}
 
     }
 }

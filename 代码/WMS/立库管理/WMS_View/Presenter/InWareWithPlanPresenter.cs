@@ -67,7 +67,7 @@ namespace WMS_Kernel
 
           
        }
-       public void AddTrayGoods(string planListID,string trayCode,int goodsNum,string goodsCode,string planCode)
+       public void AddTrayGoods(string planListID,string trayCode,float goodsNum,string goodsCode,string planCode)
        {
            if(trayCode.Trim() == "")
            {
@@ -96,7 +96,7 @@ namespace WMS_Kernel
            tglm.单位 = goodsModel.Goods_Unit;
            tglm.规格型号 = goodsModel.Goods_Model;
            //tglm.生产日期 = createDatetime;
-           tglm.数量 = goodsNum;
+           tglm.数量 = goodsNum.ToString();
            tglm.物料编码 = goodsCode;
            
            ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData.Add(tglm);
@@ -227,7 +227,7 @@ namespace WMS_Kernel
 
                        bllStockList.Add(stockList);
 
-                       if (UpdatePlanNum(trayGoodsModel.计划列表编号, goods.Goods_ID, trayGoodsModel.数量, ref restr) == false)
+                       if (UpdatePlanNum(trayGoodsModel.计划列表编号, goods.Goods_ID, float.Parse(trayGoodsModel.数量), ref restr) == false)
                        {
                            this.WmsFrame.WriteLog("按计划配盘", "", "提示", restr);
                        }
@@ -246,7 +246,7 @@ namespace WMS_Kernel
 
        }
 
-       private bool UpdatePlanNum(string planListID, string materialCode, int materialNum, ref string restr)
+       private bool UpdatePlanNum(string planListID, string materialCode, float materialNum, ref string restr)
        {
 
            Plan_ListModel planListModel = bllPlanList.GetModel(planListID);
@@ -255,7 +255,7 @@ namespace WMS_Kernel
                restr = "计划列表编码错误：" + planListID;
                return false;
            }
-           int orderNum = 0;
+           float orderNum = 0;
            if (planListModel.Plan_List_Ordered_Quantity.Trim() != "")
            {
                orderNum = int.Parse(planListModel.Plan_List_Ordered_Quantity);
@@ -268,18 +268,18 @@ namespace WMS_Kernel
 
        private bool CheckMaterialNum(ref string restr)
        {
-           Dictionary<string, int> materialNum = new Dictionary<string, int>();
+           Dictionary<string, float> materialNum = new Dictionary<string, float>();
            for (int i = 0; i < ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData.Count; i++)
            {
                TrayGoodsListModel trayGoodsModel = ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData[i];
                if(materialNum.Keys.Contains(trayGoodsModel.物料编码) == false)
                {
-                   materialNum[trayGoodsModel.物料编码] = trayGoodsModel.数量;
+                   materialNum[trayGoodsModel.物料编码] = float.Parse(trayGoodsModel.数量);
                    continue;
                }
-               materialNum[trayGoodsModel.物料编码] += trayGoodsModel.数量;
+               materialNum[trayGoodsModel.物料编码] +=float.Parse( trayGoodsModel.数量);
            }
-           foreach(KeyValuePair<string,int> keyValue in materialNum)
+           foreach (KeyValuePair<string, float> keyValue in materialNum)
            {
                int planNum = GetPlanMateriNum(keyValue.Key);
                if(keyValue.Value > planNum)

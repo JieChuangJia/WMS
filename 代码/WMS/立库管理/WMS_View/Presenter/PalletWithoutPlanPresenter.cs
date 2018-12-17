@@ -59,14 +59,14 @@ namespace WMS_Kernel
                ViewDataManager.PALLETWITHOUTPLANDATA.PalletGoodsData.Add(gsdModel);
            }
        }
-       public void AddTrayGoods( string trayCode, int goodsNum, string goodsCode, string planCode)
+       public void AddTrayGoods( string trayCode, string goodsNum, string goodsCode, string planCode)
        {
            if (trayCode.Trim() == "")
            {
                this.View.ShowMessage("信息提示", "请输入托盘条码！");
                return;
            }
-           if (goodsNum == 0)
+           if (goodsNum == "")
            {
                this.View.ShowMessage("信息提示", "请输入物料配盘数量！");
                return;
@@ -242,18 +242,18 @@ namespace WMS_Kernel
 
        private bool CheckMaterialNum(ref string restr)
        {
-           Dictionary<string, int> materialNum = new Dictionary<string, int>();
+           Dictionary<string, float> materialNum = new Dictionary<string, float>();
            for (int i = 0; i < ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData.Count; i++)
            {
                TrayGoodsListModel trayGoodsModel = ViewDataManager.PALLETWITHPLANDATA.TrayGoodsListData[i];
                if (materialNum.Keys.Contains(trayGoodsModel.物料编码) == false)
                {
-                   materialNum[trayGoodsModel.物料编码] = trayGoodsModel.数量;
+                   materialNum[trayGoodsModel.物料编码] = float.Parse(trayGoodsModel.数量);
                    continue;
                }
-               materialNum[trayGoodsModel.物料编码] += trayGoodsModel.数量;
+               materialNum[trayGoodsModel.物料编码] += float.Parse(trayGoodsModel.数量);
            }
-           foreach (KeyValuePair<string, int> keyValue in materialNum)
+           foreach (KeyValuePair<string, float> keyValue in materialNum)
            {
                int planNum = GetPlanMateriNum(keyValue.Key);
                if (keyValue.Value > planNum)

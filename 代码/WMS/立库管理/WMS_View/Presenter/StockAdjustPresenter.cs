@@ -60,14 +60,14 @@ namespace WMS_Kernel
                ViewDataManager.STOCKADJUSTVIEWDATA.PalletGoodsData.Add(gsdModel);
            }
        }
-       public void AddTrayGoods( string trayCode, int goodsNum, string goodsCode, string planCode)
+       public void AddTrayGoods( string trayCode, string goodsNum, string goodsCode, string planCode)
        {
            if (trayCode.Trim() == "")
            {
                this.View.ShowMessage("信息提示", "请输入托盘条码！");
                return;
            }
-           if (goodsNum == 0)
+           if (goodsNum == "")
            {
                this.View.ShowMessage("信息提示", "请输入物料配盘数量！");
                return;
@@ -209,7 +209,7 @@ namespace WMS_Kernel
                            stockList.Plan_List_ID = oldStockList[0].Plan_List_ID;
                            if(oldStockList[0].Plan_List_ID !="-1")
                            {
-                               if (UpdatePlanNum(oldStockList[0].Plan_List_ID, goods.Goods_ID, trayGoodsModel.数量, ref restr) == false)
+                               if (UpdatePlanNum(oldStockList[0].Plan_List_ID, goods.Goods_ID, trayGoodsModel.数量.ToString(), ref restr) == false)
                                {
                                    this.WmsFrame.WriteLog("按计划配盘", "", "提示", restr);
                                }
@@ -270,7 +270,7 @@ namespace WMS_Kernel
 
            return true;
        }
-       private bool UpdatePlanNum(string planListID, string materialCode, int materialNum, ref string restr)
+       private bool UpdatePlanNum(string planListID, string materialCode, string materialNum, ref string restr)
        {
 
            Plan_ListModel planListModel = bllPlanList.GetModel(planListID);
@@ -279,12 +279,12 @@ namespace WMS_Kernel
                restr = "计划列表编码错误：" + planListID;
                return false;
            }
-           int orderNum = 0;
+           float orderNum = 0;
            if (planListModel.Plan_List_Ordered_Quantity.Trim() != "")
            {
                orderNum = int.Parse(planListModel.Plan_List_Ordered_Quantity);
            }
-           orderNum += materialNum;
+           orderNum +=float.Parse( materialNum);
            planListModel.Plan_List_Ordered_Quantity = orderNum.ToString();
            bllPlanList.Update(planListModel);
            return true;
@@ -315,7 +315,7 @@ namespace WMS_Kernel
                    PalletGoodsList pgl = new PalletGoodsList();
                    pgl.单位 = stock.Goods_Unit;
                    pgl.规格型号 = stock.Goods_Model;
-                   pgl.数量 = int.Parse(stock.Stock_List_Quantity);
+                   pgl.数量 = stock.Stock_List_Quantity;
                    pgl.托盘条码 = stock.Stock_Tray_Barcode;
                    pgl.物料编码 = stock.Goods_Code;
 

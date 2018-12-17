@@ -147,7 +147,7 @@ namespace WMS_Kernel
             string goodsCode = this.gv_PlanList.GetRowCellValue(currRow, "物料编码").ToString();
                 string planCode = this.gv_PlanList.GetRowCellValue(currRow, "计划单号").ToString();
                 string planListCode = this.gv_PlanList.GetRowCellValue(currRow, "计划列表编码").ToString();
-                this.presenter.AddTrayGoods(planListCode,this.te_TrayCode.Text, (int)this.se_GoodsNum.Value, goodsCode, planCode);
+                this.presenter.AddTrayGoods(planListCode,this.te_TrayCode.Text,(float)this.se_GoodsNum.Value, goodsCode, planCode);
         }
  
         private void sb_DeleteGoods_Click(object sender, EventArgs e)

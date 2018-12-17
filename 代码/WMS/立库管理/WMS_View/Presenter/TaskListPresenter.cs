@@ -190,7 +190,7 @@ namespace WMS_Kernel
                      palletInfor.是否满盘 = "否";
                 }
 
-                palletInfor.数量 =int.Parse( stockDetail.Stock_List_Quantity);
+                palletInfor.数量 =stockDetail.Stock_List_Quantity;
                 palletInfor.托盘条码 = stockDetail.Stock_Tray_Barcode;
                 palletInfor.物料编码 = stockDetail.Goods_Code;
                 palletInfor.物料名称 = stockDetail.Goods_Name;
