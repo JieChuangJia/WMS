@@ -266,7 +266,7 @@
             this.ClientSize = new System.Drawing.Size(1111, 547);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "SysOperateView";
-            this.Text = "系统日志查询";
+            this.Text = "系统操作查询";
             ((System.ComponentModel.ISupportInitialize)(this.de_StartTime.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.de_StartTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.de_EndTime.Properties.CalendarTimeProperties)).EndInit();

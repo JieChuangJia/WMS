@@ -205,7 +205,7 @@ namespace WMS_Kernel
             }
             if(allowCreateTask == false)
             {
-                this.View.ShowMessage("信息提示","当前系统不允许下达上架任务！");
+                this.View.ShowMessage("信息提示", "当前系统不允许下达上架任务！只允许执行一个任务");
                 return;
             }
             if (TaskHandleMethod.CreatePutawayManageTask(palletCode, houseName, putawayStationName, isAssign, targetCell,manaTask, ref manageID, ref restr) == false)

@@ -422,6 +422,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>ImageResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="View\AboutView.resx">
       <DependentUpon>AboutView.cs</DependentUpon>
     </EmbeddedResource>
@@ -852,6 +853,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\edit-find-replace-4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-find-4.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

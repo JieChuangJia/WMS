@@ -126,6 +126,7 @@ namespace WMS_Kernel
 
         public void CancelTask(string palletCode)
         {
+            string restr = "";
             ManageModel manage = bllManage.GetModelByPalletCode(palletCode);
             if(manage == null)
             {
@@ -141,15 +142,19 @@ namespace WMS_Kernel
                 ||manage.Mange_Type_ID=="7")//入库的
             {
                 TaskHandleMethod.UpdateCellStatus(manage.Mange_End_Cell_ID, EnumCellStatus.空闲, EnumGSTaskStatus.完成, EnumGSOperate.入库);
+                TaskHandleMethod.AddCellOperRecord(manage.Mange_End_Cell_ID, EnumGSOperateType.手动取消任务, "人工手动取消入库任务", ref restr);
             }
             else if(manage.Mange_Type_ID=="5")//移库的
             {
                 TaskHandleMethod.UpdateCellStatus(manage.Mange_Start_Cell_ID, EnumCellStatus.满位, EnumGSTaskStatus.完成, EnumGSOperate.出库);
                 TaskHandleMethod.UpdateCellStatus(manage.Mange_End_Cell_ID, EnumCellStatus.空闲, EnumGSTaskStatus.完成, EnumGSOperate.入库);
+                TaskHandleMethod.AddCellOperRecord(manage.Mange_Start_Cell_ID, EnumGSOperateType.手动取消任务, "人工手动取消移库开始任务", ref restr);
+                TaskHandleMethod.AddCellOperRecord(manage.Mange_End_Cell_ID, EnumGSOperateType.手动取消任务, "人工手动取消移库目标任务", ref restr);
             }
             else if(manage.Mange_Type_ID =="2"||manage.Mange_Type_ID=="8"||manage.Mange_Type_ID=="9")//出库的
             {
                 TaskHandleMethod.UpdateCellStatus(manage.Mange_Start_Cell_ID, EnumCellStatus.满位, EnumGSTaskStatus.完成, EnumGSOperate.出库);
+                TaskHandleMethod.AddCellOperRecord(manage.Mange_Start_Cell_ID, EnumGSOperateType.手动取消任务, "人工手动取消出库任务", ref restr);
             }
             else
             {
@@ -157,6 +162,7 @@ namespace WMS_Kernel
                 return;
             }
             bllManage.Delete(manage.Mange_ID);
+            
             this.View.ShowMessage("信息提示", "取消任务成功！");
             this.WmsFrame.WriteLog("任务列表", "", "提示", "手动取消任务：托盘[" + palletCode + "]" + ",任务类型：" + manage.Mange_Type_ID);
             ViewDataManager.TASKLISTDATA.TaskDetailData.Clear();//取消配盘后要将任务详细清楚

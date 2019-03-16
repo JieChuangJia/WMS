@@ -185,6 +185,11 @@ namespace WMS_Kernel
             RefreshMaterial();
         }
 
+        private void sb_CloseProper_Click(object sender, EventArgs e)
+        {
+            this.splitContainer1.Panel2Collapsed = true;
+        }
+
 
        
 

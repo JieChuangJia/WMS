@@ -163,6 +163,10 @@
       <Project>{d986af44-5de3-40bf-a4dc-28237dea678c}</Project>
       <Name>Aoyou_Service</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WMS_JBS_Service\WMS_JBS_Service.csproj">
+      <Project>{499b0a60-77d3-4e5d-83d5-0cecbb1ab0a8}</Project>
+      <Name>WMS_JBS_Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\arrow-right-3.ico" />

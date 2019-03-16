@@ -5,12 +5,14 @@ using System.Text;
 using Aoyou_Service;
 using WMS_Service;
 using WMS_Interface;
+using WMS_JBS_Service;
 
 namespace WMS_Service_Main
 {
     public class SvrManagePresenter : BasePresenter<ISvrManaView>
     {
-        AoyouSvrManager aoyouSvrManager = new AoyouSvrManager();
+        JBS_Service_Manager jsbService = new JBS_Service_Manager();
+       
         WMS_Svr_Manager wmsSvrManager = new WMS_Svr_Manager();
         IWMSFrame wmsFrame = null;
         StatusManager statusManager = new StatusManager();
@@ -62,7 +64,7 @@ namespace WMS_Service_Main
         public void StartERPSvr(Uri svrAddr)
         {
             string restr = "";
-            if (aoyouSvrManager.StartERPServ(svrAddr, ref restr) == false)
+            if (jsbService.StartERPService(svrAddr, ref restr) == false)
             {
                 this.View.ShowMessage("信息提示", "ERP服务接口启动失败：" + restr);
                 this.wmsFrame.WriteLog("服务管理", "", "错误", "ERP服务接口启动失败！");

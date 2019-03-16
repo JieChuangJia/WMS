@@ -46,6 +46,7 @@
             this.sb_ModifyGoods = new DevExpress.XtraEditors.SimpleButton();
             this.sb_DeleteGoods = new DevExpress.XtraEditors.SimpleButton();
             this.sb_AddGoods = new DevExpress.XtraEditors.SimpleButton();
+            this.sb_CloseProper = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -138,6 +139,7 @@
             // 
             // groupControl3
             // 
+            this.groupControl3.Controls.Add(this.sb_CloseProper);
             this.groupControl3.Controls.Add(this.gc_PropertyDetail);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
@@ -148,12 +150,14 @@
             // 
             // gc_PropertyDetail
             // 
-            this.gc_PropertyDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_PropertyDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gc_PropertyDetail.Location = new System.Drawing.Point(2, 22);
             this.gc_PropertyDetail.MainView = this.gridView2;
             this.gc_PropertyDetail.Margin = new System.Windows.Forms.Padding(0);
             this.gc_PropertyDetail.Name = "gc_PropertyDetail";
-            this.gc_PropertyDetail.Size = new System.Drawing.Size(249, 422);
+            this.gc_PropertyDetail.Size = new System.Drawing.Size(249, 390);
             this.gc_PropertyDetail.TabIndex = 0;
             this.gc_PropertyDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -256,6 +260,16 @@
             this.sb_AddGoods.Text = "添加";
             this.sb_AddGoods.Click += new System.EventHandler(this.sb_AddGoods_Click);
             // 
+            // sb_CloseProper
+            // 
+            this.sb_CloseProper.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.sb_CloseProper.Location = new System.Drawing.Point(178, 415);
+            this.sb_CloseProper.Name = "sb_CloseProper";
+            this.sb_CloseProper.Size = new System.Drawing.Size(75, 23);
+            this.sb_CloseProper.TabIndex = 1;
+            this.sb_CloseProper.Text = "关闭属性";
+            this.sb_CloseProper.Click += new System.EventHandler(this.sb_CloseProper_Click);
+            // 
             // MaterialManaView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -307,6 +321,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.GroupControl groupControl3;
+        private DevExpress.XtraEditors.SimpleButton sb_CloseProper;
 
     }
 }
