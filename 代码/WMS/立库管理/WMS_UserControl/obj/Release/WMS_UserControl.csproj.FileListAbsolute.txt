@@ -1,0 +1,14 @@
+E:\JieChuangJia\WMS\代码\WMS17\代码\WMS\立库管理\WMS_UserControl\bin\Release\WMS_UserControl.dll
+E:\JieChuangJia\WMS\代码\WMS17\代码\WMS\立库管理\WMS_UserControl\bin\Release\WMS_UserControl.pdb
+E:\JieChuangJia\WMS\代码\WMS17\代码\WMS\立库管理\WMS_UserControl\obj\Release\WMS_UserControl.csprojResolveAssemblyReference.cache
+E:\JieChuangJia\WMS\代码\WMS17\代码\WMS\立库管理\WMS_UserControl\obj\Release\Storage.StorageControl.resources
+E:\JieChuangJia\WMS\代码\WMS17\代码\WMS\立库管理\WMS_UserControl\obj\Release\WMS_UserControl.csproj.GenerateResource.Cache
+E:\JieChuangJia\WMS\代码\WMS17\代码\WMS\立库管理\WMS_UserControl\obj\Release\WMS_UserControl.dll
+E:\JieChuangJia\WMS\代码\WMS17\代码\WMS\立库管理\WMS_UserControl\obj\Release\WMS_UserControl.pdb
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_UserControl\bin\Release\WMS_UserControl.dll
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_UserControl\bin\Release\WMS_UserControl.pdb
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_UserControl\obj\Release\WMS_UserControl.csprojResolveAssemblyReference.cache
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_UserControl\obj\Release\Storage.StorageControl.resources
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_UserControl\obj\Release\WMS_UserControl.csproj.GenerateResource.Cache
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_UserControl\obj\Release\WMS_UserControl.dll
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_UserControl\obj\Release\WMS_UserControl.pdb

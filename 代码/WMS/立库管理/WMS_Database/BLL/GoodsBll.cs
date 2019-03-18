@@ -163,6 +163,10 @@ namespace WMS_Database
                 return null;
             }
         }
+        public bool DeleteByCode(string goodsCode)
+        {
+            return dal.DeleteByCode(goodsCode);
+        }
 		#endregion  ExtensionMethod
 	}
 }

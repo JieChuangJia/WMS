@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\Goods_UnitBLL.cs" />
     <Compile Include="BLL\Goods_SupplierBLL.cs" />
     <Compile Include="BLL\View_Cell_OperateBLL.cs" />
     <Compile Include="BLL\View_RecordBLL.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="BLL\WH_CellBll.cs" />
     <Compile Include="BLL\WH_Cell_ChildrenBll.cs" />
     <Compile Include="BLL\WH_WareHouseBll.cs" />
+    <Compile Include="DAL\Goods_UnitDAl.cs" />
     <Compile Include="DAL\Goods_SupplierDAL.cs" />
     <Compile Include="DAL\View_Cell_OperateDAL.cs" />
     <Compile Include="DAL\View_RecordDAL.cs" />
@@ -128,6 +130,7 @@
     <Compile Include="DAL\WH_WareHouseDal.cs" />
     <Compile Include="DBUtility\DbHelperSQL.cs" />
     <Compile Include="DBUtility\PubConstant.cs" />
+    <Compile Include="Model\Goods_UnitModel.cs" />
     <Compile Include="Model\Goods_SupplierModel.cs" />
     <Compile Include="Model\View_Cell_OperateModel.cs" />
     <Compile Include="Model\View_RecordModel.cs" />

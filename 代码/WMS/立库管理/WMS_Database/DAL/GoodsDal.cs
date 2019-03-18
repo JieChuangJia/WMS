@@ -660,7 +660,24 @@ namespace WMS_Database
 
         #endregion  Method
 		#region  ExtensionMethod
-
+        /// <summary>
+        /// 删除一条数据
+        /// </summary>
+        public bool DeleteByCode(string goods_Code)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("delete from Goods ");
+            strSql.Append(" where [Goods_Code]='" + goods_Code + "' ");
+            int rowsAffected = DbHelperSQL.ExecuteSql(strSql.ToString());
+            if (rowsAffected > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }		/// <summary>
 		#endregion  ExtensionMethod
 	}
 }

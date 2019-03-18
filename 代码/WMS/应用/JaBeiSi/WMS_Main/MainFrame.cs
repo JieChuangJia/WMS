@@ -34,16 +34,19 @@ namespace WMS_Main
             this.CurrentUser = userName;
             this.bsi_CurrentUser.Caption = userName;
         }
-        public void Init()
+        public override void Init()
         {
             //DatabaseCfg();
+         
             Console.SetOut(new TextBoxWriter(this.richTextBoxLog));
             InitTabbedMDI();
             this.LoadChildForms();
             this.mainPresenter.Init(this);
+         
         }
         private void MainView_Load(object sender, EventArgs e)
         {
+            Init();
             this.ribbon_Title.ApplicationCaption = LoginView.WMSName;
             string licenseFile = AppDomain.CurrentDomain.BaseDirectory + @"\JCJLicense.lic";
             this.licenseMonitor = new LicenseMonitor(this, 2000, licenseFile, "zzkeyFT1");

@@ -60,6 +60,7 @@
     <Compile Include="IService\IWMSToWCSSvr.cs" />
     <Compile Include="IAppExtend\IWMSFrame.cs" />
     <Compile Include="IService\IWMSToView.cs" />
+    <Compile Include="MainFrameHandler.cs" />
     <Compile Include="Model\CellCoordModel.cs" />
     <Compile Include="Model\CellPositionEventArgs.cs" />
     <Compile Include="Model\CommParamModel.cs" />

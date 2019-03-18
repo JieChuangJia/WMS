@@ -30,6 +30,7 @@ namespace WMS_Service_Main
         }
         private void MainView_Load(object sender, EventArgs e)
         {
+            MainFrameHandler.SetMainFrame(this);
             //this.splitContainerControl1.SplitterPosition = (int)(this.splitContainerControl1.Height * 0.8);
             DatabaseCfg();
             Console.SetOut(new TextBoxWriter(this.richTextBoxLog));
