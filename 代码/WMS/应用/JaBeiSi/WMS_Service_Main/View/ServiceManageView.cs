@@ -14,11 +14,16 @@ namespace WMS_Service_Main
 {
     public partial class ServiceManageView : ChildViewBase,ISvrManaView
     {
-        SvrManagePresenter presenter = null;
+        private static SvrManagePresenter presenter = null;
         public ServiceManageView()
         {
             InitializeComponent();
-            this.presenter = new SvrManagePresenter(this);
+            presenter = new SvrManagePresenter(this);
+        }
+        public static SvrManagePresenter GetPresenter()
+        {
+            
+            return presenter;
         }
         private void ServiceManageView_Load(object sender, EventArgs e)
         {
@@ -30,7 +35,7 @@ namespace WMS_Service_Main
         public override void Init(IWMSFrame wmsFrame)
         {
             base.Init(wmsFrame);
-            this.presenter.Init(wmsFrame);
+           presenter.Init(wmsFrame);
 
             string restr = "";
 
@@ -49,10 +54,10 @@ namespace WMS_Service_Main
         {
          
             string wms_SvrAddr = ConfigurationManager.AppSettings["WMS_SvrAddr"];
-            this.presenter.StartWMSSvr(new Uri(wms_SvrAddr));
+          presenter.StartWMSSvr(new Uri(wms_SvrAddr));
 
             string ERP_SvrAddr = ConfigurationManager.AppSettings["WMS_To_ERP_SvrAddr"];
-            this.presenter.StartERPSvr(new Uri(ERP_SvrAddr));
+           presenter.StartERPSvr(new Uri(ERP_SvrAddr));
 
         }
 
@@ -61,7 +66,7 @@ namespace WMS_Service_Main
             //string ERP_SvrAddr = ConfigurationManager.AppSettings["ERP_SvrAddr"];
             //this.presenter.StopERPSvr(new Uri(ERP_SvrAddr));
             string wms_SvrAddr = ConfigurationManager.AppSettings["WMS_SvrAddr"];
-            this.presenter.StopWMSSvr(new Uri(wms_SvrAddr));
+           presenter.StopWMSSvr(new Uri(wms_SvrAddr));
         }
 
       

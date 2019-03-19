@@ -20,11 +20,11 @@ namespace WMS_JBS_Service
         { get; set; }
         public string material_unit
         { get; set; }
-        public string material_enabled
+        public bool material_enabled
         { get; set; }
-        public string material_shelflife
+        public int material_shelflife
         { get; set; }
-        public string op_flag
+        public int op_flag
 
         { get; set; }
     }

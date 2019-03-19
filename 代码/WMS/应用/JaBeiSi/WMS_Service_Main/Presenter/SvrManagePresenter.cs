@@ -54,13 +54,7 @@ namespace WMS_Service_Main
                 this.wmsFrame.WriteLog("服务管理", "", "提示", "WMS服务接口停止成功！");
             }
         }
-        public void StartMESSvr(Uri svrAddr)
-        { }
-        public void StopMESSvr(Uri svrAddr)
-        {
-
-        }
-     
+       
         public void StartERPSvr(Uri svrAddr)
         {
             string restr = "";
@@ -76,8 +70,11 @@ namespace WMS_Service_Main
             }
         }
 
-        public void StopERPSvr(Uri svrAddr)
-        { }
+        public void StopERPSvr()
+        { 
+            string str ="";
+            this.jsbService.StopERPService(ref str);
+        }
 
     }
 }

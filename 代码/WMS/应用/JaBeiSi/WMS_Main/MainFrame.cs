@@ -34,7 +34,7 @@ namespace WMS_Main
             this.CurrentUser = userName;
             this.bsi_CurrentUser.Caption = userName;
         }
-        public override void Init()
+        public  void Init()
         {
             //DatabaseCfg();
          
@@ -46,7 +46,7 @@ namespace WMS_Main
         }
         private void MainView_Load(object sender, EventArgs e)
         {
-            Init();
+         
             this.ribbon_Title.ApplicationCaption = LoginView.WMSName;
             string licenseFile = AppDomain.CurrentDomain.BaseDirectory + @"\JCJLicense.lic";
             this.licenseMonitor = new LicenseMonitor(this, 2000, licenseFile, "zzkeyFT1");

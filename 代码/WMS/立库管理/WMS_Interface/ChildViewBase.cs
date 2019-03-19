@@ -56,6 +56,10 @@ namespace WMS_Interface
 
         private void FormCloseEventHandler(object sender, FormClosingEventArgs e)
         {
+            if (this.Name == "MainFrame")//主窗体关闭事件
+            {
+                return;
+            }
             if (e.CloseReason == CloseReason.UserClosing)
             {
                 e.Cancel = true;

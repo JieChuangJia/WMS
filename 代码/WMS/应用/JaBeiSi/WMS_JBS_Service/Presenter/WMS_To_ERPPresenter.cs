@@ -77,7 +77,7 @@ namespace WMS_JBS_Service
                 }
                 if (operateType != 1 && operateType != 2 && operateType != 3)
                 {
-                    response.Describe = "接口操作标识错误！operateType，1为增加，2位更新，3位删除！";
+                    response.Describe = "接口操作标识错误！operateType，1为增加，2为更新，3为删除！";
                     response.Status = false;
                     MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "信息内容：" + materialInfoJson);
                     return response.ToJson();
@@ -102,12 +102,20 @@ namespace WMS_JBS_Service
                             goods.Goods_Category = materialInfo.material_category;
 
                             goods.Goods_Name = materialInfo.material_name;
-                            goods.Goods_Flag = materialInfo.material_enabled;
+                            if (materialInfo.material_enabled == true)
+                            {
+                                goods.Goods_Flag = "1";
+                            }
+                            else
+                            {
+                                goods.Goods_Flag = "0";
+                            }
+                           
                             goods.Goods_Type = materialInfo.material_category;
                             goods.Goods_Unit = materialInfo.material_unit;
                             goods.Goods_Model = materialInfo.material_model;
                             bllGoods.Add(goods);
-                            GoodsPropertyOperate(goods.Goods_ID, "shelflife", "保质期", materialInfo.material_shelflife, true);//保质期
+                            GoodsPropertyOperate(goods.Goods_ID, "shelflife", "保质期", materialInfo.material_shelflife.ToString(), true);//保质期
 
                             break;
                         }
@@ -125,12 +133,20 @@ namespace WMS_JBS_Service
                             goods.Goods_Class_ID = gsClassModel.Goods_Class_ID;
                             goods.Goods_Suppier_Code = materialInfo.material_supplier_code;
                             goods.Goods_Name = materialInfo.material_name;
-                            goods.Goods_Flag = materialInfo.material_enabled;
+                            if (materialInfo.material_enabled == true)
+                            {
+                                goods.Goods_Flag = "1";
+                            }
+                            else
+                            {
+                                goods.Goods_Flag = "0";
+                            }
+                     
                             goods.Goods_Type = materialInfo.material_category;
                             goods.Goods_Unit = materialInfo.material_unit;
                             goods.Goods_Model = materialInfo.material_model;
                             bllGoods.Update(goods);
-                            GoodsPropertyOperate(goods.Goods_ID, "shelflife","保质期", materialInfo.material_shelflife, false);//保质期
+                            GoodsPropertyOperate(goods.Goods_ID, "shelflife","保质期", materialInfo.material_shelflife.ToString(), false);//保质期
                             break;
                         }
                     case 3:
@@ -142,7 +158,7 @@ namespace WMS_JBS_Service
                     default:
                         {
                             response.Status = false;
-                            response.Describe = "操作类型错误，operateType，1为增加，2位更新，3位删除！";
+                            response.Describe = "操作类型错误，operateType，1为增加，2为更新，3为删除！";
                             return response.ToJson();
                         }
                 }
@@ -196,7 +212,7 @@ namespace WMS_JBS_Service
                 }
                 if (operateType != 1 && operateType != 2 && operateType != 3)
                 {
-                    response.Describe = "接口操作标识错误！operateType，1为增加，2位更新，3位删除！";
+                    response.Describe = "接口操作标识错误！operateType，1为增加，2为更新，3为删除！";
                     response.Status = false;
                     MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "信息内容：" + supplierInfoJson);
                     return response.ToJson();
@@ -243,7 +259,7 @@ namespace WMS_JBS_Service
                     default:
                         {
                             response.Status = false;
-                            response.Describe = "操作类型错误，operateType，1为增加，2位更新，3位删除！";
+                            response.Describe = "操作类型错误，operateType，1为增加，2为更新，3为删除！";
                             MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "信息内容：" + supplierInfoJson);
                             return response.ToJson();
                         }
@@ -268,7 +284,7 @@ namespace WMS_JBS_Service
         {
             ResponseData response = new ResponseData();
             Goods_UnitModel unitDBModel = new Goods_UnitModel();
-            materialUnitJson = GetMaterialUnitTestJson();//测试
+            //materialUnitJson = GetMaterialUnitTestJson();//测试
             try
             {
                 MaterialUnit materialUnit = Newtonsoft.Json.JsonConvert.DeserializeObject<MaterialUnit>(materialUnitJson);
@@ -295,7 +311,7 @@ namespace WMS_JBS_Service
                 }
                 if (operateType != 1 && operateType != 2 && operateType != 3)
                 {
-                    response.Describe = "接口操作标识错误！operateType，1为增加，2位更新，3位删除！";
+                    response.Describe = "接口操作标识错误！operateType，1为增加，2为更新，3为删除！";
                     response.Status = false;
                     MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "信息内容：" + materialUnitJson);
                     return response.ToJson();
@@ -342,7 +358,7 @@ namespace WMS_JBS_Service
                     default:
                         {
                             response.Status = false;
-                            response.Describe = "操作类型错误，operateType，1为增加，2位更新，3位删除！";
+                            response.Describe = "操作类型错误，operateType，1为增加，2为更新，3为删除！";
                             return response.ToJson();
                         }
 
@@ -409,13 +425,13 @@ namespace WMS_JBS_Service
            material.material_category = "螺丝";
            material.material_class = "成品";
            material.material_code = "1234tyt";
-           material.material_enabled = "1";
+           material.material_enabled = true;
            material.material_model = "gp2343";
            material.material_name = "螺母";
-           material.material_shelflife = "3";
+           material.material_shelflife = 3;
            material.material_supplier_code = "";
            material.material_unit = "个";
-           material.op_flag ="1";
+           material.op_flag =1;
            return Newtonsoft.Json.JsonConvert.SerializeObject(material);
        }
        private string GetMaterialUnitTestJson()
