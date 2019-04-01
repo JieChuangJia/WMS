@@ -92,6 +92,10 @@ namespace WMS_Kernel
         }
         public void CompletePlanManual(string planCode)
         {
+            if (this.View.AskMessage("询问", "您确定要手动完成此计划么？") != 0)
+            {
+                return;
+            }
             PlanMainModel plan = bllPlan.GetModelByPlanCode(planCode);
             if(plan == null)
             {

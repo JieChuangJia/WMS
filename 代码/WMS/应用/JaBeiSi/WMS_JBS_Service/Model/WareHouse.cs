@@ -14,7 +14,7 @@ namespace WMS_JBS_Service
 
         { get; set; }
 
-        public string op_flag
+        public int op_flag
         { get; set; }
     }
 }

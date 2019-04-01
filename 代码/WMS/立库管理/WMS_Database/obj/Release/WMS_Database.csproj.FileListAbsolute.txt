@@ -4,7 +4,6 @@ E:\JieChuangJia\WMS\代码\WMS17\代码\WMS\立库管理\WMS_Database\obj\Releas
 E:\JieChuangJia\WMS\代码\WMS17\代码\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.pdb
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_Database\bin\Release\WMS_Database.dll
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_Database\bin\Release\WMS_Database.pdb
-F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.csprojResolveAssemblyReference.cache
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.dll
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.pdb
 E:\JieChuangJia\WMS\代码\WMS\立库管理\WMS_Database\obj\Release\WMS_Database.csprojResolveAssemblyReference.cache

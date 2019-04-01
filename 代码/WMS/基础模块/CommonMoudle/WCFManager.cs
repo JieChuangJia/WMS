@@ -6,11 +6,17 @@ using System.ServiceModel.Description;
 using System.Text;
 
 using System.Security.Cryptography.X509Certificates;
- 
+using System.ServiceModel.Web;
 using System.ServiceModel.Security;
 
 namespace CommonMoudle
 {
+    public enum EnumWCFProtocol
+    {
+        WebHttp,
+        BasicHttp
+
+    }
     public class WCFManager<IContractObj>
     {
         private ServiceHost SelfHost { get; set; }
@@ -34,7 +40,7 @@ namespace CommonMoudle
         /// <param name="servAddr">服务地址</param>
         /// <param name="restr">执行描述</param>
         /// <returns>执行标志</returns>
-        public bool Start(Uri servAddr,ref string restr)
+        public bool Start(Uri servAddr,  EnumWCFProtocol protocol ,ref string restr)
         {
 
             //承载和运行服务（MSDN第三步）  
@@ -61,20 +67,59 @@ namespace CommonMoudle
                     return false;
                 }
                 this.Stop(ref restr);
+           
                 //4.添加公开服务的终结点。为此，必须指定终结点公开的协议、绑定和终结点的地址。对于此示例，将 ICalculator 指定为协定，将 WSHttpBinding 指定为绑定，并将 CalculatorService 指定为地址。在这里请注意，终结点地址是相对地址。终结点的完整地址是基址和终结点地址的组合。在此例中，完整地址是 http://localhost:8000/ServiceModelSamples/Service/CalculatorService。  
                 EndpointAddress _address = new EndpointAddress(servAddr);
-                BasicHttpBinding _binding = new BasicHttpBinding();
-               
+                BasicHttpBinding basicBinding = null;
+                WebHttpBinding webBinding = null;
+                if(protocol == EnumWCFProtocol.BasicHttp)
+                {
+                    basicBinding = new BasicHttpBinding();
+                    basicBinding.MaxBufferPoolSize = 2147483647;
+                    basicBinding.MaxBufferSize = 2147483647;
+
+                    basicBinding.MaxReceivedMessageSize = 2147483647;
+                    basicBinding.ReceiveTimeout = TimeSpan.MaxValue;//20s
+                    basicBinding.SendTimeout = TimeSpan.FromSeconds(50);//20s
+                }
+                else if(protocol == EnumWCFProtocol.WebHttp)
+                {
+                    webBinding = new WebHttpBinding();
+                    webBinding.MaxBufferPoolSize = 2147483647;
+                    webBinding.MaxBufferSize = 2147483647;
+                   
+                    webBinding.MaxReceivedMessageSize = 2147483647;
+                    webBinding.ReceiveTimeout = TimeSpan.MaxValue;//20s
+                    webBinding.SendTimeout = TimeSpan.FromSeconds(50);//20s
+                }
              
+          
+                
+                
                 ContractDescription _contract = ContractDescription.GetContract(typeof(IContractObj));
-                ServiceEndpoint endpoint = new ServiceEndpoint(_contract, _binding, _address);
+              
+             
 
                 this.SelfHost = new ServiceHost(this.ServiceContractObj, servAddr);
                 //添加终结点ABC
-                this.SelfHost.Description.Endpoints.Add(endpoint);
+                if (protocol == EnumWCFProtocol.BasicHttp)
+                {
+                    ServiceEndpoint basicendpoint = new ServiceEndpoint(_contract, basicBinding, _address);
+
+                    this.SelfHost.Description.Endpoints.Add(basicendpoint);
+                }
+                else if (protocol == EnumWCFProtocol.WebHttp)
+                {
+                    WebHttpEndpoint webEndpoint = new WebHttpEndpoint(_contract, _address);
+                    webEndpoint.HelpEnabled = true;
+                    webEndpoint.Binding = webBinding;
+                    this.SelfHost.Description.Endpoints.Add(webEndpoint);
+                }
+              
+            
                 //启用元数据交换
                 ServiceMetadataBehavior meta = new ServiceMetadataBehavior();
-                
+                meta.HttpsGetEnabled = true;
                 meta.HttpGetEnabled = true;
                 this.SelfHost.Description.Behaviors.Add(meta);
                 this.SelfHost.Open();

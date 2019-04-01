@@ -174,18 +174,19 @@ namespace Storage
         {
             return this.storage.GetPos(rowth, colth, layers);
         }
-        #endregion
-
-        #region 私有方法
         /// <summary>
         /// 获取仓位通过坐标点
         /// </summary>
         /// <param name="pt"></param>
         /// <returns></returns>
-        private Positions GetPostionsByPt(Point pt)
+        public Positions GetPostionsByPt(Point pt)
         {
             return this.storage.GetPostionsByPt(pt);
         }
+        #endregion
+
+        #region 私有方法
+       
 
         /// <summary>
         /// 设置滚动范围根据列数和层数

@@ -54,7 +54,7 @@
     <Compile Include="ChildViewBase.Designer.cs">
       <DependentUpon>ChildViewBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="IAppExtend\IMaterialExtend.cs" />
+    <Compile Include="IAppExtend\IWMSExtern.cs" />
     <Compile Include="IBaseView.cs" />
     <Compile Include="IService\IWCSToWMSSvr.cs" />
     <Compile Include="IService\IWMSToWCSSvr.cs" />
@@ -66,6 +66,9 @@
     <Compile Include="Model\CommParamModel.cs" />
     <Compile Include="Model\EnumDefModel.cs" />
     <Compile Include="Model\ExpandFormEventArgs.cs" />
+    <Compile Include="Model\ReturnObject.cs" />
+    <Compile Include="Model\UnShelveParams.cs" />
+    <Compile Include="Model\PutawayParams.cs" />
     <Compile Include="Model\GSMemTempModel.cs" />
     <Compile Include="Model\StockQueryParm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

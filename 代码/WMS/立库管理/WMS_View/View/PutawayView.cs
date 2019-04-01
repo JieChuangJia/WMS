@@ -92,6 +92,10 @@ namespace WMS_Kernel
             }
             foreach (WH_WareHouseModel house in houseList)
             {
+                if(house.WareHouse_Name == string.Empty)
+                {
+                    continue;
+                }
                 this.cbe_HouseName.Properties.Items.Add(house.WareHouse_Name);
             }
             if (this.cbe_HouseName.Properties.Items.Count > 0)

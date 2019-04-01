@@ -32,7 +32,7 @@ namespace WMS_Kernel
        View_PlanMainBLL bllViewPlanMain = new View_PlanMainBLL();
        WH_Station_LogicBLL bllStationLogic = new WH_Station_LogicBLL();
        WH_WareHouseBll bllWareHouse = new WH_WareHouseBll();
-       Func<bool> allowUnShelve = null;
+       Func<UnShelveParams, ReturnObject> allowUnShelve = null;
        public UnShelveWithoutPlanPresenter(IUnShelveWithoutPlanView view, IWMSFrame wmsFrame)
            : base(view, wmsFrame)
        {
@@ -92,7 +92,7 @@ namespace WMS_Kernel
            this.View.IniLayers(layers);
            this.View.IniPoses(poses);
        }
-       public void RegistUnShelve(Func<bool> unShelve)
+       public void RegistUnShelve(Func<UnShelveParams, ReturnObject> unShelve)
        {
            this.allowUnShelve = unShelve;
        }
@@ -267,14 +267,17 @@ namespace WMS_Kernel
            //    this.View.ShowMessage("信息提示", restr);
            //    return ;
            //}
-           bool allowCreateTask = true;
+          
+           ReturnObject allowCreateTask = new ReturnObject();
+           allowCreateTask.Status = true;
            if (this.allowUnShelve != null)
            {
-               allowCreateTask = this.allowUnShelve();
+               UnShelveParams unshelveParams = new UnShelveParams();
+               allowCreateTask = this.allowUnShelve(unshelveParams);
            }
-           if (allowCreateTask == false)
+           if (allowCreateTask.Status == false)
            {
-               this.View.ShowMessage("信息提示", "当前系统不允许下达下架任务，只允许执行一个任务！");
+               this.View.ShowMessage("信息提示", allowCreateTask.Describe);
                return;
            }
 

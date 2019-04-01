@@ -11,7 +11,7 @@ namespace WMS_Service_Main
 {
     public class SvrManagePresenter : BasePresenter<ISvrManaView>
     {
-        JBS_Service_Manager jsbService = new JBS_Service_Manager();
+        JBS_Service_Manager jsbService = null;
        
         WMS_Svr_Manager wmsSvrManager = new WMS_Svr_Manager();
         IWMSFrame wmsFrame = null;
@@ -22,6 +22,7 @@ namespace WMS_Service_Main
         public void Init(IWMSFrame wmsFrame)
         {
             this.wmsFrame = wmsFrame;
+            jsbService = JBS_Service_Manager.GetServiceManager();
             statusManager.Init(wmsFrame);
         }
         public void StartWMSSvr(Uri svrAddr)

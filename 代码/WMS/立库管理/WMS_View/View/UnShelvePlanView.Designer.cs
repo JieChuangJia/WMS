@@ -315,6 +315,7 @@
             this.sb_CheckUnShelve.Size = new System.Drawing.Size(108, 22);
             this.sb_CheckUnShelve.TabIndex = 57;
             this.sb_CheckUnShelve.Text = "拣选下架";
+            this.sb_CheckUnShelve.Visible = false;
             // 
             // sb_UnShelveTask
             // 
@@ -359,10 +360,10 @@
             // gc_Stock
             // 
             this.gc_Stock.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_Stock.Location = new System.Drawing.Point(2, 22);
+            this.gc_Stock.Location = new System.Drawing.Point(2, 21);
             this.gc_Stock.MainView = this.gv_Stock;
             this.gc_Stock.Name = "gc_Stock";
-            this.gc_Stock.Size = new System.Drawing.Size(1173, 177);
+            this.gc_Stock.Size = new System.Drawing.Size(1173, 178);
             this.gc_Stock.TabIndex = 7;
             this.gc_Stock.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Stock});

@@ -164,7 +164,10 @@ namespace WMS_Database
                 return null;
             }
         }
-        
+         public bool DeleteByCode(string wareHouse_Code)
+        {
+            return dal.DeleteByCode(wareHouse_Code);
+        }
 		#endregion  ExtensionMethod
 	}
 }

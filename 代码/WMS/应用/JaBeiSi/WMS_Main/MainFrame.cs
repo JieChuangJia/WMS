@@ -36,11 +36,11 @@ namespace WMS_Main
         }
         public  void Init()
         {
-            //DatabaseCfg();
+           
          
             Console.SetOut(new TextBoxWriter(this.richTextBoxLog));
             InitTabbedMDI();
-            this.LoadChildForms();
+            
             this.mainPresenter.Init(this);
          
         }
@@ -125,7 +125,7 @@ namespace WMS_Main
             {
 
                 richTextBoxLog.AppendText(string.Format("[{0:yyyy-MM-dd HH:mm:ss.fff}]{1},{2},{3}", DateTime.Now.ToString(), logSrc,category, content) + Environment.NewLine);
-                if (richTextBoxLog.Text.Length > 6000)
+                if (richTextBoxLog.Lines.Length > 600)
                 {
                     string[] newlines = new string[600];
                     Array.Copy(richTextBoxLog.Lines, richTextBoxLog.Lines.Length - 600, newlines, 0, 600);
@@ -270,72 +270,7 @@ namespace WMS_Main
         #endregion
 
       
-        /// <summary>
-        /// 初始化所有窗体,后期可改为数据库配置
-        /// </summary>
-        public  void LoadChildForms( )
-        {
-            //wmsViewManager.InitView(this);
-            //ModPasswordView modPV = new ModPasswordView();
-            //modPV.FormClosing += FormCloseEventHandler;
-            //modPV.Init(this);
-            //RoleManaView roleView = new RoleManaView();
-            //roleView.FormClosing += FormCloseEventHandler;
-            //roleView.Init(this);
-            //UserManaView userView = new UserManaView();
-            //userView.FormClosing += FormCloseEventHandler;
-            //userView.Init(this);
-            //LimitManaView limitView = new LimitManaView();
-            //limitView.FormClosing += FormCloseEventHandler;
-            //limitView.Init(this);
-            //WareLimitManaView wareLimitView = new WareLimitManaView();
-            //wareLimitView.FormClosing += FormCloseEventHandler;
-            //wareLimitView.Init(this);
-            //MaterialManaView materialView = new MaterialManaView();
-            //materialView.FormClosing += FormCloseEventHandler;
-            //materialView.Init(this);
-            //TaskListView taskView = new TaskListView();
-            //taskView.FormClosing += FormCloseEventHandler;
-            //taskView.Init(this);
-            //PlanManaView planManaView = new PlanManaView();
-            //planManaView.FormClosing += FormCloseEventHandler;
-            //planManaView.Init(this);
-            //PrepareWorkManaView prepareView = new PrepareWorkManaView();
-            //prepareView.FormClosing += FormCloseEventHandler;
-            //prepareView.Init(this);
-            //InWareWithoutPlanView inWareWithoutPlanView = new InWareWithoutPlanView();
-            //inWareWithoutPlanView.FormClosing += FormCloseEventHandler;
-            //inWareWithoutPlanView.Init(this);
-            //MaterialUnloadView materialUnloadView = new MaterialUnloadView();
-            //materialUnloadView.FormClosing += FormCloseEventHandler;
-            //materialUnloadView.Init(this);
-            //OutWareWithoutPlanView outWareWithoutPlanView = new OutWareWithoutPlanView();
-            //outWareWithoutPlanView.FormClosing += FormCloseEventHandler;
-            //outWareWithoutPlanView.Init(this);
-            //InWareWithPlanView inWareWithPlanView = new InWareWithPlanView();
-            //inWareWithPlanView.FormClosing += FormCloseEventHandler;
-            //inWareWithPlanView.Init(this);
-            //MaterialLoadWithPlanView materialLoadWithPlanView = new MaterialLoadWithPlanView();
-            //materialLoadWithPlanView.FormClosing += FormCloseEventHandler;
-            //materialLoadWithPlanView.Init(this);
-            //OutWareWithPlanView outWarePlanView = new OutWareWithPlanView();
-            //outWarePlanView.FormClosing += FormCloseEventHandler;
-            //outWarePlanView.Init(this);
-            //PalletManaView pallerManaView = new PalletManaView();
-            //pallerManaView.FormClosing += FormCloseEventHandler;
-            //pallerManaView.Init(this);
-            //StationShowView stationView = new StationShowView();
-            //stationView.FormClosing += FormCloseEventHandler;
-            //stationView.Init(this);
-            //PlanQueryView planQueryView = new PlanQueryView();
-            //planQueryView.FormClosing += FormCloseEventHandler;
-            //planQueryView.Init(this);
-            //WareQueryView wareQueryView = new WareQueryView();
-            //wareQueryView.FormClosing += FormCloseEventHandler;
-            //wareQueryView.Init(this);
-             
-        }
-       
+   
        
         private void barBtnItem_RoleMana_ItemClick(object sender, ItemClickEventArgs e)
         {

@@ -139,7 +139,19 @@ namespace WMS_Database
 
         #endregion  BasicMethod
 		#region  ExtensionMethod
-     
+        public Manage_ListModel GetModelByManageID(string manageID)
+        {
+            string sqlStr = "[Mange_ID]='" + manageID +"'";
+            List<Manage_ListModel> manageList = GetModelList(sqlStr);
+            if(manageList!= null&&manageList.Count>0)
+            {
+                return manageList[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
 		#endregion  ExtensionMethod
 	}
 }

@@ -165,13 +165,17 @@ namespace WMS_Kernel
         {
             this.materialView.presenter.ResgistShowMaterialProperty(showMaterialProperty);
         }
-        public void RegistAllowPutaway(Func<bool> AllowPutaway)
+        public void RegistAllowPutaway(Func<PutawayParams, ReturnObject> AllowPutaway)
         {
             this.materialUnloadView.presenter.RegistAllowPutaway(AllowPutaway);
         }
-        public void RegistUnShelve(Func<bool> unshelve)
+        public void RegistUnShelve(Func<UnShelveParams, ReturnObject> unshelve)
         {
             this.unshelveWithoutPlanView.presenter.RegistUnShelve(unshelve);
+        }
+        public void RegistPlanUnShelve(Func<UnShelveParams, ReturnObject> unshelve)
+        {
+            this.materialLoadWithPlanView.presenter.RegistUnShelve(unshelve);
         }
         
         //public void ResgistShowUserProperty(Action<string> showUserProperty)

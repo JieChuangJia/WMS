@@ -409,7 +409,24 @@ namespace WMS_Database
 
         #endregion  Method
 		#region  ExtensionMethod
-
+        /// <summary>
+        /// 删除一条数据
+        /// </summary>
+        public bool DeleteByCode(string wareHouse_Code)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("delete from WH_WareHouse ");
+            strSql.Append(" where WareHouse_Code='" + wareHouse_Code + "' ");
+            int rowsAffected = DbHelperSQL.ExecuteSql(strSql.ToString());
+            if (rowsAffected > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }		/// <summary>
 		#endregion  ExtensionMethod
 	}
 }

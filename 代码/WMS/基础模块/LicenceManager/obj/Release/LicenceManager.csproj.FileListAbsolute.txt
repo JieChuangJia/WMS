@@ -12,3 +12,10 @@ F:\NpWork\others\JieChuangJia\WMS\代码\WMS\基础模块\LicenceManager\obj\Rel
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\基础模块\LicenceManager\obj\Release\LicenceManager.csproj.GenerateResource.Cache
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\基础模块\LicenceManager\obj\Release\LicenceManager.dll
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\基础模块\LicenceManager\obj\Release\LicenceManager.pdb
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\基础模块\LicenceManager\bin\Release\LicenceManager.dll
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\基础模块\LicenceManager\bin\Release\LicenceManager.pdb
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\基础模块\LicenceManager\obj\Release\LicenceManager.csprojResolveAssemblyReference.cache
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\基础模块\LicenceManager\obj\Release\LicenceManager.ActivativeFormView.resources
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\基础模块\LicenceManager\obj\Release\LicenceManager.csproj.GenerateResource.Cache
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\基础模块\LicenceManager\obj\Release\LicenceManager.dll
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\基础模块\LicenceManager\obj\Release\LicenceManager.pdb

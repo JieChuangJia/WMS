@@ -22,19 +22,19 @@ namespace WMS_Kernel
         WH_WareHouseBll bllWareHouse = new WH_WareHouseBll();
         WH_Station_LogicBLL bllStationLogic = new WH_Station_LogicBLL();
         Plan_ListBll bllPlanList = new Plan_ListBll();
-        Func<bool> AllowPutaway = null;
+        Func<PutawayParams, ReturnObject> AllowPutaway = null;
 
 
         public PutawayPresenter(IPutawayView view, IWMSFrame wmsFrame)
             : base(view, wmsFrame)
         { }
-        public void Init()
+        public override void Init()
         {
             //IniPutawayList();
             IniHouseList();
         }
 
-        public void RegistAllowPutaway(Func<bool> AllowPutaway)
+        public void RegistAllowPutaway(Func<PutawayParams, ReturnObject> AllowPutaway)
         {
             this.AllowPutaway = AllowPutaway;
         }
@@ -198,14 +198,26 @@ namespace WMS_Kernel
             ////{
                 //manaTask = EnumManageTaskType.上架;
             //}
-            bool allowCreateTask= true;
+            ReturnObject allowCreateTask= new ReturnObject();
+            allowCreateTask.Status = true;
+             
             if(this.AllowPutaway!=null)
             {
-                allowCreateTask = this.AllowPutaway();
+                WH_WareHouseModel house = bllWareHouse.GetModelByName(houseName);
+                if(house==null)
+                {
+                    this.View.ShowMessage("信息提示","库房获取失败！");
+                    return;
+                }
+                PutawayParams putwayParams = new PutawayParams();
+                putwayParams.WareHouseName = houseName;
+                putwayParams.WareHouseCode = house.WareHouse_Code;
+                putwayParams.PalletCode = palletCode;
+                allowCreateTask = this.AllowPutaway(putwayParams);
             }
-            if(allowCreateTask == false)
+            if (allowCreateTask.Status == false)
             {
-                this.View.ShowMessage("信息提示", "当前系统不允许下达上架任务！只允许执行一个任务");
+                this.View.ShowMessage("信息提示", allowCreateTask.Describe);
                 return;
             }
             if (TaskHandleMethod.CreatePutawayManageTask(palletCode, houseName, putawayStationName, isAssign, targetCell,manaTask, ref manageID, ref restr) == false)

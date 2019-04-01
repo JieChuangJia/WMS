@@ -143,6 +143,12 @@ namespace WMS_Database
             List<View_PlanListModel> planList = GetModelList(sqlStr);
             return planList;
         }
+        public List<View_PlanListModel> GetCompleteModelByPlanCode(string planCode)
+        {
+            string sqlStr = "Plan_Code = '" + planCode + "' and [Plan_Status]='完成'";
+            List<View_PlanListModel> planList = GetModelList(sqlStr);
+            return planList;
+        }
         public List<View_PlanListModel> GetModelList(string planType, string planStatus)
         {
             string sqlStr = "Plan_Status = '" + planStatus + "' and Plan_Type_InOut = '" + planType + "'";

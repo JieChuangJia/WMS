@@ -21,8 +21,8 @@ namespace WMS_Kernel
         ManageBll bllManage = new ManageBll();
 
         private static View_ManageStockListBLL bllViewManageStockList = new View_ManageStockListBLL();
-      
-    
+
+        Func<UnShelveParams, ReturnObject> allowUnShelve = null;
         private static StockBll bllStock = new StockBll();
 
         PlanBll bllPlan = new PlanBll();
@@ -33,7 +33,7 @@ namespace WMS_Kernel
         View_PlanMainBLL bllViewPlanMain = new View_PlanMainBLL();
         WH_Station_LogicBLL bllStationLogic = new WH_Station_LogicBLL();
         WH_WareHouseBll bllWareHouse = new WH_WareHouseBll();
-        
+        private string currPlanCode = "";
         public UnShelvePlanPresenter(IUnShelvePlanView view,IWMSFrame wmsFrame):base(view,wmsFrame)
         { }
         public override void Init()
@@ -42,7 +42,10 @@ namespace WMS_Kernel
             IniHouseList();
             //GetUnShelveStation();
         }
-       
+        public void RegistUnShelve(Func<UnShelveParams, ReturnObject> unShelve)
+        {
+            this.allowUnShelve = unShelve;
+        }
         public void IniPlanList()
         {
             List<View_PlanMainModel> planList = bllViewPlanMain.GetPlanListByStatus("2", EnumPlanStatus.执行中.ToString());//下架
@@ -76,13 +79,14 @@ namespace WMS_Kernel
         }
         public void QueryPlan(string planCode)
         {
+            this.currPlanCode = planCode;
             //List<View_Plan_StockListModel> stockList = bllViewStockList.GetModelByPlanID(planID);
             List<View_PlanListModel> planList = bllViewPlanList.GetModelByPlanCode(planCode);
 
             ViewDataManager.UNSHELVEPALNDATA.PlanListData.Clear();
             if (planList == null || planList.Count == 0)
             {
-                this.View.ShowMessage("信息提示", "无此计划信息！");
+                //this.View.ShowMessage("信息提示", "无此计划信息！");
                 return;
             }
             foreach (View_PlanListModel stockModel in planList)
@@ -97,6 +101,7 @@ namespace WMS_Kernel
                 planModel.下达数量 = stockModel.Plan_List_Ordered_Quantity.ToString();
                 planModel.计划列表编码 = stockModel.Plan_List_ID;
                 planModel.计划单号 = stockModel.Plan_ID;
+                planModel.物料批次 = stockModel.Plan_List_Remark;
                 if (stockModel.Plan_Create_Time!= null)
                 {
                     planModel.计划创建时间 = stockModel.Plan_Create_Time.ToString();
@@ -180,7 +185,7 @@ namespace WMS_Kernel
 
         }
 
-        public void UnShelveTask(string planCode,string palletCode,string houseName, string unshelveStationName)
+        public void UnShelveTask(string planCode,string planlistCode,string num,string palletCode,string houseName, string unshelveStationName)
         {
             //查看当前是否已经有此托盘条码的上架管理任务
             View_Manage_ListModel manage = bllViewManageList.GetModelByPalletCodeAndTaskType(palletCode, EnumManageTaskType.下架.ToString(), EnumManageTaskStatus.待执行.ToString());
@@ -189,6 +194,13 @@ namespace WMS_Kernel
                 //this.WmsFrame.WriteLog("下架逻辑", "", "提示", "当前托盘下架任务已经下发！");
                 this.View.ShowMessage("信息提示", "当前托盘下架任务已经下发！");
                 return;
+            }
+            if (CommonMoudle.TaskHandleMethod.IsOrderNumBiggerThanPlan(planlistCode, num) == true)
+            {
+                if(this.View.AskMessage("询问？","当前计划物料下达数量已经大于计划数量，您确定还要下达吗？")!=0)
+                {
+                    return;
+                }
             }
 
             string restr = "";
@@ -201,6 +213,27 @@ namespace WMS_Kernel
             //    return ;
             //}
 
+            ReturnObject allowCreateTask = new ReturnObject();
+            allowCreateTask.Status = true;
+            if (this.allowUnShelve != null)
+            {
+                WH_WareHouseModel house = bllWareHouse.GetModelByName(houseName);
+                if (house == null)
+                {
+                    this.View.ShowMessage("信息提示", "库房获取失败！");
+                    return;
+                }
+                UnShelveParams unshelveParams = new UnShelveParams();
+                unshelveParams.WareHouseCode = house.WareHouse_Code;
+                unshelveParams.PalletCode = palletCode;
+
+                allowCreateTask = this.allowUnShelve(unshelveParams);
+            }
+            if (allowCreateTask.Status == false)
+            {
+                this.View.ShowMessage("信息提示", allowCreateTask.Describe);
+                return;
+            }
 
             if (CommonMoudle.TaskHandleMethod.CreateUnshelveManageTask(planCode, palletCode, houseName, unshelveStationName, ref manageID, ref restr) == false)
             {
@@ -219,6 +252,7 @@ namespace WMS_Kernel
                 return;
             }
             this.WmsFrame.WriteLog("下架逻辑", "", "提示", restr);
+            QueryPlan(this.currPlanCode);
         }
 
         private bool CheckMaterialNum(ref string restr)

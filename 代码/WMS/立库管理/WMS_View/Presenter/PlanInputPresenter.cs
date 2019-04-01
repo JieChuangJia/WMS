@@ -22,6 +22,8 @@ namespace WMS_Kernel
         View_CellBLL bllViewCell = new View_CellBLL();
         View_PlanListBLL bllViewPlanList = new View_PlanListBLL();
         WH_WareHouseBll bllWareHouse = new WH_WareHouseBll();
+
+        public static PlanInputPresenter planInputPresenter = null;
         public PlanInputPresenter(IPlanInputView view,IWMSFrame wmsFrame):base(view,wmsFrame)
         { }
 
@@ -146,7 +148,7 @@ namespace WMS_Kernel
                 {
                     Plan_ListModel planList = new Plan_ListModel();
                     GoodsModel goodsModel = bllGoods.GetModelByCode(goods.物料编码);
-                    if(goods == null)
+                    if (goodsModel == null)
                     {
                         this.WmsFrame.WriteLog("PlanInputPresenter", "", "错误", "物料编码错误！");
                         return;
@@ -188,5 +190,7 @@ namespace WMS_Kernel
             }
             this.View.IniPlanType(typeList);
         }
+
+       
     }
 }

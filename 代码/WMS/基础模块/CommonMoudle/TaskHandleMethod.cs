@@ -83,7 +83,7 @@ namespace CommonMoudle
                 foreach (View_PlanListModel pl in planList)
                 {
                     Plan_ListModel plm = bllPlanList.GetModel(pl.Plan_List_ID);
-                    plm.Plan_List_Finished_Quantity = (int.Parse(plm.Plan_List_Finished_Quantity) + int.Parse(manageStock.Manage_List_Quantity)).ToString();
+                    plm.Plan_List_Finished_Quantity = (float.Parse(plm.Plan_List_Finished_Quantity) + float.Parse(manageStock.Manage_List_Quantity)).ToString();
                     //plm.Plan_List_Ordered_Quantity = (int.Parse(plm.Plan_List_Ordered_Quantity) - int.Parse(manageStock.Manage_List_Quantity)).ToString();
                     bllPlanList.Update(plm);
                 }
@@ -250,7 +250,7 @@ namespace CommonMoudle
             bool completeStatus = true;
             foreach (Plan_ListModel pl in planList)
             {
-                if (int.Parse(pl.Plan_List_Finished_Quantity) < int.Parse(pl.Plan_List_Quantity))
+                if (float.Parse(pl.Plan_List_Finished_Quantity) < float.Parse(pl.Plan_List_Quantity))
                 {
                     completeStatus = false;
                     break;
@@ -482,7 +482,35 @@ namespace CommonMoudle
                 return false;
             }
         }
-       
+        /// <summary>
+        /// 某物料的下达数量大于计划数量
+        /// </summary>
+        /// <param name="planListID"></param>
+        /// <returns></returns>
+        public static bool IsOrderNumBiggerThanPlan(string planListID, string num)
+        {
+            try
+            {
+
+                Plan_ListModel planList = bllPlanList.GetModel(planListID);
+                if (planList == null)
+                {
+                    return true;
+                }
+                if (float.Parse(planList.Plan_List_Ordered_Quantity) + float.Parse(num) > float.Parse(planList.Plan_List_Quantity))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch 
+            {
+                return true;
+            }
+        }
 
         public static bool CreateUnshelveManageTask(string planCode, string palletCode,string houseName, string unshelveStationName, ref string manageID,ref string restr)
         {

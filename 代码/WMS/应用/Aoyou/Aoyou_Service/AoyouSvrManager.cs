@@ -22,7 +22,7 @@ namespace Aoyou_Service
         
         public bool StartERPServ(Uri servAddr,ref string restr)
         {
-            return erpServ.Start(servAddr, ref restr); 
+            return erpServ.Start(servAddr,EnumWCFProtocol.BasicHttp, ref restr); 
         }
         public bool StopERPServ(ref string restr)
         {
@@ -30,7 +30,7 @@ namespace Aoyou_Service
         }
         public bool StartMESServ(Uri servAddr,ref string restr)
         {
-            return mesServ.Start(servAddr, ref restr);
+            return mesServ.Start(servAddr, EnumWCFProtocol.BasicHttp,ref restr);
         }
 
         public bool StopMESServ(ref string restr)

@@ -15,7 +15,7 @@ namespace WMS_Kernel
 {
     public partial class UnShelvePlanView : ChildViewBase,IUnShelvePlanView
     {
-        UnShelvePlanPresenter presenter = null;
+        public UnShelvePlanPresenter presenter = null;
         public UnShelvePlanView()
         {
             InitializeComponent();
@@ -193,11 +193,21 @@ namespace WMS_Kernel
                 
                 return;
             }
-            int currRow = this.gv_Stock.GetSelectedRows()[0];
-            string palletCode = this.gv_Stock.GetRowCellValue(currRow, "托盘条码").ToString();
-            string houseName = this.gv_Stock.GetRowCellValue(currRow, "库房").ToString();
+           
+            int currRow = this.gv_PlanList.GetSelectedRows()[0];
+            string goodsCode = this.gv_PlanList.GetRowCellValue(currRow, "物料编码").ToString();
+            string planlistCode = this.gv_PlanList.GetRowCellValue(currRow, "计划列表编码").ToString();
+
+            int currStockRow = this.gv_Stock.GetSelectedRows()[0];
+            string goodsNum = this.gv_Stock.GetRowCellValue(currStockRow, "数量").ToString();
+            //int planCurrRow = this.gv_PlanList.GetSelectedRows()[0];
+            string palletCode = this.gv_Stock.GetRowCellValue(currStockRow, "托盘条码").ToString();
+
+            string houseName = this.gv_Stock.GetRowCellValue(currStockRow, "库房").ToString();
             string unshelveStationName = this.ce_TargetStation.Text.Trim();
-            this.presenter.UnShelveTask(this.cbe_PlanList.Text.Trim(), palletCode, houseName, unshelveStationName);
+
+
+            this.presenter.UnShelveTask(this.cbe_PlanList.Text.Trim(), planlistCode, goodsNum,palletCode, houseName, unshelveStationName);
         }
 
         private void gv_PlanList_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)

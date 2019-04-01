@@ -330,6 +330,7 @@
     <Compile Include="View\WareAreaManaView.designer.cs">
       <DependentUpon>WareAreaManaView.cs</DependentUpon>
     </Compile>
+    <Compile Include="WMSExtern.cs" />
     <Compile Include="WMSManager.cs" />
     <Compile Include="WmsViewManager.cs" />
     <Compile Include="View\MaterialDetailView.cs">

@@ -72,11 +72,13 @@ namespace WMS_Main
         private void DatabaseCfg()
         {
             string dbSrc = ConfigurationManager.AppSettings["DBSource"];
+                string dbAPPSrc = ConfigurationManager.AppSettings["WMS_ERP_Database_Path"];
             //CtlDBAccess.DBUtility.PubConstant.ConnectionString = string.Format(@"{0}Initial Catalog=ACEcams;User ID=sa;Password=123456;", dbSrc);
             string dbConn1 = string.Format(@"{0}Initial Catalog=JBSWmsDB;User ID=sa;Password=Aa123456;", dbSrc);
-            // string dbConn1 = string.Format(@"{0}Initial Catalog=WMSDB2;User ID=AoyouWmsSA;Password=Aa123456;", dbSrc);
+            string dbConn2 = string.Format(@"{0}Initial Catalog=JBS_APPDB;User ID=sa;Password=Aa123456;", dbAPPSrc);
 
             WMS_Database.PubConstant.SetConnectStr(dbConn1);
+            JBS_APPDB.PubConstant.SetConnectStr(dbConn2);
         }
         //public void ShowMessage(string title, string content)
         //{
@@ -131,16 +133,7 @@ namespace WMS_Main
         {
             DatabaseCfg();
         }
-
-        //private void DatabaseCfg()
-        //{
-        //    string dbSrc = ConfigurationManager.AppSettings["DBSource"];
-        //    //CtlDBAccess.DBUtility.PubConstant.ConnectionString = string.Format(@"{0}Initial Catalog=ACEcams;User ID=sa;Password=123456;", dbSrc);
-        //    string dbConn1 = string.Format(@"{0}Initial Catalog=WMSDB2;User ID=sa;Password=123456;", dbSrc);
-        //    // string dbConn1 = string.Format(@"{0}Initial Catalog=WMSDB2;User ID=AoyouWmsSA;Password=Aa123456;", dbSrc);
-
-        //    WMS_Database.PubConstant.SetConnectStr(dbConn1);
-        //}
+ 
 
  
     }

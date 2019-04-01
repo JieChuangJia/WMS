@@ -19,7 +19,7 @@ namespace WMS_Service
 
         public bool StartWMSServ(Uri servAddr, ref string restr)
         {
-            return wmsServ.Start(servAddr, ref restr);
+            return wmsServ.Start(servAddr,EnumWCFProtocol.BasicHttp, ref restr);
         }
         public bool StopWMSServ(ref string restr)
         {

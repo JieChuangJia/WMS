@@ -9,3 +9,14 @@ F:\NpWork\others\JieChuangJia\WMS\代码\WMS\基础模块\CreateKey\obj\Release\
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\基础模块\CreateKey\obj\Release\CreateKey.csproj.GenerateResource.Cache
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\基础模块\CreateKey\obj\Release\CreateKey.exe
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\基础模块\CreateKey\obj\Release\CreateKey.pdb
+E:\JieChuangJia\WMS\代码\WMS\基础模块\CreateKey\bin\Release\CreateKey.exe.config
+E:\JieChuangJia\WMS\代码\WMS\基础模块\CreateKey\bin\Release\CreateKey.exe
+E:\JieChuangJia\WMS\代码\WMS\基础模块\CreateKey\bin\Release\CreateKey.pdb
+E:\JieChuangJia\WMS\代码\WMS\基础模块\CreateKey\bin\Release\LicenceManager.dll
+E:\JieChuangJia\WMS\代码\WMS\基础模块\CreateKey\bin\Release\LicenceManager.pdb
+E:\JieChuangJia\WMS\代码\WMS\基础模块\CreateKey\obj\Release\CreateKey.csprojResolveAssemblyReference.cache
+E:\JieChuangJia\WMS\代码\WMS\基础模块\CreateKey\obj\Release\CreateKey.Form1.resources
+E:\JieChuangJia\WMS\代码\WMS\基础模块\CreateKey\obj\Release\CreateKey.Properties.Resources.resources
+E:\JieChuangJia\WMS\代码\WMS\基础模块\CreateKey\obj\Release\CreateKey.csproj.GenerateResource.Cache
+E:\JieChuangJia\WMS\代码\WMS\基础模块\CreateKey\obj\Release\CreateKey.exe
+E:\JieChuangJia\WMS\代码\WMS\基础模块\CreateKey\obj\Release\CreateKey.pdb

@@ -185,11 +185,15 @@ namespace WMS_Service_Main
         private void DatabaseCfg()
         {
             string dbSrc = ConfigurationManager.AppSettings["WMS_Database_Path"];
-            //string dbAoyou = ConfigurationManager.AppSettings["WMS_AoyouDatabase_Path"];
+            string dbAPPSrc = ConfigurationManager.AppSettings["WMS_ERP_Database_Path"];
             //CtlDBAccess.DBUtility.PubConstant.ConnectionString = string.Format(@"{0}Initial Catalog=ACEcams;User ID=sa;Password=123456;", dbSrc);
             string dbConn1 = string.Format(@"{0}Initial Catalog=JBSWmsDB;User ID=sa;Password=Aa123456;", dbSrc);
             //string dbAoyouConn = string.Format(@"{0}Initial Catalog=Aoyou_BusinessDB;User ID=sa;Password=Aa123456;", dbAoyou);
              WMS_Database.PubConstant.SetConnectStr(dbConn1);
+
+             string dbConn2 = string.Format(@"{0}Initial Catalog=JBS_APPDB;User ID=sa;Password=Aa123456;", dbAPPSrc);
+ 
+             JBS_APPDB.PubConstant.SetConnectStr(dbConn2);
              //Aoyou_BusinessDB.PubConstant.ConnectionString = dbAoyouConn;
         }
         private void InitTabbedMDI()

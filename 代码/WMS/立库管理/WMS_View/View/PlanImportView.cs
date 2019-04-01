@@ -29,6 +29,7 @@ namespace WMS_Kernel
         {
             base.Init(wmsFrame);
             this.presenter = new PlanInputPresenter(this, wmsFrame);
+            PlanInputPresenter.planInputPresenter = this.presenter;
             string restr = "";
             this.presenter.Init();
             Bitmap bitmap = ImageResource.PlanMana.ToBitmap();

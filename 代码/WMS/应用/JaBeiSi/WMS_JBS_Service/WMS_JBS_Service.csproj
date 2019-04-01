@@ -38,6 +38,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Services" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -72,6 +73,14 @@
     <ProjectReference Include="..\..\..\立库管理\WMS_Interface\WMS_Interface.csproj">
       <Project>{2d29f362-7ac3-4a39-a3ad-f0d1e0f4f39f}</Project>
       <Name>WMS_Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\立库管理\WMS_View\WMS_Kernel.csproj">
+      <Project>{8d74ff49-520c-4f5c-ab93-7c96b8f9c1a2}</Project>
+      <Name>WMS_Kernel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JBS_APPDB\JBS_APPDB.csproj">
+      <Project>{9bc19af4-d741-4eb4-a607-a758de129c6a}</Project>
+      <Name>JBS_APPDB</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

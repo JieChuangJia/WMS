@@ -53,13 +53,14 @@ namespace WMS_Kernel
         {
             this.wmsViewManager.ResgistShowMaterialProperty(showMaterialProperty);
         }
-        public void RegistAllowPutaway(Func<bool> AllowPutaway)
+        public void RegistAllowPutaway(Func<PutawayParams, ReturnObject> AllowPutaway)
         {
             this.wmsViewManager.RegistAllowPutaway(AllowPutaway);
         }
-        public void RegistUnShelve(Func<bool> unShelve)
+        public void RegistUnShelve(Func<UnShelveParams,ReturnObject> unShelve)
         {
             this.wmsViewManager.RegistUnShelve(unShelve);
+            this.wmsViewManager.RegistPlanUnShelve(unShelve);
         }
 
         //public void ResgistShowUserProperty(Action<string> showUserProperty)

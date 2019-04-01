@@ -58,6 +58,7 @@ namespace WMS_JBS_Service
         public string material_unit { get; set; }
         public string material_makedate { get; set; }
         public string material_batch { get; set; }
+        public string material_number { get; set; }
 
     }
 }

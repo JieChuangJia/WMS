@@ -179,7 +179,24 @@ namespace WMS_Database
             string sqlStr = "Cell_Child_ID='" + cellChildID+"'";
             return GetModelList(sqlStr);
         }
-
+        public List<View_StockListModel> GetModelListByPlanListID(string planListID)
+        {
+            string sqlStr = "[Plan_List_ID]='" + planListID + "'";
+            return GetModelList(sqlStr);
+        }
+        public View_StockListModel GetModeByPlanListID(string planListID)
+        {
+            string sqlStr = "[Plan_List_ID]='" + planListID + "'";
+            List<View_StockListModel>  stockList = GetModelList(sqlStr);
+            if (stockList != null && stockList.Count > 0)
+            {
+                return stockList[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
         public View_StockListModel GetModelByPalletCode(string palletCode)
         {
             string sqlStr = "Stock_Tray_Barcode = '" + palletCode + "'";

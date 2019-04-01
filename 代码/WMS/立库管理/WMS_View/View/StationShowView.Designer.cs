@@ -82,6 +82,7 @@
             this.tsmi_UnUseGs = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_UseGs = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_Refresh = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_StockAdjust = new System.Windows.Forms.ToolStripMenuItem();
             this.手动移库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_StartPos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_EndPos = new System.Windows.Forms.ToolStripMenuItem();
@@ -114,7 +115,6 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.gc_Area = new DevExpress.XtraGrid.GridControl();
             this.gv_Area = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.tsm_StockAdjust = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
@@ -552,6 +552,7 @@
             this.storageControl1.Size = new System.Drawing.Size(936, 363);
             this.storageControl1.TabIndex = 14;
             this.storageControl1.PositionsClick += new Storage.StorageControl.ClickPositionsEventHandler(this.storageControl1_PositionsClick);
+            this.storageControl1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.storageControl1_MouseClick);
             // 
             // cms_Property
             // 
@@ -564,35 +565,42 @@
             this.tsm_StockAdjust,
             this.手动移库ToolStripMenuItem});
             this.cms_Property.Name = "contextMenuStrip1";
-            this.cms_Property.Size = new System.Drawing.Size(153, 158);
+            this.cms_Property.Size = new System.Drawing.Size(125, 136);
             // 
             // tsmi_ModifyStatus
             // 
             this.tsmi_ModifyStatus.Name = "tsmi_ModifyStatus";
-            this.tsmi_ModifyStatus.Size = new System.Drawing.Size(152, 22);
+            this.tsmi_ModifyStatus.Size = new System.Drawing.Size(124, 22);
             this.tsmi_ModifyStatus.Text = "状态修改";
             this.tsmi_ModifyStatus.Click += new System.EventHandler(this.tsmi_ModifyStatus_Click);
             // 
             // tsmi_UnUseGs
             // 
             this.tsmi_UnUseGs.Name = "tsmi_UnUseGs";
-            this.tsmi_UnUseGs.Size = new System.Drawing.Size(152, 22);
+            this.tsmi_UnUseGs.Size = new System.Drawing.Size(124, 22);
             this.tsmi_UnUseGs.Text = "禁用货位";
             this.tsmi_UnUseGs.Click += new System.EventHandler(this.tsmi_UnUseGs_Click);
             // 
             // tsmi_UseGs
             // 
             this.tsmi_UseGs.Name = "tsmi_UseGs";
-            this.tsmi_UseGs.Size = new System.Drawing.Size(152, 22);
+            this.tsmi_UseGs.Size = new System.Drawing.Size(124, 22);
             this.tsmi_UseGs.Text = "启用货位";
             this.tsmi_UseGs.Click += new System.EventHandler(this.tsmi_UseGs_Click);
             // 
             // tsmi_Refresh
             // 
             this.tsmi_Refresh.Name = "tsmi_Refresh";
-            this.tsmi_Refresh.Size = new System.Drawing.Size(152, 22);
+            this.tsmi_Refresh.Size = new System.Drawing.Size(124, 22);
             this.tsmi_Refresh.Text = "刷      新";
             this.tsmi_Refresh.Click += new System.EventHandler(this.tsmi_Refresh_Click);
+            // 
+            // tsm_StockAdjust
+            // 
+            this.tsm_StockAdjust.Name = "tsm_StockAdjust";
+            this.tsm_StockAdjust.Size = new System.Drawing.Size(124, 22);
+            this.tsm_StockAdjust.Text = "库存调整";
+            this.tsm_StockAdjust.Click += new System.EventHandler(this.tsm_StockAdjust_Click);
             // 
             // 手动移库ToolStripMenuItem
             // 
@@ -600,7 +608,7 @@
             this.tsmi_StartPos,
             this.tsmi_EndPos});
             this.手动移库ToolStripMenuItem.Name = "手动移库ToolStripMenuItem";
-            this.手动移库ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.手动移库ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.手动移库ToolStripMenuItem.Text = "手动移库";
             // 
             // tsmi_StartPos
@@ -926,13 +934,6 @@
             this.gv_Area.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv_Area.OptionsView.ShowGroupPanel = false;
             this.gv_Area.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gv_Area_RowCellStyle);
-            // 
-            // tsm_StockAdjust
-            // 
-            this.tsm_StockAdjust.Name = "tsm_StockAdjust";
-            this.tsm_StockAdjust.Size = new System.Drawing.Size(152, 22);
-            this.tsm_StockAdjust.Text = "库存调整";
-            this.tsm_StockAdjust.Click += new System.EventHandler(this.tsm_StockAdjust_Click);
             // 
             // StationShowView
             // 

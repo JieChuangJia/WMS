@@ -30,13 +30,24 @@ namespace WMS_JBS_Service
         /// 仓库编码
         /// </summary>
         public string warehouse_code
+
         { get; set; }
+        /// <summary>
+        /// 仓库编码
+        /// </summary>
+        public string warehouse_name
+
+        { get; set; }
+
 
         /// <summary>
         /// 销售类型
         /// </summary>
         public string order_voucherType
         { get; set; }
+
+        public string wms_order_code { get; set; }
+
 
         private List<InventoryInfo> inventoryList = new List<InventoryInfo>();
         /// <summary>

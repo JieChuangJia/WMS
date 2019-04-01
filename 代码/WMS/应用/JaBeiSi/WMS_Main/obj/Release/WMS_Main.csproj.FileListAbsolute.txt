@@ -31,4 +31,15 @@ E:\JieChuangJia\WMS\代码\WMS\应用\JaBeiSi\WMS_Main\obj\Release\WMS_Main.Main
 E:\JieChuangJia\WMS\代码\WMS\应用\JaBeiSi\WMS_Main\obj\Release\WMS_Main.Properties.Resources.resources
 E:\JieChuangJia\WMS\代码\WMS\应用\JaBeiSi\WMS_Main\obj\Release\WMS_Main.WaitForm1.resources
 E:\JieChuangJia\WMS\代码\WMS\应用\JaBeiSi\WMS_Main\obj\Release\WMS_Main.csproj.GenerateResource.Cache
-E:\JieChuangJia\WMS\代码\WMS\应用\JaBeiSi\WMS_Main\obj\Release\佳贝斯WMS.exe.licenses
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\程序输出\客户端输出\Jbs\Release\佳贝斯WMS.exe.config
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\程序输出\客户端输出\Jbs\Release\佳贝斯WMS.exe
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\程序输出\客户端输出\Jbs\Release\佳贝斯WMS.pdb
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\应用\JaBeiSi\WMS_Main\obj\Release\WMS_Main.csprojResolveAssemblyReference.cache
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\应用\JaBeiSi\WMS_Main\obj\Release\WMS_Main.LoginView.resources
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\应用\JaBeiSi\WMS_Main\obj\Release\WMS_Main.MainFrame.resources
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\应用\JaBeiSi\WMS_Main\obj\Release\WMS_Main.Properties.Resources.resources
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\应用\JaBeiSi\WMS_Main\obj\Release\WMS_Main.WaitForm1.resources
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\应用\JaBeiSi\WMS_Main\obj\Release\WMS_Main.csproj.GenerateResource.Cache
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\应用\JaBeiSi\WMS_Main\obj\Release\佳贝斯WMS.exe.licenses
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\应用\JaBeiSi\WMS_Main\obj\Release\佳贝斯WMS.exe
+F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\应用\JaBeiSi\WMS_Main\obj\Release\佳贝斯WMS.pdb

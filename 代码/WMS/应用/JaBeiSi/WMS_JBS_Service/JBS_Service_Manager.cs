@@ -14,14 +14,23 @@ namespace WMS_JBS_Service
 
         WCFManager<IWMS_To_ERP> erpServ = new WCFManager<IWMS_To_ERP>();
 
-        WMS_To_ERPPresenter erpSvrPresenter = new WMS_To_ERPPresenter();
-        public JBS_Service_Manager()
+        public   WMS_To_ERPPresenter erpSvrPresenter = new WMS_To_ERPPresenter();
+        private static JBS_Service_Manager serviceManager = null;
+        private  JBS_Service_Manager()
         {
             this.erpServ.SetServiceContractObj(erpSvrPresenter);
         }
+        public static JBS_Service_Manager GetServiceManager()
+        {
+            if (serviceManager == null)
+            {
+                serviceManager = new JBS_Service_Manager();
+            }
+            return serviceManager;
+        }
         public bool StartERPService(Uri servAddr, ref string restr)
         {
-            return erpServ.Start(servAddr, ref restr);
+            return erpServ.Start(servAddr, EnumWCFProtocol.WebHttp, ref restr);
         }
         public bool StopERPService(ref string restr)
         {

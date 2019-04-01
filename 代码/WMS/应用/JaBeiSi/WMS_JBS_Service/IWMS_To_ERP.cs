@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.ServiceModel;
+using System.ServiceModel.Web;
 using System.Text;
 
 namespace WMS_JBS_Service
@@ -11,22 +13,33 @@ namespace WMS_JBS_Service
     public interface IWMS_To_ERP
     {
         [OperationContract]
-        string MaterialInfo(string materialInfoJson, int operateType);
+        [WebGet(UriTemplate = "/MaterialInfo/{materialInfoJson}/{operateType}", RequestFormat = WebMessageFormat.Json, 
+        ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        string MaterialInfo(string materialInfoJson, string operateType);
 
         [OperationContract]
-        string SupplierInfo(string supplierInfoJson, int operateType);
+        [WebGet(UriTemplate = "/SupplierInfo/{supplierInfoJson}/{operateType}", RequestFormat = WebMessageFormat.Json,
+        ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        string SupplierInfo(string supplierInfoJson, string operateType);
 
         [OperationContract]
-        string MaterialUnit(string materialUnitJson, int operateType);
+        [WebGet(UriTemplate = "/MaterialUnit/{materialUnitJson}/{operateType}", RequestFormat = WebMessageFormat.Json,
+        ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        string MaterialUnit(string materialUnitJson, string operateType);
 
         [OperationContract]
-        string WareHouseInfo(string wareHouseInfoJson);
+        [WebGet(UriTemplate = "/WareHouseInfo/{wareHouseInfoJson}/{operateType}", RequestFormat = WebMessageFormat.Json,
+        ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+
+        //[WebInvoke(Method = "POST", UriTemplate = "/WareHouseInfo/{wareHouseInfoJson}/{operateType}", RequestFormat = WebMessageFormat.Json,
+        //    ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        string WareHouseInfo(string wareHouseInfoJson, string operateType);
 
         [OperationContract]
-        string MaterialInBoundOrder(string materialInBoundOrderJson);
-
-        [OperationContract]
-        string MaterialOutBoundOrder(string materialOutBoundOrderJson);
+        [WebInvoke(Method = "POST", UriTemplate = "MaterialPlanOrder", BodyStyle = WebMessageBodyStyle.Wrapped)]
+        string MaterialPlanOrder(string materialPlanOrderJson);
+        //string MaterialPlanOrder(Stream planStream);
+       
 
     }
 

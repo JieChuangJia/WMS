@@ -34,12 +34,13 @@ namespace WMS_Interface
         public string 计划创建时间 { get; set; }
         public string 物料编码 { get; set; }
         public string 物料名称 { get; set; }
+      
         public string 规格型号 { get; set; }
         public string 计划数量 { get; set; }
         public string 计量单位 { get; set; }
         public string 下达数量 { get; set; }
         public string 完成数量 { get; set; }
-
+        public string 物料批次 { get; set; }
         public PlanListModel()
         { }
     }

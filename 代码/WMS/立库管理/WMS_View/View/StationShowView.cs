@@ -180,7 +180,7 @@ namespace WMS_Kernel
             this.storageControl1.DataSour = null;
             this.storageControl1.selectPositions = null;
             string houseName = this.cbe_HouseList.Text.Trim();
-           
+            this.storageControl1.selectPositions = null;
             if(houseName=="")
             {
                 return;
@@ -525,6 +525,18 @@ namespace WMS_Kernel
             sav.ShowDialog();
             RefreshData();
             OnClickGs();
+        }
+
+        private void storageControl1_MouseClick(object sender, MouseEventArgs e)
+        {
+            Point pt = new Point();
+            pt.X = e.X;
+            pt.Y = e.Y;
+            Positions pos = this.storageControl1.GetPostionsByPt(pt);
+            if (pos == null)
+            {
+                this.storageControl1.selectPositions = null;
+            }
         }
 
         //  private void RefreshColor()

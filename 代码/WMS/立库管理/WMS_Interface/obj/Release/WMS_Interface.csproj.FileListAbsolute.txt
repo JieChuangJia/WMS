@@ -6,7 +6,6 @@ E:\JieChuangJia\WMS\代码\WMS17\代码\WMS\立库管理\WMS_Interface\obj\Relea
 E:\JieChuangJia\WMS\代码\WMS17\代码\WMS\立库管理\WMS_Interface\obj\Release\WMS_Interface.pdb
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_Interface\bin\Release\WMS_Interface.dll
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_Interface\bin\Release\WMS_Interface.pdb
-F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_Interface\obj\Release\WMS_Interface.csprojResolveAssemblyReference.cache
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_Interface\obj\Release\WMS_Interface.ChildViewBase.resources
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_Interface\obj\Release\WMS_Interface.csproj.GenerateResource.Cache
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\立库管理\WMS_Interface\obj\Release\WMS_Interface.dll

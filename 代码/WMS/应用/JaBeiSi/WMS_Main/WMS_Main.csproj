@@ -96,7 +96,6 @@
       <DependentUpon>MainFrame.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -143,6 +142,14 @@
     <ProjectReference Include="..\..\..\立库管理\WMS_View\WMS_Kernel.csproj">
       <Project>{8d74ff49-520c-4f5c-ab93-7c96b8f9c1a2}</Project>
       <Name>WMS_Kernel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JBS_APPDB\JBS_APPDB.csproj">
+      <Project>{9bc19af4-d741-4eb4-a607-a758de129c6a}</Project>
+      <Name>JBS_APPDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WMS_JBS_Service\WMS_JBS_Service.csproj">
+      <Project>{499b0a60-77d3-4e5d-83d5-0cecbb1ab0a8}</Project>
+      <Name>WMS_JBS_Service</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

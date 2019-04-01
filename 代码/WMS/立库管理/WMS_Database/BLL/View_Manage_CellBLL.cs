@@ -138,6 +138,12 @@ namespace WMS_Database
             List<View_Manage_CellModel> manageList = GetModelList(sqlStr);
             return manageList;
         }
+        public List<View_Manage_CellModel> GetListByPlanID(string planID)
+        {
+            string sqlStr = "[Plan_ID] ='" + planID + "'";
+            List<View_Manage_CellModel> manageList = GetModelList(sqlStr);
+            return manageList;
+        }
         #endregion  ExtensionMethod
     }
 }
