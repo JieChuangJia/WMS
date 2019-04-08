@@ -30,6 +30,8 @@ namespace WMS_JBS_Service
         View_PlanListBLL bllViewPlanList = new View_PlanListBLL();
         View_StockListBLL bllViewStockList = new View_StockListBLL();
         ERP_Plan_ReportBLL bllErpPlanReport = new ERP_Plan_ReportBLL();
+        private View_Manage_CellBLL bllViewManageCell = new View_Manage_CellBLL();
+        private Manage_ListBll bllManageList = new Manage_ListBll();
         IWMSExtern wmsExtern = null;
         public WMS_To_ERPPresenter()
         {
@@ -391,7 +393,7 @@ namespace WMS_JBS_Service
             ResponseData response = new ResponseData();
             WH_WareHouseModel wareHouseDb = new WH_WareHouseModel();
             //WareHouse wareHouse = new WareHouse();
-            wareHouseInfoJson = GetWareHouseTestJson();//测试
+            //wareHouseInfoJson = GetWareHouseTestJson();//测试
             try
             {
                 WareHouse wareHouse = Newtonsoft.Json.JsonConvert.DeserializeObject<WareHouse>(wareHouseInfoJson);
@@ -504,7 +506,7 @@ namespace WMS_JBS_Service
                 InHouseOrder inHouseOrder = Newtonsoft.Json.JsonConvert.DeserializeObject<InHouseOrder>(materialPlanOrderJson);
                 if (inHouseOrder == null)
                 {
-                    response.Describe = "入库订单数据格式错误！";
+                    response.Describe = "订单数据格式错误！";
                     response.Status = false;
                     MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "信息内容：" + materialPlanOrderJson);
                     return response.ToJson();
@@ -512,7 +514,7 @@ namespace WMS_JBS_Service
 
                 if (inHouseOrder.order_code == "")
                 {
-                    response.Describe = "入库订单编码不能为空！";
+                    response.Describe = "订单编码不能为空！";
                     response.Status = false;
                     MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "信息内容：" + materialPlanOrderJson);
                     return response.ToJson();
@@ -570,14 +572,14 @@ namespace WMS_JBS_Service
                     bllErpPlanReport.Add(erpReport);
                 }
               
-                response.Describe = "入库订单数据导入成功！";
+                response.Describe = "订单数据导入成功！";
                 response.Status = true;
                 MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "信息内容：" + materialPlanOrderJson);
                 return response.ToJson();
             }
             catch (Exception ex)
             {
-                response.Describe = "入库订单数据导入失败！错误原因：" + ex.StackTrace.ToString();
+                response.Describe = "订单数据导入失败！错误原因：" + ex.StackTrace.ToString();
                 response.Status = false;
                 MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "错误", response.Describe + "信息内容：" + materialPlanOrderJson);
                 return response.ToJson();
@@ -617,7 +619,7 @@ namespace WMS_JBS_Service
                     if (stock != null)
                     {
                         inventoryInfo.inventory_code = stock.Cell_Code;
-                        inventoryInfo.inventory_name = stock.Cell_Name;
+                        inventoryInfo.inventory_name = stock.Cell_Name+"-"+stock.Cell_Chlid_Position;
                     }
                     inventoryInfo.quantity = plan.Plan_List_Finished_Quantity;
                     inventoryInfo.serial = plan.Plan_List_Remark;
@@ -645,40 +647,37 @@ namespace WMS_JBS_Service
                 {
                     return false;
                 }
-                OutHouseOrderResponse inHouseResponse = new OutHouseOrderResponse();//入库完成给erp反馈，否则没有货位信息
-                inHouseResponse.wms_order_code = planList[0].Plan_Code;
-                inHouseResponse.order_code = Guid.NewGuid().ToString();
-                if (planList[0].Plan_Create_Time != null)
+                OutHouseOrderResponse inhouseResponse = new OutHouseOrderResponse();
+                inhouseResponse.order_code = planList[0].Plan_Code;
+                inhouseResponse.order_date = planList[0].Plan_Create_Time.ToString();
+                inhouseResponse.order_maker = planList[0].Plan_Operater;
+                inhouseResponse.order_voucherType = planList[0].Plan_Type_Name;
+                inhouseResponse.warehouse_code = planList[0].Plan_Remark;
+                WH_WareHouseModel wareHouse = bllWareHouse.GetModelByCode(planList[0].Plan_Remark);
+                if (wareHouse != null)
                 {
-                    inHouseResponse.order_date = planList[0].Plan_Create_Time.ToString();
+                    inhouseResponse.warehouse_name = wareHouse.WareHouse_Name;
                 }
-                inHouseResponse.order_maker = planList[0].Plan_From_User;
-                inHouseResponse.order_voucherType = planList[0].Plan_Type_Name;
-                inHouseResponse.warehouse_code = planList[0].Plan_Remark;
-                WH_WareHouseModel house = bllWareHouse.GetModelByCode(planList[0].Plan_Remark);
-                if (house != null)
-                {
-                    inHouseResponse.warehouse_name = house.WareHouse_Name;
-                }
-                List<InventoryInfo> inventoryInfoList = new List<InventoryInfo>();
-                foreach (View_PlanListModel plan in planList)
-                {
-                    InventoryInfo inventoryInfo = new InventoryInfo();
-                    inventoryInfo.serial = plan.Plan_List_Remark;//批次
-                    View_StockListModel stock = bllViewStockList.GetModeByPlanListID(plan.Plan_List_ID);
-                    if (stock != null)
-                    {
-                        inventoryInfo.inventory_code = stock.Cell_Code;
-                        inventoryInfo.inventory_name = stock.Cell_Name;
-                    }
-                    inventoryInfo.quantity = plan.Plan_List_Finished_Quantity;
-                    inventoryInfo.serial = plan.Plan_List_Remark;
 
-                    inventoryInfoList.Add(inventoryInfo);
+                List<InventoryInfo> inventoryList = new List<InventoryInfo>();
+                List<View_Manage_CellModel> manageList = bllViewManageCell.GetListByPlanID(planList[0].Plan_ID);
+                foreach (View_Manage_CellModel manage in manageList)
+                {
+                    InventoryInfo inventInfo = new InventoryInfo();
+                    inventInfo.inventory_code = manage.Cell_Code;
+                    inventInfo.inventory_name = manage.Cell_Name+"-" + manage.Cell_Chlid_Position;
+                    Manage_ListModel manageListModel = bllManageList.GetModelByManageID(manage.Mange_ID);
+                    if (manageListModel != null)
+                    {
+                        inventInfo.quantity = manageListModel.Manage_List_Quantity;
+                    }
+
+                    inventoryList.Add(inventInfo);
                 }
-                inHouseResponse.MaterilaList = inventoryInfoList;
+                inhouseResponse.MaterilaList = inventoryList;
+
                 reStr = "获取成功！";
-                jsonStr = Newtonsoft.Json.JsonConvert.SerializeObject(inHouseResponse);
+                jsonStr = Newtonsoft.Json.JsonConvert.SerializeObject(inhouseResponse);
                 return true;
             }
             catch(Exception ex)

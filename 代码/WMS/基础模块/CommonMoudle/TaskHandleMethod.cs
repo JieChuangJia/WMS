@@ -60,7 +60,15 @@ namespace CommonMoudle
                 foreach (View_PlanListModel pl in planList)
                 {
                     Plan_ListModel plm = bllPlanList.GetModel(pl.Plan_List_ID);
-                    plm.Plan_List_Ordered_Quantity = (int.Parse(plm.Plan_List_Ordered_Quantity) + int.Parse(manageStock.Manage_List_Quantity)).ToString();
+                    if (plm.Plan_List_Ordered_Quantity =="")
+                    {
+                        plm.Plan_List_Ordered_Quantity = "0";
+                    }
+                    if (manageStock.Manage_List_Quantity=="")
+                    {
+                        manageStock.Manage_List_Quantity = "0";
+                    }
+                    plm.Plan_List_Ordered_Quantity = (float.Parse(plm.Plan_List_Ordered_Quantity) + float.Parse(manageStock.Manage_List_Quantity)).ToString();
                     bllPlanList.Update(plm);
                 }
             }

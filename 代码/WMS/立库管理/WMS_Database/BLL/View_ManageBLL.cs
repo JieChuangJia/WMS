@@ -137,7 +137,7 @@ namespace WMS_Database
         {
             string startTime = dtStart.ToString("yyyy-MM-dd 0:00:00");
             string endTime = dtEnd.ToString("yyyy-MM-dd 23:59:59");
-            string sqlstr = " 1=1 and Mange_CreateTime >='" + dtStart + "' and Mange_CreateTime<='" +dtEnd +"'";
+            string sqlstr = " 1=1 and Mange_CreateTime >='" + startTime + "' and Mange_CreateTime<='" + endTime + "'";
             if (taskStatus != "所有")
             {
                 sqlstr += "and Mange_Status ='" + taskStatus + "' ";

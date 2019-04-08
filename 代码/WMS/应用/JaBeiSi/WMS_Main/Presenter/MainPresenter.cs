@@ -95,8 +95,9 @@ namespace WMS_Main
                             erpPlanUpdate.ERP_Plan_IsReported = true;
                             bllErpPlanReport.Update(erpPlanUpdate);
                         }
+
                         //调用erp接口
-                        UploadInHouseInfoToErp(viewPlan);
+                        //object reObj = WCFHelper.WebHttpPost("http://localhost/WMS_To_ERP_Svc/MaterialPlanOrder", jsonStr, out restr);
                     }
                     else
                     {
@@ -108,6 +109,9 @@ namespace WMS_Main
                             erpPlanUpdate.ERP_Plan_IsReported = true;
                             bllErpPlanReport.Update(erpPlanUpdate);
                         }
+
+                        //调用erp接口
+                        //object reObj = WCFHelper.WebHttpPost("http://localhost/WMS_To_ERP_Svc/MaterialPlanOrder", jsonStr, out restr);
                     }
                 }
             }
