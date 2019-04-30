@@ -198,7 +198,7 @@ namespace WMS_Kernel
 
         private void cbe_Row_SelectedIndexChanged(object sender, EventArgs e)
         {
-        
+            this.storageControl1.selectPositions = null;
             this.Presenter.InitPosList(this.cbe_HouseList.Text.Trim(), int.Parse(this.cbe_Row.Text.Trim()));
             RefreshData();
         }
