@@ -43,7 +43,7 @@ namespace WMS_Kernel
        //  View_Plan_StockListModel planStock =  bllViewPlanStockList.GetModelByPalletCode(e.PalletCode);
 
        //}
-       public bool AddExternPlan(string planCode, string planTypeName, string planPerson, DateTime planDate, string warehouseCode,List<PlanListModel> planDetailList, ref string restr)
+       public bool AddExternPlan(string planCode, string planTypeName, string planPerson, DateTime planDate, string warehouseCode, List<PlanListModel> planDetailList, string planTypeReserve, ref string restr)
        {
            try
            {
@@ -96,6 +96,7 @@ namespace WMS_Kernel
                    planList.Plan_List_Ordered_Quantity = "0";
                    planList.Plan_List_Quantity = goods.计划数量;
                    planList.Plan_List_Remark = goods.物料批次;
+                   planList.Plan_List_Resever1 = planTypeReserve;//订单类型描述
                    bllPlanList.Add(planList);
                }
 

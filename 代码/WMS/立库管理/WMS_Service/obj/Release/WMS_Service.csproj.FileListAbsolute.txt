@@ -13,3 +13,7 @@ F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\程序输出\服务端输�
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\立库管理\WMS_Service\obj\Release\WMS_Service.csprojResolveAssemblyReference.cache
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\立库管理\WMS_Service\obj\Release\WMS_Service.dll
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS0320\WMS\立库管理\WMS_Service\obj\Release\WMS_Service.pdb
+E:\JieChuangJia\WMS\代码\WMS\代码\WMS\程序输出\服务端输出\Release\WMS_Service.dll
+E:\JieChuangJia\WMS\代码\WMS\代码\WMS\程序输出\服务端输出\Release\WMS_Service.pdb
+E:\JieChuangJia\WMS\代码\WMS\代码\WMS\立库管理\WMS_Service\obj\Release\WMS_Service.dll
+E:\JieChuangJia\WMS\代码\WMS\代码\WMS\立库管理\WMS_Service\obj\Release\WMS_Service.pdb

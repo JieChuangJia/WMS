@@ -3,3 +3,7 @@ F:\NpWork\others\JieChuangJia\WMS\代码\WMS\程序输出\服务端输出\Releas
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\Aoyou\Aoyou_BusinessDB\obj\Release\Aoyou_BusinessDB.dll
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\Aoyou\Aoyou_BusinessDB\obj\Release\Aoyou_BusinessDB.pdb
 F:\NpWork\others\JieChuangJia\WMS\代码\WMS\应用\Aoyou\Aoyou_BusinessDB\obj\Release\Aoyou_BusinessDB.csprojResolveAssemblyReference.cache
+E:\JieChuangJia\WMS\代码\WMS\代码\WMS\程序输出\服务端输出\Release\Aoyou_BusinessDB.dll
+E:\JieChuangJia\WMS\代码\WMS\代码\WMS\程序输出\服务端输出\Release\Aoyou_BusinessDB.pdb
+E:\JieChuangJia\WMS\代码\WMS\代码\WMS\应用\Aoyou\Aoyou_BusinessDB\obj\Release\Aoyou_BusinessDB.dll
+E:\JieChuangJia\WMS\代码\WMS\代码\WMS\应用\Aoyou\Aoyou_BusinessDB\obj\Release\Aoyou_BusinessDB.pdb

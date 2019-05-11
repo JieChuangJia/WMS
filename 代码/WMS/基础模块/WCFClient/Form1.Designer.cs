@@ -49,8 +49,8 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "采购接收",
-            "领用出库",
+            "出库",
+            "入库",
             "报废入库"});
             this.comboBox1.Location = new System.Drawing.Point(101, 47);
             this.comboBox1.Name = "comboBox1";

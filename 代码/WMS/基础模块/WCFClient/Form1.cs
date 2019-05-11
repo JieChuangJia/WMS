@@ -24,7 +24,15 @@ namespace WCFClient
             inHouseOrder.order_code = planCode;
             inHouseOrder.order_date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             inHouseOrder.order_maker = "admin";
-
+            if(planType == "入库")
+            {
+                inHouseOrder.InOut_Flag = "1";
+            }
+            else
+            {
+                inHouseOrder.InOut_Flag = "2";
+            }
+          
             inHouseOrder.order_voucherType = planType;
             inHouseOrder.warehouse_code = "A1";
             OderMaterialInfo materialInfo = new OderMaterialInfo();
