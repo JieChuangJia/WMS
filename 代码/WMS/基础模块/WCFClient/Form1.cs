@@ -24,7 +24,15 @@ namespace WCFClient
             inHouseOrder.order_code = planCode;
             inHouseOrder.order_date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             inHouseOrder.order_maker = "admin";
-
+            if(planType == "入库")
+            {
+                inHouseOrder.InOut_Flag = "1";
+            }
+            else
+            {
+                inHouseOrder.InOut_Flag = "2";
+            }
+          
             inHouseOrder.order_voucherType = planType;
             inHouseOrder.warehouse_code = "A1";
             OderMaterialInfo materialInfo = new OderMaterialInfo();
@@ -72,6 +80,7 @@ namespace WCFClient
             string strs = Newtonsoft.Json.JsonConvert.SerializeObject(tc);
             if(strs!= "")
             { }
+            this.tb_json.Text = strs;
             WebClient client = new WebClient();
             client.Headers.Add("Content-Type", "application/json; charset=utf-8");
             //client.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
@@ -84,7 +93,17 @@ namespace WCFClient
             //ob = WCFHelper.WebHttpPost("http://localhost/WMS_To_ERP_Svc/MaterialPlanOrder", "{\"order_code\":\"K8\",\"order_date\":\"2019-03-30 11:41:33\",\"order_maker\":\"admin\",\"warehouse_code\":\"A1\",\"order_voucherType\":\"采购接收\",\"MaterilaList\":[{\"material_code\":\"LSTL0001\",\"material_name\":\"极片\",\"material_model\":\"TB009\",\"material_unit\":\"片\",\"material_makedate\":\"2019-03-30 11:41:33\",\"material_batch\":\"b123\",\"material_number\":\"2\"},{\"material_code\":\"KS-60001\",\"material_name\":\"极片\",\"material_model\":\"TB009\",\"material_unit\":\"片\",\"material_makedate\":\"2019-03-30 11:41:33\",\"material_batch\":\"b123\",\"material_number\":\"2.3\"}]}", out str);
             //ob = WCFHelper.WebHttpPost("http://localhost/WMS_To_ERP_Svc/MaterialPlanOrder", "{\"materialPlanOrderJson\":{\"order_code\":\"K8\",\"order_date\":\"2019-03-30 21:34:46\",\"order_maker\":\"admin\",\"warehouse_code\":\"A1\",\"order_voucherType\":\"采购接收\",\"MaterilaList\":[{\"material_code\":\"LSTL0001\",\"material_name\":\"极片\",\"material_model\":\"TB009\",\"material_unit\":\"片\",\"material_makedate\":\"2019-03-30 21:34:46\",\"material_batch\":\"b123\",\"material_number\":\"2\"},{\"material_code\":\"KS-60001\",\"material_name\":\"极片\",\"material_model\":\"TB009\",\"material_unit\":\"片\",\"material_makedate\":\"2019-03-30 21:34:46\",\"material_batch\":\"b123\",\"material_number\":\"2.3\"}]}}", out str);
             //ob = WCFHelper.WebHttpPost("http://192.168.40.141/WMS_To_ERP_Svc/MaterialPlanOrder", strs, out str);
-            ob = WCFHelper.WebHttpPost("http://localhost/WMS_To_ERP_Svc/MaterialPlanOrder", strs, out str);
+            //ob = WCFHelper.WebHttpPost("http://localhost/WMS_To_ERP_Svc/MaterialPlanOrder", strs, out str);
+            //if (ob == null)
+            //{
+
+            //}
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string str = "";
+            bool ob = WCFHelper.WebHttpPost(this.tb_SvrAddr.Text.Trim(), this.tb_json.Text.Trim(), out str);
             if (ob == null)
             {
 

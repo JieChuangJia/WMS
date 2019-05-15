@@ -68,19 +68,22 @@ namespace WMS_Service_Main
             if (this.richTextBoxLog.InvokeRequired)
             {
                 DelegateDispLog delegateLog = new DelegateDispLog(WriteLog);
-                this.Invoke(delegateLog, new object[4] { logSrc,category, level, content });
+                this.Invoke(delegateLog, new object[4] { logSrc, category, level, content });
             }
             else
             {
 
-                richTextBoxLog.AppendText(string.Format("[{0:yyyy-MM-dd HH:mm:ss.fff}]{1},{2},{3}", DateTime.Now.ToString(), logSrc,category, content) + Environment.NewLine);
-                if (richTextBoxLog.Text.Length > 6000)
+                richTextBoxLog.AppendText(string.Format("[{0:yyyy-MM-dd HH:mm:ss.fff}]{1},{2},{3}", DateTime.Now.ToString(), logSrc, category, content) + Environment.NewLine);
+
+                string[] newlines = new string[richTextBoxLog.Lines.Length];
+                Array.Copy(richTextBoxLog.Lines, richTextBoxLog.Lines.Length - newlines.Count(), newlines, 0, newlines.Count());
+                richTextBoxLog.Lines = newlines;
+                richTextBoxLog.Select(richTextBoxLog.Text.Length, 0);
+                richTextBoxLog.ScrollToCaret();
+
+                if (this.richTextBoxLog.Lines.Length > 600)//600行数据
                 {
-                    string[] newlines = new string[600];
-                    Array.Copy(richTextBoxLog.Lines, richTextBoxLog.Lines.Length - 600, newlines, 0, 600);
-                    richTextBoxLog.Lines = newlines;
-                    richTextBoxLog.Select(richTextBoxLog.Text.Length, 0);
-                    richTextBoxLog.ScrollToCaret();
+                    this.richTextBoxLog.Clear();
                 }
                 SysLogModel logModel = new SysLogModel();
                 logModel.SysLog_ID = Guid.NewGuid().ToString();
@@ -264,6 +267,11 @@ namespace WMS_Service_Main
         private void batBtnItem_Modify_ItemClick(object sender, ItemClickEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            WriteLog("", "", "23", "23dsdfggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggdfgdfgsdfgsgggggg23dsdfggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggdfgdfgsdfgsgggggg23dsdfggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggdfgdfgsdfgsgggggg23dsdfggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggdfgdfgsdfgsgggggg23dsdfggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggdfgdfgsdfgsgggggg23dsdfggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggdfgdfgsdfgsgggggg23dsdfggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggdfgdfgsdfgsgggggg23dsdfggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggdfgdfgsdfgsgggggg23dsdfggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggdfgdfgsdfgsgggggg23dsdfggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggdfgdfgsdfgsgggggg23dsdfggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggdfgdfgsdfgsgggggg");
         }
     }
 }

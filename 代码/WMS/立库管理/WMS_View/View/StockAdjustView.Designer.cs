@@ -711,8 +711,10 @@
             this.se_GoodsNum.Name = "se_GoodsNum";
             this.se_GoodsNum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.se_GoodsNum.Properties.IsFloatValue = false;
-            this.se_GoodsNum.Properties.Mask.EditMask = "N00";
+            this.se_GoodsNum.Properties.DisplayFormat.FormatString = "0.000";
+            this.se_GoodsNum.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.se_GoodsNum.Properties.EditFormat.FormatString = "0.000";
+            this.se_GoodsNum.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.se_GoodsNum.Properties.MaxValue = new decimal(new int[] {
             9999999,
             0,

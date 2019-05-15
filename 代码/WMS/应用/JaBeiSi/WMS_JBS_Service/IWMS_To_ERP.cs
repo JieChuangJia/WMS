@@ -36,7 +36,7 @@ namespace WMS_JBS_Service
         string WareHouseInfo(string wareHouseInfoJson, string operateType);
 
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "MaterialPlanOrder", BodyStyle = WebMessageBodyStyle.Wrapped)]
+        [WebInvoke(Method = "POST", UriTemplate = "MaterialPlanOrder", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         string MaterialPlanOrder(string materialPlanOrderJson);
         //string MaterialPlanOrder(Stream planStream);
        

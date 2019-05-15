@@ -36,6 +36,10 @@ namespace WMS_JBS_Service
         /// </summary>
         public string order_voucherType
         { get; set; }
+        /// <summary>
+        /// 出入库标识，1：入库，2：出库
+        /// </summary>
+        public string InOut_Flag { get; set; }
 
         private List<OderMaterialInfo> materilaList = new List<OderMaterialInfo>();
         /// <summary>

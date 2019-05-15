@@ -329,22 +329,22 @@ namespace WMS_Database
             if (0 == cate)// 获取排数量
             {
                 sqlStr += " Cell_Row from View_Cell";
-                sqlStr += " where WareHouse_ID = " + cell.WareHouse_ID +" order by Cell_Row asc";
+                sqlStr += " where WareHouse_ID = '" + cell.WareHouse_ID +"' order by Cell_Row asc";
             }
             else if (1 == cate)// 获取列数量
             {
                 sqlStr += " Cell_Column from View_Cell ";
-                sqlStr += " where WareHouse_ID = " + cell.WareHouse_ID + " order by Cell_Column asc";
+                sqlStr += " where WareHouse_ID = '" + cell.WareHouse_ID + "' order by Cell_Column asc";
             }
             else if (2 == cate)// 获取层数量
             {
                 sqlStr += " Cell_Layer from View_Cell ";
-                sqlStr += " where WareHouse_ID = " + cell.WareHouse_ID + " order by Cell_Layer asc";
+                sqlStr += " where WareHouse_ID = '" + cell.WareHouse_ID + "' order by Cell_Layer asc";
             }
              else if(3==cate)
             {
                 sqlStr += " Cell_Chlid_Position from View_Cell";
-                sqlStr += " where WareHouse_ID = " + cell.WareHouse_ID + " order by Cell_Chlid_Position asc";
+                sqlStr += " where WareHouse_ID = '" + cell.WareHouse_ID + "' order by Cell_Chlid_Position asc";
             }
             else
             {
@@ -408,7 +408,7 @@ namespace WMS_Database
             {
                 return null;
             }
-            sqlStr += " where WareHouse_ID = " + houseID + " and Cell_Child_Status='空闲' and Cell_Child_Run_Status ='完成' and Cell_Type ='货位'";
+            sqlStr += " where WareHouse_ID = '" + houseID + "' and Cell_Child_Status='空闲' and Cell_Child_Run_Status ='完成' and Cell_Type ='货位'";
             if (0 == cate)// 获取排数量
             {
                 sqlStr += "  order by Cell_Row asc";

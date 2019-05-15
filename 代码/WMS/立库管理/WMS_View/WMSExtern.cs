@@ -43,7 +43,7 @@ namespace WMS_Kernel
        //  View_Plan_StockListModel planStock =  bllViewPlanStockList.GetModelByPalletCode(e.PalletCode);
 
        //}
-       public bool AddExternPlan(string planCode, string planTypeName, string planPerson, DateTime planDate, string warehouseCode,List<PlanListModel> planDetailList, ref string restr)
+       public bool AddExternPlan(string planCode, string planTypeName, string planPerson, DateTime planDate, string warehouseCode, List<PlanListModel> planDetailList, string planTypeReserve, ref string restr)
        {
            try
            {
@@ -64,7 +64,21 @@ namespace WMS_Kernel
                    restr = "计划编号已存在：[" + planCode + "]";
                    return false;
                }
+               if (planDetailList == null)
+               {
+                   return false;
+               }
+               foreach (PlanListModel goods in planDetailList)
+               {
+                   Plan_ListModel planList = new Plan_ListModel();
+                   GoodsModel goodsModel = bllGoods.GetModelByCode(goods.物料编码);
+                   if (goodsModel == null)
+                   {
 
+                       restr = "物料编码错误！";
+                       return false;
+                   }
+               }
                PlanMainModel plan = new PlanMainModel();
 
                plan.Plan_Code = planCode;
@@ -75,10 +89,7 @@ namespace WMS_Kernel
                plan.Plan_Operater = planPerson;
                plan.Plan_Remark = warehouseCode;
                bllPlan.Add(plan);
-               if (planDetailList == null)
-               {
-                   return false;
-               }
+              
                foreach (PlanListModel goods in planDetailList)
                {
                    Plan_ListModel planList = new Plan_ListModel();
@@ -96,6 +107,7 @@ namespace WMS_Kernel
                    planList.Plan_List_Ordered_Quantity = "0";
                    planList.Plan_List_Quantity = goods.计划数量;
                    planList.Plan_List_Remark = goods.物料批次;
+                   planList.Plan_List_Resever1 = planTypeReserve;//订单类型描述
                    bllPlanList.Add(planList);
                }
 

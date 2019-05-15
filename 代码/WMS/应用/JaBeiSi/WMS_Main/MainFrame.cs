@@ -119,25 +119,28 @@ namespace WMS_Main
             if (this.richTextBoxLog.InvokeRequired)
             {
                 DelegateDispLog delegateLog = new DelegateDispLog(WriteLog);
-                this.Invoke(delegateLog, new object[4] { logSrc,category, level, content });
+                this.Invoke(delegateLog, new object[4] { logSrc, category, level, content });
             }
             else
             {
 
-                richTextBoxLog.AppendText(string.Format("[{0:yyyy-MM-dd HH:mm:ss.fff}]{1},{2},{3}", DateTime.Now.ToString(), logSrc,category, content) + Environment.NewLine);
-                if (richTextBoxLog.Lines.Length > 600)
+                richTextBoxLog.AppendText(string.Format("[{0:yyyy-MM-dd HH:mm:ss.fff}]{1},{2},{3}", DateTime.Now.ToString(), logSrc, category, content) + Environment.NewLine);
+
+                string[] newlines = new string[richTextBoxLog.Lines.Length];
+                Array.Copy(richTextBoxLog.Lines, richTextBoxLog.Lines.Length - newlines.Count(), newlines, 0, newlines.Count());
+                richTextBoxLog.Lines = newlines;
+                richTextBoxLog.Select(richTextBoxLog.Text.Length, 0);
+                richTextBoxLog.ScrollToCaret();
+
+                if (this.richTextBoxLog.Lines.Length > 600)//600行数据
                 {
-                    string[] newlines = new string[600];
-                    Array.Copy(richTextBoxLog.Lines, richTextBoxLog.Lines.Length - 600, newlines, 0, 600);
-                    richTextBoxLog.Lines = newlines;
-                    richTextBoxLog.Select(richTextBoxLog.Text.Length, 0);
-                    richTextBoxLog.ScrollToCaret();
+                    this.richTextBoxLog.Clear();
                 }
                 SysLogModel logModel = new SysLogModel();
                 logModel.SysLog_ID = Guid.NewGuid().ToString();
                 logModel.SysLog_Level = level;
                 logModel.SysLog_Content = content;
-                logModel.SysLog_Source=logSrc;
+                logModel.SysLog_Source = logSrc;
                 logModel.SysLog_Time = DateTime.Now;
                 this.mainPresenter.AddDBLog(logModel);
 
@@ -322,9 +325,9 @@ namespace WMS_Main
         private void bti_About_ItemClick(object sender, ItemClickEventArgs e)
         {
             AboutView av = new AboutView(LoginView.WMSName);
-            string sysVersion = "1.0.14";
+            string sysVersion = "1.0.15";
             string aboutStr = "版本：" + sysVersion + " \r\n \r\n"
-                + "日期：" +"2019-4-8" + "\r\n \r\n"
+                + "日期：" +"2019-5-12" + "\r\n \r\n"
                 + "（Copyright）深圳捷创嘉智能物流装备有限公司";
                av.SetVersion(aboutStr);
             av.ShowDialog();

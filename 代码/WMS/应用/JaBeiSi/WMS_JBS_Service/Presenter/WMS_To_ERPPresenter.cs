@@ -519,20 +519,20 @@ namespace WMS_JBS_Service
                     MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "信息内容：" + materialPlanOrderJson);
                     return response.ToJson();
                 }
-                if (inHouseOrder.order_voucherType == "")
+                if (inHouseOrder.InOut_Flag == "")
                 {
-                    response.Describe = "采购类型不能为空！";
+                    response.Describe = "出入库标识不能为空！";
                     response.Status = false;
                     MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "信息内容：" + materialPlanOrderJson);
                     return response.ToJson();
                 }
-                if (inHouseOrder.warehouse_code == "")
-                {
-                    response.Describe = "库房编码不能为空！";
-                    response.Status = false;
-                    MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "信息内容：" + materialPlanOrderJson);
-                    return response.ToJson();
-                }
+                //if (inHouseOrder.warehouse_code == "")
+                //{
+                //    response.Describe = "库房编码不能为空！";
+                //    response.Status = false;
+                //    MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "信息内容：" + materialPlanOrderJson);
+                //    return response.ToJson();
+                //}
 
                 List<PlanListModel> planList = new List<PlanListModel>();
                 foreach (OderMaterialInfo material in inHouseOrder.MaterilaList)
@@ -550,10 +550,19 @@ namespace WMS_JBS_Service
                     planList.Add(plm);
 
                 }
+                string planTypeName = "";
+                if(inHouseOrder.InOut_Flag.Trim()=="1")//入库
+                {
+                    planTypeName = "入库";
+                }
+                else//出库
+                {
+                    planTypeName = "出库";
+                }
               
                 string restr = "";
-                bool status = wmsExtern.AddExternPlan(inHouseOrder.order_code, inHouseOrder.order_voucherType,
-                    inHouseOrder.order_maker, DateTime.Parse(inHouseOrder.order_date), inHouseOrder.warehouse_code, planList, ref restr);
+                bool status = wmsExtern.AddExternPlan(inHouseOrder.order_code, planTypeName,
+                    inHouseOrder.order_maker, DateTime.Parse(inHouseOrder.order_date), inHouseOrder.warehouse_code, planList,inHouseOrder.order_voucherType, ref restr);
                 if (status == false)
                 {
                     response.Describe = "入库订单数据导入失败！" + restr;
@@ -603,7 +612,7 @@ namespace WMS_JBS_Service
                     inHouseResponse.order_date = planList[0].Plan_Create_Time.ToString();
                 }
                 inHouseResponse.order_maker = planList[0].Plan_From_User;
-                inHouseResponse.order_voucherType = planList[0].Plan_Type_Name;
+                inHouseResponse.order_voucherType = planList[0].Plan_List_Resever1;
                 inHouseResponse.warehouse_code = planList[0].Plan_Remark;
                 WH_WareHouseModel house = bllWareHouse.GetModelByCode(planList[0].Plan_Remark);
                 if (house != null)
@@ -651,7 +660,7 @@ namespace WMS_JBS_Service
                 inhouseResponse.order_code = planList[0].Plan_Code;
                 inhouseResponse.order_date = planList[0].Plan_Create_Time.ToString();
                 inhouseResponse.order_maker = planList[0].Plan_Operater;
-                inhouseResponse.order_voucherType = planList[0].Plan_Type_Name;
+                inhouseResponse.order_voucherType = planList[0].Plan_List_Resever1;
                 inhouseResponse.warehouse_code = planList[0].Plan_Remark;
                 WH_WareHouseModel wareHouse = bllWareHouse.GetModelByCode(planList[0].Plan_Remark);
                 if (wareHouse != null)

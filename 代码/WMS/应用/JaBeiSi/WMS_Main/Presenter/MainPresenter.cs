@@ -180,16 +180,16 @@ namespace WMS_Main
                 return reObject;
             }
 
-            View_Plan_StockListModel planStock = bllViewPlanStockList.GetModelByPalletCode(param.PalletCode);
-            if(planStock!=null)
-            {
-                if(param.WareHouseCode!=planStock.Plan_Remark)//不等于计划的上架库房返回false
-                {
-                    reObject.Status = false;
-                    reObject.Describe = "上架库房与计划的上架库房不符，请选择计划的上架库房，计划上架的库房为：" + planStock.Plan_Remark;
-                    return reObject;
-                }
-            }
+            //View_Plan_StockListModel planStock = bllViewPlanStockList.GetModelByPalletCode(param.PalletCode);
+            //if(planStock!=null)
+            //{
+            //    if(param.WareHouseCode!=planStock.Plan_Remark)//不等于计划的上架库房返回false
+            //    {
+            //        reObject.Status = false;
+            //        reObject.Describe = "上架库房与计划的上架库房不符，请选择计划的上架库房，计划上架的库房为：" + planStock.Plan_Remark;
+            //        return reObject;
+            //    }
+            //}
             reObject.Status = true;
             reObject.Describe = "";
             return reObject;
@@ -211,16 +211,16 @@ namespace WMS_Main
                 reObject.Describe = "当前系统不允许下达下架任务！只允许执行一个任务";
                 return reObject;
             }
-            View_Plan_StockListModel planStock = bllViewPlanStockList.GetModelByPalletCode(param.PalletCode);
-            if (planStock != null)
-            {
-                if ( param.WareHouseCode != planStock.Plan_Remark)//不等于计划的上架库房返回false
-                {
-                    reObject.Status = false;
-                    reObject.Describe = "下架库房与计划的下架架库房不符，请选择计划的下架库房，计划下架的库房为：" + planStock.Plan_Remark;
-                    return reObject;
-                }
-            }
+            //View_Plan_StockListModel planStock = bllViewPlanStockList.GetModelByPalletCode(param.PalletCode);
+            //if (planStock != null)
+            //{
+            //    if ( param.WareHouseCode != planStock.Plan_Remark)//不等于计划的上架库房返回false
+            //    {
+            //        reObject.Status = false;
+            //        reObject.Describe = "下架库房与计划的下架架库房不符，请选择计划的下架库房，计划下架的库房为：" + planStock.Plan_Remark;
+            //        return reObject;
+            //    }
+            //}
             reObject.Status = true;
             reObject.Describe = "";
             return reObject;
