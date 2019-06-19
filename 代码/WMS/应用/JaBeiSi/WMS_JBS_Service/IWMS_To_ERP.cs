@@ -13,8 +13,11 @@ namespace WMS_JBS_Service
     public interface IWMS_To_ERP
     {
         [OperationContract]
-        [WebGet(UriTemplate = "/MaterialInfo/{materialInfoJson}/{operateType}", RequestFormat = WebMessageFormat.Json, 
-        ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        //[WebGet(UriTemplate = "/MaterialInfo/{materialInfoJson}/{operateType}", RequestFormat = WebMessageFormat.Json, 
+        //ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        //string MaterialInfo(string materialInfoJson, string operateType);
+
+        [WebInvoke(Method = "POST", UriTemplate = "MaterialInfo", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         string MaterialInfo(string materialInfoJson, string operateType);
 
         [OperationContract]

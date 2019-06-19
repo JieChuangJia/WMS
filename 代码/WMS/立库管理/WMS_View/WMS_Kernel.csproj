@@ -787,9 +787,6 @@
     <None Include="Resources\start.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\system-search-3.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\tool_delete.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -857,6 +854,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\edit-find-4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system-search-3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom-3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\documentation.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

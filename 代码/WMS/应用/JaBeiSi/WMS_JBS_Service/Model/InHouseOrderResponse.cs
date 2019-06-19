@@ -7,50 +7,47 @@ namespace WMS_JBS_Service
 {
     public class InHouseOrderResponse 
     {
+        
+        
         /// <summary>
-        /// 订单编码
+        ///WMS采购入库单号
         /// </summary>
-        public string order_code
+        public string mes_receipt_no
         { get; set; }
         /// <summary>
-        /// 入库单号
+        /// 采购订单 单据编号
         /// </summary>
-        public string wms_order_code
+        public string erp_receipt_no
         { get; set; }
         /// <summary>
         /// 订单日期
         /// </summary>
-        public string order_date
+        public string mes_into_date
 
         { get; set; }
         /// <summary>
-        /// 制单人
+        /// 制单人名称
         /// </summary>
-        public string order_maker
-
+        public string mes_creator
         { get; set; }
 
+        /// <summary>
+        /// 单据类型
+        /// </summary>
+        public string mes_receipt_type
+        { get; set; }
+
+        
         /// <summary>
         /// 仓库编码
         /// </summary>
-        public string warehouse_code
-
+        public string mes_warehouse_code
         { get; set; }
-        /// <summary>
-        /// 仓库编码
-        /// </summary>
-        public string warehouse_name
+      
 
-        { get; set; }
-
-        /// <summary>
-        /// 采购类型
-        /// </summary>
-        public string order_voucherType
-        { get; set; }
 
         private List<InventoryInfo> inventoryList = new List<InventoryInfo>();
-        public List<InventoryInfo> InventoryList
+        public List<InventoryInfo> backIntoDetails
         {
             get { return this.inventoryList; }
             set { this.inventoryList = value; }
@@ -60,17 +57,17 @@ namespace WMS_JBS_Service
     public class InventoryInfo
     {
         /// <summary>
-        /// 库存编码
+        /// 物料编码
         /// </summary>
-        public string inventory_code { get; set; }
-        public string inventory_name { get; set; }
+        public string mes_materiel_code { get; set; }
+        public string mes_unit { get; set; }
         /// <summary>
         /// 数量
         /// </summary>
-        public string quantity { get; set; }
+        public string mes_total_qty { get; set; }
         /// <summary>
         /// 批号
         /// </summary>
-        public string serial { get; set; }
+        public string mes_lot_no { get; set; }
     }
 }

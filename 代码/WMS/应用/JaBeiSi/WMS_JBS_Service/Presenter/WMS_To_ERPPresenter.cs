@@ -605,37 +605,37 @@ namespace WMS_JBS_Service
                     return false;
                 }
                 InHouseOrderResponse inHouseResponse = new InHouseOrderResponse();//入库完成给erp反馈，否则没有货位信息
-                inHouseResponse.wms_order_code = planList[0].Plan_Code;
-                inHouseResponse.order_code = Guid.NewGuid().ToString();
+                inHouseResponse.erp_receipt_no = planList[0].Plan_Code;
+                inHouseResponse.mes_receipt_no = Guid.NewGuid().ToString();
                 if (planList[0].Plan_Create_Time != null)
                 {
-                    inHouseResponse.order_date = planList[0].Plan_Create_Time.ToString();
+                    inHouseResponse.mes_into_date = planList[0].Plan_Create_Time.ToString();
                 }
-                inHouseResponse.order_maker = planList[0].Plan_From_User;
-                inHouseResponse.order_voucherType = planList[0].Plan_List_Resever1;
-                inHouseResponse.warehouse_code = planList[0].Plan_Remark;
-                WH_WareHouseModel house = bllWareHouse.GetModelByCode(planList[0].Plan_Remark);
-                if (house != null)
+                View_StockListModel stockList = bllViewStockList.GetModeByPlanListID(planList[0].Plan_List_ID);//只有入库可这么查询，出库就没有库存了
+                if(stockList!=null)
                 {
-                    inHouseResponse.warehouse_name = house.WareHouse_Name;
+                    inHouseResponse.mes_warehouse_code = stockList.WareHouse_Code;
                 }
+                inHouseResponse.mes_creator = planList[0].Plan_Operater;
+                inHouseResponse.mes_receipt_type = planList[0].Plan_List_Resever1;
+               
                 List<InventoryInfo> inventoryInfoList = new List<InventoryInfo>();
                 foreach (View_PlanListModel plan in planList)
                 {
                     InventoryInfo inventoryInfo = new InventoryInfo();
-                    inventoryInfo.serial = plan.Plan_List_Remark;//批次
+                    inventoryInfo.mes_lot_no = plan.Plan_List_Remark;//批次
                     View_StockListModel stock = bllViewStockList.GetModeByPlanListID(plan.Plan_List_ID);
                     if (stock != null)
                     {
-                        inventoryInfo.inventory_code = stock.Cell_Code;
-                        inventoryInfo.inventory_name = stock.Cell_Name+"-"+stock.Cell_Chlid_Position;
-                    }
-                    inventoryInfo.quantity = plan.Plan_List_Finished_Quantity;
-                    inventoryInfo.serial = plan.Plan_List_Remark;
+                        inventoryInfo.mes_materiel_code = stock.Goods_Code;
+                        inventoryInfo.mes_unit = stock.Goods_Unit;
 
+                    }
+                    inventoryInfo.mes_total_qty = plan.Plan_List_Finished_Quantity;
+                  
                     inventoryInfoList.Add(inventoryInfo);
                 }
-                inHouseResponse.InventoryList = inventoryInfoList;
+                inHouseResponse.backIntoDetails = inventoryInfoList;
                 reStr = "获取成功！";
                 jsonStr = Newtonsoft.Json.JsonConvert.SerializeObject(inHouseResponse);
                  
@@ -672,16 +672,16 @@ namespace WMS_JBS_Service
                 List<View_Manage_CellModel> manageList = bllViewManageCell.GetListByPlanID(planList[0].Plan_ID);
                 foreach (View_Manage_CellModel manage in manageList)
                 {
-                    InventoryInfo inventInfo = new InventoryInfo();
-                    inventInfo.inventory_code = manage.Cell_Code;
-                    inventInfo.inventory_name = manage.Cell_Name+"-" + manage.Cell_Chlid_Position;
-                    Manage_ListModel manageListModel = bllManageList.GetModelByManageID(manage.Mange_ID);
-                    if (manageListModel != null)
-                    {
-                        inventInfo.quantity = manageListModel.Manage_List_Quantity;
-                    }
+                    //InventoryInfo inventInfo = new InventoryInfo();
+                    //inventInfo.inventory_code = manage.Cell_Code;
+                    //inventInfo.inventory_name = manage.Cell_Name+"-" + manage.Cell_Chlid_Position;
+                    //Manage_ListModel manageListModel = bllManageList.GetModelByManageID(manage.Mange_ID);
+                    //if (manageListModel != null)
+                    //{
+                    //    inventInfo.quantity = manageListModel.Manage_List_Quantity;
+                    //}
 
-                    inventoryList.Add(inventInfo);
+                    //inventoryList.Add(inventInfo);
                 }
                 inhouseResponse.MaterilaList = inventoryList;
 

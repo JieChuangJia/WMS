@@ -55,7 +55,8 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "出库",
-            "入库"});
+            "入库",
+            "物料"});
             this.comboBox1.Location = new System.Drawing.Point(101, 47);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(180, 20);
@@ -92,7 +93,7 @@
             this.tb_SvrAddr.Name = "tb_SvrAddr";
             this.tb_SvrAddr.Size = new System.Drawing.Size(470, 21);
             this.tb_SvrAddr.TabIndex = 6;
-            this.tb_SvrAddr.Text = "http://localhost/WMS_To_ERP_Svc/MaterialPlanOrder";
+            this.tb_SvrAddr.Text = "http://61.174.29.146:8874/APIERP.aspx";
             // 
             // label3
             // 

@@ -32,6 +32,10 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.de_EndTime = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.de_StartTime = new DevExpress.XtraEditors.DateEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.sb_TaskQuery = new DevExpress.XtraEditors.SimpleButton();
@@ -47,13 +51,13 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.gc_TaskDetail = new DevExpress.XtraGrid.GridControl();
             this.gv_TaskDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.de_EndTime = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.de_StartTime = new DevExpress.XtraEditors.DateEdit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.de_EndTime.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.de_EndTime.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.de_StartTime.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.de_StartTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_TaskStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbEdit_TaskType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -66,10 +70,6 @@
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_TaskDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_TaskDetail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.de_EndTime.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.de_EndTime.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.de_StartTime.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.de_StartTime.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleButton2
@@ -114,6 +114,46 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1177, 54);
             this.panelControl1.TabIndex = 0;
+            // 
+            // de_EndTime
+            // 
+            this.de_EndTime.EditValue = new System.DateTime(2018, 3, 28, 20, 35, 53, 359);
+            this.de_EndTime.Location = new System.Drawing.Point(260, 14);
+            this.de_EndTime.Name = "de_EndTime";
+            this.de_EndTime.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.de_EndTime.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.de_EndTime.Size = new System.Drawing.Size(100, 20);
+            this.de_EndTime.TabIndex = 59;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(196, 17);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(52, 14);
+            this.labelControl3.TabIndex = 60;
+            this.labelControl3.Text = "结束时间:";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(12, 17);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(60, 14);
+            this.labelControl4.TabIndex = 57;
+            this.labelControl4.Text = "开始时间：";
+            // 
+            // de_StartTime
+            // 
+            this.de_StartTime.EditValue = new System.DateTime(2018, 3, 28, 20, 35, 53, 359);
+            this.de_StartTime.Location = new System.Drawing.Point(84, 14);
+            this.de_StartTime.Name = "de_StartTime";
+            this.de_StartTime.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.de_StartTime.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.de_StartTime.Size = new System.Drawing.Size(100, 20);
+            this.de_StartTime.TabIndex = 58;
             // 
             // labelControl2
             // 
@@ -177,7 +217,7 @@
             // 
             this.sb_ChooseConfirm.Image = ((System.Drawing.Image)(resources.GetObject("sb_ChooseConfirm.Image")));
             this.sb_ChooseConfirm.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.sb_ChooseConfirm.Location = new System.Drawing.Point(106, 28);
+            this.sb_ChooseConfirm.Location = new System.Drawing.Point(325, 24);
             this.sb_ChooseConfirm.Name = "sb_ChooseConfirm";
             this.sb_ChooseConfirm.Size = new System.Drawing.Size(95, 22);
             this.sb_ChooseConfirm.TabIndex = 8;
@@ -187,12 +227,11 @@
             // sb_TaskComplete
             // 
             this.sb_TaskComplete.Image = ((System.Drawing.Image)(resources.GetObject("sb_TaskComplete.Image")));
-            this.sb_TaskComplete.Location = new System.Drawing.Point(230, 28);
+            this.sb_TaskComplete.Location = new System.Drawing.Point(115, 28);
             this.sb_TaskComplete.Name = "sb_TaskComplete";
             this.sb_TaskComplete.Size = new System.Drawing.Size(78, 22);
             this.sb_TaskComplete.TabIndex = 7;
             this.sb_TaskComplete.Text = "手动完成";
-            this.sb_TaskComplete.Visible = false;
             this.sb_TaskComplete.Click += new System.EventHandler(this.sb_TaskComplete_Click);
             // 
             // sBtn_Cancel
@@ -275,46 +314,6 @@
             this.gv_TaskDetail.OptionsView.ColumnAutoWidth = false;
             this.gv_TaskDetail.OptionsView.ShowGroupPanel = false;
             // 
-            // de_EndTime
-            // 
-            this.de_EndTime.EditValue = new System.DateTime(2018, 3, 28, 20, 35, 53, 359);
-            this.de_EndTime.Location = new System.Drawing.Point(260, 14);
-            this.de_EndTime.Name = "de_EndTime";
-            this.de_EndTime.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.de_EndTime.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.de_EndTime.Size = new System.Drawing.Size(100, 20);
-            this.de_EndTime.TabIndex = 59;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(196, 17);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(52, 14);
-            this.labelControl3.TabIndex = 60;
-            this.labelControl3.Text = "结束时间:";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(12, 17);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(60, 14);
-            this.labelControl4.TabIndex = 57;
-            this.labelControl4.Text = "开始时间：";
-            // 
-            // de_StartTime
-            // 
-            this.de_StartTime.EditValue = new System.DateTime(2018, 3, 28, 20, 35, 53, 359);
-            this.de_StartTime.Location = new System.Drawing.Point(84, 14);
-            this.de_StartTime.Name = "de_StartTime";
-            this.de_StartTime.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.de_StartTime.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.de_StartTime.Size = new System.Drawing.Size(100, 20);
-            this.de_StartTime.TabIndex = 58;
-            // 
             // TaskListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -328,6 +327,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.de_EndTime.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.de_EndTime.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.de_StartTime.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.de_StartTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_TaskStatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbEdit_TaskType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -340,10 +343,6 @@
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc_TaskDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_TaskDetail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.de_EndTime.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.de_EndTime.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.de_StartTime.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.de_StartTime.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

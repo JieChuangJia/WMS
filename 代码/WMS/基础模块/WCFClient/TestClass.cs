@@ -17,4 +17,9 @@ namespace WCFClient
         public TestClass()
         { }
     }
+    public class MaterialJson
+    {
+        public string materialInfoJson { get; set; }
+        public string operateType { get; set; }
+    }
 }
