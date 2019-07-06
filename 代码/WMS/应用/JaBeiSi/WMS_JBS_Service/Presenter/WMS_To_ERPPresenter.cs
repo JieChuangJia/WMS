@@ -508,7 +508,7 @@ namespace WMS_JBS_Service
                 {
                     response.Describe = "订单数据格式错误！";
                     response.Status = false;
-                    MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "信息内容：" + materialPlanOrderJson);
+                    MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "，信息内容：" + materialPlanOrderJson);
                     return response.ToJson();
                 }
 
@@ -516,14 +516,21 @@ namespace WMS_JBS_Service
                 {
                     response.Describe = "订单编码不能为空！";
                     response.Status = false;
-                    MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "信息内容：" + materialPlanOrderJson);
+                    MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "，信息内容：" + materialPlanOrderJson);
                     return response.ToJson();
                 }
                 if (inHouseOrder.InOut_Flag == "")
                 {
                     response.Describe = "出入库标识不能为空！";
                     response.Status = false;
-                    MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "信息内容：" + materialPlanOrderJson);
+                    MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "，信息内容：" + materialPlanOrderJson);
+                    return response.ToJson();
+                }
+                if (inHouseOrder.order_voucherType.Trim() == "")
+                {
+                    response.Describe = "单据类型不能为空！";
+                    response.Status = false;
+                    MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "，信息内容：" + materialPlanOrderJson);
                     return response.ToJson();
                 }
                 //if (inHouseOrder.warehouse_code == "")
@@ -567,7 +574,7 @@ namespace WMS_JBS_Service
                 {
                     response.Describe = "入库订单数据导入失败！" + restr;
                     response.Status = false;
-                    MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "信息内容：" + materialPlanOrderJson);
+                    MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "，信息内容：" + materialPlanOrderJson);
                     return response.ToJson();
                 }
                 ERP_Plan_ReportModel existPlan = bllErpPlanReport.GetModelByPlanCode(inHouseOrder.order_code);
@@ -583,14 +590,14 @@ namespace WMS_JBS_Service
               
                 response.Describe = "订单数据导入成功！";
                 response.Status = true;
-                MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "信息内容：" + materialPlanOrderJson);
+                MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "，信息内容：" + materialPlanOrderJson);
                 return response.ToJson();
             }
             catch (Exception ex)
             {
                 response.Describe = "订单数据导入失败！错误原因：" + ex.StackTrace.ToString();
                 response.Status = false;
-                MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "错误", response.Describe + "信息内容：" + materialPlanOrderJson);
+                MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "错误", response.Describe + "，信息内容：" + materialPlanOrderJson);
                 return response.ToJson();
             }
         }

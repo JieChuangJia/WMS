@@ -35,6 +35,7 @@
             this.gc_GoodsList = new DevExpress.XtraGrid.GridControl();
             this.gv_MaterialList = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.sb_CloseProper = new DevExpress.XtraEditors.SimpleButton();
             this.gc_PropertyDetail = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.sb_ClosePro = new DevExpress.XtraEditors.SimpleButton();
@@ -46,7 +47,6 @@
             this.sb_ModifyGoods = new DevExpress.XtraEditors.SimpleButton();
             this.sb_DeleteGoods = new DevExpress.XtraEditors.SimpleButton();
             this.sb_AddGoods = new DevExpress.XtraEditors.SimpleButton();
-            this.sb_CloseProper = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -115,11 +115,11 @@
             // gc_GoodsList
             // 
             this.gc_GoodsList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_GoodsList.Location = new System.Drawing.Point(2, 22);
+            this.gc_GoodsList.Location = new System.Drawing.Point(2, 21);
             this.gc_GoodsList.MainView = this.gv_MaterialList;
             this.gc_GoodsList.Margin = new System.Windows.Forms.Padding(0);
             this.gc_GoodsList.Name = "gc_GoodsList";
-            this.gc_GoodsList.Size = new System.Drawing.Size(943, 422);
+            this.gc_GoodsList.Size = new System.Drawing.Size(943, 423);
             this.gc_GoodsList.TabIndex = 6;
             this.gc_GoodsList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_MaterialList});
@@ -147,6 +147,16 @@
             this.groupControl3.Size = new System.Drawing.Size(253, 446);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "物料属性";
+            // 
+            // sb_CloseProper
+            // 
+            this.sb_CloseProper.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.sb_CloseProper.Location = new System.Drawing.Point(178, 415);
+            this.sb_CloseProper.Name = "sb_CloseProper";
+            this.sb_CloseProper.Size = new System.Drawing.Size(75, 23);
+            this.sb_CloseProper.TabIndex = 1;
+            this.sb_CloseProper.Text = "关闭属性";
+            this.sb_CloseProper.Click += new System.EventHandler(this.sb_CloseProper_Click);
             // 
             // gc_PropertyDetail
             // 
@@ -259,16 +269,6 @@
             this.sb_AddGoods.TabIndex = 0;
             this.sb_AddGoods.Text = "添加";
             this.sb_AddGoods.Click += new System.EventHandler(this.sb_AddGoods_Click);
-            // 
-            // sb_CloseProper
-            // 
-            this.sb_CloseProper.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sb_CloseProper.Location = new System.Drawing.Point(178, 415);
-            this.sb_CloseProper.Name = "sb_CloseProper";
-            this.sb_CloseProper.Size = new System.Drawing.Size(75, 23);
-            this.sb_CloseProper.TabIndex = 1;
-            this.sb_CloseProper.Text = "关闭属性";
-            this.sb_CloseProper.Click += new System.EventHandler(this.sb_CloseProper_Click);
             // 
             // MaterialManaView
             // 

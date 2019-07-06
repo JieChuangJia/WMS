@@ -133,7 +133,7 @@ namespace WCFClient
 
             dic.Add("method", "produceApi");
             dic.Add("param",this.tb_json.Text.Trim());
-            //str = APIRequst.Send("POST", this.tb_SvrAddr.Text.Trim(), dic);
+            str = APIRequst.Send("POST", this.tb_SvrAddr.Text.Trim(), dic);
 
             str = SendToErp(this.tb_SvrAddr.Text.Trim(), "MaterialInfo", this.tb_json.Text.Trim());
             //var jObject = JObject.Parse(str);
