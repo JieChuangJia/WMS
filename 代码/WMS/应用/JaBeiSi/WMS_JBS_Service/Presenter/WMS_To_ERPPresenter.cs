@@ -54,7 +54,7 @@ namespace WMS_JBS_Service
                 MaterialInfo materialInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<MaterialInfo>(materialInfoJson);
                 if (materialInfo == null)
                 {
-                    response.Describe = "物料基础数据格式错误！";
+                    response.Describe = "物料基础数据格式错误，错误码：1001！";
                     response.Status = false;
                     MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "信息内容：" + materialInfoJson);
                     return response.ToJson();
@@ -86,7 +86,7 @@ namespace WMS_JBS_Service
                 }
                 if (operateType != "1" && operateType != "2" && operateType != "3")
                 {
-                    response.Describe = "接口操作标识错误！operateType，1为增加，2为更新，3为删除！";
+                    response.Describe = "接口操作标识错误！operateType，1为增加，2为更新，3为删除！，错误码：1003！";
                     response.Status = false;
                     MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "信息内容：" + materialInfoJson);
                     return response.ToJson();
@@ -98,7 +98,7 @@ namespace WMS_JBS_Service
                             GoodsModel existgoods = bllGoods.GetModelByCode(materialInfo.material_code);
                             if (existgoods != null)
                             {
-                                response.Describe = "物料基础数据添加失败，已经存在此物料编码：" + materialInfo.material_code;
+                                response.Describe = "物料基础数据添加失败，错误码：1004，已经存在此物料编码：" + materialInfo.material_code;
                                 response.Status = false;
                                 MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "信息内容：" + materialInfoJson);
                                 return response.ToJson();
@@ -133,7 +133,7 @@ namespace WMS_JBS_Service
                             GoodsModel goods = bllGoods.GetModelByCode(materialInfo.material_code);
                             if (goods == null)
                             {
-                                response.Describe = "物料基础数据更新失败，不存此物料编码：" + materialInfo.material_code;
+                                response.Describe = "物料基础数据更新失败，错误码：1005，不存此物料编码：" + materialInfo.material_code;
                                 response.Status = false;
                                 MainFrameHandler.GetMainFrame().WriteLog("WMS_To_ERP服务", "", "提示", response.Describe + "信息内容：" + materialInfoJson);
                                 return response.ToJson();
@@ -167,7 +167,7 @@ namespace WMS_JBS_Service
                     default:
                         {
                             response.Status = false;
-                            response.Describe = "操作类型错误，operateType，1为增加，2为更新，3为删除！";
+                            response.Describe = "操作类型错误，错误码：1006，operateType，1为增加，2为更新，3为删除！";
                             return response.ToJson();
                         }
                 }
