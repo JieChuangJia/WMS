@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="IWMS_To_ERP.cs" />
     <Compile Include="JBS_Service_Manager.cs" />
+    <Compile Include="Model\ErpResponse.cs" />
     <Compile Include="Model\OutHouseOrderreResponse.cs" />
     <Compile Include="Model\OutHouseOrder.cs" />
     <Compile Include="Model\InHouseOrder.cs" />

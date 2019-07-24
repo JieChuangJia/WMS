@@ -107,6 +107,11 @@ namespace WMS_Kernel
 
         private void sb_TaskComplete_Click(object sender, EventArgs e)
         {
+            if(this.IWmsFrame.RoleLevel<1)
+            {
+                this.ShowMessage("信息提示", "当前用户没有此权限！");
+                return;
+            }
             if(this.AskMessage("询问","您确定要手动完成选中任务？")!= 0)
             {
                 return;
@@ -135,6 +140,11 @@ namespace WMS_Kernel
 
         private void sBtn_Cancel_Click(object sender, EventArgs e)
         {
+            if (this.IWmsFrame.RoleLevel < 1)
+            {
+                this.ShowMessage("信息提示", "当前用户没有此权限！");
+                return;
+            }
             if (this.AskMessage("询问", "您确定要取消选中任务么？") != 0)
             {
                 return;

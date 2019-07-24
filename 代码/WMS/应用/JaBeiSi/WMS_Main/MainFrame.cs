@@ -325,9 +325,9 @@ namespace WMS_Main
         private void bti_About_ItemClick(object sender, ItemClickEventArgs e)
         {
             AboutView av = new AboutView(LoginView.WMSName);
-            string sysVersion = "1.0.15";
+            string sysVersion = "1.0.16";
             string aboutStr = "版本：" + sysVersion + " \r\n \r\n"
-                + "日期：" +"2019-5-12" + "\r\n \r\n"
+                + "日期：" +"2019-5-17" + "\r\n \r\n"
                 + "（Copyright）深圳捷创嘉智能物流装备有限公司";
                av.SetVersion(aboutStr);
             av.ShowDialog();

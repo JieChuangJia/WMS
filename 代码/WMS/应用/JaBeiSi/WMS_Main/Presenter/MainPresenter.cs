@@ -9,7 +9,9 @@ using WMS_Interface;
 using WMS_Kernel;
 using JBS_APPDB;
 using WMS_JBS_Service;
-
+using System.Configuration;
+using Newtonsoft.Json.Linq;
+  
 namespace WMS_Main
 {
     public class MainPresenter
@@ -31,6 +33,8 @@ namespace WMS_Main
         private View_Plan_StockListBLL bllViewPlanStockList = new View_Plan_StockListBLL();
         private ManageBll bllManage = new ManageBll();
         private ThreadBaseModel threadTaskHandler = null;
+        private string erpERL = "http://192.168.30.9:8874/APIERP.aspx";
+        private IWMSFrame iWmsFrame = null;
         public MainPresenter()
         { }
         /// <summary>
@@ -44,12 +48,14 @@ namespace WMS_Main
             wmsFuncList.Add(WMSFuncModule.按计划下架);
             wmsFuncList.Add(WMSFuncModule.计划查询);
             wmsFuncList.Add(WMSFuncModule.待办工作);
-            wmsFuncList.Add(WMSFuncModule.计划录入);
+            //wmsFuncList.Add(WMSFuncModule.计划录入);
         }
-        public void Init(IWMSFrame wmsFrame)
+        public void Init(IWMSFrame wmsFrame) 
         {
             InitWmsModule();
             string wmsconfig = AppDomain.CurrentDomain.BaseDirectory + @"\data\WMSClientConfig_JBS.xml";
+            this.erpERL = ConfigurationManager.AppSettings["ERP_Svr_Addr"];
+
             wmsManager.Init(wmsFrame, wmsconfig, wmsFuncList);
             wmsManager.ResgistShowMaterialProperty(ShowMaterialProperty);
             wmsManager.RegistAllowPutaway(AllowPutaway);
@@ -61,7 +67,7 @@ namespace WMS_Main
             threadTaskHandler.SetThreadRoutine(TaskHandleThread);
             threadTaskHandler.TaskInit(ref restr);
             threadTaskHandler.Start(ref restr);
-            
+            this.iWmsFrame = wmsFrame;
         }
         /// <summary>
         /// 监控erp计划完成状态
@@ -89,13 +95,14 @@ namespace WMS_Main
                     if (viewPlan[0].Plan_Type_InOut == "1")//入库
                     {
                         bool jsonGetStatus = jbsService.erpSvrPresenter.InHouseResponse(viewPlan, ref jsonStr, ref restr);
+                        SendToErp(erpERL, "PuApi", jsonStr);
                         if(jsonGetStatus==true)
                         {
                             ERP_Plan_ReportModel erpPlanUpdate = bllErpPlanReport.GetModelByPlanCode(viewPlan[0].Plan_Code);
                             erpPlanUpdate.ERP_Plan_IsReported = true;
                             bllErpPlanReport.Update(erpPlanUpdate);
                         }
-
+                     
                         //调用erp接口
                         //object reObj = WCFHelper.WebHttpPost("http://localhost/WMS_To_ERP_Svc/MaterialPlanOrder", jsonStr, out restr);
                     }
@@ -109,7 +116,8 @@ namespace WMS_Main
                             erpPlanUpdate.ERP_Plan_IsReported = true;
                             bllErpPlanReport.Update(erpPlanUpdate);
                         }
-
+                        //出库不需要上报了erp定的
+                      //  SendToErp(erpERL, "produceApi", jsonStr);
                         //调用erp接口
                         //object reObj = WCFHelper.WebHttpPost("http://localhost/WMS_To_ERP_Svc/MaterialPlanOrder", jsonStr, out restr);
                     }
@@ -122,43 +130,42 @@ namespace WMS_Main
             
         }
 
-        private void UploadInHouseInfoToErp(List<View_PlanListModel> planList)//出库入库都一样
+        private bool SendToErp(string url, string methodName, string paramStr)
         {
-            if (planList == null || planList.Count == 0)
+            try
             {
-                return;
-            }
-            InHouseOrderResponse inhouseResponse = new InHouseOrderResponse();
-            inhouseResponse.order_code = planList[0].Plan_Code;
-            inhouseResponse.order_date = planList[0].Plan_Create_Time.ToString();
-            inhouseResponse.order_maker = planList[0].Plan_From_User;
-            inhouseResponse.order_voucherType = planList[0].Plan_Type_Name;
-            inhouseResponse.warehouse_code = planList[0].Plan_Remark;
-            WH_WareHouseModel wareHouse = bllWareHouse.GetModelByCode(planList[0].Plan_Remark);
-            if (wareHouse != null)
-            {
-                inhouseResponse.warehouse_name = wareHouse.WareHouse_Name;
-            }
+                
+                Dictionary<string, string> dic = new Dictionary<string, string>();
+                dic.Add("method", methodName);
+                dic.Add("param", paramStr);
+                string restr = APIRequst.Send("POST", url, dic);
+                var jObject = JObject.Parse(restr);
+                int total = int.Parse(jObject["Total"].ToString());
+                string desc = jObject["Desc"].ToString();
+                string log = "发送数据：" + paramStr + ",erp返回：" + restr;
 
-            List<InventoryInfo> inventoryList = new List<InventoryInfo>();
-            List<View_Manage_CellModel> manageList = bllViewManageCell.GetListByPlanID(planList[0].Plan_ID);
-            foreach (View_Manage_CellModel manage in manageList)
-            {
-                InventoryInfo inventInfo = new InventoryInfo();
-                inventInfo.inventory_code = manage.Cell_Code;
-                inventInfo.inventory_name = manage.Cell_Name;
-                Manage_ListModel manageListModel = bllManageList.GetModelByManageID(manage.Mange_ID);
-                if (manageListModel != null)
+                this.iWmsFrame.WriteLog("应用主程序逻辑", "上报ERP", EnumLoglevel.提示.ToString(), log);
+                if(total>0)
                 {
-                    inventInfo.quantity = manageListModel.Manage_List_Quantity;
+                 
+                    return true;
                 }
-
-                inventoryList.Add(inventInfo);
+                else
+                {
+                    return false;
+                }
+             
+                 
             }
-            inhouseResponse.InventoryList = inventoryList;
-
-
+            catch(Exception ex)
+            {
+               
+                this.iWmsFrame.WriteLog("应用主程序逻辑", "上报ERP", EnumLoglevel.错误.ToString(), "向ERP发送数据失败：数据" + paramStr + ",系统报错：" + ex.Message);
+                return false;
+            }
+           
         }
+      
         /// <summary>
         /// 只允许一个待执行或者执行中的任务，否则不允许执行上架
         /// </summary>
